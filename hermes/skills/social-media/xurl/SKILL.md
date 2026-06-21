@@ -408,6 +408,17 @@ When Shivang asks for Twitter/X drafts with auto-posting after review time, do *
 
 Pitfall: a simple `every 10m` or `every 5m` cron series is wrong for this preference unless Shivang explicitly asks for fully unattended posting. The desired default is “draft → review window → self-review fallback → post if no reply.”
 
+### Fully approved multi-post campaign scheduling
+
+If Shivang explicitly says to "post them all" at an interval, treat that as approval for an unattended sequence. Recommended pattern:
+1. Verify `xurl auth status` and `xurl whoami`.
+2. Calculate each post length before scheduling; keep every item under 280 characters.
+3. Post the first item immediately with `xurl post`.
+4. Put the remaining posts in deterministic scripts under `~/.hermes/scripts/<campaign-name>/` and schedule one-shot `cronjob` entries at the requested intervals.
+5. For Hermes cron `script=...`, pass the path **relative to `~/.hermes/scripts/`** (for example `termbridge_x_campaign/post_02.py`), not an absolute `/Users/.../.hermes/scripts/...` path.
+6. Prefer `no_agent=true` for simple posting scripts so the cron delivers the script output exactly and avoids unnecessary model calls.
+7. After scheduling, list or otherwise verify the jobs and report the posted URL plus the scheduled times.
+
 ---
 
 ## Troubleshooting

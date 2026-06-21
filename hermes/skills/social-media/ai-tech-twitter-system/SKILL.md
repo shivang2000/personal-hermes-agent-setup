@@ -138,6 +138,15 @@ When Shivang shares an insight/discovery and asks to post it:
 6. Post with `xurl post "..."` only after X auth is configured and intent is explicit.
 7. Return the posted tweet ID/URL if available from `xurl` output.
 
+### Project-launch / not-yet-tested wording
+
+When Shivang asks to post a launch or campaign for a project that is still being tested, do not overclaim completion, adoption, or production readiness. Preserve the excitement but add explicit uncertainty/progress language such as:
+- "Local testing is in progress — stay tuned."
+- "Testing in progress."
+- "This is the direction I’m exploring/building."
+
+For multi-post sequences, apply the caveat across the campaign, not just the first tweet. Prefer "goal", "exploring", "building", and "local testing" over "shipped", "validated", "production-ready", or hard claims unless verified from the repo and the user wants that framing.
+
 Acceptable explicit posting intents include:
 - "post this"
 - "tweet this"

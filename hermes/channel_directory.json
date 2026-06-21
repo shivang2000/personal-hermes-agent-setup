@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T05:52:03.925103",
+  "updated_at": "2026-06-21T06:57:08.088934",
   "platforms": {
     "discord": [
       {
@@ -23,6 +23,12 @@
       {
         "id": "1516909789949460500",
         "name": "office-hermes-agent",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518059932123926658",
+        "name": "tech-news",
         "guild": "Shivang Hermes AI",
         "type": "channel"
       },
@@ -181,6 +187,24 @@
         "name": "Shivang Hermes AI / #general / i would like to save you on my github repo so can we do that ?? / topic 1518040322972581968",
         "type": "thread",
         "thread_id": "1518040322972581968"
+      },
+      {
+        "id": "1518052645523165275:1518052645523165275",
+        "name": "Shivang Hermes AI / #tweets-automation / let optimize our tweets to be more ai related / topic 1518052645523165275",
+        "type": "thread",
+        "thread_id": "1518052645523165275"
+      },
+      {
+        "id": "1518055262101966868:1518055262101966868",
+        "name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat... / topic 1518055262101966868",
+        "type": "thread",
+        "thread_id": "1518055262101966868"
+      },
+      {
+        "id": "1518060573496180877:1518060573496180877",
+        "name": "Shivang Hermes AI / #tech-news / A Hr miss this new channel purpose of this channel is for you to create share... / topic 1518060573496180877",
+        "type": "thread",
+        "thread_id": "1518060573496180877"
       }
     ],
     "telegram": [],

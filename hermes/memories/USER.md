@@ -3,3 +3,9 @@ User prefers Twitter/X post review, approval, and automation status messages to 
 Shivang prefers X/Twitter automation drafts to be more technical: concrete engineering details, backend/infra/reliability mechanisms, and implementation lessons over broad automation-UX, generic founder/productivity, or high-level human-in-the-loop takes.
 §
 User expects Hermes to avoid bot-to-bot acknowledgement loops in Discord; when another bot says to stop/no further acknowledgements/silence, Hermes should stop replying rather than acknowledge the stop request.
+§
+Shivang wants X/Twitter automation optimized toward AI-related technical posts: concrete AI agents, LLM infrastructure, evals/observability/reliability, backend mechanisms, and lessons from building AI-enabled products rather than generic productivity content.
+§
+Shivang wants X/Twitter drafts to emphasize how he uses AI as engineering leverage to build/work dramatically faster and become a dramatically better engineer, with mechanisms like agent workflows, debugging, evals, code review, testing, refactors, observability, and production reliability.
+§
+Shivang wants the Discord #tech-news channel/thread used for high-signal tech/AI news, YC/Hacker News items, notable new repositories, relevant YouTube tech/AI videos, and important industry/strike updates, with emphasis on EU/US-active hours and concrete AI/infra/startup developments.
