@@ -1,0 +1,213 @@
+{
+  "updated_at": "2026-06-21T05:32:02.661418",
+  "platforms": {
+    "discord": [
+      {
+        "id": "1516791937737429045",
+        "name": "general",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516818210463154246",
+        "name": "tweets-automation",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516909713533702214",
+        "name": "personal-hermes-agent",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516909789949460500",
+        "name": "office-hermes-agent",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516793362030657696:1516793362030657696",
+        "name": "Shivang Hermes AI / #personal-laptop-hermes / hie / topic 1516793362030657696",
+        "type": "thread",
+        "thread_id": "1516793362030657696"
+      },
+      {
+        "id": "1516819739723436072:1516819739723436072",
+        "name": "Shivang Hermes AI / #general / Can you create a cron job to write a post on Twitter at 8:35 PM IST to showca... / topic 1516819739723436072",
+        "type": "thread",
+        "thread_id": "1516819739723436072"
+      },
+      {
+        "id": "1516833744185593907:1516833744185593907",
+        "name": "Shivang Hermes AI / #tweets-automation / For the next post lets add information on how to do same thing as what have d... / topic 1516833744185593907",
+        "type": "thread",
+        "thread_id": "1516833744185593907"
+      },
+      {
+        "id": "1516841964358598716:1516841964358598716",
+        "name": "Shivang Hermes AI / #tweets-automation / https://x.com/johnnynel_/status/2067272621532823826?s=46 write a reply to thi... / topic 1516841964358598716",
+        "type": "thread",
+        "thread_id": "1516841964358598716"
+      },
+      {
+        "id": "1516818210463154246",
+        "name": "Shivang Hermes AI / #tweets-automation",
+        "type": "group",
+        "thread_id": null
+      },
+      {
+        "id": "1516873578719482108:1516873578719482108",
+        "name": "Shivang Hermes AI / #general / tailscale i would you to research on tailscale and its use cases and how mayb... / topic 1516873578719482108",
+        "type": "thread",
+        "thread_id": "1516873578719482108"
+      },
+      {
+        "id": "1516875872311705661:1516875872311705661",
+        "name": "Shivang Hermes AI / #tweets-automation / how many crons are there ?? / topic 1516875872311705661",
+        "type": "thread",
+        "thread_id": "1516875872311705661"
+      },
+      {
+        "id": "1516890823818612876:1516890823818612876",
+        "name": "Shivang Hermes AI / #tweets-automation / https://youtu.be/87T8xE-_yeo?si=4tZ39CbdCA-M5_Jy we just finished watching th... / topic 1516890823818612876",
+        "type": "thread",
+        "thread_id": "1516890823818612876"
+      },
+      {
+        "id": "1516902242949529650:1516902242949529650",
+        "name": "Shivang Hermes AI / #general / what kind of dashboard setup and everything has been done for our hermesagent... / topic 1516902242949529650",
+        "type": "thread",
+        "thread_id": "1516902242949529650"
+      },
+      {
+        "id": "1516934294327529562:1516934294327529562",
+        "name": "Shivang Hermes AI / #tweets-automation / what is our setup https://x.com/i_mika_el/status/2067315216262537248?s=46 dra... / topic 1516934294327529562",
+        "type": "thread",
+        "thread_id": "1516934294327529562"
+      },
+      {
+        "id": "1516937496351604746:1516937496351604746",
+        "name": "Shivang Hermes AI / #tweets-automation / post a reply for this reply to me https://x.com/tngzhy658431902/status/206735... / topic 1516937496351604746",
+        "type": "thread",
+        "thread_id": "1516937496351604746"
+      },
+      {
+        "id": "1516940847059435541:1516940847059435541",
+        "name": "Shivang Hermes AI / #tweets-automation / write a tweet on this I plan to build on a mcp/plugin which lets others agent... / topic 1516940847059435541",
+        "type": "thread",
+        "thread_id": "1516940847059435541"
+      },
+      {
+        "id": "1516945225841643540:1516945225841643540",
+        "name": "Shivang Hermes AI / #general / can you control my laptop and using that can u message on whatsapp on my behalf / topic 1516945225841643540",
+        "type": "thread",
+        "thread_id": "1516945225841643540"
+      },
+      {
+        "id": "1517179919384187050:1517179919384187050",
+        "name": "Shivang Hermes AI / #general / I would like you talk to hermes-work-agent so it can create a cron job for yo... / topic 1517179919384187050",
+        "type": "thread",
+        "thread_id": "1517179919384187050"
+      },
+      {
+        "id": "1517186072361173184:1517186072361173184",
+        "name": "Shivang Hermes AI / #office-hermes-agent / Cron prompt details: Inspect recent safe local work signals since previous ru... / topic 1517186072361173184",
+        "type": "thread",
+        "thread_id": "1517186072361173184"
+      },
+      {
+        "id": "1517186065671262291:1517186065671262291",
+        "name": "Shivang Hermes AI / #office-hermes-agent / Please create the office-laptop cron job now. Job: `office-work-summary-for-t... / topic 1517186065671262291",
+        "type": "thread",
+        "thread_id": "1517186065671262291"
+      },
+      {
+        "id": "1517188323934994432:1517188323934994432",
+        "name": "Shivang Hermes AI / #general / We would like then to talk this temporary issue Lets make skills that help th... / topic 1517188323934994432",
+        "type": "thread",
+        "thread_id": "1517188323934994432"
+      },
+      {
+        "id": "1517194939836924014:1517194939836924014",
+        "name": "Shivang Hermes AI / #general / Can you put look at it into your EV files and tell me if the settings for com... / topic 1517194939836924014",
+        "type": "thread",
+        "thread_id": "1517194939836924014"
+      },
+      {
+        "id": "1517206490283511968:1517206490283511968",
+        "name": "Shivang Hermes AI / #office-hermes-agent / — Shivang wants material for tweets from today’s work. Please inspect safe lo... / topic 1517206490283511968",
+        "type": "thread",
+        "thread_id": "1517206490283511968"
+      },
+      {
+        "id": "1517516958059204658:1517516958059204658",
+        "name": "Shivang Hermes AI / #general / https://x.com/amboras_inc/status/2067908529277882837?s=46 use career-ops skil... / topic 1517516958059204658",
+        "type": "thread",
+        "thread_id": "1517516958059204658"
+      },
+      {
+        "id": "1517530820003233954:1517530820003233954",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1517530820003233954",
+        "type": "thread",
+        "thread_id": "1517530820003233954"
+      },
+      {
+        "id": "1517533425374990426:1517533425374990426",
+        "name": "Shivang Hermes AI / #tweets-automation / post tweets on this Hermes / agent workflow Yesterday’s bot-to-bot workflow w... / topic 1517533425374990426",
+        "type": "thread",
+        "thread_id": "1517533425374990426"
+      },
+      {
+        "id": "1517544011152359434:1517544011152359434",
+        "name": "Shivang Hermes AI / #general / https://www.linkedin.com/posts/michael-bradley-07bab74a_dream-server-is-hirin... / topic 1517544011152359434",
+        "type": "thread",
+        "thread_id": "1517544011152359434"
+      },
+      {
+        "id": "1517650967464509634:1517650967464509634",
+        "name": "Shivang Hermes AI / #general / hie / topic 1517650967464509634",
+        "type": "thread",
+        "thread_id": "1517650967464509634"
+      },
+      {
+        "id": "1517922216837124146:1517922216837124146",
+        "name": "Shivang Hermes AI / #general / https://x.com/pranav6226/status/2068147721941504345?s=46 write a reply to thi... / topic 1517922216837124146",
+        "type": "thread",
+        "thread_id": "1517922216837124146"
+      },
+      {
+        "id": "1518040322972581968:1518040322972581968",
+        "name": "Shivang Hermes AI / #general / i would like to save you on my github repo so can we do that ?? / topic 1518040322972581968",
+        "type": "thread",
+        "thread_id": "1518040322972581968"
+      }
+    ],
+    "telegram": [],
+    "whatsapp": [],
+    "whatsapp_cloud": [],
+    "slack": [],
+    "signal": [],
+    "mattermost": [],
+    "matrix": [],
+    "homeassistant": [],
+    "email": [],
+    "sms": [],
+    "dingtalk": [],
+    "msgraph_webhook": [],
+    "feishu": [],
+    "wecom": [],
+    "wecom_callback": [],
+    "weixin": [],
+    "bluebubbles": [],
+    "qqbot": [],
+    "yuanbao": [],
+    "google_chat": [],
+    "irc": [],
+    "line": [],
+    "ntfy": [],
+    "photon": [],
+    "simplex": [],
+    "teams": []
+  }
+}

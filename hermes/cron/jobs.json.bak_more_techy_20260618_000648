@@ -1,0 +1,292 @@
+{
+  "jobs": [
+    {
+      "id": "cdd18a71e079",
+      "name": "Builder-context daily AIConcierge post approval",
+      "prompt": "Use the ai-tech-twitter-system skill. Prepare the daily must-post approval queue for Shivang's X/Twitter account.\n\nAudience: US recruiters, technical founders, startup operators, AI/product leaders, plus Europe/London and US readers who should come away thinking Shivang ships real systems and can learn/adapt fast.\n\nCore rule: prioritize Shivang's own build/work/study context over generic AI news. News is secondary framing only. Do NOT produce generic news commentary if it is not anchored in what Shivang actually worked on, studied, watched, or learned.\n\nEvery run:\n1. Use session_search to inspect recent conversations from roughly the last 3 days for user-shared work/study context. Search for terms like AIConcierge321, AWS, EKS, kubectl, load testing, Claude Code, video, watched, article, learned, Harshit, study, bug, framework, language, shipping, refund, reliability, and related phrases.\n2. Lightly inspect /Users/shivang/dev/AIConcierge321 for recent visible work signals. Prefer git logs, README/CLAUDE files, docs, architecture notes, recent commits, tests, and runbooks. Do NOT read .env files or secrets.\n3. Extract the strongest 2-3 angles from:\n   - what Shivang worked on today/recently\n   - what he studied or watched recently\n   - what new tools/workflows/frameworks he used\n   - where he demonstrated fast adaptation across stacks/languages/frameworks\n   - AWS/infra/load-testing/agent/reliability lessons when visible\n4. Use current AI/tech/product news only as optional context if it sharpens one of those angles. Do not make the post primarily about outside news.\n5. Draft 3 tweet candidates under 260 characters.\n6. Mark one as Recommended daily post.\n7. If a recent session includes a creator/video/article with an exact public handle or URL (for example Harshit), you may include one optional variant that references or tags them. Never guess handles.\n8. Emphasize proof-of-work: AWS/EKS/load testing, multi-agent systems, reliability hardening, payments/refunds, observability, trust boundaries, learning velocity, and ability to ship across unfamiliar stacks.\n9. Avoid hype, engagement bait, generic motivational content, and confidential implementation details.\n10. End with: \"Reply with the number you approve, edits you want, or 'skip'. I will only post after explicit approval.\"\n\nOutput format:\nUS recruiter/founder daily AIConcierge post queue — <date>\n\nPrimary work/study signal used: <brief non-sensitive signal from project or recent sessions>\nSecondary context used: <news/article/video context or 'None'>\nRecommended daily post: <number>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n2) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n3) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\nOptional tagged/video variant: <tweet or 'None today'>\nOptional thread idea: <short outline or 'None today'>\n\nApproval: Reply with the number you approve, edits you want, or 'skip'. I will only post after explicit approval.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 12 * * *",
+        "display": "45 12 * * *"
+      },
+      "schedule_display": "45 12 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 9
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-12T17:05:21.636468+05:30",
+      "next_run_at": "2026-06-18T12:45:00+05:30",
+      "last_run_at": "2026-06-17T12:48:12.104934+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": "delivery error: Telegram send failed: Timed out",
+      "deliver": "discord:#tweets-automation",
+      "origin": null,
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "24fd916089e3",
+      "name": "Builder-context 45m AIConcierge scan A",
+      "prompt": "Use the ai-tech-twitter-system skill. Run a 45-minute opportunity scan for extra AI/tech posts for Shivang.\n\nAudience: US recruiters, technical founders, startup operators, AI/product leaders, plus Europe/London and US readers.\n\nCore rule: prioritize Shivang's own current work, study notes, watched videos/articles, and project context over generic news. News is optional framing only.\n\nEvery run:\n1. Use session_search to inspect recent conversations from roughly the last 24-48 hours for what Shivang worked on, watched, studied, tried, learned, or debugged. Search for AIConcierge321, AWS, EKS, kubectl, load testing, Claude Code, video, watched, article, Harshit, learnings, framework, language, bug, reliability, refund, observability, and similar terms.\n2. Lightly inspect /Users/shivang/dev/AIConcierge321 for fresh visible work signals. Prefer git log, recent commits, docs, tests, runbooks, README/CLAUDE, and architecture notes. Do NOT read .env files or secrets.\n3. Decide whether there is a genuinely fresh post opportunity tied to current build/study context.\n4. Use outside AI/tech/product news only if it strengthens the framing of Shivang's own work/learning. Do not draft news-only posts.\n5. If there is no genuinely useful fresh opportunity, respond with exactly [SILENT].\n6. If there is a strong opportunity, draft 1-2 short tweet candidates under 260 characters.\n7. Favor angles around AWS/infra/load testing, shipping velocity, learning unfamiliar stacks quickly, multi-agent systems, reliability, refunds/payments, observability, trust boundaries, and practical lessons from today's work.\n8. If a recent session includes a creator/video/article with an exact public handle or URL, one optional variant may reference or tag them. Never guess handles.\n9. Avoid hype, generic inspirational content, plagiarism, engagement bait, and confidential details.\n10. End with: \"Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.\"\n\nOutput format when there is an opportunity:\nUS recruiter/founder 45-minute post opportunity — <date/time>\n\nPrimary work/study signal used: <brief non-sensitive signal>\nSecondary context used: <news/article/video context or 'None'>\nAngle: <one-line explanation>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n2) <optional second candidate or omit>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\nOptional tagged/video variant: <tweet or 'None today'>\n\nApproval: Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 0,3,12,15,18,21 * * *",
+        "display": "45 0,3,12,15,18,21 * * *"
+      },
+      "schedule_display": "45 0,3,12,15,18,21 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 39
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-12T17:10:20.769241+05:30",
+      "next_run_at": "2026-06-18T00:45:00+05:30",
+      "last_run_at": "2026-06-17T21:46:49.357952+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": null,
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "dabe7d3cfd7d",
+      "name": "Approved Post 3 - Reliability beats demos",
+      "prompt": "Use the xurl skill. Verify `xurl auth status` and `xurl whoami` succeed, then post this exact tweet text on X/Twitter with xurl:\n\nA boring production skill that matters more than most AI demos: idempotent migrations and explicit terminal states. Systems earn trust when retries are safe, vendor errors are sanitized, and “pending” never gets mistaken for “done.”\n\nAfter posting, return the tweet ID and URL if available. If posting fails, report the exact error. Do not modify the tweet text.",
+      "skills": [
+        "xurl"
+      ],
+      "skill": "xurl",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-06-18T00:10:00+05:30",
+        "display": "once at 2026-06-18 00:10"
+      },
+      "schedule_display": "once at 2026-06-18 00:10",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-16T04:41:08.884806+05:30",
+      "next_run_at": "2026-06-18T00:10:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "586676262",
+        "chat_name": "Shivang Chheda",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null,
+      "profile": null
+    },
+    {
+      "id": "1f3522f90910",
+      "name": "Builder-context 45m AIConcierge scan B",
+      "prompt": "Use the ai-tech-twitter-system skill. Run a 45-minute opportunity scan for extra AI/tech posts for Shivang.\n\nAudience: US recruiters, technical founders, startup operators, AI/product leaders, plus Europe/London and US readers.\n\nCore rule: prioritize Shivang's own current work, study notes, watched videos/articles, and project context over generic news. News is optional framing only.\n\nEvery run:\n1. Use session_search to inspect recent conversations from roughly the last 24-48 hours for what Shivang worked on, watched, studied, tried, learned, or debugged. Search for AIConcierge321, AWS, EKS, kubectl, load testing, Claude Code, video, watched, article, Harshit, learnings, framework, language, bug, reliability, refund, observability, and similar terms.\n2. Lightly inspect /Users/shivang/dev/AIConcierge321 for fresh visible work signals. Prefer git log, recent commits, docs, tests, runbooks, README/CLAUDE, and architecture notes. Do NOT read .env files or secrets.\n3. Decide whether there is a genuinely fresh post opportunity tied to current build/study context.\n4. Use outside AI/tech/product news only if it strengthens the framing of Shivang's own work/learning. Do not draft news-only posts.\n5. If there is no genuinely useful fresh opportunity, respond with exactly [SILENT].\n6. If there is a strong opportunity, draft 1-2 short tweet candidates under 260 characters.\n7. Favor angles around AWS/infra/load testing, shipping velocity, learning unfamiliar stacks quickly, multi-agent systems, reliability, refunds/payments, observability, trust boundaries, and practical lessons from today's work.\n8. If a recent session includes a creator/video/article with an exact public handle or URL, one optional variant may reference or tag them. Never guess handles.\n9. Avoid hype, generic inspirational content, plagiarism, engagement bait, and confidential details.\n10. End with: \"Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.\"\n\nOutput format when there is an opportunity:\nUS recruiter/founder 45-minute post opportunity — <date/time>\n\nPrimary work/study signal used: <brief non-sensitive signal>\nSecondary context used: <news/article/video context or 'None'>\nAngle: <one-line explanation>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n2) <optional second candidate or omit>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\nOptional tagged/video variant: <tweet or 'None today'>\n\nApproval: Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 1,13,16,19,22 * * *",
+        "display": "30 1,13,16,19,22 * * *"
+      },
+      "schedule_display": "30 1,13,16,19,22 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-16T21:30:26.065719+05:30",
+      "next_run_at": "2026-06-18T01:30:00+05:30",
+      "last_run_at": "2026-06-17T22:30:44.025047+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 404: Error code: 404",
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "586676262",
+        "chat_name": "Shivang Chheda",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "b465b67c3be4",
+      "name": "Builder-context 45m AIConcierge scan C",
+      "prompt": "Use the ai-tech-twitter-system skill. Run a 45-minute opportunity scan for extra AI/tech posts for Shivang.\n\nAudience: US recruiters, technical founders, startup operators, AI/product leaders, plus Europe/London and US readers.\n\nCore rule: prioritize Shivang's own current work, study notes, watched videos/articles, and project context over generic news. News is optional framing only.\n\nEvery run:\n1. Use session_search to inspect recent conversations from roughly the last 24-48 hours for what Shivang worked on, watched, studied, tried, learned, or debugged. Search for AIConcierge321, AWS, EKS, kubectl, load testing, Claude Code, video, watched, article, Harshit, learnings, framework, language, bug, reliability, refund, observability, and similar terms.\n2. Lightly inspect /Users/shivang/dev/AIConcierge321 for fresh visible work signals. Prefer git log, recent commits, docs, tests, runbooks, README/CLAUDE, and architecture notes. Do NOT read .env files or secrets.\n3. Decide whether there is a genuinely fresh post opportunity tied to current build/study context.\n4. Use outside AI/tech/product news only if it strengthens the framing of Shivang's own work/learning. Do not draft news-only posts.\n5. If there is no genuinely useful fresh opportunity, respond with exactly [SILENT].\n6. If there is a strong opportunity, draft 1-2 short tweet candidates under 260 characters.\n7. Favor angles around AWS/infra/load testing, shipping velocity, learning unfamiliar stacks quickly, multi-agent systems, reliability, refunds/payments, observability, trust boundaries, and practical lessons from today's work.\n8. If a recent session includes a creator/video/article with an exact public handle or URL, one optional variant may reference or tag them. Never guess handles.\n9. Avoid hype, generic inspirational content, plagiarism, engagement bait, and confidential details.\n10. End with: \"Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.\"\n\nOutput format when there is an opportunity:\nUS recruiter/founder 45-minute post opportunity — <date/time>\n\nPrimary work/study signal used: <brief non-sensitive signal>\nSecondary context used: <news/article/video context or 'None'>\nAngle: <one-line explanation>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n2) <optional second candidate or omit>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\nOptional tagged/video variant: <tweet or 'None today'>\n\nApproval: Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 2,14,17,20,23 * * *",
+        "display": "15 2,14,17,20,23 * * *"
+      },
+      "schedule_display": "15 2,14,17,20,23 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-16T21:30:27.149159+05:30",
+      "next_run_at": "2026-06-18T02:15:00+05:30",
+      "last_run_at": "2026-06-17T23:17:00.937333+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "586676262",
+        "chat_name": "Shivang Chheda",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "b3f859f401dc",
+      "name": "Builder-context 45m AIConcierge scan D",
+      "prompt": "Use the ai-tech-twitter-system skill. Run a 45-minute opportunity scan for extra AI/tech posts for Shivang.\n\nAudience: US recruiters, technical founders, startup operators, AI/product leaders, plus Europe/London and US readers.\n\nCore rule: prioritize Shivang's own current work, study notes, watched videos/articles, and project context over generic news. News is optional framing only.\n\nEvery run:\n1. Use session_search to inspect recent conversations from roughly the last 24-48 hours for what Shivang worked on, watched, studied, tried, learned, or debugged. Search for AIConcierge321, AWS, EKS, kubectl, load testing, Claude Code, video, watched, article, Harshit, learnings, framework, language, bug, reliability, refund, observability, and similar terms.\n2. Lightly inspect /Users/shivang/dev/AIConcierge321 for fresh visible work signals. Prefer git log, recent commits, docs, tests, runbooks, README/CLAUDE, and architecture notes. Do NOT read .env files or secrets.\n3. Decide whether there is a genuinely fresh post opportunity tied to current build/study context.\n4. Use outside AI/tech/product news only if it strengthens the framing of Shivang's own work/learning. Do not draft news-only posts.\n5. If there is no genuinely useful fresh opportunity, respond with exactly [SILENT].\n6. If there is a strong opportunity, draft 1-2 short tweet candidates under 260 characters.\n7. Favor angles around AWS/infra/load testing, shipping velocity, learning unfamiliar stacks quickly, multi-agent systems, reliability, refunds/payments, observability, trust boundaries, and practical lessons from today's work.\n8. If a recent session includes a creator/video/article with an exact public handle or URL, one optional variant may reference or tag them. Never guess handles.\n9. Avoid hype, generic inspirational content, plagiarism, engagement bait, and confidential details.\n10. End with: \"Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.\"\n\nOutput format when there is an opportunity:\nUS recruiter/founder 45-minute post opportunity — <date/time>\n\nPrimary work/study signal used: <brief non-sensitive signal>\nSecondary context used: <news/article/video context or 'None'>\nAngle: <one-line explanation>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\n2) <optional second candidate or omit>\nWhy this works: <one sentence explaining recruiter/founder appeal>\n\nOptional tagged/video variant: <tweet or 'None today'>\n\nApproval: Reply 'post 1', 'post 2', edits, or 'skip'. I will only post after explicit approval.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0,3,15,18,21 * * *",
+        "display": "0 0,3,15,18,21 * * *"
+      },
+      "schedule_display": "0 0,3,15,18,21 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 5
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-16T21:30:28.186161+05:30",
+      "next_run_at": "2026-06-18T03:00:00+05:30",
+      "last_run_at": "2026-06-18T00:02:01.109440+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "586676262",
+        "chat_name": "Shivang Chheda",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    }
+  ],
+  "updated_at": "2026-06-18T00:02:01.111460+05:30"
+}

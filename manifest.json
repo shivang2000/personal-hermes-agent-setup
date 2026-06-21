@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-06-21T00:02:58.070385+00:00",
+  "source_hermes_home": "/Users/shivang/.hermes",
+  "included": [
+    "redacted config.yaml/backups",
+    "skills",
+    "plugins",
+    "cron jobs/scripts redacted",
+    "memories redacted",
+    "hooks/scripts redacted",
+    ".env.example with keys only"
+  ],
+  "excluded": [
+    ".env real values",
+    "auth.json/OAuth tokens",
+    "logs",
+    "sessions/transcripts",
+    "caches",
+    "audio/image caches",
+    "node/venv/binaries",
+    "full hermes-agent source checkout",
+    "kanban.db"
+  ],
+  "security_note": "All copied text files were defensively redacted for token/key/password-like fields. Review before pushing to a public repo."
+}

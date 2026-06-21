@@ -1,0 +1,14 @@
+# Never commit real secrets/runtime state
+.env
+.env.*
+!hermes/.env.example
+auth.json
+*.token
+*.pem
+*.key
+logs/
+sessions/
+cache/
+*.db
+*.lock
+.DS_Store
