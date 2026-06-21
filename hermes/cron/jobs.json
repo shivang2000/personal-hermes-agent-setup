@@ -71,15 +71,15 @@
       "schedule_display": "every 45m",
       "repeat": {
         "times": null,
-        "completed": 46
+        "completed": 47
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-21T11:35:33.932726+05:30",
-      "last_run_at": "2026-06-21T10:50:33.932726+05:30",
+      "next_run_at": "2026-06-21T12:21:42.249317+05:30",
+      "last_run_at": "2026-06-21T11:36:42.249317+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -114,15 +114,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 4
+        "completed": 5
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-06-21T12:04:28.661794+05:30",
-      "last_run_at": "2026-06-21T10:03:33.772604+05:30",
+      "next_run_at": "2026-06-21T13:05:33.261083+05:30",
+      "last_run_at": "2026-06-21T11:04:37.999455+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -136,90 +136,6 @@
       "enabled_toolsets": [
         "terminal"
       ],
-      "workdir": null
-    },
-    {
-      "id": "c6be8d73b654",
-      "name": "Termbridge X campaign 11/12",
-      "prompt": "Post termbridge campaign item 11/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_11.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T11:26:40+05:30",
-        "display": "once at 2026-06-21 11:26"
-      },
-      "schedule_display": "once at 2026-06-21 11:26",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:30:00.325341+05:30",
-      "next_run_at": "2026-06-21T11:26:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "80d3f7587c59",
-      "name": "Termbridge X campaign 12/12",
-      "prompt": "Post termbridge campaign item 12/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_12.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T11:56:40+05:30",
-        "display": "once at 2026-06-21 11:56"
-      },
-      "schedule_display": "once at 2026-06-21 11:56",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:30:01.407928+05:30",
-      "next_run_at": "2026-06-21T11:56:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
       "workdir": null
     },
     {
@@ -292,15 +208,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 9
+        "completed": 19
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T10:14:27.564462+05:30",
-      "next_run_at": "2026-06-21T11:08:53.477609+05:30",
-      "last_run_at": "2026-06-21T11:03:53.477609+05:30",
+      "next_run_at": "2026-06-21T12:08:57.668334+05:30",
+      "last_run_at": "2026-06-21T12:03:57.668334+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -319,5 +235,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-06-21T11:04:28.662641+05:30"
+  "updated_at": "2026-06-21T12:05:33.262145+05:30"
 }
