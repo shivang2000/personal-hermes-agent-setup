@@ -1,6 +1,6 @@
-# Shivang Hermes Backup / Setup
+# Shivang Personal Hermes Agent Setup
 
-This repo is a **sanitized, GitHub-ready backup** of Hermes Agent setup files from `/Users/shivang/.hermes`.
+This repo is a **sanitized, GitHub-ready personal setup export** of Hermes Agent setup files from `/Users/shivang/.hermes`.
 
 ## Included
 
@@ -34,4 +34,4 @@ cp hermes/.env.example ~/.hermes/.env   # then fill real secrets locally
 hermes doctor
 ```
 
-**Security:** review before making this repo public. Prefer a private GitHub repo.
+**Security:** review before making this repo public. This repository is public, so keep real secrets only in local .env/auth files.
