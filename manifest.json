@@ -1,6 +1,7 @@
 {
-  "created_at": "2026-06-21T00:02:58.070385+00:00",
+  "updated_at": "2026-06-21T00:24:15.558870+00:00",
   "source_hermes_home": "/Users/shivang/.hermes",
+  "github_repo": "shivang2000/personal-hermes-agent-setup",
   "included": [
     "redacted config.yaml/backups",
     "skills",
@@ -21,5 +22,5 @@
     "full hermes-agent source checkout",
     "kanban.db"
   ],
-  "security_note": "All copied text files were defensively redacted for token/key/password-like fields. Review before pushing to a public repo."
+  "security_note": "All copied text files were defensively redacted for token/key/password-like fields. Review before pushing public changes."
 }

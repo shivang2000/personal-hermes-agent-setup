@@ -15,7 +15,7 @@ This repo is a **sanitized, GitHub-ready personal setup export** of Hermes Agent
 
 ## Not included on purpose
 
-These files can contain live credentials or private runtime data and were **not copied**:
+These files can contain live credentials or private runtime data and are **not copied**:
 
 - real `.env` values
 - `auth.json` OAuth tokens
@@ -34,4 +34,4 @@ cp hermes/.env.example ~/.hermes/.env   # then fill real secrets locally
 hermes doctor
 ```
 
-**Security:** review before making this repo public. This repository is public, so keep real secrets only in local .env/auth files.
+**Security:** This repository is public, so keep real secrets only in local `.env`/`auth.json` files.

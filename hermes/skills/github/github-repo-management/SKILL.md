@@ -19,6 +19,16 @@ Create, clone, fork, configure, and manage GitHub repositories. Each section sho
 
 - Authenticated with GitHub (see `github-auth` skill)
 
+## Publishing personal config/setup repos safely
+
+When saving an agent or developer environment setup to GitHub, especially if the user asks to make it public:
+
+1. **Default to a sanitized export, not a raw copy.** Exclude live secrets and runtime state: `.env`, `auth.json`, OAuth tokens, API keys, bot tokens, credentials, logs, sessions/transcripts, request dumps, caches, virtualenvs, `node_modules`, databases, and lock files.
+2. **Include restorable structure.** Prefer `README.md`, `manifest.json`, redacted config files, skills/workflows, scripts/hooks, plugin metadata, and `.env.example` with variable names only.
+3. **Redact defensively before committing.** Rewrite secret-like keys (`token`, `api_key`, `secret`, `password`, `credential`, `webhook_url`, etc.) to placeholders such as `REDACTED_SET_LOCALLY`, then run a token-pattern scan before pushing.
+4. **Prefer private first, then public only after verification.** If the user later requests public visibility, verify the secret scan and update README wording to make clear real secrets stay local.
+5. **Use GitHub rename/visibility commands when requested.** `gh repo rename NEW_NAME --repo OWNER/OLD --yes`, then `gh repo edit OWNER/NEW --visibility public --accept-visibility-change-consequences`, update the local remote URL, commit any README wording changes, push, and verify with `gh repo view --json nameWithOwner,url,isPrivate,visibility`.
+
 ### Setup
 
 ```bash
