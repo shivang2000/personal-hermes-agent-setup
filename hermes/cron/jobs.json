@@ -67,15 +67,15 @@
       "schedule_display": "every 45m",
       "repeat": {
         "times": null,
-        "completed": 40
+        "completed": 42
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-21T07:44:08.203494+05:30",
-      "last_run_at": "2026-06-18T01:01:33.203558+05:30",
+      "next_run_at": "2026-06-21T08:30:24.823719+05:30",
+      "last_run_at": "2026-06-21T07:45:24.823719+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -110,16 +110,16 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 0
+        "completed": 1
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-06-21T07:59:08.207389+05:30",
-      "last_run_at": null,
-      "last_status": null,
+      "next_run_at": "2026-06-21T09:00:12.065324+05:30",
+      "last_run_at": "2026-06-21T06:59:16.428892+05:30",
+      "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
@@ -132,90 +132,6 @@
       "enabled_toolsets": [
         "terminal"
       ],
-      "workdir": null
-    },
-    {
-      "id": "2bd4ff56bc58",
-      "name": "Termbridge X campaign 3/12",
-      "prompt": "Post termbridge campaign item 3/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_03.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T07:26:40+05:30",
-        "display": "once at 2026-06-21 07:26"
-      },
-      "schedule_display": "once at 2026-06-21 07:26",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:51.964341+05:30",
-      "next_run_at": "2026-06-21T07:26:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "971861e2f725",
-      "name": "Termbridge X campaign 4/12",
-      "prompt": "Post termbridge campaign item 4/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_04.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T07:56:40+05:30",
-        "display": "once at 2026-06-21 07:56"
-      },
-      "schedule_display": "once at 2026-06-21 07:56",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:52.971085+05:30",
-      "next_run_at": "2026-06-21T07:56:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
       "workdir": null
     },
     {
@@ -602,5 +518,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-06-21T06:59:08.207954+05:30"
+  "updated_at": "2026-06-21T08:00:12.066219+05:30"
 }
