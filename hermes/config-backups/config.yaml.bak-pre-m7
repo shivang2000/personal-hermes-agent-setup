@@ -678,8 +678,6 @@ mcp_servers:
       TERMBRIDGE_HOME: /Users/shivang/.termbridge/home
       TERMBRIDGE_PIPE_DIR: /Users/shivang/.termbridge/pipes
       TERMBRIDGE_TMUX_SOCKET: termbridge
-      TERMBRIDGE_ALLOWED_ENVS: docker
-      TERMBRIDGE_MAX_SESSIONS: "3"
     enabled: true
 
 # ── Fallback Model ────────────────────────────────────────────────────
