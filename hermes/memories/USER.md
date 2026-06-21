@@ -17,3 +17,7 @@ Shivang wants the AI/tech X/Twitter automation to auto-post strong approved-by-s
 Shivang dislikes X/Twitter draft angles based on tiny UI/form bugs, redaction placeholders/sentinels, generic data-cleanliness issues, or narrow one-off frontend edge cases unless they reveal a broadly useful technical mechanism.
 §
 Shivang wants his AI/tech X/Twitter automation to run in fully auto-post mode, without asking for manual approval, and to apply the humanizer skill/checklist before every tweet or reply is posted.
+§
+Shivang wants future X/Twitter automation optimized toward source-backed technical takeaways that attach to active AI/agent/LLM infra conversations, include concrete mechanisms/tradeoffs, and use his learning-in-public builder voice rather than generic AI commentary.
+§
+Shivang wants X/Twitter automation posts to use 1-2 highly relevant hashtags for discoverability when they match the topic/search intent (e.g. #AIAgents, #LLM, #AIInfra, #DevTools, #OpenSource, #SoftwareEngineering), while avoiding generic tag-stuffing; source-backed @mentions are also okay when genuinely useful.

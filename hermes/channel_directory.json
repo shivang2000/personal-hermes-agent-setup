@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T18:08:01.148572",
+  "updated_at": "2026-06-21T19:13:06.151803",
   "platforms": {
     "discord": [
       {
@@ -29,6 +29,18 @@
       {
         "id": "1518059932123926658",
         "name": "tech-news",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518239305619738684",
+        "name": "job-search-cron-personal",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518239399274479747",
+        "name": "job-search-global",
         "guild": "Shivang Hermes AI",
         "type": "channel"
       },
@@ -241,6 +253,18 @@
         "name": "Shivang Hermes AI / #tweets-automation / https://github.com/blader/humanizer this even I just kill and use it to make ... / topic 1518114299506065409",
         "type": "thread",
         "thread_id": "1518114299506065409"
+      },
+      {
+        "id": "1518234960627105792:1518234960627105792",
+        "name": "Shivang Hermes AI / #tweets-automation / https://x.com/shivangchheda22/status/2067340756176781413?s=46 https://x.com/s... / topic 1518234960627105792",
+        "type": "thread",
+        "thread_id": "1518234960627105792"
+      },
+      {
+        "id": "1518239882345189558:1518239882345189558",
+        "name": "Shivang Hermes AI / #job-search-cron-personal / I would like you create a cron job that does job search and post tweets for e... / topic 1518239882345189558",
+        "type": "thread",
+        "thread_id": "1518239882345189558"
       }
     ],
     "telegram": [],

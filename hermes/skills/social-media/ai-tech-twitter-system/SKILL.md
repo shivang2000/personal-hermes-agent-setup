@@ -49,6 +49,14 @@ Preferred pillars:
 5. Personal discoveries: things Shivang notices while building, reading, experimenting, or using tools.
 6. Recruiter/founder proof-of-work: concise, non-confidential examples from `/Users/shivang/dev/AIConcierge321` that show shipping velocity, production judgment, architecture taste, reliability thinking, and business impact.
 
+Recent engagement lesson:
+- Shivang's best recent X posts reached ~1.1k-1.2k views when they attached to an active AI/agent conversation, credited a relevant source, contained concrete mechanisms, and framed a real technical tradeoff.
+- Optimize future posts for: source/event + technical takeaway + tradeoff/surprise + simple punchline.
+- Strong standalone posts should include at least one concrete technical noun/mechanism: terminal agent, bash/read/write, tool loop, KV cache, context window, memory retrieval, eval harness, trace logs, retry policy, idempotency, state machine, latency/cost, orchestration, schema validation, observability, vendor failure mode.
+- Prefer source-aware hooks such as "Takeaway from...", "I expected X to matter more", "One infra tradeoff I underestimated", "Most people think X. In practice Y." over generic AI commentary.
+- Use 0-2 relevant hashtags only, usually `#AIAgents`, `#LLM`, `#AIInfra`, `#DevTools`, `#OpenSource`, or `#SoftwareEngineering`.
+- If a post crosses roughly 500 views and the topic is still timely, consider 1-2 follow-ups in the same cluster that add a new mechanism/tradeoff instead of restating the original point.
+
 Target audience emphasis:
 - US recruiters: show evidence of real full-stack/product/backend/AI ownership, production hardening, clear communication, and high agency.
 - Founders/operators: show speed, pragmatic tradeoffs, revenue/user-trust awareness, vendor-integration skill, and ability to ship systems that survive messy real-world edge cases.
