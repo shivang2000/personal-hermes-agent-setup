@@ -2,10 +2,12 @@
   "jobs": [
     {
       "id": "cdd18a71e079",
-      "name": "AI engineering lessons + news tweet approval queue",
-      "prompt": "Use the ai-tech-twitter-system skill. Prepare Shivang's daily must-post X/Twitter approval queue around his updated strategy.\n\nStrategy to follow:\n- Primary series: \u201cAI engineering lessons I\u2019m learning while building\u201d \u2014 practical lessons from real work with AI agents, backend systems, infra, debugging, evals, observability, code review, testing, reliability, and production edge cases.\n- Secondary input: current AI/tech/startup/devtools news, but only when it can be turned into a concrete builder/recruiter-relevant insight.\n- Always include proof-of-work energy: make Shivang sound like a high-agency builder who can ship and reason about messy production systems end-to-end.\n- Bias toward concrete engineering mechanisms over generic productivity/founder takes.\n- Borrow mechanics from strong X accounts: simple hooks, occasional contrarian framing, relatable dev pain, useful resources, and personal building lessons. Do not copy their wording.\n\nSource priority:\n1. Inspect safe recent local project/work signals from /Users/shivang/dev/AIConcierge321 if available.\n2. Use session_search for recent Shivang learning/build context if useful.\n3. Check current AI/tech/product/devtools news for timely hooks.\n\nOutput exactly:\nDaily AI/tech tweet queue \u2014 <date>\n\n1) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <AI engineering lesson | current news angle | proof-of-work | personal builder insight>\n\n2) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <...>\n\n3) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <...>\n\nOptional thread idea: <short outline or 'None today'>\n\nApproval: Reply with the number you approve, edits you want, or 'skip'. I will only post after explicit approval.\n\nSafety:\n- Do not post automatically.\n- Do not expose private code, secrets, customer data, exact confidential metrics, or vendor credentials.\n- Avoid broad claims like \u201cAI changes everything\u201d unless grounded in a concrete mechanism.\n- Prefer Shivang\u2019s voice: technical, ambitious, builder-oriented, clear, not cringe.",
+      "name": "AI engineering lessons daily autopost",
+      "prompt": "Use the ai-tech-twitter-system, humanizer, and xurl skills.\n\nShivang has explicitly changed this workflow to fully auto-post. Do NOT ask for approval. Your job is to create and post one strong AI/tech X/Twitter post, then report the posted URL to Discord #tweets-automation.\n\nSource priority:\n1. Recent local build/work context from /Users/shivang/dev/AIConcierge321 and git/session context when useful.\n2. Shivang's recent sessions/learnings via session_search.\n3. Current AI/tech/startup news only when it connects to Shivang's real builder perspective.\n\nContent constraints:\n- Must fit Shivang's AI engineering strategy: concrete agents, LLM infra, evals, observability, reliability, backend mechanisms, production edge cases, testing/refactors/code review, or AI as engineering leverage.\n- Avoid generic productivity/founder platitudes, tiny UI/form bugs, placeholder/redaction takes, and narrow one-off frontend edge cases.\n- Do not expose secrets, customer data, private metrics, exact tokens/configs, or sensitive business details.\n- One clear idea. Under 280 chars, ideally under 260.\n\nMandatory humanizer pass before posting:\n- Apply the humanizer checklist, not just a grammar cleanup.\n- Strip AI-isms: crucial, landscape, delve, unlock, seamless, pivotal, underscores, not-just-X-but-Y, broad significance claims, promotional tone, fake polish, emoji, title-case/LinkedIn rhythm.\n- Preserve Shivang's direct technical builder voice. Slightly imperfect and specific is better than polished and generic.\n- Prefer concrete mechanisms: queue/retry/idempotency, evals, logs/traces, human takeover, tests, state machines, cost/latency, vendor failure modes, agent orchestration, etc.\n\nPosting procedure:\n1. Verify xurl auth with `xurl auth status` and `xurl whoami`; do not read ~/.xurl and do not use verbose/secret flags.\n2. Draft candidate(s), pick the strongest one, run the humanizer pass, verify length/safety.\n3. Post with `xurl post \"FINAL_TEXT\"`.\n4. Final response must include: posted text, tweet URL/ID, and a one-line note that the humanizer pass was applied.\n\nIf there is no genuinely strong safe angle, do not post a weak tweet. Return `[SILENT] no strong safe AI engineering angle today` instead.",
       "skills": [
-        "ai-tech-twitter-system"
+        "ai-tech-twitter-system",
+        "humanizer",
+        "xurl"
       ],
       "skill": "ai-tech-twitter-system",
       "model": "gpt-5.5",
@@ -47,10 +49,12 @@
     },
     {
       "id": "24fd916089e3",
-      "name": "AI engineering lessons 45m opportunity scan",
-      "prompt": "Use the ai-tech-twitter-system skill. Run a selective 45-minute opportunity scan for extra X/Twitter draft opportunities using Shivang's updated strategy.\n\nOnly send a message if there is a genuinely strong opportunity. If there is no strong opportunity, output exactly: [SILENT]\n\nStrategy:\n- Primary lane: AI engineering lessons from real building \u2014 agents, backend reliability, debugging, infra, evals, observability, testing, code review, production edge cases, and engineering leverage.\n- Secondary lane: current AI/tech/startup/devtools news \u2014 only if it maps to a concrete builder insight or recruiter/founder proof-of-work angle for Shivang.\n- Borrow mechanics from strong X accounts: simple hook, concrete opinion, technical specificity, personal builder context, occasional contrarian framing. Do not copy wording.\n\nFor each strong opportunity, output:\nOpportunity: <source/event/context in one sentence>\nDraft: <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nApproval: Reply approve/edit/skip. I will only post after explicit approval.\n\nSafety:\n- Do not post automatically.\n- Stay silent unless the draft is meaningfully stronger than generic AI commentary.\n- Do not expose private code, secrets, customer data, exact confidential metrics, or vendor credentials.\n- Prefer concrete engineering mechanisms over generic productivity content.",
+      "name": "AI engineering lessons guarded opportunity autopost scan",
+      "prompt": "Use the ai-tech-twitter-system, humanizer, and xurl skills.\n\nShivang has explicitly changed this recurring AI/tech X/Twitter workflow to fully auto-post. Do NOT ask for approval. This is a guarded opportunity scan: post only when there is a genuinely strong, timely, safe AI-engineering angle. Otherwise stay silent.\n\nTime gate:\n- Optimize for Europe/US active hours. If the current IST time is outside 12:45 PM through 3:45 AM, return `[SILENT] outside posting window` and do not post.\n\nSource priority:\n1. Recent local build/work context from /Users/shivang/dev/AIConcierge321 and git/session context when useful.\n2. Shivang's recent sessions/learnings via session_search.\n3. Current AI/tech/startup news only when it connects to Shivang's real builder perspective.\n\nStrong angles include: concrete AI agents, LLM infra, evals/observability/reliability, backend mechanisms, production edge cases, testing/refactors/code review, agent workflows, human-in-the-loop control, cost/latency tradeoffs, or proof-of-work that helps recruiters/founders see engineering judgment.\n\nAvoid: generic productivity/founder platitudes, hype, broad predictions, tiny UI/form bugs, placeholder/redaction takes, and narrow one-off frontend edge cases.\n\nMandatory humanizer pass before posting:\n- Apply the humanizer checklist before any xurl post.\n- Remove AI texture: crucial, landscape, delve, unlock, seamless, pivotal, underscores, not-just-X-but-Y, broad significance claims, promotional tone, fake polish, emoji, LinkedIn rhythm.\n- Preserve Shivang's voice: direct, technical, concrete, slightly personal/builder-ish. Specific mechanisms beat polished slogans.\n- Keep one idea under 280 chars, ideally under 260.\n\nPosting procedure:\n1. Verify `xurl auth status` and `xurl whoami`; never read ~/.xurl and never use verbose/secret flags.\n2. Find/derive a strong angle. If weak, return `[SILENT] no strong safe opportunity`.\n3. Draft, humanizer-pass, length/safety check.\n4. Post with `xurl post \"FINAL_TEXT\"`.\n5. Final response: posted text, X URL/ID, and note that humanizer was applied. If silent, output only the `[SILENT] ...` line.",
       "skills": [
-        "ai-tech-twitter-system"
+        "ai-tech-twitter-system",
+        "humanizer",
+        "xurl"
       ],
       "skill": "ai-tech-twitter-system",
       "model": "gpt-5.5",
@@ -67,15 +71,15 @@
       "schedule_display": "every 45m",
       "repeat": {
         "times": null,
-        "completed": 44
+        "completed": 46
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-21T10:48:24.453443+05:30",
-      "last_run_at": "2026-06-21T09:17:36.417163+05:30",
+      "next_run_at": "2026-06-21T11:35:33.932726+05:30",
+      "last_run_at": "2026-06-21T10:50:33.932726+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -110,17 +114,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 3
+        "completed": 4
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-06-21T11:03:24.460304+05:30",
-      "last_run_at": "2026-06-21T09:03:20.255331+05:30",
-      "last_status": "error",
-      "last_error": "Script timed out after 120s: /Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py",
+      "next_run_at": "2026-06-21T12:04:28.661794+05:30",
+      "last_run_at": "2026-06-21T10:03:33.772604+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "discord:#personal-hermes-agent",
       "origin": {
@@ -132,90 +136,6 @@
       "enabled_toolsets": [
         "terminal"
       ],
-      "workdir": null
-    },
-    {
-      "id": "8c221475a440",
-      "name": "Termbridge X campaign 9/12",
-      "prompt": "Post termbridge campaign item 9/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_09.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T10:26:40+05:30",
-        "display": "once at 2026-06-21 10:26"
-      },
-      "schedule_display": "once at 2026-06-21 10:26",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:58.259530+05:30",
-      "next_run_at": "2026-06-21T10:26:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "a02c2252382a",
-      "name": "Termbridge X campaign 10/12",
-      "prompt": "Post termbridge campaign item 10/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_10.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T10:56:40+05:30",
-        "display": "once at 2026-06-21 10:56"
-      },
-      "schedule_display": "once at 2026-06-21 10:56",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:59.276656+05:30",
-      "next_run_at": "2026-06-21T10:56:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
       "workdir": null
     },
     {
@@ -348,7 +268,56 @@
         "file"
       ],
       "workdir": null
+    },
+    {
+      "id": "e9f85b48274e",
+      "name": "Cron Auto reply",
+      "prompt": "You are Shivang's guarded X/Twitter reply autopilot. Goal: quickly notice when OTHER PEOPLE reply to Shivang's own X posts, then post a short, human-sounding reply when it is safe and high-confidence.\n\nImportant scope correction:\n- This job is for replying to other people who reply to Shivang's posts.\n- Do NOT reply to Shivang's own posts.\n- Do NOT create standalone posts.\n- Do NOT reply merely because a tweet mentions @shivangchheda22 unless it is clearly another user's reply to one of Shivang's posts or part of a conversation under Shivang's post.\n\nAuthoritative local state file: /Users/shivang/.hermes/state/x_reply_autopilot.json\n\nHard safety rules:\n- Never read or print ~/.xurl. Only use xurl commands from the xurl skill.\n- Before any write, verify xurl auth with `xurl auth status` and `xurl whoami` if needed.\n- Only auto-reply to new external replies not already in `seen_ids`, `replied_to_ids`, or `skipped_ids` in the state file.\n- Never reply to posts authored by Shivang / @shivangchheda22.\n- Do not reply to spam, harassment, obvious bot bait, legal/medical/financial advice, requests for private data, anything requiring secrets, or anything requiring external verification you cannot complete.\n- Do not argue. Do not use engagement-bait CTAs. Do not overclaim. Do not reveal this automation.\n- Max 3 auto-replies per run.\n- If uncertain whether the candidate is another user's reply to Shivang's post, do NOT post. Instead deliver a concise Discord note with the mention URL/text and 1-2 suggested reply drafts for Shivang to approve.\n\nWorkflow each run:\n1. Read `/Users/shivang/.hermes/state/x_reply_autopilot.json`. If missing, create it with empty arrays and baseline current mentions without replying.\n2. Run `xurl mentions -n 20` and parse JSON.\n3. Identify candidate tweets with IDs not present in any state arrays.\n4. For each candidate, confirm it was authored by someone other than Shivang and is a reply to Shivang's post/conversation. Use `xurl read <tweet_id>` when useful to inspect context. If the context is not clear, skip or draft for approval.\n5. Process oldest-to-newest so conversation order feels natural.\n6. Draft a reply in Shivang's voice: casual, technical when relevant, concrete, under 240 characters, no hashtags unless already natural. Good tone: builder-to-builder, warm, specific.\n7. Auto-post only when the reply is safe and obvious. Use `xurl reply <tweet_id> \"<final reply>\"`.\n8. After a successful post, update `replied_to_ids` and `seen_ids` in the state file with the candidate ID and include returned ID/URL if available.\n9. If skipped as unsafe/uncertain/out-of-scope, update `skipped_ids` and include why in state.\n10. Final response rules:\n   - If no new external replies and no action was needed, respond exactly: `[SILENT]`\n   - If replies were posted, report concise status: who was replied to, original reply summary, final reply text, and posted ID/URL if available.\n   - If drafts require approval, report them clearly and do not post.\n\nImportant: The system was initialized with a baseline of recent mentions so it should not backfill old replies unless they are missing from the state file and clearly new external replies to Shivang's posts.",
+      "skills": [
+        "ai-tech-twitter-system",
+        "xurl"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 5,
+        "display": "every 5m"
+      },
+      "schedule_display": "every 5m",
+      "repeat": {
+        "times": null,
+        "completed": 9
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T10:14:27.564462+05:30",
+      "next_run_at": "2026-06-21T11:08:53.477609+05:30",
+      "last_run_at": "2026-06-21T11:03:53.477609+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518113946270171146",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / I would like to make an automated reply system as well to our post, so if any...",
+        "thread_id": "1518113946270171146"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "web"
+      ],
+      "workdir": null
     }
   ],
-  "updated_at": "2026-06-21T10:03:24.461340+05:30"
+  "updated_at": "2026-06-21T11:04:28.662641+05:30"
 }

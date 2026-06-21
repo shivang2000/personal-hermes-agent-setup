@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T10:02:24.374988",
+  "updated_at": "2026-06-21T11:02:28.521263",
   "platforms": {
     "discord": [
       {
@@ -229,6 +229,18 @@
         "name": "Shivang Hermes AI / #tweets-automation / more idea and refine in our tweets Research this and see what kind of things ... / topic 1518106381864009891",
         "type": "thread",
         "thread_id": "1518106381864009891"
+      },
+      {
+        "id": "1518113946270171146:1518113946270171146",
+        "name": "Shivang Hermes AI / #tweets-automation / I would like to make an automated reply system as well to our post, so if any... / topic 1518113946270171146",
+        "type": "thread",
+        "thread_id": "1518113946270171146"
+      },
+      {
+        "id": "1518114299506065409:1518114299506065409",
+        "name": "Shivang Hermes AI / #tweets-automation / https://github.com/blader/humanizer this even I just kill and use it to make ... / topic 1518114299506065409",
+        "type": "thread",
+        "thread_id": "1518114299506065409"
       }
     ],
     "telegram": [],

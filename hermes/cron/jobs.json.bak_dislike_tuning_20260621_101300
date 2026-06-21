@@ -1,0 +1,354 @@
+{
+  "jobs": [
+    {
+      "id": "cdd18a71e079",
+      "name": "AI engineering lessons daily autopost",
+      "prompt": "Use the ai-tech-twitter-system skill. Shivang has explicitly changed this workflow from approval-queue mode to AUTOPUBLISH mode.\n\nGoal: publish exactly one high-quality daily X/Twitter post for Shivang, without asking for manual approval, using his updated strategy.\n\nStrategy:\n- Primary series: “AI engineering lessons I’m learning while building” — practical lessons from real work with AI agents, backend systems, infra, debugging, evals, observability, code review, testing, reliability, and production edge cases.\n- Secondary input: current AI/tech/startup/devtools news, but only when it can be turned into a concrete builder/recruiter-relevant insight.\n- Always include proof-of-work energy: make Shivang sound like a high-agency builder who can ship and reason about messy production systems end-to-end.\n- Bias toward concrete engineering mechanisms over generic productivity/founder takes.\n- Borrow mechanics from strong X accounts: simple hooks, occasional contrarian framing, relatable dev pain, useful resources, and personal building lessons. Do not copy their wording.\n\nSource priority:\n1. Inspect safe recent local project/work signals from /Users/shivang/dev/AIConcierge321 if available.\n2. Use session_search for recent Shivang learning/build context if useful.\n3. Check current AI/tech/product/devtools news for timely hooks.\n\nAutopost procedure:\n1. Draft 3 candidates internally.\n2. Select the strongest single candidate.\n3. Self-review for: under 280 chars, one clear idea, no private/sensitive info, no secrets/customer data/vendor credentials, no exact confidential metrics, no plagiarism or close paraphrase, no unverified claim stated as certain, not cringe, not generic.\n4. Verify xurl auth with `xurl auth status` and `xurl whoami`. Do not read or print ~/.xurl. Do not use verbose mode or inline credentials.\n5. Post the selected final text with `xurl post \"...\"`.\n6. Return a concise status message to Discord with:\n   - AUTOPUBLISHED\n   - Final post text\n   - Why it fits the strategy\n   - Tweet ID/URL if available from xurl output\n\nIf no candidate clears the quality/safety bar, do NOT post. Output:\n[SILENT]\n\nImportant:\n- This job is allowed to autopost because Shivang explicitly requested autopost in this Discord thread.\n- Do not ask for approval.\n- Do not post more than one tweet from this daily job.\n- Prefer Shivang’s voice: technical, ambitious, builder-oriented, clear, not generic productivity content.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 12 * * *",
+        "display": "45 12 * * *"
+      },
+      "schedule_display": "45 12 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 13
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-12T17:05:21.636468+05:30",
+      "next_run_at": "2026-06-21T12:45:00+05:30",
+      "last_run_at": "2026-06-21T10:00:33.912853+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": null,
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "24fd916089e3",
+      "name": "AI engineering lessons guarded opportunity autopost scan",
+      "prompt": "Use the ai-tech-twitter-system skill. Shivang has explicitly changed this workflow from approval-queue mode to AUTOPUBLISH mode, but this is a frequent 45-minute scan, so be extremely selective.\n\nGoal: monitor for genuinely strong X/Twitter opportunities and autopost only when the opportunity is meaningfully stronger than generic AI commentary.\n\nStrategy:\n- Primary lane: AI engineering lessons from real building — agents, backend reliability, debugging, infra, evals, observability, testing, code review, production edge cases, and engineering leverage.\n- Secondary lane: current AI/tech/startup/devtools news — only if it maps to a concrete builder insight or recruiter/founder proof-of-work angle for Shivang.\n- Borrow mechanics from strong X accounts: simple hook, concrete opinion, technical specificity, personal builder context, occasional contrarian framing. Do not copy wording.\n\nGuardrails for frequency:\n- Use a persistent state file at /Users/shivang/.hermes/state/x_autopost_guard.json.\n- Before posting, read the file if it exists and enforce:\n  - maximum 2 opportunity-scan autoposts per IST calendar day\n  - at least 4 hours between opportunity-scan autoposts\n- After a successful opportunity autopost, update the state file with the IST date, timestamp, post text, and tweet id/url if available.\n- If the daily limit or spacing rule blocks the post, output exactly: [SILENT]\n\nAutopost procedure:\n1. Search current AI/tech/devtools/startup context and/or recent local/session signals.\n2. If no exceptional opportunity exists, output exactly: [SILENT]\n3. Draft one final post under 280 chars.\n4. Self-review for: one clear idea, no private/sensitive info, no secrets/customer data/vendor credentials, no exact confidential metrics, no plagiarism or close paraphrase, no unverified claim stated as certain, not cringe, not generic.\n5. Verify xurl auth with `xurl auth status` and `xurl whoami`. Do not read or print ~/.xurl. Do not use verbose mode or inline credentials.\n6. Post with `xurl post \"...\"`.\n7. Return a concise status message to Discord with:\n   - OPPORTUNITY AUTOPUBLISHED\n   - Source/event/context in one sentence\n   - Final post text\n   - Why it fits the strategy\n   - Tweet ID/URL if available from xurl output\n\nImportant:\n- This job is allowed to autopost because Shivang explicitly requested autopost in this Discord thread.\n- Do not ask for approval.\n- Do not post weak/generic content just because the scan runs.\n- Prefer staying silent over lowering quality.",
+      "skills": [
+        "ai-tech-twitter-system"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 45,
+        "display": "every 45m"
+      },
+      "schedule_display": "every 45m",
+      "repeat": {
+        "times": null,
+        "completed": 45
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-12T17:10:20.769241+05:30",
+      "next_run_at": "2026-06-21T10:49:28.636815+05:30",
+      "last_run_at": "2026-06-21T10:04:28.636815+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#tweets-automation",
+      "origin": null,
+      "enabled_toolsets": [
+        "web",
+        "file",
+        "terminal",
+        "session_search"
+      ],
+      "workdir": "/Users/shivang/dev/AIConcierge321",
+      "profile": null
+    },
+    {
+      "id": "cb5b43a03818",
+      "name": "Hourly sync personal Hermes setup to GitHub",
+      "prompt": "Run the script `sync_personal_hermes_repo.py` to export Shivang's Hermes Agent config, skills, plugins, cron definitions, memories, scripts, and hooks into the public GitHub repository `shivang2000/personal-hermes-agent-setup`. The script must sanitize/redact secrets, skip auth tokens/logs/sessions/caches/binaries, commit only when changed, and push to GitHub. It should be quiet when there are no changes and print a short success message only when a sync commit is pushed. If the script detects possible secrets or fails, deliver the error.",
+      "skills": [],
+      "skill": null,
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": "sync_personal_hermes_repo.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 60,
+        "display": "every 60m"
+      },
+      "schedule_display": "every 60m",
+      "repeat": {
+        "times": null,
+        "completed": 4
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T05:58:54.658728+05:30",
+      "next_run_at": "2026-06-21T11:03:33.772604+05:30",
+      "last_run_at": "2026-06-21T10:03:33.772604+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "discord:#personal-hermes-agent",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518040322972581968",
+        "chat_name": "Shivang Hermes AI / #general / i would like to save you on my github repo so can we do that ??",
+        "thread_id": "1518040322972581968"
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "8c221475a440",
+      "name": "Termbridge X campaign 9/12",
+      "prompt": "Post termbridge campaign item 9/12 via script.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "termbridge_x_campaign/post_09.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-06-21T10:26:40+05:30",
+        "display": "once at 2026-06-21 10:26"
+      },
+      "schedule_display": "once at 2026-06-21 10:26",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T06:29:58.259530+05:30",
+      "next_run_at": "2026-06-21T10:26:40+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518055262101966868",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
+        "thread_id": "1518055262101966868"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "a02c2252382a",
+      "name": "Termbridge X campaign 10/12",
+      "prompt": "Post termbridge campaign item 10/12 via script.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "termbridge_x_campaign/post_10.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-06-21T10:56:40+05:30",
+        "display": "once at 2026-06-21 10:56"
+      },
+      "schedule_display": "once at 2026-06-21 10:56",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T06:29:59.276656+05:30",
+      "next_run_at": "2026-06-21T10:56:40+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518055262101966868",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
+        "thread_id": "1518055262101966868"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "c6be8d73b654",
+      "name": "Termbridge X campaign 11/12",
+      "prompt": "Post termbridge campaign item 11/12 via script.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "termbridge_x_campaign/post_11.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-06-21T11:26:40+05:30",
+        "display": "once at 2026-06-21 11:26"
+      },
+      "schedule_display": "once at 2026-06-21 11:26",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T06:30:00.325341+05:30",
+      "next_run_at": "2026-06-21T11:26:40+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518055262101966868",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
+        "thread_id": "1518055262101966868"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "80d3f7587c59",
+      "name": "Termbridge X campaign 12/12",
+      "prompt": "Post termbridge campaign item 12/12 via script.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "termbridge_x_campaign/post_12.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "once",
+        "run_at": "2026-06-21T11:56:40+05:30",
+        "display": "once at 2026-06-21 11:56"
+      },
+      "schedule_display": "once at 2026-06-21 11:56",
+      "repeat": {
+        "times": 1,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T06:30:01.407928+05:30",
+      "next_run_at": "2026-06-21T11:56:40+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518055262101966868",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
+        "thread_id": "1518055262101966868"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "6be19c7edbdb",
+      "name": "Tech / AI / YC / YouTube news digest for #tech-news",
+      "prompt": "You are posting into Shivang's Discord #tech-news channel/thread. Create a high-signal digest of new tech news, AI news/updates, notable repositories, YouTube tech/AI videos, Hacker News/YC items, YC company/product launches, and important strike/industry updates.\n\nTiming/context: This job runs at 12:55, 16:55, 20:55, and 00:55 IST to cover European and US active hours without spamming. Prioritize things that became newly relevant since the previous run or within the last 24 hours.\n\nResearch sources to check each run, using available tools only:\n- Hacker News front page / newest / Launch HN / Show HN / Ask HN when relevant.\n- YC news/company/startup launches: Y Combinator site, YC Launch, Launch HN, and credible startup/product launch sources.\n- AI labs and infra sources: OpenAI, Anthropic, Google DeepMind, Meta AI, xAI, Mistral, Hugging Face, Cursor/Windsurf/Cognition/Replit, model providers, eval/observability/inference infra companies.\n- GitHub: trending/new notable AI/devtools/backend/infra repositories; include stars only if verified.\n- YouTube: public tech/AI channel uploads and relevant videos. If account-specific YouTube subscriptions are not available, use public web/YouTube search and clearly avoid claiming it came from Shivang's subscriptions.\n- X/Twitter: use accessible public web search only; do not fabricate tweets or metrics.\n- Industry/strike updates: include only credible, relevant labor/service/platform strike updates likely to affect tech, AI, transport, delivery, media, or business operations.\n\nSelection rules:\n- Prefer concrete engineering/AI infrastructure/product news over generic hype.\n- Avoid duplicates from the last run if visible in context; otherwise dedupe within this digest.\n- Never invent links, stats, repo stars, authors, tweets, or release details. If unsure, say \"not verified\" or omit.\n- Include only 8-15 items unless there is major breaking news.\n\nDiscord output format:\n1. Title: \"Tech / AI News Digest — <date/time IST>\"\n2. \"Top picks\" with 3-5 bullets, each: headline + link + why it matters in 1 sentence.\n3. Sections as useful: AI/model updates, Devtools/repos, Hacker News/YC, YouTube, Strike/industry updates.\n4. End with \"Watchlist\" for 2-4 developing stories to keep monitoring.\n\nTone: concise, useful, technical, no fluff. Make it feel curated for an engineer/founder tracking AI, infra, startups, and new tools.",
+      "skills": [],
+      "skill": null,
+      "model": "gpt-5.5",
+      "provider": "openai-codex",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 12,16,20,0 * * *",
+        "display": "55 12,16,20,0 * * *"
+      },
+      "schedule_display": "55 12,16,20,0 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-06-21T06:42:25.076514+05:30",
+      "next_run_at": "2026-06-21T12:55:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1518060573496180877",
+        "chat_name": "Shivang Hermes AI / #tech-news / A Hr miss this new channel purpose of this channel is for you to create share...",
+        "thread_id": "1518060573496180877"
+      },
+      "enabled_toolsets": [
+        "web",
+        "browser",
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-06-21T10:09:22.309333+05:30"
+}
