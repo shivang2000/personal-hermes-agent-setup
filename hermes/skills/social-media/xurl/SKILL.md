@@ -349,6 +349,21 @@ xurl media upload photo.jpg
 xurl post "Check out this photo!" --media-id MEDIA_ID
 ```
 
+When Shivang asks to post with “the photo”/“this image” from Discord but the message payload is unavailable to Hermes, check `/Users/shivang/Documents` for the newest screenshot/image, inspect it with vision, then post with that file if it matches the conversation. Mac screenshots can be very large RGBA PNGs; if `xurl media upload` returns a transient 503 or processing issue, convert to a smaller RGB JPEG first and retry:
+```bash
+python3 - <<'PY'
+from PIL import Image
+src = '/Users/shivang/Documents/Screenshot ...png'
+out = '/tmp/x_post_image.jpg'
+im = Image.open(src).convert('RGB')
+im.thumbnail((1600, 1600))
+im.save(out, quality=90, optimize=True)
+print(out)
+PY
+xurl media upload --media-type image/jpeg --category tweet_image /tmp/x_post_image.jpg
+xurl post "Final tweet text" --media-id MEDIA_ID
+```
+
 ### Reply to a conversation
 ```bash
 xurl read https://x.com/user/status/1234567890

@@ -9,3 +9,5 @@ Shivang wants X/Twitter automation optimized toward AI-related technical posts: 
 Shivang wants X/Twitter drafts to emphasize how he uses AI as engineering leverage to build/work dramatically faster and become a dramatically better engineer, with mechanisms like agent workflows, debugging, evals, code review, testing, refactors, observability, and production reliability.
 §
 Shivang wants the Discord #tech-news channel/thread used for high-signal tech/AI news, YC/Hacker News items, notable new repositories, relevant YouTube tech/AI videos, and important industry/strike updates, with emphasis on EU/US-active hours and concrete AI/infra/startup developments.
+§
+Shivang approved making the X/Twitter strategy center on AI engineering lessons from his real building work, combined with current tech/AI news and proof-of-work posts aimed at recruiters/founders.

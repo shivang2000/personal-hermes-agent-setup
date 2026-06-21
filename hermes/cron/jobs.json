@@ -2,8 +2,8 @@
   "jobs": [
     {
       "id": "cdd18a71e079",
-      "name": "AI-accelerated engineering tweet approval queue",
-      "prompt": "Use the ai-tech-twitter-system skill. Prepare Shivang's daily must-post X/Twitter approval queue around one core narrative: how Shivang uses AI to build/work dramatically faster and become a dramatically better engineer.\n\nPositioning:\n- The theme is \"AI as engineering leverage\": using AI agents, LLMs, automation, evals, code review, debugging, research, and tool-building to move faster while improving quality.\n- It is okay to use strong language like \"100x faster\" or \"100x better engineer\" when framed as a builder ambition/operating philosophy, but avoid unverifiable claims that sound fake. Prefer: \"feels like\", \"the path to\", \"compounds toward\", \"turns X into Y\", or concrete examples of where AI compresses cycles.\n- Make tweets sound like Shivang is actively building with AI, not merely commenting on AI news.\n\nSource priority:\n1. Inspect recent safe local work signals in /Users/shivang/dev/AIConcierge321 using git status/log/diff and lightweight file inspection. Look for examples of AI-assisted building, agent workflows, backend reliability, debugging velocity, product iteration, testing, observability, vendor integrations, infra automation, and architecture decisions.\n2. Use session_search for recent Shivang discussions/work related to AI agents, LLM tooling, coding workflows, automation, debugging, learning, evals, product building, or becoming a stronger engineer with AI.\n3. Use current AI/tech news only if it supports the \"AI makes builders faster/better\" narrative with a concrete mechanism.\n\nContent requirements:\n- Draft exactly 3 tweet candidates under 260 characters each.\n- Every candidate must connect AI to building faster AND/OR becoming a better engineer: faster feedback loops, more ambitious scope, better debugging, sharper architecture, stronger tests/evals, better docs, safer refactors, deeper research, more production reliability.\n- At least 2 of 3 drafts should be grounded in Shivang's own work/learning rather than external news.\n- Include concrete engineering nouns where natural: agent workflows, tool calls, eval loops, traces, code review, test generation, debugging, refactors, Redis/Postgres, FastAPI, WebSockets, queues, retries, observability, deployment, vendor integrations.\n- Avoid pure hype. The tweet should explain the mechanism behind the speed/quality jump.\n- Preserve confidentiality: no secrets, customer data, private metrics, tokens, or exact sensitive vendor details.\n- Tone: ambitious, concise, technical, builder/operator voice; useful to founders and US recruiters; no job-seeker framing or engagement bait.\n\nOutput format:\nDaily AI-accelerated engineering tweet queue \u2014 <date>\n\n1) <tweet candidate>\nWhy this works: <one sentence explaining the speed/quality/engineering signal>\n\n2) <tweet candidate>\nWhy this works: <one sentence explaining the speed/quality/engineering signal>\n\n3) <tweet candidate>\nWhy this works: <one sentence explaining the speed/quality/engineering signal>\n\nOptional thread idea: <short outline for a thread on using AI to build faster/better, or 'None today'>\n\nApproval: Reply with the number you approve, edits you want, or 'skip'. I will only post after explicit approval.",
+      "name": "AI engineering lessons + news tweet approval queue",
+      "prompt": "Use the ai-tech-twitter-system skill. Prepare Shivang's daily must-post X/Twitter approval queue around his updated strategy.\n\nStrategy to follow:\n- Primary series: \u201cAI engineering lessons I\u2019m learning while building\u201d \u2014 practical lessons from real work with AI agents, backend systems, infra, debugging, evals, observability, code review, testing, reliability, and production edge cases.\n- Secondary input: current AI/tech/startup/devtools news, but only when it can be turned into a concrete builder/recruiter-relevant insight.\n- Always include proof-of-work energy: make Shivang sound like a high-agency builder who can ship and reason about messy production systems end-to-end.\n- Bias toward concrete engineering mechanisms over generic productivity/founder takes.\n- Borrow mechanics from strong X accounts: simple hooks, occasional contrarian framing, relatable dev pain, useful resources, and personal building lessons. Do not copy their wording.\n\nSource priority:\n1. Inspect safe recent local project/work signals from /Users/shivang/dev/AIConcierge321 if available.\n2. Use session_search for recent Shivang learning/build context if useful.\n3. Check current AI/tech/product/devtools news for timely hooks.\n\nOutput exactly:\nDaily AI/tech tweet queue \u2014 <date>\n\n1) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <AI engineering lesson | current news angle | proof-of-work | personal builder insight>\n\n2) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <...>\n\n3) <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nPillar: <...>\n\nOptional thread idea: <short outline or 'None today'>\n\nApproval: Reply with the number you approve, edits you want, or 'skip'. I will only post after explicit approval.\n\nSafety:\n- Do not post automatically.\n- Do not expose private code, secrets, customer data, exact confidential metrics, or vendor credentials.\n- Avoid broad claims like \u201cAI changes everything\u201d unless grounded in a concrete mechanism.\n- Prefer Shivang\u2019s voice: technical, ambitious, builder-oriented, clear, not cringe.",
       "skills": [
         "ai-tech-twitter-system"
       ],
@@ -22,7 +22,7 @@
       "schedule_display": "45 12 * * *",
       "repeat": {
         "times": null,
-        "completed": 12
+        "completed": 13
       },
       "enabled": true,
       "state": "scheduled",
@@ -30,7 +30,7 @@
       "paused_reason": null,
       "created_at": "2026-06-12T17:05:21.636468+05:30",
       "next_run_at": "2026-06-21T12:45:00+05:30",
-      "last_run_at": "2026-06-20T12:46:24.406671+05:30",
+      "last_run_at": "2026-06-21T10:00:33.912853+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -47,8 +47,8 @@
     },
     {
       "id": "24fd916089e3",
-      "name": "AI-accelerated engineering 45m tweet scan",
-      "prompt": "Use the ai-tech-twitter-system skill. Run a selective 45-minute opportunity scan for extra X/Twitter posts for Shivang around one core narrative: how Shivang uses AI to build/work dramatically faster and become a dramatically better engineer.\n\nOperating mode:\n- This is NOT a must-post queue. Only send a candidate when there is a genuinely strong AI-related angle worth interrupting for.\n- Never post automatically. Ask for approval for any candidate.\n- If no strong opportunity exists, return exactly: [SILENT]\n\nPositioning:\n- The theme is \"AI as engineering leverage\": AI agents, LLMs, automation, evals, code review, debugging, research, and tool-building compress feedback loops while improving engineering judgment.\n- Strong phrases like \"100x faster\" or \"100x better engineer\" are allowed when framed as ambition/philosophy or backed by a mechanism. Avoid sounding like a fake metric.\n- Make the candidate sound like Shivang is actively building with AI, not merely commenting on AI news.\n\nActive-window guidance:\n- Prefer useful opportunities for Europe/London + US attention windows. If the current local time is outside roughly 12:45 PM\u20133:45 AM IST and there is no urgent high-quality opportunity, return [SILENT].\n\nSource priority:\n1. Recent safe local work signals in /Users/shivang/dev/AIConcierge321: AI-assisted building, agent workflows, debugging velocity, backend reliability, evals, observability, payments/refunds/trust states, vendor integrations, Redis/Postgres/FastAPI/WebSockets, infra automation.\n2. Recent session_search context about Shivang's AI building, coding workflows, debugging, learning, model/tooling experiments, or technical observations.\n3. Current AI/tech news only if it maps to a concrete lesson about using AI to build faster or become a better engineer.\n\nCandidate criteria:\n- Must connect AI to building faster AND/OR becoming a better engineer: faster feedback loops, more ambitious scope, better debugging, sharper architecture, stronger tests/evals, safer refactors, deeper research, more production reliability.\n- Prefer specific mechanisms over broad claims: agent routing, tool calls, traces, eval loops, code review, retries, queues, latency/cost budgets, auth gates, terminal states, HITL review, vendor fallback paths.\n- Under 260 characters.\n- No secrets, customer data, private metrics, tokens, or sensitive vendor details.\n- Tone: ambitious, concise, technical, builder/operator voice useful to founders and US recruiters; no engagement bait.\n\nIf a strong opportunity exists, output:\nAI engineering leverage opportunity \u2014 <date/time IST>\n\n1) <tweet candidate>\nWhy now: <one sentence>\nWhy this works: <one sentence explaining the speed/quality/engineering signal>\n\nApproval: Reply 'approve 1', edits, or 'skip'. I will only post after explicit approval.\n\nIf not strong, output only [SILENT].",
+      "name": "AI engineering lessons 45m opportunity scan",
+      "prompt": "Use the ai-tech-twitter-system skill. Run a selective 45-minute opportunity scan for extra X/Twitter draft opportunities using Shivang's updated strategy.\n\nOnly send a message if there is a genuinely strong opportunity. If there is no strong opportunity, output exactly: [SILENT]\n\nStrategy:\n- Primary lane: AI engineering lessons from real building \u2014 agents, backend reliability, debugging, infra, evals, observability, testing, code review, production edge cases, and engineering leverage.\n- Secondary lane: current AI/tech/startup/devtools news \u2014 only if it maps to a concrete builder insight or recruiter/founder proof-of-work angle for Shivang.\n- Borrow mechanics from strong X accounts: simple hook, concrete opinion, technical specificity, personal builder context, occasional contrarian framing. Do not copy wording.\n\nFor each strong opportunity, output:\nOpportunity: <source/event/context in one sentence>\nDraft: <tweet candidate under 280 chars>\nWhy this works: <one sentence>\nApproval: Reply approve/edit/skip. I will only post after explicit approval.\n\nSafety:\n- Do not post automatically.\n- Stay silent unless the draft is meaningfully stronger than generic AI commentary.\n- Do not expose private code, secrets, customer data, exact confidential metrics, or vendor credentials.\n- Prefer concrete engineering mechanisms over generic productivity content.",
       "skills": [
         "ai-tech-twitter-system"
       ],
@@ -67,15 +67,15 @@
       "schedule_display": "every 45m",
       "repeat": {
         "times": null,
-        "completed": 42
+        "completed": 44
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-21T08:30:24.823719+05:30",
-      "last_run_at": "2026-06-21T07:45:24.823719+05:30",
+      "next_run_at": "2026-06-21T10:48:24.453443+05:30",
+      "last_run_at": "2026-06-21T09:17:36.417163+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -110,19 +110,19 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 3
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-06-21T09:00:12.065324+05:30",
-      "last_run_at": "2026-06-21T06:59:16.428892+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-06-21T11:03:24.460304+05:30",
+      "last_run_at": "2026-06-21T09:03:20.255331+05:30",
+      "last_status": "error",
+      "last_error": "Script timed out after 120s: /Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py",
       "last_delivery_error": null,
-      "deliver": "origin",
+      "deliver": "discord:#personal-hermes-agent",
       "origin": {
         "platform": "discord",
         "chat_id": "1518040322972581968",
@@ -132,174 +132,6 @@
       "enabled_toolsets": [
         "terminal"
       ],
-      "workdir": null
-    },
-    {
-      "id": "fa92979dadee",
-      "name": "Termbridge X campaign 5/12",
-      "prompt": "Post termbridge campaign item 5/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_05.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T08:26:40+05:30",
-        "display": "once at 2026-06-21 08:26"
-      },
-      "schedule_display": "once at 2026-06-21 08:26",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:54.046031+05:30",
-      "next_run_at": "2026-06-21T08:26:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "1e720c0a0661",
-      "name": "Termbridge X campaign 6/12",
-      "prompt": "Post termbridge campaign item 6/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_06.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T08:56:40+05:30",
-        "display": "once at 2026-06-21 08:56"
-      },
-      "schedule_display": "once at 2026-06-21 08:56",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:55.120969+05:30",
-      "next_run_at": "2026-06-21T08:56:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "889afe9f8922",
-      "name": "Termbridge X campaign 7/12",
-      "prompt": "Post termbridge campaign item 7/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_07.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T09:26:40+05:30",
-        "display": "once at 2026-06-21 09:26"
-      },
-      "schedule_display": "once at 2026-06-21 09:26",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:56.186401+05:30",
-      "next_run_at": "2026-06-21T09:26:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
-      "workdir": null
-    },
-    {
-      "id": "d508630d48c7",
-      "name": "Termbridge X campaign 8/12",
-      "prompt": "Post termbridge campaign item 8/12 via script.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "termbridge_x_campaign/post_08.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-06-21T09:56:40+05:30",
-        "display": "once at 2026-06-21 09:56"
-      },
-      "schedule_display": "once at 2026-06-21 09:56",
-      "repeat": {
-        "times": 1,
-        "completed": 0
-      },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-06-21T06:29:57.192763+05:30",
-      "next_run_at": "2026-06-21T09:56:40+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "origin",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1518055262101966868",
-        "chat_name": "Shivang Hermes AI / #tweets-automation / I have some ideas regarding the next two weeks as well here. Also recommendat...",
-        "thread_id": "1518055262101966868"
-      },
-      "enabled_toolsets": null,
       "workdir": null
     },
     {
@@ -518,5 +350,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-06-21T08:00:12.066219+05:30"
+  "updated_at": "2026-06-21T10:03:24.461340+05:30"
 }
