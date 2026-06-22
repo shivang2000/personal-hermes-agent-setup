@@ -71,15 +71,15 @@
       "schedule_display": "every 45m",
       "repeat": {
         "times": null,
-        "completed": 86
+        "completed": 88
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-22T18:40:05.141092+05:30",
-      "last_run_at": "2026-06-22T17:55:05.141092+05:30",
+      "next_run_at": "2026-06-22T20:13:11.494266+05:30",
+      "last_run_at": "2026-06-22T19:28:11.494266+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 429: The usage limit has been reached",
       "last_delivery_error": null,
@@ -114,15 +114,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 35
+        "completed": 36
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-06-22T19:37:57.318200+05:30",
-      "last_run_at": "2026-06-22T17:37:02.454056+05:30",
+      "next_run_at": "2026-06-22T20:39:01.835592+05:30",
+      "last_run_at": "2026-06-22T18:38:07.349021+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -209,15 +209,15 @@
       "schedule_display": "every 5m",
       "repeat": {
         "times": null,
-        "completed": 323
+        "completed": 333
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T10:14:27.564462+05:30",
-      "next_run_at": "2026-06-22T18:40:08.093231+05:30",
-      "last_run_at": "2026-06-22T18:35:08.093231+05:30",
+      "next_run_at": "2026-06-22T19:40:12.947495+05:30",
+      "last_run_at": "2026-06-22T19:35:12.947495+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 429: The usage limit has been reached",
       "last_delivery_error": null,
@@ -236,5 +236,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-06-22T18:37:57.319887+05:30"
+  "updated_at": "2026-06-22T19:39:01.837025+05:30"
 }
