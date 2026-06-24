@@ -1,7 +1,8 @@
 model:
-  base_url: https://chatgpt.com/backend-api/codex
-  default: gpt-5.5
-  provider: openai-codex
+  base_url: https://openrouter.ai/api/v1
+  default: openrouter/owl-alpha
+  provider: openrouter
+  api_mode: chat_completions
 providers: {}
 fallback_providers: []
 credential_pool_strategies: REDACTED_SET_LOCALLY
@@ -679,7 +680,7 @@ mcp_servers:
       TERMBRIDGE_PIPE_DIR: /Users/shivang/.termbridge/pipes
       TERMBRIDGE_TMUX_SOCKET: termbridge
       TERMBRIDGE_ALLOWED_ENVS: docker
-      TERMBRIDGE_MAX_SESSIONS: "3"
+      TERMBRIDGE_MAX_SESSIONS: '3'
     enabled: true
 
 # ── Fallback Model ────────────────────────────────────────────────────

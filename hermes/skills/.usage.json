@@ -420,13 +420,13 @@
     "created_at": "2026-06-17T11:52:20.722824+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-21T13:03:22.578248+00:00",
-    "last_viewed_at": "2026-06-21T13:03:22.576831+00:00",
+    "last_used_at": "2026-06-24T14:48:27.231894+00:00",
+    "last_viewed_at": "2026-06-24T14:48:27.230428+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 26,
-    "view_count": 26
+    "use_count": 27,
+    "view_count": 27
   },
   "hermes-agent-skill-authoring": {
     "archived_at": null,
@@ -458,14 +458,14 @@
     "archived_at": null,
     "created_at": "2026-06-17T12:01:02.904142+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-18T16:01:17.740236+00:00",
-    "last_used_at": "2026-06-18T16:36:42.933937+00:00",
-    "last_viewed_at": "2026-06-18T16:36:42.932325+00:00",
-    "patch_count": 4,
+    "last_patched_at": "2026-06-24T14:59:57.176276+00:00",
+    "last_used_at": "2026-06-24T14:58:39.228349+00:00",
+    "last_viewed_at": "2026-06-24T14:58:39.226658+00:00",
+    "patch_count": 7,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 3,
+    "view_count": 3
   },
   "hermes-third-party-skills": {
     "archived_at": null,

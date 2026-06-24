@@ -21,3 +21,5 @@ Shivang wants his AI/tech X/Twitter automation to run in fully auto-post mode, w
 Shivang wants future X/Twitter automation optimized toward source-backed technical takeaways that attach to active AI/agent/LLM infra conversations, include concrete mechanisms/tradeoffs, and use his learning-in-public builder voice rather than generic AI commentary.
 §
 Shivang wants X/Twitter automation posts to use 1-2 highly relevant hashtags for discoverability when they match the topic/search intent (e.g. #AIAgents, #LLM, #AIInfra, #DevTools, #OpenSource, #SoftwareEngineering), while avoiding generic tag-stuffing; source-backed @mentions are also okay when genuinely useful.
+§
+User prefers direct technical answers with architecture diagrams and config examples over high-level explanations. When asking "is X possible", they want the actual config/commands, not just "yes".
