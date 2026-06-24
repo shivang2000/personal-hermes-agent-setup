@@ -46,6 +46,30 @@ The old thread still exists in `discord_threads.json` but is orphaned.
 - Archived threads still hold session data in SQLite but new messages can't be sent to them
 - When the user @mentions in the parent after a thread is archived, a new thread is created
 
+## When context loss is NOT a session issue — provider rate-limit exhaustion
+
+If sessions are correctly keyed but the bot still "forgets" or stops responding, check whether the model provider is rate-limited (HTTP 429). This is the #1 non-obvious cause of sudden amnesia on always-on gateways.
+
+```bash
+# Check for 429 rate-limit errors in gateway logs
+grep -i "429\|RateLimitError\|usage_limit\|overload" ~/.hermes/logs/gateway.log | tail -20
+
+# Check which model Discord sessions are actually using (may differ from config)
+sqlite3 ~/.hermes/state.db "SELECT DISTINCT model FROM sessions WHERE source LIKE 'discord%';"
+
+# Check if fallback_model is configured
+grep -A3 "fallback_model" ~/.hermes/config.yaml
+```
+
+If you see `usage_limit_reached` with `plan_type: plus` and a `resets_in_seconds` value, the provider has exhausted its quota. The agent cannot call the LLM at all — this is not a session management bug.
+
+**Fix**: Configure `fallback_model` so Hermes auto-fails over to a secondary provider when the primary rate-limits:
+```bash
+hermes config set fallback_model.provider openrouter
+hermes config set fallback_model.model <model-name>
+hermes gateway restart
+```
+
 ## Debugging session state
 
 ```bash

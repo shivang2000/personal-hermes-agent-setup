@@ -187,6 +187,68 @@ Check current policy:
 grep -A3 'session_reset' ~/.hermes/config.yaml
 ```
 
+## Provider rate-limit exhaustion — the "silent context loss" mimic
+
+When a provider hits its usage cap (HTTP 429 `usage_limit_reached`), the agent cannot call the LLM at all. Messages may appear to "lose context" or produce empty/garbage responses because the model call fails entirely. This is especially dangerous when no `fallback_model` is configured — the gateway has no backup and the user just sees the bot stop working.
+
+### Diagnosis
+
+Check gateway logs for 429 errors:
+
+```bash
+grep -i "429\|RateLimitError\|usage_limit\|overload" ~/.hermes/logs/gateway.log | tail -20
+```
+
+Look for patterns like:
+```
+⚠️  API call failed (attempt 1/3): RateLimitError [HTTP 429]
+   🔌 Provider: openai-codex  Model: gpt-5.5
+   📝 Error: HTTP 429: The usage limit has been reached
+   📋 Details: {'type': 'usage_limit_reached', ...}
+```
+
+Also check which model the sessions are actually using vs. your config:
+
+```bash
+sqlite3 ~/.hermes/state.db "SELECT DISTINCT model FROM sessions WHERE source LIKE 'discord%';"
+```
+
+If this shows a different model than `model.default`, there may be a per-route or per-session override in play.
+
+### Fix
+
+**Option A — configure a fallback model** (recommended for always-on gateways):
+
+```bash
+hermes config set fallback_model.provider openrouter
+hermes config set fallback_model.model <your-openrouter-model>
+hermes gateway restart
+```
+
+The fallback triggers on 429, 529, 503, and connection failures. Check current state:
+
+```bash
+grep -A5 "# ── Fallback Model" ~/.hermes/config.yaml
+```
+
+If the section is commented out, no fallback is active.
+
+**Option B — wait for the rate limit to reset.**
+
+The 429 response includes `resets_in_seconds`. For OpenAI Codex, this can be hours or days depending on plan.
+
+**Option C — switch the primary model** to a provider with available quota:
+
+```bash
+hermes config set model.default openrouter/<model>
+hermes config set model.provider openrouter
+hermes gateway restart
+```
+
+### Why this looks like context loss
+
+From the user's perspective, the bot was working, then suddenly "forgets" everything or stops responding. The actual cause is that the LLM API is unreachable — the agent cannot process any input at all, so it either returns stale/cached text or fails silently. The session transcript in `state.db` is intact; the issue is purely upstream.
+
 ## Pitfalls
 
 - **Do not handle bot tokens in chat.** Have the user enter secrets locally via `hermes gateway setup` or their editor.
@@ -195,6 +257,7 @@ grep -A3 'session_reset' ~/.hermes/config.yaml
 - **Service state matters.** A gateway LaunchAgent/systemd service can be loaded but stale relative to the current install. Refresh with `hermes gateway start` before final verification.
 - **Back up `.env` before modifying credential lines.** Commenting stale platform keys is safer than deleting them when the user might want to restore them.
 - **auto_thread context loss is the #1 Discord confusion.** Before debugging anything else, check `discord.auto_thread` and whether the user is re-mentioning in the parent channel vs. continuing inside the thread.
+- **Rate-limit 429s are the #1 "sudden amnesia" mimic on always-on gateways.** When a provider exhausts its quota, the agent cannot call the LLM at all. Always check `gateway.log` for 429 errors before assuming a session management bug. Configure `fallback_model` to prevent recurrence.
 
 ## References
 

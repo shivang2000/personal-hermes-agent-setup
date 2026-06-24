@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T20:29:12.674856",
+  "updated_at": "2026-06-24T21:31:56.408138",
   "platforms": {
     "discord": [
       {
@@ -286,11 +286,13 @@
     "bluebubbles": [],
     "qqbot": [],
     "yuanbao": [],
+    "relay": [],
     "google_chat": [],
     "irc": [],
     "line": [],
     "ntfy": [],
     "photon": [],
+    "raft": [],
     "simplex": [],
     "teams": []
   }
