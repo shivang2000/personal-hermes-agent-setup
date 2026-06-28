@@ -159,6 +159,38 @@ PNG bytes; write them out with `write_file` or the terminal (`base64 -d`).
 On CLI, you can just describe what you see — the screenshot data stays in
 your conversation context.
 
+### `screencapture` CLI fallback when you need a file on disk
+
+`computer_use` captures return images inline (vision / SOM modes) or
+persist to `~/.hermes/cache/screenshots/` only for browser-mode captures —
+vision-mode captures are NOT saved to disk, so you can't `MEDIA:` them.
+If the user needs the screenshot on a messaging platform, use the macOS
+`screencapture` CLI to grab a file:
+
+```bash
+# Most reliable from a non-interactive terminal: main display, no rect, no -x
+screencapture -m -o -t png /Users/shivang/.hermes/cache/screenshots/<name>.png
+```
+
+Pitfalls that bit during a Storage cleanup session:
+
+- `screencapture -x -t png <path>` → "could not create image from display"
+  (Screen Recording / TCC prompt suppressed, no interactive fallback).
+- `screencapture -R <rect> -x -t png <path>` → "could not create image
+  from rect" (same TCC issue, region mode is stricter).
+- `screencapture -l <windowId>` with `osascript` to fetch the window ID
+  often hangs — osascript itself triggers Automation permission prompts
+  in non-interactive shells.
+
+The `-m -o -t png` form just works: `-m` targets the main display (entire
+visible desktop), `-o` suppresses the capture sound, `-t png` writes a
+PNG. The result includes any open windows, so crop or annotate before
+sharing if privacy matters — call out what's visible (other windows,
+modals) in your reply so the user can decide whether to share it.
+
+After saving, verify with `ls -lh <path>` and `file <path>` to confirm
+it's a real PNG and not 0 bytes, then reference it with `MEDIA:<path>`.
+
 ## Safety — these are hard rules
 
 - **Never click permission dialogs, password prompts, payment UI, 2FA

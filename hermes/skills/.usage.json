@@ -627,14 +627,14 @@
     "archived_at": null,
     "created_at": "2026-06-17T23:18:51.560512+00:00",
     "created_by": null,
-    "last_patched_at": "2026-06-17T23:27:54.301157+00:00",
-    "last_used_at": "2026-06-19T15:03:26.608600+00:00",
-    "last_viewed_at": "2026-06-19T15:03:26.607293+00:00",
-    "patch_count": 2,
+    "last_patched_at": "2026-06-28T04:46:57.169309+00:00",
+    "last_used_at": "2026-06-28T04:46:34.416694+00:00",
+    "last_viewed_at": "2026-06-28T04:46:34.415010+00:00",
+    "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 5,
-    "view_count": 4
+    "use_count": 6,
+    "view_count": 5
   },
   "manim-video": {
     "archived_at": null,

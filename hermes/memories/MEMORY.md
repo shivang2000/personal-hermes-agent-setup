@@ -1,3 +1,5 @@
 Recurring Hermes cron jobs for Shivang should be pinned to openai-codex/gpt-5.5 unless he explicitly requests a different model.
 §
 For Discord bot-to-bot messages in Shivang's Hermes setup, use real mention tokens, not plain names: Office Hermes / `hermes-work-agent` is `<@1516899802913308733>`; Personal Hermes / this bot is `<@1516782563757133964>`.
+§
+Production macOS computer-use implementations cloned at ~/.hermes/research/computer-use-macos/ for reference. Open-codex-computer-use is the highest-value repo (reverse-engineered OpenAI Codex Computer Use, has OpenComputerUseKit Swift source). Other useful ones: desktop-pilot-mcp (cleanest Swift layer-router architecture), native-devtools-mcp (AX snapshot invalidation patterns), ghost-os (self-learning recipes + AX-first), agent-computer-use (Rust crates per platform). Skill at apple/macos-computer-use-implementations summarizes the proven patterns (AX-first routing cascade, CGEvent.postToPid background safety, xdotool key parser, recipe-based workflows, permission state machine).
