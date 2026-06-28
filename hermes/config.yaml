@@ -555,6 +555,7 @@ approvals:
   mcp_reload_confirm: true
   destructive_slash_confirm: true
 command_allowlist:
+  - execute_code
   - stop/restart hermes gateway (kills running agents)
   - recursive delete
   - script execution via -e/-c flag
