@@ -1,7 +1,7 @@
 model:
-  default: gpt-5.5
-  provider: openai-codex
-  base_url: https://chatgpt.com/backend-api/codex
+  default: minimax-m3:cloud
+  provider: custom
+  base_url: http://localhost:11434/v1
 providers: {}
 fallback_providers: []
 credential_pool_strategies: REDACTED_SET_LOCALLY
@@ -740,3 +740,7 @@ mcp_servers:
 fallback_model:
   provider: openrouter
   model: openrouter/owl-alpha
+custom_providers:
+  - name: Local (localhost:11434)
+    base_url: http://localhost:11434/v1
+    model: minimax-m3:cloud

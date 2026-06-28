@@ -1,3 +1,5 @@
 context_lengths:
+  glm-5.2:cloud@http://localhost:11434/v1: 1000000
   gpt-5.4@https://chatgpt.com/backend-api/codex: 272000
   gpt-5.5@https://chatgpt.com/backend-api/codex: 272000
+  minimax-m3:cloud@http://localhost:11434/v1: 524288
