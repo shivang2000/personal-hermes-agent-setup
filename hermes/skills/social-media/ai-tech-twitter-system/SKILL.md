@@ -163,6 +163,7 @@ Prerequisite: load the `xurl` skill for command details and safety rules.
 Also see:
 - `references/x-developer-setup-and-policy.md` for X Developer Portal setup, the approved data-use description, and xurl auth/credits pitfalls.
 - `references/local-work-summary-cron.md` for the proven weekday end-of-day local-work-summary cron shape, safety guardrails, model pinning, and verification caveats.
+- `references/x-tier-quota-recovery.md` for diagnosing and recovering from `HTTP 429: usage limit` fleet outages, the cadence-bomb pattern, and cadence recommendations for each autopost job type.
 
 Verification:
 ```bash
@@ -248,6 +249,8 @@ Before presenting or posting a tweet:
 6. Leaving recurring cron jobs on an inherited model that later becomes rate-limited or quota-blocked. For important recurring queues/scans, pin the cron job's `model` and `provider` explicitly instead of relying on whatever the interactive session is using at creation time.
 7. Assuming `deliver=origin` always maps back to the current chat. Cron jobs run without a live user turn; when there is no origin thread available, Hermes may fall back to the configured home channel. Verify delivery expectations when testing scheduled social workflows.
 8. Creating bot-to-bot acknowledgement loops in Discord. When another Hermes bot/profile posts status-only messages like "Done", "Received", "Paused", "Stopped", "[no reply]", or reacts with 👍, do not keep acknowledging the acknowledgement. Only respond when there is a new human instruction, an explicit request for edits/posting, or actionable tweet-approval content.
+9. Letting reply/autopost scanners run at `every 5m`. X API tier caps are not designed for that cadence — a single reply scanner at this cadence can exhaust the monthly quota in under 24 hours and silently 429 every other X-facing job in the same profile. Default reply-scan cadence to `every 30m` or longer; treat anything below `every 15m` as a quota bomb unless Shivang explicitly approves it for a short campaign.
+10. Treating `last_status: error` on a cron as a transient retry. When `hermes cron list --all` shows a job in `paused` state after 429/quota errors, an unpause alone is not enough — the underlying cadence/credit issue must be fixed first or the job will re-pause within minutes.
 
 ## Cron reliability note
 
@@ -255,6 +258,38 @@ For recurring X/Twitter drafting jobs, treat model pinning as part of setup:
 - Pin `provider` + `model` on the cron job when creating or updating it.
 - If a cron starts failing repeatedly, check whether the pinned model is quota-limited before changing the prompt.
 - After changing a cron's model/provider, manually trigger one run and confirm `last_status: ok` before trusting the next scheduled window.
+
+## X API tier-quota failure pattern (autopost fleet)
+
+When multiple X-facing cron jobs (`post`, `reply`, `search`) start failing with `HTTP 429: The usage limit has been reached` inside a narrow window (often 30–60 min), this is **not** a per-job rate limit — it is the X API tier/monthly quota hitting its cap. `xurl` may still answer `whoami` because that endpoint is cheap, but every write and many reads will 429.
+
+What the scheduler does in this state: the scheduler auto-pauses jobs on persistent errors. They will show as `paused` in `hermes cron list --all` with a `next run` timestamp in the past, **and they will not auto-resume** after the cap resets. Each paused job needs an explicit `hermes cron resume <id>` after the underlying issue is fixed.
+
+The high-cadence job is almost always the root cause. An `every 5m` reply scanner can burn a single monthly cap in well under 24 hours. Auditing cadence before resuming is non-negotiable; a sensible starting point is `every 30m` for reply scans and `every 2h` for opportunity scans.
+
+Recovery procedure (do these in order):
+1. Diagnose: `hermes cron list --all` — note every `paused` job and its `last_status` error. The first one to fail in the window is usually the rate-limit culprit.
+2. Fix credits/tier: top up X API credits (Developer Console → Billing) or upgrade the tier cap (Products → Pro/Basic → Usage). Verify with `xurl post` against an approved draft, or run `xurl search -n 1`.
+3. Fix cadence: edit the highest-cadence paused job first. Move from `every 5m` → `every 30m` (or longer) before resuming anything.
+4. Resume: `hermes cron resume <job_id>` for each paused job, one at a time. Pause and re-fix if any of them immediately re-429s.
+5. Verify: wait for one full cycle of each resumed job and confirm `last_status: ok` in `hermes cron list --all`. Do not declare the fleet healthy until at least one of each cadence has fired cleanly.
+
+Avoid retrying writes during a 429 — each retry consumes a small slice of the remaining window and pushes the recovery window further out.
+
+## Handling cron digests delivered from other profiles
+
+Some cron digests (notably `office-work-summary-for-tweets`) are owned by Shivang's office-laptop/work-agent profile and delivered into shared Discord channels like `#tweets-automation`. When the personal-Hermes bot receives such a digest, it is a **passive data drop**, not a request to draft or post.
+
+- Do not draft tweets from a partial digest. If the message is paginated (e.g. ends with `(1/6)`), acknowledge receipt, wait for the rest, and explicitly note that you are waiting.
+- Do not edit or `resume` jobs that belong to another profile. `cronjob` actions from this profile only affect jobs owned by this profile.
+- Do surface downstream issues the digest reveals (e.g. a paused autopost fleet) — those are usually owned by this profile and worth flagging.
+
+## Paginated cron responses
+
+If a cron job's output arrives paginated (Discord truncates very long digests into N messages), treat each page as a partial view:
+- Do not draft a tweet, post, or reply from a single page.
+- Either wait for the full set of pages or note explicitly which sections you have not yet seen.
+- A short acknowledgement is fine; a long analysis from incomplete data is not.
 
 ## Verification Checklist
 
@@ -264,3 +299,4 @@ For recurring X/Twitter drafting jobs, treat model pinning as part of setup:
 - [ ] User intent to post is explicit.
 - [ ] `xurl post` returns successful JSON.
 - [ ] Response includes confirmation and tweet ID/URL when available.
+- [ ] Fleet health: `hermes cron list --all` shows the autopost/news jobs in `active` state (not `paused` with stale 429 errors). If any job is paused due to `HTTP 429: usage limit`, follow the recovery procedure in "X API tier-quota failure pattern" before declaring the workflow healthy.
