@@ -48,53 +48,6 @@
       "profile": null
     },
     {
-      "id": "24fd916089e3",
-      "name": "AI engineering source-backed opportunity autopost scan",
-      "prompt": "Use the ai-tech-twitter-system, humanizer, and xurl skills.\n\nShivang has explicitly changed this recurring AI/tech X/Twitter workflow to fully auto-post. Do NOT ask for approval. This is a guarded opportunity scan: post only when there is a genuinely strong, timely, safe AI-engineering angle. Otherwise stay silent.\n\nTime gate:\n- Optimize for Europe/US active hours. If the current IST time is outside 12:45 PM through 3:45 AM, return `[SILENT] outside posting window` and do not post.\n\nRecent performance lesson to apply:\n- Shivang's best recent posts reached ~1.1k-1.2k views because they attached to an active AI/agent conversation, mentioned a relevant source, contained concrete mechanisms, and framed a real technical tradeoff.\n- Opportunity scans should now prioritize source-backed technical takeaways and replies/quote-worthy angles over standalone generic thoughts.\n\nSource priority:\n1. Active AI/agent/LLM infra conversations from credible builders/researchers/labs, especially recent posts/articles/videos/breakdowns that already have attention. Use public web sources and accessible X pages/search results when available; never fabricate tweets, handles, metrics, or quotes.\n2. Recent local build/work context from /Users/shivang/dev/AIConcierge321 and git/session context when useful.\n3. Shivang's recent sessions/learnings via session_search.\n4. Current AI/tech/startup news only when it connects to Shivang's real builder perspective.\n\nStrong angles include:\n- Concrete AI agents, LLM infra, evals/observability/reliability, backend mechanisms, production edge cases, testing/refactors/code review, agent workflows, human-in-the-loop control, cost/latency tradeoffs, memory/context tradeoffs, KV-cache implications, terminal agents/tool loops, or proof-of-work that helps recruiters/founders see engineering judgment.\n\nAngle scoring rubric. Post only if the winning angle clearly scores well:\n- +3 attaches to an active source/person/event/conversation.\n- +3 contains a concrete technical mechanism: tool loop, terminal agent, bash/read/write, KV cache, context window, eval harness, trace logs, memory retrieval, retry policy, idempotency, state machine, latency/cost, orchestration, schema validation, observability, vendor failure mode.\n- +3 reveals a tradeoff, surprise, or correction of a common assumption.\n- +2 sounds like Shivang learning/building in public.\n- -5 if it is generic AI productivity, vague founder advice, hype, or broad prediction.\n\nPreferred structures:\n- \"Takeaway from @person's breakdown: [specific technical lesson]. [tradeoff]. [punchline].\"\n- \"I expected X to matter more. In practice, Y matters more because [mechanism].\"\n- \"Most people think X. But in practice, Y. The tradeoff is Z.\"\n- \"The boring part of [agents/infra/evals] is [specific mechanism].\"\n\nAvoid:\n- Generic productivity/founder platitudes, hype, broad predictions, tiny UI/form bugs, placeholder/redaction takes, narrow one-off frontend edge cases, engagement bait, and over-polished LinkedIn-style posts.\n\nMandatory humanizer pass before posting:\n- Apply the humanizer checklist before any xurl post.\n- Remove AI texture: crucial, landscape, delve, unlock, seamless, pivotal, underscores, not-just-X-but-Y, broad significance claims, promotional tone, fake polish, emoji, LinkedIn rhythm.\n- Preserve Shivang's voice: direct, technical, concrete, slightly personal/builder-ish. Specific mechanisms beat polished slogans.\n- Keep one idea under 280 chars, ideally under 260.\n- Use 0-2 hashtags max, only if relevant: #AIAgents, #LLM, #AIInfra, #DevTools, #OpenSource, #SoftwareEngineering.\n\nPosting procedure:\n1. Verify `xurl auth status` and `xurl whoami`; never read ~/.xurl and never use verbose/secret flags.\n2. Find/derive a strong source-backed technical angle. If weak, return `[SILENT] no strong safe source-backed opportunity`.\n3. Draft, humanizer-pass, source/length/safety check.\n4. Post with `xurl post \"FINAL_TEXT\"`.\n5. Return final text, source/angle rationale in one sentence, and posted URL/ID.\n\nFollow-up rule:\n- If a recent Shivang post or angle has clearly exceeded ~500 views and the same topic is still timely, consider a follow-up in the same cluster rather than changing topics. The follow-up must add a new mechanism/tradeoff, not restate the same point.\n\nIf no strong angle exists, stay silent. Do not post just to satisfy cadence.\n\nHashtag/mention policy from Shivang: use hashtags strategically for discoverability. Include 1-2 highly relevant hashtags when they match the topic/search intent, such as #AIAgents, #LLM, #AIInfra, #DevTools, #OpenSource, or #SoftwareEngineering. Do not stuff generic hashtags; choose only tags that a reader would plausibly search for. Mentions are also allowed when the exact handle is source-backed and genuinely useful.\n",
-      "skills": [
-        "ai-tech-twitter-system",
-        "humanizer",
-        "xurl"
-      ],
-      "skill": "ai-tech-twitter-system",
-      "model": "gpt-5.5",
-      "provider": "openai-codex",
-      "base_url": null,
-      "script": null,
-      "no_agent": false,
-      "context_from": null,
-      "schedule": {
-        "kind": "interval",
-        "minutes": 45,
-        "display": "every 45m"
-      },
-      "schedule_display": "every 45m",
-      "repeat": {
-        "times": null,
-        "completed": 95
-      },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-06-23T01:24:24.896953+05:30",
-      "paused_reason": null,
-      "created_at": "2026-06-12T17:10:20.769241+05:30",
-      "next_run_at": "2026-06-23T01:35:40.701282+05:30",
-      "last_run_at": "2026-06-23T00:50:40.701282+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 429: The usage limit has been reached",
-      "last_delivery_error": null,
-      "deliver": "discord:#tweets-automation",
-      "origin": null,
-      "enabled_toolsets": [
-        "web",
-        "file",
-        "terminal",
-        "session_search"
-      ],
-      "workdir": "/Users/shivang/dev/AIConcierge321",
-      "profile": null
-    },
-    {
       "id": "cb5b43a03818",
       "name": "Hourly sync personal Hermes setup to GitHub",
       "prompt": "Run the script `sync_personal_hermes_repo.py` to export Shivang's Hermes Agent config, skills, plugins, cron definitions, memories, scripts, and hooks into the public GitHub repository `shivang2000/personal-hermes-agent-setup`. The script must sanitize/redact secrets, skip auth tokens/logs/sessions/caches/binaries, commit only when changed, and push to GitHub. It should be quiet when there are no changes and print a short success message only when a sync commit is pushed. If the script detects possible secrets or fails, deliver the error.",
@@ -114,15 +67,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 255
+        "completed": 256
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-02T03:52:41.999209+05:30",
-      "last_run_at": "2026-07-02T01:51:46.502405+05:30",
+      "next_run_at": "2026-07-02T04:53:47.015656+05:30",
+      "last_run_at": "2026-07-02T02:52:51.752152+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -159,17 +112,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 8
+        "completed": 9
       },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-06-23T01:24:21.060578+05:30",
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-06-23T12:55:00+05:30",
-      "last_run_at": "2026-06-23T00:55:38.748560+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 429: The usage limit has been reached",
+      "next_run_at": "2026-07-02T12:55:00+05:30",
+      "last_run_at": "2026-07-02T03:14:12.376587+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -184,7 +137,8 @@
         "terminal",
         "file"
       ],
-      "workdir": null
+      "workdir": null,
+      "fire_claim": null
     },
     {
       "id": "e9f85b48274e",
@@ -237,5 +191,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-07-02T02:52:42.000258+05:30"
+  "updated_at": "2026-07-02T03:53:47.016875+05:30"
 }
