@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T03:52:24.652004",
+  "updated_at": "2026-07-02T04:52:28.941778",
   "platforms": {
     "discord": [
       {
@@ -313,6 +313,12 @@
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1521878951398604942",
         "type": "thread",
         "thread_id": "1521878951398604942"
+      },
+      {
+        "id": "1522015711168303124:1522015711168303124",
+        "name": "Shivang Hermes AI / #tech-news / use this for additional sources https://engineering.atspotify.com/ / topic 1522015711168303124",
+        "type": "thread",
+        "thread_id": "1522015711168303124"
       }
     ],
     "telegram": [],

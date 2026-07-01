@@ -532,6 +532,7 @@ command_allowlist:
   - execute_code
   - recursive delete
   - stop/restart hermes gateway (kills running agents)
+  - script execution via heredoc
 hooks_auto_accept: false
 security:
   allow_private_urls: false
