@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T04:52:28.941778",
+  "updated_at": "2026-07-02T05:52:32.905061",
   "platforms": {
     "discord": [
       {
@@ -319,6 +319,12 @@
         "name": "Shivang Hermes AI / #tech-news / use this for additional sources https://engineering.atspotify.com/ / topic 1522015711168303124",
         "type": "thread",
         "thread_id": "1522015711168303124"
+      },
+      {
+        "id": "1522022176428134493:1522022176428134493",
+        "name": "Shivang Hermes AI / #personal-hermes-agent / create a cron threat for giving the updates for this cron Cronjob Response: H... / topic 1522022176428134493",
+        "type": "thread",
+        "thread_id": "1522022176428134493"
       }
     ],
     "telegram": [],

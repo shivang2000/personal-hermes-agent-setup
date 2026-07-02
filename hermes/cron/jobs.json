@@ -67,15 +67,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 257
+        "completed": 258
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-02T05:54:51.770909+05:30",
-      "last_run_at": "2026-07-02T03:54:00.503700+05:30",
+      "next_run_at": "2026-07-02T06:55:56.499539+05:30",
+      "last_run_at": "2026-07-02T04:55:03.553703+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -189,7 +189,60 @@
         "web"
       ],
       "workdir": null
+    },
+    {
+      "id": "6be605f57a23",
+      "name": "Hourly sync status reporter",
+      "prompt": "You are the status reporter for Shivang's cron job `cb5b43a03818` (\"Hourly sync personal Hermes setup to GitHub\"). You run ~5 min after that job.\n\nThe full output of the most recent run of `cb5b43a03818` is injected below as \"--- SYNC OUTPUT ---\". Read it carefully. The previous run's output is in the `state` block at the bottom (if present).\n\nYOUR TASK\n\nProduce a SHORT, HIGH-SIGNAL status update for Shivang's Discord thread. Do NOT just echo the sync output verbatim \u2014 summarize it.\n\nPOST RULES \u2014 READ CAREFULLY\n\n1. **Stay silent when there's nothing useful to say.** If the latest sync output is healthy AND the changed-path count is the same as last run AND no errors \u2192 reply with literally a single line: `NOOP` and nothing else. The cron scheduler will treat `NOOP` as \"deliver nothing\" (verify with cron delivery semantics; if NOOP is not a magic token in this build, return a one-line message like \"_sync healthy, no changes since last run_\" \u2014 either way, keep it minimal and unambiguous).\n\n2. **Post when something changed or broke:**\n   - Changed-path count differs from previous run (up or down) \u2014 note delta\n   - Sync reports an error, push rejection, or non-zero exit\n   - First run of the day (IST) \u2014 give a \"since 00:00 IST\" mini-summary: # of syncs, # of pushes with changes, total paths changed, last error if any\n   - Repo URL or branch in output differs from `https://github.com/shivang2000/personal-hermes-agent-setup.git` on `main` \u2014 alert (wrong target)\n   - Output mentions \"nothing to commit\" / \"already up to date\" repeatedly for 3+ runs in a row (you can detect from previous output) \u2014 note staleness\n\n3. **Format (when posting):**\n   - Discord-friendly markdown\n   - Lead with a clear one-line headline: `\u2705 sync ok \u00b7 N paths changed` or `\u26a0\ufe0f sync issue \u00b7 <one-liner>`\n   - 1-4 short bullet lines of detail (changed path count, delta vs last, push target, error excerpt if any)\n   - End with `next sync in ~55m` so Shivang knows the cadence\n   - No filler, no preamble, no signature\n\n4. **What you are NOT doing:**\n   - Do not re-run the sync script\n   - Do not read the repo or check git history\n   - Do not edit the sync cron job\n   - Do not schedule further cron jobs\n   - Do not post to any other channel\n\nOUTPUT\n\nEither a Discord-formatted status update OR a `NOOP` line. Nothing else.\n\n--- SYNC OUTPUT (most recent run of cb5b43a03818) ---",
+      "skills": [
+        "hermes-cron-jobs"
+      ],
+      "skill": "hermes-cron-jobs",
+      "model": "openai-codex/gpt-5.5",
+      "provider": "custom",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": [
+        "cb5b43a03818"
+      ],
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 * * * *",
+        "display": "5 * * * *"
+      },
+      "schedule_display": "5 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-02T05:04:45.052719+05:30",
+      "next_run_at": "2026-07-02T06:05:00+05:30",
+      "last_run_at": "2026-07-02T05:06:15.255748+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 404: No endpoints found for openrouter/owl-alpha.",
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1522022176428134493",
+        "chat_name": "Shivang Hermes AI / #personal-hermes-agent / create a cron threat for giving the updates for this cron Cronjob Response: H...",
+        "thread_id": "1522022176428134493",
+        "user_id": "419825531530379274"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null,
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-02T04:54:51.772609+05:30"
+  "updated_at": "2026-07-02T05:55:56.502119+05:30"
 }
