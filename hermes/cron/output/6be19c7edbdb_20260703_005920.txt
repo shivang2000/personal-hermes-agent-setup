@@ -1,0 +1,89 @@
+Cronjob Response: Tech / AI / YC / YouTube news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material now. Let me compose the digest. Key confirmed items from this run:
+
+- **CursorBench 3.1** released (cursor.com/evals) with Fable 5 leading (new "Fable" naming from Anthropic)
+- **Anthropic**: Claude Sonnet 5 launched Jun 30; Fable 5 redeployed globally Jul 1
+- **Anthropic**: Commerce lifted export controls on Fable 5 and Mythos 5 (top HN story, 956 pts)
+- **GitHub Copilot**: Kimi K2.7 Code GA, Copilot vision GA, Browser tools GA, auto model selection
+- **Cloudflare Content Independence Day** (x402 Monetization Gateway, AI bot controls)
+- **Hugging Face + Cerebras**: Gemma 4 real-time voice
+- **YC launches**: Manufact (MCP Cloud), Kestrel (AI agents for platform eng), Flick TV, StarSling, Tolmo, Corgea, Osmaura
+- **GitHub trending**: strix (AI pen-testing), agency-agents, video-use, career-ops, Vibe-Trading
+- **HN Show**: ZeroFS, Mail Memories, ctx, slopo
+- **Breaking**: Google $2B antitrust judgment, Android dev verification debate, PlayStation ending physical discs, Spain Palantir blacklist
+- **Stanford/etc**: Single-transformer-layer RL paper (1 layer = full params)
+
+# 🛰️ Tech / AI News Digest — Friday, 03 July 2026, 12:55 IST
+
+## 🔥 Top picks
+- **Anthropic launches Claude Sonnet 5** — new mid-tier flagship with frontier coding/agent perf; GA in GitHub Copilot same day. Why it matters: re-prices the Sonnet tier and sets the bar for CursorBench 3.1. <https://www.anthropic.com/news> · <https://github.blog/changelog/>
+- **U.S. lifts export controls on Fable 5 and Mythos 5** — Commerce reversal, Anthropic ships Glasswing jailbreak-severity framework with AWS, Microsoft, Google. Why it matters: ends the mid-June freeze and signals an industry-wide eval standard. <https://news.ycombinator.com/best>
+- **CursorBench 3.1 drops** — new eval on real ambiguous multi-file tasks; Fable 5 Max tops at 72.9% / $18/task, Composer 2.5 wins $/perf at 63.2% / $0.55. Why it matters: the first public benchmark that scores cost-vs-quality and exposes huge model economics gaps. <https://cursor.com/evals>
+- **Cloudflare "Content Independence Day 2.0"** — Monetization Gateway (x402 stablecoin pay-per-resource), AI Search upgrades, fine-grained Search/Agent/Training bot controls for all customers. Why it matters: the agentic web is getting a payments rail and a permission layer in one move. <https://blog.cloudflare.com/>
+- **GitHub Copilot: Kimi K2.7 Code GA + Copilot vision GA + browser tools GA + auto model routing** — single biggest Copilot update day in months. Why it matters: Kimi joins the first-party model menu; auto-routing now shipped in CLI/SDK/IDE. <https://github.blog/changelog/>
+
+## 🤖 AI / model updates
+- **Claude Sonnet 5 GA** (Anthropic, Jun 30) + **Claude Tag** team-collaboration mode (Jun 23) + **Claude Science** workbench (Jun 30). <https://www.anthropic.com/news>
+- **CursorBench 3.1** — full score/cost/tokens/steps table now public; highlights: Fable 5 Max 72.9% ($18.02), GPT-5.5 Extra High 64.3% ($4.37), Opus 4.8 Max 63.8% ($7.59), Kimi K2.7 Code 52.7% ($1.92), Gemini 3.5 Flash 49.8% ($1.94). <https://cursor.com/evals>
+- **Google DeepMind** — recent posts: Gemini Omni, Nano Banana 2 Lite + Omni Flash, computer-use in Gemini 3.5 Flash, Gemma 4 12B (encoder-free multimodal). <https://deepmind.google/blog/>
+- **Hugging Face + Cerebras**: Gemma 4 brought to real-time voice AI. <https://huggingface.co/blog>
+- **HF blog**: Every-Eval-Ever results surfaced on model pages; vLLM-on-HF-Jobs one-command guide; ScarfBench for Java framework migration (IBM). <https://huggingface.co/blog>
+- **arXiv**: "Is One Layer Enough? A Single Transformer Layer Matches Full-Parameter RL Training" (147 pts on HN). <https://arxiv.org/abs/2607.01232>
+- **Godot** will no longer accept AI-authored code contributions (HN 549 pts). <https://news.ycombinator.com>
+
+## 🛠️ Devtools / repos (trending today)
+- **usestrix/strix** — open-source AI penetration testing tool; 2,167 ⭐ today, 31.7k total. <https://github.com/usestrix/strix>
+- **msitarzewski/agency-agents** — full AI agency of specialized personas; 2,925 ⭐ today. <https://github.com/msitarzewski/agency-agents>
+- **browser-use/video-use** — "edit videos with coding agents"; 550 ⭐ today. <https://github.com/browser-use/video-use>
+- **JuliusBrussee/caveman** — Claude Code skill cutting ~65% tokens by terse prompts; 866 ⭐ today. <https://github.com/JuliusBrussee/caveman>
+- **obra/superpowers** — agentic skills framework; 1,047 ⭐ today. <https://github.com/obra/superpowers>
+- **HKUDS/Vibe-Trading** — personal LLM trading agent; 918 ⭐ today. <https://github.com/HKUDS/Vibe-Trading>
+- **ChromeDevTools/chrome-devtools-mcp** — official DevTools for coding agents; 45k ⭐, GA in Copilot. <https://github.com/ChromeDevTools/chrome-devtools-mcp>
+
+## 🚀 Hacker News / YC
+- **Launch HN: Manufact (YC S25) — MCP Cloud** — hosted MCP server infra, 76 pts, 50 comments. <https://manufact.com> · <https://news.ycombinator.com>
+- **Show HN: ZeroFS** — log-structured filesystem for S3; 99 pts, 47 comments. <https://www.zerofs.net/>
+- **Show HN: Mail Memories** — rescues photos from Gmail; 89 pts. <https://mailmemories.com>
+- **Show HN: slopo** — embedding-based near-duplicate code detector; 54 pts. <https://github.com/rafal-qa/slopo>
+- **Show HN: Claudoro** — Pomodoro in Claude Code statusline; 39 pts. <https://github.com/emson/claudoro>
+- **Show HN: ctx** — search your own coding-agent history locally. <https://github.com/ctxrs/ctx>
+- **YC Launch — Kestrel (F25)**: AI agents for platform engineering (incident response, CI/CD, dev requests). <https://www.ycombinator.com/launches>
+- **YC Launch — Flick TV (F25)**: streaming home for original AI films. <https://www.ycombinator.com/launches>
+- **YC Launch — StarSling Runners (S25)**: self-driving CI runners, 6× faster / 13× cheaper GitHub Actions. <https://starsling.com>
+- **YC Launch — Tolmo (S26)**: always-on security agent fleet for Claude-Code-pace shipping. <https://www.ycombinator.com/launches>
+- **YC Launch — Corgea (S23)**: agentic pentesting engine. <https://www.ycombinator.com/launches>
+- **YC Launch — Osmaura (S26)**: AI agents that surface legal matter for law-firm partners. <https://www.ycombinator.com/launches>
+
+## 📺 YouTube / video
+- *No Shivang-specific subscription data available*; public search shows light uploads in last 24h. Worth your time this week:
+- **Code with Claude — Spotify chief architect on DX for teams and agents** (Spotify Eng, Jun 3) — practical patterns for org-wide agent rollouts. <https://engineering.atspotify.com/>
+- **The Coding Interface (repo-driven)** — short demo of **ctx** searching local coding-agent history. <https://www.youtube.com/results?search_query=ctx+coding+agent+history>
+- **Daily Vibe Casting — Episode #448 (01 Jul 2026)** — quick news roundup incl. NotebookLM, Fable 5, Sonnet 5. <https://www.youtube.com/results?search_query=Daily+Vibe+Casting+448>
+
+## 🏭 Engineering blogs (high-signal)
+- **Spotify Eng — "Coding Is No Longer the Constraint"** (Jun 3): scaling DX for teams *and* agents, Backstage + Honk patterns. <https://engineering.atspotify.com/>
+- **Spotify Eng — "Better Experiments with LLM Evals: a funnel, not a fork"** (May 18). <https://engineering.atspotify.com/>
+- **Spotify Eng — "Background Coding Agents — Honk Part 4: dataset migrations"** (Apr 22). <https://engineering.atspotify.com/>
+- **Cloudflare Workflows — saga-style rollbacks** (Jun 25): compensating actions for multi-step durable execution. <https://blog.cloudflare.com/>
+- **Cloudflare — Self-Managed OAuth for all developers** (Jun 24), with zero-downtime migration writeup. <https://blog.cloudflare.com/>
+- **HF — shipping huggingface_hub every week with AI + humans in the loop** (Jun 23): a candid look at "AI-accelerated release engineering" for a major OSS lib. <https://huggingface.co/blog>
+
+## ⚖️ Industry / strike & policy
+- **Google hit with $2B antitrust judgment** for skewing shopping-search results (LA Times, Jul 1). <https://www.latimes.com/business/story/2026-07-01/google-hit-with-2-billion-antitrust-judgment-for-skewing-shopping-searches>
+- **Spain orders a blacklist of Palantir** from public and private procurement (clashreport, HN 272 pts). <https://clashreport.com>
+- **Japan's top court rules AI cannot be listed as inventor** on patents (Yomiuri, HN 280 pts). <https://japannews.yomiuri.co.jp/science-nature/technology/20260306-314930/>
+- **U.S. labor-force participation falls to 50-year low** (CNBC, Jul 2) — context for AI-replacement discourse. <https://www.cnbc.com/2026/07/02/job-seekers-giving-up-labor-force-participation-rate-falls-to-lowest-in-50-years-outside-of-covid-era.html>
+- **Nintendo raises base salary 10%** (mynintendonews, HN 548 pts) — tech-adjacent labor signal. <https://mynintendonews.com>
+
+## 🛰️ Watchlist
+1. **CursorBench 3.1 fallout** — expect a wave of "Fable 5 vs GPT-5.5 cost-adjusted" blog posts and pricing changes; track Anthropic's response.
+2. **GitHub Copilot agent surface area** — browser tools GA + auto-routing + Kimi + vision in one day signals a clear push toward "Copilot as the default agent OS"; watch for deeper JetBrains parity.
+3. **x402 / Cloudflare Monetization Gateway** — first real agent-payments rail at CDN scale; if adoption picks up, this rewrites how API/MCP/tool builders monetize.
+4. **Anthropic Glasswing jailbreak-severity framework** — could become the de facto industry eval if AWS/MS/Google follow through.
+
+—
+
+To stop or manage this job, send me a new message (e.g. "stop reminder Tech / AI / YC / YouTube news digest for #tech-news").
