@@ -1,0 +1,70 @@
+Cronjob Response: Tech / AI / YC / YouTube news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI News Digest — Thursday, 2 July 2026, 12:55 IST**
+
+---
+
+**Top picks**
+- 🟢 **Anthropic re-deploys Fable 5 + Mythos 5; Claude Sonnet 5 also lands** — https://www.anthropic.com/news — US Department of Commerce lifted export controls; Sonnet 5 ships at "near-Opus-4.8" performance, 1M context, 128K output, $3/$15 per M tokens (https://simonwillison.net/ for what's-new breakdown).
+- 🤖 **OpenAI reportedly in early talks to give US government a 5% stake** — https://www.theguardian.com — Major governance/sovereignty signal; just appeared on HN.
+- 🛡️ **Cloudflare's "Content Independence Day" push: Monetization Gateway (x402), AI-bot traffic controls, Attribution Insights** — https://blog.cloudflare.com/ — All customers can now distinguish Search/Agent/Training bots and monetize per-crawl via stablecoins.
+- 🧠 **zai-org/GLM-5.2 + ZCode harness trending hard on HN (414 pts) and Hugging Face** — https://huggingface.co/zai-org/GLM-5.2 — 176k downloads / 3.21k likes; signals continued open-weight frontier pressure.
+- 🔍 **Meta building a cloud business to sell excess AI capacity** — https://www.reuters.com (via HN) — Hyperscaler #4 in the making; impacts infra pricing & model-hosting landscape.
+
+---
+
+**AI / Model updates**
+- **Anthropic: Claude Sonnet 5 GA** (Jun 30) — frontier coding/agent perf near Opus 4.8; adaptive thinking on by default; https://www.anthropic.com/news
+- **Anthropic: Claude Science workbench GA** (Jun 30) — auditable artifacts for researchers; https://www.anthropic.com/news
+- **GitHub: Copilot agentic harness eval blog** (Jun 25) — harness beats provider default harnesses on Claude Sonnet 4.6, Opus 4.7, GPT-5.4, GPT-5.5 across SWE-bench, TerminalBench, SkillsBench; https://github.blog/ai-and-ml/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/
+- **Google: ADK Go 2.0 for multi-agent apps** (HN) — https://googleblog.com; surfaces in HN newest queue today
+- **DeepMind: Gemini Omni, Gemma 4 12B (encoder-free multimodal), DiffusionGemma 4× faster text gen, Gemini 3.5 Flash computer use** — https://deepmind.google/discover/blog/
+- **Hugging Face: Every-Eval-Ever results now on model pages** (Jun 30) — https://huggingface.co/blog
+
+**Devtools / Repos (GitHub trending, verified)**
+- `usestrix/strix` — open-source AI pen-testing agent; **30,704★, +1,211 today** → https://github.com/usestrix/strix
+- `msitarzewski/agency-agents` — full AI agency with role-specific agents; **124,924★, +2,114 today** → https://github.com/msitarzewski/agency-agents
+- `obra/superpowers` — agentic skills framework; **243,928★, +1,047 today** → https://github.com/obra/superpowers
+- `JuliusBrussee/caveman` — Claude Code skill claiming 65% token cut; **79,435★, +866 today** → https://github.com/JuliusBrussee/caveman
+- `browser-use/video-use` — edit videos with coding agents; **+693 today** → https://github.com/browser-use/video-use
+- `ChromeDevTools/chrome-devtools-mcp` — DevTools for coding agents; https://github.com/ChromeDevTools/chrome-devtools-mcp
+- Show HN: `PMB` — local memory layer for coding agents with usage telemetry → https://pmbai.dev
+- Show HN: `Salt` — systems language with Z3 theorem proving in the compiler → https://salt-lang.dev
+
+**Hacker News / YC**
+- **Kimi K2.7 Code GA in GitHub Copilot** (187 pts) — https://github.blog/changelog/; brings another strong open model into the Copilot picker alongside Sonnet 5.
+- **ZCode harness for GLM-5.2** (414 pts, 297 comments) — https://z.ai
+- **"A new Android malware from Google"** (710 pts) — F-Droid thread; supply-chain concern.
+- **Singapore seizes $42M mansion over Nvidia chip smuggling** (just on HN newest) — https://bbc.com
+- **Apple "Hide My Email" reportedly exposing real addresses** — https://www.theverge.com/tech (404 Media original)
+- **Google loses final €4.1B Android antitrust appeal** — Court of Justice of the EU upholds 2018 fine.
+- YC Launch page returning empty feed in this scrape; check https://www.ycombinator.com/launches for fresh cohort posts.
+
+**YouTube (public search, not subscription-derived)**
+- **"Why Anthropic's most powerful AI models are back online"** — FRANCE 24 English, 3.5k views, ~18h ago → https://www.youtube.com/results?search_query=AI+news+today+2026
+- **Bloomberg Brief 6/29/2026 — Tech rebound + South Korea AI push** — 16k views, 3 days ago
+- **"Cursor just crushed Claude Code"** — Tech With Tim, 36k views (4 wks old; recency check needed)
+
+**Big-tech engineering blog highlights**
+- **Spotify Engineering: "Encoding Your Domain Expert: The Context Layer Behind Spotify's Data Assistant"** (Jun 10) — https://engineering.atspotify.com/ — direct relevance to LLM context-engineering patterns.
+- **Spotify: "Coding Is No Longer the Constraint"** (Jun 3) — DX for teams + agents, Backstage-driven.
+- **GitHub Blog: "6 security settings every maintainer should enable this week"** — https://github.blog
+- **Cloudflare: "How we built saga rollbacks for Cloudflare Workflows"** (Jun 25) — durable execution with compensating actions; relevant for agent infra.
+
+**Strike / Industry**
+- No new high-signal tech/transport/delivery strike updates verified in this run. Singapore seizure (above) is the closest labor/regulatory tech story.
+
+---
+
+**Watchlist**
+1. **OpenAI–US gov 5% stake talks** — could reshape governance, procurement, and export-control posture; track official statements vs. leaks.
+2. **GLM-5.2 / ZCode traction** — if Zai's harness + model stack keeps gaining HN mindshare, expect more agents-shopping the open-weight frontier.
+3. **Cloudflare's x402 Monetization Gateway waitlist** — open protocol for pay-per-resource (including MCP tools); a real shot at agent-economy rails.
+4. **GitHub Copilot harness vs. model-provider harness** battle — GitHub's data shows their harness wins consistently; could pressure Anthropic/OpenAI to ship their own first-class harnesses.
+5. **Anthropic's "jailbreak severity scoring framework" with Amazon/Microsoft/Google** — pre-regulatory standards work; worth watching for industry adoption.
+
+— Hermes cron digest · next run 16:55 IST
+
+To stop or manage this job, send me a new message (e.g. "stop reminder Tech / AI / YC / YouTube news digest for #tech-news").
