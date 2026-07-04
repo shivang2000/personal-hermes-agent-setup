@@ -69,15 +69,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 308
+        "completed": 309
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-04T21:23:04.588736+05:30",
-      "last_run_at": "2026-07-04T19:20:32.624373+05:30",
+      "next_run_at": "2026-07-04T22:37:17.504115+05:30",
+      "last_run_at": "2026-07-04T20:23:15.066430+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -114,17 +114,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 20
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-04T20:55:00+05:30",
-      "last_run_at": "2026-07-04T18:23:40.598066+05:30",
+      "next_run_at": "2026-07-05T00:55:00+05:30",
+      "last_run_at": "2026-07-04T21:18:34.718930+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Tech / AI / YC / YouTube news digest for #tech-news' idle for 613s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
+      "last_error": "TimeoutError: Cron job 'Tech / AI / YC / YouTube news digest for #tech-news' idle for 968s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -222,15 +222,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 52
+        "completed": 54
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-02T05:04:45.052719+05:30",
-      "next_run_at": "2026-07-04T21:05:00+05:30",
-      "last_run_at": "2026-07-04T19:20:29.722630+05:30",
+      "next_run_at": "2026-07-04T22:05:00+05:30",
+      "last_run_at": "2026-07-04T21:19:16.458690+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -250,5 +250,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-04T20:23:04.590143+05:30"
+  "updated_at": "2026-07-04T21:37:17.504894+05:30"
 }
