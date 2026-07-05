@@ -485,12 +485,12 @@
     "created_at": "2026-07-01T23:17:20.233633+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-07-01T23:17:49.671364+00:00",
-    "last_used_at": "2026-07-04T23:47:16.849183+00:00",
+    "last_used_at": "2026-07-05T00:40:43.562341+00:00",
     "last_viewed_at": "2026-07-02T00:45:58.772919+00:00",
     "patch_count": 2,
     "pinned": false,
     "state": "active",
-    "use_count": 62,
+    "use_count": 63,
     "view_count": 1
   },
   "hermes-durable-services": {
