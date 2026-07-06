@@ -69,15 +69,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 345
+        "completed": 346
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-06T21:25:59.939994+05:30",
-      "last_run_at": "2026-07-06T19:10:43.496205+05:30",
+      "next_run_at": "2026-07-06T22:30:50.503836+05:30",
+      "last_run_at": "2026-07-06T20:26:13.330923+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -114,18 +114,18 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 27
+        "completed": 28
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-06T20:55:00+05:30",
-      "last_run_at": "2026-07-06T16:56:19.536814+05:30",
+      "next_run_at": "2026-07-07T00:55:00+05:30",
+      "last_run_at": "2026-07-06T21:13:42.568688+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: Connection error.",
-      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "last_error": "TimeoutError: Cron job 'Tech / AI / YC / YouTube news digest for #tech-news' idle for 945s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
+      "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -222,15 +222,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 94
+        "completed": 95
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-02T05:04:45.052719+05:30",
-      "next_run_at": "2026-07-06T21:05:00+05:30",
-      "last_run_at": "2026-07-06T20:09:36.270936+05:30",
+      "next_run_at": "2026-07-06T22:05:00+05:30",
+      "last_run_at": "2026-07-06T21:13:50.151191+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -250,5 +250,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-06T20:25:59.940822+05:30"
+  "updated_at": "2026-07-06T21:30:50.505020+05:30"
 }
