@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T07:25:39.428508",
+  "updated_at": "2026-07-06T10:18:21.653125",
   "platforms": {
     "discord": [
       {
@@ -331,6 +331,12 @@
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1522241896351666256",
         "type": "thread",
         "thread_id": "1522241896351666256"
+      },
+      {
+        "id": "1523507689060302958:1523507689060302958",
+        "name": "Shivang Hermes AI / #personal-hermes-agent / Apply using career-ops skills in Dev/jobsearch/career-ops https://wellfound.c... / topic 1523507689060302958",
+        "type": "thread",
+        "thread_id": "1523507689060302958"
       }
     ],
     "telegram": [],
