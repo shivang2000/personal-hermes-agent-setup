@@ -529,6 +529,7 @@ approvals:
 command_allowlist:
   - script execution via -e/-c flag
   - force kill processes
+  - delete in root path
   - execute_code
   - recursive delete
   - stop/restart hermes gateway (kills running agents)
