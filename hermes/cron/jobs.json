@@ -69,15 +69,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 374
+        "completed": 375
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-08T13:45:28.689926+05:30",
-      "last_run_at": "2026-07-08T11:36:08.219677+05:30",
+      "next_run_at": "2026-07-08T15:44:39.132940+05:30",
+      "last_run_at": "2026-07-08T13:02:11.259079+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,7 +121,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-08T12:55:00+05:30",
+      "next_run_at": "2026-07-08T16:55:00+05:30",
       "last_run_at": "2026-07-08T02:00:22.101773+05:30",
       "last_status": "error",
       "last_error": "TimeoutError: Cron job 'Tech / AI / YC / YouTube news digest for #tech-news' idle for 870s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
@@ -229,7 +229,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-02T05:04:45.052719+05:30",
-      "next_run_at": "2026-07-08T13:05:00+05:30",
+      "next_run_at": "2026-07-08T15:05:00+05:30",
       "last_run_at": "2026-07-08T12:33:34.891956+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -250,5 +250,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-08T12:45:28.690486+05:30"
+  "updated_at": "2026-07-08T14:44:39.133217+05:30"
 }
