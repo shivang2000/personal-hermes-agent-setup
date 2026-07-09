@@ -1,7 +1,7 @@
 model:
-  default: tencent/hy3:free
-  provider: nous
-  base_url: https://inference-api.nousresearch.com/v1
+  default: minimax-m3
+  provider: ollama-cloud
+  base_url: https://ollama.com/v1
 fallback_providers: []
 toolsets:
   - hermes-cli
