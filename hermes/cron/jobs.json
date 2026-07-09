@@ -69,17 +69,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 387
+        "completed": 388
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-09T15:16:56.263819+05:30",
-      "last_run_at": "2026-07-09T13:06:22.930731+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-09T16:43:11.417092+05:30",
+      "last_run_at": "2026-07-09T14:42:45.094743+05:30",
+      "last_status": "error",
+      "last_error": "Script timed out after 120s: /Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py",
       "last_delivery_error": null,
       "deliver": "discord:#personal-hermes-agent",
       "origin": {
@@ -114,7 +114,7 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 36
+        "completed": 37
       },
       "enabled": true,
       "state": "scheduled",
@@ -122,9 +122,9 @@
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
       "next_run_at": "2026-07-09T16:55:00+05:30",
-      "last_run_at": "2026-07-09T01:28:51.590175+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Tech / AI / YC / YouTube news digest for #tech-news' idle for 1031s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
+      "last_run_at": "2026-07-09T14:18:04.179395+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -222,15 +222,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 135
+        "completed": 137
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-02T05:04:45.052719+05:30",
-      "next_run_at": "2026-07-09T15:05:00+05:30",
-      "last_run_at": "2026-07-09T13:44:04.420641+05:30",
+      "next_run_at": "2026-07-09T16:05:00+05:30",
+      "last_run_at": "2026-07-09T15:07:11.490301+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -250,5 +250,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-09T14:16:56.270961+05:30"
+  "updated_at": "2026-07-09T15:43:11.418071+05:30"
 }
