@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/Users/shivang/.hermes/logs/curator/20260702-191653",
-  "last_run_at": "2026-07-02T19:16:53.144902+00:00",
-  "last_run_duration_seconds": 1.932053,
+  "last_report_path": "/Users/shivang/.hermes/logs/curator/20260709-200601",
+  "last_run_at": "2026-07-09T20:06:01.107060+00:00",
+  "last_run_duration_seconds": 1.95489,
   "last_run_summary": "auto: no changes; llm: skipped (consolidation off)",
   "last_run_summary_shown_at": "2026-06-25T18:13:47.400394+00:00",
   "paused": false,
-  "run_count": 6
+  "run_count": 7
 }
