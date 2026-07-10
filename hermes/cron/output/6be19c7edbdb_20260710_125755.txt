@@ -1,0 +1,56 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have plenty of verified material. Tencent Hy3 is a 295B-param MoE (21B active), 256K context, Apache-2.0. Now I have a robust set of high-signal items. Let me compose the digest.
+
+**Tech / AI / Crypto / Software Digest — Friday, 10 July 2026, 20:55 IST**
+
+**Top picks**
+- **[GLM-5.2 from Z.ai](https://huggingface.co/zai-org/GLM-5.2)** — Open-weight MoE flagship with a solid 1M-token context, released under MIT. Technical highlights: "IndexShare" reuses a sparse-attention indexer across 4 layers (2.9× per-token FLOP reduction at 1M), and a 20% longer MTP acceptance length for speculative decoding. Strong open-weights answer for long-horizon agentic coding work; HLE 54.7 (w/tools), AIME 2026 99.2.
+- **[pgrust: Postgres rewritten in Rust passes 100% of regression tests](https://github.com/malisper/pgrust)** (HN #7) — A from-scratch Rust re-implementation of PostgreSQL 18.3 (vendored in-tree) now passes the full upstream regression and isolation suites. Even at this stage it's a research artifact, but the existence of a clean Rust-idiomatic port with vendor parity is a structural data point for the database-engineering community.
+- **[GPT-5.6](https://openai.com/index/gpt-5-6/)** (HN #5, 1211 pts, 856 comments) — OpenAI's latest frontier model. Landed today per the HN surge; the comment thread is the best real-time signal for coding/agentic behavior changes worth tracking.
+- **[EU Parliament "Chat Control" advances](https://patrick-breyer.de)** (HN #2, 1267 pts) — Mandate for client-side scanning of private messengers (incl. E2E-encrypted chats) moves forward in Brussels. Material to every developer/operator shipping messaging, identity, or E2EE-adjacent features in the EU.
+- **[Tencent Hy3 (Hunyuan 3)](https://huggingface.co/tencent/Hy3)** (HN #9) — Apache-2.0 295B-param MoE (21B active, 8/192 routing), 256K context, 80 layers, GQA 64/8. Post-trained with data from 50+ Tencent products; positioned to rival 2–5× larger open models on agent/productivity evals.
+
+**AI, Agents & Models**
+- **[Harbor: evaluate agents in sandboxed environments](https://www.harborframework.com/)** — New framework (from the terminal-bench team) for specifying sandboxed agent tasks for evaluation and optimization. Install via `uv tool install harbor`. Useful for teams building agent eval pipelines.
+- **[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)** — Production-grade engineering skills for AI coding agents (Claude/Codex/Cursor/Gemini plugin layouts in one repo). 76k stars, 2,554 added today, with a three-tier skill-eval framework added in the last week.
+- **[iOfficeAI/OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)** — First single-binary Office suite built for AI agents to read/edit Word, Excel, PowerPoint with no Office install. 1,929 stars today; relevant for any agent that touches .docx/.xlsx.
+- **[DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)** — MCP server giving Claude terminal control, FS search, and diff-based file editing. 6.6k stars; useful baseline for local coding-agent harnesses.
+- **GLM 5.2 on a slow computer** ([Show HN](https://github.com/justvugg)) — 574 pts. Practical write-up of running the 1M-context GLM-5.2 on constrained hardware; relevant if you're self-hosting open-weights frontier models.
+
+**Software Engineering & DevTools**
+- **["Preempt_none Is Dead; Your Postgres Probably Doesn't Care"](https://thebuild.com)** (Christophe Pettus) — New post arguing the `preempt_none` issue is mostly a non-event for typical workloads. Worth a read before you change kernel/Linuxtune knobs in prod.
+- **[Interview with Mitchell Hashimoto on Ghostty & Zig](https://alexalejandre.com)** (HN #8, 208 pts) — Hashimoto discusses Ghostty's terminal-emulator design choices and why Zig fits that niche (C ABI, comptime, no GC, small runtime). Useful for terminal/runtime engineers.
+
+**Cloud, Infra, Data & Security**
+- **EU "Chat Control 1.0"** — see Top picks. Concrete product/infra impact: any EU-hosted service that handles user-to-user messages may need to implement content-detection on user devices regardless of E2EE. Track Council negotiations and DSA/CSA interplay.
+- **[Hackers use fake "emergency data requests" against Apple, Meta and others](https://www.bitdefender.com/en-us/blog/hotforsecurity/hackers-use-fake-emergency-requests-to-steal-data-from-apple-meta-and-others-investigation-reveals)** — Ongoing investigation into compromised law-enforcement portals being abused to issue forged EDRequests. Add EDRequest verification/throttling to your abuse-handling runbook if you operate a platform with a legal-request intake.
+
+**Crypto & Blockchain Engineering**
+- **[Coinbase CLO Paul Grewal departs](https://www.coindesk.com/)** — Coinbase's top legal exec (lead during the SEC fight) is leaving after the case closed; others reassigned. Material to anyone tracking US exchange regulatory posture and securities-law precedent.
+- **[Robinhood chain: $568M onchain trading frenzy lifts Arbitrum](https://www.coindesk.com/)** — Robinhood's new L2 (built on Arbitrum) is generating material volume; ARB up 19% on the news. Relevant for L2 builder economics and infra capacity planning.
+- **[New Hampshire rejects state bitcoin-bond proposal](https://www.coindesk.com/)** — Executive council voted 3-2 against a pioneering state-government BTC bond. Setback for the "sovereign BTC balance sheet" narrative; the legal/template framework is the durable artifact, not this one vote.
+- **[Grayscale CFO Edward McGee exits](https://www.coindesk.com/)** — Second senior departure (after distribution chief John Hoffman → Ondo) in months; watch for organizational restructuring ahead of any spot-ETF fee compression.
+
+**Open Source / GitHub**
+- **[crawl4ai](https://github.com/unclecode/crawl4ai)** — LLM-friendly open-source web crawler/scraper; 72k stars, sponsored. The default many agent teams reach for.
+- **[pentagi](https://github.com/vxcontrol/pentagi)** — Fully autonomous AI pentesting agent system. Useful reference architecture if you're building red-team/blue-team agents; 535 stars today.
+- **[awesome-design-md](https://github.com/VoltAgent/awesome-design-md)** — Curated DESIGN.md files from brand design systems; drop one in to constrain a coding agent to a brand's UI conventions. 1,391 stars today.
+
+**Startups, YC & Industry**
+- **["18 Words"](https://18words.com)** (Show HN, 952 pts, 312 comments) — Tiny game/product; included as a cultural signal of what HN is rewarding this week.
+- **SensorFM (Google Research)** — A foundation model for wearable health sensor streams (HR, HRV, motion, etc.) toward general-purpose health intelligence. Early-stage but signals the multimodal-physiological direction.
+
+**YouTube / Technical Media**
+- Harbor launch video ([harborframework.com](https://www.harborframework.com/)) — Short Loom walkthrough of the agent-eval framework; good primer before reading the docs.
+- Hashimoto/Ghostty/Zig interview (linked above) — Practical runtime/architecture discussion for systems builders.
+
+**Watchlist**
+- **EU Chat Control — Council trilogue and E2EE carve-outs.** Will determine whether the final text mandates client-side scanning of E2EE chats or narrows to opt-in/limited cases. Material for every EU messaging product.
+- **pgrust performance numbers + contributor momentum.** The repo is at regression-parity; expect either (a) credible perf benchmarks vs. C Postgres in coming weeks, or (b) a slowdown once the novelty wears off. Both are informative.
+- **Open-weight 1M-context coding race: GLM-5.2 vs. Qwen3.7-Max vs. DeepSeek-V4-Pro.** MIT + Apache-2.0 flags plus matched or better coding/HLE numbers make this a real alternative to paid frontier APIs for long-horizon agentic work — expect fast follow-up finetunes and evals.
+- **Tencent Hy3 downstream adoptions.** Apache-2.0 + 256K context + 21B active is a friendly inference footprint; watch for SGLang/vLLM community fine-tunes and any notable agent-framework integrations.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
