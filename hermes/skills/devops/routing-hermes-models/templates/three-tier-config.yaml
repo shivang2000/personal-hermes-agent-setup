@@ -1,0 +1,71 @@
+# Adapt after checking live provider catalogs and available credentials.
+
+model:
+  provider: ollama-cloud
+  default: minimax-m3
+  base_url: https://ollama.com/v1
+
+credential_pool_strategies:REDACTED_SET_LOCALLY
+  ollama-cloud: round_robin
+
+# Availability fallback, not task-complexity routing.
+# Keep this on an independent credential/provider surface.
+fallback_providers:
+  - provider: openrouter
+    model: z-ai/glm-5.2
+  - provider: openai-codex
+    model: gpt-5.6-sol
+
+# All delegate_task children use this route.
+delegation:
+  provider: ollama-cloud
+  model: glm-5.2
+  max_iterations: 50
+  max_concurrent_children: 3
+  reasoning_effort: high
+
+model_aliases:
+  light:
+    provider: ollama-cloud
+    model: minimax-m3
+  intensive:
+    provider: ollama-cloud
+    model: glm-5.2
+  extreme:
+    provider: moa
+    model: extreme
+
+# Cheap side jobs stay off frontier models.
+auxiliary:
+  title_generation:
+    provider: ollama-cloud
+    model: minimax-m3
+  compression:
+    provider: ollama-cloud
+    model: minimax-m3
+  web_extract:
+    provider: ollama-cloud
+    model: minimax-m3
+  approval:
+    provider: ollama-cloud
+    model: minimax-m3
+  skills_hub:
+    provider: ollama-cloud
+    model: minimax-m3
+  mcp:
+    provider: ollama-cloud
+    model: minimax-m3
+
+moa:
+  default_preset: extreme
+  presets:
+    extreme:
+      reference_models:
+        - provider: openai-codex
+          model: gpt-5.6-sol
+      aggregator:
+        provider: openrouter
+        model: anthropic/claude-opus-4.8
+      reference_max_tokens: REDACTED_SET_LOCALLY
+      max_tokens: REDACTED_SET_LOCALLY
+      enabled: true

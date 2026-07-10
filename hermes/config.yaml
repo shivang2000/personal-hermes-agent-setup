@@ -1,8 +1,10 @@
 model:
-  default: minimax-m3
-  provider: ollama-cloud
-  base_url: https://ollama.com/v1
+  default: gpt-5.6-sol
+  provider: openai-codex
+  base_url: https://chatgpt.com/backend-api/codex
 fallback_providers: []
+credential_pool_strategies:REDACTED_SET_LOCALLY
+  ollama-cloud: round_robin
 toolsets:
   - hermes-cli
 max_live_sessions: 16
@@ -18,7 +20,7 @@ agent:
   environment_probe: true
   environment_hint: ''
   coding_context: auto
-  verify_on_stop: true
+  verify_on_stop: false
   gateway_timeout_warning: 900
   clarify_timeout: 600
   gateway_notify_interval: 180
@@ -431,7 +433,6 @@ delegation:
   child_timeout_seconds: 0
   reasoning_effort: ''
   max_concurrent_children: 3
-  max_async_children: 3
   max_spawn_depth: 1
   orchestrator_enabled: true
   subagent_auto_approve: false
@@ -634,7 +635,7 @@ paste_collapse_threshold_fallback: 5
 paste_collapse_char_threshold: 2000
 computer_use:
   cua_telemetry: false
-_config_version: 30
+_config_version: 33
 group_sessions_per_user: true
 known_plugin_toolsets:
   cli:
@@ -706,10 +707,29 @@ mcp_servers:
       TERMBRIDGE_ALLOWED_ENVS: docker
       TERMBRIDGE_MAX_SESSIONS: '3'
     enabled: true
-fallback_model:
-  provider: openrouter
-  model: openrouter/owl-alpha
 custom_providers:
   - name: Local (localhost:11434)
     base_url: http://localhost:11434/v1
     model: minimax-m3:cloud
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4

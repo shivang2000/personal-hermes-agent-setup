@@ -24,6 +24,10 @@ Shivang wants X/Twitter automation posts to use 1-2 highly relevant hashtags for
 §
 User prefers direct technical answers with architecture diagrams and config examples over high-level explanations. When asking "is X possible", they want the actual config/commands, not just "yes".
 §
-For AI/LLM recommendations, Shivang wants a two-tier stack — not one model for everything: (1) Tier 1 = always-on / high-volume / basic work (Hermes cron, iMessage replies, AIConcierge phone agent, news research, tweets, trading bots) — must be fast, reliable at tool calls, cheap/free; (2) Tier 2 = demanding multi-step agent work (termbridge MCP sessions, paperclip orchestration, sentry-fixer-bot triage, hard SWE refactors across monorepos) — must be top intelligence with native tool use + long context. Match this split in recommendations, even if he doesn't say it explicitly.
+For AI/LLM recommendations and Hermes routing, Shivang prefers a three-tier stack: (1) lightweight/high-volume work on MiniMax M3 via pooled Ollama Cloud API keys; (2) intensive multi-step work on GLM 5.2; (3) extreme/high-stakes work escalated to Claude and Codex. Preserve cost-aware routing rather than using one model for everything.
 §
 When a job portal or web target is blocked by bot-mitigation (DataDome, Cloudflare, etc.) and the default browser tool fails, Shivang wants the agent to escalate to Playwright (real Chrome, persistent context, ideally CDP-attached to his running Chrome for Testing) before declaring the target unreachable. He will explicitly say "use playwright to do it" — that means "try harder, don't give up at the first wall." The escalation ladder, ethical lines, and "log blocked, never fabricate" pattern live in the `bot-blocked-web-fetch` Hermes skill.
+§
+Shivang prefers using the Pandoc CLI to generate PDFs from Markdown when available.
+§
+Shivang prefers browser tasks requiring authentication to use a hybrid logged-in session strategy: real Chrome/Arc via background computer-use first, with safe CDP-attached Playwright fallback.
