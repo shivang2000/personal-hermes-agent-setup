@@ -69,15 +69,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 403
+        "completed": 404
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-10T07:59:18.095746+05:30",
-      "last_run_at": "2026-07-10T05:58:20.734386+05:30",
+      "next_run_at": "2026-07-10T09:00:22.808842+05:30",
+      "last_run_at": "2026-07-10T06:59:25.215298+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -222,17 +222,17 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 152
+        "completed": 153
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-02T05:04:45.052719+05:30",
-      "next_run_at": "2026-07-10T07:05:00+05:30",
-      "last_run_at": "2026-07-10T06:05:25.095931+05:30",
+      "next_run_at": "2026-07-10T08:05:00+05:30",
+      "last_run_at": "2026-07-10T07:05:30.329086+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 429: {\"error\":\"you (shivangchheda) have reached your weekly usage limit, upgrade for higher limits: https://ollama.com/upgrade (ref: abb5bd26-e285-42ec-be34-a99eed2541ce)\"}",
+      "last_error": "RuntimeError: HTTP 429: {\"error\":\"you (shivangchheda) have reached your weekly usage limit, upgrade for higher limits: https://ollama.com/upgrade (ref: 2e269533-0821-4705-9a4b-1a3e323fbf8f)\"}",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -250,5 +250,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-10T06:59:18.096560+05:30"
+  "updated_at": "2026-07-10T08:00:22.809533+05:30"
 }
