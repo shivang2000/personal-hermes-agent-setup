@@ -14,12 +14,13 @@ Extract transcripts from YouTube videos and convert them into useful formats.
 
 ## Setup
 
-Use `uv` so the dependency is installed into the same Hermes-managed environment
-that runs the helper script:
+Prefer an ephemeral `uv` environment so setup works even when no virtual environment is active:
 
 ```bash
-uv pip install youtube-transcript-api
+uv run --with youtube-transcript-api python3 SKILL_DIR/scripts/fetch_transcript.py "URL" --text-only --timestamps
 ```
+
+If you are already inside the Hermes-managed virtual environment, `uv pip install youtube-transcript-api` is also valid. Do not use bare `uv pip install` when no venv is active; it fails with `No virtual environment found`.
 
 ## Helper Script
 
