@@ -1,0 +1,52 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+The exact EU Commission URL didn't resolve; the HN front page used `ec.europa.eu/commission/presscorner/home/en` (the press release index). I'll reference the HN thread as primary and the press corner as the source. I have everything I need. Let me write the digest — focused on what changed since 16:55 IST (4 hours ago) and avoiding repeats from the last digest.
+
+**Tech / AI / Crypto / Software Digest — Friday, 10 July 2026, 20:55 IST**
+
+**Top picks**
+- **EU Commission preliminarily finds Instagram and Facebook in breach of the DSA on "addictive design"** — 147 pts on HN, posted ~4 h ago. First formal DSA preliminary finding against Meta, citing the "infinite scroll" and engagement-loop mechanics as systemic dark patterns. Procedural step (Meta can respond before a final decision and any fine), but the precedent is real: any consumer app shipping engagement-loop UX inside the EU now has a regulatory reference point. <https://news.ycombinator.com/item?id=44741678> (thread), EC press corner: <https://ec.europa.eu/commission/presscorner/home/en>
+- **Cloudflare: Improving Smart Tiered Cache for Public Cloud Regions** — Posted 2026-07-10. Extends Workers Cache to be region-aware when your origin lives on AWS / GCP / Azure / Oracle Cloud: you pass a cloud-region hint and Cloudflare pins the upper-tier cache to that region, cutting the long-haul fetch on the most common traffic pattern. Cheap, but very real p50/p90 wins for anyone running multi-region Worker apps with non-trivial origins. <https://blog.cloudflare.com/>
+- **Circle granted U.S. national trust bank approval** — Reported by CoinDesk at 17:11 IST today; stock up sharply. USDC issuer now operates under federal banking supervision alongside the state-chartered trust route it already had. Concrete step toward on-chain dollars settling inside the same regulatory perimeter as ACH/wire; institutional cash-equivalent flows into stablecoins are easier to justify under the new charter. <https://www.coindesk.com/>
+- **OKX + MetaMask + Matter Labs + 24 others back Genlayer "Internet Court" for AI-agent payments** — Reported by CoinDesk at 17:59 IST. A 27-firm consortium around the Genlayer Foundation shipping an open dispute-resolution court for AI-agent escrowed payments, leveraging ZK and "optimistic" verification. Pragmatic answer to "who do you sue when an agent mis-routes an API call worth $0.40?" — and a direct play for the agentic-commerce stack. <https://www.coindesk.com/>
+- **TornadoVM "Java at the Metal": CUDA Graphs, Tensor Cores, cuBLAS/cuDNN/cuFFT from the JVM** — Top of HN in the last hour, deep engineering writeup from the TornadoVM team. They expose CUDA Graphs and multi-stream capture behind a new `withCUDAStreams()` on `TaskGraph`, lower `mma.sync` Tensor-Core intrinsics through a new `@Tensor` API, and bind cuBLAS / cuDNN / cuFFT to the same device buffers and stream — so a graph can capture a JIT kernel *and* a vendor call. Includes `cuda` backend that emits CUDA C and JIT-compiles via NVRTC. Real production-grade GPU path from Java. <https://www.tornadovm.org/blogs/java-at-the-metal-cuda-graphs-tensor-cores-cublas-cudnn-cufft>
+
+**AI, Agents & Models**
+- **GPT-5.6 family, Copilot integration, Fable 5, Muse Spark 1.1, Hy3 trending** — all covered in the 12:55 / 16:55 IST digests; no material change in the last 4 h. Continuing to track independent SWE-Bench Pro numbers vs Claude Fable 5.
+- **DSPy + Claude Fable 5: Simon Willison used DSPy to evaluate and improve Datasette Agent's SQL system prompt** — Concrete eval-driven prompt-engineering case study: Fable identified column-name guessing and "don't call describe_table" as failure modes and proposed schema-in-prompt fixes. Practical recipe for anyone running an agent over a structured API. <https://simonwillison.net/2026/Jul/>
+
+**Software Engineering & DevTools**
+- **Show HN: Runloom — Go-style coroutines for Python free-threaded (16 pts, 2 h ago)** — Lightweight structured-concurrency library for PEP 703 free-threaded Python (no GIL). If free-threaded CPython takes off, expect more of this category. <https://github.com/robertsdotpm/runloom>
+- **"Write code like a human will maintain it" (unstack.io, 133 pts, 1 h ago)** — Strong HN reaction to a piece on writing code for future maintainers (including LLM agents). Less a tool, more a prompt for code review standards in agent-heavy teams.
+- **Bun trending on GitHub (307 stars today)** — Still rising even with the prior Rust-port news; latest tagged release remains v1.3.14 (May). Worth noting the v1.3.x line has been quiet through the summer.
+
+**Cloud, Infra, Data & Security**
+- **Cloudflare "Improving Smart Tiered Cache for Public Cloud Regions"** — see Top picks. <https://blog.cloudflare.com/>
+- **EU Commission / DSA addictive-design preliminary finding (Meta)** — see Top picks. <https://news.ycombinator.com/item?id=44741678>
+- **Cloudflare / Anthropic: "Why we cannot wait for better post-quantum signatures" (Jul 9)** — Engineering walkthrough of the nine NIST PQC signature candidates; argument is *don't wait* for a winner, ship ML-DSA today. Concrete posture for any team planning a PQC migration. <https://blog.cloudflare.com/why-we-cannot-wait-for-better-post-quantum-signature-algorithms/>
+
+**Crypto & Blockchain Engineering**
+- **Circle U.S. national trust bank approval** — see Top picks. <https://www.coindesk.com/>
+- **OKX + MetaMask + Matter Labs / Genlayer "Internet Court"** — see Top picks. <https://www.coindesk.com/>
+- **Metaplanet × JPYC × Progmat: bitcoin-backed digital credit in Japan (12:38 PM IST today)** — Concrete institutional step toward 24/7 onchain credit in JPY, this time with a clear counterparty stack. <https://www.coindesk.com/>
+- **Polymarket files for U.S. margin trading (15:05 PM IST today)** — Following Kalshi's March authorization; regulated event-derivative space is consolidating. <https://www.coindesk.com/>
+- **Rekt: BONKDAO — $19.3M governance attack (new)** — Attacker bought ~1% of BONK, slipped a treasury-transfer call inside a boring proposal, passed it with 2.9% voter turnout. No code broke; the math of token-weighted voting did. Sobering for any DAO that treats "the proposal passed" as proof of legitimacy. <https://rekt.news/>
+
+**Open Source / GitHub**
+- **wonderwhy-er/DesktopCommanderMCP** — Trending #1, 349 stars today; MCP server giving Claude full terminal control + filesystem search + diff editing. Still the de-facto "Claude controls my Mac" server. <https://github.com/trending>
+- **obra/superpowers (1,096 stars today), addyosmani/agent-skills (1,114), mattpocock/skills (1,728)** — Three of the top four trending repos today are agent-skill/agent-discipline repos. The "agent skill packs" category is now the default substrate people fork alongside Claude Code.
+- **oven-sh/bun** — 307 stars/day; stable, not breaking news.
+
+**Startups, YC & Industry**
+- **YC launches: Frigade Skills (in-app AI agent), Control Seat (AI-native SCADA), Rindler (website→API for agents), Ekpa (AI investing), Monumint (voice AI for finance), Korso Shepherd (agent collab)** — YC S26 continues to cluster heavily around "AI agents with tool use" as a vertical. <https://www.ycombinator.com/launches>
+- **EU Commission / Meta DSA** — see Top picks.
+
+**Watchlist**
+- **DSA preliminary finding → final decision and any fine** — Meta's response window and the EC's final decision will set the precedent for engagement-loop UX regulation across all consumer apps in the EU.
+- **BonkDAO governance attack fallout** — A textbook low-turnout, low-quorum, low-cost attack; expect off-the-shelf quorum-floor audits and "is your proposal boring-looking but treasury-moving?" checkers to ship quickly across DAO tooling.
+- **Bun's next release after the Rust port** — Last tagged release is v1.3.14 (May 13). The next tagged version will likely ship a real perf/incident writeup and the first stable Rust path; that release note is the one to read carefully.
+- **Circle trust bank charter — first regulated product on top** — Watch for Circle announcing a yield-bearing USDC product or a bank-channel settlement rail now that the federal charter is in hand.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
