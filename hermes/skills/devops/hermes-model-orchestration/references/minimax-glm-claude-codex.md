@@ -31,6 +31,7 @@ Run `hermes model --refresh` and use the exact account-visible IDs.
 
 ## Recommended routing
 
+### Default three-tier (cost-aware)
 - Main: `ollama-cloud/minimax-m3`
 - Delegation: `ollama-cloud/glm-5.2`
 - Availability fallback 1: `openrouter/z-ai/glm-5.2` for independent quota/provider diversity
@@ -38,6 +39,17 @@ Run `hermes model --refresh` and use the exact account-visible IDs.
 - Extreme MoA: Codex reference, Claude Opus aggregator
 - Auxiliary text tasks: MiniMax M3
 - Vision: leave on `auto` until explicitly tested
+
+### Single-tier override (user preference 2026-07-11)
+When the user has an Ollama Pro plan and explicitly says "use GLM 5.2 for everything":
+- Main: `ollama-cloud/glm-5.2` (set via `hermes config set model.default glm-5.2`)
+- Delegation: `ollama-cloud/glm-5.2` (set via `hermes config set delegation.model glm-5.2` + `hermes config set delegation.provider ollama-cloud`)
+- Fallback: keep existing `openai-codex/gpt-5.6-sol` for outage recovery only
+- Auxiliary: leave on `nous/minimax-m3` (cheap tasks don't need GLM's reasoning)
+- This collapses the three-tier stack to one tier + fallback. Cost is higher per token but the user has a Pro plan (quota is not the constraint). Respect the user's explicit choice — do NOT re-escalate to MiniMax for "lightweight" work unless they ask.
+- Config changes via `hermes config set` (not direct file edit — the `patch` tool refuses to write to `config.yaml` as a security guard)
+- Smoke test: `hermes chat -q "Reply with exactly: GLM 5.2 OK" -m ollama-cloud/glm-5.2 --quiet`
+- Existing sessions keep the old model until `/reset` or fresh `hermes` launch
 
 ## Semantic escalation rules
 

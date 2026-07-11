@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T22:59:38.074749",
+  "updated_at": "2026-07-12T00:04:45.719714",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,12 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1525561586205462548:1525561586205462548",
+        "name": "Shivang Hermes AI / #general / which models are available to use ?? / topic 1525561586205462548",
+        "type": "thread",
+        "thread_id": "1525561586205462548"
       },
       {
         "id": "1524993599337664593:1524993599337664593",

@@ -98,6 +98,9 @@ If the repo has uncommitted changes in safety-critical paths (`src/risk/`, `src/
 
 The #1 lesson from every post-mortem: silent failure on a funded account is how accounts die. Set up at least one alert channel before going live.
 
+**User preference (2026-07-11): use existing Discord connection, don't create new infrastructure.**
+When Hermes gateway is already connected to Discord, the user prefers reusing the existing channel + bot identity over creating webhooks or new channels. Check `hermes send --list discord` for an existing `#trading-bot` channel and use the `DISCORD_BOT_TOKEN` from `~/.hermes/.env` + the channel ID. Do NOT ask the user to create a webhook or a new channel unless no suitable existing channel exists.
+
 **Discord via Hermes bot token (recommended if Hermes gateway is already connected):**
 1. Find the channel: `hermes send --list discord`
 2. Set env vars on the bot's host: `DISCORD_BOT_TOKEN=REDACTED_SET_LOCALLY
@@ -169,8 +172,38 @@ docker compose -f docker-compose.yml \
 **Docker + Rosetta 2 FAILS for MT5 on Apple Silicon (discovered 2026-07-11):**
 The `gmag11/metatrader5_vnc` Docker image cannot install MT5 under Rosetta 2. The installer fails with `rosetta error: invalid gdt selector index 5` — a Wine + Rosetta CPU emulation incompatibility that prevents `terminal64.exe` from installing. This happens even with a clean wine prefix and `--platform linux/amd64`. Retrying produces the same error.
 
-**Native MT5 Mac app workaround (works as of 2026-07-11):**
-The official MetaTrader 5 Mac app (`/Applications/MetaTrader 5.app`) ships with its own bundled Wine 8.0.1 that does NOT use Rosetta — it's a macOS-native Wine build. MT5 is already installed in its Wine prefix. The workaround: install Python + MetaTrader5 + RPyC into the native MT5's Wine prefix, start an RPyC server, and run the bot as bare Python.
+**QEMU emulation workaround (testing 2026-07-11):**
+Docker Desktop on Apple Silicon uses Rosetta 2 for x86 emulation by default (`useVirtualizationFrameworkRosetta: True` in settings). Disabling it forces QEMU full CPU emulation, which is slower but Wine-compatible. To disable:
+```bash
+python3 -c "
+import json
+path = '$HOME/Library/Group Containers/group.com.docker/settings-store.json'
+with open(path) as f: d = json.load(f)
+d['UseVirtualizationFrameworkRosetta'] = False
+with open(path, 'w') as f: json.dump(d, f, indent=2)
+"
+# Also update settings.json
+python3 -c "
+import json
+path = '$HOME/Library/Group Containers/group.com.docker/settings.json'
+with open(path) as f: d = json.load(f)
+d['useVirtualizationFrameworkRosetta'] = False
+with open(path, 'w') as f: json.dump(d, f, indent=2)
+"
+# Restart Docker Desktop
+killall Docker; sleep 3; open -a Docker
+# Wait for daemon, then retry MT5 container
+docker pull --platform linux/amd64 gmag11/metatrader5_vnc:latest
+rm -rf mt5_data  # clean wine prefix
+docker compose -f docker-compose.yml -f docker-compose.macbook.override.yml up -d metatrader5
+# QEMU is slower — MT5 install may take 5-10 min vs 1-2 min on native x86
+```
+QEMU emulation is significantly slower than Rosetta but should not hit the GDT selector bug. Monitor `docker logs metatrader5-mac` for "terminal64.exe is installed" vs the rosetta error.
+
+**Native MT5 Mac app workaround (partial — Python installer hangs):**
+The official MetaTrader 5 Mac app (`/Applications/MetaTrader 5.app`) ships with its own bundled Wine 8.0.1 that does NOT use Rosetta — it's a macOS-native Wine build. MT5 is already installed in its Wine prefix (`terminal64.exe` present). The intended workaround: install Python + MetaTrader5 + RPyC into the native MT5's Wine prefix, start an RPyC server, and run the bot as bare Python.
+
+**IMPORTANT CAVEAT (discovered 2026-07-11):** The Python 3.9 Windows installer (`python-3.9.13.exe`) hangs indefinitely when run inside the native MT5 Mac app's bundled Wine. The installer was still stuck after 70 minutes with zero progress. The native MT5 Wine is a minimal Wine configured only to run MT5 — it may lack the system DLLs needed for Python's installer. If the QEMU Docker approach works, prefer it. If both Docker+QEMU and native Wine fail, EC2 is the only reliable path for Apple Silicon Macs.
 
 ```bash
 WINE_PREFIX="/Users/$USER/Library/Application Support/net.metaquotes.wine.metatrader5"
@@ -269,7 +302,9 @@ See `references/discord-notifier-pattern.md` for the two-mode Discord notifier i
 - **Stale pytest plugins from other tools** (e.g. `superclaude.pytest_plugin`) can block the test suite. Temporarily move the dist-info directory to run tests, then restore it.
 - **Running funded accounts on a laptop.** Sleep, WiFi, battery, Rosetta overhead. The compose file says "DO NOT" — listen to it. If user overrides, mitigate with `caffeinate -d -i -m -s` and don't close the lid.
 - **Apple Silicon Docker pull fails without --platform flag.** The MT5 image (`gmag11/metatrader5_vnc:latest`) has no arm64 manifest. `docker pull` without `--platform linux/amd64` fails with "no matching manifest for linux/arm64/v8 in the manifest list entries." Must explicitly pass `--platform linux/amd64` to pull the amd64 image for Rosetta 2 emulation.
-- **Docker + Rosetta 2 cannot install MT5.** Even with `--platform linux/amd64` and a clean wine prefix, the MT5 installer fails under Rosetta 2 with `rosetta error: invalid gdt selector index 5`. This is a Wine + Rosetta CPU emulation incompatibility, not a fixable config issue. Use the native MT5 Mac app's bundled Wine 8.0.1 instead — see the "Native MT5 Mac app workaround" in Phase 7 above.
+- **Docker + Rosetta 2 cannot install MT5.** Even with `--platform linux/amd64` and a clean wine prefix, the MT5 installer fails under Rosetta 2 with `rosetta error: invalid gdt selector index 5`. This is a Wine + Rosetta CPU emulation incompatibility, not a fixable config issue. Fix: disable `useVirtualizationFrameworkRosetta` in Docker Desktop settings to force QEMU emulation (slower but Wine-compatible), or use the native MT5 Mac app's bundled Wine 8.0.1 instead — see the "QEMU emulation workaround" and "Native MT5 Mac app workaround" in Phase 7 above.
+- **Native MT5 Mac app's Wine may hang on Python installer.** The bundled Wine in `/Applications/MetaTrader 5.app` is minimal — configured only to run MT5, not to install arbitrary Windows software. The Python 3.9 Windows installer hung for 70+ minutes with zero progress in this Wine. If using the native Wine approach, monitor the install closely and fall back to QEMU Docker or EC2 if it stalls.
+- **Docker Desktop Rosetta setting lives in TWO files.** Both `settings-store.json` (`UseVirtualizationFrameworkRosetta`) and `settings.json` (`useVirtualizationFrameworkRosetta`) must be set to `False`. Docker Desktop must be restarted (`killall Docker; open -a Docker`) for the change to take effect. Verify after restart: `cat ~/Library/Group\ Containers/group.com.docker/settings-store.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('UseVirtualizationFrameworkRosetta'))"` should print `False`.
 - **CONFIG_OVERLAY env var may point to wrong account size.** Always verify `CONFIG_OVERLAY` in the bot's `.env` matches the intended account (e.g. `fundingpips-5k` not `fundingpips-10k`). A mismatch means the bot trades with wrong risk parameters — wrong DD limits, wrong lot sizing, wrong profit target. Check with `grep CONFIG_OVERLAY .env` before every deploy.
 - **Manual trades during news events.** The #1 documented cause of prop-firm busts. The bot can't prevent this by force — the MT5 investor password pattern is the mitigation.
 
