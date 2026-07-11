@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T16:53:53.993388",
+  "updated_at": "2026-07-11T17:54:02.246710",
   "platforms": {
     "discord": [
       {
@@ -41,6 +41,12 @@
       {
         "id": "1518239399274479747",
         "name": "job-search-global",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1525476646176690297",
+        "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
       },
