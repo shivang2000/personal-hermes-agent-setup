@@ -159,14 +159,14 @@
     "archived_at": null,
     "created_at": "2026-07-06T06:36:16.353931+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-07-06T06:37:34.121544+00:00",
-    "last_used_at": "2026-07-11T12:19:22.049768+00:00",
-    "last_viewed_at": "2026-07-11T12:19:22.048093+00:00",
-    "patch_count": 3,
+    "last_patched_at": "2026-07-11T16:40:24.125622+00:00",
+    "last_used_at": "2026-07-11T17:09:22.529678+00:00",
+    "last_viewed_at": "2026-07-11T17:09:22.528003+00:00",
+    "patch_count": 4,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 7,
+    "view_count": 7
   },
   "bot-taREDACTED_SECRET": {
     "archived_at": null,
@@ -336,6 +336,19 @@
     "state": "active",
     "use_count": 2,
     "view_count": 2
+  },
+  "devops:prop-firm-trading-bot-deploy": {
+    "archived_at": null,
+    "created_at": "2026-07-11T17:10:02.512964+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-07-11T17:10:02.514445+00:00",
+    "last_viewed_at": "2026-07-11T17:10:02.512980+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "discord-bot-loop-hygiene": {
     "archived_at": null,
@@ -588,14 +601,14 @@
     "archived_at": null,
     "created_at": "2026-07-10T00:21:42.595361+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-07-10T00:22:12.847084+00:00",
-    "last_used_at": "2026-07-11T12:08:55.633308+00:00",
-    "last_viewed_at": "2026-07-11T12:08:55.631473+00:00",
-    "patch_count": 2,
+    "last_patched_at": "2026-07-11T16:40:13.927081+00:00",
+    "last_used_at": "2026-07-11T17:09:15.757187+00:00",
+    "last_viewed_at": "2026-07-11T17:09:15.755842+00:00",
+    "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 5,
+    "view_count": 5
   },
   "hermes-third-party-skills": {
     "archived_at": null,
@@ -961,6 +974,19 @@
     "use_count": 0,
     "view_count": 0
   },
+  "prop-firm-trading-bot-deploy": {
+    "archived_at": null,
+    "created_at": "2026-07-11T16:41:02.261045+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-11T17:11:03.311569+00:00",
+    "last_used_at": "2026-07-11T17:11:14.092649+00:00",
+    "last_viewed_at": "2026-07-11T17:11:14.090840+00:00",
+    "patch_count": 9,
+    "pinned": false,
+    "state": "active",
+    "use_count": 7,
+    "view_count": 7
+  },
   "python-debugpy": {
     "archived_at": null,
     "created_at": "2026-06-18T17:57:24.467216+00:00",
@@ -1005,13 +1031,13 @@
     "created_at": "2026-07-10T00:11:20.791511+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-07-10T05:33:09.233936+00:00",
-    "last_used_at": "2026-07-10T05:33:25.947196+00:00",
-    "last_viewed_at": "2026-07-10T05:33:25.946017+00:00",
+    "last_used_at": "2026-07-11T16:53:59.108842+00:00",
+    "last_viewed_at": "2026-07-11T16:53:59.107093+00:00",
     "patch_count": 8,
     "pinned": false,
     "state": "active",
-    "use_count": 6,
-    "view_count": 6
+    "use_count": 7,
+    "view_count": 7
   },
   "scrape": {
     "archived_at": null,

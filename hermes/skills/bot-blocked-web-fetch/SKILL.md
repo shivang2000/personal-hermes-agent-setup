@@ -84,6 +84,31 @@ Try each one once. If it fails, the next step is the *next* rung, not retrying t
 | 8 | Try the portal's documented public API (often undocumented) | Step 7 failed | JSON response with JD data | Whether the API endpoint is whitelisted (rare) |
 | 9 | Accept block. Log and move on. | All steps failed | n/a | The right answer when the IP is hard-denied |
 
+**Wayback Machine fallback (between rungs 8 and 9):** If the target is a public website (not a personal portal or authenticated page), try the Internet Archive's Wayback Machine. This often works when the live site has Cloudflare/Vercel security checkpoints but the archived snapshot was captured before the bot-mitigation was enabled.
+
+```bash
+# Try the latest snapshot
+curl -sL "https://web.archive.org/web/2025/https://target.example/page" -o /tmp/wb_page.html -w "HTTP %{http_code}\n"
+```
+
+For help-center / documentation sites (e.g. `help.example.com/en/articles/12345-slug`), the Wayback Machine frequently returns the full article body in static HTML. Extract the `<article>` tag content:
+
+```python
+import re, html
+with open('/tmp/wb_page.html') as f: t = f.read()
+m = re.search(r'<article[^>]*>(.*?)</article>', t, re.S)
+if m:
+    body = re.sub(r'<[^>]+>', ' ', m.group(1))
+    body = re.sub(r'\s+', ' ', html.unescape(body)).strip()
+    print(body[:3000])
+```
+
+For collection/index pages, extract article links: `grep -oE '/articles/[0-9]+-[a-z0-9-]+' /tmp/wb_page.html | sort -u`
+
+**Limitations:** Wayback snapshots can be months old. Always check the capture date in the Wayback toolbar. If the content has changed since the snapshot (rules updated, pricing changed, policies revised), note the snapshot date and verify against the live site via `browser_navigate` if possible. Wayback is a **last-resort fallback for public content**, not a primary fetch method.
+
+**Do NOT use Wayback for:** authenticated pages, user dashboards, account-specific data, or any page that requires login. It only archives public content.
+
 **If step 6 fails when step 5 also failed with the user's real browser at `localhost:<CDP-port>`** — that is conclusive evidence the block is network-level, not fingerprint-level. **Stop escalating.** More attempts waste tokens and time. Move to the recovery pattern below.
 
 ## Ethical line — what NOT to do
