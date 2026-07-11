@@ -107,6 +107,8 @@ For collection/index pages, extract article links: `grep -oE '/articles/[0-9]+-[
 
 **Limitations:** Wayback snapshots can be months old. Always check the capture date in the Wayback toolbar. If the content has changed since the snapshot (rules updated, pricing changed, policies revised), note the snapshot date and verify against the live site via `browser_navigate` if possible. Wayback is a **last-resort fallback for public content**, not a primary fetch method.
 
+**Verified working (2026-07-11):** Used to extract FundingPips help center articles (forbidden strategies, copy trading policy, IP rule, news/weekend holding, toxic trading flow, lot exposure limits) through Cloudflare-blocked `help.fundingpips.com`. The live site returned a Turnstile CAPTCHA; the Wayback snapshots (2025-11-26 to 2026-02-10) returned full article content. Also used to extract `fundingpips.com` homepage and `/trading-objectives` page when the live site returned Vercel security checkpoint (HTTP 429). The `browser_navigate` tool can also navigate directly to Wayback URLs — it renders the archived page including JS-rendered content.
+
 **Do NOT use Wayback for:** authenticated pages, user dashboards, account-specific data, or any page that requires login. It only archives public content.
 
 **If step 6 fails when step 5 also failed with the user's real browser at `localhost:<CDP-port>`** — that is conclusive evidence the block is network-level, not fingerprint-level. **Stop escalating.** More attempts waste tokens and time. Move to the recovery pattern below.
