@@ -1,0 +1,60 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+The PDF is hosted on cdn.openai.com and is a real 3-page document. The story is verifiable. Now let me compose the digest.
+
+**Tech / AI / Crypto / Software Digest — 11 July 2026, 00:55 IST**
+
+**Top picks**
+- [Apple sues OpenAI over alleged AI-gadget trade-secret theft](https://www.nytimes.com/2026/07/10/technology/apple-openai-lawsuit.html) (NYT) — Apple filed suit July 10 accusing OpenAI and several ex-Apple engineers of systematically poaching talent and lifting confidential model and hardware work to build OpenAI's "AI gadgets." Apple claims the scheme was "at every level" of the consumer-AI stack. The case escalates the platform war over who owns the next interface for AI-driven devices and will set precedent for talent-mobility and trade-secret claims against frontier labs.
+- [GPT-5.6 Sol Ultra produces a proof of the Cycle Double Cover Conjecture](https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf) (OpenAI hosted PDF) — A published proof attempt of a long-standing open problem in graph theory attributed to GPT-5.6 "Sol Ultra," an OpenAI reasoning-tier model. The community is reviewing it; even if the proof has gaps, this is a concrete signal that reasoning-model releases are now producing artifacts the math community takes seriously enough to scrutinize. Worth tracking for follow-up verification.
+- [QuadRF: a $499 open-source phased-array SDR on a Raspberry Pi 5](https://www.jeffgeerling.com/blog/2026/quadrf-can-spot-drones-and-see-wifi-through-my-wall/) (jeffgeerling.com) — ScaleRF's QuadRF streams I/Q over the Pi 5's MIPI lanes at >5 Gbps to a 4.9–6 GHz beamforming array, lets you visualize 5 GHz WiFi through walls and track drones in flight. A genuinely accessible consumer hardware-SDR milestone and a clever reuse of camera/display FFC connectors for high-bandwidth signal work.
+- [Apple vs OpenAI, decrypted: how the lawsuit's bombshells actually read](https://www.businessinsider.com/apple-sues-openai-trade-secret-theft-2026-7) (Business Insider) — Companion piece pulling out the specific allegations: the named ex-employees, the "Apple Brain" / foundation-model work allegedly reused, and the AI-gadget hardware program OpenAI is accused of seeding with stolen IP. The most useful single read on the substantive (not just legal) claims.
+- [SpaceX files for 100,000 more Starlink satellites targeting ~100× bandwidth](https://www.zdnet.com/home-and-office/networking/spacex-wants-to-launch-100000-more-starlink-satellites/) (ZDNet) — An FCC filing asks to massively expand the constellation with higher-capacity inter-satellite links and Ka/E-band spectrum. Material for anyone running low-latency networking, ground-station software, or edge compute over LEO.
+- [An update on residential proxies and the scraper situation](https://lwn.net/Articles/1032738/) (LWN.net) — Long-form look at how the residential-proxy and bot-detection landscape is consolidating around a few incumbents and what that means for legitimate operators, scraper defenders, and the open web. Practical read for anyone running crawlers, defense, or rate-limiting at scale.
+
+**AI, Agents & Models**
+- [Launch HN: Manufact (YC S25) – MCP Cloud](https://manufact.com) — YC-launched cloud for hosting MCP servers and apps, from the team behind the open-source `mcp-use` SDK. Useful infra piece if you're shipping agent tools and don't want to run your own MCP gateway.
+- [Launch HN: Context.dev (YC S26) – structured-data API for any site](https://www.context.dev) — Send a URL (optionally with a JSON Schema) and get clean markdown, screenshots, brand metadata, or schema-conformant extracted data. Targeted at agent-enrichment flows and knowledge-base builders.
+- [Show HN: Smart model routing directly in Claude, Codex and Cursor](https://github.com/workweave/router) — `workweave/router` plugs into popular coding agents and routes subtasks (planning, exploration, implementation) to the most cost-effective model (e.g. Opus for planning, DeepSeek/GLM for execution). Source-available, self-hostable, Elastic-2.0. A pragmatic pattern for anyone feeling the burn of agent inference bills.
+- [obra/superpowers – an agentic skills framework & dev methodology](https://github.com/obra/superpowers) (251k★, +1,013 today) — Sonnet's maintainer's open framework for structured agent skills and a "software development methodology that works" — currently the most-starred trending repo. Worth comparing against `mattpocock/skills` and `addyosmani/agent-skills` below.
+- [addyosmani/agent-skills – production-grade engineering skills for AI coding agents](https://github.com/addyosmani/agent-skills) (77k★, +1,116 today) — Google's engineering-productivity lead publishing the actual skill packs the Chrome team uses with Claude/Codex-style agents. Concrete, opinionated, and directly reusable.
+- [mattpocock/skills – skills for real engineers](https://github.com/mattpocock/skills) (165k★, +1,712 today) — TypeScript DX educator Matt Pocock's `.claude` skills repo. High signal-to-noise for working TS engineers adopting Claude Code.
+
+**Software Engineering & DevTools**
+- [microsoft/TypeScript trending on GitHub today](https://github.com/microsoft/TypeScript) (110k★, +177 today) — TypeScript is bumping up the trending list; check the recent commits for compiler/IDE perf and Go-to-TS port tooling. Good reminder to `npm i -g typescript@latest` and re-run a build.
+- [oven-sh/bun trending strong](https://github.com/oven-sh/bun) (94k★, +209 today) — Bun continues to add stars; useful if you've been on the fence about the runtime/bundler/test-runner package manager for greenfield Node projects.
+- [An iroh powered smart fan](https://www.iroh.computer/blog/an-iroh-powered-smart-fan) (iroh.computer) — Iroh is a Rust QUIC-based P2P connectivity library; this write-up shows it running a real consumer IoT device with zero-config NAT traversal. Good reference architecture for anyone building offline-first or LAN-free IoT.
+- [Show HN: Abralo – run several Claude Code agents in one window](https://abralo.com) — Lightweight multi-agent harness around Claude Code, useful if you've been copy-pasting between worktrees to run parallel agents.
+
+**Cloud, Infra, Data & Security**
+- [An update on residential proxies and the scraper situation](https://lwn.net/Articles/1032738/) (LWN.net) — see Top picks.
+- [Oracle ELSA-2025-20344: systemd security update (CVE-2025-4598)](https://lwn.net/Articles/1023456/) (LWN.net) — Important-rated systemd fix in OL9; coredump kernel-pattern format-string issue. Patch OL9 systemd boxes on the next maintenance window.
+- [Show HN: Gflow – lightweight single-node GPU job scheduler in Rust](https://github.com/AndPuQing/gflow) — SLURM is overkill for a single shared workstation; Gflow is a Tokio/Axum scheduler with NVML awareness. Worth a look for small ML teams sharing a box.
+
+**Crypto & Blockchain Engineering**
+- No major primary-source protocol releases surfaced on HN in the last 24h. Skipping the section this run rather than padding it.
+
+**Open Source / GitHub**
+- [wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP) (7.5k★, +328 today) — MCP server that gives Claude terminal control, file-system search, and diff-style file editing. The most-starred trending repo today; an early canonical "give Claude real control" MCP server.
+- [catchorg/Catch2](https://github.com/catchorg/Catch2) (20.6k★) — Modern C++ test framework trending today; reminder to check v3 if you've been on GoogleTest by default.
+- [abseil/abseil-cpp](https://github.com/abseil/abseil-cpp) (17.5k★, +89 today) — Google's foundational C++ libraries; trending. Worth a look if you write C++ and haven't audited your `string_view` / `flat_hash_map` usage lately.
+- [jbeder/yaml-cpp](https://github.com/jbeder/yaml-cpp) (6.1k★, +69 today) — Classic C++ YAML parser; trending today.
+
+**Startups, YC & Industry**
+- [Apple sues OpenAI](https://www.nytimes.com/2026/07/10/technology/apple-openai-lawsuit.html) — see Top picks.
+- [Launch HN: Context.dev (YC S26)](https://www.context.dev) — see AI section.
+- [Launch HN: Manufact (YC S25)](https://manufact.com) — see AI section.
+
+**YouTube / Technical Media**
+- [Jeff Geerling: "This radio can see through walls"](https://www.youtube.com/watch?v=isKhAyivtfM) — Full hands-on with QuadRF. Best visual walkthrough of the Pi 5 MIPI SDR streaming trick; pair with the blog post.
+- [Constellation Space (YC W26): AI for satellite mission assurance](https://www.youtube.com/watch?v=069V9fADAtM) — Engineering deep-dive on using ITU-R P.618 / P.676 propagation models plus magnetometer Kp indices to predict Ka-band link drops minutes ahead. Relevant if you build LEO networking, IoT-over-sat, or RF simulation.
+
+**Watchlist**
+- *Apple v OpenAI* — Expect rapid filings, named-engineer depositions, and a discovery fight over model-training data sources. Watch for any Apple-on-Apple hiring-restriction motions and whether Jony Ive's hardware partnership with OpenAI gets named.
+- *GPT-5.6 Sol Ultra "Cycle Double Cover" proof* — Math community (MO, MathOverflow, arXiv moderation) is reviewing. If the proof holds, it's a landmark reasoning-model result; if it has fixable gaps, it still sets the bar for verifiable LLM math. Watch the HN thread + arXiv for follow-ups.
+- *Starlink 100k-satellite FCC filing* — Comment period, ITU coordination filings, and reactions from Amazon Kuiper / OneWeb will follow. Material for anyone planning LEO-edge deployments in 2027–2030.
+- *MCP-tool "rug pull" risk surface* — With `DesktopCommanderMCP` and `superpowers` style servers exploding in adoption, expect the first real-world supply-chain incidents on MCP registries. The `Driftcop` SAST tool referenced earlier is the earliest public response.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
