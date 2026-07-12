@@ -1,12 +1,15 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.0.0
+version: 1.1.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
+    changelog:
+      - 1.1.0 (2026-07-12): Phase 7 EC2 first-boot fixes (mt5_data chown 911:911, docker-compose v5 + buildx 0.12 workaround, IMDSv2), correct deploy order (start MT5 only, log in via noVNC, then start bot to avoid crash loop), and 4 new pitfall entries.
+      - 1.0.0 (2026-07-11): Initial 8-phase workflow with FP rules, EC2/Apple-Silicon pitfalls, MT5 investor-password pattern.
 ---
 
 # Prop-Firm Trading Bot Deployment
@@ -144,6 +147,64 @@ docker compose -f docker-compose.ec2.yml up -d
 # Enable AutoTrading
 docker compose -f docker-compose.ec2.yml restart trading-bot
 ```
+
+**EC2 first-boot: 3 mandatory one-time fixes BEFORE `up -d` (discovered 2026-07-12)**
+
+These are NOT optional. Skipping any of them causes silent failures that look like "the deploy is broken" but are actually one-line config fixes. Apply in this exact order on a fresh EC2.
+
+**Fix 1 — `mt5_data` ownership.** The `gmag11/metatrader5_vnc` image runs Wine as `abc` (uid 911, set by `PUID/PGID=911` in the compose file). If the host bind-mount dir is owned by any other user, every step in `start-mt5.sh` fails with `wine: '/config/.wine' is not owned by you` AND every curl download silently fails with `curl: (23) Failure writing output to destination` because curl can't create the temp file. Result: MT5 never installs, RPyC never starts, and you get "RPyC server failed to start" with no other explanation. Fix BEFORE first `up -d`:
+
+```bash
+# push project to EC2 first
+rsync -az --exclude=.git --exclude=mt5_data --exclude=data --exclude=logs \
+  ./ ec2-user@<ec2-host>:trading-bot-v2/
+ssh ec2-user@<ec2-host> "cd trading-bot-v2 && mkdir -p mt5_data data logs && \
+  sudo chown -R 911:911 mt5_data && \
+  docker-compose -f docker-compose.ec2.yml up -d metatrader5"
+# wait ~3-5 min for first-boot install, verify RPyC up:
+ssh ec2-user@<ec2-host> "docker exec metatrader5 ss -tln | grep :8001"   # → LISTEN on 0.0.0.0:8001
+```
+
+If you ALREADY did the first start without chown, stop the container, chown, and start it again — Wine does not auto-recover, the partial prefix is poisoned.
+
+**Fix 2 — `docker-compose` v5 + buildx 0.12 incompatibility (Amazon Linux 2023 stock).** The default `docker-compose` on a fresh Amazon Linux 2023 EC2 is the v5.0.1 standalone binary, which requires `buildx >= 0.17`. The bundled buildx is `0.12.1`, so `docker compose -f docker-compose.ec2.yml up -d` fails with `compose build requires buildx 0.17 or later`. Workaround: build the bot image directly with `docker build`, then bring up the stack:
+
+```bash
+ssh ec2-user@<ec2-host> "cd trading-bot-v2 && \
+  docker build -t trading-bot-v2-trading-bot:latest . && \
+  docker-compose -f docker-compose.ec2.yml up -d"
+```
+
+The image name MUST be `trading-bot-v2-trading-bot` (the compose project + service name, the default Compose v2 prefix) so `docker-compose up` picks it up without rebuilding. Verify with `docker images | grep trading-bot-v2`.
+
+**Fix 3 — IMDSv1 may be disabled (security-hardened EC2).** On EC2s with IMDSv1 disabled, `curl 169.254.169.254/...` returns HTTP 401 with no body. Use IMDSv2 to get the public IP, instance ID, and security group:
+
+```bash
+TOKEN=REDACTED_SET_LOCALLY
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 60")
+curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/public-ipv4
+curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/instance-id
+```
+
+If the box also has no public IP at all, it's a private subnet — you'll need an SSH bastion or a noVNC tunnel. Quick cross-check: `curl https://checkip.amazonaws.com` should match the instance's known EIP — if it differs, the instance is behind a NAT.
+
+**After fixes: deploy order (CRITICAL — log into MT5 BEFORE starting the bot)**
+
+`docker-compose up -d` brings up BOTH the metatrader5 container AND the trading-bot container. **Do NOT start the bot in the first `up -d`** — the bot will crash-loop every ~20s on `MT5 result expired` because no MT5 account is logged in, and `restart: unless-stopped` will respawn it forever, flooding logs. The correct sequence is:
+
+```bash
+# 1. Start MT5 only (skip the bot for now)
+docker-compose -f docker-compose.ec2.yml up -d metatrader5
+# 2. Wait for first-boot install to finish (3-5 min, watch logs)
+docker logs -f metatrader5   # wait for: "RPyC server is running on port 8001."
+# 3. Open the EC2 SG ports 8080 (noVNC) + 8001 (RPyC) from your IP
+# 4. Open http://<ec2-public-ip>:8080 in browser, noVNC password = botpass
+# 5. Log into MT5 with the funded account + enable AutoTrading
+# 6. NOW start the bot
+docker-compose -f docker-compose.ec2.yml up -d trading-bot
+```
+
+The "MT5 result expired" error is **distinct from "connection refused"**: RPyC accepts the TCP connection fine, but `mt5.initialize()` inside Wine returns a stale result because no account is logged in. Quick test from the bot container: `docker exec trading-bot-v2 python -c "import rpyc; c = rpyc.connect('metatrader5', 8001); print(type(c.root))"` — if it prints `<netref ...>`, RPyC is healthy and the only thing missing is a logged-in MT5 account. If the bot has already been left crash-looping while you do the noVNC login, just `docker-compose stop trading-bot` first, then start it again after MT5 is logged in.
 
 **Local (user may insist despite warnings — mitigate aggressively):**
 ```bash
@@ -308,6 +369,10 @@ See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickst
 - **Docker Desktop Rosetta setting lives in TWO files.** Both `settings-store.json` (`UseVirtualizationFrameworkRosetta`) and `settings.json` (`useVirtualizationFrameworkRosetta`) must be set to `False`. Docker Desktop must be restarted (`killall Docker; open -a Docker`) for the change to take effect. Verify after restart: `cat ~/Library/Group\ Containers/group.com.docker/settings-store.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('UseVirtualizationFrameworkRosetta'))"` should print `False`.
 - **CONFIG_OVERLAY env var may point to wrong account size.** Always verify `CONFIG_OVERLAY` in the bot's `.env` matches the intended account (e.g. `fundingpips-5k` not `fundingpips-10k`). A mismatch means the bot trades with wrong risk parameters — wrong DD limits, wrong lot sizing, wrong profit target. Check with `grep CONFIG_OVERLAY .env` before every deploy.
 - **Manual trades during news events.** The #1 documented cause of prop-firm busts. The bot can't prevent this by force — the MT5 investor password pattern is the mitigation.
+- **`mt5_data` ownership on EC2 (verified 2026-07-12).** The bind-mount dir for `/config/.wine` inside the MT5 container must be owned by `911:911` (the image's `abc` user, PUID/PGID=911 from compose). If it's owned by `ec2-user` (the default after `mkdir -p` from a root/sudo session), Wine refuses with `/config/.wine is not owned by you` and curl downloads fail with no useful error. Symptom: "RPyC server failed to start" with the MT5 install showing curl 23 errors. Fix BEFORE first `up -d`: `sudo chown -R 911:911 mt5_data`. Wine does not auto-recover from a partially-installed prefix — if you already started, stop+chown+restart.
+- **`docker-compose` v5.0.1 + `buildx` 0.12 mismatch (Amazon Linux 2023, verified 2026-07-12).** `docker compose -f ... up -d` fails with `compose build requires buildx 0.17 or later`. Workaround: `docker build -t trading-bot-v2-trading-bot:latest .` first, then `docker-compose -f ... up -d`. The image name is `<project>-<service>` (compose v2 default prefix); get it right or compose will rebuild.
+- **IMDSv1 disabled on hardened EC2s.** Plain `curl 169.254.169.254/...` returns HTTP 401. Use IMDSv2 with a session token to read public IP, instance ID, and security groups. If public IP is also missing, the instance is in a private subnet — need a bastion or noVNC tunnel.
+- **Bot crash-loops on "MT5 result expired" with no logged-in account (verified 2026-07-12).** The MT5 container's RPyC accepts the TCP connection fine — `mt5.initialize()` is the call that returns a stale/expired result when no account is logged in. Distinct from `[Errno 111] Connection refused` (RPyC not up yet). Quick health probe: `docker exec trading-bot-v2 python -c "import rpyc; print(type(rpyc.connect('metatrader5', 8001).root))"` — `<netref ...>` = RPyC up, just needs MT5 login. If you let `restart: unless-stopped` respawn it for 10+ minutes, you have a 1000+ line error log to grep through. Stop the bot with `docker-compose stop trading-bot` until the noVNC login is done.
 
 ## Overlap note (for curator)
 
