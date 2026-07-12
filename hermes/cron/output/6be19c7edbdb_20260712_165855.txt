@@ -1,0 +1,35 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 12 July 2026, 16:57 IST**
+
+**Top picks**
+- [Mesh LLM distributes inference across heterogeneous machines](https://www.iroh.computer/blog/mesh-llm) — Iroh’s new runtime exposes an OpenAI-compatible endpoint while routing requests to peers or pipeline-splitting model layers across nodes. Authenticated QUIC, NAT traversal, gossip-based capability discovery, and relay fallback make this a notable attempt at practical decentralized inference.
+- [GitHub: Better tools initially made Copilot code review worse](https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/) — Giving the reviewer more tools increased autonomy but also tool misuse and low-value comments. GitHub’s production lesson is that agent quality depends on tool-selection training, trajectory-level evaluation, and end-to-end acceptance metrics—not simply expanding the action space.
+- [ClickHouse scales PgBouncer to four times its previous throughput](https://clickhouse.com/blog/pgbouncer-clickhouse-managed-postgres) — The Managed Postgres team details its work around PgBouncer’s single-threaded event loop and connection-management bottlenecks. Useful reading for anyone operating high-connection-count Postgres services where the pooler, rather than the database, becomes the limiting component.
+- [AI-assisted review finds an Ethereum consensus-layer vulnerability](https://www.coindesk.com/tech/2026/07/11/ethereum-foundation-says-ai-found-bug-that-could-take-validators-offline/) — The reported flaw could have forced validators offline, but human reviewers were still needed to validate exploitability and coordinate remediation. The important signal is AI moving from generic code scanning toward protocol-aware vulnerability discovery—not autonomous security sign-off.
+- [Reame explores CPU-first LLM serving that improves over time](https://github.com/swellweb/reame) — This early-stage `llama.cpp`-based server combines persistent disk KV cache, generation archives, adaptive speculative decoding, and interleaved multi-user scheduling. It is an interesting design point for private inference on commodity hardware, though still too young for production assumptions.
+- [CISA adds two actively exploited vulnerabilities to KEV](https://www.cisa.gov/news-events/alerts/2026/07/10/cisa-adds-two-known-exploited-vulnerabilities-catalog) — CVE-2026-48939 and CVE-2026-56291 now have evidence of exploitation in the wild. Teams should prioritize exposed affected assets and investigate for compromise rather than treating patch installation alone as sufficient remediation.
+
+**AI, Agents & Models**
+- [Mindwalk replays coding-agent sessions on a 3D codebase map](https://github.com/cosmtrek/mindwalk) — The new visualization tool maps an agent’s file traversal and edits onto repository structure, offering a more inspectable alternative to raw event logs. It could be useful for debugging why coding agents consumed context, looped, or modified unrelated areas.
+- [Terry Tao experiments with rebuilding old and new applications using coding agents](https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/) — Tao’s write-up is valuable as a grounded account of where current agents compress implementation time and where specification, verification, and domain judgment remain the real work.
+- [An agent implemented in roughly 100 lines of Lisp](https://thebeach.dev/posts/lisp-agent/) — A compact example strips the agent loop down to messages, tool dispatch, and state evolution. It is more instructive as an architectural reference than as a framework: the minimal implementation makes control flow and trust boundaries explicit.
+
+**Software Engineering & DevTools**
+- [Buf introduces `protobuf-py`](https://buf.build/blog/protobuf-py) — The from-scratch Python Protobuf runtime covers proto2, proto3, editions, extensions, unknown fields, dynamic messages, and the conformance suite. Generated code is readable and typed with no runtime dependencies; an optional Rust accelerator targets performance comparable to Google’s `upb`.
+- [Ant: a new JavaScript runtime and package ecosystem](https://antjs.org/) — The newly launched project is attempting an integrated runtime/tooling stack rather than another thin Node-compatible launcher. It is worth watching, but compatibility breadth, package installation security, and sustained maintenance will matter more than launch benchmarks.
+- [Why SQLite applications should consider `STRICT` tables](https://evanhahn.com/prefer-strict-tables-in-sqlite/) — `STRICT` mode preserves SQLite’s lightweight deployment while rejecting values that cannot be losslessly coerced to declared column types. It is a low-cost guard against data-quality bugs for new schemas, especially those shared across several application languages.
+- [Biff.graph models a Clojure codebase as a queryable graph](https://github.com/jacobobryant/biff/tree/v2.x/libs/graph) — Functions, dependencies, configuration, and application structure become graph data that tooling can query. The approach is especially relevant to code intelligence and agents, which benefit from explicit structural relationships rather than repeated text search.
+
+**Cloud, Infra, Data & Security**
+- [Cloudflare improves Smart Tiered Cache for public-cloud origins](https://blog.cloudflare.com/smart-tiered-cache-for-public-clouds/) — Cloudflare now selects upper-tier cache locations with awareness of the origin’s public-cloud region, reducing unnecessary long-distance origin fetches. The mechanism can improve cache-miss latency and egress economics without requiring customers to manually pin topology.
+- [UPI: anatomy of a payment transaction](https://timeseriesofindia.com/economy/reads/upi-architecture/) — This architecture walkthrough traces a payment through PSP apps, banks, NPCI switching, authentication, and settlement. It is useful context for designing high-volume financial APIs where user-visible success, asynchronous reconciliation, and final settlement are distinct states.
+
+**Open Source / GitHub**
+- [RISCBoy: an open-source portable console built from scratch](https://github.com/Wren6991/RISCBoy) — The project combines a custom RISC-V-oriented hardware platform with firmware and supporting tooling. Beyond retro-computing appeal, it offers a concrete learning stack spanning board design, low-level software, graphics, and constrained-device performance.
+
+**Watchlist** — Real-world results and failure modes from Mesh LLM’s cross-node pipeline inference; disclosure details and client patches for the Ethereum validator vulnerability; adoption and compatibility testing for `protobuf-py`; product identification and remediation deadlines for the two newest CISA KEV entries.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").

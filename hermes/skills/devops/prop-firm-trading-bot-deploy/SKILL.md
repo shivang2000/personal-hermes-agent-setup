@@ -1,13 +1,14 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.3.1
+version: 1.4.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - 1.4.0 (2026-07-12): 5-minute health-watchdog pattern added as references/health-watchdog-pattern.md. Silent-on-success cron (vs digest always-emit), auto-remediate-safe-containers only (never auto-restart MT5 container — would lose noVNC login), offset-based state file in /tmp to avoid re-alerting on the same CRITICAL, Python logging level-padding pitfall (substring without close-bracket matches both formats), inject-then-reset-state testing pattern. Cron deliver=local + script self-posts to Discord only on failure.
       - 1.3.1 (2026-07-12): hourly-digest-pattern reference extended with two-stage state check (docker inspect fallback when log is stale) and naming-convention pitfall (boolean variables that flip the wrong way).
       - 1.3.0 (2026-07-12): Python `FileHandler` block-buffering pitfall (Docker stdout lag, impact on log readers), hourly-digest-script pattern (ssh+parse in pure Python, no LLM in loop) for catching warnings/restarts/lifecycle when no real-time visibility is available.
       - 1.2.0 (2026-07-12): Phase 7 recovery path for "user logged in late" (bounce bot only, not MT5), alert-routing note (parent channel vs thread), DEGRADED-mode-is-benign pitfall, 2 new pitfall entries.
@@ -372,6 +373,7 @@ See `references/fundingpips-full-rules.md` for the complete verified ruleset inc
 See `references/discord-notifier-pattern.md` for the two-mode Discord notifier implementation (webhook + bot-token), MultiNotifier fan-out, channel discovery, and testing approach.
 See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickstart, cost estimate, post-provision steps, and data-durability checklist.
 See `references/hourly-digest-pattern.md` for the reusable log-digest cron pattern (pure-Python script, `no_agent: true` schema, log-lag handling, Discord delivery) used to read `logs/trading.log` from a remote box.
+See `references/health-watchdog-pattern.md` for the 5-minute health-watchdog cron pattern (silent on success, auto-remediate safe containers, offset-based state file, level-padding-safe substring detection) — pairs with the hourly digest for proactive paging.
 
 ## Pitfalls
 
