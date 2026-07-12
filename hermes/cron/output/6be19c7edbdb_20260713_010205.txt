@@ -1,0 +1,76 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough well-sourced material. Now I'll compose the digest.
+
+**Tech / AI / Crypto / Software Digest — Mon, 13 Jul 2026, 00:55 IST**
+
+**Top picks**
+- **[Apple sues OpenAI over alleged trade-secret theft by ex-employees](https://9to5mac.com/2026/07/12/apple-sues-openai-accuses-ex-employees-of-stealing-trade-secrets/)** — Apple filed suit accusing multiple former Apple engineers who moved to OpenAI of exfiltrating proprietary info, including hardware/model-related documents (HN discussion, 1.6k points: https://news.ycombinator.com/item?id=REDACTED_SET_LOCALLY
+- **[What xAI's Grok build CLI sends to xAI — wire-level analysis](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)** (HN, 345 pts) — Independent packet-capture teardown of xAI's `grok build` CLI showing exactly which endpoints, headers, and payloads the developer tool transmits per invocation. The practical takeaway: agentic CLIs from frontier labs need the same scrutiny as a vendor SaaS dependency.
+- **[Old and new apps, via modern coding agents — Terence Tao](https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/)** — Tao documents using a coding agent to port his 1999-era Java applets to working JavaScript in hours, plus a "vibe-coded" Minkowski-diagram viz for special relativity. Net-wash on bugs: agent found two latent issues in the original code, he found one minor regression. Concrete evidence that agentic porting now works on non-trivial interactive math visualizations.
+- **[Mesh LLM: distributed AI inference over iroh's P2P mesh](https://www.iroh.computer/blog/mesh-llm)** (n0/iroh, Jul 11) — OpenAI-compatible API that splits a model across machines by layer ranges ("Skippy" pipeline parallelism) and routes requests to whichever node already has the weights loaded. Built on iroh's QUIC-over-public-key NAT-traversal stack with two fallback relays. Drops the "you need a single big GPU" assumption for serving big MoE.
+- **[Claude Code ships ~33k tokens before reading the prompt; OpenCode ships ~7k — Systima](https://news.ycombinator.com/item?id=REDACTED_SET_LOCALLY
+- **[Ethereum Foundation: "The triage is the product — running AI agents against protocol code"](https://blog.ethereum.org/)** (by Nikos Baxevanis, EF Protocol Security) — Notes from running coordinated AI agents on real client code. The interesting result: agents produced one genuine, remotely-triggerable validator crash *and* a pile of confident-but-wrong reports. Validation is now the bottleneck, not generation.
+
+**AI, Agents & Models**
+- **[Apple → OpenAI ex-employee lawsuit](https://9to5mac.com/2026/07/12/apple-sues-openai-accuses-ex-employees-of-stealing-trade-secrets/)** (1.6k pts on HN) — see Top picks. Includes "Reasons-of-Unfamiliarity" claims around Apple Foundation Models work; discovery will likely surface the scope of who-could-see-what at model labs.
+- **[Wire-level analysis of xAI's Grok build CLI](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547)** — see Top picks. Includes captured requests for repo context, file diffs, and telemetry endpoints; useful reference if you're evaluating `grok` for CI integration.
+- **[Tao on agentic porting of math applets](https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/)** — see Top picks. Notable that he landed on JavaScript for portability and shipped the source on a public repo, with full LLM conversation transcripts.
+- **[Claude Sonnet 5 / Fable 5 — Anthropic](https://www.anthropic.com/news)** — Anthropic's newsroom lists Sonnet 5 as "frontier performance across coding, agents, and professional work at scale" plus the Fable 5 jailbreak-severity scoring framework with Amazon, Microsoft, Google and other Glasswing partners (Jun 30).
+- **[DeepMind: Gemini Omni, Nano Banana 2 Lite, Omni Flash, Gemma 4 12B, computer-use in Gemini 3.5 Flash](https://deepmind.google/blog/)** — DeepMind's front page this week is stacked: a unified multimodal flagship, a flash-distilled variant, encoder-free multimodal 12B open weights, and a computer-use model on 3.5 Flash. Computer-use on a flash-tier model is the more interesting release for agent cost/perf.
+- **[ScarfBench: benchmarking agents for enterprise Java framework migration — IBM Research on HF](https://huggingface.co/blog)** — New public benchmark for measuring agent quality on the unsexy but high-value task of Spring/Jakarta/etc. migration; expect coverage from enterprise Java shops.
+- **[LeRobot v0.6.0 — "Imagine, Evaluate, Improve"](https://huggingface.co/blog)** — Adds counterfactual rollouts and improved evaluation harnesses for the open robotics stack; relevant if you're building on `lerobot`.
+
+**Software Engineering & DevTools**
+- **[Ant — a from-scratch JavaScript runtime (Show HN, 312 pts)](https://antjs.org/)** — "Ant Silver" is a hand-built engine (not V8/JSC), ships a 9 MB binary, and benchmarks 5.4 ms cold start (Hono import) vs. Bun 12.8 / Deno 24.8 / Node 31.1. Bundles a hardware-isolated VM sandbox and an npm-protocol-compatible registry at `ants.land`. Worth watching even if you don't switch — it's the first credible non-V8 runtime to claim a 2×+ cold-start win.
+- **[Show HN: Shirei — cross-platform native-Go GUI framework](https://news.ycombinator.com/item?id=hsn915)** (49 pts, 2h) — Posted as a `hasenj/shirei` Show HN; native rendering, no webview. Note: the GitHub repo link was 404ing at scan time — flag this before linking.
+- **[Mesh LLM (iroh)](https://www.iroh.computer/blog/mesh-llm)** — see Top picks. Architecturally significant because it ships its own application-layer protocol over QUIC with three ALPNs (`mesh-llm/1`, `mesh-llm-control/1`, `skippy-stage/2`) and a single-byte stream-type demuxer on the main connection. Good reference for anyone building P2P data plane.
+- **[Prefer strict tables in SQLite — Evan Hahn](https://evanhahn.com/)** (HN #9, 330 pts) — Argues for `STRICT` tables now that SQLite 3.37+ supports them; the type-discipline win matters once your `INTEGER` columns start silently accepting `TEXT`. The post URL was 404ing on direct fetch; treat as a known-good HN link.
+- **[Native-speed vLLM transformers modeling backend — HF](https://huggingface.co/blog)** — `transformers` can now call through to a vLLM-backed modeling layer for inference, removing the "training in HF, serving in vLLM" code duplication for many small models.
+
+**Cloud, Infra, Data & Security**
+- **[Cloudflare introduces Meerkat / QuePaxa consensus](https://blog.cloudflare.com/)** (Jul 8) — New global consensus service using a novel algorithm (QuePaxa); intended to back a strongly-consistent fault-tolerant KV store and other services. Cloudflare is publicly moving into replication/coordination primitives — relevant if you build control planes.
+- **[Cloudflare Workers Cache](https://blog.cloudflare.com/)** (Jul 6) — A regional tiered cache in front of Worker entrypoints, configured via standard HTTP cache headers. Pairs with the Jul 10 Smart-Tiered-Cache update for public cloud origins.
+- **[Cloudflare Monetzation Gateway via x402 (waitlist)](https://blog.cloudflare.com/)** (Jul 1) — Settle charges for any resource behind Cloudflare in stablecoins over the x402 open protocol — i.e., HTTP-402-based agentic pay-per-call. Worth tracking if you're building agent monetization.
+- **[Cloudflare: ML-DSA today, post-quantum signatures tomorrow](https://blog.cloudflare.com/)** (Jul 9) — Engineering position paper: don't wait for NIST's nine candidate PQ signature algorithms; deploy ML-DSA now. Direct guidance for crypto library maintainers.
+- **[Cloudflare joins UK Cyber Resilience Pledge](https://blog.cloudflare.com/)** (Jul 7) — Voluntary UK framework tying board-level accountability to security governance. Notable as a non-US policy reference for multinational cloud buyers.
+- **[Profiling attention in PyTorch — Part 3 (HF blog)](https://huggingface.co/blog)** — Practical guide to kernel-level profiling of attention in PyTorch with the new `torch.profile`/Flash path. Useful for anyone tuning GPU inference beyond the model code.
+- **Nvidia "Data for Agents" (HF blog, Jul 8)** — Curated guidance on what data to expose to agentic systems; relevant if you're building a tooling/MCP integration that touches enterprise data.
+
+**Crypto & Blockchain Engineering**
+- **[Ethereum: Glamsterdam-hardening Soldøgn interop recap (Svalbard)](https://blog.ethereum.org/)** (by Tim Beiko) — 100+ contributors aligned on three deliverables: 200M post-Glamsterdam gas limit floor, stable ePBS with external builders, and final EIP-8037 state-creation repricing. Hegotá groundwork (FOCIL, native AA) prototyped.
+- **[Ethereum "triage is the product" — AI agents vs. protocol code](https://blog.ethereum.org/)** (by Nikos Baxevanis) — see Top picks. Real protocol-security takeaways: validate agent claims, separate "agent finding" from "exploit chain," instrument for reproducibility.
+- **[Bitcoin Core 31.1, 30.3, 29.4 all released in the past week](https://github.com/bitcoin/bitcoin/releases)** — fjl/fanquake cut a fan-out of maintenance releases. If you operate a node, check the changelogs; multiple versions released July 6–8.
+- **[Geth 1.17.4 "Flexible Polymer Casing" — Amsterdam hardfork work continues](https://github.com/ethereum/go-ethereum/releases)** (3 weeks ago) — Maintenance release; Clef signer removed to its own repo (`ethereum/clef`), Block Access Lists (EIP-7928) build/verify implemented, snap/2 (EIP-8189) added. Important for EL client operators tracking Amsterdam.
+- **[Bonzo Lend loses ~$9.05M via third-party Supra oracle exploit on Hedera](https://www.coindesk.com/)** (Jul 11) — 77% TVL drop; "verification flaw in a third-party Supra oracle contract." Concrete reminder: oracle-routing choices and trust boundaries are an application-layer decision, not a vendor abstraction.
+- **[Bitcoin BIP-110 fork deadline nears with zero miner support](https://www.coindesk.com/)** — Proposal to cap arbitrary data (anti-spam) is hitting its activation window without hash-rate backing. Watch whether a soft-fork attempt materializes, or it gets shelved.
+- **[Ethereum Foundation Clear Signing standard launches](https://blog.ethereum.org/)** — Open registry under the Trillion Dollar Security Initiative to end "blind signing" of transactions; framed as the structural fix the Bybit-style exploits need. Wallets, security firms, and the EF are stewards.
+- **[Solana Developer Platform additions — MoneyGram joins as infra/validator partner (Jun 22)](https://solana.com/news)** — Continuing payments-rail focus; on the engineering side, watch Agave 4.1.0, RPC 2.0, and Alpenglow progress (Jul 2 changelog).
+
+**Open Source / GitHub**
+- **[destructive_command_guard — `Dicklesworthstone/destructive_command_guard`](https://github.com/Dicklesworthstone/destructive_command_guard)** (trending #1, ~2.7k stars, +444 today) — Hooks into `claude-code`/agent shells to deny destructive git/fs/curl commands; v0.6.6 documents the hook contract. Pair with the Claude-Code/OpenCode token-cost story above — guardrails are now a peer concern to model cost.
+- **[DesktopCommanderMCP — `wonderwhy-er/DesktopCommanderMCP`](https://github.com/wonderwhy-er/DesktopCommanderMCP)** (trending #2, 7.9k stars, +207 today) — MCP server giving Claude terminal control, fs search, and diff-based edits. v0.2.45 released two days ago. The fact that this is *still* trending two days in is a signal that "give Claude a real shell" is not a solved agent primitive.
+- **[background-agents — `ColeMurray/background-agents`](https://github.com/ColeMurray/background-agents)** (2.2k stars) — Open-source background-agent coding system with managed sandbox snapshots, browser-based web terminal, and Linear issue transition on agent work start. Worth reading even if you don't adopt it — it codifies the moving parts a "background agent" product actually needs.
+- **[Ant JavaScript runtime — `theMackabu/ant`](https://antjs.org/)** — see Software Engineering. Open source, Apache-2.0 from the snippets shown.
+- **[Vibe-Trading — `HKUDS/Vibe-Trading`](https://github.com/)** (20.4k stars, +776 today) — HKU Data Mining course's "vibe trading" agent; trending today. Treat as a reference trading-agent skeleton, not a strategy recommendation.
+- **[Awesome LLM Apps — `Shubhamsaboo/awesome-llm-apps`](https://github.com/)** (118k stars, +450 today) — Long-running list of runnable LLM agent/RAG apps; still useful for quickly finding a starting template.
+
+**Startups, YC & Industry**
+- **[Apple v. OpenAI suit](https://9to5mac.com/2026/07/12/apple-sues-openai-accuses-ex-employees-of-stealing-trade-secrets/)** — see Top picks. Likely to harden exit processes across the AI industry (DLP, USB controls, file-pinning at offboarding).
+- **[ColeMurray/background-agents](https://github.com/ColeMurray/background-agents)** (above) — also a useful signal of where the agent infra market is consolidating: managed sandboxes, issue-tracker coupling, browser terminals.
+- **[Empery Digital sold ~half its BTC stack to pivot to AI data centers](https://www.coindesk.com/)** (Jul 11) — A BTC-treasury company redeploying into AI infrastructure is a small but symbolic datapoint: capital is rotating from "AI exposure via crypto" back to direct AI infra.
+- **[Nvidia/CoreWeave/Nebius circular-financing deep dive](https://io-fund.com/)** (HN #5, 355 pts) — Independent analysis of the GPU-leasing financing loop. Worth reading if you underwrite, build, or buy from any of them.
+- **[NYC ban on deceptive subscription practices](https://theguardian.com/)** (HN #2, 635 pts) — Local law on subscription UX; relevant to anyone shipping consumer/SaaS pricing in the US market.
+
+**YouTube / Technical Media**
+- *No fresh, primary-source engineering talks surfaced in this scan.* The "Old and new apps, via modern coding agents" post from Tao (linked above) reads as both blog and short talk; if you'd like, I can mine YouTube directly next run for Terence Tao–style "mathematician ships an agent" content.
+
+**Watchlist**
+- **Apple v. OpenAI discovery** — Expect filings to expose the workflow that "knowledgeable about Foundation Models" exits took; data-loss-prevention defaults at frontier labs will be a follow-on story.
+- **Ethereum Glamsterdam + AI-assisted protocol security** — Soldøgn results and the EF's own agentic-triage postmortem set the tone for Hegotá. Watch for the first public Glamsterdam devnet announcement and the first agent-attributed validator patch.
+- **PQ cryptography rollout** — Cloudflare's ML-DSA paper and the iroh post-quantum key-exchange work from May are converging. Browser/library PQ-by-default flags are worth tracking quarter-over-quarter.
+- **Bitcoin BIP-110** — Either miners find a path to support, or it dies quietly; the social-coordination outcome is itself a precedent for any future "spam-cap" proposal.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
