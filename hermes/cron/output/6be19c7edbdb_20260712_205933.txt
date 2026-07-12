@@ -1,0 +1,64 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 12 July 2026, 20:55 IST**
+
+**Top picks**
+- **Ethereum Foundation: AI agent fleet found a real libp2p vuln (CVE-2026-34219)** — Coordinated agents running against consensus-client code, with a strict "candidate schema" (target, invariant, mechanism, success, reproducer, dedup) so a finding only counts when there's a runnable proof. The interesting lesson: "an agent is a search tool, not an oracle" — most engineering effort goes to triage, not to finding. ([blog.ethereum.org](https://blog.ethereum.org/2026/07/09/triage-is-the-product))
+- **Microsoft ships Agent Framework for Go (public preview)** — First-party Go SDK for building production agent systems, with model support for Microsoft Foundry, Azure OpenAI, Anthropic, Gemini, plus tool-calling, MCP, and multi-agent orchestration. Notably, OpenAI and Anthropic don't have comparable Go agent frameworks of their own — Go is consolidating as the cloud-native agent language. ([thenewstack.io](https://thenewstack.io/microsoft-agent-framework-go/))
+- **Apple sues OpenAI over alleged mass IP theft** — Suit targets OpenAI plus two former Apple employees (incl. a former VP of product design), with Bloomberg reporting the "LOL moment" (a literal "lol" reply referencing Apple docs) as a key piece of evidence. Significant because it puts AI talent mobility and pre-training data lineage into direct legal crosshairs. ([bbc.com](https://www.bbc.com/news/articles/cy8w379e091o) · [bloomberg.com](https://www.bloomberg.com/news/articles/2026-07-11/openai-engineer-s-lol-moment-set-stage-for-legal-fight-with-apple))
+- **OpenAI forks Git on GitHub** — `github.com/openai/git`, mirroring `git/git` with Taylor Blau (long-time Git maintainer) committing under `@ttaylorr-oai`. Suggests OpenAI is investing in core VCS engineering, plausibly to push large-repo / agent-workflow performance changes upstream. ([github.com/openai/git](https://github.com/openai/git))
+- **Terry Tao ports 1999 Java applets to JS + ships new viz in days, with agent** — Vibe-coded a Minkowski-space vector tool he'd abandoned in 1999 and a Gilbreath-conjecture visualization to accompany a paper. Of ~24 ported applets, only one minor bug, and the agent flagged two bugs in his original code — a clean field test of agent reliability for non-critical math code. ([terrytao.wordpress.com](https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/))
+
+**AI, Agents & Models**
+- **Codex now encrypts messages passed to subagents** — New behaviour in the Codex CLI/agent means inter-subagent traffic is encrypted, hardening against in-host / on-host log exfiltration of intermediate reasoning. ([github.com/openai/codex#28058](https://github.com/openai/codex/issues/28058))
+- **Anthropic: "Inviting Hard Questions"** — New Anthropic post framing their approach to user/developer pushback (refusals, jailbreaks, capability tradeoffs). Worth reading for anyone integrating Claude with safety-relevant surfaces. ([anthropic.com/news/hard-questions](https://www.anthropic.com/news/hard-questions))
+- **Anthropic removing its covert anti-distillation tracker** — "Secret Claude tracker surprises users after Anthropic's anti-surveillance stance" — Anthropic has been fingerprinting/flagging suspected Chinese-firm distillation attempts in responses, and is now walking that back per its public posture. ([theregister.com](https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert_code-for_catching-chinese-competitors/5265366))
+- **Anthropic found a "hidden space" where Claude puzzles over concepts** — Interpretability work identifying an internal feature space that activates during multi-step reasoning. Useful signal that frontier interpretability is moving from single-token attribution to step-level structure. ([technologyreview.com](https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/))
+- **OpenAI Head of Safety departing post-reshuffle** — Johannes Heidecke leaving after an internal safety org restructuring. Continues a pattern of senior safety departures from major labs worth tracking for governance reasons. ([wired.com](https://www.wired.com/story/openai-head-of-safety-leaving/))
+- **Microsoft + Google back Go for agents; OpenAI/Anthropic don't** — Beyond the Microsoft launch, the article notes Google already ships agent SDKs in Go, while the two leading model labs have no first-party Go agent frameworks — a real gap for Go-heavy backend teams. ([thenewstack.io](https://thenewstack.io/microsoft-agent-framework-go/))
+
+**Software Engineering & DevTools**
+- **Mesh LLM: distributed AI inference over iroh (P2P QUIC)** — `iroh` builds an encrypted, hole-punched P2P overlay using QUIC; this project shards LLM inference across nodes on it. Implication: viable path to decentralized inference without central control planes — interesting substrate for private/sovereign AI deployments. ([iroh.computer](https://iroh.computer))
+- **MnesticDB: hard fork of CozoDB as agent memory with bitemporal provenance** — Same semiring-provenance framework (Green et al. 2007) extended with transaction-time beliefs, so an agent can answer "what did we believe at time T, and why". Designed specifically as a Hippocampus-for-AI store. ([github.com](https://github.com/MnesticDB) via [HN](https://hn.algolia.com/?q=CozoDB+memory&sort=byDate&type=story&dateRange=last_24h))
+- **destructive_command_guard (dcg) — Rust guard against dangerous shell/git commands for agents** — Trending hard on GitHub (444 stars today, 2.5k total). Pattern-matches `rm -rf`, force-push, etc. and prompts/blocked before execution — directly relevant to anyone running coding agents with shell access. ([github.com/Dicklesworthstone/destructive_command_guard](https://github.com/Dicklesworthstone/destructive_command_guard))
+- **DesktopCommanderMCP** — MCP server giving Claude terminal control, file search, and diff-based editing; trending #2 on GitHub (207 stars today). Useful reference implementation of an MCP tool server for coding agents. ([github.com/wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP))
+- **Spice 2.0 — real-time analytics on operational data, no ETL** — Apache DataFusion + Ballista + new Vortex-based "Cayenne" engine; claims 1.5× faster than DuckDB acceleration at 1/3 the memory, 26× faster than Spice 1.x on TPC-DS, and 2.9× scaling from 1→3 nodes. Targets the "agent-on-live-data" pattern. ([spice.ai](https://spice.ai/blog/spice-2-0-is-now-available))
+
+**Cloud, Infra, Data & Security**
+- **Unauthenticated RCE in Motorola MR2600 router** — Pre-auth remote code execution disclosed for a still-shipping consumer ISP router. Patch status and model exposure should be checked for home/branch-office fleets. ([mrbruh.com](https://mrbruh.com))
+- **OpenWrt pre-auth remote root reported by Hacker Fantastic** — Another high-impact router/firewall RCE on a popular open-source platform. Worth watching for the coordinated disclosure timeline. ([twitter.com/hackerfantastic](https://twitter.com/hackerfantastic/status/2074871544984064163))
+- **Git Takes Another Step Towards Making Rust Mandatory** — Video walkthrough of Git's incremental Rustification: new contributors increasingly land C→Rust ports (sha1, refs, fsmonitor) to eliminate memory unsafety in hot paths. ([youtube.com](https://www.youtube.com/watch?v=I_6Mnvobi3c))
+- **Codex subagent messages encrypted (cross-ref above)** — Practical signal that agent runtimes are starting to treat subagent IPC as a security boundary, not a trusted channel.
+
+**Crypto & Blockchain Engineering**
+- **Ethereum: AI-agent bug-hunting pipeline (top pick above) found libp2p gossipsub DoS** — Beyond the methodology, the finding itself (CVE-2026-34219, a remotely-triggerable panic in libp2p's gossipsub) is patched and disclosed, with credit to the team. Sets a template for AI-assisted protocol security work. ([blog.ethereum.org](https://blog.ethereum.org/2026/07/09/triage-is-the-product))
+- **Crypto billionaires funding "Liberland" meritocratic micronation** — BBC Two documentary feature on the Free Republic of Liberland, backed by Justin Sun (Tron) and ~30 other crypto billionaires, using the on-chain "Liberland Merits" token as vote-weight. Governance experiment with real capital behind it. ([bbc.com](https://www.bbc.com/news/articles/cly8eqyj8e2o))
+- **Bull Bitcoin challenges EU DAC8 in French court** — DAC8 forces CASPs to report user data to tax authorities; Bull Bitcoin argues it conflicts with GDPR. Outcome will shape the legal ceiling for European crypto surveillance. ([thecoinheadlines.com](https://thecoinheadlines.com/crypto/bull-bitcoin-challenges-eus-dac8-crypto-surveillance-rules-in-french-court/article-25451/))
+- **CertiK 2026 "wrench attack" overview** — Survey of physical attacks on crypto holders this year, useful as a sober threat-model input for self-custody UX. ([certik.com](https://www.certik.com/blog/2026-wrench-attacks-overview))
+
+**Open Source / GitHub**
+- **`destructive_command_guard` (Rust)** — see above
+- **`DesktopCommanderMCP` (TypeScript)** — see above
+- **`HKUDS/Vibe-Trading`** — Trending (776 stars today, 20k total) "personal trading agent" repo from HKU Data Science. Use as reference, not financial advice. ([github.com/HKUDS/Vibe-Trading](https://github.com/HKUDS/Vibe-Trading))
+- **`anthropics/claude-cookbooks`** — Anthropic's own recipes/notebook collection picking up speed (464 stars today). Worth bookmarking for SDK patterns. ([github.com/anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks))
+- **`PrefectHQ/prefect`** — Python workflow orchestration trending today; useful if you're stitching agents + long-running data flows. ([github.com/PrefectHQ/prefect](https://github.com/PrefectHQ/prefect))
+
+**Startups, YC & Industry**
+- **Vint Cerf retiring** — "Father of the Internet" stepping back; mostly symbolic, but a useful inflection for anyone writing about the protocol layer. ([techcrunch.com](https://techcrunch.com))
+- **NYT and other publishers ask court to penalize OpenAI** — Escalation in the copyright/training-data litigation that already resulted in the NYT's win; expect more aggressive remedies sought. ([nytimes.com](https://www.nytimes.com/2026/07/09/technology/new-york-times-openai.html))
+- **OpenAI pushes ChatGPT into households with a "families" play** — Distribution + retention strategy as consumer AI wars shift from individual seats to whole-household plans. ([techcrunch.com](https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/))
+- **"Hysteria" grips SF housing as AI-wealth pours in** — Useful macro signal: OpenAI/Anthropic IPO rumours + secondary sales are pulling staff and capital into SF, distorting housing. ([nytimes.com](https://www.nytimes.com/2026/07/08/technology/san-francisco-home-sales-openai-anthropic-ipo.html))
+
+**YouTube / Technical Media**
+- **Git Takes Another Step Towards Making Rust Mandatory** — linked above; clearest recent summary of the C→Rust port cadence in Git core.
+- **Microsoft Agent Framework for Go launch talk** — Companion dev-blog and channel content to the SDK launch; good for teams deciding on Go vs. Python for agent infra. ([Microsoft DevBlogs via thenewstack](https://thenewstack.io/microsoft-agent-framework-go/))
+
+**Watchlist**
+- **Apple v. OpenAI** — Discovery phase and any preliminary injunction; will set precedent for talent-mobility / trade-secret cases against AI labs.
+- **Ethereum AI-agent bug bounty methodology** — EF says more posts are coming on per-client results; expect a Cambrian explosion of "AI red-team" playbooks for protocol code.
+- **OpenAI Git fork** — Watch what gets PR'd upstream: large-monorepo perf, new index formats, agent-friendly reflog design would all be hints at the next 2 years of Git.
+- **Anthropic "Hard Questions" follow-ups** — Likely prefaces concrete policy/product changes around refusals, copyright, and classifier behaviour for developers.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
