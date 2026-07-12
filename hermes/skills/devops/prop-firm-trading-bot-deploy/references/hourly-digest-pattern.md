@@ -31,14 +31,31 @@ The pattern below:
 `/Users/shivang/.hermes/scripts/trading_bot_hourly_digest.py` — full
 source. Key design decisions:
 
-1. **Timestamp-windowed, not byte-offset.** Filter to `now - 75m` based on
-   parsed timestamps. Survives log rotation, container restarts, and
-   `tail -n 4000` truncation. The 75m window is 25% overlap with the
-   60m cadence so we never miss an event at the window boundary.
+1. **Timestamp-windowed, not byte-offset.** Use wall clock (`datetime.now()`) as
+   "now" — NEVER the last log line's timestamp. The last line is often
+   5-30 min behind the actual state (Python `FileHandler` is block-buffered
+   on non-TTY processes, see parent skill's Pitfalls). Filtering the window
+   from the last-line timestamp makes the window silently slide with the lag.
+   The 75m window is 25% overlap with the 60m cadence so we never miss an
+   event at the boundary. Survives log rotation, container restarts, and
+   `tail -n 4000` truncation.
 2. **Most-recent-state wins for the health pulse.** If a "started" and
    "stopped" both appear in the window, use whichever is later — not
    "did the word 'started' appear anywhere". This is the most common
    bug in log-digest scripts.
+2a. **Two-stage state check when the log is too stale.** When lag > 5 min,
+   the log-derived health pulse is unreliable. Cross-check with
+   `docker inspect` over SSH and prefer that:
+   ```python
+   if lag_min > 5:
+       live = ssh_check_container("<container>")  # one `docker inspect` call
+       if live and live["status"] == "running":
+           bot_state = f"🟢 Bot up (live check: {live['status']}/{live.get('health','?')})"
+   ```
+   This catches the case where the log file is rotated/truncated under the
+   script and prevents the digest from saying "🔴 Bot down" when the
+   container is actually running. Mark the source clearly in the message
+   so the user knows it's live-checked, not log-derived.
 3. **Explicit log-lag warning.** Compute `wall_clock - last_log_line`
    and surface it in the message if > 5 min. Python `FileHandler` is
    block-buffered on non-TTY processes (Docker), so the log file
@@ -128,3 +145,31 @@ To adapt the script for a new service:
 3. Update `PEM` / `EC2_HOST` / `LOG_PATH` constants
 4. Test once locally
 5. `cronjob create` with a new `--script` and `--deliver`
+
+## Naming gotcha — boolean variables that flip the wrong way
+
+A subtle class of bug that hit the first version of this script: the bot has
+two Telegram states (configured + failing = real problem, vs. unconfigured =
+intentional strategy-only mode). The script needs a boolean to gate the
+DEGRADED warning. The natural-seeming name is `telegram_intentional` —
+"True if Telegram is intentionally disabled."
+
+**The trap:** the listener already exposes `is_configured` (True when
+TELEGRAM_API_ID/HASH/PHONE are all set). The right variable is
+`skipped = not is_configured` (True when the listener is unconfigured), not
+`intentional = is_configured` (which would be True when the listener IS
+configured and the user is relying on it). I picked the wrong direction on
+the first pass — `intentional` read as "intentionally off" but the
+implementation was True when the listener was ON. The if/else branches ran
+backwards, the digest said "Telegram: NOT AUTHENTICATED" for the strategy-only
+case, and the bug was visible only after the bot was already running.
+
+**Fix (verified 2026-07-12):** always pair the boolean with the `not` operation
+explicitly in the variable name:
+- `telegram_skipped = not listener.is_configured` (True when listener is OFF)
+- `position_monitor_active = bool(running_task)` (True when task is alive)
+- `lag_detected = wall_now > last_log_line + threshold` (True when stale)
+
+If you find yourself writing `if is_X: do_thing` and X is read-only state from
+elsewhere (like `is_configured`), prefer `skipped = not X` to avoid the
+double-negative trap.

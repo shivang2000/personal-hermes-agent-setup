@@ -74,6 +74,37 @@ def ssh_cat_log() -> str:
     return out.stdout
 
 
+def ssh_check_container(container: str) -> dict | None:
+    """Quick docker inspect fallback for live state.
+
+    Returns {"status": str, "health": str | None} if the container exists,
+    or None if it can't be reached. Used when the log file is too stale
+    to make reliable state calls.
+    """
+    cmd = [
+        "ssh",
+        "-i", PEM,
+        "-o", "StrictHostKeyChecking=no",
+        "-o", "BatchMode=yes",
+        EC2_HOST,
+        f"docker inspect --format "
+        f"'{{{{.State.Status}}}}|{{{{.State.Health.Status}}}}' {container} 2>/dev/null",
+    ]
+    try:
+        out = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=15
+        )
+    except subprocess.TimeoutExpired:
+        return None
+    if out.returncode != 0 or not out.stdout.strip():
+        return None
+    parts = out.stdout.strip().split("|")
+    return {
+        "status": parts[0] if parts else "unknown",
+        "health": parts[1] if len(parts) > 1 else None,
+    }
+
+
 def parse_log(text: str) -> list[dict]:
     """Parse lines of trading.log into structured events."""
     events: list[dict] = []
@@ -165,15 +196,20 @@ def main() -> int:
         )
         return 1
 
-    now_utc = events[-1]["ts"]  # use the last line's timestamp as "now"
-    cutoff = now_utc - timedelta(minutes=WINDOW_MIN)
+    # "Now" should be wall clock, not the last log line timestamp. The last
+    # log line is often minutes/hours behind the bot's actual state because
+    # Python's FileHandler is block-buffered on a non-TTY process. The window
+    # cutoff uses wall-now so the digest always covers a real 75-min slice.
+    wall_now_utc = datetime.now(timezone.utc)
+    cutoff = wall_now_utc - timedelta(minutes=WINDOW_MIN)
     window = [e for e in events if in_window(e, cutoff)]
+    last_event_utc = events[-1]["ts"]
     if not window:
         # No activity in the window — emit a quiet heartbeat
         print(
-            f"**Trading bot hourly digest — {fmt_time_ist(now_utc)} IST**\n\n"
+            f"**Trading bot hourly digest — {fmt_time_ist(wall_now_utc)} IST**\n\n"
             f"No log activity in the last {WINDOW_MIN}m "
-            f"(last log line: {events[-1]['ts'].astimezone(IST).strftime('%H:%M:%S IST')}). "
+            f"(last log line: {last_event_utc.astimezone(IST).strftime('%H:%M:%S IST')}). "
             "If the bot has been running, this is normal. If you expected activity, "
             "check `#trading-bot` and Slack for the last alert."
         )
@@ -230,7 +266,7 @@ def main() -> int:
     elif last_mt5_fail:
         # Count recent failures (last 15 min) — historical "failed" lines
         # shouldn't taint the current-state indicator
-        recent_cutoff = now_utc - timedelta(minutes=15)
+        recent_cutoff = wall_now_utc - timedelta(minutes=15)
         recent_fails = [
             e for e in window
             if "MT5 connect attempt" in e["msg"] and "failed" in e["msg"]
@@ -244,7 +280,7 @@ def main() -> int:
         mt5_state = "🟡 MT5 unknown"
 
     # Header
-    ist_now = now_utc.astimezone(IST)
+    ist_now = wall_now_utc.astimezone(IST)
     out: list[str] = [
         f"**Trading bot hourly digest — {ist_now.strftime('%H:%M IST, %d %b')}**",
         f"Window: last {WINDOW_MIN}m · "
@@ -254,19 +290,50 @@ def main() -> int:
         f"{level_counts.get('CRITICAL', 0)} CRIT",
     ]
 
-    # Log lag: how stale is the last log line relative to the script's wall clock?
+    # Log lag: how stale is the last log line relative to wall clock?
     # Python's FileHandler on a TTY-detached process is block-buffered, so the log
     # can lag the actual bot state by many minutes. If the lag is large, we
     # call it out so the user doesn't read too much into "no events recently".
-    wall_now_utc = datetime.now(timezone.utc)
-    lag_min = int((wall_now_utc - now_utc).total_seconds() // 60)
+    lag_min = int((wall_now_utc - last_event_utc).total_seconds() // 60)
     if lag_min > 5:
         out.append(
             f"_⚠️ Log is {lag_min}m stale (last flush at "
-            f"{now_utc.astimezone(IST).strftime('%H:%M:%S IST')}; "
+            f"{last_event_utc.astimezone(IST).strftime('%H:%M:%S IST')}; "
             f"Python FileHandler is block-buffered on a non-TTY process). "
             f"Crashes/restarts still flush immediately._"
         )
+
+    # Live state override: when the log is too stale, the "bot_state" /
+    # "mt5_state" derived from log events is unreliable. Cross-check with
+    # `docker inspect` for the actual container state, and prefer that.
+    # Threshold of 5m matches the stale-warning threshold above, so a stale
+    # log always means we cross-check live state too.
+    used_live_check = False
+    if lag_min > 5:
+        live_bot = ssh_check_container("trading-bot-v2")
+        live_mt5 = ssh_check_container("metatrader5")
+        if live_bot is not None:
+            used_live_check = True
+            cs = live_bot["status"]
+            ch = live_bot.get("health") or "no-healthcheck"
+            if cs == "running" and ch in ("healthy", "starting", "no-healthcheck"):
+                bot_state = f"🟢 Bot up (live check: {cs}/{ch})"
+            elif cs == "running":
+                bot_state = f"🟡 Bot running but unhealthy (live check: {ch})"
+            elif cs in ("exited", "dead", "paused"):
+                bot_state = f"🔴 Bot {cs} (live check)"
+            else:
+                bot_state = f"🟡 Bot state unknown (live check: {cs})"
+        if live_mt5 is not None:
+            used_live_check = True
+            if live_mt5["status"] == "running":
+                mt5_state = "🟢 MT5 container up (live check)"
+            else:
+                mt5_state = f"🔴 MT5 container {live_mt5['status']} (live check)"
+        if used_live_check:
+            out.append(
+                f"_ℹ️ State above from `docker inspect` (log is {lag_min}m stale)._"
+            )
 
     # Health pulse
     pulse = [bot_state, mt5_state]

@@ -1,13 +1,14 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.2.0
+version: 1.3.1
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - 1.3.1 (2026-07-12): hourly-digest-pattern reference extended with two-stage state check (docker inspect fallback when log is stale) and naming-convention pitfall (boolean variables that flip the wrong way).
       - 1.3.0 (2026-07-12): Python `FileHandler` block-buffering pitfall (Docker stdout lag, impact on log readers), hourly-digest-script pattern (ssh+parse in pure Python, no LLM in loop) for catching warnings/restarts/lifecycle when no real-time visibility is available.
       - 1.2.0 (2026-07-12): Phase 7 recovery path for "user logged in late" (bounce bot only, not MT5), alert-routing note (parent channel vs thread), DEGRADED-mode-is-benign pitfall, 2 new pitfall entries.
       - 1.1.0 (2026-07-12): Phase 7 EC2 first-boot fixes (mt5_data chown 911:911, docker-compose v5 + buildx 0.12 workaround, IMDSv2), correct deploy order (start MT5 only, log in via noVNC, then start bot to avoid crash loop), and 4 new pitfall entries.
