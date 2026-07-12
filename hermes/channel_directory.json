@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12T08:10:27.564698",
+  "updated_at": "2026-07-12T09:10:32.401270",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,12 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1525706622238724109:1525706622238724109",
+        "name": "Shivang Hermes AI / #trading-bot / lets start with deploying it on ec2 instance its simple and fast here is are ... / topic 1525706622238724109",
+        "type": "thread",
+        "thread_id": "1525706622238724109"
       },
       {
         "id": "1525561586205462548:1525561586205462548",
