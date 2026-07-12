@@ -91,7 +91,9 @@ aws ssm put-parameter --name /trading-bot/discord-channel-id --value "1525476646
 ### Live test
 
 ```bash
-hermes send --to discord:trading-bot "Test alert from trading bot"
+# Either by channel name (with #) or by numeric ID
+hermes send --to discord:#trading-bot "Test alert from trading bot"
+hermes send --to discord:1525476646176690297 "Test alert from trading bot"
 ```
 
 Or from the bot's Python code directly:
@@ -102,3 +104,12 @@ os.environ['DISCORD_ALERT_CHANNEL_ID'] = '1525476646176690297'
 from src.monitoring.discord import DiscordNotifier, DiscordConfig
 asyncio.run(DiscordNotifier(DiscordConfig()).send("🟢 Test alert"))
 ```
+
+### Alert routing: parent channel vs thread (verified 2026-07-12)
+
+The bot's `DiscordNotifier` posts to whatever channel `DISCORD_ALERT_CHANNEL_ID` points to — this is the **parent channel** (e.g. `#trading-bot`), not a thread. Threads on that channel do **not** inherit the alert stream; they are for operator discussion and status updates from the agent (Hermes). This is the correct design:
+
+- **Parent channel** = operational audit log. Every bot lifecycle event: `Trading Bot V2 started`, `WARNING: ... Telegram not authenticated`, `CRITICAL: FATAL: ...`, `Position opened`, `Emergency stop`, `Heartbeat stale`. Searchable, archiveable, post-mortem-friendly.
+- **Thread on parent channel** = discussion thread for a specific deploy/incident. Status reports from the agent, questions to the user, action items.
+
+If the user reports "I can't see the alerts" during a deploy, first check whether they're looking at a thread. Hermes's status messages land in the thread, but the bot's alerts do not — they go to the parent. This routing is by design and should not be "fixed" by changing the channel ID.

@@ -259,7 +259,39 @@ From the user's perspective, the bot was working, then suddenly "forgets" everyt
 - **auto_thread context loss is the #1 Discord confusion.** Before debugging anything else, check `discord.auto_thread` and whether the user is re-mentioning in the parent channel vs. continuing inside the thread.
 - **Rate-limit 429s are the #1 "sudden amnesia" mimic on always-on gateways.** When a provider exhausts its quota, the agent cannot call the LLM at all. Always check `gateway.log` for 429 errors before assuming a session management bug. Configure `fallback_model` to prevent recurrence.
 
+## Delivering messages from agents/scripts (the `hermes send` CLI)
+
+The gateway platform setup above is for the *gateway* (the long-running
+service that listens for incoming messages and replies). The
+**outbound** side — sending a message from an agent, script, or cron —
+is the `hermes send` CLI. It reuses the same platform credentials and
+works without a running gateway for bot-token platforms like Discord.
+
+Full flag reference and worked examples in
+`~/.hermes/skills/devops/hermes-cron-jobs/references/hermes-send-cli.md`.
+Key shapes:
+
+```bash
+hermes send -t discord:<thread_id> "message"        # thread (auto-resolves parent)
+hermes send -t discord:#channel-name "message"       # parent channel by name
+hermes send -t discord:<chat_id>:<thread_id> "msg"   # explicit chat+thread (rare)
+hermes send -t discord:<thread_id> -f /tmp/msg.md   # multi-line markdown from file
+hermes send --list discord                          # see available channels/threads
+```
+
+Common mistakes to avoid (full list in the reference):
+- `--message` is rejected — message is positional, not a flag.
+- Sending to a *message* ID (snowflake) returns 404 — extract the
+  thread ID from the `discord_threads.json` or the channel metadata.
+- For multi-line markdown, use `-f PATH` not inline; bash quoting
+  is fragile.
+- Media (images, audio) goes inline as `MEDIA:/absolute/path`.
+
 ## References
+
+- `references/discord-without-telegram.md` — concrete migration recipe for enabling Discord while disabling Telegram without exposing secrets.
+- `references/discord-session-keys.md` — how Discord session keys are constructed, why auto-thread causes apparent context loss, and how to debug session state.
+- `~/.hermes/skills/devops/hermes-cron-jobs/references/hermes-send-cli.md` — full `hermes send` CLI reference (flags, target formats, common pitfalls, per-platform notes).
 
 - `references/discord-without-telegram.md` — concrete migration recipe for enabling Discord while disabling Telegram without exposing secrets.
 - `references/discord-session-keys.md` — how Discord session keys are constructed, why auto-thread causes apparent context loss, and how to debug session state.

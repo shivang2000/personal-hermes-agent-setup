@@ -1,13 +1,15 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.1.0
+version: 1.2.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - 1.3.0 (2026-07-12): Python `FileHandler` block-buffering pitfall (Docker stdout lag, impact on log readers), hourly-digest-script pattern (ssh+parse in pure Python, no LLM in loop) for catching warnings/restarts/lifecycle when no real-time visibility is available.
+      - 1.2.0 (2026-07-12): Phase 7 recovery path for "user logged in late" (bounce bot only, not MT5), alert-routing note (parent channel vs thread), DEGRADED-mode-is-benign pitfall, 2 new pitfall entries.
       - 1.1.0 (2026-07-12): Phase 7 EC2 first-boot fixes (mt5_data chown 911:911, docker-compose v5 + buildx 0.12 workaround, IMDSv2), correct deploy order (start MT5 only, log in via noVNC, then start bot to avoid crash loop), and 4 new pitfall entries.
       - 1.0.0 (2026-07-11): Initial 8-phase workflow with FP rules, EC2/Apple-Silicon pitfalls, MT5 investor-password pattern.
 ---
@@ -122,6 +124,10 @@ When Hermes gateway is already connected to Discord, the user prefers reusing th
 - Trade opened / trade closed
 - Heartbeat stale (Docker healthcheck)
 
+**Alert routing — parent channel vs thread (verified 2026-07-12):** The bot's `DiscordNotifier` posts to the `DISCORD_ALERT_CHANNEL_ID` (parent channel, e.g. `#trading-bot`). Threads on that channel do NOT inherit the alert stream — they are for operator discussion, not the operational log. This is the correct design: the channel is the audit log ("Trading Bot V2 started", "WARNING: ... Telegram not authenticated", "CRITICAL: ..."), threads are for context-setting messages. If the user reports they can't see the alerts, check they're looking at the parent channel, not a thread.
+
+**DEGRADED-mode startup is a non-error (verified 2026-07-12).** When Telegram isn't configured, the bot logs `WARNING: Trading Bot V2 started DEGRADED: Telegram not authenticated` and then `Trading Bot V2 started`. The DEGRADED status is a feature: it signals the bot is running but a non-critical subsystem is offline. For deploys that use the bot's own strategies (no signal channels), Telegram-skip is expected and safe — do NOT misread the DEGRADED line as a fatal error. The bot continues to run PositionMonitor, SignalGenerator, and trade execution; only the optional Telegram notifier is disabled.
+
 ### Phase 6: Verify post-mortem preconditions
 
 If a post-mortem document exists (e.g. `docs/post-mortem-5k.md`), read it and check every item in the "Decisions" or "Preconditions" section. Typical items:
@@ -205,6 +211,16 @@ docker-compose -f docker-compose.ec2.yml up -d trading-bot
 ```
 
 The "MT5 result expired" error is **distinct from "connection refused"**: RPyC accepts the TCP connection fine, but `mt5.initialize()` inside Wine returns a stale result because no account is logged in. Quick test from the bot container: `docker exec trading-bot-v2 python -c "import rpyc; c = rpyc.connect('metatrader5', 8001); print(type(c.root))"` — if it prints `<netref ...>`, RPyC is healthy and the only thing missing is a logged-in MT5 account. If the bot has already been left crash-looping while you do the noVNC login, just `docker-compose stop trading-bot` first, then start it again after MT5 is logged in.
+
+**Recovery from "user logged in late" scenario (verified 2026-07-12):** If the user logged in via noVNC AFTER the RPyC server's `start-mt5.sh` already called `mt5.initialize()` (i.e. RPyC is in a stale "Authorization failed" state with the actual terminal now showing a logged-in account), the bot's `mt5.initialize()` will return the same stale result even though the terminal has a real session. The fix is a one-line bounce of the bot container ONLY — do not touch the MT5 container:
+
+```bash
+ssh ec2-user@<ec2-host> "cd trading-bot-v2 && \
+  docker-compose -f docker-compose.ec2.yml restart trading-bot"
+# watch logs — should see: "Connected to MT5 — Login: <n>, Server: <s>, Balance: ..."
+```
+
+The restart forces the bot's `MT5Client.connect()` (in `src/mt5/client.py:69`) to re-call `mt5.initialize()` from a fresh RPyC session, which re-attaches to the now-logged-in terminal. Verified working: the visible MT5 (`start.exe /exec`, PID ~524) and the RPyC's Wine Python (PID ~1043) are **the same single MT5 instance** under one Wine user — when RPyC re-inits, it inherits the terminal's existing account. This is the simplest recovery and is preferable to bouncing the whole stack, which would force the user to re-do the noVNC login.
 
 **Local (user may insist despite warnings — mitigate aggressively):**
 ```bash
@@ -354,6 +370,7 @@ Verify before going live: log into MT5 via noVNC with the investor password, att
 See `references/fundingpips-full-rules.md` for the complete verified ruleset including scaling plan, fail discounts, and all help-center article content.
 See `references/discord-notifier-pattern.md` for the two-mode Discord notifier implementation (webhook + bot-token), MultiNotifier fan-out, channel discovery, and testing approach.
 See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickstart, cost estimate, post-provision steps, and data-durability checklist.
+See `references/hourly-digest-pattern.md` for the reusable log-digest cron pattern (pure-Python script, `no_agent: true` schema, log-lag handling, Discord delivery) used to read `logs/trading.log` from a remote box.
 
 ## Pitfalls
 
@@ -373,6 +390,12 @@ See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickst
 - **`docker-compose` v5.0.1 + `buildx` 0.12 mismatch (Amazon Linux 2023, verified 2026-07-12).** `docker compose -f ... up -d` fails with `compose build requires buildx 0.17 or later`. Workaround: `docker build -t trading-bot-v2-trading-bot:latest .` first, then `docker-compose -f ... up -d`. The image name is `<project>-<service>` (compose v2 default prefix); get it right or compose will rebuild.
 - **IMDSv1 disabled on hardened EC2s.** Plain `curl 169.254.169.254/...` returns HTTP 401. Use IMDSv2 with a session token to read public IP, instance ID, and security groups. If public IP is also missing, the instance is in a private subnet — need a bastion or noVNC tunnel.
 - **Bot crash-loops on "MT5 result expired" with no logged-in account (verified 2026-07-12).** The MT5 container's RPyC accepts the TCP connection fine — `mt5.initialize()` is the call that returns a stale/expired result when no account is logged in. Distinct from `[Errno 111] Connection refused` (RPyC not up yet). Quick health probe: `docker exec trading-bot-v2 python -c "import rpyc; print(type(rpyc.connect('metatrader5', 8001).root))"` — `<netref ...>` = RPyC up, just needs MT5 login. If you let `restart: unless-stopped` respawn it for 10+ minutes, you have a 1000+ line error log to grep through. Stop the bot with `docker-compose stop trading-bot` until the noVNC login is done.
+- **Stale RPyC state after the user logs in late (verified 2026-07-12).** If `start-mt5.sh` already called `mt5.initialize()` before the user did the noVNC login, RPyC sits in a stale "Authorization failed" state. After the user logs in via noVNC, bouncing the **bot container only** (`docker-compose restart trading-bot`) re-attaches to the now-logged-in terminal. Do NOT bounce the metatrader5 container — that would force the user to re-do the noVNC login. The visible `start.exe /exec` MT5 and the RPyC's Wine Python share one MT5 instance per Wine user, so re-init from the bot side picks up the terminal's existing account.
+- **Misreading the "DEGRADED" startup line as a fatal error (verified 2026-07-12).** When `TELEGRAM_PHONE` is unset (i.e. the bot uses its own strategies, not signal channels), the bot logs `WARNING: Trading Bot V2 started DEGRADED: Telegram not authenticated` followed by `Trading Bot V2 started`. The DEGRADED status is a feature, not a failure — Telegram is a non-critical notifier. The bot's main loop, PositionMonitor, SignalGenerator, and trade execution all run normally. Do not crash the bot, do not roll back, do not treat this as a deploy failure. Only a `FATAL: Both MT5 and Telegram are down` line is a real failure mode.
+
+- **Python `logging.FileHandler` is block-buffered when stdout is not a TTY (verified 2026-07-12).** The bot's `logs/trading.log` lags the actual bot state by 5-30 minutes under normal operation. Crashes/restarts/sigterms still flush immediately (process death closes the file), so any log-based monitor will still catch real problems — but quiet, "everything is fine" activity won't show up in real time. Two fixes when we get there: (1) change Dockerfile's `CMD` from `python -m src.main` to `python -u -m src.main` to force unbuffered stdout (does NOT fix the FileHandler's own internal buffer, only Python's); (2) add `logging.basicConfig(force=True, stream=sys.stdout)` in `src/main.py` and remove the explicit `FileHandler` so all logs flow through stdout (the `docker logs -f` stream), or add a periodic `handler.flush()` in the bot's main loop. Until this is fixed, the right way to read the bot's log is **not** by tailing the file — use `docker logs --tail 200 trading-bot-v2` (always-live stdout) or set up a cron that SSHes in and parses the log with explicit lag detection (see `references/hourly-digest-pattern.md`).
+
+- **The trading bot's "laptop vs EC2" question is a recurring confusion (verified 2026-07-12).** The bot always runs on EC2 (or wherever the user deployed it). The laptop/desktop is just an SSH terminal + source-code editor — Docker doesn't run locally, Wine doesn't run on Apple Silicon, MT5 only runs in `gmag11/metatrader5_vnc`. If the user asks "is the bot on EC2 or on my laptop?", the answer is "EC2 — your laptop is just the SSH terminal to it." Keep this in mind when designing log readers, alerts, and on-call workflows: they must work against the remote box, not the local Mac.
 
 ## Overlap note (for curator)
 

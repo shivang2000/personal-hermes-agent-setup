@@ -51,6 +51,65 @@ If you use the `patch` tool to insert text into a `"prompt": "..."` value in a J
 - Scheduler state: `~/.hermes/cron/jobs.json` + `ticker_heartbeat` + `ticker_last_success`
 - Lock files (ignore unless debugging scheduler contention): `~/.hermes/cron/.jobs.lock`, `~/.hermes/cron/.tick.lock`
 
+## `no_agent: true` + `script` — when the script IS the job (verified 2026-07-12)
+
+For deterministic jobs (read a file → format → deliver), use `no_agent: true`
+and pass `script` (a filename under `~/.hermes/scripts/`). The script runs
+as a subprocess, its **stdout becomes the delivered message** verbatim,
+exit 0 = success, exit 1 = error surfaces to the user. The `prompt` field
+is ignored when `no_agent: true`.
+
+CLI shape that works:
+
+```bash
+cronjob create \
+  --name "Hourly <service> log digest" \
+  --schedule "5 * * * *" \
+  --no_agent true \
+  --script "<name>.py"            # filename, resolved under ~/.hermes/scripts/
+  --model "<model>"               # still required even though no LLM runs (used for routing/fallback)
+  --provider "<provider>"
+  --deliver "discord:<channel_id>"
+  --enabled_toolsets terminal
+```
+
+Pitfalls:
+- Passing `prompt` AND `no_agent: true` (without `script`) returns `create with no_agent=True requires a script — the script is the job`. The `script` field is required.
+- Passing `script` AND `no_agent: false` is also rejected — pick one mode.
+- `script` is a **filename**, not a path. Place under `~/.hermes/scripts/`. Subdirectories are not currently resolved by the scheduler.
+- The model+provider are still required in the `create` schema even when no LLM runs — they're used for routing/fallback metadata. Pick the cheapest tier (`minimax-m3` via ollama-cloud for Shivang) since they're never invoked.
+
+When the job delivers, the message is wrapped with a "Cronjob Response:
+<job name> (job_id: <id>)" header. This is intentional (lets the user
+identify/manage the job) and cannot be disabled.
+
+## `hermes send` — sending a message from a script/agent (verified 2026-07-12)
+
+Useful when an agent or cron needs to deliver to a Discord channel/thread,
+Telegram chat, Slack channel, or Signal number without going through the
+cron scheduler. The CLI reuses the gateway's platform credentials (no
+separate auth needed).
+
+```bash
+hermes send -t discord:<chat_id>:<thread_id> "<message>"     # inline
+hermes send -t discord:<chat_id>:<thread_id> -f /path/to/msg.md  # from file (preferred for multi-line)
+hermes send -t discord:#channel-name                            # by channel name (no thread)
+hermes send --list discord                                      # list available Discord channels
+echo "..." | hermes send -t telegram:-1001234567890            # pipe from stdin
+```
+
+Common pitfalls:
+- Flag is `-t` not `--to` (verified by running `hermes send --help`).
+- The `message` argument is **positional** — `--message "..."` is rejected. The `-f PATH` form takes a file and is the right choice for multi-line markdown.
+- For Discord **threads**, the target is `discord:<thread_id>` (not the parent channel ID). Hermes auto-resolves the parent. Sending the parent channel ID + thread ID as separate fields is rejected with `Unknown Channel`.
+- Sending to a **message ID** (which is what the user reply context shows) is wrong — the message ID is a snowflake, not a channel. Extract the thread ID from the `Triggering message id: ...` context block, not from the message itself.
+- `-s SUBJECT` prepends a header line (useful for "ALERT:" prefixes on important messages).
+- `-q` suppresses stdout (exit-code only) — useful in scripts that don't want to leak the message body to logs.
+- For media (images, audio, files), put `MEDIA:/absolute/path` in the message text — the platform's delivery layer picks it up.
+
+See `references/hermes-send-cli.md` for the full flag reference, exit
+codes, and worked examples for each platform.
+
 ## Quota and auto-pause behavior (X API and similar shared tiers)
 
 Some cron fleets share a single API tier — e.g. multiple X/Twitter jobs on one quota. An aggressive cadence on one job (the classic trap: an `every 5m` reply scanner) can burn the monthly cap in well under 24h and silently 429 every other job in the fleet. The scheduler auto-pauses all of them on 429.
@@ -95,3 +154,4 @@ For Shivang's personal-Hermes profile, recurring cron jobs should be pinned to *
 
 ## Reference files
 - `references/jobs-json-edit-pitfall.md` — verbatim session trace of a literal-newline JSON corruption and the in-place fix; the dated `.bak_*` files are merge-of-trust snapshots, not transaction logs.
+- `references/hermes-send-cli.md` — full `hermes send` CLI reference for delivering messages to Discord/Telegram/Slack/Signal from agents, scripts, and crons. Covers the `-t` vs `--to` gotcha, thread-vs-message-ID confusion, per-platform target formats, and the `MEDIA:` inline attachment syntax.
