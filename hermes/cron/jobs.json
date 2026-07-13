@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 478
+        "completed": 479
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-13T14:43:00.244759+05:30",
-      "last_run_at": "2026-07-13T12:42:04.429225+05:30",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
+      "next_run_at": "2026-07-13T15:44:04.901916+05:30",
+      "last_run_at": "2026-07-13T13:43:09.019107+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -117,15 +117,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 24
+        "completed": 25
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-12T15:06:32.355879+05:30",
-      "next_run_at": "2026-07-13T14:05:00+05:30",
-      "last_run_at": "2026-07-13T13:05:59.498705+05:30",
+      "next_run_at": "2026-07-13T15:05:00+05:30",
+      "last_run_at": "2026-07-13T14:05:03.411640+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -192,5 +192,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-13T13:43:00.245395+05:30"
+  "updated_at": "2026-07-13T14:44:04.902604+05:30"
 }
