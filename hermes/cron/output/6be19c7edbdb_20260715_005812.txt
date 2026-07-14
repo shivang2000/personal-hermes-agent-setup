@@ -1,0 +1,56 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 15 Jul 2026, 00:55 IST**
+
+**Top picks**
+- [Bonsai 27B (1-bit LLM): The First 27B-Class Model to Run on a Phone — PrismML](https://prismml.com/news/bonsai-27b) — Based on Qwen3.6 27B with ternary/binary weights and FP16 group scaling; 1-bit variant ships at 3.9 GB and fits an iPhone 17 Pro while retaining ~90% of full-precision scores on a 15-benchmark suite. Re-defines the on-device/agentic trade-off and ships under Apache 2.0.
+- [Alternative(s) to run CUDA on non-Nvidia hardware — HPCWire](https://www.hpcwire.com/2026/07/09/spectral-compute-aims-to-set-cuda-free-will-it-succeed/) — Spectral Compute's SCALE toolkit recompiles existing CUDA for AMD/Intel/other GPUs. Backed with $6M from Costanoa + Crucible, the compiler is the most concrete threat to CUDA lock-in since ZLUDA, and the most credible open ecosystem play for AI compute.
+- [EU digital identity wallet age-verification "app" forcing everyone to use Android or iOS — GitHub discussion](https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19) — Spec is built around Google Play Integrity + Apple App Attestation, effectively mandating Big-Tech attestation. High-traffic HN discussion on platform-dependency and EU sovereignty concerns for any app that touches age verification.
+- ["The Tower Keeps Rising" — Armin Ronacher](https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/) — A pointed essay on agentic coding eroding the *shared* understanding of a codebase (Babel without the collapse). Required reading for engineering leads standardising agent workflows.
+- [Show HN: I RL-trained an agent that trains models with RL (for –$1.3k) — Danau5tin/ai-trains-ai](https://github.com/Danau5tin/ai-trains-ai) — End-to-end demo of a self-bootstrapping RL training pipeline that *made money* during training. Concrete numbers, not slides — and an early peek at agent-on-agent self-play economics.
+- [How the FSF sysadmins block botnets with reaction — FSF](https://www.fsf.org/blogs/community/blocking-botnets-with-reaction) — A production incident write-up using fail2ban + `ipset` + a stateful reaction pipeline; useful template for any small-org mail/SSH infra hardening.
+
+**AI, Agents & Models**
+- [Launch HN: Agnost AI (YC S26) — Extract user feedback from agent conversations](https://agnost.ai) — PostHog-for-conversations: ingests agent transcripts (SDK/OTel), clusters behavioral signals (rageprompting, repeat rephrasings) using cosine-drift segmentation + BIRCH + HDBSCAN. ~1M msg/day, ClickHouse-backed; LLM is fallback only. Differentiates from observability/evals by targeting *unspecified* failure discovery.
+- [Danau5tin/ai-trains-ai — Show HN](https://github.com/Danau5tin/ai-trains-ai) — Self-bootstrapping RL agent that trained other RL agents, with a real PnL. Repo is the receipt; methodology and config matter more than the headline.
+- [Nutlope/hallmark — "Anti-AI-slop" design skill for Claude Code/Cursor/Codex](https://github.com/Nutlope/hallmark) — ~6k stars, 1k today; complementary to the agent-skill ecosystem (Matt Pocock's `skills`, dcg below) emerging around Claude Code.
+- [HKUDS/Vibe-Trading — "Your Personal Trading Agent"](https://github.com/HKUDS/Vibe-Trading) — HKU Data Science lab's framework, similar surface area to AI Hedge Fund repos but with a stronger agent-tooling focus.
+
+**Software Engineering & DevTools**
+- ["The Tower Keeps Rising" — Ronacher](https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/) — Same as top picks; included here for engineering-org audience.
+- [Beautiful Type Erasure with C++26 Reflection](https://ryanjk5.github.io/posts/rjk-duck/) — Practical use of the new reflection proposal for type-erased containers; real code, not toy examples.
+- [Differentiable Fortran with LFortran and Enzyme](https://docs.pasteurlabs.ai/projects/tesseract-core/latest/blog/2026-07-09-enzyme-lfortran-autodiff.html) — LLVM-level Enzyme AD plugin landing in LFortran; lowers the bar to bring scientific Fortran into modern ML/sciML pipelines.
+- [FSF botnet blocking with reaction](https://www.fsf.org/blogs/community/blocking-botnets-with-reaction) — SRE/security crossover write-up.
+- [Dicklesworthstone/destructive_command_guard (dcg)](https://github.com/Dicklesworthstone/destructive_command_guard) — Active v0.6.x line; rule-based shell hook for Claude/Codex/Cursor that blocks destructive patterns pre-execution. Rising fast (481 stars today). Pairs naturally with the "agent safety" theme.
+
+**Cloud, Infra, Data & Security**
+- [EU digital-identity wallet age-verification spec discussion](https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19) — Architectural dependency on Play Integrity / App Attestation is the security story; if it lands unmodified, EU age-gated apps lose web/Linux viability.
+- [Spectral Compute SCALE — CUDA on non-Nvidia GPUs](https://www.hpcwire.com/2026/07/09/spectral-compute-aims-to-set-cuda-free-will-it-succeed/) — Compelling compiler story for anyone running heterogeneous GPU fleets or worried about Nvidia-only lock-in.
+- [S&P downgrades Oracle to BBB — heise](https://www.heise.de/en/news/S-P-downgrades-Oracle-to-BBB-only-one-notch-above-junk-level-11363472.html) — One notch above junk; relevant for anyone with significant OCI commitments, vendor-risk reviews, or Oracle-db dependent SLAs.
+
+**Crypto & Blockchain Engineering**
+- No fresh primary-source crypto news on HN's front page in the last 24h. Skipping the section rather than padding with price chatter. Worth tracking: ongoing EIP/rollup work, but nothing new and significant enough to surface from public sources at this run.
+
+**Open Source / GitHub**
+- [OpenCut-app/OpenCut v0.3.0 (Apr 15)](https://github.com/OpenCut-app/OpenCut) — Open-source CapCut alternative gaining 4k+ stars/day; video editor stack is one of the more active OSS categories right now.
+- [Raphire/Win11Debloat](https://github.com/Raphire/Win11Debloat) — 779 stars today; PowerShell script to strip preinstalled apps/telemetry from Win10/11. Sustained community interest in OS-debloating.
+- [Dicklesworthstone/destructive_command_guard](https://github.com/Dicklesworthstone/destructive_command_guard) — As above; shipping 0.6.x with active Claude/Codex-targeted rule packs.
+- [mattpocock/skills](https://github.com/mattpocock/skills) — Pocock's "real engineer" Claude skill repo, 1.5k stars today. Reference for the new Claude Code skills format.
+
+**Startups, YC & Industry**
+- [Agnost AI (YC S26) — Launch HN](https://agnost.ai) — Conversation analytics for AI products, $499/mo Pro tier, ~1M msg/day in production. Sits in the "tooling for builders of agentic products" wave.
+- [Kontigo (YC S24) hiring Head of Security](https://www.ycombinator.com/companies/kontigo/jobs/uNttrlv-head-of-security) — Notable for the role, not the company; supply of YC-backed security leadership is a positive signal for the ecosystem.
+- [Oracle credit downgrade to BBB](https://www.heise.de/en/news/S-P-downgrades-Oracle-to-BBB-only-one-notch-above-junk-level-11363472.html) — Material procurement/vendor-risk story.
+
+**YouTube / Technical Media**
+- No fresh verified public-Youtube engineering talks surfaced this run. Watchlist candidates next cycle: SC25 appearances (Spectral Compute is at booth #6552, Nov 18–20 — useful date-pin for CUDA-portability coverage); any Anthropic/OpenAI engineering AMAs in the next 12h.
+
+**Watchlist**
+- Spectral Compute SCALE benchmark results and first third-party CUDA port reproductions — the magnitude of the CUDA-portability story hinges on real workloads, not vendor demos.
+- Bonsai 27B independent reproductions on actual iPhone 17 Pro hardware (battery, thermals, real agent-loop latency) — the on-device claim is the headline; needs pressure-testing.
+- EU age-verification spec outcomes after the high-engagement GitHub discussion — the integrity-API requirement is the lever to watch.
+- Any Anthropic/OpenAI/Google DeepMind engineering blog or model-card drops in the next 4h — quiet period is unusual and worth noting if it breaks.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
