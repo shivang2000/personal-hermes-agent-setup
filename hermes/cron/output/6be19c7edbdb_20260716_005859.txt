@@ -1,0 +1,45 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. Let me compose the digest.
+
+**Tech / AI / Crypto / Software Digest — 16 July 2026, 00:55 IST**
+
+**Top picks**
+- [Thinking Machines releases Inkling, a 975B (41B active) open-weights MoE with 1M context, plus a 276B/12B-active Inkling-Small preview](https://thinkingmachines.ai/news/introducing-inkling/) — DeepSeek-V3-style arch (256 routed + 2 shared experts, 6 active/token, sigmoid+aux-loss-free routing), Muon+Adam hybrid optimizer, trained on 45T tokens of text/image/audio/video, with a "controllable thinking effort" knob (0.2–0.99) that hits Terminal Bench 2.1 at ~⅓ the tokens of Nemotron 3 Ultra. Weights on Hugging Face in BF16 and NVFP4, with inference paths in SGLang, vLLM, llama.cpp, and Modal/Together/Fireworks/Databricks/Baseten APIs. Post-training was scaled to 30M+ RL rollouts on synthetic+human envs; Tinker fine-tuning available at 50% off for limited time.
+- [OpenAI ships its first hardware: Codex Micro, a $230 macropad with Work Louder](https://thenewstack.io/openai-codex-micro-macropad/) — 6 RGB-lit "agent keys" surface Codex task state (idle/think/done/error), bottom row is accept/reject/branch/push-to-talk, dial+joystick map to Codex composer and reasoning level. Re-skinned Work Louder Creator Micro 2 with low-profile switches; programmable via Work Louder's Input app. Limited run on Supply Co, separate from the Ive "smart speaker" project. Worth a look if you live in Codex and want physical affordances for parallel agent threads.
+- [Neomind Labs runs Gemma 4 26B-A4B at 5.2 tok/s on dual Ivy Bridge Xeons, AVX1 only, no GPU](https://www.neomindlabs.com/2026/06/08/running-gemma-4-26b-at-5-tokens-sec-on-a-13-year-old-xeon-with-no-gpu/) — The author hit a real-world engineering puzzle: ikawrakow/ik_llama.cpp's MoE fast paths assume AVX2, and the build silently fell through to a path where 240 expert FFN tensors per pass never got computed (mean logit pinned at +16). The PR (ik_llama.cpp#2138) gates fused MOE_FUSED_UP_GATE on `GGML_USE_IQK_MULMAT` and rewrites the scalar fallbacks. Reading-speed inference on 2013-era DDR3 hardware for under $300.
+
+**AI, Agents & Models**
+- [Pantograph Pan-1: a 4B goal-conditioned Minecraft agent from 500k hours of video pretraining](https://pantograph.com/journal/pan-1) — Goal-conditioned RL using internet video (VPT-style inverse-dynamics labels); 300-frame context (~30s), 20 Hz action frequency. Stronger out-of-distribution goal generalization than Gemma 4 fine-tunes on the same action data. PBC framing this as a stepping stone toward general robotics — useful methodology read for anyone working on long-horizon embodied agents.
+- [Launch HN: Coasty (YC S26) — API for computer-use agents](https://coasty.ai/docs) — Managed Linux/Windows machines, task-run and workflow DSL primitives (loops, branches, budgets, approvals), low-level predict/sessions/grounding endpoints, and an MCP server. Bills upfront and refunds on failure via `X-Credits-Refunded` header. Notable for exposing "human takeover" and "bring your own model" as first-class primitives.
+- [OpenAI loses "OPENAI" trademark appeal at EU General Court](https://dpa-international.com/economics/urn:newsml:dpa.com:20090101:260715-930-389143/) — Court ruled the term is purely descriptive for software/cloud services (since "open" + "AI" reads as "freely accessible AI"). Appeal to the ECJ still possible. UK/Singapore registrations were held not binding under EU law. Mostly affects EU brand posture; no immediate product impact.
+- [OpenCut (open-source CapCut alternative) tops GitHub trending at 71k stars, 1.5k today](https://github.com/OpenCut-app/OpenCut) — Multi-track timeline editor with export pipeline; rapid momentum signals real demand for OSS creator tooling. Worth tracking if you build video/creator infra.
+
+**Software Engineering & DevTools**
+- [vshulcz/deja-vu — zero-dep binary that turns Claude Code/Codex/opencode session logs into a searchable memory layer](https://github.com/vshulcz/deja-vu) — SQLite-backed FTS index with secret redaction at index time, MCP `recall` tool, `deja install --auto` SessionStart hook for proactive context, and `deja sync ssh <host>` for cross-machine memory. Strikes at a real pain point: coding agents keep re-debugging the same "connection pool exhausted" issues because they can't see prior sessions.
+- [Show HN: misa77 — LZ codec decoding ~2× faster than LZ4 at better ratios](https://github.com/welcome-to-the-sunny-side/misa77) — Silesia corpus: 5219 MB/s decode at -0 effort, 4274 MB/s at -1, vs LZ4's 2505 MB/s. Constant ≤5 MB memory; compression is intentionally slow. Live on the Pareto frontier for decode-throughput vs ratio across Intel/AMD/ARM64. Interesting for read-heavy services (log search, asset pipelines).
+- [FreeBSD 16 retires the last GPL code from the base system (dialog removed)](https://www.phoronix.com/news/FreeBSD-16-Goes-GPL-Free) — Closes out a multi-year project; the entire base system is now BSD-licensed. 16.0 release targeted for December 2027. Mostly symbolic, but meaningful for downstream distros/embedded users who care about license purity.
+- [Weathergotchi: an open-source, battery-powered ESP32-S3 e-paper climate logger](https://github.com/Michael-Manning/E-Paper-Climate-Logger) — Full hardware release: KiCad PCB, OpenSCAD case, PlatformIO firmware, 1-week runtime on a small Li-Po. A useful reference design if you're building low-power always-on sensors.
+
+**Cloud, Infra, Data & Security**
+- [Telegram Serverless: run bot/Mini App backends on Telegram's infra with V8 isolates + per-bot SQLite](https://core.telegram.org/bots/serverless) — Push via `npx tgcloud push`, schema migrations via separate `migrate` step with risk-classified changes. SDK exposes `db`, `api` (full Bot API), `fetch` (outbound HTTP). Ships with `AGENTS.md` and a Drizzle-style schema DSL so Claude Code/Cursor can build bots in plain language. Interesting precedent: a major consumer platform offering a serverless runtime in the same process as its API.
+- [Redis to cut ~75 jobs in Tel Aviv (~25% of its Israeli workforce, ~6% global)](https://www.timesofisrael.com/israeli-founded-data-tech-unicorn-set-to-slash-25-of-its-tel-aviv-workforce/) — 300-person R&D center, 1300 employees total. Cited as part of an Israeli tech layoff wave (Wix, Rapyd, Amdocs) tied to AI-driven automation and shekel strength. ARR has crossed $300M; 12k paying customers including ~⅓ of Fortune 100.
+
+**Open Source / GitHub**
+- [Nutlope/hallmark — anti-AI-slop design skill for Claude Code, Cursor, Codex (1.1k stars today)](https://github.com/Nutlope/hallmark) — A system prompt/library of design constraints that agents can load to produce more polished, on-brand UI. Notable that "anti-slop" is now a category in the agent-skill ecosystem.
+- [Dicklesworthstone/destructive_command_guard — blocks dangerous shell/git commands from agents (497 stars today)](https://github.com/Dicklesworthstone/destructive_command_guard) — Pattern-matches risky ops (`rm -rf`, force-push to main, etc.) before they hit the shell. The kind of guardrail that should be in every coding-agent loop; signals the maturing agent-safety tooling layer.
+
+**Startups, YC & Industry**
+- [Stripe + Advent joint offer to acquire PayPal at $53B+ (Reuters sources)](https://www.reuters.com/business/finance/stripe-advent-offer-buy-paypal-more-than-53-billion-sources-say-2026-07-15/) — Reported offer above $53B; would be Stripe's biggest move into consumer/payment-network territory and a major consolidation play in global payments. Confirmations and counter-bids expected.
+- [Why I Left Google DeepMind (Alex Turner)](https://turntrout.com/why-i-left-google-deepmind) — A researcher's account of internal efforts (lunch with Jeff Dean, public framework for gov AI contracts) to keep Google from signing a Pentagon deal; concludes the company signed regardless. Useful primary source for anyone tracking AI-lab governance and the Pentagon-Anthropic-Google procurement story.
+- [Briar is in maintenance mode](https://briarproject.org/news/2026-maintenance-mode/) — Long-standing Tor/Android mesh messenger moves to security/bugfix-only after funding uncertainty; project not shut down despite earlier rumors. Important for the at-risk-communications ecosystem (journalists, activists).
+
+**Watchlist**
+- Stripe/Advent–PayPal deal confirmation or counter-bid in coming days — shape of the global payments stack.
+- OpenAI v EU IPO "OPENAI" ruling — ECJ appeal timing; sets precedent for descriptive AI brand names in Europe.
+- OpenAI vs Apple "stolen hardware secrets" lawsuit — referenced in The Verge's Codex Micro coverage; expected to escalate.
+- OpenAI "Ive" smart-speaker hardware reveal — separately rumored for later in 2026; Codex Micro was framed as a side bet, not the main device.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
