@@ -1,0 +1,44 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have sufficient material. Let me draft the digest.
+
+**Tech / AI / Crypto / Software Digest — Wed 16 Jul 2026, 00:55 IST**
+
+**Top picks**
+- [Bonsai 27B: a 27B-class model that fits on a phone](https://prismml.com/news/bonsai-27b) — PrismML ships 1-bit and ternary (1.71 effective bits/weight) variants of a 27B model: ternary at 5.9 GB on a laptop, 1-bit small enough to run on an iPhone 17 Pro Max. Reported benchmarks keep tool-calling/agentic scores within ~6 pts of the Qwen 3.6 27B baseline; the "intelligence density" framing (0.53/GB, ~10x full-precision) matters for on-device agentic systems.
+- [Tailscale SSH + Serve bulletin (TS-2026-009 & 008)](https://tailscale.com/security-bulletins) — Linux Tailscale SSH accepted usernames with leading dashes, so connecting as `-i` reached `getent --no-idn`, dumped `passwd`, and opened a `root` session in violation of `autogroup:nonroot` ACLs. A separate path-walk DoS pinned a CPU core via Tailscale Serve/Funnel on non-absolute paths. Both fixed in 1.98.9; SSH users on Linux should upgrade today.
+- [Cursor 0-day disclosed by Mindgard](https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left) — Mindgard publicly disclosed a 0-day in Cursor after an alleged unresponsive vendor process, publishing PoC code. Worth reading for AI-coding-agent users as a template for what agentic IDE hardening should look like (sandbox, egress, tool policy).
+- [Microsoft July 2026 Patch Tuesday: 570 CVEs, ~60 critical, 2 zero-days in active exploit](https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/) — Microsoft attributes the spike to AI-assisted vulnerability discovery (Pavan Davuluri post on July 9). Notable: CVE-2026-48561 RCE in Microsoft Copilot via Edge for Android (CVSS 9.6), CVE-2026-50661 BitLocker bypass with physical access, and a SharePoint EoP already on CISA KEV.
+- [Dependabot version updates now default to a 3-day package cooldown](https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/) — Dependabot waits 3 days after a new release is published before opening version-update PRs, no config required (lands in GHES 3.23). Direct mitigation against "new-release = supply-chain attack window" typosquat/hijack patterns.
+
+**AI, Agents & Models**
+- [The Memory Heist: exfiltrating Claude.ai memory via web_fetch](https://www.ayush.digital/blog/the-memory-heist) — Researcher uses Claude's `web_fetch` follow-link rule plus a controllable website of single-character links to walk an alphabet tree and silently leak the model's injected memory profile (name, employer, security-question answers). Demonstrates that the daily summarization + retrieval memory stack is an attack surface as soon as the agent can browse.
+- [Star Fleet: 20 Codex agents solve 19 Erdős problems in parallel with Lean 4](https://www.starfleetmath.com/) — Bun+TypeScript Mac app spins up 20 "starships" on dedicated 60-vCPU sandboxes (x86-64 / H100 bursts, SAT/SMT/SageMath toolchains, vector-DB Lean premise search, Claude Fable proof-verifier) and posts 13 full + 6 partial proposed solutions. Useful architecture sketch for parallel research-grade agents.
+- [LeMario: training a JEPA world model on Super Mario Bros](https://www.benjamin-bai.com/projects/lemario) — From-scratch JEPA reproduction with AdaLN-Zero action injection, SIGReg collapse prevention, and a frank postmortem: the model predicts pixels and stays within 2–5px of nearby image goals, but cannot reliably clear the first obstacle. Good engineering writeup of JEPA's failure modes for agent-style planning.
+- [Juggler – Show HN: GUI coding agent by the creator of JUCE](https://github.com/juggler-ai/juggler) — Julian Storer (JUCE) released an open-source GUI-first coding agent. ~362 stars in a few days; commits add a headless "linux server without GTK" path, relevant for self-hosted code agents.
+- [Armin Ronacher – "The Tower Keeps Rising"](https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/) — Essay on what happens when AI agents don't feel pain: they let one person act across parts of a system that previously required teams. Worth reading as the best short framing of where the developer-headcount math breaks.
+
+**Software Engineering & DevTools**
+- [How I use HTMX with Go (Alex Edwards)](https://www.alexedwards.net/blog/how-i-use-htmx-with-go) — Concrete patterns for `html/template` + HTMX: base/page/partials layout, `embed.FS` wiring, partial-vs-full responses, redirect/error handling, and a default HTMX config. The most pragmatic Go+HTMX reference released this cycle.
+- [Hallmark: anti-AI-slop design skill for Claude Code / Cursor / Codex](https://github.com/Nutlope/hallmark) — Skill/prompt pack that nudges coding agents toward distinctive, non-generic UI. 1k+ stars/day on GitHub trending; evidence the "AI-generated slop UI" pain point is now treated as a tooling problem.
+- [destructive_command_guard (dcg) – block dangerous shell/git from agents](https://github.com/Dicklesworthstone/destructive_command_guard) — Wraps shell invocations and refuses patterns like `rm -rf`, `git reset --hard`, force-pushes, etc., aimed at Claude Code / Codex / Cursor. Trending at 473 stars/day; practical complement to the policy-gate pattern.
+
+**Cloud, Infra, Data & Security**
+- [RISC-V Is Inevitable – RISC-V Summit Europe 2026 keynote](https://www.eetimes.com/risc-v-is-inevitable-state-of-the-union-keynote-argues/) — Krste Asanović (SiFive) argues server-class RVA23 silicon is the 2026 story; Qualcomm, NVIDIA, Meta, Google, Alibaba are all adding RISC-V. Hyperscalers cited as engaged on next-gen RISC-V cores as an alternative to incumbents.
+- [Who's running all those tiny RPKI servers?](https://blog.apnic.net/2026/07/15/whos-running-all-those-tiny-rpki-servers/) — APNIC investigates the long tail of RPKI validators/hosts and what that means for Internet routing security. Useful background before deploying ROA filters.
+- [OpenCut – open-source CapCut alternative hits #1 on GitHub trending](https://github.com/OpenCut-app/OpenCut) — Electron + FFmpeg-based video editor; 69.8k stars, 4.3k added in 24h. Notable as a real open-source threat to a closed-source editing product, not just a clone.
+
+**Startups, YC & Industry**
+- [Launch HN: Agnost AI (YC S26) – feedback mining for agent conversations](https://agnost.ai) — Clusters production agent traces into user intents/violations, surfaces missing-tool and repeated-prompt patterns, integrates with Google's MCP Toolbox for Databases. Concrete example of the "observability for AI agents" category.
+- [NYT: SF home sellers asking for OpenAI/Anthropic stock](https://www.nytimes.com/2026/07/08/technology/san-francisco-home-sales-openai-anthropic-ipo.html) — Pre-IPO private stock now appearing as real-estate payment; a marker of how concentrated the AI-lab cap-table liquidity story is becoming.
+- [Vancouver PD "Quick Escape" button wipes its own history](https://vpd.ca/) — Now-standard pattern for domestic-violence pages; implementation is a `history.replaceState` + `window.open` redirect chain. Worth borrowing for any abuse-related resource page.
+
+**Watchlist**
+- Anthropic / Claude memory hardening: the Memory Heist is the first public exfil demo against `claude.ai` memory; expect either a tool-call policy change or a memory-scope revision. Anthropic's news index (claude-fable, sonnet-5, mythos) has been moving fast this week.
+- Microsoft exploitability-index credibility: with Anthropic Red Team producing PoCs for 13/14 "Exploitation Less Likely" n-days, vendors will be forced to redo severity ratings; track the CISA KEV pipeline.
+- RISC-V server silicon vs. NVIDIA/AMD roadmap: if hyperscaler RVA23 designs tape out in 2026, watch for the first Cloudflare/CDN-class deployment numbers by Q4.
+- Agnost AI / YC S26 cohort for agent-observability: if Google + YC both bet here, expect Datadog, Honeycomb, and the new Arize/Tracewave tier to consolidate fast.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
