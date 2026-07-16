@@ -1,0 +1,48 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough signal. Let me compile the digest.
+
+# Tech / AI / Crypto / Software Digest — 16 Jul 2026, 20:55 IST
+
+**Top picks**
+- **[Inkling open-weights MoE from Thinking Machines](https://thinkingmachines.ai/news/introducing-inkling/)** — 975B-total / 41B-active MoE, 1M-token context, pretrained on 45T tokens of text+image+audio+video, with explicit "controllable thinking effort." Positioned as a customization base, not a frontier winner; available for fine-tuning on their Tinker platform.
+- **[Grok Build is open source](https://github.com/xai-org/grok-build)** — xAI released the internals behind their coding-agent harness: includes a self-contained Unicode Mermaid renderer, terminal UI code, and prompt/tooling scaffolding. Useful reference for anyone building coding agents on top of Grok.
+- **[PlanetScale: Making 768 servers look like 1](https://planetscale.com/blog/making-768-servers-look-like-1)** — Concrete writeup of horizontal Postgres sharding: sharded proxy layer, write-ahead-log bottlenecks, read-replica limits, and how PlanetScale routes queries across 768 shards holding ~1 PB. Reference architecture for anyone designing multi-tenant OLTP.
+- **[Kimi K3 is live](https://www.kimi.com/en)** — Moonshot's new flagship reports frontier-level benchmarks (GDPval-AA v2 = 1687, AA-Briefcase = 1527), reportedly second only to Claude Fable 5 and GPT-5.6 Sol. API priced $3/$15 per 1M tokens (cache $0.3); full weights promised in coming days.
+- **[Rust → Zig rewrite hits feature parity in Roc compiler](https://rtfeldman.com/rust-to-zig)** — Richard Feldman reports 300k-line rewrite in Zig now matches the original Rust compiler, with a playable WASM-4 game as the proof. Useful counterpoint to Bun's Zig→Rust rewrite, with concrete reasons (compile times, C interop, simpler runtime) and tradeoffs.
+
+**AI, Agents & Models**
+- **[Inkling: open-weights MoE from Thinking Machines](https://thinkingmachines.ai/news/introducing-inkling/)** — 975B/41B-active MoE, 1M context, multimodal (text+image+audio), controllable reasoning. Plays the role Meta's Llama used to — a strong, customizable US-hosted open base — but the lab is explicit it isn't SOTA. Fine-tunable on Tinker.
+- **[Kimi K3 is live](https://www.kimi.com/en)** — Moonshot's new frontier-class model (weights pending). Pricing tracks Claude Sonnet, well above GLM-5.2; performance reportedly just behind Fable 5 and GPT-5.6 Sol. Reasoning-token efficiency will determine real-world cost.
+- **[The LLM Critics Are Right. I Use LLMs Anyway](https://www.theocharis.dev/blog/llm-critics-are-right-i-use-llms-anyway/)** — Practitioner counterpoint on the productivity/economics vs. capability-debate discussion that has been dominating HN/YC threads this week.
+
+**Software Engineering & DevTools**
+- **[SQLite should have (Rust-style) editions](https://mort.coffee/home/sqlite-editions/)** — Concrete case for opt-in safe-by-default behavior in SQLite (foreign keys ON by default, stricter types, stricter PRAGMAs), using the *editions* concept Rust uses. The author walks through real-world ROWID-reuse bugs and how they could be prevented.
+- **[Let's Build PlanetScale from Scratch: Infrastructure](https://onatm.dev/2026/07/16/homescale-part-1/)** — Companion piece to the PlanetScale blog: a from-scratch walkthrough of sharding, replication, and proxy routing. Useful educational build for distributed-DB engineers.
+- **[Rust → Zig rewrite: feature parity](https://rtfeldman.com/rust-to-zig)** — Roc compiler's 300k-line port reaches parity; report covers build ergonomics, C interop, allocator design, and what they lost (no borrow checker, weaker packaging story). Strong context for any team weighing Zig for a new compiler or runtime.
+- **[Improving 15 LLMs at Coding in One Afternoon — Only the Harness Changed](http://blog.can.ac/2026/02/12/the-harness-problem/)** — (re-surging on HN) Empirical reminder that prompt format, retries, tool scaffolding, and verification loops drive coding scores more than raw model choice. Good checklist if you're building an internal coding agent.
+
+**Cloud, Infra, Data & Security**
+- **[PlanetScale: Making 768 servers look like 1](https://planetscale.com/blog/making-768-servers-look-like-1)** — Production sharding architecture: proxy layer in front of N shards, sharding key selection, write-scaling limits, USL-style ceilings, backups. Petabyte-scale reference.
+- **[Bluesky trademarks "AT Protocol"](https://atproto.com/blog/at-protocol-trademark)** — Bluesky acquired the AT Protocol mark to defend it from a third party that was threatening ecosystem developers. Free for non-commercial / descriptive use; license needed only when the mark becomes a product brand. Notable precedent for open-protocol governance.
+- **[Teen hackers jailed after live-streamed TfL cyber attack](https://www.bbc.com/news/articles/c4gyg0y6yg2o)** — Owen Flowers and Thalha Jubair convicted for the 2024 Transport-for-London attack that cost ~£39M and exposed customer data. Reminder that public-facing social media during ops is now treated as an aggravator.
+
+**Open Source / GitHub**
+- **[xai-org/grok-build](https://github.com/xai-org/grok-build)** — xAI's open-sourced coding-agent stack: includes Mermaid-to-Unicode terminal renderer, terminal UI primitives, and agent-tool plumbing. Already forked/reimplemented by Simon Willison as a WASM playground.
+- **[minh-ton/reynard-browser: real Firefox for iOS 13+](https://github.com/minh-ton/reynard-browser)** — Third-party iOS Firefox build using Gecko rather than the WebKit shell Apple forces on browsers. Notable because Apple now allows alternative engines in the EU but not everywhere.
+- **[lateos-ai/npm-scan](https://github.com/lateos-ai/npm-scan)** — Modern supply-chain scanner for npm: package metadata analysis, install-script heuristics, and maintainer-anomaly checks. Useful for CI gates given recent npm ecosystem incidents.
+- **[SnapState — persistent state for AI agent workflows](https://snapstate.dev)** — Show HN: durable, resumable state layer designed for multi-step agent runs (long-horizon workflows, crash recovery, replay). Targets a real gap most agent frameworks still leave to users.
+
+**Startups, YC & Industry**
+- **[Where are YC founders now? OpenAI and Anthropic, mostly](https://joinedanthropic.com)** — Aggregate look at YC alumni trajectories: an outsized share of recent batches now sit inside the frontier-AI labs rather than building their own companies. Provokes the ongoing debate about whether AI is a talent magnet or a hiring monoculture.
+- **[David Siegel: Governments, companies, nonprofits should invest in free, open source AI (PDF)](https://www.siegelendowment.org/wp-content/uploads/2026/07/fortune-david-siegel-open-source-ai.pdf)** — Position paper arguing for public-good funding of open-weights AI; useful framing for policy/regulation and procurement.
+
+**Watchlist**
+- **Kimi K3 open-weights drop** — Moonshot said "coming days"; expect benchmarks, GGUF/NVFP4 quantizations, and pricing reaction from GLM/Qwen camps.
+- **OnePlus US/EU halt** — community thread at 322 points; details sparse, treat as developing.
+- **xAI Grok Build downstream** — early forks already turning the Mermaid renderer into standalone tools; watch for AGENTS.md / harness convergence.
+- **TfL attackers' sentencing details** — expected to set new UK sentencing precedent for live-streamed intrusions against critical infrastructure.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
