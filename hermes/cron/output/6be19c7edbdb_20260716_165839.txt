@@ -1,0 +1,128 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have plenty. Now let me write the digest. Based on my research, here are the verified, high-signal items I'll include:
+
+**AI/Agents & Models**
+- Thinking Machines Lab released Inkling, an open-weights multimodal model (text/image/audio), fine-tunable via Tinker
+- xAI open-sourced Grok Build — their Rust-based coding agent harness + TUI (9k stars, 1.4k forks already, top HN)
+- Anthropic's "Agentic misalignment" research + latest news (Claude for Teachers, Canadian AI research, Bernanke on Trust)
+- Google DeepMind's Gemini Omni + Gemma 4 12B encoder-free multimodal
+- IBM Research: "Model Routing Is Simple. Until It Isn't." on HF blog
+
+**Software Engineering & DevTools**
+- GitHub Copilot changelog: BYOK in JetBrains, Security reviews in Copilot app, Agentic autofix for code scanning, GPT-5.6 Sol/Terra/Luna, Kimi K2.7
+- GitHub Blog: durable owner for 14k+ repos, cross-repo documentation via Agentic Workflows
+- Apache Ossie trending — semantic metadata spec for analytics/AI/BI
+- PostHog trending
+
+**Cloud, Infra, Data & Security**
+- Cloudflare: DNSSEC rollover took down .al TLD, EDE 33 error code added to 1.1.1.1
+- Cloudflare: Precursor — continuous client-side behavioral bot detection
+- Cloudflare: Workers Cache — in front of Worker entrypoints
+- Cloudflare: Meerkat — global consensus with QuePaxa algorithm
+- Cloudflare joins UK Cyber Resilience Pledge
+- CodeQL 2.26.0 adds Kotlin 2.4.0 + AI prompt injection detection
+- GitHub Dependabot version updates — default package cooldown
+
+**Crypto & Blockchain**
+- x402 Foundation under Linux Foundation — open standard for AI agent payments (75.4M transactions/$24.2M volume in 30 days)
+- US Senate unanimously opposes clemency for SBF
+- Tether invests $20M in Argentine neobank Ualá
+- Coinbase's Jesse Pollak steps back from Base app leadership
+- US sanctions 4 Iran central bank crypto wallets; Tether freezes $131M
+- Coinbase Base strategy shift
+
+**Open Source / GitHub**
+- Grok Build (xai-org)
+- Inkling (Thinking Machines)
+- Apache Ossie
+- Nutlope/hallmark — anti-AI-slop design skill for Claude Code/Cursor/Codex (10k+ stars)
+- LeRobot v0.6.0
+
+**Startups, YC & Industry**
+- Stripe + Advent joint offer to acquire PayPal (Reuters)
+- YC founders — most going to OpenAI/Anthropic
+- OnePlus halts USA/Europe operations
+- Samsung/big hardware reports — TBD
+
+Now I have a strong, fresh digest. Let me format it.
+
+---
+
+**Tech / AI / Crypto / Software Digest — Thursday, 16 July 2026, 20:55 IST**
+
+**Top picks**
+- [Inkling: Thinking Machines' open-weights multimodal model](https://thinkingmachines.ai/inkling/) — TML released Inkling, an efficient open model covering text, images, and audio, with first-class fine-tuning through their Tinker API. The site benchmarks it against Nemotron 3 Ultra, GLM 5.2, GPT 5.6 Sol, and Claude Fable 5. This is a notable entrant into the multimodal-OSS race and the first big release to make per-model fine-tuning as cheap as inference.
+- [xAI open-sources Grok Build — their coding agent harness + TUI](https://github.com/xai-org/grok-build) — A Rust workspace (`bin/`, `crates/`, third-party notices) shipping xAI's fullscreen, mouse-interactive, extensible agent harness and terminal UI. Already at ~9k stars and 1.4k forks within hours, and one of the top stories on HN. Treat as a reference implementation to study for any team building their own coding agent.
+- [x402 Foundation launches under the Linux Foundation](https://x402.org/) — An open, neutral HTTP-native payments standard aimed at AI agent commerce, leveraging the long-unused HTTP 402 status. x402.org claims 75.4M transactions, $24.2M volume, 94k buyers and 22k sellers in the last 30 days. A meaningful open infrastructure attempt for agent-to-agent payments.
+- [Stripe + Advent make joint offer to acquire PayPal — Reuters](https://www.reuters.com/technology/stripe-advent-have-made-joint-offer-acquire-paypal-sources-2026-07-16/) — Per sources, Stripe and PE firm Advent are bidding jointly for PayPal. If it closes, this is the largest payment-stack consolidation in a decade and would reshape the developer-friendly payments competitive landscape.
+- [Cloudflare: a broken DNSSEC rollover took down .al — and 1.1.1.1 now signals bypassed validation](https://blog.cloudflare.com/) — After a failed .al TLD key rollover, Cloudflare deployed a Negative Trust Anchor and added EDE 33, a new DNS error code that returns to clients when DNSSEC validation is skipped. Directly useful for anyone running authoritative DNS, validating resolvers, or measuring DNSSEC posture.
+- [CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection detection](https://github.blog/changelog/) — CodeQL extends its Kotlin analyzer to 2.4.0 grammar and ships detectors aimed at prompt-injection patterns in code, alongside a new public preview of "Agentic autofix" for code scanning alerts. Practical additions for any team using GitHub Advanced Security with modern Android/Kotlin and LLM-bearing code.
+
+**AI, Agents & Models**
+- [Anthropic: "Inviting hard questions" + Claude for Teachers + Bernanke on Long-Term Benefit Trust](https://www.anthropic.com/news) — A public Q&A campaign about AI plus education and governance moves (Jul 9–14). Less about new model capability and more about how Anthropic is positioning around safety and accountability.
+- [Google DeepMind: Gemini Omni + Gemma 4 12B (encoder-free multimodal) + Nano Banana 2 Lite + Gemini Omni Flash](https://www.deepmind.google/blog/) — DeepMind's homepage highlights a unified multimodal model line, plus a smaller image/editing model family ("Nano Banana") shipping at Flash-tier latency. Notable because Gemma 4 12B drops the separate vision encoder stack.
+- [Hugging Face blog: "Welcome Inkling by Thinking Machines"](https://huggingface.co/blog) — HF's official write-up/hosting of TML's Inkling release with community reproductions.
+- [Hugging Face: IBM Research — "Model Routing Is Simple. Until It Isn't."](https://huggingface.co/blog) — IBM Research's enterprise post on the operational pitfalls of model-routing (latency vs cost vs capability SLAs). Worth reading before you build a router in production.
+- [AllenAI: "What building Shippy taught us about building agents"](https://huggingface.co/blog) — Lessons-learned post from a real agent product with measurable behavior problems (memory, tool failure, planning). Useful case study for agent harness builders.
+- [Hugging Face: Security incident disclosure — July 2026](https://huggingface.co/blog) — HF's public disclosure (Jul 16). Important transparency for anyone pinning HF Spaces/Models in production.
+- [xAI Grok Build launch on HN (518 comments)](https://github.com/xai-org/grok-build) — Community reaction; the size of the discussion signals industry attention to the harness internals.
+
+**Software Engineering & DevTools**
+- [GitHub Blog: How GitHub gave every repository a durable owner](https://github.blog/) — GitHub had 14,000+ repos and <50% had clear ownership; they validated owners across the active set in <45 days and archived the rest. A concrete playbook for large-scale code asset governance.
+- [GitHub Blog: Automating cross-repo documentation with GitHub Agentic Workflows](https://github.blog/) — The .NET Aspire team uses agentic workflows to convert merged product changes into SME-reviewed docs PRs.
+- [GitHub Copilot for JetBrains expands BYOK capabilities (Jul 14)](https://github.blog/changelog/) — Bring-your-own-key support broadened in JetBrains IDEs, useful for orgs routing Copilot through Azure OpenAI or internal gateways.
+- [GitHub Copilot: Security reviews now available in the Copilot app (Jul 14)](https://github.blog/changelog/) — Pulls Copilot security review functionality into the standalone Copilot app, not just the IDE.
+- [OpenAI's GPT-5.6 Sol, Terra, and Luna now available in GitHub Copilot (Jul 9)](https://github.blog/changelog/) — Full new GPT-5.6 family is live across Copilot surfaces. Worth a benchmark on your own eval set.
+- [Kimi K2.7 now available for Copilot Business and Enterprise (Jul 7)](https://github.blog/changelog/) — Moonshot's K2.7 is the latest non-OpenAI frontier-tier option in Copilot for orgs.
+- [Codex as agent provider in JetBrains IDEs (Jul 7)](https://github.blog/changelog/) — Adds OpenAI's Codex as an alternative agent backend inside JetBrains, alongside the native Copilot agent.
+- [GitHub: New pull requests dashboard is now generally available (Jul 9)](https://github.blog/changelog/) — Replaces the legacy PR list with a dashboard oriented around review queues and bottlenecks.
+- [GitHub Copilot app available to all (Jul 7)](https://github.blog/changelog/) — The standalone Copilot mobile/desktop app is no longer gated behind preview.
+
+**Cloud, Infra, Data & Security**
+- [Cloudflare: Precursor — continuous client-side behavioral bot detection](https://blog.cloudflare.com/) — A new bot-management engine that turns session-level behavior into detection signals across the full user journey. Direct competition to HUMAN/DataDAD-style behavioral vendors.
+- [Cloudflare: Workers Cache — a cache layer in front of your Worker](https://blog.cloudflare.com/) — Regionally tiered cache configured via standard HTTP headers, designed to be composable with Workers and Durable Objects.
+- [Cloudflare: Meerkat — global consensus experiment using the new QuePaxa algorithm](https://blog.cloudflare.com/) — Cloudflare Research published a new consensus algorithm and a planned strongly-consistent KV store on top of it. Worth a read for distributed-systems folks.
+- [Cloudflare: Improving Smart Tiered Cache for Public Cloud Regions](https://blog.cloudflare.com/) — Lets customers hint cloud region (AWS/GCP/Azure/Oracle) so Cloudflare's tiered cache picks the right upper-tier POPs — a meaningful origin-cost optimization lever.
+- [Cloudflare joins the UK Cyber Resilience Pledge](https://blog.cloudflare.com/) — Voluntary governance commitment; mostly signal, but a directional datapoint on UK policy.
+- [Cloudflare: "Why we cannot wait for better post-quantum signature algorithms"](https://blog.cloudflare.com/) — Cloudflare's argument to ship ML-DSA now rather than wait for the next wave of PQC signature candidates. Practical for anyone planning a PQC migration.
+- [Dependabot version updates introduce default package cooldown (Jul 14)](https://github.blog/changelog/) — Reduces noisy PR churn by waiting for a package version to mature before bumping. Operationally useful for any team drowning in Dependabot PRs.
+- [GitHub availability report: June 2026 (Jul 8)](https://github.blog/) — Six incidents caused degraded performance across services in June; the level of detail GitHub publishes is itself useful for your own SLO/incident postmortem templates.
+
+**Crypto & Blockchain Engineering**
+- [US Senate unanimously opposes clemency for SBF](https://www.coindesk.com/) — Nonbinding resolution after SBF requested clemency; comes after Trump pardoned CZ and Ross Ulbricht. A clear policy signal even without binding effect.
+- [Tether invests $20M in Argentine neobank Ualá; Tether freezes $131M on TRON after US sanctions Iran central bank wallets](https://www.coindesk.com/) — Two Tether datapoints: a Latin America distribution play, and a compliance-side freeze of sanctioned addresses — important for anyone building USDT flows or TRON integrations.
+- [x402 Foundation: open standard for AI-agent payments (Linux Foundation)](https://x402.org/) — Reuses the long-dormant HTTP 402 status code so any HTTP server can require payment per request and any client (including agents) can pay. Real traction: 75.4M transactions/$24.2M volume/94k buyers in 30 days.
+- [Coinbase's Jesse Pollak steps back from Base app leadership, "Cobie" (Jordan Fish) takes over](https://www.coindesk.com/) — Pollak admitted the crypto social strategy failed. Concrete org/strategy change at one of the most important L2 developer surfaces.
+- [Bitcoin dormant since 2017 peak moves $383M](https://www.coindesk.com/) — Coins went to a fresh address, not an exchange; nothing sold yet, but it's a meaningful supply-overhang signal to watch.
+- [ZachXBT publicly criticizes hardware wallets](https://www.coindesk.com/) — High-profile on-chain investigator claiming hardware wallets are "complete garbage." Not actionable in itself, but the thread is where crypto security discussion is happening this week.
+
+**Open Source / GitHub**
+- [apache/ossie — semantic metadata standard for analytics, AI and BI platforms (34★ today, 730 total)](https://github.com/trending) — Apache incubator project aiming to standardize semantic metadata exchange between analytics/AI/BI tools. Trending today; relevant if you build or operate semantic layers, dbt, or model context pipelines.
+- [Nutlope/hallmark — anti-AI-slop design skill for Claude Code, Cursor, Codex (1,277★ today, 10k+ total)](https://github.com/Nutlope/hallmark) — A guardrail "skill" bundle specifically targeted at keeping AI-generated UI from converging on the same generic look. Practical and very popular.
+- [xai-org/grok-build — open-source coding agent harness and TUI in Rust (477 HN pts, 518 comments, 9k★, 1.4k forks in hours)](https://github.com/xai-org/grok-build) — A reference implementation of a production coding-agent loop and terminal UI; one of the fastest-rising repos of the week.
+- [PrismML-Eng/Bonsai-demo (323★ today)](https://github.com/PrismML-Eng/Bonsai-demo) — Trending ML demo from the Bonsai project.
+- [OpenCut-app/OpenCut — open-source CapCut alternative (1,664★ today, 73k total)](https://github.com/OpenCut-app/OpenCut) — Sponsorship-backed video editor; large day-1 growth on trending.
+- [LeRobot v0.6.0: "Imagine, Evaluate, Improve"](https://huggingface.co/blog) — Robotics framework update with new imagination-based evaluation; continues the open-source embodied-AI momentum.
+- [Hugging Face: Native-speed vLLM transformers modeling backend](https://huggingface.co/blog) — vLLM now plugs into the standard `transformers` backend at native speed; lowers the bar for high-throughput serving of HF models.
+
+**Startups, YC & Industry**
+- [Stripe + Advent joint offer to acquire PayPal — Reuters sources](https://www.reuters.com/technology/stripe-advent-have-made-joint-offer-acquire-paypal-sources-2026-07-16/) — Bidding price not yet disclosed. If consummated, it's the most consequential fintech M&A in years and would change the strategic terrain for any startup picking a payment provider.
+- [Where are YC founders now? OpenAI and Anthropic, mostly](https://joinedanthropic.com/) — A new "joined-anthropic" tracker plus companion analysis shows YC alumni are disproportionately landing at frontier AI labs. Useful signal on where talent is concentrating.
+- [OnePlus halts operations in USA and Europe (oneplus.com)](https://www.oneplus.com/) — Trending HN; details in the linked post. Notable supply-chain/regional-operations news for hardware-aware builders.
+- [GitHub Q1 2026 Innovation Graph: open-source collaboration accelerating worldwide](https://github.blog/) — GitHub's quarterly OSS-collaboration metrics; useful for anyone tracking geographic shifts in dev activity.
+
+**YouTube / Technical Media**
+- [Thinking Machines — Inkling announcement (model page with video)](https://thinkingmachines.ai/inkling/) — TML's official video walkthrough of the open-weights model and Tinker fine-tuning flow.
+- [Google DeepMind — Gemini Omni launch video](https://www.deepmind.google/blog/) — Demo footage of the new flagship model and its "Omni Flash" tier.
+- [CoinDesk: "A $19 billion AI deal, ETF inflows return, and Binance.US plots a comeback" (28-min market video)](https://www.coindesk.com/) — Useful for context on the cross-over between AI capex and crypto market structure this week.
+
+**Watchlist**
+- Stripe/Advent–PayPal outcome — Reuters is sourcing; expect formal confirmation/disconfirmation in the next 48–72h.
+- Claude Sonnet 5 in the wild — Anthropic shipped it Jun 30; still early for production eval reports.
+- x402 traction — 30-day numbers are striking for a payments standard; watch whether major LLM agent frameworks (LangChain, OpenAI Agents SDK, MCP servers) start shipping native x402 clients.
+- CodeQL 2.26.0 prompt-injection detection — early days; if it holds up, it's a meaningful shift in static analysis for LLM-bearing code.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
