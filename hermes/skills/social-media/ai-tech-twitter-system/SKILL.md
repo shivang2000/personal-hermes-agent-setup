@@ -89,7 +89,7 @@ For scheduled AI/tech tweet runs, Shivang has explicitly approved auto-posting. 
 
 1. Check Shivang's recent build/work context first, then current AI/tech/product/startup developments from reliable sources.
 2. Pick the strongest single angle. If no angle is genuinely strong, stay silent rather than forcing a weak post.
-3. Draft one tweet under 260 characters when possible, always under 280.
+3. Draft one tweet **aiming for ≤260 characters from the first attempt**, never exceed 280. The 260 budget is for edit room after humanizer passes, hashtag adds, and any trim-and-tighten round. Drafting long then trimming 3-4 times wastes turns and tends to lose the mechanism; a tight first draft usually survives the humanizer pass as-is.
 4. Apply the `humanizer` skill/checklist before posting:
    - remove AI words and broad significance language
    - avoid LinkedIn rhythm, emoji, fake polish, and generic inspiration
@@ -251,6 +251,7 @@ Before presenting or posting a tweet:
 8. Creating bot-to-bot acknowledgement loops in Discord. When another Hermes bot/profile posts status-only messages like "Done", "Received", "Paused", "Stopped", "[no reply]", or reacts with 👍, do not keep acknowledging the acknowledgement. Only respond when there is a new human instruction, an explicit request for edits/posting, or actionable tweet-approval content.
 9. Letting reply/autopost scanners run at `every 5m`. X API tier caps are not designed for that cadence — a single reply scanner at this cadence can exhaust the monthly quota in under 24 hours and silently 429 every other X-facing job in the same profile. Default reply-scan cadence to `every 30m` or longer; treat anything below `every 15m` as a quota bomb unless Shivang explicitly approves it for a short campaign.
 10. Treating `last_status: error` on a cron as a transient retry. When `hermes cron list --all` shows a job in `paused` state after 429/quota errors, an unpause alone is not enough — the underlying cadence/credit issue must be fixed first or the job will re-pause within minutes.
+11. Drafting the tweet body long (400+ chars) and trimming down to 280 in 3-4 round-trips. This wastes turns and tends to lose the concrete mechanism with each pass. Aim for ≤260 characters on the first draft — that gives real edit room for humanizer fixes, hashtag addition, and a Shivang-driven tweak without thrashing the message. If the first draft is over 350, you have probably included filler that needs to go, not content that needs to stay.
 
 ## Cron reliability note
 
@@ -290,6 +291,18 @@ If a cron job's output arrives paginated (Discord truncates very long digests in
 - Do not draft a tweet, post, or reply from a single page.
 - Either wait for the full set of pages or note explicitly which sections you have not yet seen.
 - A short acknowledgement is fine; a long analysis from incomplete data is not.
+
+### Finding the rest of a paginated work-agent digest
+
+The work-agent's `office-work-summary-for-tweets` cron is delivered as a Discord message that **mentions** the personal-Hermes bot. The cron body is usually a single message that ends with `(1/6)`, `(1/7)`, etc. — and the remaining pages are siblings in the same thread, not a multi-message split of the same message.
+
+Pattern when the first page lands in your session:
+1. Note the `message_id` from the trigger — that is the anchor of the thread, not a single message.
+2. `fetch_messages(channel_id, limit=10)` on the originating channel/thread. All paginated pages from the same cron usually appear as consecutive messages from `hermes-work-agent` within seconds of each other.
+3. Walk forward in chronological order. The final page is the one that ends with the `To stop or manage this job…` footer and the section-count marker (e.g. `(6/6)`).
+4. Only act on the digest once you have seen the stop-footer page. If the footer is missing, you are still missing pages — wait or escalate, do not draft from what you have.
+
+This is a false-alarm trap: the `(1/6)` marker looks like an error or a crash, but it is just the work-agent's normal "I am going to send six messages, this is the first" pattern. Do not reply to the partial page or you will post from incomplete data.
 
 ## Verification Checklist
 
