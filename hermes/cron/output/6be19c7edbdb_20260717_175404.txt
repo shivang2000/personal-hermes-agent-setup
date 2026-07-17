@@ -1,0 +1,64 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. Let me write the digest now.
+
+**Tech / AI / Crypto / Software Digest — 17 July 2026, 17:25 IST**
+
+**Top picks**
+- [Kimi K3: Open Frontier Intelligence (2.8T params)](https://www.kimi.com/blog/kimi-k3) — Moonshot's first open 3T-class model, built on Kimi Delta Attention + Attention Residuals with a Stable LatentMoE activating 16/896 experts per token. Claims ~2.5× scaling-efficiency gain over K2, native vision, 1M context, 57 on Artificial Analysis Intelligence Index (#4/189) but verbose (130M eval tokens) and slow (62 tok/s). Full weights due by **27 July 2026**; noteworthy because Kimi built a working Triton-like compiler (MiniTriton) end-to-end as a capability demo.
+- [NotebookLM is now Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/) — Google rebrand plus a real capability jump: every notebook gets a **secure cloud computer** that can write and execute code natively for source-grounded data analysis. Rolling out to AI Ultra today, all Pro on web "over the coming weeks"; notebooks also surface inside the Gemini app and soon AI Mode in Search.
+- [LM Studio Bionic: the AI agent for open models](https://lmstudio.ai/blog/introducing-lm-studio-bionic) — Desktop coding/docs agent that runs locally, via LM Link, or through LM Studio Secure Cloud (zero-data-retention by default). Natively local voice transcription; relevant for builders who want an agent harness without sending source code to a proprietary cloud.
+- [Blatant AI slop just won a $25k DeepMind Kaggle Grand Prize (Kaggle "Measuring Progress Toward AGI")](https://www.kaggle.com/competitions/kaggle-measuring-agi/discussion/724918#3498423) — Frontpage HN story documenting that an LLM-generated submission took first place. Worth reading the discussion thread for what this says about evaluation design for agentic/AGI benchmarks.
+- [Microsoft Comic Chat is now open source](https://opensource.microsoft.com/blog/2026/07/16/microsoft-comic-chat-is-now-open-source/) — 1990s MSN-era collaborative comic chat client released under MIT. Fun historical artifact + a reference implementation of a multi-user graphical canvas over IRC-era protocols.
+- [Ask HN: Any AWS billing issues known? $3B forecast](https://news.ycombinator.com/item?id=48945681) — Multiple users reporting AWS Budgets forecasting absurdly high (hundreds-of-billions to trillions) charges since July 1, with near-uniform daily costs that look like a metering/billing defect. AWS support bot acknowledged "billing or metering error" pattern; widespread enough to be on the front page.
+
+**AI, Agents & Models**
+- [xAI open-sources `grok-build`: coding agent harness + fullscreen TUI](https://github.com/xai-org/grok-build) — Rust workspace (`crates/`, `prod/mc/cli-chat-proxy-types`, `bin/`), "mouse-interactive, extensible" TUI. Mirrors the Claude Code / opencode product shape; 14.7k stars in a day. Useful reference for anyone building agent harnesses.
+- [Pydantic: "The Human-in-the-Loop is Tired"](https://pydantic.dev/articles/the-human-in-the-loop-is-tired) — Pydantic AI maintainer essay on the new review fatigue of LLM-generated PRs: "errors of coherence" not capability, plan-writing as a full-time job. Worth reading for any team setting AI-coding policy.
+- [opencode issue #15854: local-LLM mode still POSTs to `opencode.ai/zen/v1/responses` for thread titles](https://github.com/anomalyco/opencode/issues/15854) — A subtle "local mode is not local" footgun in a popular open-source coding agent: every prompt is shipped to a cloud endpoint to generate a title summary, even with an explicit local model flag. Closed as "not planned" — read before adopting opencode for sensitive codebases.
+- [Vetted Consumer: Kimi K3 — the largest open model ever, and why almost no one can run it locally](https://vettedconsumer.com/kimi-k3-the-largest-open-model-ever-2-8t-params-and-why-almost-no-one-can-run-it-locally/) — Pragmatic reality check on the 2.8T-param release: VRAM, storage, and quantization tradeoffs for actually serving K3 on consumer hardware.
+
+**Software Engineering & DevTools**
+- [Pydantic AI: LLM Classifier patterns](https://blog.lyc8503.net/en/post/llm-classifier/) — Patterns for using LLMs as classifiers in production systems (prompt design, calibration, fall-through rules).
+- [Rust to Zig (rtfeldman)](https://rtfeldman.com/rust-to-zig) — Field notes from a maintainer migrating a real codebase from Rust to Zig; what you actually give up vs gain.
+- [Microsoft Comic Chat (open source release)](https://opensource.microsoft.com/blog/2026/07/16/microsoft-comic-chat-is-now-open-source/) — MIT-licensed historical multi-user graphical chat client; useful as a reference for canvas-over-IRC-style architectures.
+- [An Engineer's Guide to USB Type-C (TI, 2024)](https://www.ti.com/lit/eb/slyy228/slyy228.pdf) — Solid primary-source reference for anyone doing USB-C PD / alt-mode / signaling work.
+
+**Cloud, Infra, Data & Security**
+- [AWS Budgets showing bogus multi-billion forecasts since July 1 (HN)](https://news.ycombinator.com/item?id=48945681) — Likely billing/metering regression producing flat ~$3B/day "forecasts" on dormant accounts; AWS support bot itself flags it as a metering error. Watch your billing alarms.
+- [EU forces Google to share Search data and open up AI on Android](https://arstechnica.com/gadgets/2026/07/its-official-eu-will-force-google-to-share-search-data-and-open-up-ai-on-android/) ([The Verge](https://www.theverge.com/policy/966438/eu-google-android-ai-interoperability-search-data-dma), [AP](https://apnews.com/article/eu-google-android-antitrust-184b3067120e56d858cb8c81aee26d45)) — Formal Digital Markets Act designations; concrete implications for Android search/AI defaults and search index access for EU rivals.
+- [Pebble Mega Update – July 2026](https://repebble.com/blog/pebble-mega-update-july-2026) — Rebble/Core's monthly drop for the open-source Pebble ecosystem; relevant for embedded + e-paper firmware hackers.
+- [`cryptofonts/Decoy Font` and the broader homoglyph/anti-fingerprint reading list](https://www.mixfont.com/experiments/decoy-font) — Engineering write-up on generating typefaces that break LLM-based web scrapers / training data collection. Tangential to AI training/evals pipelines.
+
+**Crypto & Blockchain Engineering**
+- [Trump crypto bank built an Iran sanctions loophole — and Claude wrote the ad copy (Disruption Banking)](https://www.disruptionbanking.com/2026/07/16/trumps-crypto-bank-built-an-iran-sanctions-loophole-and-claude-wrote-the-ad-copy/) — Reports an LLM-generated marketing pipeline being used in promotional copy for a politically connected crypto bank; raises OFAC/AI-policy questions.
+- [CometBFT `SecretConnection` pre-auth handshake CPU-burn (nullrabbit.ai)](https://nullrabbit.ai/research/cometbft-secretconnection-preauth-handshake-cpu-burn) — Security write-up on a CPU-exhaustion / DoS vector in CometBFT's TLS-style handshake; relevant for Tendermint-based chain operators.
+- [End-to-end encrypted secret sharing with the Web Crypto API](https://notnotp.com/notes/end-to-end-encrypted-secret-sharing-with-the-web-crypto-api/) — Practical pattern for sharing secrets client-side using only the browser's built-in WebCrypto primitives.
+- [Guardian: Justin Sun and the Trump family crypto pipeline](https://www.theguardian.com/technology/ng-interactive/2026/jul/16/justin-sun-trump-family-crypto) — Long-form investigation into payments and World Liberty Financial relationships; relevant for anyone building compliance or analytics on the TRON/USDT side of the market.
+
+**Open Source / GitHub**
+- [`alxndrTL/little-book-rl`](https://github.com/alxndrTL/little-book-rl/) — Concise open-source intro to reinforcement learning, currently trending on HN.
+- [`solod`: Go as a "better C"](https://solod.dev) — Tooling/patterns for using Go in low-level, systems-programming style; trending discussion.
+- [`samyeyo/clx`: AOT Lua → C++20 compiler](https://github.com/samyeyo/clx) — Generates standalone native binaries via GCC/Clang/MSVC; new release swaps NaN tagging for shadow types, adds int64 + ARM64 macOS coroutines.
+- [`GFrancV/notvex`](https://github.com/GFrancV/notvex) — Local-first encrypted notes in a single `.nvx` file (SQLCipher AES-256 + XChaCha20-Poly1305 per note, Argon2id KDF, BIP39 recovery).
+- [`PengZhang64/circuit-framework`](https://github.com/PengZhang64/circuit-framework) — Multi-agent LLM trading research framework (Apache-2.0); ~440 stars in 24h, worth a look for agent-orchestration patterns.
+
+**Startups, YC & Industry**
+- [SpaceX stock erases gains, slides below IPO price in intraday trading (LA Times)](https://www.latimes.com/business/story/2026-07-16/spacex-stock-erases-gains-slides-below-ipo-price-in-intraday-trading) — Notable market-structure signal for a previously frothy private-public listing.
+- [Anthropic careers page (joinedanthropic.com)](https://joinedanthropic.com) — Anthropic going on a hiring push; relevant for anyone tracking frontier-lab org changes.
+- [Why I left Google DeepMind (TurnTrout)](https://turntrout.com/why-i-left-google-deepmind) — First-person account of departing an alignment team; useful signal on internal culture shifts.
+- [OpenAI Supply / "Work Louder" co-lab](https://openai.com/supply/co-lab/work-louder/) — OpenAI's Supply program showcasing a hardware/physical-product partner; less engineering, more industry posture.
+
+**YouTube / Technical Media**
+- [Xavier Vasques (NVIDIA) — talk on LLMs](https://www.youtube.com/watch?v=kV8v2GKC8WA) — Publicly available recent technical talk (linked from HN; verify channel before citing as primary).
+- [Theocharis — "LLM critics are right, I use LLMs anyway"](https://www.theocharis.dev/blog/llm-critics-are-right-i-use-llms-anyway/) — Video-adjacent essay, the kind of contrarian-but-honest engineering POV worth 5 minutes.
+
+**Watchlist**
+- **AWS Budgets billing regression (July 1 onward):** a metering defect appears to be producing multi-billion-dollar forecasts on dormant accounts. Watch for an official AWS postmortem and check your own alarms.
+- **Kimi K3 weights drop (target 27 July 2026) + competitive response from DeepSeek/Qwen:** the open-weights ceiling just moved to 2.8T; inference partners and local-serving tooling will be the next dominoes.
+- **EU DMA enforcement against Google Search + Android AI:** formal designations just landed; expect ripple effects on default-search/AI-choice screens and on EU-only search index APIs.
+- **CometBFT `SecretConnection` pre-auth DoS research:** if the linked nullrabbit.ai analysis is reproducible, Cosmos SDK chains and IBC relayers should patch or rate-limit before the next large-volume day.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").

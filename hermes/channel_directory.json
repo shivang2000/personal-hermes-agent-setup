@@ -1,7 +1,55 @@
 {
-  "updated_at": "2026-07-17T16:34:44.656780",
+  "updated_at": "2026-07-17T18:15:24.582079",
   "platforms": {
     "discord": [
+      {
+        "id": "1516791937737429045",
+        "name": "general",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516818210463154246",
+        "name": "tweets-automation",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516909713533702214",
+        "name": "personal-hermes-agent",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1516909789949460500",
+        "name": "office-hermes-agent",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518059932123926658",
+        "name": "tech-news",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518239305619738684",
+        "name": "job-search-cron-personal",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1518239399274479747",
+        "name": "job-search-global",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
+      {
+        "id": "1525476646176690297",
+        "name": "trading-bot",
+        "guild": "Shivang Hermes AI",
+        "type": "channel"
+      },
       {
         "id": "1527314621839708181:1527314621839708181",
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1527314621839708181",
