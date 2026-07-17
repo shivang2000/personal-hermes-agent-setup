@@ -1,0 +1,60 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough signal to write a strong, source-backed digest. Let me now write it.
+
+**Tech / AI / Crypto / Software Digest — Fri, 17 Jul 2026, 12:55 IST**
+
+**Top picks**
+- [Kimi K3: Open Frontier Intelligence](https://kimi.com/blog/kimi-k3) — Moonshot AI's K3 launch (1,505 HN points, #1 trending) ships as a frontier-tier open-weights MoE for agentic coding, slides, and "Swarm" parallel task execution; positions an open model head-to-head with closed agents and is already driving the openinterpreter project to rebrand itself as "a coding agent for open models like Kimi K3."
+- [Inkling: Thinking Machines Lab's open-weights model](https://thinkingmachines.ai/inkling) (also on [Hugging Face](https://huggingface.co/thinkingmachines/Inkling)) — Mira Murati's lab dropped a 952B-parameter multimodal MoE (text/image/audio) with an NVFP4-quantized 553B variant; weights are released with explicit "Tinker" fine-tuning APIs aimed at making post-training the unit of work, not the base model.
+- [xAI open-sources Grok Build](https://github.com/xai-org/grok-build) — SpaceXAI published its coding-agent harness + fullscreen/mouse-interactive TUI as a Rust crate (13.7k★ in <24h). Practical signal that the "agent harness" layer is now being treated as IP-grade infrastructure worth open-sourcing competitively.
+- [Microsoft Comic Chat is now open source](https://opensource.microsoft.com/blog/2026/07/16/microsoft-comic-chat-is-now-open-source/) — MS opens the source of the 1990s IRC-era Comic Chat client (built on the Agent protocol) under MIT. Fun nostalgia, but the underlying Agent/RPC plumbing and headless X11 rendering code is genuinely useful for anyone modernizing legacy COM/Windows protocol stacks.
+- [How Our Rust-to-Zig Rewrite is Going — Roc compiler](https://rtfeldman.com/rust-to-zig) — After 487 days, the Roc team hit feature parity in a 300k-line Rust→Zig rewrite, with hot-code loading, smaller WASM (31KB vs 60+KB), and a different ergonomic lesson from Bun's Zig→Rust port. A concrete counterpoint to "rewrite in Rust = always win" in the systems-language debate.
+- [Cloudflare: DNSSEC rollover broke .al, plus EDE 33 and Precursor](https://blog.cloudflare.com/) — A failed .al (Albania) DNSSEC key rollover took the TLD offline; Cloudflare deployed a Negative Trust Anchor and now returns **Extended DNS Error 33** so resolvers can programmatically detect that DNSSEC validation was bypassed. Same week they shipped Precursor, a session-level bot/agent behavioral signal for Bot Management — relevant to anyone serving agent traffic.
+
+**AI, Agents & Models**
+- [Kimi K3](https://kimi.com/blog/kimi-k3) — frontier open-weights MoE targeted at agentic coding + parallel "Swarm" workflows; same release cycle that [openinterpreter/openinterpreter rebased onto Codex 0.144.4](https://github.com/openinterpreter/openinterpreter) to support it (66.1k★, 661 stars today, repo now tagged "A coding agent for open models like Kimi K3").
+- [Inkling open-weights (Thinking Machines Lab)](https://thinkingmachines.ai/inkling) — 952B MoE for text/image/audio with variable "thinking effort" and an NVFP4 553B serving variant. Useful for builders who actually want to fine-tune rather than API-call.
+- [LM Studio Bionic — agent for open models](https://lmstudio.ai/blog/introducing-lm-studio-bionic) (Show HN, 227 pts) — LM Studio ships an agent that runs against local open models (DeepSeek, Qwen, Kimi K3) instead of cloud APIs, packaged as `lms` CLI + Python/JS SDKs.
+- [xAI grok-build open source](https://github.com/xai-org/grok-build) — Rust-based agent harness with fullscreen TUI; a real alternative to Claude Code / Codex-CLI if you want Grok as the backend.
+- ["The human-in-the-loop is tired" — Pydantic](https://pydantic.dev/articles/the-human-in-the-loop-is-tired) (162 pts) — Pydantic's take on why HITL review patterns are bottlenecking agents in production, with proposed schema-level guardrails.
+- [Detecting LLM-Generated Text with Classical ML](https://blog.lyc8503.net/en/post/llm-classifier/) (188 pts) — A practical look at stylometric + n-gram classifiers that still work without GPU, relevant for content-pipeline guardrails.
+- [Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning](https://arxiv.org/abs/2607.12395) (49 pts) — arXiv paper on zero-RL emergent reasoning at the 1T scale, a useful marker of where post-training is going.
+
+**Software Engineering & DevTools**
+- [Rust-to-Zig rewrite retrospective (Roc)](https://rtfeldman.com/rust-to-zig) — 487-day rewrite report: better compile times, smaller WASM, native hot-code loading, but a far slower port than Bun's Zig→Rust. Includes lessons on cross-compilation, comptime generics vs. trait specialization, and FFI.
+- [SQLite should have (Rust-style) editions](https://mort.coffee) (HN best list) — design note arguing for backward-compat "edition" switches inside a single SQLite binary.
+- [Show HN: Galois connections for composable numeric casts in Rust](https://github.com/cmk) — type-theoretic primitives (Galois connections) for safe, composable numeric widening/narrowing in Rust; small but well-engineered.
+- [Show HN: Solod — Go can be a better C](https://solod.dev) (108 pts) — a new C-like systems language transpiling through Go, positioning itself for embedded + low-level Linux tooling.
+- [The Little Book of Reinforcement Learning](https://github.com/alxndrTL/little-book-rl/) (112 pts) — concise, free RL textbook with code; useful for engineers moving from supervised to RL fine-tuning.
+- [An Engineer's Guide to USB Type-C (2024)](https://www.ti.com/lit/eb/slyy228/slyy228.pdf?ts=17598925580229) (132 pts) — Texas Instruments' reference PDF on USB-C PD, alt-modes, and cable electronics.
+
+**Cloud, Infra, Data & Security**
+- [Cloudflare: DNSSEC rollover took down .al, EDE 33 added](https://blog.cloudflare.com/) (Jul 14) — A real .al TLD outage from a bad key rollover; 1.1.1.1 now signals EDE 33 so clients can tell when DNSSEC validation was bypassed. Operators should start surfacing EDE codes in observability stacks.
+- [Cloudflare Precursor — continuous client-side agent detection](https://blog.cloudflare.com/) (Jul 13) — Bot-management engine that turns session-level interaction signals (mouse, timing, navigation) into bot-vs-human scores; purpose-built for the agentic web.
+- [Cloudflare Workers Cache](https://blog.cloudflare.com/) (Jul 6) — Regionally tiered cache that sits in front of Worker entrypoints, configured via standard HTTP headers; reduces origin egress for compute-on-the-edge apps.
+- [Cloudflare Smart Tiered Cache: region hints for AWS/GCP/Azure/Oracle](https://blog.cloudflare.com/) (Jul 10) — origin-tag-driven upper-tier selection; lower RTT for public-cloud customers.
+- [npm-scan: Modern supply-chain security for npm](https://github.com/lateos-ai/npm-scan) (HN) — fresh tool to detect post-install scripts, typosquats, and maintainer anomalies in package.json graphs.
+
+**Open Source / GitHub**
+- [OpenCut-app/OpenCut — open-source CapCut alternative](https://github.com/OpenCut-app/OpenCut) — 74,326★ (3,537 today) — the fastest-rising creator-tools repo of the moment, multi-track video editor; meaningful for any team evaluating FFmpeg/wasm-based NLE stacks.
+- [Nutlope/hallmark — anti-AI-slop design skill](https://github.com/Nutlope/hallmark) — 11,349★ (3,372 today) — a "skill" pack for Claude Code/Cursor/Codex that injects design constraints to fight generic AI output. Concept worth stealing for any team standardizing agent style guides.
+- [openinterpreter/openinterpreter rebases on Codex, targets Kimi K3](https://github.com/openinterpreter/openinterpreter) — 66,116★, 661 today; new release `0.0.28` ships ~2h ago. Tracks where the open-weights coding-agent stack is consolidating.
+- [apache/ossie — vendor-neutral semantic metadata spec](https://github.com/apache/ossie) — 1,040★, 60 today; Apache incubator project standardizing how analytics/AI/BI tools exchange semantic-layer metadata. Relevant if you build or consume BI/AI agents.
+- [PrismML-Eng/Bonsai-demo](https://github.com/PrismML-Eng/Bonsai-demo) — 1,609★; demo of a model-merge / routing tool gaining traction.
+- [Microsoft Comic Chat OSS](https://opensource.microsoft.com/blog/2026/07/16/microsoft-comic-chat-is-now-open-source/) (642 pts) — the Win95-era comic-strip IRC client, MIT-licensed, with the Agent/RPC and headless X11 code intact.
+
+**Startups, YC & Industry**
+- [Polygon Labs cuts staff amid Coinme acquisition](https://cointelegraph.com/) (Cointelegraph, 9h) — Polygon Labs announces layoffs and acquires Coinme; continues the "L1/L2 consolidation + fintech rollups" pattern of 2026.
+- [Bybit launches in Indonesia via NOBI acquisition](https://cointelegraph.com/) (3h) — Cross-border exchange consolidation continues into SE Asia.
+- [xAI rebrands to "SpaceXAI" on GitHub](https://github.com/xai-org) — the org now publishes under xai-org, and has open-sourced the Grok Build agent harness + plugin marketplace + x-algorithm feed. Worth watching if you care about open-weights agent stacks.
+
+**Watchlist**
+- **Inkling evaluation and serving stack** — community already flagging missing weights and 404'd serving recipes on the HF model card; watch for fixes and benchmark corrections.
+- **"Open frontier intelligence" wave** — Kimi K3 + Inkling + Grok Build in the same week is a strong signal that open-weights are now competitive at the agentic tier; expect the next 7–10 days to produce a swarm of forks and benchmarks.
+- **DNSSEC operational risk** — the .al incident is a reminder that the global DNS trust chain is fragile; expect more TLD-level rollovers and more EDE-aware resolvers.
+- **Agent UX layer** — both Grok Build (fullscreen TUI) and LM Studio Bionic point to "agent harness as product" being a serious new surface; worth tracking Cursor/Codex/Claude Code responses.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
