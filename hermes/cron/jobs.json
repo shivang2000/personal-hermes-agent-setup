@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 589
+        "completed": 590
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-18T16:53:54.858998+05:30",
-      "last_run_at": "2026-07-18T14:02:02.359102+05:30",
+      "next_run_at": "2026-07-18T18:04:58.776841+05:30",
+      "last_run_at": "2026-07-18T16:02:24.002675+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -72,7 +72,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-18T16:55:00+05:30",
+      "next_run_at": "2026-07-18T20:55:00+05:30",
       "last_run_at": "2026-07-18T14:34:12.655722+05:30",
       "last_status": "error",
       "last_error": "TimeoutError: Cron job 'AI / Crypto / Tech / Software news digest for #tech-news' idle for 906s (limit 600s) \u2014 last activity: waiting for stream response (36s, no chunks yet)",
@@ -117,15 +117,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 141
+        "completed": 142
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-12T15:06:32.355879+05:30",
-      "next_run_at": "2026-07-18T16:05:00+05:30",
-      "last_run_at": "2026-07-18T16:02:13.258439+05:30",
+      "next_run_at": "2026-07-18T17:05:00+05:30",
+      "last_run_at": "2026-07-18T16:19:39.192057+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -192,5 +192,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-18T16:02:13.258738+05:30"
+  "updated_at": "2026-07-18T17:04:58.781592+05:30"
 }
