@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 590
+        "completed": 591
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-18T18:04:58.776841+05:30",
-      "last_run_at": "2026-07-18T16:02:24.002675+05:30",
+      "next_run_at": "2026-07-18T19:07:10.827556+05:30",
+      "last_run_at": "2026-07-18T17:05:11.687617+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,7 +65,7 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 74
+        "completed": 75
       },
       "enabled": true,
       "state": "scheduled",
@@ -73,9 +73,9 @@
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
       "next_run_at": "2026-07-18T20:55:00+05:30",
-      "last_run_at": "2026-07-18T14:34:12.655722+05:30",
+      "last_run_at": "2026-07-18T17:20:01.582200+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI / Crypto / Tech / Software news digest for #tech-news' idle for 906s (limit 600s) \u2014 last activity: waiting for stream response (36s, no chunks yet)",
+      "last_error": "TimeoutError: Cron job 'AI / Crypto / Tech / Software news digest for #tech-news' idle for 865s (limit 600s) \u2014 last activity: executing tool: browser_navigate",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -117,15 +117,15 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 142
+        "completed": 144
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-12T15:06:32.355879+05:30",
-      "next_run_at": "2026-07-18T17:05:00+05:30",
-      "last_run_at": "2026-07-18T16:19:39.192057+05:30",
+      "next_run_at": "2026-07-18T19:05:00+05:30",
+      "last_run_at": "2026-07-18T18:07:12.301272+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -192,5 +192,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-18T17:04:58.781592+05:30"
+  "updated_at": "2026-07-18T18:07:12.302301+05:30"
 }
