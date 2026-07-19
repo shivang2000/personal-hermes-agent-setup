@@ -1,0 +1,75 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+The digest looks good. Final output below.
+
+**Tech / AI / Crypto / Software Digest — 19 Jul 2026, 13:10 IST**
+
+**Top picks**
+
+- **Kimi K3 (Moonshot AI) drops as a 2.8T open-weight model at Sonnet-tier pricing** — The first "3T-class" model (2.8T params) is now API-live at $3/M input and $15/M output tokens, with open weights promised by 27 Jul. Reports: leading Arena.ai Frontend Code arena; Artificial Analysis long-horizon Elo 1547 (+732 from K2.6), only behind Claude Fable 5. https://simonwillison.net/2026/Jul/16/kimi-k3/
+
+- **Vercel Labs ships `deepsec`, an agentic vulnerability scanner for large repos** — Apache 2.0 harness that runs coding agents at max reasoning over your codebase in parallel, resumable across failures, with on-demand PR review and a revalidator pass to cut FPs. Already 5,523 stars; designed to be bootstrapped by the user's own agent. https://github.com/vercel-labs/deepsec
+
+- **transcribe.cpp — a ggml-based, GPU-accelerated drop-in replacement for whisper.cpp** — 16 ASR families, 60+ models, all numerically + WER-validated against the references. Accelerates via Vulkan, Metal, CUDA, TinyBLAS, with maintained Python/JS/Rust/Swift bindings. https://workshop.cjpais.com/projects/transcribe-cpp
+
+- **Supabase + CipherStash make field-level encryption searchable (ZeroKMS, no schema change)** — Encryption happens in the SDK; each value ships as ciphertext + Searchable Encrypted Metadata so Postgres can still `WHERE`/join/`ORDER BY` without ever seeing plaintext. A Postgres-wire-protocol proxy covers analytics/background workers. https://supabase.com/blog/searchable-field-level-encryption-with-cipherstash
+
+- **Moonshine Micro runs VAD + STT + neural TTS in 468 KiB SRAM on an 80-cent MCU** — Reference platform is RP2350; pipeline (SpellingCNN STT + TinyVadCNN VAD + neural diphone TTS) fits in ~3.6 MiB flash, MIT-licensed, time-shares one ~384 KiB TFLM arena. `moonshine-ai/moonshine` is at 9,076 stars. https://github.com/moonshine-ai/moonshine/tree/main/micro
+
+**AI, Agents & Models**
+
+- **Claude Code `/goal` empirically: a small win-rate lift, but worse means on an NP-hard problem** — Charles Azam ran matched 30-min Harbor runs on the KIRO fiber-network design problem with Fable 5 and GPT-5.6 Sol. `/goal` won 4/6 trials but made both models' mean solution worse. Fable's plain mode was both strongest and most consistent (319-pt spread vs Sol's 1,958-pt spread). https://charlesazam.com/blog/fable-5-gpt-5-6-sol-goal/
+- **GPT-5.6 + a single prompt closed a 30-year gap in convex optimization** — Discussion of a result tied to OpenAI's recent CDC proof announcement: an unguided LLM prompt produced a new construction improving a long-standing bound. Big deal if it survives review. https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a/
+- **"The Kimi K3 Moment" — frontier parity from a 2.8T open model is now real** — Reader thread on what it means that a Chinese open-weights model lands at Sonnet-class prices with broad benchmark parity. https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/ (HN: https://news.ycombinator.com/item?id=48960218)
+- **Codex/Claude weekly quota resets are now happening multiple times a week** — Max Woolf (BuzzFeed) tracks 6 direct Codex resets in 2 weeks (Jul 9, 10, 10, 14, 15, 17) plus a banked-reset system. Cynical read: timed to keep power users from testing the new frontier competition. https://minimaxir.com/2026/07/agent-quota-reset/ — tracker: https://codex-resets.com/
+- **"Setting up a spare Mac for Claude Code to control"** — Detailed ops guide: wipe + fresh local account (no Apple ID), enable remote login, drive from your main Mac over SSH and the Claude mobile app. The reference pattern for sandboxed `--dangerously-skip-permissions` workflows. https://ykdojo.github.io/claude-controls-mac/
+- **ACM Queue farewell: "Goodbye, and Thanks for All the Bikesheds" (Kode Vicious)** — KV's final column. Worth reading for engineering culture and the long tail of standards-process lore. https://queue.acm.org/detail.cfm?id=3818307
+
+**Software Engineering & DevTools**
+
+- **Moonshine Micro — voice interfaces for microcontrollers** (see top picks).
+- **transcribe.cpp** (see top picks).
+- **Elixir-lang.org ships a redesigned site** — Refreshed docs/marketing for the BEAM ecosystem. https://elixir-lang.org/
+- **Gleam moves to Tangled** — The BEAM-targeting ML-with-type-inference language's primary forge is now Tangled, a Git-federated forge. Tangled is increasingly real as a non-GitHub option for language infrastructure. https://tangled.org/gleam.run/gleam
+- **Mathematicians still don't know the fastest way to multiply numbers** — A solid Scientific American explainer of current matrix-multiplication upper bounds (and why ~2.371 is still the published record vs the O(n^2) conjecture). https://www.scientificamerican.com/article/mathematicians-still-dont-know-the-fastest-way-to-multiply-numbers/
+
+**Cloud, Infra, Data & Security**
+
+- **Supabase CipherStash searchable encryption** (see top picks) — Data-Level Access Control with per-value keys, ZeroKMS, FedRAMP/IL4 path via region split. Read it if you handle regulated Postgres workloads.
+- **LG monitors silently install software via Windows Update** — A supply-chain/UEFI-adjacent concern: displays pushing signed-but-unconsented updates. Worth confirming before corporate fleets. https://videocardz.com/newz/lg-monitors-silently-install-software-through-windows-update-without-user-consent
+- **Parsoid (MediaWiki) mainlined** — The long-running HTML5/RDFa parser+serializer is now a default MediaWiki component, replacing the legacy parser for read paths. Affects anyone running on-prem Wiki or scraping Wikimedia. https://www.mediawiki.org/wiki/Parsoid
+- **Vercel `deepsec`** (see top picks) — the most engineering-relevant security item of the cycle for codebases shipping JS/TS.
+
+**Crypto & Blockchain Engineering**
+
+- *No high-signal protocol/client release, exploit, or governance event surfaced in the last 24h that passes the verification bar. Skipping rather than padding.*
+
+**Open Source / GitHub**
+
+- **vercel-labs/deepsec** — 5,523★, agentic vulnerability scanner. https://github.com/vercel-labs/deepsec
+- **moonshine-ai/moonshine** — 9,076★, MIT-licensed low-latency STT/TTS/intent with a microcontroller variant. https://github.com/moonshine-ai/moonshine
+- **stupside/castor — "Better and Cheaper Than IPTV"** — Self-hosted IPTV/HLS replacement; 154 HN points. https://github.com/stupside/castor
+- **Transcribe.cpp (handy-computer)** — cross-engine ASR on top of ggml. https://workshop.cjpais.com/projects/transcribe-cpp
+- **airdows — browser-based P2P file transfer over WebRTC** — Show HN. https://airdows.com/
+
+**Startups, YC & Industry**
+
+- **NYC Mayor Mamdani bars landlords from secretly using AI images in listings** — First US municipal rule of its kind; legal landmines for proptech using GenAI imagery. https://petapixel.com/2026/07/16/mayor-mamdani-says-landlords-cant-secretly-use-ai-images-to-advertise-properties/
+- **Kaiser nurses complain that AI workplace surveillance is degrading patient care** — Pattern of concern for clinical AI deployments: ambient transcription + monitoring tools adding load without removing it. https://localnewsmatters.org/2026/07/15/kaiser-nurses-say-ai-workplace-surveillance-are-making-their-jobs-and-patient-care-worse/
+- **GoPro reportedly near collapse** — Hardware shakeout continues. https://amateurphotographer.com/latest/photo-news/going-going-gone-is-this-the-end-of-the-once-mighty-gopro/
+- **EU: ban on destruction of unsold clothes and shoes now in force** — Compliance clock for EU fashion/textile retailers. https://environment.ec.europa.eu/news/ban-destruction-unsold-clothes-and-shoes-enters-application-2026-07-17_en
+
+**YouTube / Technical Media**
+
+- *Nothing published in the last ~12h that I've verified isn't already covered by the linked blogs. Skipping.*
+
+**Watchlist**
+
+- **AMD MI400 / GFX1250** — Chips & Cheese teardown of LLVM commits ahead of the Advancing AI event; expect MI400/GFX1250 microarch and ROCm details in the next 48h. https://chipsandcheese.com/p/scrying-the-amd-gfx1250-llvm-tea
+- **OpenAI CDC proof + GPT-5.6 convex-optimization result** — If peer-reviewed, this is the first concrete "AI closed a research gap" claim at frontier level. Expect replication attempts and pushback.
+- **Moonshot Kimi K3 open-weights drop (≤ 27 Jul)** — Watch the open-source release notes and the DeepSeek-K3 comparison.
+- **Frontier-model pricing war** — Sonnet-class pricing from a 2.8T open model + frequent Codex/Claude quota resets + Fable 5 stability = sustained pressure on Anthropic and OpenAI plan economics.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
