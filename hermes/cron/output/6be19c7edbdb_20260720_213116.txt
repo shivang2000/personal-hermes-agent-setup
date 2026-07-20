@@ -1,0 +1,54 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+The digest is clean, well-sourced, and covers all the most important fresh news. Now let me deliver the final output to the user.
+
+**Tech / AI / Crypto / Software Digest — Mon, 20 Jul 2026, 20:55 IST**
+
+**Top picks**
+- [Hugging Face discloses AI-driven intrusion; defenders had to use GLM 5.2 because hosted US model guardrails blocked incident response](https://huggingface.co/blog/security-incident-july-2026) — HF reports an "autonomous AI agent" attacker pivoted from a malicious dataset's code-execution paths into internal clusters. Their blue team tried frontier commercial LLMs first but safety guardrails refused real exploit payloads, so they ran forensic analysis on self-hosted Z.ai GLM 5.2. The takeaway for builders: keep a capable open-weight model vetted and offline for IR before you need it, since hosted guardrails cannot distinguish responder from attacker.
+- [Kimi K3 — 2.8T-param open-weights frontier model from Moonshot](https://www.kimi.com/blog/kimi-k3) — First 3T-class open release; built on a "Kimi Delta Attention" + Attention Residuals, native vision, 1M-token context, and Moonshot paused new subscriptions from demand. Lands the same week as Qwen 3.8 (2.4T params, also open), making this the first credible open-vs-proprietary parity window — see [industry analysis](https://www.emergingtrajectories.com/lh/frontier-lab-economics/) on what that does to Anthropic's economics.
+- [Searchlight Cyber finds an unauthenticated pre-auth RCE in WordPress using GPT-5.6 "Sol Ultra" for ~$25 in API spend](https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/) — Researcher adapted OpenAI's "Sol" math-conjecture prompt, spun up 4 agents for 6 hours, and produced a full pre-auth → RCE chain that brokers pay ~$500k for. The open wp2shell tool checks if you're affected. Expect a wave of agentic 0-day research now that the SOTA reasoning models can be agent-driven.
+- [Bun-in-Rust now shipping in Claude Code v2.1.181+](https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/) — Simon Willison confirms with `strings` that the Claude Code binary embeds a 563-file Rust-built Bun runtime v1.4.0, with measurable 10% faster Linux startup. The Rust port (released as `bun upgrade --canary`) is now running at scale in one of the most widely deployed dev CLIs.
+- [Hacker wipes Romania's entire land registry (ANCPI) after failed extortion](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — Attacker "ByteToBreach" used valid creds, mapped internal systems, deleted prod and backups; real-estate market is at a standstill. KELA has now doxxed the actor as an Algerian individual. Confirms the post-2024 pattern: Poland, Slovakia, Greece, Morocco, Russia, Ukraine, now Romania — and offline copies of land/cadastral data are not optional anymore.
+
+**AI, Agents & Models**
+- [Soofi S — first German sovereign 30B MoE on 27T tokens](https://www.soofi.info/) — Soofi-Konsortium (Fraunhofer IAIS/IIS, DFKI, TU Darmstadt, others) published a pretraining report ([arxiv 2607.09424v2](https://arxiv.org/html/2607.09424v2)) for a German/English MoE aimed at industrial code, agentic and document workloads. Currently in industrial pilot phase; not yet open-weights, which has drawn skepticism on HN. Worth tracking if you build in the EU public sector.
+- [Qwen 3.8 Max Preview on Alibaba Token Plan — 2.4T params](https://qwen.ai/home) — Alibaba opened paid access alongside [Qwen 3.8 release notes](https://twitter.com/Alibaba_Qwen/status/2078759124914098291); pricing on [Token Plan](https://www.qwencloud.com/pricing/token-plan). Pair with Kimi K3 above to size the new open-weight ceiling.
+- [Moonshot suspends new Kimi K3 subscriptions after demand spike](https://twitter.com/kimi_moonshot/status/2078855608565207130) — Operational reality check: a 2.8T-param open model from a Chinese lab still has the serving capacity to crash its own vendor's onboarding. K3 is reportedly [topping the Front end Code Arena at 1679 pts](https://twitter.com/arena/status/2077824029126504525).
+- [lora-speedrun — public wall-clock LoRA fine-tuning leaderboard (modded-nanogpt style)](https://github.com/Saivineeth147/lora-speedrun) — Frozen task, frozen hardware, public timing. Pairs well with KTransformers' [CPU-GPU heterogeneous SFT/inference work](https://github.com/kvcache-ai/ktransformers) (v0.6.1, with day-0 MiniMax-M3 and GLM-5.2 support as of late June) to make fine-tuning speed reproducible instead of folklore.
+- [Inertia-1 — wrist-only pretraining generalizes to all body placements & modalities](https://yang-ai-lab.github.io/Inertia-1/) — Yang AI Lab's foundation model for IMU motion. Pretrained on wrist accelerometers, holds up on hip/ankle/chest placements and gyroscope/magnetometer streams it never saw, and stays stable from 0.2 Hz to 20 Hz. Useful template for sensor-foundation-model evaluation: vary placements, devices, and tasks inside one controlled space.
+
+**Software Engineering & DevTools**
+- [Eliminating Go bound checks with `unsafe`](https://blog.andr2i.com/posts/2026-07-06-eliminating-go-bound-checks-with-unsafe) — A walkthrough of when BCE leaves hot paths stuck, and how `unsafe` pointer arithmetic + assembly diffing can recover leaf-function status. Worth reading if you ship tight Go loops in a serving path.
+- [Bun-in-Rust in production inside Claude Code](https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/) — See Top picks; also a leading indicator that Jarred Sumner's Rust port is now safe to depend on for high-stakes CLIs.
+- [Ziggity — a terminal UI for Git written in Zig](https://github.com/simoarpe/ziggity) — New Zig-based TUI git client. Zig momentum keeps building; relevant if you're tired of Magit/Emacs and want a small native alternative.
+
+**Cloud, Infra, Data & Security**
+- [Hugging Face security incident disclosure (Jul 16)](https://huggingface.co/blog/security-incident-july-2026) — See Top picks. Concrete lessons: rotate tokens, treat datasets as a code-execution attack surface, and don't plan to do postmortem forensics on a hosted model.
+- [Searchlight Cyber — pre-auth RCE in WordPress via GPT-5.6 Sol Ultra](https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/) — See Top picks. Run [wp2shell.com](https://wp2shell.com/) against any WP instance you operate.
+- [Hacker wipes Romania's entire land registry database](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — See Top picks.
+- [The newest AI security threat: "token torching"](https://www.itbrew.com/stories/meet-the-newest-ai-security-threat-token-torching) — Repackaging of a Sumo Logic "burn your AI budget" piece from Jan; primarily a prompt-injection/wallet-drain taxonomy rather than new vuln. Useful as a vocabulary reference; don't treat as breaking.
+
+**Open Source / GitHub**
+- [PrefectHQ/fastmcp — MCP server framework, 1M downloads/day, ~70% of all MCP servers](https://github.com/PrefectHQ/fastmcp) — Today, the de-facto Python MCP stack. Trending as Prefect pairs it with Horizon (SSO, RBAC, audit logs, branch-preview deploys) for enterprise MCP.
+- [topoteretes/cognee — open-source AI agent memory on a knowledge graph](https://github.com/topoteretes/cognee) — Persistent long-term memory for agents with self-hosted knowledge-graph engine. Active project, trending.
+- [kvcache-ai/ktransformers — heterogeneous CPU/GPU inference + SFT](https://github.com/kvcache-ai/ktransformers) — Continues to land day-0 support for MiniMax-M3 and GLM-5.2; added native BF16/FP8 per-channel and CPU-GPU expert scheduling.
+- [diegosouzapw/OmniRoute — MIT AI gateway, 268+ providers behind one endpoint](https://github.com/diegosouzapw/OmniRoute) — Quota-aware auto-fallback, RTK+Caveman compression, drop-in for Claude Code/Codex/Cursor/Cline/Copilot.
+- [CodeTrain — an AI tutor that refuses to write code for you](https://codetrain.ai) — Show HN; positions as pedagogy over copilot. Small but clean framing if you teach.
+
+**Startups, YC & Industry**
+- [Manufact (YC S25) is hiring a senior infra engineer to build "the MCP cloud"](https://www.ycombinator.com/companies/manufact/jobs/Dh6PYP5-senior-infrastructure-engineer) — Concrete signal MCP is moving to managed/hosted infra; pairs with FastMCP/Horizon above. Shows a real MCP-native infra startup pitch.
+- [DeepSQL — self-hostable AI DBA agent for Postgres/MySQL with MCP + Slack](https://deepsql.ai/) — Show HN. Wraps a Brain+workload analyzer with a CLI, Slack, and BI; claims ~38% database cost reductions from automated slow-query work. Worth a look if you operate RDS/Aurora at scale.
+- [Vestige — splits large AI diffs into reviewable chunks (VS Code)](https://marketplace.visualstudio.com/items?itemName=Vestige.vestige-vscode-extension) — Show HN. Practical reaction to "Claude Code produces a 2,000-line diff" — a reviewer-side UX problem.
+- [American AI is locked down and proprietary. It's losing](https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/) — Opinion piece riding the Kimi K3 + Qwen 3.8 + Soofi + GLM 5.2 wave arguing US labs are losing the open-weight race. Use as context for the Kimi-K3 moment, not as data.
+- [Open models for AI were inevitable — Bill Gurley (Washington Post op-ed)](https://www.washingtonpost.com/opinions/2026/07/20/open-model-ai-is-good-competition-anthropic-openai/) — Veteran VC backs the open-weights thesis publicly. Adds investor-side gravity to the "Anthropic unravelling" framing.
+
+**Watchlist**
+- Hugging Face IR postmortem: how the team formalizes "have a self-hostable model for IR ready" — likely an industry checklist for blue teams by next run.
+- Qwen 3.8 vs Kimi K3 vs Anthropic "Fable 5" — independent benchmark deltas; expect a clean leaderboard fight by next digest.
+- Agentic vulnerability research wave (Searchlight's wp2shell) — will another lab publish a parallel chain on Next.js, Nginx, or a managed-K8s component this week?
+- Romania ANCPI rebuild timeline + the "ByteToBreach" Algerian doxx — law-enforcement follow-through and EU data-residency fallout both potentially newsworthy next run.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
