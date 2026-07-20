@@ -1,0 +1,71 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — Tuesday, 21 July 2026 — 00:59 IST**
+
+**Top picks**
+- [WordPress "wp2shell" unauth RCE chain disclosed; public exploits already in the wild](https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/) — Searchlight Cyber's Adam Kues reproduced a full unauthenticated RCE in WordPress (CVE-2026-63030 + CVE-2026-60137) using GPT-5.6 "Sol Ultra" and ~$25 of API spend, with independent reconfirmation by brokers Calif and Hacktron before PoC publication. Patched in 6.8.2; Cloudflare shipped matching WAF rules. Anyone running self-hosted WP should patch *now* — this is a credible RCE class that historically gets mass-scanned within hours.
+- [Hacker wipes Romania's entire land registry database after failed extortion](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — Actor "ByteToBreach" used valid credentials, mapped the network, then deleted systems *and* backups at ANCPI; notaries can't record transactions, citizens can't pull ownership records. Per Risky Business, ANCPI was rebuilding from scratch using an offline copy. Sober reminder that valid-credential, dwell-time-then-wipe attacks are now the playbook for high-impact government incidents.
+- [Cursor publishes "Agent swarms and the new model economics" — tree decomposition + planner/worker split](https://cursor.com/blog/agent-swarm-model-economics) — Concrete engineering writeup: hierarchical goal tree, planner agents on frontier models, worker agents on cheap/fast models, with a version-control system for agent edits. The SQLite-from-scratch re-run is the headline: new swarm hit 80% of a held-out test suite in 4 hours with Grok 4.5 where the old swarm had to be killed before hour 2. Most useful pattern of the week for anyone building multi-agent harnesses.
+- [Hacker wipes Romania land registry + AI-assisted open-source RCE + Anthropic's Project Glasswing](https://www.anthropic.com/glasswing) — Stack the three together and a picture emerges: Anthropic's Glasswing (AWS, Apple, Google, Microsoft, NVIDIA, Cisco, etc.) is the first industry-wide coalition using a frontier model — "Claude Mythos Preview" — to find vulnerabilities in critical OSS *before* adversaries do, with $100M in usage credits committed. The wp2shell story is essentially Glasswing's thesis on the offensive side. Worth reading Glasswing's post for the threat-model framing.
+- [Kimi K3 / Qwen 3.8 challenge Anthropic; Moonshot files for HK IPO at ~$30B](https://www.emergingtrajectories.com/lh/frontier-lab-economics/) — Moonshot's Kimi K3 and Alibaba's Qwen 3.8 reportedly match Anthropic's "Fable 5" while shipping open weights (Kimi is MXFP4-quantized, ~2.8T params per a HF community overview). Coindesk is reporting a HK listing at $30B+ post-Kimi. Frontier-lab unit economics are now a "power + datacenter" margin game; the open-weight release strategy turns US compute export controls into a Chinese distribution advantage.
+- [EU Commission finalizing EBSP framework allowing US biometric/identity access for visa-free travel](https://edri.org/our-work/the-eu-is-about-to-sell-our-most-sensitive-data-to-the-us-for-visa-free-travel/) — Leaked draft of the "Enhanced Border Security Partnership" framework requires automated exchange of personal data and biometric screening against US databases. EDRi flags it as a fundamental-rights risk. Affects any EU SaaS whose user data could end up in secondary US access regimes; the operational impact is mostly legal/compliance, but the precedent is large.
+
+**AI, Agents & Models**
+- [Kimi Work — local desktop agent for knowledge workers (file indexing, browser automation, 24/7)](https://www.kimi.com/products/kimi-work) — Moonshot's desktop agent watches ~/Documents, indexes PDFs, drives a real browser, runs as a persistent local daemon. Pair with [Inertia-1: open motion foundation model](https://yang-ai-lab.github.io/Inertia-1/) and [Soofi — Sovereign Open Source Foundation Models](https://www.soofi.info/) (Sovereign AI angle) — the agentic-desktop category is moving fast.
+- [What I learned from reimplementing 40 multi-agent LLM papers](https://medium.com/@Koukyosyumei/what-i-learned-from-reimplementing-40-multi-agent-llm-papers-bd6b574f5659) — Honest "what actually works" synthesis from a paper reimplementer; pairs well with Cursor's swarm post above.
+- [An Empirical Study: AI Agent Rules Need Context and Layered Enforcement (eBPF)](https://eunomia.dev/blog/2026/07/15/ebpf-ai-agent-policy-enforcement/) — Argues that CLAUDE.md-style rule files can't enforce hard limits; the action is pushing policy into the kernel via eBPF. Eunomia's whole blog is the most concrete writing on agent runtime enforcement right now (cgroup fences, semantic-rollback attacks, scheduler isolation).
+- [Controlling reasoning effort in LLMs — Sebastian Raschka](https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms) — Clean summary of how "reasoning effort" knobs (low/medium/high, or explicit token budgets) work under the hood, and why cost-aware serving matters.
+
+**Software Engineering & DevTools**
+- [Hyprland 0.55 — configs move to Lua, plus a user-defined Layout API](https://hypr.land/news/update55/) — Hyprlang configs still work for a few releases; new `Layout` API means users can implement dynamic tiling algorithms in Lua (dwindle, scrolling, fullscreen-in-tape all landed). Big break for compositor power users.
+- [Firefox merges support for Vulkan Video decoding](https://github.com/search) — Hardware-accelerated video decode lands in Firefox via Vulkan Video; reduces power and unblocks proper 4K/HDR on Linux/BSD. Worth noting for anyone shipping video to Firefox users.
+- [Agent swarms and the new model economics (Cursor)](https://cursor.com/blog/agent-swarm-model-economics) — Already in top picks; called out again here for the engineering audience since it has the most actionable swarm architecture published to date.
+- [GitHub: AI credit pools for cost centers, Code Quality GA, repo-level Copilot metrics](https://github.blog/) — Three shipping changes on the same day: cost-center billing, Code Quality out of preview, per-repo Copilot usage visibility. Tells you where GitHub's enterprise AI monetization is going.
+- [Harness engineering anthology by Ryan Lopopolo](https://github.com/lopopolo/harness-engineering) — Pattern catalog for "harness engineering" — the discipline of context bundles, agent profiles, and work-type routing. Hot, 656 stars in a few days.
+
+**Cloud, Infra, Data & Security**
+- [wp2shell (CVE-2026-63030 & CVE-2026-60137) — full RCE chain PoC](https://github.com/Icex0/wp2shell-poc) — Public PoC; mirror Cloudflare WAF rules; patch 6.8.2 immediately if you self-host.
+- [Cloudflare WAF protects WordPress apps from the two high-severity vulns](https://blog.cloudflare.com/) — Cloudflare shipped two WAF rules on the same disclosure.
+- [Hugging Face warns an autonomous AI agent hacked its network](https://www.bleepingcomputer.com/news/security/) — Risky Bulletin and BleepingComputer both report an autonomous AI agent on HF Spaces was used to pivot internally; HF disclosed a security incident on July 16. Strong case study for sandboxing in agent platforms.
+- [1.1.1.1 now returns EDE 33 when DNSSEC validation is bypassed](https://blog.cloudflare.com/) — Operational postmortem of the `.al` TLD DNSSEC rollover failure, plus a new DNS error code so clients can see when validation was skipped. Worth knowing if you do DNSSEC monitoring.
+- [GitHub Agentsmith — universal, model-agnostic operating harness](https://github.com/PromptPartner/agentsmith) — Lean core + work-type profiles assembled from one set, Claude/Codex/Gemini-agnostic. One of the more useful-looking harness repos from the last week.
+- [Abbott probes two cyber incidents amid extortion claims](https://www.bleepingcomputer.com/) — Healthcare/med-device vendor; not yet confirmed breach scope but worth watching for downstream medical-device impact.
+
+**Crypto & Blockchain Engineering**
+- [Allbridge halts after $1.65M flash-loan exploit](https://www.coindesk.com/) — Attacker used a $1.12M flash loan from Kamino to manipulate pool ratios on Allbridge Core, draining the bridge of $1.65M. Bridge pause, Allbridge post-mortem pending; classic pool-pricing-oracle exploit pattern — keep an eye on cross-chain bridges with thin liquidity.
+- [Hyperliquid HIP-4: permissionless prediction markets on testnet first, mainnet later](https://www.coindesk.com/) — HIP-4 upgrades the chain to host native, on-chain prediction markets; notable because the design mirrors Hyperliquid's orderbook-L1 approach rather than an AMM.
+- [Moonshot AI IPO push follows Kimi K3, Alibaba Qwen release](https://www.coindesk.com/) — Confirms the HK listing at ~$30B valuation; K3's release "rattled chip stocks" Friday. Watchlist item.
+- [Amazon Japan supplier AZ-Com Maruwa to pay 2,300 partners in JPYC yen stablecoin](https://www.coindesk.com/) — First large-scale corporate yen stablecoin rollout; expect regulatory reaction in Japan.
+- [Brazil's CVM sets up tokenization task force with 60-day deadline](https://www.coindesk.com/) — Framework will address ownership records, private key custody, transaction reversibility, system liability. Worth tracking if you ship tokenization infra into Brazil.
+- [Bank of Korea live CBDC test with 9 banks in September](https://www.coindesk.com/) — Retail tokenized-won interbank test; relevant to anyone building CBDC interoperability layers.
+
+**Open Source / GitHub**
+- [Nativ — run frontier open models locally on your Mac](https://blaizzy.github.io/nativ/) — Lightweight launcher for running open-weight frontier models on Apple Silicon; one to watch.
+- [Harness engineering (lopopolo/harness-engineering)](https://github.com/lopopolo/harness-engineering) — Already in DevTools; flagged again because it's the canonical "agent context bundle" reference this week.
+- [agentsmith — model-agnostic agent operating harness](https://github.com/PromptPartner/agentsmith) — Same.
+- [Ziggity — terminal UI for Git, written in Zig](https://github.com/simoarpe/ziggity) — TUI Git client, single binary, native speed.
+- [Conversation steganography — hide messages inside LLM-driven conversations](https://github.com/nethical6/conversation-steganography) — Interesting security/privacy research, 867 stars; treat as research-grade.
+- [npm-scan — modern supply-chain security for npm](https://github.com/lateos-ai/npm-scan) — Tooling angle on the FakeGit campaign below.
+
+**Startups, YC & Industry**
+- [Fabraix — frontier agent that hacks customer-facing AI (YC S26)](https://www.ycombinator.com/launches) — AI red-team agents; claims to have already found vulns in agents at "dozens of Fortune 500 companies." Reads as the Glasswing commercial counterpart.
+- [Alkera — the data agent you can trust (YC S26)](https://www.ycombinator.com/launches) — Data engineering/analytics agent positioning itself against the "untrusted coding agent" gap. Worth a look if you run data workflows.
+- [Rational — AI Employees for Accounting (YC S26)](https://www.ycombinator.com/launches) — Vertical agent for accounting back-office work.
+- [Wildcard — AEO/GEO/AI Search for Ecommerce Brands (YC W25)](https://www.ycombinator.com/launches) — "Answer Engine Optimization" tooling as AI search becomes a real acquisition channel.
+- [Moonshot AI Hong Kong IPO at ~$30B post-Kimi K3](https://www.coindesk.com/) — See Crypto section; this is also a pure-startup-markets story.
+
+**YouTube / Technical Media**
+- [Cursor: Agent swarms and the new model economics — Wilson Lin, ~17 min read](https://cursor.com/blog/agent-swarm-model-economics) — Long-form engineering essay (not video) but the most important "talk-style" writeup of the week.
+- [Sebastian Raschka: Controlling reasoning effort in LLMs](https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms) — Best short technical explainer on reasoning-model cost control this cycle.
+- [Eunomia blog series on AI agent runtime with eBPF](https://eunomia.dev/blog/2026/07/15/ebpf-ai-agent-policy-enforcement/) — Series reads like a 10-episode deep-dive; start with the layered-enforcement post and the ActPlane / AgentCgroup entries.
+- [Risky Bulletin (podcast) — Hacker wipes Romania's entire land registry database](https://risky.biz/) — 15-min audio rundown of the Romania ANCPI incident, including the KELA profile of ByteToBreach.
+
+**Watchlist**
+- **Allbridge post-mortem & bridge pause** — watch for root-cause writeup, whether any LP funds are unrecoverable, and whether regulators respond to another cross-chain bridge exploit.
+- **Moonshot AI HK IPO pricing** — Kimi K3's reception will set the multiple for the next wave of Chinese AI listings (Zhipu, Stepfun, DeepSeek consumer).
+- **WordPress wp2shell mass exploitation** — expect scanning within hours; the next 48 hours of telemetry will tell us if this becomes a worm-class incident.
+- **Anthropic Project Glasswing — what gets disclosed first** — Mythos Preview has reportedly found vulns in "every major OS and browser"; the first coordinated disclosure will set the tone for AI-defensive work.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
