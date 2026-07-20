@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 629
+        "completed": 630
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-20T12:43:13.858880+05:30",
-      "last_run_at": "2026-07-20T10:43:06.255645+05:30",
+      "next_run_at": "2026-07-20T13:44:12.281834+05:30",
+      "last_run_at": "2026-07-20T11:43:25.689402+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -117,18 +117,18 @@
       "schedule_display": "5 * * * *",
       "repeat": {
         "times": null,
-        "completed": 185
+        "completed": 186
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-12T15:06:32.355879+05:30",
-      "next_run_at": "2026-07-20T12:05:00+05:30",
-      "last_run_at": "2026-07-20T11:05:09.958215+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "next_run_at": "2026-07-20T13:05:00+05:30",
+      "last_run_at": "2026-07-20T12:05:06.824431+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstdout:\n**Trading bot hourly digest \u2014 ERROR**\n\nCould not read `/home/ec2-user/trading-bot-v2/logs/trading.log` on the bot's EC2. The SSH session worked but `tail` failed (or returned no output).",
+      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "discord:1525476646176690297",
       "origin": {
         "platform": "discord",
@@ -192,5 +192,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-20T11:43:13.859872+05:30"
+  "updated_at": "2026-07-20T12:44:12.282473+05:30"
 }
