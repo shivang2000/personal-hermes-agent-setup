@@ -1,0 +1,53 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+Good enough — I have strong, source-backed material. Let me write the digest now.
+
+**Tech / AI / Crypto / Software Digest — Tue, 21 Jul 2026, 20:55 IST**
+
+**Top picks**
+- [**Qwen-Image-3.0 released by Alibaba's Qwen team**](https://qwen.ai/blog?id=qwen-image-3.0) — Third-gen foundation image model focused on "Rich Content, Authentic Details, Deep Knowledge." Demos show legible 10px text rendering, photographic skin/hair micro-detail, and nested "picture-in-picture" UI composition. Most consequential open-weights image model launch since Qwen-Image-2.0 and a direct shot at the closed-image-model moat.
+- [**Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber — Google blog**](https://blog.google) — Google shipped three new Gemini variants in one drop: a 3.6 Flash step-up, a cost-optimized 3.5 Flash-Lite, and "Flash Cyber" (a security-tuned variant). The Cyber edition is the interesting one — purpose-built for SOC and detection workflows, suggesting Google is pushing into vertical agent roles rather than just cheaper base models.
+- [**Jane Street open-sources `Incremental` — a library for incremental computations**](https://github.com/janestreet/incremental) — OCaml library that lets you build self-adjusting computations (think spreadsheet-style recompute-on-change, but type-safe and incremental). 295 HN points, mostly unknown outside the OCaml/Jane Street world; relevant to anyone building reactive UIs, build systems, or agent state machines without the React/MobX tax.
+- [**Hacker wipes Romania's land registry database**](https://risky.biz) — A attacker destroyed the national property/land registry via compromised admin credentials, 683-point HN thread. Confirms the "single admin + no immutable backup" failure mode at nation-state scale; every infra team running critical systems should re-audit blast-radius and offline backups this week.
+- [**Stratechery: "Who's afraid of Chinese models?"**](https://stratechery.com) — Long-form analysis (843 pts, 666 comments) on why Western labs are now structurally behind on cost-per-token despite frontier-capable closed models. Frames the strategic question for builders: which workloads will stay on closed US models vs. migrate to cheaper open Chinese weights over the next 12 months.
+
+**AI, Agents & Models**
+- [**Claude Is Not a Compiler — exe.dev**](https://exe.dev) — Hot HN take arguing against the "treat LLMs as compilers" mental model for code agents. Worth reading if you build coding agents; the error-recovery semantics are wildly different from deterministic compilers and that shapes prompt and tool design.
+- [**Kimi Work — Moonshot AI**](https://kimi.com) (628 pts) — Moonshot launched a new "Work" product surface for Kimi, signaling a shift from chatbot to agent/work-OS positioning in the same window as Qwen and DeepSeek releases.
+- [**Code-review-graph — local-first code intelligence for MCP/CLI**](https://github.com/tirth8205/code-review-graph) (1,921 stars today) — Builds a persistent graph of your codebase so coding agents (via MCP) only read the relevant slice. Sponsors-trending on GitHub; practical answer to the "context window bloat" problem in Claude Code / Cursor.
+- [**bojieli/ai-agent-book — open-source deep dive on AI Agent design**](https://github.com/bojieli/ai-agent-book) (4,434 stars today) — Chinese-language book on agent design and engineering practice with full PDF and code per chapter. Currently the most-starred new repo on GitHub today.
+
+**Software Engineering & DevTools**
+- [**Python 3.15's ultra-low overhead interpreter profiling mode — Ken Jin**](https://fidget-spinner.github.io) — 84 pts. New CPython profiling mode that drastically reduces the cost of `sys.setprofile`/`sys.settrace`, making continuous production profiling finally viable in 3.15. Direct impact for anyone doing perf work in Python.
+- [**Jelly UI — soft-body physics for native HTML form controls**](https://jelly-ui.com) (608 pts) — Drop-in CSS+JS that gives native form controls bouncy spring physics. Purely a delight-engineering story, but a good reference for anyone building high-end interactive UI.
+- [**Jellyfin founder Andrew leaves the project**](https://jellyfin.org) (331 pts) — Major maintainer-level change in the largest self-hosted media server project. Worth watching for governance and roadmap implications for anyone self-hosting or contributing.
+- [**Stencil: "You only need the frontier model for one single edit"**](https://stencil.so) (204 pts) — Product/philosophical writeup arguing most "AI editing" workflows can use a cheap model for context and a single frontier-model pass for the actual diff. Pattern is reusable for your own agent designs.
+
+**Cloud, Infra, Data & Security**
+- [**Apple defeats liability for not scanning iCloud for CSAM**](https://ericgoldman.org) — Court ruled Apple isn't liable for not proactively scanning iCloud for CSAM. Precedent-setting for client-side scanning mandates and E2E encryption policy in the US/EU.
+- **Show HN: Artifacta — 6048 YC companies as an interactive galaxy** (https://artifacta.io) — Visualization of the YC ecosystem as a force-directed graph; fun, and useful as a market-landscape tool if you're tracking competitors.
+
+**Crypto & Blockchain Engineering**
+- *(No major new primary-source engineering developments surfaced in the last 4 hours; standing watch on the items below.)*
+
+**Open Source / GitHub**
+- [**koala73/worldmonitor — real-time global intelligence dashboard**](https://github.com/koala73/worldmonitor) (1,167 stars today) — AI-powered news/geopolitical/infrastructure aggregator. Cliché category, but trending #1 today, and worth a look as a reference implementation for multi-source LLM summarization.
+- [**AstrBotDevs/AstrBot — multi-IM LLM agent framework**](https://github.com/AstrBotDevs/AstrBot) (37.4k stars, +416 today) — Self-hosted alternative to OpenClaw; bridges Discord/Telegram/Slack/etc. with pluggable LLM backends and a plugin ecosystem. Good reference architecture if you're building a multi-channel agent.
+- [**ayghri/i-have-adhd — agent skill for ADHD-friendly output**](https://github.com/ayghri/i-have-adhd) (1,846 stars today) — A reusable "skill" file for Claude Code / Cursor that adjusts agent output style. Novel packaging of prompt-engineering-as-skill and very likely to be cloned for other accessibility profiles.
+
+**Startups, YC & Industry**
+- [**Launch HN: Bloomy (YC S26) — AI-powered mastery learning for K-12**](https://news.ycombinator.com) (93 pts) — Current YC batch; ed-tech + adaptive practice loop. Worth tracking if you watch the "AI for education" wave.
+- **Stratechery on Chinese model strategy** (see Top picks) — Strategic/market-structure read, not a funding event, but materially shapes what US-based AI startups are building against.
+
+**YouTube / Technical Media**
+- *(No high-signal new uploads surfaced in the active crawl window; skipping the section rather than padding.)*
+
+**Watchlist**
+- **Gemini 3.6 Flash + Flash Cyber** — pricing, availability, and exact cybersecurity-eval benchmarks expected within days; matter for any SOC-tool builder.
+- **Qwen-Image-3.0 weights release** — blog post is live but the HF/ModelScope weights drop and license terms are the next event to watch.
+- **Jellyfin post-Andrew governance** — open questions on roadmap and contributor succession; affects a large self-hosting community.
+- **Romania land-registry hack attribution & remediation** — 683-pt story, follow-up reporting will determine whether this was nation-state or financially motivated; both have different infra-defense implications.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
