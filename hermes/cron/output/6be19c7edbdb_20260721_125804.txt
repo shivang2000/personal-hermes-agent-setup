@@ -1,0 +1,54 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have plenty of solid material now. I won't include the single-core matmul repo (looks like a sketchy random .exe) or the 85.3 GFlops one. Let me write the digest with strictly verified items.
+
+Title: **Tech / AI / Crypto / Software Digest — 21 July 2026, 12:55 IST**
+
+**Top picks**
+- [**Cursor — "Agent swarms and the new model economics" (Wilson Lin, Jul 20)**](https://cursor.com/blog/agent-swarm-model-economics) — Cursor re-ran its "build SQLite from scratch in Rust, docs only" task on a new planner/worker tree-decomposition swarm vs. the old one, same models, same budget. New swarm + Grok 4.5 hit **80% of a held-out SQL test suite in 4h**; old swarm spiraled before hour 2. Quality holds across model mixes; cost swings enormously (e.g. Opus-planning+Flash-executing costs **14% more** than Opus alone) — concrete data for anyone tuning agent harnesses.
+- [**Risky Bulletin — Hacker wipes Romania's entire land registry (Jul 20)**](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — Attacker "ByteToBreach" entered ANCPI with valid credentials, mapped the network, then wiped systems and backups after a failed extortion. Romania's property market is at a standstill, notaries can't record transactions. Same bulletin: **Hugging Face was breached using AI**, and an unauth RCE was finally found in WordPress — a bad week for supply-chain assumptions.
+- [**Jane Street — Incremental library (HN #1, 130 pts)**](https://github.com/janestreet/incremental) — Production OCaml library for *incremental computations* (memoized DAG with change propagation) used internally at Jane Street. Useful for build systems, UIs, and any pipeline where you re-derive outputs from a stream of inputs; ships with a small-step debug harness and skeleton/step_function APIs.
+- [**Xena Project — "Human mathematicians are being outcounterexampled" (Jul 20)**](https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/) — Kevin Buzzard recounts ChatGPT disproving Erdős' Unit Distance conjecture (May 2026), then OpenAI's "Sol" producing **1.2M lines of Lean** autoformalizing the proof and related class-field-theory machinery in three weeks — almost half the size of mathlib, which took nine human years. This is the real "AI for math" inflection point, not a benchmark.
+- [**Kimi Work launches (Moonshot AI)**](https://www.kimi.com/products/kimi-work) — Desktop AI agent (macOS first, Windows) from Moonshot. Notable primitives: **WebBridge** (autonomous browser agent), **Agent Swarm / "Instant Office Creation"** for multi-agent workflows, scheduled tasks, and native global market data plumbing for finance workflows. Most direct Western competitor framing to ChatGPT/Claude desktop agents.
+- [**Stencil — "You only need the frontier model for one single edit"**](https://stencil.so/blog/prewalk) — Empirical SWE-Bench Pro results dismantling the "Opus plans, Flash executes" /plan pattern: it costs **14% more** than letting Opus finish, because **~91% of tokens are reads, not writes** — the planner re-reads what Opus already read. Strong artifact for anyone designing routing/cascades.
+
+**AI, Agents & Models**
+- [**Kimi Work (Moonshot AI) — desktop agent with WebBridge + Agent Swarm**](https://www.kimi.com/products/kimi-work) — Beta; local-file privacy model, browser automation, scheduled tasks, finance-market-data integration. Notable that the *Kimi K3* model is now positioned as the agent core, not just a chat model.
+- [**unslop.run — "How we measured AI writing across arXiv" (Jul 2026)**](https://unslop.run/blog/measuring-ai-writing-on-arxiv) — Detector calibrated to a **0.4% false-positive floor on pre-ChatGPT papers**, then run on 12,750 arXiv papers. Result: **~32% of recent quarter flagged**, peaking ~39% early 2026; CS = **65%**, quant bio = **56%**, math = **0.7%** (mathlib is shrinking the floor). Useful framing for anyone writing or reviewing academic output.
+- [**Cursor — "Agent swarms and the new model economics"**](https://cursor.com/blog/agent-swarm-model-economics) *(also above)* — Tree-of-planners-and-workers as a Coase-style organization; the SQLite-from-docs experiment is the cleanest public benchmark of a multi-agent harness vs. a monolithic one.
+
+**Software Engineering & DevTools**
+- [**Jane Street / Incremental — OCaml library for incremental computations (HN front page)**](https://github.com/janestreet/incremental) — The formal model (Step_function.t → Incr.t → observers) generalizes React-style diffing to arbitrary computations. MIT-licensed, small, immediately useful for build/UI/ETL pipelines.
+- [**Stencil — "/plan" patterns are usually a cost trap**](https://stencil.so/blog/prewalk) — Argument is empirical, not aesthetic: the bill is **O(reads)**, the planner/executor split duplicates reads, and the planner's "deep understanding" doesn't transfer via a 2K-token postcard. If you're building agent routing, this is the load-bearing data point.
+- [**Werd.io — "China's open-weights AI strategy is winning"**](https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/) — Timely complement to Stratechery and the Stratechery HN thread arguing the same; relevant if you're picking an open-weights base model in the next quarter.
+
+**Cloud, Infra, Data & Security**
+- [**Risky Bulletin — Romania land-registry wipe + HF hack + WordPress unauth RCE (Jul 20)**](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — Three incidents, one digest: (1) full national land database destroyed via valid creds + mapped network + backup wipe after failed extortion; (2) Hugging Face breach **using AI as part of the intrusion chain**; (3) unauthenticated RCE in WordPress finally surfaced. Pattern: identity, not vulns, is the dominant 2026 breach vector.
+- [**Stratechery discussion thread (549 pts) — "Who's afraid of Chinese models?"**](https://news.ycombinator.com/item?id=48981114) — High-signal comment thread on the new Stratechery piece arguing that US closed-weights strategy is structurally losing against China's open-weights releases. (The article URL on stratechery.com returned 404 at fetch time — link is to the HN discussion until the permalink resolves.)
+- [**Nikkei — "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding" (203 pts)**](https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding) — The capital-structure side of the same story: who is actually funding the GPU and data-center buildout, and through which off-balance-sheet vehicles. Material for infra cost planning over 2027.
+
+**Crypto & Blockchain Engineering**
+- *(No first-tier verified items in the last 24h. Worth flagging: the Risky Bulletin mentions AI-augmented ransomware negotiation tactics by the group "FulcrumSec" — directly relevant to crypto treasury/security teams.)* Will watchlist for next run.
+
+**Open Source / GitHub**
+- [**Jellyfin — project leadership transition (Joshua Boniface + Anthony + Andrew departing)**](https://forum.jellyfin.org/t-project-leadership-changes) — Founder cites burnout after 7.5 years; the team says hand-off is amicable and "no jellyforks." Largest FLOSS media server (~1M+ admins); governance continuity matters for self-hosters and downstream packagers.
+- [**Ex Situ — open-source spatial index of displaced cultural artifacts (Show HN)**](https://exsitu.app/map) — Map-typed registry of artifacts separated from their origin institutions. Niche but technically interesting: vector tile + provenance graph stack.
+- [**Jelly UI — soft-body physics for native HTML form controls (446 pts)**](https://jelly-ui.com/) — Web components library that runs a physics sim on form controls. Surprisingly high-quality demo; the implementation is a teaching reference if you've ever wanted to know how to drive a small rigid/soft-body solver from pointer events.
+
+**Startups, YC & Industry**
+- [**Launch HN: Bloomy (YC S26) — AI-powered mastery learning for K-12**](https://news.ycombinator.com/item?id=48981136) — Direct-from-YC launch; relevant if you track EdTech × LLM tutoring stacks.
+- [**Hacker News — "Who's afraid of Chinese models?" (Stratechery, 549 pts)**](https://news.ycombinator.com/item?id=48981114) — Highest-engagement policy/strategy thread of the day, with first-hand context on DeepSeek/Kimi/Qwen release cadence. Read the top comments for builder-relevant readouts on model pricing and license terms.
+
+**YouTube / Technical Media**
+- [**Srsly Risky Biz — "Ransomware uses AI to amp up negotiations"**](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) — Companion podcast to the Risky Bulletin above; worth the 20 min if you're responsible for any externally-exposed system.
+- [**Risky Business podcast (Risky Bulletin audio edition)**](https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database/) *(same feed)* — Recommended subscribe via the RSS link in the article for daily 15-min security briefings.
+
+**Watchlist**
+- **Cursor's new agent swarm** — independent reproductions of the SQLite-from-docs 80% number; expect forks/improved harnesses this week.
+- **Jellyfin governance** — amicable today, but a founder transition in the largest FLOSS media server is worth tracking for fork risk and release cadence.
+- **Stratechery "Chinese models" piece** — permalink currently 404ing; confirm URL once Ben Thompson's CDN settles, then read alongside the Nikkei $1.65T debt story.
+- **Hugging Face breach details** — Risky Bulletin confirms it was AI-assisted; waiting for the post-mortem and any affected tokens/models.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
