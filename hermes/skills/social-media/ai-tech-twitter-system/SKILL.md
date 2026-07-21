@@ -252,6 +252,7 @@ Before presenting or posting a tweet:
 9. Letting reply/autopost scanners run at `every 5m`. X API tier caps are not designed for that cadence — a single reply scanner at this cadence can exhaust the monthly quota in under 24 hours and silently 429 every other X-facing job in the same profile. Default reply-scan cadence to `every 30m` or longer; treat anything below `every 15m` as a quota bomb unless Shivang explicitly approves it for a short campaign.
 10. Treating `last_status: error` on a cron as a transient retry. When `hermes cron list --all` shows a job in `paused` state after 429/quota errors, an unpause alone is not enough — the underlying cadence/credit issue must be fixed first or the job will re-pause within minutes.
 11. Drafting the tweet body long (400+ chars) and trimming down to 280 in 3-4 round-trips. This wastes turns and tends to lose the concrete mechanism with each pass. Aim for ≤260 characters on the first draft — that gives real edit room for humanizer fixes, hashtag addition, and a Shivang-driven tweak without thrashing the message. If the first draft is over 350, you have probably included filler that needs to go, not content that needs to stay.
+12. **Auto-mirror noise loops in cron-delivered Discord threads.** Threads opened by a cron job (e.g. `office-work-summary-for-tweets` → #tweets-automation thread 1529126825559588995) auto-mirror every Hermes tool output and assistant turn into the thread. Internal reasoning, tool-result previews, and even `delete_message` cleanup attempts all surface as visible Discord messages to Shivang and any other bots watching the thread. The clean pattern: post the tweet via `xurl post`, send the report via `hermes send --to discord:<channel_id>:<thread_id>` ONCE, then stop touching the thread — no follow-up `fetch_messages` to "verify", no `delete_message` cleanup loops (every delete call itself gets mirrored and creates more noise), no `cronjob` actions, no in-thread clarifications. The single `hermes send` is the only thread message that should land. If you need a "voice calibration" check (e.g. `xurl search from:shivangchheda22 -is:retweet`), run it via terminal — it does not need to be visible in the thread.
 
 ## Cron reliability note
 
@@ -284,6 +285,14 @@ Some cron digests (notably `office-work-summary-for-tweets`) are owned by Shivan
 - Do not draft tweets from a partial digest. If the message is paginated (e.g. ends with `(1/6)`), acknowledge receipt, wait for the rest, and explicitly note that you are waiting.
 - Do not edit or `resume` jobs that belong to another profile. `cronjob` actions from this profile only affect jobs owned by this profile.
 - Do surface downstream issues the digest reveals (e.g. a paused autopost fleet) — those are usually owned by this profile and worth flagging.
+
+**Exception: pre-drafted "Safe tweet angles" sections are an explicit auto-post trigger.** When the work-agent digest contains a section labeled "Safe tweet angles in Shivang's technical builder voice" (or similar) listing 3-5 candidate tweets, that is the work-agent's signal that the input is ready for the auto-post pipeline. In that case:
+- Verify all N/N pages have arrived before acting.
+- Pick the strongest angle by Shivang's audience (recruiters/founders, concrete mechanism, ≤280 chars).
+- Apply the humanizer checklist and post via `xurl post` (auto-post mode is on for this system).
+- Do not ask Shivang for approval — the pre-drafting IS the approval handoff.
+- After posting, send a single concise report to the thread and stop. See Common Pitfall #12 about thread auto-mirror noise.
+- Voice calibration: `xurl search "from:shivangchheda22 -is:retweet" -n 50` via terminal to avoid duplicating a recent angle.
 
 ## Paginated cron responses
 
