@@ -1,0 +1,85 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+Excellent — the Stratechery piece on Kimi K3 and Chinese models is highly relevant. I have enough material now. Let me write the digest.
+
+I have strong items on:
+- Qwen-Image-3.0 (494 pts on HN) — Alibaba image model
+- Gemini 3.6 Flash / 3.5 Flash-Lite / 3.5 Flash Cyber (433 pts on HN) — Google release
+- ACP v2 draft (1 min ago on newest) — agent-client protocol
+- Meta's AI models for Genesis Mission (56 pts)
+- Claude Fable counterexample to Jacobian Conjecture (783 pts)
+- Hacker wipes Romania's land registry (692 pts, major security)
+- Kimi Work (661 pts) and Stratechery "Who's afraid of Chinese models" (925 pts)
+- Xiaomi-Robotics-1 (505 pts)
+- EU-US data deal (537 pts)
+- Flock/ACLU (445 pts)
+- Cloudflare Internal DNS GA, WAF for WordPress, Meerkat, Precursor
+- HuggingFace security incident disclosure
+- Anthropic's Fable 5 redeployment
+- GitHub trending: code-review-graph, jcode, openship, worldmonitor
+- Telegram Gram wallet, BIS stablecoin warning, White House market structure bill
+
+Let me write the final digest now.
+
+**Tech / AI / Crypto / Software Digest — 22 July 2026, 20:55 IST**
+
+**Top picks**
+- **[Google rolls out Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber](https://blog.google/technology/google-deepmind/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/)** — 433 pts on HN. The "Flash" line is now a whole family: a faster, cheaper sibling of Gemini 3 Flash, a distilled "Lite" tier, and a security-focused "Cyber" variant. Worth watching for cost/quality and for any jailbreak-resistance claims on the Cyber model.
+- **[Qwen-Image-3.0 — rich content, authentic details, deep knowledge](https://qwen.ai/blog?id=REDACTED_SET_LOCALLY
+- **[ACP v2 is available in draft](https://agentclientprotocol.com/)** — Editor↔agent protocol (Zed + JetBrains + others) enters a v2 draft, separating "Prompt Lifecycle" from the v1 prompt turn and adding plan/config/sessions as first-class. Direct LSP-style play for agent portability; if you build IDEs or coding agents, this is the spec to watch.
+- **[Hacker wipes Romania's land-registry database](https://risky.biz/)** — Risky Bulletin coverage of a destructive breach of the national cadaster. National-scale data loss with potential title-deed impact; expect post-mortems on access paths, backup integrity, and ransomware-vs-wiper classification.
+- **[Claude Fable produced a counterexample to the Jacobian Conjecture](https://xcancel.com/)** — 783 pts on HN. A frontier model found a counterexample in pure mathematics; "human mathematicians are being out-counterexampled" is the follow-up. The interesting question is how much of the proof search was automated vs. agentic in a theorem-prover loop.
+
+**AI, Agents & Models**
+- **[Meta's AI models are powering the first wave of Genesis Mission projects](https://about.fb.com/)** — 56 pts on HN. Meta's frontier models are being deployed inside DOE's Genesis Mission science initiative; concrete tie-in for scientific agents on US government compute.
+- **[Kimi K3 and "Who's afraid of Chinese models?"](https://stratechery.com/2026/whos-afraid-of-chinese-models/)** — Stratechery's analysis of the Kimi K3 release: tokens are not a commodity; COGS and model footprint determine economics, not list price. Essential reading if you're choosing between Kimi, GLM, DeepSeek, and Western APIs.
+- **[Kimi Work](https://kimi.com/)** — 661 pts on HN. Moonshot's agentic workbench: persistent projects, scheduled tasks, and "Claws" (likely custom agent slots). Competitive shot at Manus/Claude Cowork.
+- **[Hugging Face security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-disclosure-july-2026)** — 281 upvotes. Worth reading the root-cause and scope if you serve model artifacts; treat HF as a supply-chain dependency like any other artifact registry.
+- **[Native-speed vLLM transformers modeling backend](https://huggingface.co/blog/native-speed-vllm-transformers-backend)** — Lets you run `transformers` code at vLLM-class throughput. Big DX win for inference teams that want model code and serving code to be the same code.
+- **[Grabette: an open system to record robot-manipulation data](https://huggingface.co/blog/grabette)** — Open data-collection stack for manipulation robots. Useful if you're working on LeRobot/VLA pipelines or imitation learning.
+- **[Introducing Cosmos 3 Edge](https://huggingface.co/blog/cosmos-3-edge)** — NVIDIA's edge-targeted world model for robotics. Continue the trajectory from Cosmos 1/2 toward deployable edge inference.
+
+**Software Engineering & DevTools**
+- **[ACP v2 draft — agents, clients, transports](https://agentclientprotocol.com/protocol/v2/overview)** — v2 redesign of Agent Client Protocol. Key changes: prompt turn → "Prompt Lifecycle," explicit plan/config primitives, no FS module (scoped to terminals/auth). Migration guide lives at `protocol/v2/migrating-from-v1`.
+- **[code-review-graph — local-first code intelligence for MCP and CLI](https://github.com/tirth8205/code-review-graph)** — Trending #3 today (1.9k stars/24h). Builds a persistent code graph that MCP servers and CLI agents can query so they only pull relevant context; claims measured context reduction on real reviews. Direct response to context-window saturation in coding agents.
+- **[jcode — "the most intelligent agent harness for code"](https://github.com/1jehuang/jcode)** — Trending #6 (835 stars/24h). Worth a look if you maintain a Claude Code/Cursor/Aider-style agent loop.
+- **[Jelly UI: soft-body physics for native HTML form controls](https://jelly-ui.com/)** — 644 pts on HN. Novel CSS/JS technique for animating form controls with physics. UI-engineering curiosity, not a tool you'll ship next week.
+
+**Cloud, Infra, Data & Security**
+- **[Cloudflare Internal DNS is now GA](https://blog.cloudflare.com/cloudflare-internal-dns-is-now-generally-available/)** — Authoritative and recursive DNS for private networks on the same global plane that runs Zero Trust. Cuts a real operational dependency on BIND/CoreDNS for internal-only zones.
+- **[Cloudflare WAF protects WordPress from two high-severity vulnerabilities](https://blog.cloudflare.com/cloudflare-waf-protects-wordpress-applications-from-two-high-severity-vulnerabilities/)** — Two WAF rules deployed automatically. If you self-host WP, patch anyway — the rules are a safety net, not a substitute.
+- **[Hacker wipes Romania's land-registry database](https://risky.biz/)** — Major destructive incident; expect a post-mortem on the access path within a week. Treat as a reminder that national-scale databases need offline, verified backups and least-privileged admin tiers.
+- **[Introducing Precursor: detecting agentic behavior with continuous client-side signals](https://blog.cloudflare.com/introducing-precursor-detecting-agentic-behavior-with-continuous-client-side-signals/)** — Bot-management pivot to behavioral session signals. Relevant if you're shipping browser agents and hitting anti-bot walls.
+- **[Introducing Meerkat: an experiment in global consensus](https://blog.cloudflare.com/introducing-meerkat-an-experiment-in-global-consensus/)** — Cloudflare Research's QuePaxa consensus algorithm, intended as substrate for a strongly-consistent global KV store. Theoretical today; primitives to watch.
+- **[The EU is about to sell our most sensitive data to the US for visa-free travel](https://edri.org/)** — 537 pts on HN. EDRi raises concerns about EU-US data transfer under the proposed visa-free framework. Affects any infra provider with EU users; track the legal text.
+
+**Crypto & Blockchain Engineering**
+- **[Pavel Durov says Telegram to roll out native Gram crypto wallet](https://cointelegraph.com/)** — Native in-app wallet inside Telegram, using the TON-aligned Gram token. Distribution story is the point; engineering worth tracking only after launch (key management, MPC vs. self-custody).
+- **[BIS warns stablecoins could weaken capital controls in emerging markets](https://cointelegraph.com/)** — BIS bulletin on stablecoin-driven capital flow leakage. Sets up regulatory pressure on offshore USDT/USDC use, not on US/EU on-ramps directly.
+- **[UK parliamentary group probes banking barriers for crypto firms](https://cointelegraph.com/)** — Treasury Select Committee inquiry into de-banking of crypto firms. Procedural, but actionable for UK-based builders — comment window likely open.
+- **[White House agrees to ethics provisions in market structure bill](https://cointelegraph.com/)** — US market structure bill moves forward with ethics clauses attached. Watch for how CFTC/SEC jurisdictional lines get drawn for DEX/perp venues.
+
+**Open Source / GitHub**
+- **[worldmonitor — real-time global intelligence dashboard](https://github.com/koala73/worldmonitor)** — Trending #1 today (1.2k stars/24h). AI-aggregated geopolitical/infrastructure news map; useful as a reference for LLM-driven news-pipeline architecture.
+- **[ai-agent-book (李博杰) — open textbook on AI agent design](https://github.com/bojieli/ai-agent-book)** — Trending #2 (4.4k stars/24h). Full Chinese-language open book on agent design and engineering practice with per-chapter code. Strong signal on the appetite for serious agent-engineering material.
+- **[openship — self-hosted deployment platform](https://github.com/oblien/openship)** — Trending #7 (1.5k stars/24h). DIY Vercel/Render alternative; the self-host-deploy category is heating up again.
+
+**Startups, YC & Industry**
+- **[Bloomy (YC S26) is hiring a founding engineer](https://www.ycombinator.com/launches)** — S26-batch role on the Launch YC board. Useful as a temperature check on what S26 companies are staffing for.
+- **[AppLovin/AdScale, Flock Safety credibility collapse](https://aclu.org/)** — 445 pts on HN: ACLU report on Flock Safety's ALPR network misrepresenting data to city councils and police. Operational impact if you ship anywhere near surveillance-tech integrations.
+- **[Hetzner self-hosted Kubernetes](https://qstars.nl/)** — 38 pts on HN. Practical guide to running cheap k8s on Hetzner; relevant given the cloud-cost-cutting posture across the ecosystem.
+
+**YouTube / Technical Media**
+- **[Risky Bulletin: Hacker wipes Romania's entire land-registry database](https://risky.biz/)** — Risky Business short-form bulletin on the Romania cadaster incident. Best ~10-min incident primer.
+- **[How the 2026 World Cup affected Internet traffic](https://blog.cloudflare.com/how-the-2026-world-cup-affected-internet-traffic/)** — Cloudflare's global HTTP analysis of streaming/kickoff/halftime traffic patterns. Useful data for anyone modeling live-event load on a CDN.
+- **[Stratechery: "Who's afraid of Chinese models?" — podcast version](https://stratechery.com/2026/whos-afraid-of-chinese-models/)** — 50-min analysis of Kimi K3, open weights economics, and why tokens ≠ commodity. Recommended companion to the article.
+
+**Watchlist**
+- **Anthropic Fable 5 / Glasswing jailbreak-severity framework** — Anthropic, Amazon, Microsoft, and Google co-proposed a scoring framework; expect third-party models and benchmarks in coming weeks.
+- **ACP v2 adoption** — If JetBrains, Zed, and one of the big coding-agent vendors land v2 implementations this week, the protocol graduates from "LSP-for-agents" to de-facto standard.
+- **EU-US data transfer / visa-free framework** — EDRi's complaint is one of several; legal text and member-state responses will clarify the actual builder impact.
+- **Kimi K3 and Chinese open-weights pricing** — If Moonshot drops list price or ships a stronger K3.x, expect another round of "tokens are a commodity" debate.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
