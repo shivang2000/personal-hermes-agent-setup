@@ -1,0 +1,71 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. The Register's direct article URLs are 404 (CMS path issue), so I'll link the homepage topic routes. Now I have a solid, verified set. Let me produce the digest.
+
+**Tech / AI / Crypto / Software Digest — Tuesday, 21 July 2026, 16:55 IST**
+
+**Top picks**
+- [Qwen-Image-3.0: Rich Content, Authentic Details, Deep Knowledge](https://news.ycombinator.com/item?id=REDACTED_SET_LOCALLY
+- [Frontier LLMs couldn't help Hugging Face fight off evil agents — Chinese open-weight GLM 5.2 happily obliged](https://www.theregister.com/) — A red-team report where proprietary frontier refusals failed but Zhipu AI's open-weight GLM-5.2 produced functional exploit code, exposing that safety-training recipes don't transfer and that open weights are a double-edged sword for defenders.
+- [Hugging Face: thinkingmachines/Inkling trending, prism-ml/Ternary-Bonsai-27B-gguf hits 432k downloads, zai-org/GLM-5.2 545k](https://huggingface.co/) — Wave of ternary-quantized (1.58-bit) 27B model builds ("Bonsai") going viral alongside 2.4T-param Qwen 3.8 Max and 1.4M-download Bonsai base — practical sub-20GB local inference on Apple silicon is now routine.
+- [OVH reveals semi-secret plan to fix critical "Januscape" hypervisor bug with mass reboots](https://www.theregister.com/) — OVH backported a Debian patch into its hypervisor stack and rebooted customer VMs without consent to neutralize a critical virtualization-escape-class bug; raises hard questions about host-provider patch authority and the limits of "zero-customer-downtime" promises.
+- [Cloudflare Internal DNS is now generally available](https://blog.cloudflare.com/) — Authoritative + recursive DNS for private networks on the same anycast control plane as 1.1.1.1 and Zero Trust, letting teams retire BIND/Windows DNS without a separate resolver fleet.
+
+**AI, Agents & Models**
+- [GitHub Agentic Workflows automate cross-repo documentation](https://github.blog/) — Aspire team's pipeline turns merged product changes into SME-reviewed docs PRs; concrete pattern for "doc as a side-effect of agent workflow" rather than human tickets.
+- [The new GPT-5.6 family: Luna, Terra, Sol + Kimi K3 (2.8T params)](https://simonwillison.net/) — Simon Willison's notes confirm OpenAI's Luna/Terra/Sol split and a 2.8T-parameter Moonshot Kimi K3 reasoning release; AWS Weekly Roundup confirms [OpenAI GPT-5.6 is now on Bedrock](https://aws.amazon.com/blogs/aws/).
+- [Cloudflare Precursor: continuous client-side signals for agentic-bot detection](https://blog.cloudflare.com/) — Behavioral validation engine scoring session-level interaction patterns rather than fingerprints; relevant if you're building scraper/agent-aware APIs.
+- [Stratechery: "Who's Afraid of Chinese Models?"](https://stratechery.com) — Ben Thompson argues US should codify that training-data scraping is fair use and bar anti-distillation ToS to let open US labs actually compete with Qwen/GLM/Kimi. (HN #3, 691 pts.)
+- [Nativ: Run frontier open models locally on your Mac](https://blaizzy.github.io) — Desktop wrapper that handles MLX/vLLM-style backends and model routing so non-CLI users can run 70B-class Qwen/GLM locally.
+
+**Software Engineering & DevTools**
+- [GitHub Code Quality is now generally available](https://github.blog/changelog/) — Repo-level quality signal (beyond CodeQL alerts) scoring maintainability, with public-preview license estimator and REST API for VS subscription management.
+- [CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt-injection detection](https://github.blog/changelog/) — First-party SAST coverage for prompt-injection patterns in code that builds LLM pipelines.
+- [Incremental — Jane Street's library for incremental computations](https://github.com/janestreet) (231 pts HN) — OCaml library for memoized incremental computation, used in production trading systems; under-the-radar pick for builders writing UI/REPL pipelines that need to recompute only what changed.
+- [AWS: EKS Kubernetes version rollbacks now supported](https://aws.amazon.com/blogs/aws/) + Xcode 27 runner image in public preview — Two reliability wins for CI/CD: undo a bad cluster upgrade, and build/test iOS/macOS apps on a current Xcode in GitHub Actions.
+- [Jelly UI: soft-body physics for native HTML form controls](https://jelly-ui.com) (525 pts HN) — CSS + tiny JS to give `<input>`/`<select>`/`<button>` spring/elastic feedback without replacing them; useful primitive for "delightful" agent/webapp UIs.
+
+**Cloud, Infra, Data & Security**
+- [HOLLOWGRAPH: M365 calendar appointments (dated 2050) used as covert C2 drop boxes](https://www.theregister.com/) — Malware embeds commands in long-future Outlook calendar entries and uses M365 itself as the exfil channel; bypasses network egress controls that only watch HTTP/DNS.
+- [Attackers pummel critical WordPress vuln — dozens of PoCs in the wild](https://www.theregister.com/) — Active exploitation of a high-severity WP core/plugin bug; Cloudflare deployed WAF rules on Jul 17 ([blog post](https://blog.cloudflare.com/cloudflare-waf-protects-wordpress-applications-from-two-high-severity-vulnerabilities/)) but unpatched self-hosted sites remain exposed.
+- [Google Cloud outage: single DC + 3 services down on "upstream" power failure, rest of zone/region survived](https://www.theregister.com/) — Useful postmortem for SREs on the real blast radius of hyperscaler resilience claims; zone ≠ DC, and HA is uneven across product lines.
+- [AWS customer learns the hard way: expired card + spam filter + broken authenticator=REDACTED_SET_LOCALLY
+- [AWS Weekly Roundup: one-click Lambda setup prompt, OpenAI GPT-5.6 on Bedrock, Strands Agents updates](https://aws.amazon.com/blogs/aws/) — Notable: Lambda now offers an AI-assisted project bootstrap, and Bedrock gained the full GPT-5.6 family.
+- [Cloudflare WAF protects against two high-severity WordPress CVEs](https://blog.cloudflare.com/) — Disclosed by the WP security team; deploy rules are on by default for Cloudflare customers.
+- [WordPress Foundation v Microsoft on OOXML](https://www.theregister.com/) — TDF argues OOXML's ISO stamp is hollow because only Office renders it faithfully; matters for anyone maintaining long-term document portability in their stack.
+
+**Crypto & Blockchain Engineering**
+- [UK Parliament opens inquiry into banking chokepoint for crypto firms](https://www.coindesk.com/) — Crypto & Digital Assets APPG probing UK banks that refused accounts/restricted transactions to crypto businesses; relevant for any UK/EU builder needing fiat rails.
+- [Cardano "Van Rossum" hard fork moves to v11 — first community-voted upgrade, not company-driven](https://www.coindesk.com/) — Governance milestone for stake-pool operators and DApp developers on Cardano.
+- [Grayscale files S-1 for first US Worldcoin ETF](https://cointelegraph.com/) — Adds another privacy/identity-coin product to the approval queue; watch for SEC posture.
+- [US "CLARITY Act" market-structure bill moves to Senate with ethics provision concession](https://cointelegraph.com/) — If passed, materially clarifies SEC/CFTC jurisdiction over digital assets; concrete progress for builders structuring US-compliant products.
+- [Exodus to cut 25% of workforce to build full-stack payments platform](https://www.coindesk.com/) — Post-acquisition consolidation of Monavate + Baanx into a payments stack; signal that pure wallet plays are pivoting to commerce infra.
+
+**Open Source / GitHub**
+- [Qwen-Image (8.1k stars)](https://github.com/QwenLM/Qwen-Image) — Top-of-trending; Apache-2.0 weights + inference code; the reference open-weights text-to-image model for document/posters today.
+- [Incremental (Jane Street, OCaml)](https://github.com/janestreet/incremental) — Industrial-strength incremental computation library; worth studying even if you don't write OCaml.
+- [code-review-graph (Tirth Shah)](https://github.com/tirth8205/code-review-graph) — Local-first code intelligence graph exposing codebase structure via MCP + CLI; claims benchmarked context reductions for AI code review on large repos.
+- [AstrBot](https://github.com/AstrBotDevs/AstrBot) — Multi-IM-platform (Telegram/Discord/Slack/etc.) LLM agent framework with plugin system; rapidly climbing (37k+ stars) as a self-hostable OpenClaw alternative.
+- [Nativ](https://blaizzy.github.io) — Electron/Mac wrapper for running open weights (Qwen, GLM, Llama) locally; not a new model but a real developer-tool gap-filler.
+
+**Startups, YC & Industry**
+- [Launch HN: Coasty (YC S26) — An API for computer-use agents](https://news.ycombinator.com/) — API that wraps computer-use agents for legacy desktop/web apps; targets healthcare ops workflows (payer portals, EHRs, remote desktops). 44 pts, 26 comments.
+- [EU AI labeling rules take effect next month](https://www.theregister.com/) — Chatbots and agents must disclose AI identity to users; real compliance deadline for any EU-facing agent product.
+- [Hut 8 + IREN land billions in new AI compute contracts](https://www.coindesk.com/) — Rebound in AI-compute stocks after demand skepticism; miners pivoting to HPC/AI hosting is now a multi-billion-dollar line item.
+- [EU fines AliExpress €550M under DSA — largest-ever](https://www.theregister.com/) — Signal that the Commission is willing to use DSA to attack the "cheap goods" biz model; any cross-border e-commerce/compliance founder should care.
+
+**YouTube / Technical Media**
+- [Ben Thompson — "Who's Afraid of Chinese Models?" (Stratechery)](https://stratechery.com) — Long-form essay; the cleanest current framing of US-vs-China open-weights strategy and what policy levers actually matter.
+- [Simon Willison on reverse-engineering home devices with coding agents](https://simonwillison.net/2026/Jul/20/) — Short post with concrete anecdotes on how agents flipped the ROI of hobbyist RE; useful framing for "where coding-agent time is actually going."
+
+**Watchlist**
+- **Qwen 3.8 Max (2.4T) and Kimi K3 (2.8T) — first real trillion+ open-weights releases.** Distribution mechanics, distillation into smaller models, and what US labs do next will dominate AI news this month.
+- **OVH "Januscape" hypervisor patch and downstream effect.** Watch for OVH postmortem, any customer-side incident reports, and whether other EU clouds have similar undisclosed bugs.
+- **WordPress CVE exploitation wave.** Mass exploitation with PoCs public is ongoing; confirm your WP/WP-plugin versions and WAF rules before next Patch Tuesday.
+- **US CLARITY Act Senate vote.** Could materially change the legal surface for every US crypto builder and stablecoin issuer within weeks.
+
+— Shivang's #tech-news digest, auto-delivered.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
