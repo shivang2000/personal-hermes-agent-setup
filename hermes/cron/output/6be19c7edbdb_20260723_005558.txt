@@ -1,0 +1,39 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 23 July 2026, 00:55 IST**
+
+**Top picks**
+- [GigaToken: ~1000x faster language model tokenization](https://github.com/marcelroed) — Show HN at #2: a Rust/CPU SIMD tokenizer reportedly hitting 3M+ tokens/sec/core for the LLaMA-3 BPE vocab (135 pts, 26 comments). If the numbers hold, this collapses the prefill/ingest bottleneck for batch inference, RAG indexing, and high-throughput agent loops.
+- [Terrence Tao's ChatGPT conversation about the Jacobian Conjecture counterexample](https://chatgpt.com) — #1 on HN (243 pts): Tao is using a frontier model to interrogate a putative counterexample in real time, a meaningful signal that LLMs are now useful as sparring partners for research-level mathematics rather than just exposition.
+- [Launch HN: Unlayer (YC W22) – add email and document builders to your app](https://unlayer.com) — Embeddable WYSIWYG editor (email/PDF/landing pages) with a SaaS or self-hosted embed; a useful primitive if you want to ship "doc/email builders" without building a drag-and-drop engine.
+- [Everyone should know SIMD](https://mitchellh.com) — Mitchell Hashimoto primer on portable SIMD in Rust/Go for performance-critical paths; relevant context given GigaToken and ongoing CPU-side inference work.
+- [The startup's Postgres survival guide](https://hatchet.run) — 214 pts, 112 comments: pragmatic playbook on connection pooling, vacuum strategy, replication, and operational pitfalls. Worth the read for any founder running Postgres at scale.
+- [CrucibleBench: a MUD-based LLM evaluation ($99 PoC)](https://cruciblebench.ai) — Interesting eval-design idea: live multiplayer text game as a dynamic, adversarial, tool-use benchmark. Cheap, reproducible, and harder to game than static prompt sets.
+
+**AI, Agents & Models**
+- [Are AI Labs Pelicanmaxxing?](https://dylancastillo.co) — Argues frontier labs are chasing pelican-on-bicycle-style mascot benchmarks for PR rather than capability; useful framing if you're choosing which leaderboard claims to trust this quarter.
+- [Bento – an entire PowerPoint in one HTML file](https://bento.page) (#3, 439 pts) — Not pure AI, but a strong example of single-file, deterministic-by-design web apps that coding agents can now produce end-to-end.
+
+**Software Engineering & DevTools**
+- [Ghost Cut – or why Cut and Paste is broken everywhere](https://textualize.io) (67 pts) — Deep dive from the Textual team on cross-platform clipboard semantics. Relevant if you're building terminals, agent UIs, or anything that pipes rich content.
+- [Nobody knows what a used GPU cluster is worth](https://ciphertalk.substack.com) — Market-color piece on secondary H100/H200/B200 pricing, depreciation curves, and hyperscaler buy-back dynamics. Important if you're sizing capex vs. on-demand.
+
+**Open Source / GitHub (trending today)**
+- [koala73/worldmonitor](https://github.com/koala73/worldmonitor) — Real-time geopolitical/infrastructure dashboard with AI news aggregation (4,131 stars today). Fork-worthy reference for multi-source ingestion + LLM summarization.
+- [ruvnet/RuView](https://github.com/ruvnet/RuView) — WiFi-CSI based presence detection and vital-sign monitoring without cameras (875 stars/day). Privacy-preserving sensing with a surprising amount of signal.
+- [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) — Agent skill/rule-set that forces coding agents to surface the answer up front instead of burying it (1,682 stars today). The fact this is trending tells you the UX problem is real.
+- [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) — MIT-licensed multi-provider LLM gateway (268+ providers, 500+ models), quota-aware fallback, RTK + "Caveman" token compression (15–95% savings), MCP/A2A. Worth evaluating if you're tired of hand-rolling provider routers.
+- [jamiepine/voicebox](https://github.com/jamiepine/voicebox) — Open-source AI voice studio for cloning/dictation. Notable as a self-hostable alternative to commercial voice suites.
+- [likec4/likec4](https://github.com/likec4/likec4) — Always-actual C4 architecture diagrams generated from code; useful for keeping design docs from rotting.
+
+**Startups, YC & Industry**
+- [Launch HN: Unlayer (YC W22)](https://unlayer.com) — See top picks.
+
+**Watchlist**
+- **GPU secondary-market repricing.** Cipher Talk's piece hints at a soft secondary market; if hyperscalers accelerate buy-backs, expect 2–3 year TCO math for training/inference clusters to shift.
+- **SIMD-native inference on CPU.** GigaToken + Mitchell Hashimoto's SIMD essay in the same digest is a coincidence, but together they suggest a small wave of CPU-side perf work; worth tracking for serving cost.
+- **MUD-style agent evals.** If CrucibleBench's protocol catches on, we'll see more "live environment" evals (game servers, sandboxes) competing with static leaderboards.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
