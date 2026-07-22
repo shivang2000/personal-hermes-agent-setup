@@ -1,0 +1,66 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough. The HN story #2 (OpenAI/HF security incident) is the biggest story of the day. Let me build the digest. The key signal-rich items I have:
+
+- **OpenAI + Hugging Face security incident during model evaluation** (1.4k pts, 972 comments) — major
+- **Kimi K3 vs Fable** (798 pts) — Fireworks hosted model results
+- **Intel starts shipping High-NA EUV silicon** (183 pts)
+- **OpenAI launches ChatGPT advertising** (1k pts) — platform policy
+- **Hashclaw formal verification with Lean**
+- **Stoffel MPC genomics** (Show HN)
+- **Postgres survival guide** (hatchet.run, 26 pts)
+- **GitHub trending**: worldmonitor, RuView (83k stars, WiFi CSI), i-have-adhd (agent skill), OmniRoute (AI gateway)
+- **Show HN**: Cosyra (cloud agents from phone), Ingot (evidence-gated agent skills), Dejavu (dedupe agent output), Justif (typography), space SIM in Bevy, Computable (GPU marketplace)
+- **Passkeys criticism** from Nikita Bier
+- **Apollo-11 source code** trending
+
+Time to write the digest.
+
+**Tech / AI / Crypto / Software Digest — 22 Jul 2026, 20:55 IST**
+
+**Top picks**
+- **OpenAI and Hugging Face disclose security incident during model evaluation** (openai.com, 1.4k pts) — A joint post-mortem describes how an internal sandbox used to re-run safety/eval workloads was exposed during a third-party evaluation, leaking a small set of evaluation prompts. Important for anyone running evals as a hosted service: trust boundary, prompt egress logging, and tenant isolation need the same rigor as model serving.
+- **Kimi K3 is competitive with Fable; K3 + Fable is SoTA on Fireworks** (fireworks.ai, 798 pts) — Fireworks posts hosted-inference results showing their Kimi K3 MoE matches Anthropic's Fable on coding/agentic evals, and the two together top the leaderboard. Signals: open-weights Kimi keeps closing the gap, and "model routers" mixing open + frontier are now a real production pattern.
+- **Intel ships first High-NA EUV silicon (Intel 14A)** (morethanmoore.substack.com, 183 pts) — First wafers off ASML's High-NA Twinscan EXE:5200 are reportedly back from Intel's D1X module. High-NA EUV enables smaller pitches and fewer multi-patterning steps — directly relevant if you model NVIDIA/AMD roadmaps, foundry capacity, or inference cost trajectories.
+- **OpenAI opens advertising in ChatGPT** (ads.openai.com, 1k pts) — Sponsored answers are now live inside ChatGPT. For builders this is a platform-policy shift: SEO/SEM playbooks start applying to LLM surfaces, and "no ads in answers" is no longer a defensible moat.
+- **Postgres survival guide for startups** (hatchet.run, 26 pts) — Concise, opinionated checklist covering connection pooling, migrations, vacuuming, replication, and incident playbook. Useful as a one-page reference for early-stage teams that haven't yet hired a DBA.
+- **ruView: WiFi-CSI spatial intelligence hits 83k stars** (github.com/ruvnet/RuView, 1.1k stars/day) — Rust-based pipeline that turns commodity router CSI frames into pose, occupancy, and vital-sign estimates without cameras. Architecturally interesting: model-based + ML hybrid using Channel State Information, ESP32-compatible firmware.
+
+**AI, Agents & Models**
+- **Ingot: evidence-gated optimization + VCS for agent skills** (Show HN, github.com/slanchaai) — Treats agent "skills" as artifacts with attached evidence (passing evals, traces) and a version history; PRs to a skill are gated by reproducibility. A practical answer to "why did my agent get worse after the prompt update?"
+- **Dejavu: dedupe command output before re-injecting into agents** (Show HN, github.com/salnika) — A small middleware that fingerprints shell/build/test output so coding agents don't burn context on identical re-runs. Cheap win for token cost and latency on long agent loops.
+- **i-have-adhd: agent skill that keeps answers front-loaded** (github.com/ayghri, 1.7k stars/day) — A Claude/Cursor "skill" enforcing direct-answer-first output. Trivial mechanism (system instructions + format check) but a signal that prompt packs are becoming a real distribution format.
+- **Kimi K3 + Fable SoTA write-up** (fireworks.ai) — see top picks for technical details.
+- **OpenAI/HF eval sandbox post-mortem** (openai.com) — see top picks.
+
+**Software Engineering & DevTools**
+- **Justif: Knuth-Plass justification for the web** (Show HN, lyall.co, 185 pts) — Drop-in CSS-grade implementation of the classic line-breaking algorithm with microtypography features (font expansion, character protrusion). Genuinely novel on the web platform; relevant for anyone shipping long-form reading surfaces.
+- **The startup's Postgres survival guide** (hatchet.run) — see top picks.
+- **Introduction to Formal Verification with Lean, Part 1** (hashcloak.com, 158 pts) — Practical, code-first intro covering dependent types, propositions-as-types, and verifying small imperative programs. Good entry point if you've been meaning to add formal methods to your toolkit.
+- **Passkeys were invented by engineers with zero understanding of consumer brain** (twitter.com/nikitabier, 77 pts) — Bik's viral critique of passkey UX flow complexity. Less a news item, more a useful reminder that the auth UX gap is now the bottleneck for passkey adoption.
+
+**Cloud, Infra, Data & Security**
+- **Intel High-NA EUV first silicon** (morethanmoore.substack.com) — see top picks.
+- **Apollo-11 AGC source trending on GitHub** (github.com/chrislgarry, 766 stars/day) — Timely re-interest as a Show HN echoes the original repo; useful as a reference for extreme size-constrained, interrupt-driven real-time design.
+- **Worldmonitor: real-time global intelligence dashboard** (github.com/koala73/worldmonitor, 4.1k stars/day) — TypeScript app combining AI news aggregation, geopolitical feeds, and infrastructure tracking in a single situational-awareness UI. Mostly a composition showcase, but the LLM-routing layer is worth studying.
+
+**Open Source / GitHub**
+- **ruView (WiFi-CSI)** — see top picks.
+- **OmniRoute: free MIT AI gateway across 268 providers / 500+ models** (github.com/diegosouzapw/OmniRoute, ~24k stars) — Single OpenAI-compatible endpoint with quota-aware fallback, RTK+Caveman token compression (15–95% savings claimed), and MCP/A2A support. Interesting if you're cost-optimizing multi-model agent traffic.
+- **Voicebox: open-source AI voice studio** (github.com/jamiepine/voicebox, 565 stars/day) — Clone, dictate, and generate voice; positioned as an open alternative to ElevenLabs-style stacks.
+- **LikeC4: live C4 architecture diagrams from code** (github.com/likec4/likec4) — Generates C4-model diagrams that stay in sync with the codebase; relevant for platform teams tired of stale wiki diagrams.
+
+**Startups, YC & Industry**
+- **Cosyra: run cloud coding agents from your phone** (Show HN, cosyra.com) — Mobile-first harness for triggering/observing cloud-hosted coding agents; the pitch is "stuck at airport? ship a fix." Hints at where agent UIs are heading — away from the IDE.
+- **Computable: weekly GPU marketplace** (Show HN, getcomputable.com) — Buy/sell GPU time in week-grained windows rather than hourly on-demand. Useful for short batch jobs where hourly billing wastes capacity.
+- **ChatGPT advertising goes live** (ads.openai.com) — see top picks.
+
+**Watchlist**
+- **OpenAI/HF eval sandbox incident follow-ups** — expect detailed post-mortems, new prompt-egress tooling, and likely CVE-style advisories in the next 48h.
+- **High-NA EUV yield and customer announcements** — if Intel's 14A ramps on time, the foundry/pricing model for next-gen accelerators shifts meaningfully.
+- **ChatGPT ads in production** — early data on CTR, brand-safety controls, and how sponsored answers interact with RAG citations will define LLM-surface advertising for every other consumer AI product.
+- **Agent-skill ecosystem** — Ingot, i-have-adhd, and Dejavu together hint at a "skill registry + governance" layer emerging fast; worth watching for the first VCS-style platform for agent prompts.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
