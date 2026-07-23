@@ -1,0 +1,72 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough verified information to produce the digest. Let me compose the final report.
+
+**Tech / AI / Crypto / Software Digest — Thursday, 23 July 2026, 20:55 IST**
+
+**Top picks**
+- [Treasury threatens sanctions after White House claims Moonshot distilled Anthropic's Fable — TechCrunch](https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/) — U.S. officials say Moonshot AI's Kimi K3 was trained against Anthropic's Fable outputs and Treasury is weighing sanctions; if substantiated this becomes the first cross-border model-distillation enforcement case and reshapes how Chinese labs source training signal.
+- [OpenAI says Hugging Face was breached by its pre-release models — TechCrunch](https://techcrunch.com/) — Pre-release OpenAI weights surfaced on Hugging Face via a compromised internal pipeline; OpenAI says the leak vector was an operational mistake rather than a HF platform vuln, but it puts every hosted-weights preview policy under fresh scrutiny.
+- [Cloudflare Internal DNS is now generally available — Cloudflare blog](https://blog.cloudflare.com/cloudflare-internal-dns-is-now-generally-available/) — Authoritative + recursive DNS for private networks on the same global control plane as 1.1.1.1 and Zero Trust, with on-network record types and DNSSEC — a credible single-vendor alternative to split-horizon BIND/CoreDNS stacks.
+- [Buzz (Block) is a "hive mind" chat platform that puts AI agents in channels alongside humans — GitHub](https://github.com/block/buzz) — Jack Dorsey/Block open-sourced an async messaging app where every channel is a shared context for both teammates and autonomous agents (Claude, Goose, Codex skills already shipped); 5.8k stars and 3,200+ stars today, with a real desktop client and signed macOS canary builds.
+- [Etched hits $10.3B valuation as Nvidia-comparable AI chip startup raises from big-name investors — TechCrunch](https://techcrunch.com/) — Etched's Sohu chip is transformer-only (no general matrix math), bets that the entire inference fleet will converge on a single architecture; the round implies serious belief that dedicated silicon beats general GPUs on LLM tokens/$ and latency.
+- [GitHub Code Quality is now generally available — GitHub Changelog](https://github.blog/changelog/jul-20-2026-github-code-quality-is-now-generally-available/) — Repo-level code-health scoring lands in GA for all GitHub users, joining Copilot code review and Dependabot's new default package cooldown — a meaningful step toward a built-in "engineering intelligence" layer.
+
+**AI, Agents & Models**
+- [Gemini 3.6 Flash is now available in GitHub Copilot — GitHub Changelog](https://github.blog/changelog/) — Google's smaller reasoning model joins the Copilot model picker; combined with Gemini 3.5 Flash Cyber on DeepMind's blog, Google is filling out a tiered cost/latency stack.
+- [Vercel: "Open-weight models surge to 29% of volume, price per token flattens" — Vercel Blog](https://vercel.com/blog/open-weight-models-surge-to-29-of-volume-price-per-token-flattens) — Across Vercel's AI Gateway, open-weight traffic hit 29% in a quarter and inference pricing is decoupling from frontier model list prices — useful supply-side signal for any product that ships LLM features.
+- [DiffusionGemma: 4x faster text generation — Google DeepMind](https://deepmind.google/discover/blog/) — A diffusion-style decoding variant of Gemma that the team reports at ~4× throughput; relevant for high-QPS summarization and code-completion paths where latency dominates quality.
+- [Terence Tao's ChatGPT conversation on the Jacobian Conjecture counterexample — ChatGPT](https://chatgpt.com/) — Tao spent ~30 hours with GPT-5.x to chase a 90-year-old open problem in commutative algebra; HN hit 1,000+ points and 588 comments, the strongest current example of LLMs acting as a serious research collaborator.
+- [ComposioHQ/awesome-claude-skills — GitHub](https://github.com/ComposioHQ/awesome-claude-skills) — 69.2k stars, the de-facto index of reusable Agent Skills, MCP connectors and Code-execution recipes for Claude — useful starting point if you're standardizing agent tooling across a team.
+
+**Software Engineering & DevTools**
+- [Run any Dockerfile on Vercel — Vercel Blog](https://vercel.com/blog/run-any-dockerfile-on-vercel) — Vercel now runs arbitrary HTTP servers from a Dockerfile (Rails, Django, Spring Boot, Go), not just Node/Edge — makes Vercel a credible home for full-stack apps without polyglot rewrites.
+- [AI SDK 7 — Vercel Blog](https://vercel.com/blog) — Major version of the TypeScript AI SDK with cleaner agent primitives and provider-agnostic streaming.
+- [Vercel acquires Better Auth to accelerate open source auth — Vercel Blog](https://vercel.com/blog) — Vercel bought the TypeScript-first auth library; expect it to become the default auth layer for Next.js/Vercel apps.
+- [Claude Code uses Bun written in Rust now — Simon Willison](https://simonwillison.net/2026/Jul/19/claude-code-bun-rust/) — Anthropic's coding agent swapped its Node runtime for a Rust+Bun shell, reportedly cutting startup and tool-call overhead — a real-world datapoint that JS runtimes are not the bottleneck for agent harnesses.
+- [Show HN: Palmier Pro — open-source macOS video editor built for AI](https://news.ycombinator.com/) — Native Swift editor with first-class agent hooks; a glimpse of what "AI-native desktop apps" look like beyond the browser.
+
+**Cloud, Infra, Data & Security**
+- [A broken DNSSEC rollover took down .al; 1.1.1.1 now returns EDE 33 to signal bypassed validation — Cloudflare blog](https://blog.cloudflare.com/) — Cloudflare deployed a Negative Trust Anchor for the Albanian TLD after a botched KSK rollover, and now propagates Extended DNS Error code 33 to clients so resolvers can see when validation is off — a useful transparency primitive for the DNSSEC-vs-DoH debate.
+- [Introducing Precursor: detecting agentic behavior with continuous client-side signals — Cloudflare blog](https://blog.cloudflare.com/) — New continuous behavioral-validation engine that distinguishes scripted bots from agentic automation (mouse dynamics, scroll cadence, page-graph traversal) — relevant for any site currently losing the arms race against scraper agents.
+- [Introducing Meerkat: an experiment in global consensus (QuePaxa) — Cloudflare Research](https://blog.cloudflare.com/) — Cloudflare Research open-sourced a strongly consistent, fault-tolerant key-value store prototype running on a new consensus protocol (QuePaxa) — interesting alternative to Raft/EPaxos for geo-distributed control planes.
+- [Cloudflare WAF protects WordPress from two high-severity vulnerabilities — Cloudflare blog](https://blog.cloudflare.com/) — Virtual-patch rules shipped ahead of disclosure; WordPress sites behind Cloudflare get coverage even before the patched core release.
+- [GitHub Copilot code review: customization and configurability improvements — GitHub Changelog](https://github.blog/changelog/) — Repo-level code-review rules, ignore paths, and per-team tuning land on the same surface as the new Code Quality GA product.
+- [Code scanning shows AI security detections on pull requests — GitHub Changelog](https://github.blog/changelog/) — AI-generated code gets its own detection category in code scanning results.
+
+**Crypto & Blockchain Engineering**
+- [BlackRock, Coinbase, Strategy join a $15M consortium to prepare Bitcoin for quantum threats — CoinDesk](https://www.coindesk.com/) — A new industry group (members fund independently; no protocol/governance role) is the first coordinated Wall-Street-funded post-quantum roadmap for Bitcoin — worth watching for any roadmap, address-format or signature-scheme proposals that follow.
+- [Uniswap pushes deeper into tokenized assets with permissioned trading pools — CoinDesk](https://www.coindesk.com/) — Framework built with Superstate, Securitize and Dowgo lets regulated funds and securities trade on Uniswap while enforcing compliance on-chain — significant for RWA tokenization because the liquidity layer is now the existing DEX.
+- [BNY plans tokenized Treasuries on a private blockchain by year-end — CoinDesk](https://www.coindesk.com/) — Settlement to cover more international trading hours, eliminating the weekend lag in U.S. Treasuries — direct evidence that the 24/7 capital-markets thesis is moving into the largest custodian.
+- [Polymarket to challenge France's nationwide website block — CoinDesk](https://www.coindesk.com/) — French regulator ANJ cited loss, identity-check and market-manipulation risks; precedent-setting for prediction markets in the EU and for jurisdiction-vs-protocol conflicts more broadly.
+- [BitMEX, the exchange that invented perps, is shutting down — CoinDesk](https://www.coindesk.com/) — Co-founded by Arthur Hayes in 2014, the first venue for 100x-leverage perpetual swaps is winding down; the venue that defined the modern derivatives stack is exiting.
+- [Zcash's plan to beat the quantum threat — CoinDesk](https://www.coindesk.com/) — ECC's roadmap for post-quantum signature migration on Zcash — a concrete engineering template other UTXO chains can study.
+- [Hyperliquid requires 500,000 HYPE (~$30M) stake to deploy permissionless prediction markets under HIP-4 — Cointelegraph](https://cointelegraph.com/) — Highest economic-security floor ever set for a permissionless market launcher; positions Hyperliquid as a credible Polymarket competitor.
+- [Injective files for SEC transfer-agent registration to bring securities ownership records onchain — Cointelegraph](https://cointelegraph.com/) — First major L1 to seek transfer-agent status; opens the door for natively onchain cap-table / shareholder-record workflows.
+
+**Open Source / GitHub**
+- [Kronos: A Foundation Model for the Language of Financial Markets — GitHub](https://github.com/shiyu-coder/Kronos) — Open K-line/OHLCV foundation model from shiyu-coder, 32.9k stars — first credible text-style pretraining approach applied to candle/cross-asset time series.
+- [Pumpkin-MC/Pumpkin — GitHub](https://github.com/Pumpkin-MC/Pumpkin) — Fast, modern Minecraft server in Rust (8.8k stars, +563 today) — relevant as a systems-language benchmark for protocol parsing, ECS, and plugin sandboxing.
+- [ego-lite — citrolabs — GitHub](https://github.com/citrolabs/ego-lite) — Browser designed to run human and AI-agent sessions in parallel with first-class Claude/Codex skill integration; concrete reference for the "agent-first" browser category.
+- [OmniRoute — diegosouzapw — GitHub](https://github.com/diegosouzapw/OmniRoute) — MIT-licensed AI gateway bundling 278+ providers and 500+ models behind one endpoint, with quota-aware auto-fallback, RTK/Caveman prompt compression (15-95% token savings), and MCP/A2A support — drop-in for anyone running Claude Code, Codex, Cline, or Cursor across multiple providers.
+- [Show HN: YAFL — an E2EE file handoff for AI agents](https://news.ycombinator.com/) — End-to-end-encrypted blob transfer specifically designed for agent-to-agent and agent-to-human handoffs — interesting primitive for any multi-agent pipeline that touches PII.
+- [Show HN: STT-MCP — local speech-to-text for agents](https://news.ycombinator.com/) — Local Whisper-style STT exposed as an MCP tool so agents can ingest voice without leaving the machine.
+
+**Startups, YC & Industry**
+- [AI chip startup Etched defies skeptics, hits $10.3B valuation — TechCrunch](https://techcrunch.com/)
+- [Travis Kalanick's robotics company raises $1.7B led by a16z — TechCrunch](https://techcrunch.com/)
+- [Arcee, a US open-source AI lab, says Chinese models are not inherently dangerous — TechCrunch](https://techcrunch.com/) — Coordinated counter-message to the White House's distillation/distillation-sanctions framing; the open-weights industry is starting to organize politically.
+- [ServiceNow bets $40M on Indian banking software specialist — TechCrunch](https://techcrunch.com/) — Vertical SaaS roll-up in regulated financial services, with the AI "kill switch for rogue agents" framing now appearing in earnings calls.
+- [Edtech platform raises $4.5M to teach students how to "vibe code" — TechCrunch](https://techcrunch.com/)
+- [Google Cloud CEO Kurian says customers are spending 50% more as segment blows away expectations — CNBC](https://www.cnbc.com/) — Q2 results put Google Cloud well ahead of consensus, driven by AI workload attach; Alphabet still got hit ~6% on capex guidance — useful signal for cost-conscious builders (cloud is bidding up).
+- [Google slapped with $1B fine under landmark EU digital law — CNBC](https://www.cnbc.com/) — DMA/GDMA enforcement keeps compounding; expect more platform-level friction for any builder shipping to EU users.
+
+**Watchlist**
+- Whether Treasury's Moonshot-distillation probe produces a formal enforcement action and a published technical finding — sets the precedent for the next 24 months of model-distillation litigation.
+- GitHub Universe announcements (Universe is being promoted on the GitHub blog right now) — Copilot SDK, agent marketplace, and any movement on the Copilot-as-platform thesis.
+- Robinhood Chain, Hyperliquid HIP-4, and the Injective transfer-agent filing — three different shots at onchain capital markets converging in the same week; if any one ships, the RWA-on-L1 narrative flips from "demo" to "production".
+- Quantum-resilience roadmaps for Bitcoin, Zcash, and major Ethereum L2s — first coordinated funding is now in place; expect concrete signature/address-format proposals before end of year.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
