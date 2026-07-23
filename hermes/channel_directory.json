@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T19:29:20.478912",
+  "updated_at": "2026-07-23T20:29:27.971297",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,18 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1529855322766835793:1529855322766835793",
+        "name": "Shivang Hermes AI / #trading-bot / how can we build bot that will trade for me using yt live video and using tel... / topic 1529855322766835793",
+        "type": "thread",
+        "thread_id": "1529855322766835793"
+      },
+      {
+        "id": "1529851368716632118:1529851368716632118",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1529851368716632118",
+        "type": "thread",
+        "thread_id": "1529851368716632118"
       },
       {
         "id": "1529769061842686023:1529769061842686023",
