@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T13:23:30.092131",
+  "updated_at": "2026-07-23T14:23:37.043635",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,12 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1529769061842686023:1529769061842686023",
+        "name": "Shivang Hermes AI / #trading-bot / stop the cronjob for hourly trading bot log digest / topic 1529769061842686023",
+        "type": "thread",
+        "thread_id": "1529769061842686023"
       },
       {
         "id": "1529489493827125298:1529489493827125298",
