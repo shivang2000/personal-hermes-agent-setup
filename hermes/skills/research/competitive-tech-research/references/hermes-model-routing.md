@@ -52,6 +52,40 @@ For Ollama Cloud specifically, verify the current provider profile for:
 
 Do not confuse this first-class cloud provider with local Ollama, which is normally configured as a custom OpenAI-compatible endpoint at `http://localhost:11434/v1`.
 
+## Moving an auxiliary model between providers
+
+When the model stays the same but its provider changes, update **every named auxiliary slot that uses it**, not only the slot printed by the abbreviated `hermes config` summary. Audit the full `auxiliary:` map first. A common MiniMax M3 utility tier includes:
+
+- `auxiliary.web_extract`
+- `auxiliary.compression`
+- `auxiliary.skills_hub`
+- `auxiliary.approval`
+- `auxiliary.mcp`
+- `auxiliary.title_generation`
+
+Set both fields for each slot; provider-native model IDs can differ from aggregator IDs:
+
+```bash
+for task in web_extract compression skills_hub approval mcp title_generation; do
+  hermes config set "auxiliary.${task}.provider" ollama-cloud
+  hermes config set "auxiliary.${task}.model" minimax-m3
+done
+```
+
+Use this verification sequence:
+
+1. Test the destination route independently in a fresh one-shot process:
+   ```bash
+   hermes chat -q 'Reply with exactly: ROUTE_OK' \
+     --provider ollama-cloud --model minimax-m3 \
+     --toolsets safe --quiet
+   ```
+2. Restart long-lived consumers with `hermes gateway restart`.
+3. Read back the relevant `auxiliary.<task>.provider` and `.model` values from the config.
+4. Start a fresh CLI session or use `/reset`; the existing conversation may retain startup-cached routing even though the gateway now has the new configuration.
+
+A successful direct model call proves credentials, model ID, and endpoint routing, but does not by itself prove that every auxiliary slot was rewritten. Verify both the direct call and the persisted slot map.
+
 ## Docs/source mismatch rule
 
 When prose documentation and executable schema disagree:
