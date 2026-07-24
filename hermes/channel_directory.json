@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T01:00:34.820028",
+  "updated_at": "2026-07-25T02:00:45.210632",
   "platforms": {
     "discord": [
       {
@@ -51,6 +51,12 @@
         "type": "channel"
       },
       {
+        "id": "1529855322766835793:1529855322766835793",
+        "name": "Shivang Hermes AI / #trading-bot / how can we build bot that will trade for me using yt live video and using tel... / topic 1529855322766835793",
+        "type": "thread",
+        "thread_id": "1529855322766835793"
+      },
+      {
         "id": "1530213827856306316:1530213827856306316",
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1530213827856306316",
         "type": "thread",
@@ -61,12 +67,6 @@
         "name": "Shivang Hermes AI / #job-search-global / https://x.com/thepavelbuchta/status/2080199110603252078?s=46 write an email t... / topic 1529969068961038487",
         "type": "thread",
         "thread_id": "1529969068961038487"
-      },
-      {
-        "id": "1529855322766835793:1529855322766835793",
-        "name": "Shivang Hermes AI / #trading-bot / how can we build bot that will trade for me using yt live video and using tel... / topic 1529855322766835793",
-        "type": "thread",
-        "thread_id": "1529855322766835793"
       },
       {
         "id": "1529851368716632118:1529851368716632118",

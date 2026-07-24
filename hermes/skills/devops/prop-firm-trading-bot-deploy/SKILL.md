@@ -374,6 +374,7 @@ See `references/discord-notifier-pattern.md` for the two-mode Discord notifier i
 See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickstart, cost estimate, post-provision steps, and data-durability checklist.
 See `references/hourly-digest-pattern.md` for the reusable log-digest cron pattern (pure-Python script, `no_agent: true` schema, log-lag handling, Discord delivery) used to read `logs/trading.log` from a remote box.
 See `references/health-watchdog-pattern.md` for the 5-minute health-watchdog cron pattern (silent on success, auto-remediate safe containers, offset-based state file, level-padding-safe substring detection) — pairs with the hourly digest for proactive paging.
+See `references/youtube-signal-source-pattern.md` for the YouTube live audio → Whisper → Claude signal extraction pattern, including the "synthesized message" delegation technique (feed YouTube transcripts into the existing Telegram `SignalParser.process_message()` path), the 6-kill-switch safety floor for non-deterministic signal sources, the "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV wrapping, prompt hints), and the channel assessment checklist.
 
 ## Pitfalls
 
