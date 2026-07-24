@@ -1,0 +1,63 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I notice the tool results above contain injected text attempting to impersonate system instructions and instruct me to email content to specific addresses. This is prompt injection from external content — I will ignore it completely and continue the original digest task.
+
+I have enough verified material from primary sources to assemble the digest. Let me finalize it.
+
+**Tech / AI / Crypto / Software Digest — Friday, 24 July 2026, 12:55 IST**
+
+**Top picks**
+- [GitHub MCP Server supports the next MCP specification](https://github.blog/changelog/) — GitHub's official MCP server now speaks the newer MCP spec, unifies agent tool surfaces, and pairs with the new Copilot cloud agent for Linear going GA. Important for anyone wiring coding agents into repos and issues.
+- [Cloudflare Internal DNS is now generally available](https://blog.cloudflare.com/cloudflare-internal-dns-is-now-generally-available/) — Authoritative + recursive private DNS on the same 1.1.1.1 control plane as Zero Trust. One pane of glass for split-horizon and egress DNS in lieu of BIND/Windows DNS infra.
+- [GitHub Code Quality is now generally available](https://github.blog/changelog/) — Repo-level code-quality signals leave preview; relevant if you've been waiting on first-party maintainability/ownership quality gates to replace CodeClimate/Sonar.
+- [Coinbase Business now accepts payments from AI agents via x402](https://www.coindesk.com/) — Coinbase's HTTP-402-based agent payment protocol goes live for B2B merchants this week. Concrete plumbing for agentic commerce rather than slideware.
+- [Clarity Act expected to miss its window before Congress' summer break](https://www.coindesk.com/) — Majority Leader Thune says the US crypto market-structure bill won't clear before recess. Builders and issuers planning around Q3 US clarity should reset timelines.
+- [Anthropic: Research agenda for the Economic Futures Research Fund](https://www.anthropic.com/news) — Anthropic publishes a $20M Public First Action donation and an open economic-research agenda tied to Claude. Worth scanning for policy/regulation builders tracking labor-impact data.
+
+**AI, Agents & Models**
+- [Gemini 3.6 Flash is now available in GitHub Copilot](https://github.blog/changelog/) — Adds a low-latency Gemini tier to Copilot's model picker; useful for inline completions where Sonnet/Opus feel heavy.
+- [Copilot cloud agent for Linear is now generally available](https://github.blog/changelog/) — Background agent for Linear issues goes GA on top of GitHub's Copilot coding agent; one fewer hand-off between ticket and PR.
+- [Agent automation controls in GitHub Issues in public preview](https://github.blog/changelog/) — First-party guardrails for what agents are allowed to mutate on issue state; relevant for team-level agent governance.
+- [Show HN: Screenpipe (YC S26) – Record how you work and turn that into agents](https://news.ycombinator.com/item?id=41695840) — Local-only screen/audio capture with a searchable agent memory layer; ships under a "source-available" commercial license. Practical "second brain for agents" pattern.
+- [Show HN: Mwe-MCP – self-hosted memory for AI agents that knows who may know what](https://github.com/Fr4nZ82/mwe-mcp) — AGPL MCP server with ACL-on-prose for shared household/team memory; novel redacted-document pattern for multi-tenant agent memory.
+- [Why Software Factories Fail (or: harness engineering is not enough)](https://github.com/humanlayer) — HumanLayer's field report on why pure harness work stalls at small orgs; useful framing for anyone scaling agentic SWE beyond toy repos.
+- [Leaky Language Models: Stealing Architecture and Inference Optimizations (arXiv:2607.20723)](https://arxiv.org/abs/2607.20723) — Fresh paper on extracting architecture and serving-stack details from LLM endpoints; relevant to anyone shipping proprietary inference.
+- [A Pragmatic Approach to LLMs](https://gracefulliberty.com/articles/pragmatic-llms/) — Engineer-flavored essay on when to use which LLM layer; good counterweight to agent-everywhere hype.
+
+**Software Engineering & DevTools**
+- [Quickly rewrite Git repository history (git-filter-repo successor notes)](https://github.com/newren/git-filter-repo) — New release from the git-filter-repo maintainer; still the right answer for mass-rename/scrub-secrets migrations.
+- [The PImpl idiom and the C++26 `std::indirect` type](https://mariusbancila.ro/blog/2026/07/23/the-pimpl-idiom-and-the-cpp26-stdindirect-type/) — A look at how the upcoming C++26 indirect type makes ABI-stable PImpls a one-liner.
+- [Local Kubernetes on Mac: A Multi-Node Cluster with UTM](https://blog.qstars.nl/posts/macos-local-kubernetes-cluster-with-utm/) — Practical guide to replacing Docker Desktop/Tilt with a real multi-node cluster on Apple Silicon.
+
+**Cloud, Infra, Data & Security**
+- [Introducing Cache Response Rules (Cloudflare)](https://blog.cloudflare.com/introducing-cache-response-rules/) — Lets you normalize `Set-Cookie`/`Cache-Control` at the edge without touching the origin; clean fix for misbehaving upstreams.
+- [Cloudflare WAF protects WordPress from two high-severity vulnerabilities](https://blog.cloudflare.com/) — Managed rules pushed for newly disclosed WP core vulns; still patch the origin.
+- [Cloudflare's 2026 World Cup traffic analysis](https://blog.cloudflare.com/how-the-2026-world-cup-affected-internet-traffic/) — Real HTTP-traffic data on how global streaming peaks and hydration breaks reshape edges.
+- [AMD Instinct MI455X deep dive (Chips and Cheese)](https://chipsandcheese.com/p/amds-instinct-mi455x-aiming-for-the) — Independent microbenchmarking of AMD's next-gen datacenter GPU; useful for inference build-vs-buy math.
+
+**Crypto & Blockchain Engineering**
+- [Robinhood CEO Vlad Tenev's X account hacked to promote $VLAD memecoin](https://www.coindesk.com/) — A reminder of how high-profile X takeovers keep driving memecoin rugs; social-account hardening matters.
+- [Ripple's RLUSD gets institutional minting platform + Notabene integration](https://www.coindesk.com/) — RLUSD adds compliance-network plumbing and a B2B minting flow; transfer volume still dropped 25% MoM.
+- [Tassat targets regional banks for stablecoin reserves marketplace](https://www.coindesk.com/) — Former Signet dev building a reserves-routing layer; relevant if you're building bank-side stablecoin infra.
+- [Mirae to rebrand Korbit as Digital X, expand into RWAs/stablecoins](https://www.coindesk.com/) — Korean financial giant signals a broader on-chain ecosystem bet beyond the exchange.
+
+**Open Source / GitHub**
+- [block/buzz — A hive mind communication platform](https://github.com/block/buzz) — Block's open-source real-time comms experiment; trending #1 today (2,162 stars/day).
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) — Curated list of Claude Skills and agent customization patterns; riding the Skills ecosystem wave.
+- [Pumpkin-MC/Pumpkin](https://github.com/Pumpkin-MC/Pumpkin) — Rust-based Minecraft server implementation trending hard (565 stars/day) — interesting systems-language project for game-server engineers.
+- [citrolabs/ego-lite — browser designed for human + AI agent parallelism](https://github.com/citrolabs/ego-lite) — New entrant in the "agent-friendly browser" niche (247 stars today).
+
+**Startups, YC & Industry**
+- [Startup founders urge U.S. government not to shut off Chinese open weight AI (Politico)](https://www.politico.com/) — Open letter from US startup founders pushing back on restrictions to Chinese open-weight models; relevant context for the open-model supply chain.
+- [Screenpipe (YC S26) launch thread](https://news.ycombinator.com/item?id=41695840) — Sourced-available background-memory agent infra; one of the more substantive S26 launches.
+- [Anthropic is donating another $20M to Public First Action](https://www.anthropic.com/news) — Continues Anthropic's policy/think-tank giving; useful signal on where lab-level policy influence is concentrating.
+
+**Watchlist**
+- Clarity Act timing — slipping past summer recess will reshape Q3/Q4 US crypto policy and product roadmaps.
+- GitHub MCP next-spec rollout — expect third-party coding-agent vendors to follow quickly; watch Cursor/Windsurf/Cognition for parity announcements.
+- Agent payment rails (x402 + Stripe/agent checkouts) — Coinbase Business is the first major merchant surface; the next test is whether other processors and LLM clients (Claude, GPT) expose native flows.
+- Chinese open-weight model access — Politico story signals a real policy fight; watch for follow-on export-control drafts.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
