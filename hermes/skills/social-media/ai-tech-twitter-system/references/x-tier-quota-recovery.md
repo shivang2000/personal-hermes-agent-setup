@@ -10,11 +10,17 @@ Multiple X-facing cron jobs (`post`, `reply`, `like`, `repost`, search-heavy rea
 RuntimeError: HTTP 429: The usage limit has been reached
 ```
 
-Affected jobs in Shivang's setup so far:
-- `cdd18a71e079` — AI engineering lessons daily autopost (`45 12 * * *`)
-- `24fd916089e3` — AI engineering source-backed opportunity autopost scan (`every 45m`)
+Affected jobs in Shivang's current fleet (as of July 2026):
+- `15c6cb6d1c24` — Daily AI/tech autopost (`45 12 * * *`)
+- `83b4fd8d0951` — AI/Tech breaking-news trigger (`*/30 7-22 * * *`)
+- `d1d619cfb98e` — AI/tech opportunity scan (`*/45 7-22 * * *`)
+- `e7282bec2292` — Reply-engagement scanner (`*/30 7-22 * * *`)
 - `6be19c7edbdb` — Tech/AI/YC/YouTube news digest for #tech-news (`55 12,16,20,0 * * *`)
-- `e9f85b48274e` — X reply autopilot (`every 5m`)
+
+Previous fleet (retired, IDs preserved for historical context):
+- `cdd18a71e079` — old daily autopost (replaced by `15c6cb6d1c24`)
+- `24fd916089e3` — old opportunity scan (replaced by `d1d619cfb98e`)
+- `e9f85b48274e` — old reply autopilot at `every 5m` (replaced by `e7282bec2292` at safe `every 30m`)
 
 After this pattern fires once, all four jobs sit in `paused` state. `last_status: error` is permanent until manually resumed.
 
@@ -50,11 +56,11 @@ Do these steps in order; skipping cadence review tends to put the fleet back int
 3. **Resume one job at a time.** Start with the lowest-cadence one (the daily post). Verify `last_status: ok` before resuming the next. If a resumed job immediately re-429s, pause it and re-check credits/cadence — something is still wrong.
 
 ```bash
-# Resume
-hermes cron resume cdd18a71e079
+# Resume (use current fleet job IDs)
+hermes cron resume 15c6cb6d1c24
 
 # Watch for next run
-hermes cron list --all | grep -A 2 cdd18a71e079
+hermes cron list --all | grep -A 2 15c6cb6d1c24
 ```
 
 4. **Verify fleet health.** Wait for one full cycle of each resumed job. Do not declare the workflow healthy until at least one run of each cadence has returned `last_status: ok`.
@@ -64,9 +70,10 @@ hermes cron list --all | grep -A 2 cdd18a71e079
 | Job type | Unsafe | Default | Notes |
 | --- | --- | --- | --- |
 | Reply scanner | `every 5m` | `every 30m` | A reply scanner at `every 5m` is the most common quota bomb |
+| Breaking-news trigger | `every 15m` | `every 30m` | Limited to 1-2 posts per cycle; goes [SILENT] when no event |
 | Opportunity/source scan | `every 15m` | `every 45m` to `every 2h` | Most scans have nothing genuinely fresh; longer cadence + `[SILENT]` works better |
 | News digest | every <2h | `every 4h` (e.g. `55 12,16,20,0`) | Europe + US coverage without burning quota |
-| Daily approval queue | multiple per day | 1/day at the start of the active window | Already correct in Shivang's setup |
+| Daily autopost | multiple per day | 1/day at the start of the active window | Already correct in Shivang's setup |
 
 Anything at `every 5m` or `every 10m` for X-facing jobs should be treated as a quota bomb unless Shivang explicitly approves it for a short, time-boxed campaign.
 

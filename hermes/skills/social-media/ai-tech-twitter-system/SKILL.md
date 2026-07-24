@@ -1,7 +1,7 @@
 ---
 name: ai-tech-twitter-system
-description: Use when drafting, approving, scheduling, or posting AI/tech/product insight tweets for Shivang. Keeps a regular approval queue and handles user-discovered insights safely.
-version: 1.0.0
+description: Use when drafting, approving, scheduling, or posting AI/tech/product insight tweets for Shivang. Covers the full v2 pipeline — daily autopost, breaking-news trigger, quote-tweet amplification, image/screenshot attachment, multi-angle event clusters, reply-engagement scanning, and user-discovered insights. Auto-post mode is on.
+version: 2.0.0
 author: REDACTED_SET_LOCALLY
 license: MIT
 metadata:
@@ -32,6 +32,12 @@ Use this skill when Shivang asks to:
 - Manage a Twitter/X approval queue.
 - Post an approved tweet with `xurl`.
 - Adjust cadence, tone, or content pillars for AI/tech posting.
+- Quote-tweet a high-engagement AI tweet with a new angle.
+- Attach screenshots/images to tweets for higher reach.
+- Post immediately on a breaking AI event (new model, benchmark, guardrail).
+- Reply to high-engagement AI tweets from large accounts for visibility.
+- Post multiple angles on the same event for audience testing.
+- Analyze a competitor's X/Twitter growth strategy and apply learnings.
 
 Do not use this skill for:
 - Posting sensitive/private information.
@@ -56,6 +62,18 @@ Recent engagement lesson:
 - Prefer source-aware hooks such as "Takeaway from...", "I expected X to matter more", "One infra tradeoff I underestimated", "Most people think X. In practice Y." over generic AI commentary.
 - Use 0-2 relevant hashtags only, usually `#AIAgents`, `#LLM`, `#AIInfra`, `#DevTools`, `#OpenSource`, or `#SoftwareEngineering`.
 - If a post crosses roughly 500 views and the topic is still timely, consider 1-2 follow-ups in the same cluster that add a new mechanism/tradeoff instead of restating the original point.
+
+Growth tactics (studied from high-engagement AI accounts, July 2026 — see `references/twitter-growth-tactics.md` for the full competitive analysis):
+
+1. **Quote-tweet amplification.** When a breaking AI event is happening, don't only post an original take. Find the highest-engagement tweet about it and quote-tweet with a *new angle* — a correction, a cost analysis, a mechanism explanation, a "what this means for builders" framing. This rides the original tweet's reach and puts the post in front of the original author's audience. A 2k-follower account using this tactic regularly gets 5k–67k views per post.
+
+2. **Attach images/screenshots to every high-stakes tweet.** Tweets with benchmark screenshots, terminal output, or source tweet images get 2–5× the reach of pure-text tweets. When posting about a benchmark, model release, or guardrail behavior, attach a screenshot of the relevant data. Use `xurl post --media <path>` to attach images.
+
+3. **Speed on breaking events.** When a major model drops or a benchmark publishes, post within *minutes*, not at the next 45-minute scan window. Add a breaking-news trigger path: if a scan detects a major release/event, post immediately rather than waiting for the next scheduled run.
+
+4. **Multiple angles on the same event.** Instead of one perfect tweet per event, post 3–4 quick takes within the same hour: the news itself, the cost angle, the mechanism/guardrail angle, the "what this means for builders" angle. Each catches a different audience and some will break out. Don't over-polish each one — prioritize speed and a distinct angle over perfection.
+
+5. **Reply in high-visibility reply sections.** Scan for high-engagement tweets from major AI accounts and reply with a useful technical addition (not a generic "great point"). This puts Shivang's handle in front of the big account's audience. A reply scanner at `every 30m` cadence is safe for the API quota.
 
 Target audience emphasis:
 - US recruiters: show evidence of real full-stack/product/backend/AI ownership, production hardening, clear communication, and high agency.
@@ -100,6 +118,212 @@ For scheduled AI/tech tweet runs, Shivang has explicitly approved auto-posting. 
 7. Report the posted text and X URL/ID to #tweets-automation. If nothing is posted, return `[SILENT]` or a brief reason only when useful.
 
 Do not use the old approval-queue output format for the recurring AI/tech system unless Shivang explicitly asks to re-enable manual approvals.
+
+## Quote-Tweet Amplification Workflow
+
+When a breaking AI event is happening (new model release, benchmark, guardrail discovery, major API change), don't only post an original take. Use `xurl quote` to ride the reach of high-engagement tweets about the same event.
+
+Procedure:
+1. Search for the event: `xurl search "model name or event" -n 10 --sort public_metrics.impression_count` (or use raw API with `order=recency` for breaking events).
+2. Pick the highest-engagement tweet from a larger account (1k+ followers). This maximizes the audience that sees the quote-tweet.
+3. Draft a **new angle** — not a restatement. Good quote-tweet angles:
+   - Cost analysis: "X is 2x more expensive per task than Y"
+   - Correction/warning: "This is confirmed — set this flag to false or X will silently downgrade"
+   - Mechanism explanation: "What's actually happening under the hood is..."
+   - Builder implication: "What this means for production agents..."
+4. Apply the humanizer checklist (same as regular posts).
+5. Post with `xurl quote POST_ID "Your take"`.
+6. If the original tweet has an image/screenshot, consider also attaching one in the quote tweet for extra reach.
+
+Quota note: Each `xurl quote` is a write endpoint. During breaking events, limit to 1-2 quote tweets per event to avoid burning API quota. The breaking-news scan (see below) should surface the opportunity; the quote-tweet is the action.
+
+xurl quote + media note: `xurl quote POST_ID "text"` supports `--media-id` the same way `xurl post` does. Upload the image first with `xurl media upload`, then pass the returned media ID. If `xurl quote --media-id` fails with a 400, fall back to `xurl post "text" --media-id MEDIA_ID` without the quote reference — some X API tier configurations restrict media on quote tweets but allow it on standalone posts.
+
+Example workflow:
+```bash
+# Find the highest-engagement tweet about the event
+xurl search "Claude Opus 5 benchmark" -n 10
+
+# Quote-tweet with a new angle
+xurl quote 1234567890 "Opus 5 is 2x more expensive per task than GPT 5.6 Sol on the Artificial Analysis Index. The benchmark win is real, but the cost/impression ratio matters more for production agent budgets."
+```
+
+## Image/Screenshot Attachment Workflow
+
+Tweets with images get 2-5x the reach of pure-text tweets. When posting about a benchmark, model release, terminal output, or guardrail behavior, attach a screenshot.
+
+### When to attach images
+
+Always attach an image when the tweet is about:
+- Benchmark results (screenshot the benchmark page/chart)
+- Terminal output or code (screenshot the terminal)
+- Model behavior/guardrails (screenshot the conversation or settings)
+- A source tweet (screenshot the tweet as a backup image in case the quote-tweet doesn't render)
+- Any "proof" claim — show the evidence
+
+### How to capture and attach
+
+**Option A: Screenshot from browser**
+```bash
+# If a URL is available, use browser tools to screenshot the page
+# Save to /tmp/tweet_screenshot.png
+
+# Upload to X
+xurl media upload /tmp/tweet_screenshot.png
+# Returns: {"data": {"id": "MEDIA_ID", ...}}
+
+# Post with the media
+xurl post "Tweet text" --media-id MEDIA_ID
+```
+
+**Option B: Screenshot a terminal/code output**
+```bash
+# Use the macOS screencapture command for a specific window or region
+screencapture -i /tmp/tweet_screenshot.png  # interactive selection
+
+# Or use a script to render text/code to an image
+python3 -c "
+from PIL import Image, ImageDraw, ImageFont
+img = Image.new('RGB', (1200, 400), color=(17, 17, 17))
+draw = ImageDraw.Draw(img)
+font = ImageFont.truetype('/System/Library/Fonts/Menlo.ttc', 24)
+draw.text((20, 20), 'Your code/output here', fill=(255, 255, 255), font=font)
+img.save('/tmp/tweet_screenshot.png')
+"
+```
+
+**Option C: Screenshot a web page via headless browser**
+```bash
+# Use Chrome headless to capture a page
+google-chrome --headless --screenshot=/tmp/tweet_screenshot.png --window-size=1200,600 "https://example.com"
+# Or use the browser tool's screenshot capability
+```
+
+### Image optimization
+
+Mac screenshots can be very large RGBA PNGs. Before uploading, convert to a smaller RGB JPEG:
+```bash
+python3 - <<'PY'
+from PIL import Image
+src = '/tmp/tweet_screenshot.png'
+out = '/tmp/tweet_image.jpg'
+im = Image.open(src).convert('RGB')
+im.thumbnail((1600, 1600))
+im.save(out, quality=90, optimize=True)
+print(out)
+PY
+xurl media upload --media-type image/jpeg --category tweet_image /tmp/tweet_image.jpg
+```
+
+### Quote-tweet with image
+
+```bash
+xurl media upload /tmp/screenshot.png
+# Returns MEDIA_ID
+xurl quote POST_ID "Your take" --media-id MEDIA_ID
+```
+
+## Breaking-News Immediate-Post Trigger
+
+When a major AI event is detected (new model release, benchmark, guardrail discovery, API change), post immediately rather than waiting for the next 45-minute scan window.
+
+### Detection criteria (what counts as "breaking")
+
+A breaking event is:
+- A new model release or major version (GPT, Claude, Gemini, Llama, etc.)
+- A benchmark result from a credible source (Artificial Analysis, LMSYS, etc.)
+- A guardrail/safety behavior discovery (silent fallback, rerouting, etc.)
+- A major API change or pricing change from an AI provider
+- A significant open-source model release
+
+### Trigger workflow
+
+The breaking-news trigger runs as a cron job at `every 30m` during the active window (12:45 PM IST – 3:45 AM IST). When it detects a breaking event:
+
+1. Search X for recent high-engagement tweets about the event: `xurl search "event keywords" -n 10`
+2. Cross-reference with Hacker News / AI news sources for confirmation.
+3. If confirmed and no existing tweet from Shivang covers this event:
+   a. Post the first take immediately (the news itself + initial analysis) → `xurl post`
+   b. If there's a high-engagement tweet to quote, use `xurl quote` instead.
+   c. Attach a screenshot if possible (benchmark chart, terminal output, etc.).
+4. Schedule 2-3 follow-up angles within the next 30-60 minutes (see Multi-Angle Posting below).
+5. Report the posted tweet(s) to #tweets-automation.
+
+### What is NOT breaking news
+
+- Minor product updates, bug fixes, or UX changes
+- Opinion pieces or analysis by non-primary sources
+- Rumors or unconfirmed leaks
+- Generic "AI is changing" trend pieces
+
+When in doubt, defer to the regular 45-minute scan. The breaking-news trigger should fire at most 2-3 times per week.
+
+## Multi-Angle Posting on Same Event
+
+Instead of one perfect tweet per event, post 3-4 quick takes within the same hour. Each one catches a different audience and some will break out.
+
+### Angle templates
+
+When a breaking event happens, draft these angles (pick the strongest 3-4):
+
+1. **The news itself** (fastest, post first): "X just released Y. Initial take: Z."
+2. **The cost/pricing angle**: "X costs $N per task. That's 2x more than Y. For production agents running 10k tasks/day, that's $N/day."
+3. **The mechanism/guardrail angle**: "Under the hood, X is doing Y. The guardrail behavior means Z for production use."
+4. **The builder implication**: "What this means for agent builders: you need to handle X in your retry/fallback logic."
+5. **The comparison angle**: "X vs Y on benchmark Z: X wins on A but loses on B. The tradeoff is C."
+
+### Execution
+
+- Post the first angle immediately (breaking-news trigger).
+- Schedule follow-up angles 15-30 minutes apart using one-shot cron jobs or the next scan window.
+- Each follow-up should add a NEW mechanism/tradeoff, not restate the original point.
+- If an earlier tweet in the cluster is gaining traction (500+ views), prioritize follow-ups that add depth to that specific angle.
+- Do NOT post all 3-4 at once — spacing them out gives each one its own chance to break out.
+
+### Quota management
+
+Each post + each quote-tweet is a write endpoint hit. During a breaking event, keep total writes to 3-4 per hour. The 45-minute opportunity scans should go [SILENT] during a breaking-event cluster to conserve quota.
+
+## Reply-Engagement Scanner
+
+Scan for high-engagement tweets from major AI accounts and reply with a useful technical addition. This puts Shivang's handle in front of the big account's audience.
+
+### Target accounts
+
+Monitor replies/mentions from accounts in the AI/ML space with 5k+ followers. Priority targets:
+- AI lab accounts (Anthropic, OpenAI, Google DeepMind, xAI)
+- AI researchers and engineers with large followings
+- AI tool builders (Harrison Chase, LangChain, etc.)
+- AI news/analysis accounts
+
+### Scanner workflow (cron at `every 30m`)
+
+1. Search for recent high-engagement AI tweets: `xurl search "AI OR LLM OR agent OR Claude OR GPT" -n 20`
+2. Filter for tweets with 100+ likes and from accounts with 5k+ followers.
+3. For each candidate, check if Shivang has already replied (skip if so).
+4. Draft a **useful technical addition** — not a generic "great point":
+   - Add a mechanism, tradeoff, or production lesson the original tweet missed
+   - Share a relevant data point or benchmark
+   - Correct a technical inaccuracy (politely)
+   - Ask a sharp technical question that shows depth
+5. Apply the humanizer checklist.
+6. Post with `xurl reply POST_ID "Reply text"`.
+7. Limit to 2-3 replies per scan cycle to conserve API quota.
+
+### Reply quality bar
+
+A reply should make a reader think "this person knows what they're talking about" — not "this person is engagement farming."
+
+Good reply patterns:
+- "One thing to add: in production, X also fails when Y. We hit this when..."
+- "The benchmark numbers are impressive, but the cost/impression ratio tells a different story..."
+- "This matches what we see with [specific mechanism]. The edge case is..."
+
+Bad reply patterns:
+- "Great point!" or "Totally agree!"
+- Generic restatement of the original tweet
+- Link-dropping without context
+- "Check out my project" self-promotion
 
 ## AIConcierge321 Proof-of-Work Angles
 
@@ -164,6 +388,7 @@ Also see:
 - `references/x-developer-setup-and-policy.md` for X Developer Portal setup, the approved data-use description, and xurl auth/credits pitfalls.
 - `references/local-work-summary-cron.md` for the proven weekday end-of-day local-work-summary cron shape, safety guardrails, model pinning, and verification caveats.
 - `references/x-tier-quota-recovery.md` for diagnosing and recovering from `HTTP 429: usage limit` fleet outages, the cadence-bomb pattern, and cadence recommendations for each autopost job type.
+- `references/twitter-growth-tactics.md` for competitive analysis of high-engagement AI accounts (quote-tweet amplification, image attachment, breaking-news speed, multi-angle posting, reply engagement) with concrete engagement data and implementation priorities.
 
 Verification:
 ```bash
@@ -211,6 +436,8 @@ If a video/article creator is relevant and the exact public handle or URL is vis
 Current default for Shivang:
 - Daily must-post approval queue at 12:45 PM IST so the first review lands at the start of the broader Europe + US attention window.
 - 45-minute opportunity scans from 12:45 PM IST through 3:45 AM IST, covering Europe/London plus US workday and evening attention.
+- Breaking-news trigger at `every 30m` during the same active window — fires immediately on major AI events instead of waiting for the next 45-minute scan.
+- Reply-engagement scanner at `every 30m` during the same active window — replies to high-engagement AI tweets from large accounts.
 - Discovery-led posting whenever Shivang shares an insight and explicitly asks to post.
 
 Timing rationale:
@@ -241,7 +468,7 @@ Before presenting or posting a tweet:
 
 ## Common Pitfalls
 
-1. Posting from the daily queue without explicit approval. The queue is for review only.
+1. Posting from the daily queue without explicit approval — **only applies when auto-post mode is OFF**. Shivang has explicitly switched the system to auto-post mode; the daily autopost and opportunity scan jobs post without asking. The approval queue is re-enabled only if Shivang explicitly asks for it.
 2. Turning every news item into commentary. Prefer implications and patterns over headlines.
 3. Over-polishing user discoveries until they lose personality. Preserve Shivang's phrasing when possible.
 4. Using broad claims like "AI agents are the future" without a concrete mechanism.
@@ -253,6 +480,7 @@ Before presenting or posting a tweet:
 10. Treating `last_status: error` on a cron as a transient retry. When `hermes cron list --all` shows a job in `paused` state after 429/quota errors, an unpause alone is not enough — the underlying cadence/credit issue must be fixed first or the job will re-pause within minutes.
 11. Drafting the tweet body long (400+ chars) and trimming down to 280 in 3-4 round-trips. This wastes turns and tends to lose the concrete mechanism with each pass. Aim for ≤260 characters on the first draft — that gives real edit room for humanizer fixes, hashtag addition, and a Shivang-driven tweak without thrashing the message. If the first draft is over 350, you have probably included filler that needs to go, not content that needs to stay.
 12. **Auto-mirror noise loops in cron-delivered Discord threads.** Threads opened by a cron job (e.g. `office-work-summary-for-tweets` → #tweets-automation thread 1529126825559588995) auto-mirror every Hermes tool output and assistant turn into the thread. Internal reasoning, tool-result previews, and even `delete_message` cleanup attempts all surface as visible Discord messages to Shivang and any other bots watching the thread. The clean pattern: post the tweet via `xurl post`, send the report via `hermes send --to discord:<channel_id>:<thread_id>` ONCE, then stop touching the thread — no follow-up `fetch_messages` to "verify", no `delete_message` cleanup loops (every delete call itself gets mirrored and creates more noise), no `cronjob` actions, no in-thread clarifications. The single `hermes send` is the only thread message that should land. If you need a "voice calibration" check (e.g. `xurl search from:shivangchheda22 -is:retweet`), run it via terminal — it does not need to be visible in the thread.
+13. **Cron `*/N` schedule pitfall.** `*/45 7-22 * * *` does NOT mean "every 45 minutes from 7am to 10pm". In cron, `*/45` in the minute field means "at minute 0 and 45 of every hour" — i.e. two fires per hour, not every-45-minutes. Similarly `*/30` means "at minute 0 and 30" (every 30 min, which is correct but worth confirming). For true every-N-minutes cadence, use the cron schedule string `every Nm` (Hemis shorthand) instead of raw cron `*/N`. The current fleet uses `*/30 7-22` (correct — fires at :00 and :30) and `*/45 7-22` (semi-correct — fires at :00 and :45, which is 15-min then 45-min gap, not uniform 45-min). If uniform spacing matters, switch to `every 45m` with a time-window guard in the prompt instead.
 
 ## Cron reliability note
 

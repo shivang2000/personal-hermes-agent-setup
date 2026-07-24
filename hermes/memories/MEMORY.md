@@ -11,3 +11,5 @@ Shivang has high risk tolerance for trading — overrides safety recommendations
 Shivang prefers local execution over cloud when possible — tried multiple approaches (Docker+Rosetta, Docker+QEMU, native MT5 Wine) before accepting EC2. Always attempt local-first paths before suggesting cloud deployment.
 §
 EC2: i-095ac6e00402283e5 (t3.medium equivalent, ap-south-1, IP 3.7.59.175), noVNC port 8080 pwd botpass. MT5 cannot run on Apple Silicon (Rosetta GDT error + QEMU illegal instruction). Use EC2. Old instance i-0c7e31141a9bd1de6 is gone.
+§
+Shivang's X/Twitter baseline as of July 25, 2026: @shivangchheda22, 53 followers, 375 tweets, recent tweets getting 1-11 impressions. No images, no quote-tweets, no reply engagement with larger accounts. Launched v2 Twitter automation fleet (daily autopost, breaking-news trigger, opportunity scan, reply scanner) all on glm-5.2/ollama-cloud at 30-45m cadence. Target: 500-2000 followers in 3 months. Competitive benchmark: @cheatyyyy (2k followers, 67k views per breaking tweet) uses quote-tweet amplification + screenshot attachment + speed on breaking events + multi-angle posting + reply engagement.

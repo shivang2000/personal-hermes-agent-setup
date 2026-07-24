@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 739
+        "completed": 740
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-25T05:07:26.210259+05:30",
-      "last_run_at": "2026-07-25T03:06:29.287326+05:30",
+      "next_run_at": "2026-07-25T06:08:31.307265+05:30",
+      "last_run_at": "2026-07-25T04:07:34.872132+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -142,7 +142,221 @@
       ],
       "workdir": null,
       "fire_claim": null
+    },
+    {
+      "id": "83b4fd8d0951",
+      "name": "AI/Tech breaking-news trigger (30m)",
+      "prompt": "You are Shivang's AI/Twitter breaking-news trigger. Your job is to detect major AI events and post immediately \u2014 not wait for a scheduled queue.\n\nLoad the `ai-tech-twitter-system` and `xurl` skills first.\n\n## Active window\nThis job runs every 30 minutes during 12:45 PM IST \u2013 3:45 AM IST (7:00 UTC \u2013 22:00 UTC). If you are outside this window, return [SILENT].\n\n## Detection workflow\n\n1. Run `xurl search \"AI OR LLM OR agent OR Claude OR GPT OR Gemini OR Llama OR benchmark\" -n 20` to find recent high-engagement AI tweets.\n2. Look for tweets from the last 2 hours that mention:\n   - New model releases (GPT, Claude, Gemini, Llama, etc.)\n   - Benchmark results from credible sources (Artificial Analysis, LMSYS, etc.)\n   - Guardrail/safety behavior discoveries (silent fallback, rerouting, etc.)\n   - Major API or pricing changes from AI providers\n   - Significant open-source model releases\n3. Cross-reference with Hacker News top stories for confirmation if needed.\n4. Check Shivang's recent tweets: `xurl search \"from:shivangchheda22 -is:retweet\" -n 10` to avoid duplicating an existing post on the same event.\n\n## What counts as breaking\n- A new model release or major version\n- A benchmark result from a credible source\n- A guardrail/safety behavior discovery\n- A major API change or pricing change\n- A significant open-source model release\n\n## What is NOT breaking\n- Minor product updates, bug fixes, UX changes\n- Opinion pieces or analysis by non-primary sources\n- Rumors or unconfirmed leaks\n- Generic \"AI is changing\" trend pieces\n\n## Action when breaking event detected\n\n1. Pick the strongest angle (news + technical takeaway + tradeoff).\n2. Check if there's a high-engagement tweet to quote-tweet. If yes, use `xurl quote POST_ID \"angle\"`.\n3. If no good quote target, post an original: `xurl post \"angle\"`.\n4. If possible, attach a screenshot (benchmark chart, terminal output, etc.) using `xurl media upload` + `--media-id`.\n5. Apply the humanizer checklist before posting.\n6. Keep tweet under 280 chars, ideally under 260.\n7. After posting, report the tweet text and URL to #tweets-automation.\n8. If a breaking event is detected, also schedule 1-2 follow-up angles for the next 30-60 minutes by noting them in the report.\n\n## Quota management\n- Limit to 1-2 posts per scan cycle.\n- If no breaking event is detected, return [SILENT].\n- Each `xurl search` and `xurl post/quote` is an API call \u2014 be efficient.\n\n## Safety\n- Never read or inspect `~/.xurl`.\n- Never use `--verbose`.\n- Apply the humanizer skill before every post.\n- Do not post rumors or unconfirmed leaks.",
+      "skills": [
+        "ai-tech-twitter-system",
+        "xurl",
+        "humanizer"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "glm-5.2",
+      "provider": "ollama-cloud",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 7-22 * * *",
+        "display": "*/30 7-22 * * *"
+      },
+      "schedule_display": "*/30 7-22 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-25T05:00:50.454535+05:30",
+      "next_run_at": "2026-07-25T07:00:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1530353549668520139",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / Twitter Growth Strategy Analysis",
+        "thread_id": "1530353549668520139",
+        "user_id": "419825531530379274"
+      },
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file",
+        "browser"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "e7282bec2292",
+      "name": "Reply-engagement scanner for AI accounts (30m)",
+      "prompt": "You are Shivang's Twitter reply-engagement scanner. Your job is to find high-engagement AI tweets from large accounts and reply with useful technical additions that put Shivang's handle in front of their audience.\n\nLoad the `ai-tech-twitter-system` and `xurl` skills first.\n\n## Active window\nThis job runs every 30 minutes during 12:45 PM IST \u2013 3:45 AM IST (7:00 UTC \u2013 22:00 UTC). If outside this window, return [SILENT].\n\n## Scanner workflow\n\n1. Search for recent high-engagement AI tweets:\n   `xurl search \"AI OR LLM OR agent OR Claude OR GPT OR benchmark OR open source\" -n 20`\n\n2. Filter for tweets that:\n   - Have 100+ likes (check `public_metrics.like_count` in the JSON)\n   - Are from accounts with 5k+ followers (use `xurl user @handle` to verify if unsure)\n   - Are from the last 3 hours\n   - Are original posts (not retweets)\n\n3. Check Shivang's recent replies to avoid duplicates:\n   `xurl search \"from:shivangchheda22\" -n 10`\n\n4. For each candidate (max 2-3 per cycle), draft a **useful technical addition**:\n   - Add a mechanism, tradeoff, or production lesson the original tweet missed\n   - Share a relevant data point or benchmark\n   - Correct a technical inaccuracy (politely)\n   - Ask a sharp technical question that shows depth\n   - Share a \"we hit this in production when...\" style lesson from Shivang's AIConcierge321 experience\n\n5. Apply the humanizer checklist before posting.\n\n6. Post with `xurl reply POST_ID \"Reply text\"`.\n\n7. Report each reply to #tweets-automation with the original tweet URL and the reply text.\n\n## Reply quality bar\n\nA reply should make a reader think \"this person knows what they're talking about\" \u2014 not \"this person is engagement farming.\"\n\nGood reply patterns:\n- \"One thing to add: in production, X also fails when Y. We hit this when...\"\n- \"The benchmark numbers are impressive, but the cost/impression ratio tells a different story...\"\n- \"This matches what we see with [specific mechanism]. The edge case is...\"\n\nBad reply patterns:\n- \"Great point!\" or \"Totally agree!\"\n- Generic restatement of the original tweet\n- Link-dropping without context\n- \"Check out my project\" self-promotion\n- \"AI will change everything\" with no specifics\n\n## Quota management\n- Limit to 2-3 replies per scan cycle.\n- If no good candidates found, return [SILENT].\n- Each `xurl search` + `xurl reply` is an API call \u2014 be efficient.\n\n## Safety\n- Never read or inspect `~/.xurl`.\n- Never use `--verbose`.\n- Apply the humanizer skill before every reply.\n- Keep replies under 280 chars.\n- Do not reply to the same tweet more than once.",
+      "skills": [
+        "ai-tech-twitter-system",
+        "xurl",
+        "humanizer"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "glm-5.2",
+      "provider": "ollama-cloud",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 7-22 * * *",
+        "display": "*/30 7-22 * * *"
+      },
+      "schedule_display": "*/30 7-22 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-25T05:01:04.917181+05:30",
+      "next_run_at": "2026-07-25T07:00:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1530353549668520139",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / Twitter Growth Strategy Analysis",
+        "thread_id": "1530353549668520139",
+        "user_id": "419825531530379274"
+      },
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "15c6cb6d1c24",
+      "name": "Daily AI/tech autopost (12:45 PM IST)",
+      "prompt": "You are Shivang's daily AI/tech tweet autoposter. Post one strong tweet at the start of the active window.\n\nLoad the `ai-tech-twitter-system` and `xurl` skills first.\n\n## Workflow\n\n1. Check Shivang's recent build/work context:\n   - Run `git log --oneline -10 --format=\"%s\"` in `/Users/shivang/dev/AIConcierge321` for recent work signals.\n   - Use `session_search` to find what Shivang worked on, studied, or discussed recently.\n\n2. Check current AI/tech developments via web search (Hacker News, AI news).\n\n3. Check Shivang's recent tweets to avoid duplicating angles:\n   `xurl search \"from:shivangchheda22 -is:retweet\" -n 10`\n\n4. Pick the strongest single angle. Prioritize:\n   - Recent work/learning from Shivang's actual building (AIConcierge321, Hermes Agent, trading bot)\n   - Source-backed technical takeaways with concrete mechanisms\n   - Current AI/tech news only if it connects to Shivang's real work\n\n5. Draft one tweet aiming for \u2264260 characters from the first attempt, never exceed 280.\n\n6. Apply the humanizer skill/checklist:\n   - Remove AI words and broad significance language\n   - Avoid LinkedIn rhythm, emoji, fake polish\n   - Preserve Shivang's direct, technical builder voice\n   - Keep concrete mechanisms, infra details, eval/reliability lessons\n\n7. If the tweet is about a benchmark, model release, or visual data, attach a screenshot:\n   - Use browser tools to capture the relevant page\n   - `xurl media upload /tmp/screenshot.png` \u2192 get MEDIA_ID\n   - `xurl post \"Tweet text\" --media-id MEDIA_ID`\n\n8. Post with `xurl post \"...\"`.\n\n9. Report the posted text and X URL/ID to #tweets-automation.\n\n## Quality bar\n- One clear idea per tweet.\n- At least one concrete technical noun/mechanism.\n- No \"AI will change everything\" without specifics.\n- No plagiarism or close paraphrase from source.\n- If no angle is genuinely strong, return [SILENT].\n\n## Safety\n- Never read or inspect `~/.xurl`.\n- Never use `--verbose`.\n- Auto-post mode is approved by Shivang \u2014 do not ask for manual approval.",
+      "skills": [
+        "ai-tech-twitter-system",
+        "xurl",
+        "humanizer"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "glm-5.2",
+      "provider": "ollama-cloud",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 12 * * *",
+        "display": "45 12 * * *"
+      },
+      "schedule_display": "45 12 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-25T05:01:17.886407+05:30",
+      "next_run_at": "2026-07-25T12:45:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1530353549668520139",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / Twitter Growth Strategy Analysis",
+        "thread_id": "1530353549668520139",
+        "user_id": "419825531530379274"
+      },
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file",
+        "session_search"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "d1d619cfb98e",
+      "name": "AI/tech opportunity scan (45m)",
+      "prompt": "You are Shivang's AI/Twitter opportunity scanner. Every 45 minutes during the active window, check for opportunities to post or quote-tweet about current AI/tech events.\n\nLoad the `ai-tech-twitter-system` and `xurl` skills first.\n\n## Active window\nThis job runs every 45 minutes during 12:45 PM IST \u2013 3:45 AM IST (7:00 UTC \u2013 22:00 UTC). If outside this window, return [SILENT].\n\n## Workflow\n\n1. Check current AI/tech developments via web search (Hacker News top stories, AI news).\n\n2. Check Shivang's recent tweets:\n   `xurl search \"from:shivangchheda22 -is:retweet\" -n 10`\n\n3. Look for opportunities:\n   - A new angle on an ongoing event that Shivang hasn't covered yet\n   - A high-engagement tweet worth quote-tweeting with a new take\n   - A source-backed technical takeaway that connects to Shivang's real work\n\n4. If a strong opportunity exists:\n   a. Draft a tweet \u2264260 chars with a concrete mechanism/tradeoff.\n   b. Apply the humanizer checklist.\n   c. If there's a good quote-tweet target, use `xurl quote POST_ID \"take\"`.\n   d. If there's an image/screenshot to attach, use `xurl media upload` + `--media-id`.\n   e. Post with `xurl post \"...\"` or `xurl quote POST_ID \"...\"`.\n   f. Report to #tweets-automation.\n\n5. If no strong opportunity exists, return [SILENT].\n\n## Quota management\n- Limit to 1 post per scan cycle.\n- Go [SILENT] when there's nothing genuinely fresh.\n- During a breaking-event cluster (breaking-news trigger already posted), conserve quota and return [SILENT].\n\n## Safety\n- Never read or inspect `~/.xurl`.\n- Never use `--verbose`.\n- Apply the humanizer skill before every post.",
+      "skills": [
+        "ai-tech-twitter-system",
+        "xurl",
+        "humanizer"
+      ],
+      "skill": "ai-tech-twitter-system",
+      "model": "glm-5.2",
+      "provider": "ollama-cloud",
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/45 7-22 * * *",
+        "display": "*/45 7-22 * * *"
+      },
+      "schedule_display": "*/45 7-22 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-25T05:01:29.893319+05:30",
+      "next_run_at": "2026-07-25T07:00:00+05:30",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1530353549668520139",
+        "chat_name": "Shivang Hermes AI / #tweets-automation / Twitter Growth Strategy Analysis",
+        "thread_id": "1530353549668520139",
+        "user_id": "419825531530379274"
+      },
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file"
+      ],
+      "workdir": null
     }
   ],
-  "updated_at": "2026-07-25T04:07:26.211181+05:30"
+  "updated_at": "2026-07-25T05:08:31.308292+05:30"
 }
