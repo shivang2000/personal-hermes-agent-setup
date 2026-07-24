@@ -1,13 +1,14 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.4.0
+version: 1.5.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - 1.5.0 (2026-07-24): YouTube live signal source pattern added as references/youtube-signal-source-pattern.md. Synthesized-message delegation technique (YouTube transcripts → existing SignalParser.process_message), 6-kill-switch safety floor for non-deterministic signal sources, "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV, prompt hints), channel assessment checklist, pytest-plugin-broken workaround (inline asyncio.run), "OLD" matching "GOLD" test pitfall.
       - 1.4.0 (2026-07-12): 5-minute health-watchdog pattern added as references/health-watchdog-pattern.md. Silent-on-success cron (vs digest always-emit), auto-remediate-safe-containers only (never auto-restart MT5 container — would lose noVNC login), offset-based state file in /tmp to avoid re-alerting on the same CRITICAL, Python logging level-padding pitfall (substring without close-bracket matches both formats), inject-then-reset-state testing pattern. Cron deliver=local + script self-posts to Discord only on failure.
       - 1.3.1 (2026-07-12): hourly-digest-pattern reference extended with two-stage state check (docker inspect fallback when log is stale) and naming-convention pitfall (boolean variables that flip the wrong way).
       - 1.3.0 (2026-07-12): Python `FileHandler` block-buffering pitfall (Docker stdout lag, impact on log readers), hourly-digest-script pattern (ssh+parse in pure Python, no LLM in loop) for catching warnings/restarts/lifecycle when no real-time visibility is available.
@@ -27,6 +28,7 @@ Use this skill when deploying or managing an automated trading bot against a fun
 - User asks to "set up" or "start trading" with an existing bot against a prop firm
 - Config files reference prop-firm rules (daily loss, overall DD, profit target, min trading days)
 - A post-mortem document exists for a previous account failure
+- User wants to add a NEW signal source to the trading bot (YouTube live, Telegram channel, voice) — see `references/youtube-signal-source-pattern.md` for the synthesized-message delegation pattern and safety floor design
 
 ## Critical principle: bot must be TIGHTER than the prop firm
 
@@ -400,6 +402,10 @@ See `references/youtube-signal-source-pattern.md` for the YouTube live audio →
 - **Python `logging.FileHandler` is block-buffered when stdout is not a TTY (verified 2026-07-12).** The bot's `logs/trading.log` lags the actual bot state by 5-30 minutes under normal operation. Crashes/restarts/sigterms still flush immediately (process death closes the file), so any log-based monitor will still catch real problems — but quiet, "everything is fine" activity won't show up in real time. Two fixes when we get there: (1) change Dockerfile's `CMD` from `python -m src.main` to `python -u -m src.main` to force unbuffered stdout (does NOT fix the FileHandler's own internal buffer, only Python's); (2) add `logging.basicConfig(force=True, stream=sys.stdout)` in `src/main.py` and remove the explicit `FileHandler` so all logs flow through stdout (the `docker logs -f` stream), or add a periodic `handler.flush()` in the bot's main loop. Until this is fixed, the right way to read the bot's log is **not** by tailing the file — use `docker logs --tail 200 trading-bot-v2` (always-live stdout) or set up a cron that SSHes in and parses the log with explicit lag detection (see `references/hourly-digest-pattern.md`).
 
 - **The trading bot's "laptop vs EC2" question is a recurring confusion (verified 2026-07-12).** The bot always runs on EC2 (or wherever the user deployed it). The laptop/desktop is just an SSH terminal + source-code editor — Docker doesn't run locally, Wine doesn't run on Apple Silicon, MT5 only runs in `gmag11/metatrader5_vnc`. If the user asks "is the bot on EC2 or on my laptop?", the answer is "EC2 — your laptop is just the SSH terminal to it." Keep this in mind when designing log readers, alerts, and on-call workflows: they must work against the remote box, not the local Mac.
+
+- **Non-deterministic signal sources (YouTube live, voice) need a tighter safety floor than technical strategies (verified 2026-07-24).** Technical OHLCV signals are deterministic (same data → same signal) and backtestable via walk-forward. YouTube/voice signals are non-deterministic (depend on transcription quality, streamer phrasing, LLM interpretation) and un-backtestable end-to-end. The safety floor for these sources must include: confidence floor ≥0.85 (vs 0.65 tech), hard lot cap 0.01, daily loss limit 1% (vs prop firm's 3-5%), auto-kill after 5 consecutive losses, auto-kill at -2% rolling source P&L, and no-pyramiding (only fire when technical strategies are flat). See `references/youtube-signal-source-pattern.md` for the full 6-kill-switch pattern.
+
+- **"No paper, go funded" override must be documented, not silently applied (verified 2026-07-24).** When the user overrides the validation ladder for a new signal source, document the override explicitly in the conversation and in memory. State what's different about this source (non-deterministic, un-backtestable, low stream cadence) that makes the override riskier than the previous "no paper" call (which was on deterministic technical strategies). The mitigation is a tighter safety floor in code — not a verbal agreement. If the user won't validate, the code must be tighter than the prop firm's own limits. Do the one validation you CAN do: replay a past VOD through the pipeline offline for precision/recall numbers.
 
 ## Overlap note (for curator)
 
