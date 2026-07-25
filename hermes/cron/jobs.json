@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 751
+        "completed": 752
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-25T17:20:24.630154+05:30",
-      "last_run_at": "2026-07-25T15:19:28.751591+05:30",
+      "next_run_at": "2026-07-25T18:21:29.584175+05:30",
+      "last_run_at": "2026-07-25T16:20:33.818888+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,17 +65,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 102
+        "completed": 103
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-25T16:55:00+05:30",
-      "last_run_at": "2026-07-25T12:55:17.651212+05:30",
+      "next_run_at": "2026-07-25T20:55:00+05:30",
+      "last_run_at": "2026-07-25T16:55:36.721166+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
+      "last_error": "RuntimeError: HTTP 503: Service Unavailable",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -121,15 +121,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-25T16:30:00+05:30",
-      "last_run_at": "2026-07-25T16:01:33.325292+05:30",
+      "next_run_at": "2026-07-25T17:30:00+05:30",
+      "last_run_at": "2026-07-25T17:01:39.913157+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -176,15 +176,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-25T16:30:00+05:30",
-      "last_run_at": "2026-07-25T16:01:12.901942+05:30",
+      "next_run_at": "2026-07-25T17:30:00+05:30",
+      "last_run_at": "2026-07-25T17:01:33.886771+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 19
+        "completed": 21
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-25T16:45:00+05:30",
-      "last_run_at": "2026-07-25T16:02:32.783754+05:30",
+      "next_run_at": "2026-07-25T17:45:00+05:30",
+      "last_run_at": "2026-07-25T17:01:31.729761+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-25T16:20:24.631453+05:30"
+  "updated_at": "2026-07-25T17:21:29.585057+05:30"
 }
