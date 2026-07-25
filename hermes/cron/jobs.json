@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 740
+        "completed": 741
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-25T06:08:31.307265+05:30",
-      "last_run_at": "2026-07-25T04:07:34.872132+05:30",
+      "next_run_at": "2026-07-25T07:09:36.341970+05:30",
+      "last_run_at": "2026-07-25T05:08:43.529473+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -94,54 +94,6 @@
       "fire_claim": null,
       "provider_snapshot": null,
       "model_snapshot": null
-    },
-    {
-      "id": "acfd9284435a",
-      "name": "Trading bot health watchdog (5m)",
-      "prompt": "",
-      "skills": [],
-      "skill": null,
-      "model": "minimax-m3",
-      "provider": "ollama-cloud",
-      "provider_snapshot": null,
-      "model_snapshot": null,
-      "base_url": null,
-      "script": "trading_bot_watchdog.py",
-      "no_agent": true,
-      "context_from": null,
-      "schedule": {
-        "kind": "cron",
-        "expr": "*/5 * * * *",
-        "display": "*/5 * * * *"
-      },
-      "schedule_display": "*/5 * * * *",
-      "repeat": {
-        "times": null,
-        "completed": 246
-      },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-07-13T13:11:46.160122+05:30",
-      "paused_reason": null,
-      "created_at": "2026-07-12T16:44:26.057217+05:30",
-      "next_run_at": "2026-07-13T13:15:00+05:30",
-      "last_run_at": "2026-07-13T13:11:01.101342+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
-      "deliver": "local",
-      "origin": {
-        "platform": "discord",
-        "chat_id": "1525706622238724109",
-        "chat_name": "Shivang Hermes AI / #trading-bot / lets start with deploying it on ec2 instance its simple and fast here is are ...",
-        "thread_id": "1525706622238724109",
-        "user_id": "419825531530379274"
-      },
-      "enabled_toolsets": [
-        "terminal"
-      ],
-      "workdir": null,
-      "fire_claim": null
     },
     {
       "id": "83b4fd8d0951",
@@ -358,5 +310,5 @@
       "workdir": null
     }
   ],
-  "updated_at": "2026-07-25T05:08:31.308292+05:30"
+  "updated_at": "2026-07-25T06:09:36.342958+05:30"
 }
