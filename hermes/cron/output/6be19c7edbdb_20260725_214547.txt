@@ -1,0 +1,59 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — Sat 25 Jul 2026, 20:55 IST**
+
+**Top picks**
+- **[Stripe in talks to acquire OpenRouter for ~$10B (WSJ)](https://finance.yahoo.com/technology/ai/articles/stripe-talks-acquire-openrouter-potential-215104525.html)** — OpenRouter raised at $1.3B in May; ~7.7× markup. OpenRouter is the routing layer that lets enterprises mix frontier + open-weight models; Stripe already runs payments on top of it. A Stripe-owned LLM router turns the payments giant into the routing fabric of the agent economy.
+- **[AMD × Cerebras: disaggregated inference](https://www.cerebras.ai/press-release/amd-and-cerebras-announce-industry-leading-ultra-low-latency-and-high-throughput-ai-inference)** — Helios (AMD Instinct, high-throughput prefill) and Cerebras Wafer-Scale Engine (low-latency decode) stitched into one inference workflow, claiming 5× tokens/sec/W. Cerebras Cloud H2 2026. Direct shot at NVIDIA's vertically integrated stack.
+- **[Microsoft open-sources MLVC (Multi-platform Learned Video Codec)](https://github.com/microsoft/MLVC)** ([blog](https://techcommunity.microsoft.com/blog/linuxandopensourceblog/announcing-the-open-source-release-of-ml-video-codec-mlvc/4539875)) — 18.3M-param neural codec claiming >70% MOS BD-rate gain over hardware HEVC, ~100 FPS on Apple/Intel/Qualcomm NPUs. Ships CoreML, ONNX (OpenVINO), QNN exports, plus a C++ entropy coder. First serious open-weights video codec with on-device NPU paths.
+- **[PyTorch Monarch lands on AMD ROCm](https://pytorch.org/blog/bringing-pytorch-monarch-to-amd-gpus-single-controller-distributed-training-on-rocm/)** — single-controller distributed runtime (Meta) ported to AMD Instinct MI325 with fault-tolerant recovery; the same post shows 96.16% scaling efficiency on 1024-GPU MI325 for FP8 DeepSeekV3-671B. Closes one of the biggest CUDA-only gaps.
+- **[India I4C orders GitHub to remove Bitchat](https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece)** — Indian Cyber Crime Coordination Centre cites the Bluetooth-mesh P2P app as enabling "anonymous communication" during internet shutdowns. Jack Dorsey pushes back; Bitchat surfaces on [Radicle](https://radicle.network/nodes/rosa.radicle.network/rad%3Az2v9tRJz1oknFAqCSY5W5c76nVvm6). First real test of "git hosts can't remove what you sign" as a hosting-defiance primitive.
+
+**AI, Agents & Models**
+- **[Open Weights letter: Google has signed (Sundar on X)](https://twitter.com/sundarpichai/status/2081026488158040181)** — Sundar Pichai adds Google's name to the 25-company open-weights letter first reported yesterday; [CNBC explainer](https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html) frames the broader DC–SV split on Chinese open-weight models and the distillation-as-theft narrative. OpenAI and Anthropic still absent.
+- **[Opus 5 is #1 on Artificial Analysis Intelligence Leaderboard](https://artificialanalysis.ai/models)** — confirms yesterday's launch claim. ARC-AGI-3 leadership [disputed by external testers](https://xcancel.com/quietnning/status/2080786711861407883) ("benchmaxxed") — wait for independent evals.
+- **[Codex now leads Homebrew cask installs (30-day)](https://formulae.brew.sh/analytics/cask-install/30d/)** — first time a coding agent beats Claude Code at developer mindshare in a public install metric.
+- **[Visa Vulnerability Agentic Harness (VVAH) — public agentic SAST](https://github.com/visa/visa-vulnerability-agentic-harness)** — Visa open-sourced an 11-stage / 4-phase agent pipeline (clone → scan → triage → fix). Real-world agent-sec framework from a Fortune 500; reads as a template for "agentic SDLC" patterns.
+- **[Claude Subagent Optimizer](https://github.com/HabibiCodeCH/claude-subagent-optimizer)** — pre-spawn decision layer for Claude Code's `Agent` tool: picks the cheapest model + toolset that still meets a declared success bar. Same idea as the SHACKLE harness in the last digest, but narrower and shippable.
+- **[Jargo: a Go port of Pipecat for realtime voice agents](https://github.com/gojargo/jargo)** — WebRTC-native, audio-first conversational-AI framework in Go. If Pipecat (Python) is your reference, this is the latency/footprint variant.
+
+**Software Engineering & DevTools**
+- **[glibc 2.44 released](https://www.phoronix.com/news/GNU-C-Library-glibc-2.44)** — introduces `/etc/tunables.conf` as a persistent, per-line replacement for `GLIBC_TUNABLES=`. Other highlights: more optimizations, a new `getrandom` in `libc.so` for early boot, AVX-512 string routines. Worth reading the changelog before your next base-image bump.
+- **[TypeScript software rasterizer with programmable shaders](https://github.com/vangelov/ts-rasterizer)** — WebGL-class pipeline in pure TS, with WGSL-ish shader support. Useful reference for any team that wants a deterministic software renderer in tests/CI.
+- **[Show HN: CLI that argues your startup idea is wrong](https://github.com/jintukumardas/opportunity-engine)** — not your usual "idea generator"; it walks the claim chain back to quotes. Less relevant technically than as a snapshot of where agentic dev tools are landing.
+
+**Cloud, Infra, Data & Security**
+- **[Pope's "Click To Pray" app leaks 700K+ users' data (IDOR)](https://www.theregister.com/security/2026/07/24/popes-official-prayer-app-commits-cardinal-sin-leaks-700k-users-info/5278603)** — researcher BobDaHacker found and reported the IDOR in Jan 2026; no fix shipped until disclosure. Textbook OWASP A01: increment a user ID, get a stranger's profile. Email auth is also broken, so phishing will be hard to distinguish.
+- **[Brazil: dairy cows tokenized on B3 stock exchange, ~$20K credit unlocked per farmer](https://www.coindesk.com/markets/2026/07/24/brazilian-farmers-tokenized-dairy-cows-to-get-loans-bypassing-bank-lending-limits)** — Cowmed's smart collars emit a health/location signature that becomes the on-chain identity of the asset; double-pledge is blocked by the streaming attestation. First listed tokenization of livestock collateral on a national exchange.
+
+**Crypto & Blockchain Engineering**
+- **[Brazil: dairy cows as on-chain collateral on B3](https://www.coindesk.com/markets/2026/07/24/brazilian-farmers-tokenized-dairy-cows-to-get-loans-bypassing-bank-lending-limits)** — same story, infra angle: 100K-cow Cowmed network tracking $395M in herd value; 20% uptake could unlock $77.6M in credit. Plausibly the first "smart-collar attestation → tokenized RWA → bank-loan collateral" pipeline at exchange scale.
+- **[Bitchat ↔ Radicle](https://radicle.network/nodes/rosa.radicle.network/rad%3Az2v9tRJz1oknFAqCSY5W5c76nVvm6)** — the mesh-messaging app, now under I4C pressure, mirrored onto Radicle. Watch for the precedent: can a git-host removal order force the disappearance of a code-signing identity, or does the P2P overlay absorb the hit?
+
+**Open Source / GitHub**
+- **[microsoft/MLVC](https://github.com/microsoft/MLVC)** — see Top picks. MIT-licensed; pre-trained checkpoints + C++ entropy coder; export to CoreML, ONNX (OpenVINO + QNN) and Windows ML.
+- **[visa/visa-vulnerability-agentic-harness](https://github.com/visa/visa-vulnerability-agentic-harness)** — also worth a "this came from a Fortune 500" ping.
+- **[Rust on ESP Book (Espressif)](https://docs.espressif.com/projects/rust/book/)** — official Espressif guide to writing Rust on ESP32/ESP32-S3. Stable, well-edited; lowers the bar for embedded Rust.
+- **[HabibiCodeCH/claude-subagent-optimizer](https://github.com/HabibiCodeCH/claude-subagent-optimizer)** — see AI section.
+- **[gojargo/jargo](https://github.com/gojargo/jargo)** — see AI section.
+- **[vangelov/ts-rasterizer](https://github.com/vangelov/ts-rasterizer)** — see SE section.
+
+**Startups, YC & Industry**
+- **[YC Requests for Startups — Fall 2026](https://www.ycombinator.com/rfs)** — explicit theme: "AI is moving into the physical world." First time an RFS includes a request from a sitting U.S. cabinet secretary (Secretary of the Army). Topical buckets include defense, healthcare, education, infrastructure, finance, work.
+- **[Anduril in talks at ~$100B valuation (Reuters via TechCrunch)](https://techcrunch.com/2026/07/24/anduril-reportedly-in-talks-to-raise-funding-at-100b-valuation-more-than-3x-last-years-mark/)** — ~$40B step-up from May's $61B; 2025 revenue was $2.2B (more than doubled YoY). Defense-tech VC funding H1 2026 > $12B, already eclipsing all of 2025.
+- **[Samsung wins $200B Broadcom AI chip partnership](https://www.reuters.com/business/autos-transportation/samsung-elec-wins-200-billion-broadcom-ai-chip-partnership-boosting-foundry-push-2026-07-25/)** — broadside on TSMC: 2nm capacity commitments to Broadcom as a top-3 customer. Also: [Samsung + SK Group close $950B in deals with global AI firms](https://www.reuters.com/business/media-telecom/south-korea-president-lee-looking-open-new-era-ai-with-global-tech-companies-2026-07-25/).
+
+**YouTube / Technical Media**
+- *Nothing above the bar since the last digest.* Holding for the next run.
+
+**Watchlist**
+- **Stripe × OpenRouter** — if this closes near $10B, the multi-model routing layer is now inside the payments layer. Watch for (a) competing bidders, (b) what happens to OpenRouter's neutrality.
+- **Bitchat + I4C + Radicle** — first test of "git hosts can't remove what you can sign." Outcome sets the precedent for every code-mirroring / IPFS-over-git strategy going forward.
+- **Open Weights letter expansion** — Google signing is the inflection; whether Apple, Anthropic (no), and OpenAI (no) hold the line is what determines whether the letter is a *movement* or a *faction*.
+- **AMD × Cerebras / AMD ROCm tooling** — both stories (Monarch, Helios disaggregation) land on the same day. The narrative of "AMD is real competition for NVIDIA on the agent/inference side" is now worth tracking run-rate, not just headlines.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
