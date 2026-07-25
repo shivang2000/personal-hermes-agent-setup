@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 749
+        "completed": 750
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-25T15:18:15.023284+05:30",
-      "last_run_at": "2026-07-25T13:17:19.210023+05:30",
+      "next_run_at": "2026-07-25T16:19:19.871407+05:30",
+      "last_run_at": "2026-07-25T14:18:23.889463+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,17 +121,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 17
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-25T14:30:00+05:30",
-      "last_run_at": "2026-07-25T14:01:28.044660+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-25T15:30:00+05:30",
+      "last_run_at": "2026-07-25T15:00:30.050469+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 503: Service Unavailable",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -176,17 +176,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 17
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-25T14:30:00+05:30",
-      "last_run_at": "2026-07-25T14:00:51.892657+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-25T15:30:00+05:30",
+      "last_run_at": "2026-07-25T15:00:30.289856+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 503: Service Unavailable",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -285,17 +285,17 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 15
+        "completed": 17
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-25T14:45:00+05:30",
-      "last_run_at": "2026-07-25T14:01:05.483894+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-25T15:45:00+05:30",
+      "last_run_at": "2026-07-25T15:00:31.382890+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 503: Service Unavailable",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-25T14:18:15.024478+05:30"
+  "updated_at": "2026-07-25T15:19:19.872338+05:30"
 }
