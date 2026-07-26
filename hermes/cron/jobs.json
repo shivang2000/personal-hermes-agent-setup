@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 769
+        "completed": 770
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-26T12:48:58.576517+05:30",
-      "last_run_at": "2026-07-26T10:48:02.757913+05:30",
+      "next_run_at": "2026-07-26T13:50:03.452196+05:30",
+      "last_run_at": "2026-07-26T11:49:07.308309+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,17 +121,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 38
+        "completed": 40
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-26T12:00:00+05:30",
-      "last_run_at": "2026-07-26T11:31:08.296952+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-26T13:00:00+05:30",
+      "last_run_at": "2026-07-26T12:30:10.726156+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -176,17 +176,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 39
+        "completed": 41
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-26T12:00:00+05:30",
-      "last_run_at": "2026-07-26T11:31:15.138546+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-26T13:00:00+05:30",
+      "last_run_at": "2026-07-26T12:30:12.502857+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -230,15 +230,15 @@
       "schedule_display": "45 12 * * *",
       "repeat": {
         "times": null,
-        "completed": 1
+        "completed": 2
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-07-26T12:45:00+05:30",
-      "last_run_at": "2026-07-25T12:46:36.307882+05:30",
+      "next_run_at": "2026-07-27T12:45:00+05:30",
+      "last_run_at": "2026-07-26T12:47:48.767260+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 38
+        "completed": 40
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-26T12:00:00+05:30",
-      "last_run_at": "2026-07-26T11:46:51.572836+05:30",
+      "next_run_at": "2026-07-26T13:00:00+05:30",
+      "last_run_at": "2026-07-26T12:46:50.846542+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-26T11:48:58.577322+05:30"
+  "updated_at": "2026-07-26T12:50:03.453009+05:30"
 }
