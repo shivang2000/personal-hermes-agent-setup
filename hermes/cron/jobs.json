@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 779
+        "completed": 780
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-26T22:59:49.856883+05:30",
-      "last_run_at": "2026-07-26T20:58:53.882175+05:30",
+      "next_run_at": "2026-07-27T00:00:54.650306+05:30",
+      "last_run_at": "2026-07-26T21:59:58.850649+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,15 +121,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 58
+        "completed": 60
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-26T22:00:00+05:30",
-      "last_run_at": "2026-07-26T21:30:49.535849+05:30",
+      "next_run_at": "2026-07-27T07:00:00+05:30",
+      "last_run_at": "2026-07-26T22:30:54.307743+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
       "last_delivery_error": null,
@@ -176,17 +176,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 59
+        "completed": 61
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-26T22:00:00+05:30",
-      "last_run_at": "2026-07-26T21:30:57.395557+05:30",
+      "next_run_at": "2026-07-27T07:00:00+05:30",
+      "last_run_at": "2026-07-26T22:30:54.322637+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
+      "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 58
+        "completed": 60
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-26T22:00:00+05:30",
-      "last_run_at": "2026-07-26T21:47:58.436433+05:30",
+      "next_run_at": "2026-07-27T07:00:00+05:30",
+      "last_run_at": "2026-07-26T22:47:42.344650+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-26T21:59:49.857724+05:30"
+  "updated_at": "2026-07-26T23:00:54.651889+05:30"
 }
