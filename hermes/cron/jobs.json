@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 773
+        "completed": 774
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-26T16:53:18.508476+05:30",
-      "last_run_at": "2026-07-26T14:52:21.927257+05:30",
+      "next_run_at": "2026-07-26T17:54:23.794626+05:30",
+      "last_run_at": "2026-07-26T15:53:26.362075+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,15 +121,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 46
+        "completed": 48
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-26T16:00:00+05:30",
-      "last_run_at": "2026-07-26T15:30:27.627338+05:30",
+      "next_run_at": "2026-07-26T17:00:00+05:30",
+      "last_run_at": "2026-07-26T16:30:31.441948+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
@@ -176,15 +176,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 47
+        "completed": 49
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-26T16:00:00+05:30",
-      "last_run_at": "2026-07-26T15:30:21.045808+05:30",
+      "next_run_at": "2026-07-26T17:00:00+05:30",
+      "last_run_at": "2026-07-26T16:30:23.635536+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
       "last_delivery_error": null,
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 46
+        "completed": 48
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-26T16:00:00+05:30",
-      "last_run_at": "2026-07-26T15:47:57.148322+05:30",
+      "next_run_at": "2026-07-26T17:00:00+05:30",
+      "last_run_at": "2026-07-26T16:47:17.076186+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-26T15:53:18.509738+05:30"
+  "updated_at": "2026-07-26T16:54:23.795536+05:30"
 }
