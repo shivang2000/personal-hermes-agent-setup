@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 774
+        "completed": 775
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-26T17:54:23.794626+05:30",
-      "last_run_at": "2026-07-26T15:53:26.362075+05:30",
+      "next_run_at": "2026-07-26T18:55:29.821549+05:30",
+      "last_run_at": "2026-07-26T16:54:34.121864+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,17 +65,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 106
+        "completed": 107
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-26T16:55:00+05:30",
-      "last_run_at": "2026-07-26T13:01:32.833445+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-26T20:55:00+05:30",
+      "last_run_at": "2026-07-26T16:55:33.209564+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -121,15 +121,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 48
+        "completed": 50
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-26T17:00:00+05:30",
-      "last_run_at": "2026-07-26T16:30:31.441948+05:30",
+      "next_run_at": "2026-07-26T18:00:00+05:30",
+      "last_run_at": "2026-07-26T17:30:36.899866+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
@@ -176,17 +176,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 49
+        "completed": 51
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-26T17:00:00+05:30",
-      "last_run_at": "2026-07-26T16:30:23.635536+05:30",
+      "next_run_at": "2026-07-26T18:00:00+05:30",
+      "last_run_at": "2026-07-26T17:30:37.195020+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
+      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 48
+        "completed": 50
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-26T17:00:00+05:30",
-      "last_run_at": "2026-07-26T16:47:17.076186+05:30",
+      "next_run_at": "2026-07-26T18:00:00+05:30",
+      "last_run_at": "2026-07-26T17:48:44.436822+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-26T16:54:23.795536+05:30"
+  "updated_at": "2026-07-26T17:55:29.822872+05:30"
 }
