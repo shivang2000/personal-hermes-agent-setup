@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 776
+        "completed": 777
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-26T19:56:34.995993+05:30",
-      "last_run_at": "2026-07-26T17:55:40.369326+05:30",
+      "next_run_at": "2026-07-26T20:57:40.114825+05:30",
+      "last_run_at": "2026-07-26T18:56:45.449359+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,17 +121,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 52
+        "completed": 54
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-26T19:00:00+05:30",
-      "last_run_at": "2026-07-26T18:30:44.409784+05:30",
+      "next_run_at": "2026-07-26T20:00:00+05:30",
+      "last_run_at": "2026-07-26T19:30:43.061274+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
+      "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -176,15 +176,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 53
+        "completed": 55
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-26T19:00:00+05:30",
-      "last_run_at": "2026-07-26T18:30:43.887111+05:30",
+      "next_run_at": "2026-07-26T20:00:00+05:30",
+      "last_run_at": "2026-07-26T19:30:48.636212+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 404: {\"detail\":\"Not Found\"}",
       "last_delivery_error": null,
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 52
+        "completed": 54
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-26T19:00:00+05:30",
-      "last_run_at": "2026-07-26T18:49:21.584035+05:30",
+      "next_run_at": "2026-07-26T20:00:00+05:30",
+      "last_run_at": "2026-07-26T19:47:10.884105+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-26T18:56:34.996642+05:30"
+  "updated_at": "2026-07-26T19:57:40.115508+05:30"
 }
