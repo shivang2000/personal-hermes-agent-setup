@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 800
+        "completed": 801
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-27T20:21:58.936535+05:30",
-      "last_run_at": "2026-07-27T18:21:04.643233+05:30",
+      "next_run_at": "2026-07-27T21:22:53.041504+05:30",
+      "last_run_at": "2026-07-27T19:22:08.371664+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -98,10 +98,9 @@
     {
       "id": "83b4fd8d0951",
       "name": "AI/Tech breaking-news trigger (30m)",
-      "prompt": "You are Shivang's AI/Twitter breaking-news trigger. Your job is to detect major AI events and post immediately \u2014 not wait for a scheduled queue.\n\nLoad the `ai-tech-twitter-system` and `humanizer` skills first.\n\n## CRITICAL: Use browser-based X.com automation, NOT xurl API\n\nX API credits are depleted. Instead of `xurl`, use the browser-based script at `/Users/shivang/.hermes/scripts/x_browser.py` which drives Arc browser (X.com is logged in there). This is FREE \u2014 no API credits needed.\n\nAvailable commands:\n```bash\n# Search X.com (returns JSON with tweets)\npython3 /Users/shivang/.hermes/scripts/x_browser.py search \"Claude OR GPT OR LLM\" 10\n\n# Post a tweet\npython3 /Users/shivang/.hermes/scripts/x_browser.py post \"Tweet text here\"\n\n# Quote-tweet a post\npython3 /Users/shivang/.hermes/scripts/x_browser.py quote \"https://x.com/user/status/123\" \"Quote text\"\n\n# Reply to a tweet\npython3 /Users/shivang/.hermes/scripts/x_browser.py reply \"https://x.com/user/status/123\" \"Reply text\"\n\n# Get Shivang's recent tweets (to avoid duplicates)\npython3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10\n\n# Check if X.com is logged in\npython3 /Users/shivang/.hermes/scripts/x_browser.py check\n```\n\n## Active window\nThis job runs every 30 minutes during 12:45 PM IST \u2013 3:45 AM IST (7:00 UTC \u2013 22:00 UTC). If you are outside this window, return [SILENT].\n\n## Detection workflow\n\n1. Run `python3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM OR agent OR Claude OR GPT OR Gemini OR Llama OR benchmark\" 20` to find recent AI tweets.\n2. Cross-reference with Hacker News top stories for confirmation if needed.\n3. Check Shivang's recent tweets: `python3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10` to avoid duplicating.\n\n## What counts as breaking\n- A new model release or major version (GPT, Claude, Gemini, Llama, etc.)\n- A benchmark result from a credible source\n- A guardrail/safety behavior discovery\n- A major API change or pricing change\n- A significant open-source model release\n\n## Action when breaking event detected\n\n1. Pick the strongest angle (news + technical takeaway + tradeoff).\n2. Check if there's a high-engagement tweet to quote-tweet. If yes, use `x_browser.py quote`.\n3. If no good quote target, post an original: `python3 /Users/shivang/.hermes/scripts/x_browser.py post \"angle\"`.\n4. Apply the humanizer checklist before posting.\n5. Keep tweet under 280 chars, ideally under 260.\n6. After posting, report the tweet text and any URL to #tweets-automation.\n7. If no breaking event is detected, return [SILENT].\n\n## Safety\n- Apply the humanizer skill before every post.\n- Do not post rumors or unconfirmed leaks.\n- The browser automation is FREE \u2014 no API credits needed. No quota management needed.",
+      "prompt": "You are Shivang's background AI/Twitter breaking-news trigger. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report once that the isolated profile needs its one-time login. Research current AI/agent/LLM infra news from reliable public primary sources and use headless X search with `x_background.py search \"QUERY\" 15`. Confirm material claims against a primary source. Check `x_background.py profile @shivangchheda22 15` to prevent duplicates. Fire only for a genuinely major release, benchmark, API/pricing change, safety finding, or significant open-source launch; otherwise return `[SILENT]`. Draft one source-backed technical post in Shivang's concrete builder voice, <=260 characters preferred and <=280 required, applying the humanizer skill. For a high-value event, capture a clean public-source screenshot headlessly: `python3 /Users/shivang/.hermes/scripts/x_background.py capture \"SOURCE_URL\" /tmp/x-breaking-source.png`; prefer a relevant selector/crop when known, avoid cookie banners/private pages, and attach only if the image is legible and directly proves the claim. Post with `python3 /Users/shivang/.hermes/scripts/x_background.py post \"TEXT\" --image /tmp/x-breaking-source.png`; if screenshot capture is unsuitable, post text-only. Require returned `status: POSTED` and a verified X URL. Limit to one post per run and never retry a possibly completed submission. Report only the final text, URL, source, and whether an image was attached.",
       "skills": [
         "ai-tech-twitter-system",
-        "xurl",
         "humanizer"
       ],
       "skill": "ai-tech-twitter-system",
@@ -123,12 +122,12 @@
         "times": null,
         "completed": 85
       },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-07-27T19:12:11.121281+05:30",
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-27T19:30:00+05:30",
+      "next_run_at": "2026-07-27T20:30:00+05:30",
       "last_run_at": "2026-07-27T19:05:42.454783+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -153,10 +152,9 @@
     {
       "id": "e7282bec2292",
       "name": "Reply-engagement scanner for AI accounts (30m)",
-      "prompt": "You are Shivang's Twitter reply-engagement scanner. Your job is to find high-engagement AI tweets from large accounts and reply with useful technical additions.\n\nLoad the `ai-tech-twitter-system` and `humanizer` skills first.\n\n## CRITICAL: Use browser-based X.com automation, NOT xurl API\n\nX API credits are depleted. Instead of `xurl`, use the browser-based script at `/Users/shivang/.hermes/scripts/x_browser.py` which drives Arc browser (X.com is logged in there). This is FREE.\n\nAvailable commands:\n```bash\n# Search X.com for high-engagement AI tweets\npython3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM OR agent OR Claude OR GPT\" 20\n\n# Reply to a tweet\npython3 /Users/shivang/.hermes/scripts/x_browser.py reply \"https://x.com/user/status/123\" \"Reply text\"\n\n# Get Shivang's recent tweets (to avoid duplicates)\npython3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10\n```\n\n## Active window\nRuns every 30 minutes during 7:00 UTC \u2013 22:00 UTC. If outside, return [SILENT].\n\n## Scanner workflow\n\n1. Search for recent high-engagement AI tweets: `python3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM OR agent OR Claude OR GPT OR benchmark\" 20`\n2. Filter for tweets with high engagement (look at the metrics in the results).\n3. Check Shivang's recent tweets to avoid duplicates.\n4. For each candidate (max 2-3 per cycle), draft a useful technical addition:\n   - Add a mechanism, tradeoff, or production lesson\n   - Share a relevant data point\n   - Ask a sharp technical question\n5. Apply the humanizer checklist.\n6. Post with `python3 /Users/shivang/.hermes/scripts/x_browser.py reply \"URL\" \"text\"`.\n7. Report each reply to #tweets-automation.\n\n## Reply quality bar\nGood: \"One thing to add: in production, X also fails when Y...\"\nBad: \"Great point!\" or \"Totally agree!\"\n\n## Safety\n- Apply the humanizer skill before every reply.\n- Keep replies under 280 chars.\n- Browser automation is FREE \u2014 no quota management needed.",
+      "prompt": "You are Shivang's background X reply-engagement scanner. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not reply and report once that the isolated profile needs its one-time login. Find fresh, high-signal AI/agent/LLM-infra posts from credible accounts with `x_background.py search`, focusing on active technical conversations. Choose at most one target per run, skip anything Shivang already replied to, and stay `[SILENT]` if there is no genuinely useful addition. Draft a <=280-character reply that adds a concrete mechanism, failure mode, tradeoff, benchmark caveat, or production lesson; apply the humanizer skill and avoid generic praise or engagement farming. Normally use `python3 /Users/shivang/.hermes/scripts/x_background.py reply \"POST_URL\" \"TEXT\"`. Attach a screenshot only when it adds direct evidence and is from a safe public source: capture it headlessly with `x_background.py capture` and pass `--image PATH`. Require returned `status: REPLIED`; never retry a possibly completed reply. Report only the target URL and posted reply, otherwise `[SILENT]`.",
       "skills": [
         "ai-tech-twitter-system",
-        "xurl",
         "humanizer"
       ],
       "skill": "ai-tech-twitter-system",
@@ -178,12 +176,12 @@
         "times": null,
         "completed": 86
       },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-07-27T19:12:12.203962+05:30",
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-27T19:30:00+05:30",
+      "next_run_at": "2026-07-27T20:30:00+05:30",
       "last_run_at": "2026-07-27T19:07:48.889970+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -207,10 +205,9 @@
     {
       "id": "15c6cb6d1c24",
       "name": "Daily AI/tech autopost (12:45 PM IST)",
-      "prompt": "You are Shivang's daily AI/tech tweet autoposter. Post one strong tweet at the start of the active window.\n\nLoad the `ai-tech-twitter-system` and `humanizer` skills first.\n\n## CRITICAL: Use browser-based X.com automation, NOT xurl API\n\nX API credits are depleted. Instead of `xurl`, use the browser-based script at `/Users/shivang/.hermes/scripts/x_browser.py` which drives Arc browser (X.com is logged in there). This is FREE.\n\nAvailable commands:\n```bash\n# Post a tweet\npython3 /Users/shivang/.hermes/scripts/x_browser.py post \"Tweet text here\"\n\n# Get Shivang's recent tweets (to avoid duplicates)\npython3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10\n\n# Search for current AI trends\npython3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM OR agent\" 10\n```\n\n## Workflow\n\n1. Check Shivang's recent build/work context:\n   - Run `git log --oneline -10 --format=\"%s\"` in `/Users/shivang/dev/AIConcierge321` for recent work signals.\n   - Use `session_search` to find what Shivang worked on recently.\n\n2. Check current AI/tech developments via web search (Hacker News, AI news).\n\n3. Check Shivang's recent tweets: `python3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10`\n\n4. Pick the strongest single angle. Prioritize:\n   - Recent work/learning from Shivang's actual building\n   - Source-backed technical takeaways with concrete mechanisms\n   - Current AI/tech news connected to Shivang's real work\n\n5. Draft one tweet aiming for \u2264260 characters, never exceed 280.\n\n6. Apply the humanizer skill/checklist.\n\n7. Post with `python3 /Users/shivang/.hermes/scripts/x_browser.py post \"tweet text\"`.\n\n8. Report the posted text to #tweets-automation.\n\n## Safety\n- Apply the humanizer skill before posting.\n- Auto-post mode is approved by Shivang.\n- Browser automation is FREE \u2014 no quota management needed.",
+      "prompt": "You are Shivang's daily background AI/tech autoposter. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report that the isolated profile needs its one-time login. Build one strong daily post from, in order: Shivang's recent safe technical/build context, a current source-backed AI/agent/LLM-infra development, or a concrete production engineering lesson. Use web research plus `x_background.py search` and `profile @shivangchheda22 20` to calibrate voice and prevent duplication. Draft <=260 characters preferred and <=280 required, with a concrete mechanism/tradeoff and 0-2 relevant hashtags. Apply the humanizer skill before posting. Make the post visual whenever a useful public proof artifact exists: benchmark chart, model card, release page, architecture diagram, terminal output safe for public sharing, or source announcement. Capture it headlessly via `python3 /Users/shivang/.hermes/scripts/x_background.py capture \"PUBLIC_URL\" /tmp/x-daily-source.png` (use `--selector` when it improves focus), verify the screenshot is relevant and contains no private data, then post with `python3 /Users/shivang/.hermes/scripts/x_background.py post \"TEXT\" --image /tmp/x-daily-source.png`. If no good image exists, post text-only rather than attaching filler. Require `status: POSTED` and a verified X URL; never retry a possibly completed post. Report only final text, URL, source, and image status.",
       "skills": [
         "ai-tech-twitter-system",
-        "xurl",
         "humanizer"
       ],
       "skill": "ai-tech-twitter-system",
@@ -232,9 +229,9 @@
         "times": null,
         "completed": 3
       },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-07-27T19:12:13.278627+05:30",
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
       "next_run_at": "2026-07-28T12:45:00+05:30",
@@ -262,10 +259,9 @@
     {
       "id": "d1d619cfb98e",
       "name": "AI/tech opportunity scan (45m)",
-      "prompt": "You are Shivang's AI/Twitter opportunity scanner. Every 45 minutes during the active window, check for opportunities to post or quote-tweet about current AI/tech events.\n\nLoad the `ai-tech-twitter-system` and `humanizer` skills first.\n\n## CRITICAL: Use browser-based X.com automation, NOT xurl API\n\nX API credits are depleted. Instead of `xurl`, use the browser-based script at `/Users/shivang/.hermes/scripts/x_browser.py` which drives Arc browser (X.com is logged in there). This is FREE.\n\nAvailable commands:\n```bash\n# Search X.com for opportunities\npython3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM OR agent OR Claude OR GPT\" 20\n\n# Post a tweet\npython3 /Users/shivang/.hermes/scripts/x_browser.py post \"Tweet text\"\n\n# Quote-tweet a post\npython3 /Users/shivang/.hermes/scripts/x_browser.py quote \"https://x.com/user/status/123\" \"Quote text\"\n\n# Get Shivang's recent tweets\npython3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10\n```\n\n## Active window\nRuns every 45 minutes during 7:00 UTC \u2013 22:00 UTC. If outside, return [SILENT].\n\n## Workflow\n\n1. Check current AI/tech developments via web search (Hacker News).\n2. Check Shivang's recent tweets: `python3 /Users/shivang/.hermes/scripts/x_browser.py profile \"@shivangchheda22\" 10`\n3. Search X.com for trends: `python3 /Users/shivang/.hermes/scripts/x_browser.py search \"AI OR LLM\" 20`\n4. If a strong opportunity exists:\n   a. Draft a tweet \u2264260 chars with a concrete mechanism/tradeoff.\n   b. Apply the humanizer checklist.\n   c. Post with `python3 /Users/shivang/.hermes/scripts/x_browser.py post \"text\"`.\n   d. Or quote-tweet with `python3 /Users/shivang/.hermes/scripts/x_browser.py quote \"URL\" \"text\"`.\n   e. Report to #tweets-automation.\n5. If no strong opportunity, return [SILENT].\n\n## Safety\n- Apply the humanizer skill before every post.\n- Browser automation is FREE \u2014 no quota management needed.",
+      "prompt": "You are Shivang's background AI/Twitter opportunity scanner. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report once that the isolated profile needs its one-time login. Scan current AI agents, LLM infrastructure, evals, observability, reliability, DevTools, open source, and recruiter/founder-relevant builder conversations using reliable web sources and `x_background.py search`. Check `x_background.py profile @shivangchheda22 20` for duplicates. Stay `[SILENT]` unless there is a timely source-backed angle with a concrete mechanism or tradeoff. Choose at most one action per run: original post, quote post, or useful reply. Apply the humanizer skill; <=260 characters preferred and <=280 required. For original/quote posts, attach a clean screenshot when it materially improves proof and engagement: capture only a public primary source headlessly with `x_background.py capture \"URL\" /tmp/x-opportunity-source.png`, avoid private information and generic decorative images, then pass `--image`. Use `x_background.py post`, `quote`, or `reply`; require a successful status and do not retry a possibly completed action. Report only the final action, text, source, URL, and image status; otherwise `[SILENT]`.",
       "skills": [
         "ai-tech-twitter-system",
-        "xurl",
         "humanizer"
       ],
       "skill": "ai-tech-twitter-system",
@@ -287,12 +283,12 @@
         "times": null,
         "completed": 85
       },
-      "enabled": false,
-      "state": "paused",
-      "paused_at": "2026-07-27T19:12:14.363089+05:30",
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-27T19:45:00+05:30",
+      "next_run_at": "2026-07-27T20:45:00+05:30",
       "last_run_at": "2026-07-27T19:05:16.464411+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -314,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-27T19:21:58.937713+05:30"
+  "updated_at": "2026-07-27T20:22:53.042482+05:30"
 }

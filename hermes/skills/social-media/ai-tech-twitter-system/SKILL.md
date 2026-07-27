@@ -382,30 +382,42 @@ Reply-length pitfall: X replies may need to be condensed under the character lim
 
 ## X/Twitter Posting Procedure
 
-### Browser-based automation (FREE — default since July 2026)
+### Background Playwright automation (FREE — default since July 2026)
 
-X API credits depleted, so the default posting method is now browser-based via Arc browser. X.com is logged in on Arc, and the script `/Users/shivang/.hermes/scripts/x_browser.py` drives it via AppleScript JavaScript execution. This costs $0 — no API credits needed.
+The production default is `/Users/shivang/.hermes/scripts/x_background.py`. It uses an isolated persistent Chromium profile at `~/.hermes/browser-profiles/x-automation`, runs headlessly after a one-time manual login, and never navigates Arc or the user's visible browser tabs. A file lock at `~/.hermes/locks/x-background.lock` serializes all X cron jobs so overlapping 30/45-minute schedules cannot collide.
 
-Available commands:
+One-time setup:
 ```bash
-python3 /Users/shivang/.hermes/scripts/x_browser.py check                          # Check login status
-python3 /Users/shivang/.hermes/scripts/x_browser.py search "query" 20              # Search tweets
-python3 /Users/shivang/.hermes/scripts/x_browser.py post "tweet text"              # Post a tweet
-python3 /Users/shivang/.hermes/scripts/x_browser.py quote "URL" "quote text"       # Quote-tweet
-python3 /Users/shivang/.hermes/scripts/x_browser.py reply "URL" "reply text"       # Reply to tweet
-python3 /Users/shivang/.hermes/scripts/x_browser.py timeline 20                    # Get home timeline
-python3 /Users/shivang/.hermes/scripts/x_browser.py profile "@handle" 20           # Get user's tweets
+python3 /Users/shivang/.hermes/scripts/x_background.py login
+# Log in manually in the separate window, return to the terminal, press Enter.
 ```
 
-Requirements:
-- Arc browser must be running with X.com logged in.
-- "Allow JavaScript from Apple Events" must be enabled in Arc (Developer menu).
-- The script uses `osascript` to execute JavaScript in Arc's active tab.
+Background commands:
+```bash
+python3 /Users/shivang/.hermes/scripts/x_background.py check
+python3 /Users/shivang/.hermes/scripts/x_background.py search "query" 20
+python3 /Users/shivang/.hermes/scripts/x_background.py profile "@handle" 20
+python3 /Users/shivang/.hermes/scripts/x_background.py capture "PUBLIC_URL" /tmp/source.png
+python3 /Users/shivang/.hermes/scripts/x_background.py post "text" --image /tmp/source.png
+python3 /Users/shivang/.hermes/scripts/x_background.py quote "POST_URL" "text" --image /tmp/source.png
+python3 /Users/shivang/.hermes/scripts/x_background.py reply "POST_URL" "text" --image /tmp/source.png
+```
 
-Limitations:
-- Browser automation is slower than API calls (~5-10s per operation vs <1s for API).
-- Cannot attach images yet (only text tweets, quote tweets, replies).
-- The active tab is shared — don't navigate Arc while a cron job is running.
+Screenshot policy:
+- Capture only public sources that directly support the post.
+- Prefer benchmark charts, model cards, release pages, architecture diagrams, or public proof artifacts.
+- Use `--selector CSS` when it gives a cleaner crop.
+- Never capture private dashboards, email, customer data, local secrets, or unrelated browser chrome.
+- If no useful proof image exists, post text-only rather than attaching filler.
+
+Requirements:
+- Complete the isolated profile's one-time manual X login.
+- Keep normal runs headless; only the `login` command is visible.
+- Require `status: POSTED` plus a verified X URL before reporting success.
+
+### Arc active-tab automation (legacy fallback only)
+
+`/Users/shivang/.hermes/scripts/x_browser.py` drives Arc's active tab through AppleScript. Do not use it from scheduled jobs because it interrupts browsing, YouTube, and Netflix and allows concurrent jobs to race over the same tab. Keep it only as an explicitly requested emergency fallback.
 
 ### xurl API (fallback — requires credits)
 
@@ -634,13 +646,15 @@ This is a false-alarm trap: the `(1/6)` marker looks like an error or a crash, b
 
 ## Verification Checklist
 
-### Browser-based automation (default, $0/month)
-- [ ] Arc browser is running and X.com is logged in: `python3 ~/.hermes/scripts/x_browser.py check`
-- [ ] "Allow JavaScript from Apple Events" is enabled in Arc (Developer menu).
-- [ ] Tweet text is final and under 280 chars.
+### Background Playwright automation (default, $0/month)
+- [ ] One-time isolated-profile login completed: `python3 ~/.hermes/scripts/x_background.py login`
+- [ ] Headless auth check passes: `python3 ~/.hermes/scripts/x_background.py check`
+- [ ] Tweet text is final and under 280 characters.
 - [ ] Humanizer checklist applied.
-- [ ] `x_browser.py post` returns `"status": "POSTED"`.
-- [ ] After posting, verify by running `x_browser.py profile "@shivangchheda22" 3` to confirm the tweet appears.
+- [ ] If attaching media, `capture` produced a non-empty public-source image with no private data.
+- [ ] `x_background.py post` returns `"status": "POSTED"` and a verified X URL.
+- [ ] Scheduled jobs never invoke `x_browser.py`, Arc, Finder, or foreground computer-use.
+- [ ] Cross-process lock serializes overlapping cron jobs.
 
 ### xurl API (fallback, requires credits)
 - [ ] `xurl` is installed when posting is requested.

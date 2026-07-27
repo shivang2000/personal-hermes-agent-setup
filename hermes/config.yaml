@@ -1,8 +1,8 @@
 model:
-  default: glm-5.2
-  provider: ollama-cloud
-  base_url: https://ollama.com/v1
+  default: gpt-5.6-sol
+  provider: openai-codex
   max_tokens: REDACTED_SET_LOCALLY
+  base_url: https://chatgpt.com/backend-api/codex
 fallback_providers:
   - provider: ollama-cloud
     model: minimax-m3
@@ -125,8 +125,8 @@ checkpoints:
   max_file_size_mb: 10
   auto_prune: true
   retention_days: 7
-  delete_orphans: true
   min_interval_hours: 24
+  delete_orphans: true
 context_file_max_chars: 20000
 file_read_max_chars: 100000
 mcp_discovery_timeout: 1.5
@@ -155,17 +155,6 @@ compression:
   abort_on_summary_failure: false
   codex_gpt55_autoraise: true
   in_place: false
-kanban:
-  dispatch_in_gateway: true
-  dispatch_interval_seconds: 60
-  failure_limit: 2
-  worker_log_rotate_bytes: 2097152
-  worker_log_backup_count: 1
-  orchestrator_profile: ''
-  default_assignee: ''
-  auto_decompose: true
-  auto_decompose_per_tick: 3
-  dispatch_stale_timeout_seconds: 14400
 prompt_caching:
   cache_ttl: 5m
 openrouter:
@@ -577,6 +566,17 @@ cron:
     nas_jwks_url: ''
   wrap_response: true
   mirror_delivery: false
+kanban:
+  dispatch_in_gateway: true
+  dispatch_interval_seconds: 60
+  failure_limit: 2
+  worker_log_rotate_bytes: 2097152
+  worker_log_backup_count: 1
+  orchestrator_profile: ''
+  default_assignee: ''
+  auto_decompose: true
+  auto_decompose_per_tick: 3
+  dispatch_stale_timeout_seconds: 14400
 code_execution:
   mode: project
   max_tool_calls: 50

@@ -28,7 +28,7 @@ elif _hermes_env="${HERMES_HOME:-$HOME/.hermes}/.env"; [ -f "$_hermes_env" ] && 
     if [ -n "$GITHUB_TOKEN" ]; then
         GH_AUTH_METHOD=REDACTED_SET_LOCALLY
     fi
-elif [ -f "$HOME/.git-credentials" ] && grep -q "github.com" "$HOME/.git-credentials" 2>/dev/null; then
+elif [ -f "$HOME/.git-credentials" ]; then
     GITHUB_TOKEN=REDACTED_SET_LOCALLY
     if [ -n "$GITHUB_TOKEN" ]; then
         GH_AUTH_METHOD=REDACTED_SET_LOCALLY

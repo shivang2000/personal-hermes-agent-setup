@@ -31,3 +31,5 @@ When a job portal or web target is blocked by bot-mitigation (DataDome, Cloudfla
 Shivang prefers using the Pandoc CLI to generate PDFs from Markdown when available.
 §
 Shivang prefers browser tasks requiring authentication to use a hybrid logged-in session strategy: real Chrome/Arc via background computer-use first, with safe CDP-attached Playwright fallback.
+§
+Shivang requires recurring X/Twitter automation to run in an isolated headless browser profile and never navigate Arc, change active tabs, open Finder, switch Spaces, or disturb YouTube/Netflix/normal computer use. A one-time visible login to the isolated profile is acceptable.
