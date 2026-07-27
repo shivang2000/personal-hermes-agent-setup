@@ -45,6 +45,8 @@ hermes mcp list
 
 Then verify provider-specific authentication and model availability. Dynamic provider catalogs are authoritative; do not assume that a public model-page slug exactly matches the account-visible API model ID.
 
+Treat authentication and model entitlement as separate states. A valid pooled credential may return HTTP 403 only for a subscription-gated model while still serving another model. Read the response body and correlate it with credential-rotation labels before calling a key invalid. For the full diagnostic and safe fallback probe, see `references/provider-entitlements-and-fallback-probes.md`.
+
 Never print or copy raw API keys. Add keys through a secure prompt:
 
 ```bash
@@ -143,7 +145,7 @@ Do not claim the routing system works from configuration alone. Verify:
 4. Auxiliary title/compression calls use the lightweight route.
 5. The MoA preset resolves the intended references and aggregator.
 6. External coding agents are authenticated and can create/verify a harmless artifact in a temporary git repository.
-7. Fallback is tested safely in an isolated profile, not by damaging the default profile or deliberately burning quota.
+7. Fallback is tested safely with a harmless failing route (or in an isolated profile), not by damaging the default profile or deliberately burning quota. Verify the `Fallback activated:` line and the resulting provider/model in `agent.log`; matching response text alone does not prove which model answered.
 8. Gateway behavior is checked in a fresh session after restart.
 
 Keep a rollback copy and document the command that restores the previous default model.
@@ -151,16 +153,22 @@ Keep a rollback copy and document the command that restores the previous default
 ## Common pitfalls
 
 - Treating fallback order as a complexity classifier.
-- Pinning a fallback to the same exhausted provider pool and expecting quota diversity.
+- Pinning a fallback to the same exhausted provider pool and expecting quota diversity. A model-specific 403 can mark credentials exhausted even when those credentials can still serve the fallback model.
+- Treating every 403 as an invalid key. Read the response body: `requires a subscription` is a model-entitlement failure.
+- Testing `-m provider/model` while another provider is configured and assuming it overrides the provider. Use `--provider <provider> -m <model>` and verify logs.
+- Trusting a successful probe response without checking whether fallback actually produced it.
+- Assuming `hermes config set fallback_providers '<JSON>'` created a list. Some versions store a quoted scalar; immediately run `hermes fallback list` and correct malformed non-secret YAML from a backup if needed.
+- Typing a raw API key into an agent-driven interactive fallback picker when it fails to recognize an existing auth pool. Stop and use secure credential management instead.
 - Assuming public catalog IDs instead of checking the live picker.
 - Switching models repeatedly in a long session and losing prompt-cache savings.
 - Forgetting that existing sessions do not reread new config.
 - Assuming Claude Code subscription login is equivalent to a direct Anthropic API key.
 - Trusting subagent claims without inspecting artifacts, diffs, tests, or live metadata.
 - Putting secrets directly in YAML examples or shell history.
-- **The `patch` tool refuses to edit `~/.hermes/config.yaml` directly** — it returns "Agent cannot modify security-sensitive configuration." Use `hermes config set <key> <value>` from the terminal instead. This is a defense-in-depth guard, not a bug. Example: `hermes config set model.default glm-5.2` and `hermes config set delegation.model glm-5.2`. Back up config.yaml first: `cp ~/.hermes/config.yaml ~/.hermes/config.yaml.bak-$(date +%s)`.
+- **The `patch` tool refuses to edit `~/.hermes/config.yaml` directly** — it returns "Agent cannot modify security-sensitive configuration." Use `hermes config set <key> <value>` from the terminal instead. This is a defense-in-depth guard, not a bug. Example: `hermes config set model.default glm-5.2` and `hermes config set delegation.model glm-5.2`. Back up config.yaml first: `cp ~/.hermes/config.yaml ~/.hermes/config.yaml.bak-$(date +%s)`. For structured values that the setter serializes incorrectly, use the supported manager or a backed-up round-trip edit containing no secrets, then validate with the Hermes CLI.
 
 ## Supporting files
 
 - `references/minimax-glm-claude-codex.md` contains a concrete three-tier worked example and deferred activation checklist.
+- `references/provider-entitlements-and-fallback-probes.md` covers mixed subscription entitlements in credential pools, explicit provider testing, safe forced-fallback verification, and structured-config pitfalls.
 - `templates/three-tier-config.yaml` is a copy-and-modify configuration starter with no secrets.
