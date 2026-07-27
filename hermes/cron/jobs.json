@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 787
+        "completed": 788
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-27T07:08:28.871245+05:30",
-      "last_run_at": "2026-07-27T05:07:33.576451+05:30",
+      "next_run_at": "2026-07-27T08:09:34.067436+05:30",
+      "last_run_at": "2026-07-27T06:08:37.835487+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -121,17 +121,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 60
+        "completed": 61
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-27T07:00:00+05:30",
-      "last_run_at": "2026-07-26T22:30:54.307743+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
+      "next_run_at": "2026-07-27T07:30:00+05:30",
+      "last_run_at": "2026-07-27T07:00:47.618069+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -176,17 +176,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 61
+        "completed": 62
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-27T07:00:00+05:30",
-      "last_run_at": "2026-07-26T22:30:54.322637+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 403 \u2014 HTML error page (title not found)",
+      "next_run_at": "2026-07-27T07:30:00+05:30",
+      "last_run_at": "2026-07-27T07:01:10.570384+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -285,15 +285,15 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 60
+        "completed": 61
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-27T07:00:00+05:30",
-      "last_run_at": "2026-07-26T22:47:42.344650+05:30",
+      "next_run_at": "2026-07-27T07:45:00+05:30",
+      "last_run_at": "2026-07-27T07:00:49.195068+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -314,5 +314,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-27T06:08:28.872470+05:30"
+  "updated_at": "2026-07-27T07:09:34.068644+05:30"
 }
