@@ -1,0 +1,37 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 27 July 2026, 8:55 PM IST**
+
+**Top picks**
+- [Kimi K3 open weights released](https://huggingface.co/moonshotai/Kimi-K3) — Moonshot’s native multimodal MoE has 2.8T total/104B active parameters, routes each token through 16 of 896 experts, and supports a 1M-token context window. The custom-licensed weights bring a frontier-scale coding/agent model on-prem, though serving requirements will be formidable and published benchmarks remain vendor-reported.
+- [Open Secure AI Alliance launches](https://blogs.nvidia.com/blog/open-secure-ai-alliance/) — NVIDIA, the Linux Foundation, OpenSSF, Cloudflare, Microsoft, Hugging Face, LangChain and dozens more are organizing around inspectable models, harnesses and vulnerability-remediation tooling for AI-assisted defense. The critical next step is whether this unusually broad coalition produces interoperable artifacts rather than another standards forum.
+- [Cosmos-H-Dreams runs a generative surgical simulator at ~160 FPS](https://huggingface.co/blog/nvidia/cosmos-h-dreams) — NVIDIA distilled an action-conditioned Cosmos teacher into a causal few-step student, then used streaming KV caches, CUDA Graphs and compilation to reach interactive closed-loop simulation on one RTX Pro 6000. It is a concrete recipe for using learned world models to train and test robotics policies without constant physical-hardware access.
+- [Volvo/Eicher fleet APIs exposed platform-wide account takeover](https://eaton-works.com/2026/07/27/my-eicher-hack/) — A researcher found unauthenticated API discovery, customer/user records and an endpoint exposing historical OTPs, enabling takeover of commercial fleets and access to sensitive documents. It is a severe example of why API route enumeration, authorization tests and OTP isolation must be part of every telematics threat model.
+- [Bank of Baroda investigates customer-data exposure](https://www.business-standard.com/companies/news/bank-of-baroda-probes-data-breach-says-core-banking-systems-remain-secure-126072701179_1.html) — The bank attributes unauthorized access to a compromised employee email account and says core banking systems were not accessed; reports of roughly 1TB of leaked records are still being forensically assessed. Builders should distinguish “core system unaffected” from “customer data safe” and review email-to-document-store blast radius.
+- [scriptc compiles TypeScript into native executables](https://github.com/vercel-labs/scriptc) — Vercel Labs’ new Apache-2.0 compiler statically lowers supported TypeScript without Node/V8, producing a demonstrated 178KB Fibonacci binary with ~2ms startup; unsupported constructs can be explicitly refused or delegated to opt-in QuickJS. Promising for CLIs and constrained deployments, but it is very early and supports only a subset of the JS ecosystem.
+
+**AI, Agents & Models**
+- [Independent agencies assess Kimi K3’s cyber capability](https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities) — UK AISI and US CAISI found it behind leading closed US models but ahead of GLM-5.2 on preliminary tests; in a simulated 32-step corporate attack it averaged step 17 versus 28.5 for the strongest tested US systems. Its safeguards also allowed attempted exploit development, making local deployment controls important despite the capability gap.
+- [Claude Managed Agents gain Vercel Chat SDK support](https://vercel.com/changelog/claude-managed-agents-with-chat-sdk) — Anthropic handles the model/tool loop, session state and sandboxed research server-side, while Vercel supplies a type-safe streaming UI adapter for web, Slack, Teams, Discord, WhatsApp and 30-plus channels. Tool activity can be surfaced live, and the managed session removes the need to operate a separate conversation database.
+
+**Software Engineering & DevTools**
+- [A critical audit of Bun’s AI-assisted Rust rewrite](https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html) — Repository inspection challenges the framing of an 11-day, $165,000 rewrite as “finished,” pointing to substantial continuing CI and review work. The useful lesson is to measure migration claims with merged surface area, compatibility tests, human-review load and post-merge stabilization—not generated LOC or elapsed agent time.
+- [LLMs as proof automation: a Zstandard decompressor in Lean](https://www.imperialviolet.org/2026/07/26/zstd-lean.html) — Adam Langley’s experiment argues that LLM-generated proofs can reduce the historic proof-engineering overhead of dependent types while Lean’s checker remains the trusted verifier. It suggests a practical route to formally verified systems components: humans specify invariants, agents search for proofs, and a small kernel rejects invalid output.
+- [PGSimCity visualizes PostgreSQL internals as a live 3D system](https://nikolays.github.io/PGSimCity/) — The interactive simulator maps WAL, buffer-cache behavior, checkpoints, vacuum, locks, replication lag, sequential/index scans and connection storms into observable scenarios. It is unusually useful for teaching how tuning decisions interact rather than memorizing isolated settings.
+
+**Cloud, Infra, Data & Security**
+- [AWS adds durable .NET Lambda workflows and unified AgentCore telemetry](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-july-27-2026/) — The GA C# SDK automatically checkpoints multi-step functions and can suspend them for up to a year, targeting payment flows, agent orchestration and human approvals. AgentCore now puts traces, prompts and application logs in one CloudWatch log group with per-agent access control and customer-managed encryption keys.
+- [NVIDIA deploys Vera CPUs for its own chip-design workflows](https://blogs.nvidia.com/blog/vera-cpu-eda/) — Selected Cadence Jasper and Synopsys VCS verification workloads reportedly ran up to 1.5× faster at equal core counts. Vera combines 88 Olympus cores, LPDDR5X and NVIDIA’s coherent fabric, targeting CPU-bound formal verification and logic simulation that GPUs do not accelerate well.
+
+**Crypto & Blockchain Engineering**
+- [Circle acquires nearly 1,000 IBM blockchain patents](https://www.circle.com/pressroom/circle-acquires-ibm-blockchain-patent-portfolio) — The purchase covers more than 680 patent families spanning blockchain, banking, insurance, supply-chain verification and secure cloud operations. It materially strengthens Circle’s IP position around USDC, Arc, its payments network and agentic-finance products, although terms and intended licensing posture were not disclosed.
+
+**Watchlist**
+- Independent Kimi K3 inference results, hardware footprints and reproductions of its coding/agent benchmarks.
+- Concrete repositories, schemas and evaluation suites from the Open Secure AI Alliance.
+- Bank of Baroda’s forensic findings, especially confirmation of the claimed data volume and affected record classes.
+- Stabilization progress and compatibility coverage for scriptc and Bun’s Rust migration.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
