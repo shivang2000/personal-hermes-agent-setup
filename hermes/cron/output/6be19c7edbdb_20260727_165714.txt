@@ -1,0 +1,64 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+11:26 UTC = 16:56 IST, matching the 16:55 schedule. Composing the digest now.
+
+**Tech / AI / Crypto / Software Digest — 27 Jul 2026, 16:55 IST**
+
+**Top picks**
+- [Kimi-K3 releases on Hugging Face](https://huggingface.co/moonshotai) — Moonshot AI's next-generation open-weight model went live today on HF (Hacker News front page, 413 pts, 185 comments), continuing the Kimi K2 line that already sits at 1.1T parameters with strong agentic/intelligence scores. Watch the K2.5/K2.6/K2.7 family repos on the org page for immediate card updates.
+- [Scriptc by Vercel: TypeScript-to-Native compiler, no JS engine in binary](https://github.com/vercel-labs/scriptc) (HN, 205 pts, 105 comments) — Vercel Labs open-sourced a TS-to-native AOT compiler; the `AGENTS.md` and `Library mode takes the static-or-refuse npm posture` commits signal an explicit "agent-friendly" release process. Genuinely interesting for shipping CLI/edge agents without a V8 payload.
+- [Inside the relay market powering LLM token resellers and fraud](https://simonwillison.net/2026/Jul/26/llm-token-resellers/) — Matt Lenhard's investigation (covered by Simon Willison) documents a Chinese reseller ecosystem built on `one-api` / `new-api` that abuses free trials, leaked keys, and stolen cards to undercut official API pricing. Reinforces why every LLM app needs hard per-key spend caps.
+- [Astral ships Ruff v0.16.0 with 413 default rules](https://simonwillison.net/2026/Jul/25/ruff/) (via Brent Westbrook) — Ruff's first default-ruleset change since v0.1.0 turns on hundreds of new checks, including syntax-error and immediate-runtime-error detectors. Expect un-pinned `ruff` dev deps to break CI across the ecosystem.
+- [Vercel ships open-code-review — hybrid deterministic + LLM agent reviewer](https://github.com/alibaba/open-code-review) (832 stars/day on trending) — Open-source, OpenAI/Anthropic-compatible code review with a built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQLi) and line-level comments. Notable that it's Alibaba-scale battle-tested.
+- [Storj files for Chapter 11, proposes court-approved equity path for STORJ holders](https://cointelegraph.com/) — Decentralized storage operator Storj entered bankruptcy while keeping the network running; unusual tokenholder-equity mechanism being negotiated. Material precedent for the "infra token" model.
+
+**AI, Agents & Models**
+- [Kimi-K3 releases on Hugging Face](https://huggingface.co/moonshotai) — see Top picks.
+- [Hugging Face trending models](https://huggingface.co/) — `poolside/Laguna-S-2.1` (updated <1 min ago, 63.6k pulls), `upstage/Solar-Open2-250B`, `Nanbeige/Nanbeige4.2-3B` are all gaining pull velocity this week; useful signal for inference-cost engineering.
+- [`pbakaus/impeccable` — "design language that makes your AI harness better at design"](https://github.com/pbakaus/impeccable) (413 stars/day) — Anthropic design lead Philip Bakaus's design system aimed at agent-generated UI. Worth sampling if you ship agent-rendered frontends.
+- [Open-source AI pen-testing tool `usestrix/strix`](https://github.com/usestrix/strix) (490 stars/day) — Agents that find and fix app vulnerabilities; relevant for shipping AI-driven security review in CI.
+- [Relay market for LLM token resellers](https://simonwillison.net/2026/Jul/26/llm-token-resellers/) — see Top picks; call to action is per-key spend caps, not just rate limits.
+
+**Software Engineering & DevTools**
+- [Scriptc by Vercel Labs](https://github.com/vercel-labs/scriptc) — see Top picks.
+- [Ruff v0.16.0 ships 413 default rules](https://simonwillison.net/2026/Jul/25/ruff/) — see Top picks.
+- [`alibaba/open-code-review`](https://github.com/alibaba/open-code-review) — see Top picks.
+- [VLC for Unity now supported on Linux](https://www.videolan.org/) — Cross-platform media playback in Unity games continues to expand; engine-agnostic video path matters for live-ops tooling.
+- [How is the Bun rewrite in Rust going?](https://lockwood.dev/) (HN newest) — Worth reading if you're betting on Bun or Node-API runtime consolidation.
+
+**Cloud, Infra, Data & Security**
+- [`amnezia-vpn/amnezia-client` trending](https://github.com/amnezia-vpn/amnezia-client) — Anti-censorship VPN client adding obfuscation tech to bypass DPI; relevant for users in restrictive networks and for any infra team serving them.
+- [`yorukot/superfile` — modern terminal file manager](https://github.com/yorukot/superfile) (131 stars/day) — Polished TUI file manager in Go; quick win for SSH-first workflows.
+- [GrapheneOS phone wipes during airport search — US citizen charged](https://www.techspot.com/) (HN front page) — Follow-up on the legal/operational risks of secure-mobile devices at borders.
+
+**Crypto & Blockchain Engineering**
+- [Storj files for bankruptcy, explores equity path for tokenholders](https://cointelegraph.com/) — see Top picks.
+- [Garden Finance disables app as Blockaid reports $450K exploit](https://cointelegraph.com/) — Cross-chain bridge/aggregator disabled its app after Blockaid flagged an exploit; shows continued necessity of pre-emptive monitoring partnerships.
+- [Triple-A confirms treasury-wallet breach — losses reach $11.8M](https://cointelegraph.com/) — Payment processor's treasury wallet drained; engineers integrating stablecoin on-ramps should re-evaluate custody assumptions.
+- [WEMIX — attacker moved ~$724K after contract breach](https://cointelegraph.com/) — Korean gaming chain; standard post-mortem pattern, worth a brief read for Solidity ops teams.
+- [BitMart withdrawals slow following wind-down announcement](https://cointelegraph.com/) — Custodial withdrawal slowdowns after a shutdown announcement; reminder that exchange-exit risk is real for active trading balances.
+- [BNY Mellon unit joins MiCA register as ESMA adds 15 providers](https://cointelegraph.com/) — Major institutional entry under EU's MiCA framework; signals continued institutional adoption in EU.
+- [South Korea's largest bank to launch payment service on JPMorgan's Kinexys](https://cointelegraph.com/) — Bank-grade deployment on a permissioned L1; meaningful for tokenized-deposit interoperability work.
+
+**Open Source / GitHub**
+- [`permissionlesstech/bitchat` — Bluetooth mesh chat](https://github.com/permissionlesstech/bitchat) (1,166 stars today, 31,457 total) — Offline, mesh-network chat; relevant infrastructure for disaster/disrupted-connectivity scenarios.
+- [`moeru-ai/airi` — self-hosted waifu companion](https://github.com/moeru-ai/airi) (554 stars today) — Realtime voice + Minecraft/Factorio-playing agent; strong demo of local-stack agent orchestration.
+- [`shiyu-coder/Kronos` — foundation model for financial-market language](https://github.com/shiyu-coder/Kronos) (321 stars today) — Domain-specific TSFM for candle/OHLC forecasting; useful building block for quant pipelines.
+- [`bradautomates/claude-video` — give Claude the ability to watch any video](https://github.com/bradautomates/claude-video) (412 stars today) — Downloads, frame-extracts, transcribes, hands to Claude; a pragmatic tool-use pattern.
+- [`andrewyng/aisuite` — unified interface to multiple GenAI providers](https://github.com/andrewyng/aisuite) (187 stars today) — Simple Python switchboard across OpenAI/Anthropic/etc.; useful for vendor-portable agent stacks.
+
+**Startups, YC & Industry**
+- [Chinese chipmaker shares surge 470%](https://www.bbc.com/) (HN front page, 58 pts) — Notable semiconductor move on Chinese markets; context for any team evaluating non-NVIDIA inference roadmaps.
+- [Coinbase CEO touts agentic finance as Base tops 100M AI payments](https://cointelegraph.com/) — Layer-2 throughput milestone framing agentic payments as a near-term product surface.
+- [CLARITY hopes fade, BitMEX shuts as lawsuit looms — Hodler's Digest, July 26](https://cointelegraph.com/) — US crypto market-structure legislation fading and a major exchange winding down; relevant for compliance planning.
+- [Brazilian police bust cocaine traffickers in crypto-linked transnational probe](https://cointelegraph.com/) — On-chain forensics continuing to produce real-world enforcement outcomes.
+
+**Watchlist**
+- Kimi-K3 release notes / HF card details — expect benchmark and agent-eval coverage in the next 24h; updates to the `moonshotai` org page will be first signal.
+- Vercel Scriptc — README, "static-or-refuse" semantics, and the `outbound native FFI` PR warrant a closer read once dust settles; could reshape CLI/edge agent distribution.
+- Storj bankruptcy mechanics — tokenholder-equity restructuring is unprecedented at this scale for a "real" infrastructure token; watch creditor-vs-holder disputes.
+- Binance/MiCA CASP registration pipeline — BNY Mellon entry plus 15 new CASP registrations suggests another wave of EU institutional onboarding next quarter.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
