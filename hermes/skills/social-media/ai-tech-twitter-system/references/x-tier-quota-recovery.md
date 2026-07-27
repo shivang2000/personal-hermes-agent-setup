@@ -90,4 +90,5 @@ When the personal-Hermes bot (this profile, `default`) receives one of these dig
 ## Related references
 
 - `references/x-developer-setup-and-policy.md` — OAuth setup, `xurl auth status` interpretation, `CreditsDepleted` vs `HTTP 429` distinction.
+- `references/x-api-cost-analysis.md` — X API pay-per-use pricing table, session DB cost analysis technique, real cost data, and cost-safe cadence rules. **Read this first if the failure is `credits depleted` (HTTP 402) rather than `HTTP 429`** — the pay-per-use model depletes credits per call rather than hitting a monthly tier cap.
 - `references/local-work-summary-cron.md` — proven job shape for the office-work-summary digest cron.

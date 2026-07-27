@@ -7,7 +7,7 @@ license: MIT
 metadata:
   hermes:
     tags: [twitter, x, ai, tech, content, approval-queue, social-media]
-    related_skills: [xurl]
+    related_skills: [xurl, humanizer]
 ---
 
 # AI/Tech Twitter System
@@ -382,13 +382,46 @@ Reply-length pitfall: X replies may need to be condensed under the character lim
 
 ## X/Twitter Posting Procedure
 
+### Browser-based automation (FREE — default since July 2026)
+
+X API credits depleted, so the default posting method is now browser-based via Arc browser. X.com is logged in on Arc, and the script `/Users/shivang/.hermes/scripts/x_browser.py` drives it via AppleScript JavaScript execution. This costs $0 — no API credits needed.
+
+Available commands:
+```bash
+python3 /Users/shivang/.hermes/scripts/x_browser.py check                          # Check login status
+python3 /Users/shivang/.hermes/scripts/x_browser.py search "query" 20              # Search tweets
+python3 /Users/shivang/.hermes/scripts/x_browser.py post "tweet text"              # Post a tweet
+python3 /Users/shivang/.hermes/scripts/x_browser.py quote "URL" "quote text"       # Quote-tweet
+python3 /Users/shivang/.hermes/scripts/x_browser.py reply "URL" "reply text"       # Reply to tweet
+python3 /Users/shivang/.hermes/scripts/x_browser.py timeline 20                    # Get home timeline
+python3 /Users/shivang/.hermes/scripts/x_browser.py profile "@handle" 20           # Get user's tweets
+```
+
+Requirements:
+- Arc browser must be running with X.com logged in.
+- "Allow JavaScript from Apple Events" must be enabled in Arc (Developer menu).
+- The script uses `osascript` to execute JavaScript in Arc's active tab.
+
+Limitations:
+- Browser automation is slower than API calls (~5-10s per operation vs <1s for API).
+- Cannot attach images yet (only text tweets, quote tweets, replies).
+- The active tab is shared — don't navigate Arc while a cron job is running.
+
+### xurl API (fallback — requires credits)
+
+The xurl API still works if credits are topped up. Use it as a fallback when Arc is closed or browser automation fails.
+
 Prerequisite: load the `xurl` skill for command details and safety rules.
 
 Also see:
 - `references/x-developer-setup-and-policy.md` for X Developer Portal setup, the approved data-use description, and xurl auth/credits pitfalls.
 - `references/local-work-summary-cron.md` for the proven weekday end-of-day local-work-summary cron shape, safety guardrails, model pinning, and verification caveats.
 - `references/x-tier-quota-recovery.md` for diagnosing and recovering from `HTTP 429: usage limit` fleet outages, the cadence-bomb pattern, and cadence recommendations for each autopost job type.
+- `references/x-api-cost-analysis.md` for X API pay-per-use pricing, the session DB cost analysis technique, real cost data from Shivang's fleet, the browser-based $0/month alternative, and cost-safe cadence rules.
+- `references/x-api-pricing-and-cost-analysis.md` for X API pay-per-use pricing table, real cost data from Shivang's fleet (session DB analysis technique), monthly projections at various cadences, and the $0/month browser alternative.
 - `references/twitter-growth-tactics.md` for competitive analysis of high-engagement AI accounts (quote-tweet amplification, image attachment, breaking-news speed, multi-angle posting, reply engagement) with concrete engagement data and implementation priorities.
+- `scripts/x_browser.py` — the browser-based X.com automation script (free alternative to xurl API, drives Arc via AppleScript JS). Copy to `~/.hermes/scripts/x_browser.py` for cron jobs.
+- `scripts/x_browser.py` — the browser-based X.com automation script (free alternative to xurl API, drives Arc via AppleScript JS).
 
 Verification:
 ```bash
@@ -481,6 +514,17 @@ Before presenting or posting a tweet:
 11. Drafting the tweet body long (400+ chars) and trimming down to 280 in 3-4 round-trips. This wastes turns and tends to lose the concrete mechanism with each pass. Aim for ≤260 characters on the first draft — that gives real edit room for humanizer fixes, hashtag addition, and a Shivang-driven tweak without thrashing the message. If the first draft is over 350, you have probably included filler that needs to go, not content that needs to stay.
 12. **Auto-mirror noise loops in cron-delivered Discord threads.** Threads opened by a cron job (e.g. `office-work-summary-for-tweets` → #tweets-automation thread 1529126825559588995) auto-mirror every Hermes tool output and assistant turn into the thread. Internal reasoning, tool-result previews, and even `delete_message` cleanup attempts all surface as visible Discord messages to Shivang and any other bots watching the thread. The clean pattern: post the tweet via `xurl post`, send the report via `hermes send --to discord:<channel_id>:<thread_id>` ONCE, then stop touching the thread — no follow-up `fetch_messages` to "verify", no `delete_message` cleanup loops (every delete call itself gets mirrored and creates more noise), no `cronjob` actions, no in-thread clarifications. The single `hermes send` is the only thread message that should land. If you need a "voice calibration" check (e.g. `xurl search from:shivangchheda22 -is:retweet`), run it via terminal — it does not need to be visible in the thread.
 13. **Cron `*/N` schedule pitfall.** `*/45 7-22 * * *` does NOT mean "every 45 minutes from 7am to 10pm". In cron, `*/45` in the minute field means "at minute 0 and 45 of every hour" — i.e. two fires per hour, not every-45-minutes. Similarly `*/30` means "at minute 0 and 30" (every 30 min, which is correct but worth confirming). For true every-N-minutes cadence, use the cron schedule string `every Nm` (Hemis shorthand) instead of raw cron `*/N`. The current fleet uses `*/30 7-22` (correct — fires at :00 and :30) and `*/45 7-22` (semi-correct — fires at :00 and :45, which is 15-min then 45-min gap, not uniform 45-min). If uniform spacing matters, switch to `every 45m` with a time-window guard in the prompt instead.
+
+14. **Browser automation shared-tab conflict.** The `scripts/x_browser.py` script drives Arc's *active tab* — if Shivang is actively browsing in Arc while a cron job fires, the cron job will navigate away from whatever Shivang is doing. This is a UX conflict, not a crash. Mitigation: cron jobs should complete quickly (search + post = ~15s) and the window is the active-window hours (12:45 PM – 3:45 AM IST) when Shivang may not be actively browsing. If Shivang reports tab hijacking, consider opening a dedicated Arc space/window for automation or reducing scanner cadence.
+
+16. **X.com compose button selector: `tweetButtonInline` not `tweetButton`.** The X.com compose page (`/compose/post`) uses `data-testid="tweetButtonInline"` for the post button, NOT `data-testid="tweetButton"`. The `tweetButton` selector only appears on reply dialogs and the home timeline inline compose. The `scripts/x_browser.py` script handles this by trying `tweetButtonInline` first, then falling back to `tweetButton`. If a future X.com UI change renames the selector, run this diagnostic in Arc to find the current one:
+```bash
+osascript -e 'tell application "Arc" to execute active tab of front window javascript "JSON.stringify(Array.from(document.querySelectorAll(\"button[data-testid]\")).map(b => b.getAttribute(\"data-testid\") + \": \" + (b.disabled ? \"disabled\" : \"enabled\"))).filter(s => s.includes(\"tweet\"))"'
+```
+
+17. **X.com search returns crypto/spam for generic AI queries.** Searching `x_browser.py search "Claude OR GPT OR LLM"` returns a mix of relevant tweets and crypto scam spam (especially "Moonshot" token listings). To filter: use more specific queries like `"Kimi K3"` (quoted phrase) or `"Claude API"` instead of broad OR queries. The browser search does not support engagement-based sorting (unlike the X API), so results are purely chronological. To find high-engagement tweets, scan the `metrics` array in each result for "N Likes" or "N reposts" and filter programmatically.
+
+18. **`x_browser.py profile` may return empty on first call.** When navigating to a profile page, the JS extraction runs before X.com finishes rendering the React timeline. If `profile` returns `[]`, either: (a) increase the wait time in the script's `arc_navigate` call, or (b) re-run the command after the page has loaded. The `search` and `check` commands are more reliable because they navigate to pages that load faster.
 
 ## X API cost management
 
@@ -590,6 +634,15 @@ This is a false-alarm trap: the `(1/6)` marker looks like an error or a crash, b
 
 ## Verification Checklist
 
+### Browser-based automation (default, $0/month)
+- [ ] Arc browser is running and X.com is logged in: `python3 ~/.hermes/scripts/x_browser.py check`
+- [ ] "Allow JavaScript from Apple Events" is enabled in Arc (Developer menu).
+- [ ] Tweet text is final and under 280 chars.
+- [ ] Humanizer checklist applied.
+- [ ] `x_browser.py post` returns `"status": "POSTED"`.
+- [ ] After posting, verify by running `x_browser.py profile "@shivangchheda22" 3` to confirm the tweet appears.
+
+### xurl API (fallback, requires credits)
 - [ ] `xurl` is installed when posting is requested.
 - [ ] `xurl auth status` shows a configured default app/account.
 - [ ] Tweet text is final and visible.
@@ -597,3 +650,4 @@ This is a false-alarm trap: the `(1/6)` marker looks like an error or a crash, b
 - [ ] `xurl post` returns successful JSON.
 - [ ] Response includes confirmation and tweet ID/URL when available.
 - [ ] Fleet health: `hermes cron list --all` shows the autopost/news jobs in `active` state (not `paused` with stale 429 errors). If any job is paused due to `HTTP 429: usage limit`, follow the recovery procedure in "X API tier-quota failure pattern" before declaring the workflow healthy.
+- [ ] If `xurl search` or `xurl post` fails with `credits depleted` (HTTP 402), switch to browser-based automation (`x_browser.py`) or tell Shivang to deposit credits at Developer Console → Billing.
