@@ -78,7 +78,7 @@ def browser_session(headless: bool = True):
         )
         try:
             page = context.pages[0] if context.pages else context.new_page()
-            page.set_default_timeout(15_000)
+            page.set_default_timeout(45_000)
             yield context, page
         finally:
             context.close()
@@ -182,10 +182,16 @@ def cmd_capture(url: str, output: str, selector: str | None) -> None:
 
 
 def compose(page: Page, text: str, image: str | None = None) -> None:
-    goto(page, "https://x.com/compose/post", 2500)
+    # The /compose/post page has a React state issue in headless mode where the
+    # Post button never enables even after typing. The inline composer on the
+    # home timeline works correctly. Use that instead.
+    goto(page, "https://x.com/home", 2500)
     box = page.locator('[data-testid="tweetTextarea_0"]').first
     box.wait_for(state="visible")
-    box.fill(text)
+    box.click()
+    page.wait_for_timeout(300)
+    page.keyboard.type(text, delay=5)
+    page.wait_for_timeout(500)
     if image:
         image_path = Path(image).expanduser().resolve()
         if not image_path.is_file():
@@ -249,7 +255,10 @@ def cmd_reply(post_url: str, text: str, image: str | None) -> None:
         require_login(page)
         goto(page, post_url, 2500)
         box = page.locator('[data-testid="tweetTextarea_0"]').first
-        box.fill(text)
+        box.click()
+        page.wait_for_timeout(200)
+        page.keyboard.type(text, delay=5)
+        page.wait_for_timeout(500)
         if image:
             file_input = page.locator('[data-testid="fileInput"], input[type="file"]').first
             file_input.set_input_files(str(Path(image).expanduser().resolve()))
