@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 816
+        "completed": 817
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-28T19:14:03.743421+05:30",
-      "last_run_at": "2026-07-28T15:15:31.360331+05:30",
+      "next_run_at": "2026-07-28T22:47:15.972434+05:30",
+      "last_run_at": "2026-07-28T18:15:44.893326+05:30",
       "last_status": "error",
-      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 1.",
+      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -65,15 +65,15 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 114
+        "completed": 115
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-28T20:55:00+05:30",
-      "last_run_at": "2026-07-28T15:01:18.722220+05:30",
+      "next_run_at": "2026-07-29T00:55:00+05:30",
+      "last_run_at": "2026-07-28T18:55:34.781880+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: Connection error.",
       "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1518059932123926658 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
@@ -120,18 +120,18 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 96
+        "completed": 99
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-28T18:30:00+05:30",
-      "last_run_at": "2026-07-28T16:53:30.327826+05:30",
+      "next_run_at": "2026-07-28T22:00:00+05:30",
+      "last_run_at": "2026-07-28T20:44:01.434417+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 960s (limit 600s) \u2014 last activity: API error recovery (attempt 3/3)",
-      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "last_error": "RuntimeError: Connection error.",
+      "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1530353549668520139 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -174,18 +174,18 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 97
+        "completed": 100
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-28T18:30:00+05:30",
-      "last_run_at": "2026-07-28T16:53:30.323894+05:30",
+      "next_run_at": "2026-07-28T22:00:00+05:30",
+      "last_run_at": "2026-07-28T20:44:01.443817+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Reply-engagement scanner for AI accounts (30m)' idle for 960s (limit 600s) \u2014 last activity: API error recovery (attempt 3/3)",
-      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "last_error": "RuntimeError: Connection error.",
+      "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1530353549668520139 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -281,17 +281,17 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 94
+        "completed": 96
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-28T18:45:00+05:30",
-      "last_run_at": "2026-07-28T15:52:28.704226+05:30",
+      "next_run_at": "2026-07-28T22:00:00+05:30",
+      "last_run_at": "2026-07-28T19:44:03.398238+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: Connection error.",
+      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 980s (limit 600s) \u2014 last activity: API error recovery (attempt 3/3)",
       "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1530353549668520139 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-28T18:14:04.072171+05:30"
+  "updated_at": "2026-07-28T21:47:15.982415+05:30"
 }
