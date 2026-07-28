@@ -219,7 +219,15 @@ def submit(page: Page) -> None:
     page.wait_for_function(
         "() => { const b=document.querySelector('[data-testid=tweetButtonInline]') || document.querySelector('[data-testid=tweetButton]'); return b && !b.disabled; }"
     )
-    button.click()
+    # Some X layouts place an invisible overlay div that intercepts pointer
+    # events on the compose button. Use JS click to bypass the overlay.
+    page.evaluate(
+        """() => {
+            const b = document.querySelector('[data-testid="tweetButtonInline"]')
+                   || document.querySelector('[data-testid="tweetButton"]');
+            if (b) b.click();
+        }"""
+    )
     page.wait_for_timeout(3000)
     # A successful submit clears the composer or navigates away.
     remaining = page.locator('[data-testid="tweetTextarea_0"]').count()
