@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 828
+        "completed": 829
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-30T00:24:02.761022+05:30",
-      "last_run_at": "2026-07-29T21:38:48.049581+05:30",
+      "next_run_at": "2026-07-30T02:25:23.690097+05:30",
+      "last_run_at": "2026-07-30T00:07:33.051670+05:30",
       "last_status": "error",
       "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
       "last_delivery_error": null,
@@ -72,7 +72,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-30T00:55:00+05:30",
+      "next_run_at": "2026-07-30T12:55:00+05:30",
       "last_run_at": "2026-07-29T22:09:57.968420+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: Connection error.",
@@ -174,7 +174,7 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 108
+        "completed": 109
       },
       "enabled": true,
       "state": "scheduled",
@@ -182,7 +182,7 @@
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
       "next_run_at": "2026-07-30T07:00:00+05:30",
-      "last_run_at": "2026-07-29T22:22:57.062725+05:30",
+      "last_run_at": "2026-07-30T00:24:58.845732+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: Connection error.",
       "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-29T23:58:31.533989+05:30"
+  "updated_at": "2026-07-30T01:25:23.694725+05:30"
 }
