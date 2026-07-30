@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 835
+        "completed": 836
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-30T13:07:15.382455+05:30",
-      "last_run_at": "2026-07-30T11:04:05.825521+05:30",
+      "next_run_at": "2026-07-30T14:08:47.789304+05:30",
+      "last_run_at": "2026-07-30T12:07:57.644472+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,17 +65,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 121
+        "completed": 122
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-30T12:55:00+05:30",
-      "last_run_at": "2026-07-30T01:45:25.072515+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI / Crypto / Tech / Software news digest for #tech-news' idle for 741s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "next_run_at": "2026-07-30T16:55:00+05:30",
+      "last_run_at": "2026-07-30T12:59:17.141180+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -120,17 +120,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 115
+        "completed": 117
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-30T12:30:00+05:30",
-      "last_run_at": "2026-07-30T11:59:42.090121+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 696s (limit 600s) \u2014 last activity: terminal command running (10s elapsed)",
+      "next_run_at": "2026-07-30T13:30:00+05:30",
+      "last_run_at": "2026-07-30T13:04:31.431299+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -174,15 +174,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 115
+        "completed": 117
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-30T12:30:00+05:30",
-      "last_run_at": "2026-07-30T11:37:26.724971+05:30",
+      "next_run_at": "2026-07-30T13:30:00+05:30",
+      "last_run_at": "2026-07-30T13:03:39.496853+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -227,18 +227,18 @@
       "schedule_display": "45 12 * * *",
       "repeat": {
         "times": null,
-        "completed": 5
+        "completed": 6
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-07-30T12:45:00+05:30",
-      "last_run_at": "2026-07-29T15:54:25.722287+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: Connection error.",
-      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "next_run_at": "2026-07-31T12:45:00+05:30",
+      "last_run_at": "2026-07-30T12:48:23.584661+05:30",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -281,17 +281,17 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 110
+        "completed": 113
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-30T12:45:00+05:30",
-      "last_run_at": "2026-07-30T11:37:23.078350+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 738s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "next_run_at": "2026-07-30T13:45:00+05:30",
+      "last_run_at": "2026-07-30T13:03:36.771449+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-30T12:07:15.387669+05:30"
+  "updated_at": "2026-07-30T13:08:47.790322+05:30"
 }

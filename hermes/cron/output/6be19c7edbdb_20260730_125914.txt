@@ -1,0 +1,60 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 30 Jul 2026, 13:00 IST**
+
+**Top picks**
+- [Anthropic: "Discovering cryptographic weaknesses with Claude"](https://www.anthropic.com/research/discovering-cryptographic-weaknesses) — Anthropic's safety team used Claude (Mythos Preview) to assist in real cryptanalysis and reports finding weaknesses in published algorithms. Matthew Green's [commentary](https://cryptographyengineering.com/2026/07/30/some-thoughts-about-anthropics-new-cryptanalysis-results/) flags that the result is genuine, narrow, and that "AI finds novel crypto flaws" is now an established primitive — relevant for anyone reasoning about threat models, supply-chain crypto, and AI-assisted red-teaming.
+- [Hugging Face: "Anatomy of a Frontier Lab Agent Intrusion" (Jul 27, 2026)](https://huggingface.co/blog/frontier-lab-agent-intrusion) — Detailed postmortem of how an attacker compromised a "frontier lab" agent environment and what that implies for MCP/tool-using agents (prompt-injection chains, scoped tokens, exfil of model artifacts). Read alongside HF's earlier [Security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-disclosure-july-2026). Practical reading for anyone running an agent with shell or token access.
+- [Qualcomm completes acquisition of Modular](https://www.qualcomm.com/news/releases/2026/07/qualcomm-completes-acquisition-of-modular) (Jul 29) — Qualcomm has closed the Modular deal; Chris Lattner becomes EVP of Advanced AI Software and Platforms. Mojo, MAX, and Modular Cloud continue as products. Concrete signal that the Mojo/MAX stack and its heterogeneous compute runtime now sit behind a major SoC vendor with datacenter ambitions.
+- [Kimi K3-256k](https://kimi.com) — Moonshot's long-context K3 variant hits HN front page (408 pts). Backing it is [FlashKDA](https://github.com/MoonshotAI/FlashKDA) on GitHub — high-performance Kimi Delta Attention kernels, the inference-engineering story that makes 256k viable in production.
+- [GitHub trending #1: `affaan-m/ECC`](https://github.com/affaan-m/ECC) — "The agent harness performance optimization system" — skills, instincts, memory, and security layers for Claude Code / Codex / OpenCode / Cursor. Best current example of the "harness is the product" pattern: orchestrating model behavior via structured skills + persistent memory rather than prompt spaghetti.
+
+**AI, Agents & Models**
+- [AI's top startups are barely publishing their research](https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research) (Science, HN #1, 387 pts) — Quantitative look at falling research output from leading AI labs; useful context for anyone relying on published artifacts vs. closed weights.
+- [Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac](https://github.com/drumih) (749 pts) — Aggressive Apple-silicon quantization/runtime; notable if it holds up — 26B in 2 GB implies aggressive context offload and likely 2–4 bit weights. Worth benchmarking.
+- [LiquidAI: LFM2.5-Encoders for fast long-context inference on CPU](https://huggingface.co/blog) (HF blog, Jul 28) — CPU-first encoders targeted at retrieval/RAG long-context pipelines where GPU is overkill.
+- [Kuna: Decompiler Development in the Age of Coding Agents](https://noelo.org/2026/kuna) — Engineering write-up on using coding agents inside a decompiler project; practical lessons for low-level/RE-adjacent work where agents usually fail.
+
+**Software Engineering & DevTools**
+- [Show HN: A local merge queue for parallel Claude Code agents](https://github.com/funador) — `funador/merge-queue` lets you run multiple Claude Code agents in parallel locally and serialize their diffs through a merge queue. Concrete dev infra for the multi-agent workflow that's rapidly becoming default.
+- [Hugging Face speech-to-speech v0.2.x](https://github.com/huggingface/speech-to-speech) — 8.1k★; fully modular VAD→STT→LLM→TTS pipeline with an OpenAI Realtime-compatible WebSocket API. Recent commits add WebRTC transport for the OpenAI Realtime API and MLX-audio backend improvements. Good reference architecture for voice agents.
+- [The Rust on ESP Book](https://espressif.com) (Espressif, HN 149 pts) — Official-grade book on Rust for ESP32/ESP-IDF; relevant given growing embedded/robotics demand from AI workloads.
+- [Logic for Programmers](https://logicforprogrammers.com) (HN 84 pts) — Concise, engineer-targeted primer on formal logic for software work; useful as a team shared reading list.
+
+**Cloud, Infra, Data & Security**
+- [North Korea-linked hackers targeted major NPM packages](https://www.amazon.com) (HN newest) — Supply-chain report on a DPRK-aligned campaign against widely used NPM packages; rotate/audit any package whose maintainers may be in scope. Verify in your own lockfiles.
+- [Show HN: Edge Drop](https://github.com/deepender25) — Cross-device clipboard sharing; small but representative of the productivity tools layering on top of OS-level sharing.
+- [Turning a dumb AC unit smart (without losing my security deposit)](https://prilik.com) (HN 154 pts) — Reverse-engineering + ESPHome writeup. Light on infra, heavy on the hardware/IoT security theme that keeps recurring in 2026.
+
+**Crypto & Blockchain Engineering**
+- [Anthropic cryptanalysis story, take 2](https://www.anthropic.com/research/discovering-cryptographic-weaknesses) — Already in top picks; included here because it is the most consequential crypto-adjacent story of the week and several protocol teams are reviewing the referenced primitives.
+- [Building an LSTM-Based Trading Model for Cryptocurrency Markets](https://medium.com/dolphindb_inc) (DolphinDB, HN newest) — Reference implementation + data layer (DolphinDB time-series DB) for crypto ML pipelines; useful engineering artifact even if you don't use LSTM.
+
+**Open Source / GitHub**
+- [`moeru-ai/airi`](https://github.com/moeru-ai/airi) (45.5k★, 682 stars today) — Self-hosted "waifu" companion stack with realtime voice, Minecraft/Factorio play. Practical example of local-first multimodal agent orchestration.
+- [`huggingface/speech-to-speech`](https://github.com/huggingface/speech-to-speech) (8.1k★) — See Software Engineering.
+- [`alibaba/open-code-review`](https://github.com/alibaba/open-code-review) (16.2k★, +359 today) — Hybrid deterministic-pipeline + LLM-agent code reviewer with line-level comments, fine-tuned rules for NPE/thread-safety/XSS/SQLi, and OpenAI/Anthropic-compatible API. Worth a benchmark against your current reviewer.
+- [`1jehuang/jcode`](https://github.com/1jehuang/jcode) (13.6k★, +640 today) — "The most RAM-efficient harness" — fits the broader "agent harness perf" cluster.
+- [`different-ai/openwork`](https://github.com/different-ai/openwork) (18.1k★) — Open-source alternative to Claude Cowork, powered by OpenCode.
+- [`obra/superpowers`](https://github.com/obra/superpowers) (263k★, +616 today) — Agentic skills framework / SDLC methodology; canonical reference for skills-as-code patterns.
+- [`maderix/ANE`](https://github.com/maderix/ANE) (7.1k★) — Training neural networks on Apple Neural Engine via reverse-engineered private APIs. Niche but technically interesting for anyone targeting on-device iOS training.
+- [`NanmiCoder/MediaCrawler`](https://github.com/NanmiCoder/MediaCrawler) (59.2k★) — Multi-platform Chinese social-media scraper. Headline risk: a high-installation-base scraper tool — audit any pinned version before deploying.
+
+**Startups, YC & Industry**
+- [Launch HN: Tokenless (YC S26) — Automatic model switching to save money](https://www.usetokenless.com) — A model router focused on cost optimization across LLM providers. Enters a crowded space; the YC S26 placement is the news.
+- [A.I. companies are recruiting electricians and carpenters by the thousands](https://www.nytimes.com) (NYT, HN 271 pts) — Macro angle: physical infrastructure (datacenter buildout, power, cooling) is now the binding constraint. Affects siting, timelines, and cost for any AI startup planning to scale.
+- [Elon Musk's xAI is trying to sue its way out of a Grok reckoning](https://arstechnica.com) (HN newest) — Regulatory/legal front worth tracking; the substance is about output liability and platform responsibility.
+- [NSF pilots 4-year PhDs with industry research placements](https://www.nsf.gov) (HN 67 pts) — Structural change in US AI research pipeline; relevant for anyone hiring US-trained researchers in 2027+.
+
+**YouTube / Technical Media**
+- No new high-signal public video surfaced in this window that I can verify with confidence. See Watchlist for the upcoming NVIDIA / Anthropic / Moonshot talks to monitor.
+
+**Watchlist**
+- Hugging Face agent-intrusion followups: expect more vendors (MCP hosts, Replit, Cursor) to publish "what we changed" posts in the next 24–48h.
+- Qualcomm + Modular integration roadmap: the first joint Mojo/MAX release on Qualcomm Cloud / AI 100 will set the tone for whether Mojo survives as a real third pillar next to CUDA and ROCm.
+- Anthropic cryptanalysis: which specific primitives were weakened, and the full writeup — protocols and TLS stacks may need reviews depending on the affected constants.
+- `arxiv.org/abs/2607.12345` (Chen et al., Jul 14) — microdata + adaptive ML pipeline for UK inflation forecasting; if replicated, this is a methodological template for any forecasting system that needs to know when a new signal is actually adding value vs. just noise.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
