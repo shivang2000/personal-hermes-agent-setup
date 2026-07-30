@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 843
+        "completed": 844
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-30T21:16:33.889876+05:30",
-      "last_run_at": "2026-07-30T19:15:34.925947+05:30",
+      "next_run_at": "2026-07-31T00:03:59.339921+05:30",
+      "last_run_at": "2026-07-30T20:16:41.599061+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,18 +65,18 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 123
+        "completed": 124
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-30T20:55:00+05:30",
-      "last_run_at": "2026-07-30T17:00:21.696073+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "next_run_at": "2026-07-31T00:55:00+05:30",
+      "last_run_at": "2026-07-30T22:22:51.984967+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: Connection error.",
+      "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1518059932123926658 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "discord:#tech-news",
       "origin": {
         "platform": "discord",
@@ -120,17 +120,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 131
+        "completed": 132
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-30T20:30:00+05:30",
-      "last_run_at": "2026-07-30T20:01:38.363199+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-31T07:00:00+05:30",
+      "last_run_at": "2026-07-30T20:47:07.167898+05:30",
+      "last_status": "error",
+      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 605s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -174,15 +174,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 131
+        "completed": 132
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-30T20:30:00+05:30",
-      "last_run_at": "2026-07-30T20:04:05.559165+05:30",
+      "next_run_at": "2026-07-31T07:00:00+05:30",
+      "last_run_at": "2026-07-30T20:36:53.793156+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -281,18 +281,18 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 127
+        "completed": 128
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-30T20:45:00+05:30",
-      "last_run_at": "2026-07-30T20:02:57.018134+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "next_run_at": "2026-07-31T07:00:00+05:30",
+      "last_run_at": "2026-07-30T21:14:54.984140+05:30",
+      "last_status": "error",
+      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 1632s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1530353549668520139 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-30T20:16:33.890440+05:30"
+  "updated_at": "2026-07-30T23:03:59.340313+05:30"
 }
