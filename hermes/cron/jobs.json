@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 844
+        "completed": 845
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-31T00:03:59.339921+05:30",
-      "last_run_at": "2026-07-30T20:16:41.599061+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-31T02:06:51.777450+05:30",
+      "last_run_at": "2026-07-30T23:21:39.825018+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -72,7 +72,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-07-31T00:55:00+05:30",
+      "next_run_at": "2026-07-31T12:55:00+05:30",
       "last_run_at": "2026-07-30T22:22:51.984967+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: Connection error.",
@@ -120,7 +120,7 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 132
+        "completed": 133
       },
       "enabled": true,
       "state": "scheduled",
@@ -128,10 +128,10 @@
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
       "next_run_at": "2026-07-31T07:00:00+05:30",
-      "last_run_at": "2026-07-30T20:47:07.167898+05:30",
+      "last_run_at": "2026-07-31T00:02:42.629166+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 605s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
-      "last_delivery_error": null,
+      "last_error": "RuntimeError: Connection error.",
+      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -174,7 +174,7 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 132
+        "completed": 133
       },
       "enabled": true,
       "state": "scheduled",
@@ -182,10 +182,10 @@
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
       "next_run_at": "2026-07-31T07:00:00+05:30",
-      "last_run_at": "2026-07-30T20:36:53.793156+05:30",
-      "last_status": "ok",
-      "last_error": null,
-      "last_delivery_error": null,
+      "last_run_at": "2026-07-31T00:02:42.519247+05:30",
+      "last_status": "error",
+      "last_error": "TimeoutError: Cron job 'Reply-engagement scanner for AI accounts (30m)' idle for 912s (limit 600s) \u2014 last activity: API error recovery (attempt 2/3)",
+      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -281,7 +281,7 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 128
+        "completed": 129
       },
       "enabled": true,
       "state": "scheduled",
@@ -289,10 +289,10 @@
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
       "next_run_at": "2026-07-31T07:00:00+05:30",
-      "last_run_at": "2026-07-30T21:14:54.984140+05:30",
+      "last_run_at": "2026-07-31T00:02:42.584990+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 1632s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
-      "last_delivery_error": "live adapter send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; live adapter delivery to discord:1530353549668520139 failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]; delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "last_error": "RuntimeError: Connection error.",
+      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
       "deliver": "origin",
       "origin": {
         "platform": "discord",
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-30T23:03:59.340313+05:30"
+  "updated_at": "2026-07-31T01:06:51.790935+05:30"
 }
