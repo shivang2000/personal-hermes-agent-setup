@@ -151,9 +151,9 @@ def extract_articles(page: Page, limit: int) -> list[dict[str, Any]]:
 def cmd_search(query_text: str, limit: int) -> None:
     with exclusive_lock(), browser_session(headless=True) as (_, page):
         require_login(page)
-        goto(page, f"https://x.com/search?q={quote(query_text)}&f=live", 3000)
+        goto(page, f"https://x.com/search?q={quote(query_text)}&f=live", 6000)
         page.mouse.wheel(0, 900)
-        page.wait_for_timeout(1200)
+        page.wait_for_timeout(3000)
         emit(extract_articles(page, limit))
 
 
@@ -161,7 +161,7 @@ def cmd_profile(handle: str, limit: int) -> None:
     handle = handle.lstrip("@")
     with exclusive_lock(), browser_session(headless=True) as (_, page):
         require_login(page)
-        goto(page, f"https://x.com/{handle}", 3000)
+        goto(page, f"https://x.com/{handle}", 6000)
         emit(extract_articles(page, limit))
 
 
