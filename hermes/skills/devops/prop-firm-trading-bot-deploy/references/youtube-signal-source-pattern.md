@@ -24,9 +24,23 @@ YouTube Live
   ↓ Claude → Signal → SignalEvent → RiskManager → MT5
 ```
 
-This gives you: zero changes to Claude prompts, regex fallback, amendment detection,
-validation, SL/TP geometry, or the EventBus. The YouTube source looks exactly like a
-Telegram channel to the rest of the bot.
+This reuses the parser's extraction logic, regex fallback, amendment detection, geometry validation, and EventBus. It is **not** literally zero-change integration: a Telegram-oriented parser often rejects an unknown `yt:*` pseudo-channel through its channel registry and may stamp every emitted signal as `telegram:*`.
+
+The transport must pass an explicit source policy into the shared parser:
+
+```python
+await parser.process_message(
+    raw_message_id=raw_id,
+    channel_id=f"yt:{stream.id}",
+    message_text=synthesized,
+    image_bytes=None,
+    source=f"youtube:{stream.name}",
+    allowed_symbols=set(stream.symbols),
+    min_confidence=youtube.safety.confidence_floor,
+)
+```
+
+The parser must use `allowed_symbols` instead of the Telegram registry when supplied, enforce `min_confidence` before publishing, and preserve `source` in the `Signal`. Add an end-to-end regression proving a YouTube pseudo-channel is admitted, correctly attributed, and reaches `SignalEvent`; a mocked `process_message()` call alone does not prove this.
 
 ## Files created
 
@@ -61,6 +75,7 @@ ffmpeg -loglevel error -i <manifest> \
 - Audio chunk size: `16000 * 1 * 2 * 5 = 160000 bytes` per 5-second chunk.
 - YouTube can go offline between sessions. Listener sleeps + polls, does not crash.
 - ffmpeg stderr must be drained or it deadlocks.
+- Installing the Python `yt-dlp` dependency is insufficient: the production Docker image must also install the system `ffmpeg` binary (and CA certificates). Verify inside the built image with `ffmpeg -version`, `yt-dlp --version`, and an application import probe.
 
 ## Whisper API integration
 
@@ -90,7 +105,7 @@ ffmpeg -loglevel error -i <manifest> \
 5. **Debounce**: don't re-extract within 30s of last attempt
 6. **Hash dedup**: MD5 of merged text — skip if identical to last extraction
 7. **Synthesize**: `[YouTube Live | {name} | {symbols}]\n{merged_text}`
-8. **Delegate**: call `parser.process_message(raw_message_id, channel_id, message_text, image_bytes=None)`
+8. **Delegate with policy**: call `parser.process_message(..., source="youtube:<name>", allowed_symbols=set(stream.symbols), min_confidence=safety.confidence_floor)`.
 
 ## Safety floor for non-deterministic signal sources
 
@@ -110,6 +125,18 @@ The 6 kill switches (all configurable in `youtube_signals.yaml`):
 | `rolling_loss_pct_kill` | -2.0 | Auto-disable if source P&L < -2% rolling |
 | `only_when_technical_flat` | true | No pyramiding with technical signals |
 | `max_open_positions_from_source` | 1 | Hard cap concurrent YT-sourced positions |
+
+**Configuration is not enforcement.** Before deploy, search production code for every safety field and prove it is consumed at the actual parser/risk/order choke point. Required enforcement pattern:
+
+- parser floor before `SignalEvent` publication;
+- independent confirmation in `RiskManager._on_signal`, fail closed on API errors;
+- lot cap after position sizing and before `OrderEvent`;
+- flat/source-position/daily-loss checks inside the central risk validator;
+- consecutive-loss, rolling-P&L, and daily source-P&L updates from `PositionClosedEvent`;
+- persist kill-switch state in the tracking database so a container restart cannot erase a losing streak;
+- retain a recognizable `youtube:` marker inside the MT5 order comment so closed positions can be attributed after restart.
+
+A YAML-only safety section must be treated as a deployment blocker.
 
 ## "No paper, go funded" override pattern
 
@@ -145,22 +172,19 @@ if youtube_path.exists():
 
 ## Testing approach
 
-The pytest plugin `superclaude.pytest_plugin` may be broken (ModuleNotFoundError at import
-time, before `-p no:` can take effect). Workaround: run tests via `python3 -c "..."` with
-inline `asyncio.run()` instead of pytest:
+If pytest fails during bootstrap with `ModuleNotFoundError: No module named 'superclaude.pytest_plugin'`, `-p no:` is too late because the stale entry point loads before argument handling. Temporarily move the stale dist-info directory, run the canonical suite, and restore it with a shell trap:
 
-```python
-import asyncio
-from unittest.mock import AsyncMock, MagicMock
-
-async def test_xxx():
-    # ... test body ...
-    pass
-
-asyncio.run(test_xxx())
+```bash
+set -e
+DIST='/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/superclaude-4.1.9.dist-info'
+BACK='/tmp/superclaude-4.1.9.dist-info.test-run'
+restore(){ if [ -d "$BACK" ]; then mv "$BACK" "$DIST"; fi; }
+trap restore EXIT
+if [ -d "$DIST" ]; then mv "$DIST" "$BACK"; fi
+python3 -m pytest tests/ -q
 ```
 
-This avoids the pytest plugin loading entirely and gives the same assertion coverage.
+This preserves real `pytest-asyncio` collection and allows targeted, unit, and full-suite evidence. Inline `asyncio.run()` harnesses are useful for quick diagnosis, but they do not replace the canonical pytest run before deployment.
 
 ## Pitfall: "OLD" matching "GOLD"
 

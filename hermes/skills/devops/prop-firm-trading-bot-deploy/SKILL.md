@@ -1,13 +1,14 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.5.0
+version: 1.6.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - 1.6.0 (2026-07-31): Added Phase 0 runtime security stop-gate and references/mt5-container-compromise-response.md after detecting an active root XMR miner in an MT5/noVNC container. Adds process/log/port triage, container-vs-host scope checks, approval-gated containment, clean replacement and credential rotation standard, and explicit rule that passing bot tests never overrides a compromised execution host.
       - 1.5.0 (2026-07-24): YouTube live signal source pattern added as references/youtube-signal-source-pattern.md. Synthesized-message delegation technique (YouTube transcripts → existing SignalParser.process_message), 6-kill-switch safety floor for non-deterministic signal sources, "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV, prompt hints), channel assessment checklist, pytest-plugin-broken workaround (inline asyncio.run), "OLD" matching "GOLD" test pitfall.
       - 1.4.0 (2026-07-12): 5-minute health-watchdog pattern added as references/health-watchdog-pattern.md. Silent-on-success cron (vs digest always-emit), auto-remediate-safe-containers only (never auto-restart MT5 container — would lose noVNC login), offset-based state file in /tmp to avoid re-alerting on the same CRITICAL, Python logging level-padding pitfall (substring without close-bracket matches both formats), inject-then-reset-state testing pattern. Cron deliver=local + script self-posts to Discord only on failure.
       - 1.3.1 (2026-07-12): hourly-digest-pattern reference extended with two-stage state check (docker inspect fallback when log is stale) and naming-convention pitfall (boolean variables that flip the wrong way).
@@ -39,6 +40,18 @@ The bot's own risk guard (EmergencyStop, PropFirmGuard) must trip BEFORE the pro
 Example: FundingPips 1 Step has 3% daily / 6% overall. Bot should trip at 2% / 4.5%.
 
 ## Workflow: 8 phases
+
+### Phase 0: Runtime-target security stop-gate
+
+Before validating configuration or deploying code, inspect the actual MT5 host/container. Application tests cannot make a compromised broker terminal safe.
+
+1. Check container state, recent logs, process tree, mounts, privilege mode, and exposed ports.
+2. Treat `xmrig`, `xmr_linux_amd64`, unrelated script downloads, unknown shared objects such as `sshdd.so`, or unexpected root supervisors as confirmed compromise.
+3. If compromise is suspected, switch to read-only triage. Do not deploy, restart the container, or enter funded credentials.
+4. Containment (`docker stop metatrader5`) is reversible but operationally disruptive; obtain the normal side-effect approval, stop only the affected container, and verify ports/processes disappeared.
+5. Prefer instance/container and Wine-volume replacement over attempted cleanup. Rotate exposed credentials and restrict VNC/noVNC/RPyC to the operator IP or private networking.
+
+See `references/mt5-container-compromise-response.md` for indicators, exact triage commands, containment verification, and the clean-rebuild standard.
 
 ### Phase 1: Research the prop firm's actual rules
 
