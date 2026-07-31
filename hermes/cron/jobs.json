@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 861
+        "completed": 862
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-07-31T20:28:30.547969+05:30",
-      "last_run_at": "2026-07-31T18:27:37.438716+05:30",
+      "next_run_at": "2026-07-31T21:29:34.717869+05:30",
+      "last_run_at": "2026-07-31T19:28:40.484499+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -120,15 +120,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 158
+        "completed": 160
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-07-31T19:30:00+05:30",
-      "last_run_at": "2026-07-31T19:07:50.000718+05:30",
+      "next_run_at": "2026-07-31T20:30:00+05:30",
+      "last_run_at": "2026-07-31T20:02:37.861882+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -174,15 +174,15 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 158
+        "completed": 160
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-07-31T19:30:00+05:30",
-      "last_run_at": "2026-07-31T19:08:14.722909+05:30",
+      "next_run_at": "2026-07-31T20:30:00+05:30",
+      "last_run_at": "2026-07-31T20:08:31.519488+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -281,17 +281,17 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 154
+        "completed": 156
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-07-31T19:45:00+05:30",
-      "last_run_at": "2026-07-31T19:04:54.888544+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-07-31T20:45:00+05:30",
+      "last_run_at": "2026-07-31T20:16:12.926307+05:30",
+      "last_status": "error",
+      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 604s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-07-31T19:28:30.548709+05:30"
+  "updated_at": "2026-07-31T20:29:34.719038+05:30"
 }
