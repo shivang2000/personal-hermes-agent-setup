@@ -214,13 +214,16 @@ def compose(page: Page, text: str, image: str | None = None) -> None:
 
 
 def submit(page: Page) -> None:
-    button = page.locator('[data-testid="tweetButtonInline"]:not([disabled]), [data-testid="tweetButton"]:not([disabled])').first
-    button.wait_for(state="visible")
+    # Wait for the Post button to be enabled (text registered in React state).
     page.wait_for_function(
-        "() => { const b=document.querySelector('[data-testid=tweetButtonInline]') || document.querySelector('[data-testid=tweetButton]'); return b && !b.disabled; }"
+        """() => {
+            const b = document.querySelector('[data-testid="tweetButtonInline"]')
+                   || document.querySelector('[data-testid="tweetButton"]');
+            return b && !b.disabled;
+        }""",
+        timeout=15_000,
     )
-    # Some X layouts place an invisible overlay div that intercepts pointer
-    # events on the compose button. Use JS click to bypass the overlay.
+    # Try JS click first, then fall back to keyboard shortcut (Cmd+Enter).
     page.evaluate(
         """() => {
             const b = document.querySelector('[data-testid="tweetButtonInline"]')
@@ -228,11 +231,25 @@ def submit(page: Page) -> None:
             if (b) b.click();
         }"""
     )
-    page.wait_for_timeout(3000)
-    # A successful submit clears the composer or navigates away.
+    page.wait_for_timeout(2500)
+    # Check if composer was cleared; if not, try Cmd+Enter as fallback.
     remaining = page.locator('[data-testid="tweetTextarea_0"]').count()
     if remaining and page.locator('[data-testid="tweetTextarea_0"]').first.inner_text().strip():
-        raise RuntimeError("composer still contains text after submit")
+        # Focus the composer and try keyboard shortcut.
+        box = page.locator('[data-testid="tweetTextarea_0"]').first
+        if box.count():
+            box.click()
+            page.wait_for_timeout(200)
+        page.keyboard.press("Meta+Enter")
+        page.wait_for_timeout(3000)
+        remaining = page.locator('[data-testid="tweetTextarea_0"]').count()
+        if remaining and page.locator('[data-testid="tweetTextarea_0"]').first.inner_text().strip():
+            # One more try: Control+Enter (some platforms use Ctrl instead of Meta).
+            page.keyboard.press("Control+Enter")
+            page.wait_for_timeout(3000)
+            remaining = page.locator('[data-testid="tweetTextarea_0"]').count()
+            if remaining and page.locator('[data-testid="tweetTextarea_0"]').first.inner_text().strip():
+                raise RuntimeError("composer still contains text after submit")
 
 
 def verify_recent_post(page: Page, text: str, handle: str = DEFAULT_HANDLE) -> str | None:
