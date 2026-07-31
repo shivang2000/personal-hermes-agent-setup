@@ -1,0 +1,64 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 31 Jul 2026, 16:55 IST**
+
+**Top picks**
+- **[Coldcard Mk3 RNG advisory: seeds from firmware 4.0.1+ may be at risk](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/)** — Coinkite disclosed that starting in Mk3 firmware 4.0.1 (and extending into pre-5.6.0 Mk4/Mk5 and pre-1.5.0Q), device-generated entropy was hashed in a way that reduced effective seed entropy when dice rolls were *also* supplied. Fixed firmware 5.6.0 / 1.5.0Q released. Any HODL wallet on affected firmware needs to migrate, ideally to a fresh seed on a different device.
+- **[JEP 401: Value Objects (Preview) merged to OpenJDK master](https://github.com/openjdk/jdk/commit/cc278db)** — 64-author commit implementing value-object semantics (`=REDACTED_SET_LOCALLY
+- **[DeepSeek-V4-Flash 0731 release](https://deepseek.com/)** + **[Artificial Analysis scorecard](https://artificialanalysis.ai/)** — DeepSeek pushed a Flash-tier V4 update; the briefcase-priced tier dropped into AA's leaderboards at competitive speed (top of AA's output-tokens/s chart) while keeping cost-per-task among the lowest. Notably relevant if you route traffic across providers.
+- **[Gemini Robotics 2 / ER 2 launch](https://deepmind.google/)** — DeepMind shipped a whole-body-control robotics model plus the ER 2 orchestration layer for multi-robot task planning and video understanding. Matters beyond robotics: the same hierarchical agent pattern is what production AI shops are now trying to scale for software workflows.
+- **[GitHub Stacked PRs in public preview](https://github.blog/changelog/stacked-pull-requests-are-now-in-public-preview/)** — Stacked sessions/PRs are now live in the Copilot app and GitHub.com, the single biggest ergonomic unlock for AI-agent-driven development where each layer is a separate agent iteration. Pairs with the in-tandem blog "[How I modernized an old codebase using stacked sessions](https://github.blog/)" and the supply-chain hardening posts.
+
+**AI, Agents & Models**
+- **[DeepSeek V4 Flash 0731 — Independent evaluation](https://artificialanalysis.ai/)** — V4-Flash (Reasoning, Max Effort) added to AA's evaluation, sitting at the cheap end of cost-per-task while remaining top of the speed chart; the AA Intelligence Index v4.1 also folds in GDPval-AA V2, 𝜏³-Banking and Terminal-Bench v2.1.
+- **[Stacked sessions and PRs in the GitHub Copilot app](https://github.blog/)** — Cassidy Williams' walkthrough of modernising an old repo by stacking agent sessions and PRs; the same workflow already displaces ad-hoc branch-switching in agent harnesses.
+- **[The harness is all you need (mostly)](https://github.blog/)** — Burke Holland argues that a single well-tuned Copilot workflow (prototype → plan → implement → review) is the durable asset, independent of whichever model lands next.
+- **[Gemini Robotics 2 brings whole-body intelligence to robots](https://deepmind.google/)** — Direct policy that controls arms, legs, grippers and torso in one model; companion Gemini Robotics ER 2 handles video-understanding-based task orchestration across multi-robot fleets.
+- **[Frontier Red Team: three real-world incident investigations](https://www.anthropic.com/news)** — Anthropic shared three declassified cyber eval incidents (Jul 30) — useful pattern library for anyone building agent security evals.
+- **[AA-Briefcase benchmark launches](https://artificialanalysis.ai/)** — A new long-horizon knowledge-work benchmark from Artificial Analysis; relevant if you're shopping for agents that need to persist across sessions rather than single-turn Q&A.
+
+**Software Engineering & DevTools**
+- **[JEP 401: Value Objects (Preview) merged](https://github.com/openjdk/jdk/commit/cc278db)** — JDK-8389219 lands a preview of inline-class-style value semantics: identity-less equality, freely shareable, primitive-friendly. Plan for `--enable-preview` usage in benchmarks.
+- **[Better tools made Copilot code review worse](https://github.blog/)** — GitHub engineering team moved Copilot code review onto shared Unix-style code-exploration tooling and reduced review cost by reshaping agent workflows around PR evidence — concrete DX takeaway.
+- **[Automating cross-repo docs with GitHub Agentic Workflows](https://github.blog/)** — The .NET Aspire team's pattern for converting merged product changes into SME-reviewed docs PRs is a good template for any team drowning in stale READMEs.
+- **[Dependabot cooldown + supply-chain hardening](https://github.blog/)** — New 3-day default cooldown on Dependabot version PRs plus a retrospective on Q2 npm + GitHub Actions supply-chain mitigations. Useful if you maintain a public repo.
+- **[GCC steering committee announces AI policy](https://lwn.net/)** — LWN coverage of how one of the largest OSS compiler projects wants to handle AI-assisted contributions; reference for maintainer-governance discussions elsewhere.
+- **[The Economic Benefit of Refactoring](https://martinfowler.com/)** — Martin Fowler revisits the costs of refactoring in an AI-coding era where feature delivery is cheap but ownership is expensive; lots of useful framing for tech-lead budget talks.
+
+**Cloud, Infra, Data & Security**
+- **[Cloudflare adds post-quantum authentication to origins](https://blog.cloudflare.com/)** — Authenticated Origin Pulls and Custom Origin Trust Store now support PQ auth (ML-DSA family), addressing harvest-now-decrypt-later risk at the edge-to-origin handshake.
+- **[Cloudflare migrates cdnjs onto its own Developer Platform](https://blog.cloudflare.com/)** — 9 billion requests/day on the same infra customers use — and it pushed Workers/Workflows limits higher for everyone as a side effect.
+- **[Google: AI accelerated Chrome bug fixing](https://blog.google/)** — More Chrome bugs fixed in June than the previous two years combined, attributed to AI-assisted triage; solid read on how AI is changing software supply chains at scale.
+- **[Network simulator using Go/WASM](https://ccsim.fly.dev/)** — In-browser TCP loss/congestion simulator built on Go compiled to WASM — handy reproducible reproduction of flaky network bugs.
+- **[Cloudflare Radar Q2 2026 disruption report](https://blog.cloudflare.com/)** — Telemetry breakdown of natural-disaster and government-mandated Internet outages last quarter; useful baseline for resilience planning.
+
+**Crypto & Blockchain Engineering**
+- **[Vitalik on Obfuscation (Part II): Diamond IO](https://vitalik.eth.limo/)** — Vitalik Buterin's walkthrough of Diamond IO, an obfuscation candidate relevant to on-chain / coprocessor designs; readable for the cryptographic structure, not just the political implications.
+- **[Coldcard Mk3 seed-generation vulnerability — see Top Picks](https://blog.coinkite.com/coldcard-mk3-seed-generation-warning/)** — Every hardware-wallet user should read and act.
+
+**Open Source / GitHub**
+- **[zhaoxuya520/reverse-skill](https://github.com/zhaoxuya520/reverse-skill)** — Trending repo (612 stars today): AI-routed pentesting/skills package for Claude Code, Kiro, Cursor, Cline. Useful if you're building security tooling or red-team agents.
+- **[different-ai/openwork](https://github.com/different-ai/openwork)** — Trending (915 stars today): open-source alternative to Claude Cowork powered by opencode. Worth watching for self-hosted agent workstation patterns.
+- **[mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)** — Agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket and the web; 378 stars today. (We use a similar pipeline internally — verify any single-source claims before publishing.)
+- **[github/copilot-sdk](https://github.com/github/copilot-sdk)** — Multi-platform SDK for embedding the GitHub Copilot agent into apps and services — relevant if you've been waiting for a stable API rather than the CLI.
+- **[GCC AI policy](https://lwn.net/)** — See Software Engineering section above for the maintainer-governance context.
+- **[Google fixing more Chrome bugs than the last two years combined](https://blog.google/)** — Visible upstream signal of AI-accelerated security work.
+
+**Startups, YC & Industry**
+- **[GCC steering committee AI policy](https://lwn.net/)** — Significant governance signal for OSS projects negotiating where AI-assisted contributions fit.
+- **[Anthropic on open-weights](https://www.anthropic.com/news)** — Anthropic's published position on releasing open-weight models; framing matters for any startup deciding which model tier to bet on.
+- **[Cloudflare joins UK Cyber Resilience Pledge](https://blog.cloudflare.com/)** — Voluntary framework with board-level accountability and supply-chain rigor; precursor signal for what CRA-style obligations will look like.
+
+**YouTube / Technical Media**
+- **[Martin Kleppmann — Local-first in an unstable world](https://www.youtube.com/watch?v=--Ru7cL22rI)** — Updated talk on local-first software — useful framing if you're building offline-capable agents.
+- **[Gemini Robotics 2 demos](https://deepmind.google/)** — DeepMind's product page carries launch videos for the new whole-body and ER 2 systems.
+
+**Watchlist**
+- **Coldcard advisory ripple-effects** — Watch for exchanges / custodians publishing their own cold-storage migration guidance and any on-chain analysis of affected-address spending patterns.
+- **JEP 401 + Valhalla tooling** — Expect IDE/JDK toolchain announcements (IntelliJ, Gradle, Lombok-style projects) over the next 2-4 weeks as Value Objects hit early-access builds.
+- **DeepSeek V4 family evolution** — After V4-Pro and V4-Flash, watch for an agent-tuned or V4-VL refresh; AA will publish cost-per-task data within days.
+- **EU "Chat Control" vote trajectory** — Story surfacing on HN/Euronews this week; if it advances, expect tooling/test infrastructure changes for any service handling EU messages.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
