@@ -1,0 +1,62 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough verified material. TRELLIS.2 already HN'd in late April (so not a new story — the trending today is just the GitHub trending page itself). Let me skip TRELLIS as a fresh top story and instead lead with confirmed fresh items. I have what I need to write a high-quality digest. Time to compose.
+
+**Tech / AI / Crypto / Software Digest — Sun 2 Aug 2026, 00:55 IST**
+
+**Top picks**
+- **[Anthropic – Frontier Red Team: investigating three real-world incidents (Jul 30)](https://www.anthropic.com/news/frontier-red-team)** — Anthropic's safety team published three case studies from cybersecurity evaluations of Claude Opus 5: real-world attack chains, what failed, and what defenses the model added. Useful read for anyone building agentic systems that touch privileged credentials or network actions.
+- **[NetBSD 11.0 released (HN #1, 79 pts)](https://netbsd.org/releases/formal-11/NetBSD-11.0.html)** — First stable RISC-V port (StarFive JH71XX, VisionFive 2, STAR64, QEMU), initial Snapdragon X Elite support, a new MICROVM x86 kernel that boots in ~10 ms via PVH + VirtIO MMIO, and substantially expanded `compat_linux` (epoll via kqueue, statx, inotify, close_range, clone3, etc.). Also tighter POSIX.1-2024 / C23 compliance — relevant if you ship embedded or VM images.
+- **[ripgrep: musl binaries occasionally segfault during very-large searches (HN #7, 207 pts)](https://github.com/BurntSushi/ripgrep/issues/3494)** — Real reproducer, the thread already points at musl's allocator doing free/realloc on the same address under load. Worth scanning if you ship `rg` inside Alpine-based containers or any musl static binary at scale.
+- **[qm – Multiplayer agent harness for work (Show HN, 638 pts)](https://github.com/yc-software/qm)** — A startup-oriented agent platform that runs Pi, OpenCode, Codex, or Claude Code behind a uniform core, with per-person / per-room scoped memory, files, keychain, crons, deploys and skills — Slack and web. The interesting design move is skills being "scope-owned, shareable by grant, admin-promotable."
+- **[Run the full 2.78T-param Kimi K3 on 29 GB of RAM at 0.5 tok/s — Waste engine (Show HN, 314 pts)](https://github.com/sqliteai/waste)** — Sqlite-AI's new inference engine squeezes Moonshot's 2.78T MoE onto laptop-class memory; the repo ships the actual loader/quantization code. Heavy context for anyone tracking local MoE serving and how aggressively K3 is being optimized for single-GPU/CPU runs.
+- **[Cursor removed cost information from the usage page and CSV export (HN #8, 213 pts)](https://cursor.com)** — Users can no longer see per-prompt dollar costs in-app; this is a meaningful loss of transparency for anyone tracking coding-agent ROI. Worth flagging to your team if cost attribution is part of your agent rollout workflow.
+
+**AI, Agents & Models**
+- **[Anthropic – Our position on open-weights models (Jul 27)](https://www.anthropic.com/news/position-open-weights-models)** — Anthropic argues for mandatory safety testing of "sufficiently capable" models (open or closed) rather than blanket bans; the post also touches distillation attacks and export controls. Useful framing for ongoing EU/US AI policy debates.
+- **[GitHub – Copilot SDK v1.0.8 (rust) (Jul 22)](https://github.com/github/copilot-sdk/releases/tag/rust/v1.0.8)** — Adds documented sub-agent event attribution, expanded Azure Managed Identity BYOK guidance, and a fix for `ask_user` starving the per-session event loop. The trending repo (10k+ stars) is now a viable backend for embedded coding agents.
+- **[bytedance/deer-flow v2.0](https://github.com/bytedance/deer-flow)** — Open-source "long-horizon SuperAgent" harness with sandboxes, memories, sub-agents, skills, and a message gateway. Watch this as an alternative to LangGraph/LlamaIndex for multi-hour research + code + write workflows.
+- **[Hugging Face – speech-to-speech](https://github.com/huggingface/speech-to-speech)** — "Build local voice agents with open-source models." Building block for fully open voice-assistant stacks (ASR → LLM → TTS, all local).
+- **[Anthropic – The Making of Claude Code (Jul 6)](https://www.anthropic.com/news/making-of-claude-code)** — Engineering retrospective on how Claude Code went from an internal CLI to a product. Background reading if you're designing coding agents.
+
+**Software Engineering & DevTools**
+- **[Solid Queue 1.6.0 — fiber execution mode with Async (Jul 31)](https://github.com/rails/solid_queue/releases/tag/v1.6.0)** — Rails' DB-backed job system now supports `Async` fibers, dramatically increasing concurrency per worker process. Practical win for high-throughput Rails apps.
+- **[Pgtestdb's template-cloning approach to testing is fast (brandur)](https://brandur.org/pgtestdb)** — Deep dive on using PostgreSQL template databases for sub-second per-test DB creation. Good pattern for any team running integration tests against Postgres.
+- **[GitHub – gh-stack: stacked PRs](https://github.com/github/gh-stack)** — Official GitHub CLI extension for managing stacked/dependent PRs. Watch this if you do trunk-based dev with AI agents generating multi-step changes.
+- **[Anthropic – Ask Claude about the Anthropic Economic Index (Jul 22)](https://www.anthropic.com/news/anthropic-economic-index)** — Interactive economic-impact dataset; useful for grounding "is AI replacing coding work" debates in measured data rather than vibes.
+- **[TencentCloud / TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory)** — A team-level memory hub that turns conversations, docs and code into four reusable assets (Chat Memory, Skill, LLM-Wiki, Code-Graph), governed and shared across agents. Notable as production-grade memory infrastructure from a major cloud vendor.
+
+**Cloud, Infra, Data & Security**
+- **[Linux on ESP32](https://github.com/grieferpig/linux-on-esp32)** — Yes, really. Useful reference for low-cost Linux-capable IoT/MCU targets beyond RPi-class SBCs.
+- **[Anthropic – Frontier Red Team cyber-eval cases (Jul 30)](https://www.anthropic.com/news/frontier-red-team)** — Worth a second look from the security angle: documented attack chains against agentic systems, what defenses held, what didn't.
+- **[Ripgrep musl segfaults — see Top picks](#)** — Operational signal for anyone shipping static musl binaries at scale.
+
+**Crypto & Blockchain Engineering**
+- No fresh primary-source items passed verification in this window (CoinDesk / The Block / coindesk-style primary pages are behind Cloudflare bot checks; HN and direct protocol blogs produced no concrete engineering release in the last ~24 h). Flagging rather than guessing.
+
+**Open Source / GitHub**
+- **[microsoft/TRELLIS.2 — Native and compact structured latents for 3D](https://github.com/microsoft/TRELLIS.2)** — Microsoft's 4B-param image-to-3D model. Worth noting on the trending board even though the original Show HN ran in April; ongoing Apple-Silicon port activity keeps it live.
+- **[huggingface/speech-to-speech](https://github.com/huggingface/speech-to-speech)** — See AI section.
+- **[TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory)** — See Software Engineering section.
+- **[bytedance/deer-flow v2.0](https://github.com/bytedance/deer-flow)** — See AI section.
+- **[github/copilot-sdk](https://github.com/github/copilot-sdk)** — See AI section.
+- **[usekaneo/kaneo](https://github.com/usekaneo/kaneo)** — Open-source project management; trending for a reason if you're looking for a Jira alternative without the bloat.
+- **[zhaoxuya520/reverse-skill](https://github.com/zhaoxuya520/reverse-skill)** — AI-routed security-research skill pack for Claude Code / Cursor / Cline / Kiro. If you do authorized pentest work, an interesting framework to study even if you don't adopt it.
+
+**Startups, YC & Industry**
+- **[Kontigo (YC S24) is hiring](https://www.ycombinator.com/companies/kontigo)** — YC Fall 2026 batch applications closed Jul 27; S24 startups entering growth hiring is a useful early signal of traction.
+- **[Cursor removes usage cost data (see Top picks)](#)** — Platform-policy change with concrete consequences for builders tracking agent cost.
+- **[Canada signs UN Cybercrime Convention (HN #9, 197 pts)](https://www.michaelgeist.ca/)** — Michael Geist's analysis argues the convention as drafted enables broad cross-border surveillance with weak human-rights safeguards. Worth reading if you operate infrastructure in or routed through Canada.
+
+**YouTube / Technical Media**
+- No fresh public-watch items this cycle — HN was dominated by NetBSD, ripgrep, and Cursor stories; subscription-based technical channels were not verifiable in this run, so flagged rather than fabricated.
+
+**Watchlist**
+- **Claude Opus 5 post-launch reliability** — Two HN-reported "Elevated errors" incidents (Jul 27) plus leaked system-prompt discussion; worth tracking whether Anthropic publishes a stability follow-up this week.
+- **Local MoE inference for K3-class models** — Waste, Unsloth GGUF (594 GB), and RightNow-AI/local-kimi all shipped in the same week. If 2.78T-param quality lands on a single RTX 5090, on-prem coding-agent economics change fast.
+- **Cursor cost transparency** — Community backlash is loud (96+ comments, 213 pts); possible follow-up from Cursor or competing coding agents (Claude Code, Codex, Windsurf) positioning on cost visibility.
+- **NetBSD 11.0 RISC-V + MICROVM adoption** — First stable RISC-V plus 10 ms boot times are interesting for edge/VM workloads; watch for downstream ports and CI images.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
