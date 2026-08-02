@@ -1,0 +1,66 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough verified material. Let me write the digest now.
+
+**Tech / AI / Crypto / Software Digest — Sunday, 2 August 2026, 00:55 IST**
+
+**Top picks**
+- [Coldcard hardware-wallet exploit: ~$89M swept from ~1,200 BTC addresses](https://www.coindesk.com/) (CoinDesk / Galaxy Research) — Weak seed generation in Coldcard let an attacker reconstruct likely private keys offline and sweep funds without ever touching the devices; third wave now hit 4,500 addresses. Concrete self-custody incident, with CZ publicly calling for wallet diversification.
+- [Go 1.27 interactive tour](https://victoriametrics.com/blog/go-1-27/) (VictoriaMetrics, by Jesús Espino) — Deep, runnable walkthrough of the headline features: **generic methods** (methods with their own type parameters, independent of the receiver), promoted-field struct-literal keys, generalized function type inference, and a faster `runtime.alloc` path (up to 30% on small allocations, ~1% real-world, +60 KB binary).
+- [Seedance 2.5](https://bytedance.com/) (ByteDance) — Latest version of ByteDance's video generation model, trending hard on HN (302 points). Worth a look for multimodal/video pipeline builders tracking open vs. proprietary frontier video models.
+- [RFC 10015: Deprecating obsolete key-exchange methods in TLS 1.2/DTLS 1.2](https://www.rfc-editor.org/) — IETF formally deprecates legacy KEX; long tail of TLS stacks and embedded devices will need updates. Practical, non-hype security news.
+- [TencentCloud / TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory) — Team-level memory hub for AI agents that turns chat, docs, and code into four reusable assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) shared across frameworks. Notable open-source move in the agent-memory space.
+- [GitHub Copilot SDK](https://github.com/github/copilot-sdk) — Official multi-platform SDK for embedding the GitHub Copilot agent into apps and services. Direct shot across the bow for third-party agent harnesses.
+
+**AI, Agents & Models**
+- [Hugging Face `speech-to-speech`](https://github.com/huggingface/speech-to-speech) — Open-source framework for building local voice agents with open models (+442 stars today). Competes directly with closed realtime voice APIs.
+- [Bytedance `deer-flow`](https://github.com/bytedance/deer-flow) — Long-horizon "SuperAgent" harness: research, code, create; sandboxes, memories, tools, subagents, message gateway. 78k stars; one of the bigger open agent-harness projects.
+- [DeepSeek's Theory of the AI Gap](https://hellochinatech.com/) (HN) — Analysis framing the US/China AI capability gap; useful context for builders betting on either ecosystem.
+- [Testing LLM Concurrency on Consumer Hardware (RTX 5060)](https://2it.onl/) (HN) — Empirical concurrency/throughput numbers on a 5060 — useful baseline if you're sizing local inference.
+- [MUD as AI Evaluation, and LLM-judge distortion aggregate κ misses](https://lesswrong.com/) (HN) — Argues multi-step textual-world evals surface things that headline benchmarks miss; relevant if you're building eval harnesses.
+
+**Software Engineering & DevTools**
+- [We accidentally built an LLVM compiler for Jax](https://iza.ac/) (HN) — Practitioner write-up on what happens when an XLA-style ML stack bumps into LLVM; the kind of post that explains why JAX/MLIR tooling is brittle in practice.
+- [We accidentally built an LLVM compiler for Jax](https://iza.ac/) — original essay, [show HN: Galda](https://galda.app/) — IDE-style overlay so you can return to Claude Code / Codex sessions without grepping Git.
+- [Microsoft `TRELLIS.2`](https://github.com/microsoft/TRELLIS.2) — Native, compact structured latents for 3D generation; relevant for 3D/asset pipelines.
+- [Show HN: Btfy – a blockchain that uses weather observations](https://github.com/kotagit75) — Novel consensus substrate using meteorological data; interesting experiment in non-financial PoX designs.
+- [Atom is better than RSS, in ways that matter](https://chrismorgan.info/) (HN) — Solid spec-level comparison; relevant to anyone shipping feeds.
+- [The cipher behind QSYRUPWD: reconstructing IBM i password hashes](https://silentsignal.eu/) (HN) — Reverse-engineering of IBM i password hashing; useful for legacy enterprise security audits.
+
+**Cloud, Infra, Data & Security**
+- [Linux desktop market share has hit over 10% in North America](https://www.reddit.com/) (HN) — StatCounter threshold crossed; meaningful for cross-platform / Electron / packaging decisions.
+- [P\[drive failure\]: how reliable is your NAS?](https://khz.ac/) (HN) — Backblaze-style failure data for consumer/SMB NAS; good read for homelab/SRE folks.
+- [When `random.bytes()` runs but doesn't work](https://btcpp.dev/) (HN) — Worth a read if you've ever trusted a CSPRNG wrapper without checking the backend.
+
+**Crypto & Blockchain Engineering**
+- [XRP Ledger upgrade `xrpld` 3.3.0 brings back features once pulled over critical bugs](https://www.coindesk.com/) — Two features previously withdrawn after researchers found bugs that could've enabled unauthorized transactions or fee draining are returning with revised amendments. Good example of post-mortem-driven protocol hardening.
+- [Tether posts $1.5B operating profit in Q2; reserve buffer falls by half](https://www.coindesk.com/) — Adds 14 t of gold and ~1,800 BTC to reserves; reserve-ratio drop is the actual story for stablecoin engineers.
+- [Circle secures New York trust charter](https://www.coindesk.com/) — USDC issuer approved for fiduciary/custody services under NY banking law; structural step for US stablecoin infra.
+- [Dubai-based exchange "Shelbit" tied to $4B Iran sanctions-evasion network](https://www.coindesk.com/) — On-chain forensics tying an exchange to sanctioned-Iran flows, including flows into Binance. Compliance/AML-relevant.
+- [Tokenized stock trading surged 288% in July, but one QQQ token drove most of it](https://www.coindesk.com/) — Headline volume dominated by QQQB; reminder that "tokenization" volume stats are highly concentrated.
+- [Bank of Italy: stablecoins aren't necessarily cheaper for remittances](https://www.coindesk.com/) — Mystery-shopper study; FX spreads and banking rails still dominate cost.
+
+**Open Source / GitHub**
+- [zhaoxuya520/reverse-skill](https://github.com/zhaoxuya520/reverse-skill) — Skill-routing pack for AI coding clients (Claude Code, Kiro, Cursor, Cline) for reverse engineering and authorized pentest workflows (+1,320 stars today). Notable for the emerging "skill pack" pattern on top of MCP-style clients.
+- [usekaneo/kaneo](https://github.com/usekaneo/kaneo) — Open-source project management; +760 stars today.
+- [huggingface/speech-to-speech](https://github.com/huggingface/speech-to-speech), [tencentcloud/tencentdb-agent-memory](https://github.com/TencentCloud/TencentDB-Agent-Memory), [github/copilot-sdk](https://github.com/github/copilot-sdk), [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners), [github/gh-stack](https://github.com/github/gh-stack) — see above; all on today's GitHub trending.
+
+**Startups, YC & Industry**
+- [EU moves to make AI labels compulsory on authentic-looking content](https://www.theguardian.com/technology/2026/aug/02/ai-labels-to-be-compulsory-on-authentic-looking-content-under-eu-rules) (HN) — Compliance-relevant for any product publishing user-generated or AI-generated media into the EU. (Guardians URL 404'd on direct hit; flagging as unverified pending primary source.)
+- [Morph (YC S23) is hiring Member of Technical Staff](https://www.ycombinator.com/) (HN) — Active YC recruiting signal.
+- [GitHub Copilot SDK](https://github.com/github/copilot-sdk) — see above; relevant industry signal beyond pure OSS.
+- [Coindesk: Coinbase's weak quarter leaves Wall Street split on timing of a recovery](https://www.coindesk.com/) — Trading-volume dip noted as the driver; mostly market-structure commentary, lower priority.
+
+**YouTube / Technical Media**
+- [Fireship / Byte-Sized mini-videos on Kimi K3, Seedance 2.5, EU AI Act](https://www.youtube.com/@Fireship) (public search) — Short explainer coverage of three of the day's biggest stories; useful 5-min catch-up.
+- [IBM CEO Arvind Krishna on quantum computing commercialization](https://www.coindesk.com/) (CNBC, via Coindesk) — Predictions that quantum will start generating meaningful revenue before decade-end; longer-term infra signal.
+
+**Watchlist**
+- **Coldcard exploit follow-on** — $89M+ now swept across 4,500 addresses; expect firmware patches, fund-recovery tracing posts, and possible migration of self-custody users toward ETFs or multisig over the next 1–2 weeks.
+- **Go 1.27 ecosystem ripple** — Generic methods + better alloc paths will likely surface real-world benchmarks and a wave of "we migrated to 1.27" posts from large Go shops.
+- **GitHub Copilot SDK vs. third-party agent harnesses** — First official multi-platform SDK from a major host; pricing/terms and how it compares to direct OpenAI/Anthropic SDKs will be the key things to watch.
+- **EU AI content-labeling rules** — Implementation details (which content counts as "authentic-looking", watermark spec) will determine real compliance cost.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
