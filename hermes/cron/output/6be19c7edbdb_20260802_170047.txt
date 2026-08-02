@@ -1,0 +1,66 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have a strong, source-backed set of items. Time to write the digest.
+
+**Tech / AI / Crypto / Software Digest — 17:00 IST, 02 Aug 2026**
+
+**Top picks**
+- **[Lean kernel soundness bug #14576 — postmortem](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/)** (Leonardo de Moura / Lean FRO) — A soundness bug in the Lean 4 kernel let a proof of `False` through because phantom parameters on a nested inductive type escaped type checking during kernel elimination. Discovered via an AI-generated "Collatz disproof," fixed in ~1h; an independent Rust checker (nanoda) had a separate, coincidentally-similar bug. Important for anyone trusting LLM-generated or kernel-checked formal proofs.
+- **[Coldcard hardware-wallet RNG flaw — $70M+ drained](https://engineering.block.xyz/blog/predictable-rng-fallback-and-32-bit-reseed-in-coldcard-firmware)** (Block Engineering + Coinkite) — A `#ifndef` instead of `#if` in libngu made COLDCARD's `random.bytes()` fall back to a deterministic MicroPython Yasmarang PRNG seeded from the MCU UID + SysTick + RTC. Mk2/Mk3 firmware v4.0.0–v4.1.9 have *no* secure-element reseed; Mk4/Q/Mk5 add a 32-bit reseed (≈2³¹ candidates). Any seed generated on affected firmware should be treated as burned.
+- **[Kimi K3 served on AMD MI355X beats B300 on perf/$](https://www.wafer.ai/blog/kimi-k3-mi355x)** (Wafer.ai) — 8× MI355X at TP8 reaches 952 tok/s/node aggregate at 118 tok/s/stream for 2.8T-param Kimi K3 — ~3.8× a 2-node TP16 B200 build on aggregate, and ~1.45× the perf/$ of B300. The interesting engineering detail: most of the gap closed without custom kernels, just by working around a missing `top_k_renorm_prob` alias in sglang's ROCm sampling branch.
+- **[ByteDance Seedance 2.5 — 30-second audio-video joint generation](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5)** — Unified multimodal audio-video model generating up to 30s clips in a single pass with multi-round extension, up to 30 images / 10 video / 10 audio references per generation, and timestamp-level editing. Rolling out on Jimeng AI and Doubao Pro; API via BytePlus ModelArk "coming soon."
+- **[EU DMA decision opens 11 Android features to third-party assistants](https://www.openhomefoundation.org/blog/a-big-win-for-android-interoperability/)** (Open Home Foundation / EC DMA) — Alphabet must let third-party voice assistants use the same wake-word DSP path, ambient sensors, and screen automation as Gemini, with concurrent wake-word access and no default-assistant coupling. Matters for Home Assistant, accessibility, and anyone building Android-side AI agents that need low-power mic or sensor access.
+
+**AI, Agents & Models**
+- **[Antirez's `ds4`: local DeepSeek 4 Flash/Pro inference engine for Metal/CUDA/ROCm](https://github.com/antirez/ds4)** — Redis creator Salvatore Sanfilippo's 19.8k★ C/CUDA/ROCm engine ships Metal + CUDA tensor-parallel + distributed inference and a native DS4 agent. Useful for engineers running frontier-sized open models locally without Python stack overhead.
+- **[Anthropic Frontier Red Team: three real-world cybersecurity incidents](https://www.anthropic.com/news/frontier-red-team-real-world-incidents)** (Anthropic, 30 Jul) — Public walk-through of three model-misuse cases discovered in Claude evaluations. Worth a read for anyone building red-team pipelines or eval frameworks around LLM agents.
+- **[Smart model routing directly in Claude/Codex/Cursor — `router` (216p)](https://github.com/workweave/router)** — Adds a single `AGENTS.md`-style router so Claude Code, Codex, and Cursor pick the right model for subtasks without you wiring each client. Trending Show HN with 113 comments.
+- **[Anthropic's "position on open-weights models"](https://www.anthropic.com/news/our-position-on-open-weights-models)** (27 Jul) — Anthropic's stated stance against open-weighting their largest models, citing jailbreak risks. Worth reading for context on the closed-vs-open model debate.
+
+**Software Engineering & DevTools**
+- **[Go 1.27 interactive tour](https://victoriametrics.com/blog/go-1-27/index.html)** (237p) — Walks through new stdlib and runtime changes in Go 1.27. Good quick reference for backend teams planning an upgrade.
+- **[Postmortem for Kernel Soundness Bug #14576 (Lean)](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/)** (152p) — See top picks. Great read on the discipline of keeping a kernel's TCB minimal and trusting *nothing* the elaborator produces.
+- **[RFC 10015: deprecating obsolete key-exchange methods in TLS 1.2 / DTLS 1.2](https://www.rfc-editor.org/rfc/rfc10015.html)** (63p) — IETF formally drops legacy KEX (e.g., DHE ≤ 1024-bit, 3DES-era options) in TLS 1.2/DTLS 1.2. Concrete checklist for anyone hardening TLS configs.
+- **[Syncular — offline-first SQL sync with TS + Rust cores (Show HN)](https://github.com/syncular/syncular)** (16p) — A new local-first sync engine with a TypeScript app SDK and a Rust sync core. Interesting alternative to Electric SQL / Replicache for CRDT-lite workflows.
+- **[OpenTelemetry-instrumented espresso machine on ClickHouse Cloud](https://clickhouse.com/blog/espresso-machine-observability-with-otel)** (14p) — Practical OTel→ClickHouse walkthrough; useful as a reference for shipping high-cardinality metrics to ClickHouse.
+- **["When random.bytes() runs but doesn't work"](https://insider.btcpp.dev/p/when-randombytes-runs-but-doesnt)** (53p) — A subtle C++ thread-safety bug in stdlib RNG; the deeper Coldcard RNG flaw above makes this a timely companion read.
+
+**Cloud, Infra, Data & Security**
+- **[Bank of Italy: stablecoin remittances not necessarily cheaper](https://www.coindesk.com/business/2026/08/01/bank-of-italy-research-suggests-stablecoins-arent-necessarily-cheaper-for-remittances)** — Mystery-shopping study finds FX spreads and exchange fees offset much of the on-chain cost. Important nuance for anyone building cross-border payments on stablecoin rails.
+- **[Circle secures New York trust charter](https://www.coindesk.com/business/2026/08/01/circle-secures-new-york-trust-charter-as-crypto-regulatory-push-accelerates)** — USDC issuer can now offer fiduciary and custody services under NY banking law. Continues the trend of stablecoin issuers moving toward bank-style charters.
+- **[XRPL rippled 3.2.1 hotfix + GPG key rotation (3.2.1, 31 Jul)](https://github.com/xrplf/rippled/releases)** — XRP Ledger reference server hotfix plus a Ripple GPG signing-key rotation. Operators need to import the new key or auto-upgrades break.
+- **[Tether Q2 operating profit $1.5B, reserve buffer halved](https://www.coindesk.com/business/2026/07/31/tether-posts-usd1-5-billion-operating-profit-in-q2-as-reserve-buffer-falls-by-half)** — Tether added ~14t of gold and ~1,800 BTC to reserves; reserve buffer fell 50% relative to circulation. Worth tracking for anyone integrating USDT.
+
+**Crypto & Blockchain Engineering**
+- **[Coldcard RNG flaw — $70M+ drained, 4,500+ addresses swept](https://www.coindesk.com/business/2026/08/01/bitcoin-cold-wallet-attack-spreads-to-4500-addresses-as-losses-near-usd89-million)** — Galaxy Research says a third wave is now targeting smaller balances; total losses now ~$89M across 4,500+ addresses. See Block's postmortem (top picks) for the underlying mechanism.
+- **[XRP Ledger 3.3.0 brings back two features previously pulled for critical bugs](https://www.coindesk.com/business/2026/08/01/xrp-ledger-upgrade-brings-back-features-once-pulled-over-critical-bugs)** — Two amendments (previously withdrawn because researchers found unauthorized-spend and fee-drain paths) re-enable with hardened implementations. Expected to go live next week.
+- **[Solana Foundation's new CISO warns AI is making crypto scams more convincing](https://www.coindesk.com/business/2026/08/01/solana-foundations-new-ciso-warns-ai-is-making-crypto-scams-more-convincing)** — Michael Coates (new CISO) flags AI-generated identities and deepfakes as the next wave of attack surface. Relevant for wallet/UX teams.
+- **[Dubai exchange "Shelbit" linked to $4B Iran sanctions-evasion network](https://www.coindesk.com/business/2026/08/01/dubai-based-crypto-exchange-tied-to-usd4-billion-iran-sanctioned-evasion-network)** — On-chain tracing tied Shelbit to flows through Binance, gambling sites, and sanctioned Iranian entities. Reminder that venue-level compliance gaps still drive the largest illicit flows.
+- **[CertiK H1 2026 Wrench Attacks: $124M losses, +33% YoY](https://www.coindesk.com/press-releases/2026/07/22/certik-h1-2026-wrench-attacks-report)** — Physical-coercion attacks on crypto holders are up sharply. Consider for any team building self-custody UX for high-net-worth users.
+
+**Open Source / GitHub**
+- **[`lyogavin/airllm` — 70B inference on a single 4GB GPU (242 stars today)](https://github.com/lyogavin/airllm)** — Tiling/sliding inference for huge checkpoints. Useful baseline for anyone shipping consumer-GPU LLM apps.
+- **[`Panniantong/Agent-Reach` — single CLI to read Twitter/Reddit/YouTube/GitHub/Bilibili/XHS without API keys (645⭐ today)](https://github.com/Panniantong/Agent-Reach)** — Drop-in tool for coding agents needing web/ social research without paid APIs.
+- **[`TencentCloud/TencentDB-Agent-Memory` — team-level memory hub for AI agents (227⭐ today)](https://github.com/TencentCloud/TencentDB-Agent-Memory)** — Four reusable assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) shared across agents/frameworks. Worth a look for anyone building multi-agent memory layers.
+- **[`different-ai/openwork` — open-source Claude Cowork alternative (585⭐ today)](https://github.com/different-ai/openwork)** — Powered by opencode; agentic desktop workspace, MIT-style license.
+- **[`mvanhorn/last30days-skill` — Claude skill that synthesizes Reddit/X/YouTube/HN/Polymarket (600⭐ today)](https://github.com/mvanhorn/last30days-skill)** — Practical reference for grounded research agents.
+
+**Startups, YC & Industry**
+- **[Launch HN: Airweave (YC X25) — "let agents search any app"](https://github.com/airweave-ai/airweave)** (164p) — Connectors that expose arbitrary SaaS data to LLM agents via a unified search API. Plays in the same space as Hebbia/Glean.
+- **[Launch HN: Manufact (YC S25) — MCP Cloud](https://manufact.com)** (111p) — Hosted MCP server platform. Watch if you're building agent infra — managed MCP could compress a lot of glue work.
+- **[Launch HN: RunRL (YC X25) — Reinforcement learning as a service](https://runrl.com)** (71p) — Managed RL training/inference. RL post-training has been the missing piece for many open-weights teams; managed infra here is notable.
+- **[Launch HN: Expanse (YC P26) — unlock wasted GPU capacity](https://www.expanse.ai)** (103p) — A spot market / scheduler for idle GPU capacity. Relevant to anyone paying list price for H100s/MI300X.
+
+**YouTube / Technical Media**
+- **[Seedance 2.5 official demos](https://seed.bytedance.com/en/seedance2_5)** — The full end-to-end creative film Seedance 2.5 produced itself; best way to judge the multi-shot coherence and 30-second coherence claims.
+- **[The Kimi K3-on-MI355X teardown is text, but the Wafer.ai piece links benchmark charts](https://www.wafer.ai/blog/kimi-k3-mi355x)** that double as a tutorial on reading aggregate-vs-per-stream throughput on real serving stacks.
+
+**Watchlist**
+- **Coldcard user impact and migration tooling** — Coinkite's definitive report and the post-exodus user flow to seeds generated on safer firmware. Also: any movement from regulators on hardware-wallet RNG auditing standards.
+- **Tether reserve buffer + stablecoin regulatory momentum** — Half-buffer in a single quarter alongside Circle's NY charter is a meaningful divergence in how the two largest stablecoin issuers are positioning.
+- **Sglang ROCm parity** — The MI355X postmortem was light on custom kernels. If AMD + the open-weights serving stacks close the ROCm sampling/scheduler gap further, perf/$ of AMD nodes will keep improving through Q4.
+- **EU DMA Android implementation milestones** — Google has two months to file implementation plans; watch for "malicious compliance" patterns in the actual SDK changes.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
