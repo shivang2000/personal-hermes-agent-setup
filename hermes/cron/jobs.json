@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 915
+        "completed": 916
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-08-03T03:25:05.132657+05:30",
-      "last_run_at": "2026-08-03T01:24:17.692904+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-08-03T04:26:09.508261+05:30",
+      "last_run_at": "2026-08-03T02:25:42.152119+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-03T02:25:05.133969+05:30"
+  "updated_at": "2026-08-03T03:26:09.508842+05:30"
 }
