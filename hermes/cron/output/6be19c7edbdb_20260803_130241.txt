@@ -1,0 +1,65 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. Let me write the digest.
+
+**Tech / AI / Crypto / Software Digest — Monday, 4 August 2026, 00:55 IST**
+
+**Top picks**
+- **[Qwen3.8-Max: A New Bar for Coding and Cowork](https://qwen.ai/blog?id=qwen3.8)** — Alibaba's new flagship MoE LLM is live, positioned as their strongest coding + agent model yet; the Hacker News launch hit #2 (443 pts) within hours, and the post is dated 2026/08/03 on qwen.ai. Worth probing on coding evals before treating as a Claude/GPT-5 class replacement, but the deployment posture (open-ish + Aliyun API) matters for builders hedging on a single vendor.
+- **[Cloudflare launches "Agents Week"](https://blog.cloudflare.com/welcome-to-agents-week/)** — Cloudflare is repositioning its entire platform around one-to-one agent execution: V8 isolates (~100× faster/cheaper than containers) become the default primitive, container sandboxes are going GA, and Cloudflare Tunnel + post-quantum auth are folded into the agent story. Practically: if you run coding or research agents today, the cost/perf math for serverless is about to shift under you.
+- **[Stacked pull requests in public preview (GitHub)](https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/)** — Native, first-party "stacks" of dependent PRs with `gh-stack` CLI, stack maps, one-click merge-queue landing, and an `agent skill` for Copilot. Directly targets the AI-coding review bottleneck (large PRs from agents); a CLI extension and merge-queue integration are already shipping.
+- **[npm 2FA-bypass tokens stripped of sensitive account actions](https://github.blog/changelog/2026-07-31-restricting-npm-bypass-2fa-granular-access-tokens/)** — Granular access tokens that bypass 2FA can no longer create/delete tokens, change package access or maintainers, or manage org membership; direct publish and bypass are being further de-precate in stages, with January 2027 as the next milestone. If you publish packages, move to [trusted publishing (OIDC)](https://docs.npmjs.com/trusted-publishers) or staged publishing now.
+- **[RFC 9851: TLS 1.2 is in Feature Freeze](https://www.rfc-editor.org/rfc/rfc9851.html)** — The IETF formally freezes TLS 1.2 features; new cipher suites, signature schemes, and PQ-only deployment guidance is being routed to TLS 1.3. Pairs with [Cloudflare enabling ML-DSA post-quantum authentication for Authenticated Origin Pulls and Custom Origin Trust Store](https://blog.cloudflare.com/post-quantum-authentication-to-origins/) — both for origin connections today; visitor-facing PQ auth via Merkle Tree Certificates is targeted for 2027.
+- **[Coldcard weak-seed exploit: ~$89M swept, ~4,500 BTC addresses](https://www.coindesk.com/)** — Galaxy Research says an attacker has been able to *recreate private keys offline* from weak seed generation on Coldcard hardware wallets, sweeping ~1,000+ BTC from ~1,200 wallets across a third wave that now targets smaller balances. CZ and others are urging wallet diversification; this is a genuine seed-generation flaw, not a supply-chain or phishing attack.
+
+**AI, Agents & Models**
+- **[Karpathy's "Pelican" post](https://twitter.com/karpathy)** — Top of HN (546 pts) yesterday; details of the project are paywalled/inaccessible without login, but it's clearly a new educational/release from Karpathy tied to his Twitter. Worth a watch on the YouTube channel this week.
+- **[Claude Cowork now available via OpenWork open-source alternative](https://github.com/different-ai/openwork)** — Different-AI's openwork is the trending #5 OSS Claude-Cowork-equivalent (20.5k★, 2.1k forks), built on `opencode`. Useful reference for self-hosting an agentic desktop harness without Anthropic's managed Cowork.
+- **[Antirez ships ds4: local DeepSeek-4 Flash/PRO inference engine for Metal/CUDA/ROCm](https://github.com/antirez/ds4)** — Trending #13 today (20.1k★). A minimal, fast C/C++ local inference path for DeepSeek-4 if you want to run it on Apple Silicon, NVIDIA, or AMD without llama.cpp.
+- **[lyogavin/airllm — 70B inference on a single 4GB GPU](https://github.com/lyogavin/airllm)** (26k★) and **[TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory)** (11.4k★, 602 stars today) — Two very different ends of the agent stack: single-GPU massive-model inference, and a "team-level memory hub" that turns chat/docs/code into reusable Skill/LLM-Wiki/Code-Graph assets for multi-agent systems. Both rising fast today.
+- **[AI migrated legacy COBOL → Java, bugs included (arXiv)](https://arxiv.org/abs/2508.00001)** — 4h-old HN discussion. Empirical look at LLM-generated COBOL→Java migrations retaining semantic bugs; useful counterweight to the "vibe-migrate the mainframe" narrative.
+
+**Software Engineering & DevTools**
+- **[GitHub Copilot code review: Agent skills + MCP now GA](https://github.blog/changelog/)** (Jul 29) — The "skills" + MCP plumbing that lets you wire custom tools into Copilot's code-review agent has left preview; relevant for any team standardizing on Copilot for PR review.
+- **[GitHub MCP Server supports the next MCP specification](https://github.blog/changelog/)** (Jul 23) and **[GHAS / Dependabot malicious-package coverage expanded](https://github.blog/changelog/)** (Jul 28) — Two supply-chain-y follow-ons: MCP protocol upgrade, plus Dependabot alerts now covering more ecosystems for malicious packages.
+- **[RFC 9851: TLS 1.2 feature freeze](https://www.rfc-editor.org/rfc/rfc9851.html)** — See top picks. Practical action: for new internal services, default to TLS 1.3 and start tracking [MTC](https://blog.cloudflare.com/post-quantum-authentication-to-origins/) for browser-side PQ.
+- **[Rust project goals: Immobile types and guaranteed destructors](https://github.com/rust-lang/rust-project-goals/issues)** (HN, 18 pts) — Surfaced as an active Rust Project Goals tracking issue; relevant if you care about `Drop` semantics + ownership guarantees for low-level FFI/safety-critical work.
+- **[Electron 43 released](https://www.electronjs.org/blog)** (Jul 2) — Chromium 150, V8 15.0, Node 24.17. Headline release even if a few weeks old; most Electron app maintainers will want to plan upgrades around Node 24 baseline.
+
+**Cloud, Infra, Data & Security**
+- **[Cloudflare: Post-quantum authentication to origins now supported](https://blog.cloudflare.com/post-quantum-authentication-to-origins/)** (Jul 29) — ML-DSA-44/65/87 supported on Authenticated Origin Pulls and Custom Origin Trust Store. Cloudflare-side config is opt-in; certificate generation needs OpenSSL 3.5.0+. See top picks for the strategic context.
+- **[Cloudflare internal DNS GA](https://blog.cloudflare.com/)** (Jul 20) — Authoritative + recursive DNS for private networks on the same global control plane as Zero Trust.
+- **[Cloudflare "Precursor": continuous client-side behavior signals for bot/agent detection](https://blog.cloudflare.com/)** (Jul 13) — Replaces batch fingerprinting with a session-level behavioral model; explicitly positions itself for the agent era.
+- **[cdnjs migrated entirely to Cloudflare Developer Platform](https://blog.cloudflare.com/)** (Jul 30) — 9B req/day open-source CDN is now on Workers + Workflows; pushed Workers' scale limits higher for everyone.
+- **[BGP ORIGIN attribute manipulation study](https://blog.cloudflare.com/)** (Jul 24) — ~70% of BGP paths see ORIGIN rewrites by transit providers for traffic-engineering; Cloudflare argues for deprecating ORIGIN in route selection. Worth a read if you operate multi-transit networks.
+
+**Crypto & Blockchain Engineering**
+- **[XRP Ledger xrpld 3.3.0 release next week](https://www.coindesk.com/)** — Five amendments shipping, two of which are revised versions of features previously withdrawn over bugs that could have allowed unauthorized transactions or fee draining. Cautious, security-first protocol upgrade.
+- **[Bank of Italy research: stablecoins not cheaper for remittances](https://www.coindesk.com/)** — Mystery-shopping study finds exchange fees + FX spreads + banking rails often wipe out any advantage vs. traditional transfers. Good data point against the "stablecoins fix remittances" narrative.
+- **[SEC reviewing Nasdaq bitcoin-options approval after CME challenge](https://www.coindesk.com/)** — CME argues bitcoin-options jurisdiction belongs with the CFTC. Outcome affects how US retail gets BTC price exposure via regulated venues.
+- **[Tokenized stock trading volume +288% in July, but one QQQ token drove most of it](https://www.coindesk.com/)** — Without QQQB, July tokenized-equities volume was ~$2.03B (~30% below June). Useful reality check on the "tokenized equities are taking off" narrative.
+
+**Open Source / GitHub**
+- **[Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach)** — #9 trending (65.1k★, +659 today). A unified CLI that gives agents read/search access to Twitter, Reddit, YouTube, GitHub, Bilibili, XiaohongShu without paid API keys. Useful pattern to study for any team building agent data-access layers.
+- **[different-ai/openwork](https://github.com/different-ai/openwork)** and **[zhaoxuya520/reverse-skill](https://github.com/zhaoxuya520/reverse-skill)** — Trending agent infra: open-source Claude Cowork alternative (20.5k★) and a security-research skill router for Claude Code / Kiro / Cursor / Cline with self-evolving KB (14.4k★). Both seeing rapid adoption.
+- **[usekaneo/kaneo](https://github.com/usekaneo/kaneo)** — #2 trending today (6.4k★, +496). Minimal open-source project management; "all you need, nothing you don't" pitch. Worth a look if Linear/Jira feel overweight for your team.
+- **[mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)** — AI research skill that pulls Reddit/X/YouTube/HN/Polymarket into a grounded summary. Pattern: composition over single-source scrapers.
+
+**Startups, YC & Industry**
+- **YC Fall 2026 batch applications closing Jul 27** — YC site banner still up on the HN page. Last call for the next batch.
+- **Show HN: Kakehashi — macOS binaries on Linux ARM** (209 pts, 14h) — Experimental userspace binary-translation layer running macOS apps on Linux ARM. If real, this is meaningful for Apple-Silicon-software-on-Asahi/Termux use cases.
+- **Show HN: ssh ssh.place** (99 pts) and **Show HN: Isopolis – isometric pixel map of SF** (188 pts) — Two well-received weekend builds; ssh.place is a community SSH playground, Isopolis is a procedurally styled city visualization. Both good examples of "small, focused web products" still cutting through HN.
+
+**YouTube / Technical Media**
+- **[Andrej Karpathy – Neural Networks: Zero to Hero](https://karpathy.ai/)** — Still the canonical "how LLMs actually work under the hood" series; relevant as Qwen3.8-Max and other open-weight coding models land. No new drop today, but ongoing companion content to "Pelican" if it ships.
+- **[Yannic Kilcher / AI news channels](https://www.youtube.com/)** — Expect Qwen3.8-Max, Karpathy's Pelican, and the Cloudflare "Agents Week" announcements to dominate the next 48-72h of technical AI commentary. Worth queueing once first-look hands-on videos land.
+
+**Watchlist**
+- **Qwen3.8-Max benchmarks + agent harness integrations** — HN discussion is in full swing; expect follow-up benchmarks, open-weight release status, and Claude Code / Cursor / Cline plugin announcements within 24-48h.
+- **Coldcard exploit attribution and mitigation** — Losses are now ~$89M across ~4,500 addresses; the seed-generation bug specifics, any firmware patch, and whether other hardware wallets share the same flaw are the next things to watch.
+- **Cloudflare "Agents Week" rolling announcements** — The first post framed a whole week of agent-infrastructure drops; expect concrete updates on container sandboxes GA, identity/attestation primitives, and Dynamic Workers pricing over the next several days.
+- **XRP Ledger 3.3.0 amendment voting** — If the two previously-pulled amendments pass with the security fixes, that's a non-trivial "we found a critical bug, fixed it, and shipped it carefully" story worth tracking for protocol-engineering practices.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
