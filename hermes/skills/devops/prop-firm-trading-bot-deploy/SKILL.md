@@ -1,13 +1,15 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.7.0
+version: 1.9.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - "1.9.0 (2026-08-04): Added references/small-equity-xau-sizing.md for evaluating whether a large-account XAUUSD backtest can run on a micro balance. Separates inferred backtest equity from margin and stop-risk, requires live broker contract metadata, rejects sub-minimum lots instead of clamping upward, quantizes down, and stress-checks costs/margin before execution. Extended the trading-video reference with a read-only Trader.dev-through-Codex MCP workflow, per-tool approval allowlisting, and non-chat API-key authentication handling."
+      - "1.8.0 (2026-08-04): Extended the trading-video feasibility reference with a reproducible public-strategy-database workflow: inspect browser network calls, use exact API filter names, compare later forks with creator claims, detect leaderboard/risk-scaling traps, and treat authenticated fork/source artifacts as the reproduction boundary."
       - "1.7.0 (2026-08-04): Added references/trading-video-feasibility-review.md for source-first assessment of YouTube strategy claims; distinguishes research assistants, strategy generators, and autonomous execution; reconstructs deterministic rules; grades profitability evidence; checks prop-limit compatibility; keeps LLMs out of quantity/fill authority; and separates MT5 CFD execution from multi-leg Zerodha options. Also records direct SSH/rsync/Docker Compose as the user's required deployment transport, not AWS CLI."
       - 1.6.0 (2026-07-31): Added Phase 0 runtime security stop-gate and references/mt5-container-compromise-response.md after detecting an active root XMR miner in an MT5/noVNC container. Adds process/log/port triage, container-vs-host scope checks, approval-gated containment, clean replacement and credential rotation standard, and explicit rule that passing bot tests never overrides a compromised execution host.
       - 1.5.0 (2026-07-24): YouTube live signal source pattern added as references/youtube-signal-source-pattern.md. Synthesized-message delegation technique (YouTube transcripts → existing SignalParser.process_message), 6-kill-switch safety floor for non-deterministic signal sources, "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV, prompt hints), channel assessment checklist, pytest-plugin-broken workaround (inline asyncio.run), "OLD" matching "GOLD" test pitfall.
@@ -32,6 +34,7 @@ Use this skill when deploying or managing an automated trading bot against a fun
 - A post-mortem document exists for a previous account failure
 - User wants to add a NEW signal source to the trading bot (YouTube live, Telegram channel, voice) — see `references/youtube-signal-source-pattern.md` for the synthesized-message delegation pattern and safety floor design
 - User asks whether a trading-bot video, AI broker integration, indicator strategy, or options setup is feasible/profitable for the funded bot — see `references/trading-video-feasibility-review.md`
+- User asks whether an XAUUSD strategy tested on a larger balance can run on a micro account, cent account, or very small equity — see `references/small-equity-xau-sizing.md`
 
 ## Critical principle: bot must be TIGHTER than the prop firm
 
@@ -379,7 +382,22 @@ Verify before going live: log into MT5 via noVNC with the investor password, att
 | Daily reset | 00:00 Platform Time (GMT+2), NOT UTC |
 | Daily loss basis | Higher of equity or balance at session start |
 
-### FundingPips — 2 Step model
+### FundingPips — 2 Step Flex model (current official objectives; verified 2026-08-04)
+
+| Rule | Step 1 | Step 2 | Master |
+|---|---|---|---|
+| Profit target | 10% | 6% | None |
+| Max daily loss | 4% | 4% | 4% |
+| Max overall loss | 12% | 12% | 12% |
+| Trading period | Unlimited | Unlimited | — |
+| News trading | Allowed | Allowed | Restricted ±5 min around affected high-impact news; 5-hour exclusion applies |
+| Overnight/weekend | Allowed | Allowed | Allowed |
+| Headline leverage | 1:100 | 1:100 | 1:100; Metals 1:30 |
+| Max risk/trade idea | Evaluation guideline only | Evaluation guideline only | None below $25K; 3% at $25K; 2% above $25K |
+
+The older generic 2-Step 5%/10% numbers are **not** the current 2-Step Flex limits. Verify the purchased model in the dashboard/account contract before deployment.
+
+### FundingPips — historical generic 2 Step model (not Flex; re-verify)
 
 | Rule | Step 1 (Student) | Step 2 (Practitioner) | Master |
 |---|---|---|---|
@@ -395,9 +413,11 @@ See `references/hourly-digest-pattern.md` for the reusable log-digest cron patte
 See `references/health-watchdog-pattern.md` for the 5-minute health-watchdog cron pattern (silent on success, auto-remediate safe containers, offset-based state file, level-padding-safe substring detection) — pairs with the hourly digest for proactive paging.
 See `references/youtube-signal-source-pattern.md` for the YouTube live audio → Whisper → Claude signal extraction pattern, including the "synthesized message" delegation technique (feed YouTube transcripts into the existing Telegram `SignalParser.process_message()` path), the 6-kill-switch safety floor for non-deterministic signal sources, the "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV wrapping, prompt hints), and the channel assessment checklist.
 See `references/trading-video-feasibility-review.md` for evaluating YouTube trading-bot and AI-broker videos: source/transcript extraction, deterministic-rule reconstruction, profitability evidence grading, prop-limit compatibility, LLM execution boundaries, and MT5-versus-Zerodha architecture separation.
+See `references/small-equity-xau-sizing.md` for micro-account XAUUSD feasibility: distinguish inferred backtest equity from margin and stop-risk, query live broker contract metadata, reject sub-minimum volume instead of rounding up, and test lot-step/cost/margin behavior.
 
 ## Pitfalls
 
+- **Minimum-lot clamping can catastrophically over-risk a micro account.** A position sizer shaped like `max(min_lot, calculated_volume)` silently turns an unrepresentable safe size into the broker minimum. If calculated volume is below `volume_min`, reject the trade. Quantize down to `volume_step`, recompute worst-case stopped loss including costs, and reject again if the risk cap is exceeded. Never infer that a percentage backtest can scale to small equity without this broker-granularity gate.
 - **Config drift in the safe direction is still drift.** If the bot is tighter than the prop firm, that's safe — but if it's tighter because of a WRONG base number (e.g. daily loss calculated on $50 demo balance instead of $5000 funded), the bot will either trip too early or too late. Always verify the base.
 - **Daily reset timezone mismatch.** Many prop firms reset daily limits at 00:00 Platform Time (GMT+2). If the bot uses UTC midnight, there's a 2-hour window where the bot and the prop firm disagree on "today." This is usually safe (bot is stricter) but can cause unnecessary emergency stops if a loss straddles the GMT+2 midnight boundary.
 - **Daily loss uses HIGHER of equity or balance.** Some prop firms calculate the daily limit from max(equity, balance), not just equity. If the bot only tracks equity, it may under-count the limit. Again, usually safe direction (bot trips earlier) but worth verifying.

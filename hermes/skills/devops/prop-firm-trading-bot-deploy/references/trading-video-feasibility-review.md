@@ -94,7 +94,78 @@ For Iron Condors and similar structures:
 
 A suggested strategy with a declared "max loss" is not executable evidence until these controls are implemented.
 
-## 8. Standard conclusion format
+## 8. Investigate public strategy databases reproducibly
+
+When a creator links a public strategy browser or leaderboard, use it as a lead generator, not as proof.
+
+1. Inspect browser network resources to find the JSON search endpoint instead of manually reading cards.
+2. Inspect the page's own filter-building JavaScript for exact query names. Do not guess snake_case when the API uses camelCase.
+3. Query on symbol, timeframe, minimum trades, maximum drawdown, profit factor, and a risk-adjusted sort axis. Example shape:
+
+```text
+/strategies/search?symbol=XAUUSD&timeframe=1h&minTrades=300&maxDrawdownPct=10&minProfitFactor=1.3&sort=sharpe&limit=50&offset=0
+```
+
+4. Preserve strategy ID, result ID, name, version, `forkedFromStrategyId`, creation time, test interval, bars, trades, gross profit/loss, net return, drawdown, profit factor, Sharpe, Sortino, and win rate.
+5. Compare these fields directly with the video. A matching name/indicator family is not necessarily the creator's original strategy: a result created after publication or carrying `forkedFromStrategyId` is a later fork.
+6. Treat authenticated `fork.json`, Pine, or strategy-source download as the reproduction boundary. Public KPI cards without source/config are evidence of a reported backtest, not enough to port or validate it.
+7. Reject "best profit" as the default ranking for funded accounts. It frequently surfaces leverage-heavy results with drawdowns far beyond the account limit and tiny samples. Start with minimum sample size and sort by Sharpe/Sortino; inspect drawdown and costs before return.
+8. If risk is linearly scaled to estimate prop-limit compatibility, label it as triage only. Lot rounding, compounding, path dependence, spread, and stop behavior break exact proportionality. Re-run the strategy at the proposed size before approving it.
+9. Check whether duplicated cards share identical metrics/result families; repeated forks do not increase independent evidence.
+
+## 8b. Read-only Trader.dev investigation through Codex MCP
+
+The public `/browse` page is a catalogue, not the MCP endpoint. Use the provider-published MCP transport and keep the first pass read-only:
+
+```bash
+codex mcp add trader-dev -- npx -y mcp-remote https://mcp.trader.dev/sse
+codex mcp get trader-dev
+```
+
+Codex may discover both read and mutating tools. Do not solve non-interactive approval failures with unrestricted host access. In `~/.codex/config.toml`, pre-approve only the audit tools needed for the investigation:
+
+```toml
+[mcp_servers.trader-dev.tools.whoami]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.login]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.get_strategy]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.get_backtest_result]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.get_equity_curve]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.get_trades]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.parse_strategy_inputs]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.search_strategies]
+approval_mode = "approve"
+
+[mcp_servers.trader-dev.tools.compare_backtests]
+approval_mode = "approve"
+```
+
+Leave create/update/fork/deploy/order/exchange/alert/optimization tools unapproved. `codex exec` with an effective `approval: never` otherwise reports `user cancelled MCP tool call` even for reads; per-tool approval is the narrow fix.
+
+Trader.dev application authentication is separate from MCP transport discovery. The durable flow is:
+
+1. Call `login` to obtain the provider's API-key URL.
+2. Have the user authenticate in the browser.
+3. Never ask for the displayed `pk_…` key in a shared chat.
+4. Transfer/store it through a local secret path with mode `0600` or an approved secret store.
+5. Call `authenticate` without logging the key, then perform all strategy reads in the same authenticated MCP lifecycle unless persistence has been verified.
+
+If authentication is unavailable, preserve the exact blocker and fall back only to public KPI endpoints. Do not represent public cards as source/config evidence, and do not infer repainting or execution assumptions without code and the trade ledger.
+
+## 9. Standard conclusion format
 
 Return separate verdicts:
 

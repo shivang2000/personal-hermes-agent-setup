@@ -36,7 +36,44 @@ and help.fundingpips.com (via Wayback Machine snapshots 2025-11-26 to 2026-02-10
 - Leverage: 1:30 (same as Step 1)
 - 1.2% Risk Guideline: No restrictions (not applicable on 1 Step model)
 
-## 2 Step model (for reference)
+## 2 Step Flex model — current official objectives
+
+Verified 2026-08-04 from `https://fundingpips.com/trading-objectives` with the **2 Step Flex** tab selected.
+
+### Step 1 (Evaluation Phase 1)
+- Profit target: 10%
+- Max daily loss: 4%
+- Max overall loss: 12%
+- Headline leverage: 1:100
+- Trading period: Unlimited
+- News trading: Allowed
+- Overnight and weekend holding: Allowed
+- Inactivity: 30 days
+
+### Step 2 (Evaluation Phase 2)
+- Profit target: 6%
+- Max daily loss: 4%
+- Max overall loss: 12%
+- Headline leverage: 1:100
+- Trading period: Unlimited
+- News trading: Allowed
+- Overnight and weekend holding: Allowed
+- Inactivity: 30 days
+
+### Master Account
+- Max daily loss: 4%
+- Max overall loss: 12%
+- Max risk per trade idea: no restriction below $25K; 3% at $25K; 2% above $25K
+- 1.2% risk guideline: no restriction on this model
+- News trading: restricted 5 minutes before/after affected high-impact events; trades opened at least 5 hours before are excluded
+- Overnight and weekend holding: Allowed
+- Inactivity: 30 days
+- Headline leverage: 1:100; instrument breakdown: FX 1:100, Metals 1:30, Energies 1:10, Indices 1:20, Crypto 1:2
+- Reward cycles shown: bi-weekly 85% split, or bi-weekly 95% after 3 profitable days; minimum reward 1%
+
+**Do not apply the older generic 2-Step 5%/10% limits to a 2-Step Flex account.** The live model selector is authoritative for the purchased model; verify the dashboard/account contract before deployment.
+
+## Historical generic 2 Step model (not 2 Step Flex; re-verify before use)
 
 ### Step 1 (Student)
 - Profit target: 8% (Option One) or 10% (Option Two) — trader's choice
