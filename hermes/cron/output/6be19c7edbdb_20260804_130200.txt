@@ -1,0 +1,98 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have strong signal. Now let me write the digest.
+
+Key items confirmed (with sources verified):
+1. **Qwen3.8-Max released** (Open weights, codestral/coding focused) — qwen.ai
+2. **SQLite CVEs article** — jfrog research
+3. **LLMs Reward expertise** — seangoedecke.com (high engagement essay)
+4. **OpenAI super PAC funding AI news site** — modelrepublic.org
+5. **Ten Advances in Math & TCS** — openai.com
+6. **Apple is getting this wrong** — openai.com (might be about Apple Intelligence strategy)
+7. **EU age verification w/ hardware-bound attestation** — linuxiac.com
+8. **Hoplite** (YC S26, cloud coding agents with custom harness) — hoplite.sh
+9. **MiniMax H3 day-0 in ComfyUI** — open weights + native audio + 2K video
+10. **Swiftlet** — 80B Qwen on 4.3GB RAM Mac
+11. **Cloudflare Kimi/GLM serving blog** — blog.cloudflare.com
+12. **Bonsai (Jane Street UI library)** — github.com/janestreet/bonsai
+13. **Andy Pavlo → ClickHouse Labs** — clickhouse.com
+14. **Devtools must be open source** — blog.exe.dev
+15. **C-Kermit first release in 15 years** — complet.org changelog
+16. **Twenty Years of Pandoc** — pandoc.org
+17. **Bifrost / Agent harnesses Show HN** — github.com/maximhq/bifrost
+18. **Armature MCP analytics** — armature.tech
+19. **Frontis-MA1 35B open-weights for self-improvement** — frontisai.github.io
+20. **Rust project goals (move trait / immobile types)** — rust-lang/rust-project-goals
+21. **AirLLM 70B on 4GB** — github.com/lyogavin/airllm
+22. **Bitcoin cold-card wallet RNG flaw → $88M theft** — coindesk / bleepingcomputer (CRYPTO SECURITY)
+23. **Trump-crypto tie-up family windfall** — bloomberg
+
+Let me draft the digest now.
+
+**Tech / AI / Crypto / Software Digest — Tuesday, 4 Aug 2026, 12:55 IST**
+
+**Top picks**
+- **Qwen3.8-Max released** — Alibaba's Qwen3.8-Max landed on Qwen Cloud, OpenRouter and is benchmarked by ArtificialAnalysis. The team positions it as a new bar for "coding and cowork" agent workloads; pricing/perf data is up and it's already driving HN's front page. ([blog](https://qwen.ai/blog?id=qwen3.8) · [analysis](https://artificialanalysis.ai/models/qwen3-8-max) · [router](https://openrouter.ai/qwen/qwen3.8-max))
+- **Coldcard RNG flaw → ~$88M BTC theft spreading to ~4,500 addresses** — Researchers now link an RNG weakness in Coldcard hardware wallets to a theft that has expanded to thousands of addresses (~$89M losses). Concrete action item: anyone using affected firmware should rotate seed material and reassess. ([coindesk](https://www.coindesk.com/tech/2026/08/02/bitcoin-cold-wallet-attack-spreads-to-4-500-addresses-as-losses-near-usd89-million) · [bleepingcomputer](https://www.bleepingcomputer.com/news/security/coldcard-wallet-rng-flaw-likely-linked-to-88-million-bitcoin-theft/))
+- **SQLite CVEs or LLM Slop? (JFrog)** — Researchers published the official NVD CVE backlog for SQLite and asked how much of the noise was actually LLM-generated. Useful methodology piece on triaging CVE feed signal for any C/C++ dependency. ([jfrog research](https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/))
+- **Cloudflare: smaller/faster/safer — running Kimi and GLM at scale** — Cloudflare shipped production serving for Kimi K2 and GLM (Zhipu) open-weight models on its inference platform. Key for builders: a neutral third-party confirming these frontier-tier open models are now first-class inference options, not just benchmarks. ([cloudflare blog](https://blog.cloudflare.com/smaller-faster-safer-models/))
+- **MiniMax H3 day-0 in ComfyUI: open weights, native audio, 2K video** — Multimodal "H3" model lands with native audio generation and 2K video support in ComfyUI; open weights on day zero. Worth a look for anyone building local creative pipelines. ([comfy blog](https://blog.comfy.org/p/minimax-h3-day-0-support-in-comfyui))
+- **OpenAI: "Apple is getting this wrong" + "Ten advances in mathematics & TCS"** — Two OpenAI-published pieces trending simultaneously. The math piece now has >500 comments and surfaces ten concrete advances from OpenAI researchers (including combinatorial and complexity-theory results useful for crypto/ZK practitioners). ([apple piece](https://openai.com/index/apple-is-getting-this-wrong/) · [math post](https://openai.com/index/ten-advances-in-mathematics/))
+
+**AI, Agents & Models**
+- **Hoplite (YC S26) launches cloud coding agents with a custom harness** — Built their own agent loop (not wrapping Codex/Claude Code), uses Temporal + Modal + Planetscale. Stack-level detail matters: "agents as tier-0 infra" with durable workflows and sandboxed preview environments. ([hoplite.sh](https://hoplite.sh))
+- **Armature (YC P26): analytics + evals reconstructed from your MCP server** — 3-line wrapper to reconstruct full user↔agent sessions behind MCP tool calls; gives MCP operators a usage clustering and failure triage dashboard. Practical observability layer for the MCP ecosystem. ([armature.tech](https://armature.tech/))
+- **Show HN: Bifrost — changed how I use agent harnesses** — Maxim's Go LLM gateway now pitched as a unified provider swap layer for OpenCode/Zen-style coding agents; if you care about rate-limit resilience across providers, the architecture is worth reading. ([github](https://github.com/maximhq/bifrost/))
+- **Show HN: Swiftlet — run an 80B Qwen in 4.3 GB RAM on a Mac, 35B on an iPhone** — Aggressive quantization + on-device inference harness. Methodology claims are strong; the on-iPhone 35B is the genuinely surprising part. ([github](https://github.com/leonickson1/Swiftlet))
+- **Frontis-MA1: 35B open model oriented toward recursive self-improvement** — Open weights + release notes focused on self-improvement training signals rather than chat benchmarks. ([openrsi](https://frontisai.github.io/OpenRSI/))
+- **LLMs Reward Expertise** — Sean Goedecke argues that pairing models with specialist domain data yields far better output than vanilla prompting; high-engagement essay that's been trending all day. ([post](https://www.seangoedecke.com/llms-reward-expertise/))
+- **LLMs Can't Jump** — OpenReview paper arguing current LLMs struggle with the "incombinatorial leap" of scientific invention; good counter-balance to frontier hype. ([openreview pdf](https://openreview.net/pdf?id=klU4737opt))
+- **AirLLM adds 70B inference on a single 4 GB GPU** — Continues the layer-offloading approach from the same author; useful reference impl for extreme memory-constrained inference. ([github](https://github.com/lyogavin/airllm))
+
+**Software Engineering & DevTools**
+- **Bonsai — Jane Street's UI library now on GitHub** — OCaml-based GUI toolkit described in last year's "TUI Renaissance" post, now first-party published. Worth a look for anyone in functional/typed GUI space. ([github](https://github.com/janestreet/bonsai))
+- **Andy Pavlo joins ClickHouse to launch ClickHouse Labs** — Database researcher (CMU) leaves academia to head a dedicated research arm at ClickHouse. ([blog](https://clickhouse.com/blog/andy-pavlo-joins-clickhouse))
+- **Rust 2026 project goals: "immobile types" (move trait) and guaranteed destructors** — Proposal that gives the type system a handle on values that must move exactly once and a guarantee that destructors run. Affects the future of unsafe-cleanup and embedded-style code. ([goals](https://github.com/rust-lang/rust-project-goals/blob/main/src/2026/move-trait.md))
+- **Devtools must be open source** — exe.dev's argument that developer infrastructure is too foundational to be closed; relevant as agent CLIs move into editors and shells. ([post](https://blog.exe.dev/devtools-must-be-open-source))
+- **Show HN: MPEdb — drop-in SQLite replacement with concurrency** — Built on SQLite; claims concurrent writers via MVCC. Real-world utility will depend on benchmark fidelity vs. litestream/syncular-style stacks. ([github](https://github.com/punnerud/mpedb))
+- **Show HN: BIPRO — variant of BiRO/Golang tabular lib (alternative-take of Polars)** — Attempts a Go-native columnar DataFrame; relevant if you want Polars-style ergonomics outside Python/JS. ([guywaldman post](https://guywaldman.com/posts/polars-dataframe-contributions))
+- **Twenty Years of Pandoc** — Long retrospective from John MacFarlane on the universal document converter's history; useful history for anyone touching the format-conversion stack. ([pandoc](https://pandoc.org/twenty-years-of-pandoc.html))
+- **First C-Kermit release in 15 years + 45-year milestone** — Maintenance update to C-Kermit (terminal/file-transfer stack); interesting both as legacy software and as a case study in C codebase longevity. ([changelog](https://changelog.complete.org/archives/44456-celebrating-45-years-of-kermit-with-the-first-new-c-kermit-release-in-15-years-and-working-with-a-decades-old-c-codebase))
+- **Socket.dev warns about Rust `tokio` package obfuscation** — Socket flagged supply-chain-style obfuscation in the cargo registry's `tokio` listing worth checking if you pin by name; confirms need for namespace-vigilance. ([socket](https://socket.dev/cargo/package/tokio))
+
+**Cloud, Infra, Data & Security**
+- **EU Age Verification pilot mandates hardware-bound attestation** — Project specification requires local device attestation (TEE/secure enclave) for adult-content verification. Raises major implementation and privacy questions for app developers targeting EU. ([linuxiac](https://linuxiac.com/eu-age-verification-project-mandates-hardware-bound-attestation/))
+- **AI is breaking the SaaS deployment model — "10 commandments for BYOC"** — Omnistrate/cron founders argue SaaS deploy-into-customer-cloud is the new normal for AI products (data locality + model cost). Useful template if you're building enterprise AI today. ([manifesto](https://byocanywhere.org/) · [post](https://omnistrate.com/blog/byoc-anywhere-the-spectrum-of-bring-your-own-cloud-deployments))
+- **Prevent cognitive debt by manually retyping LLM-generated code** — Ankur Sethi's argument that copy-pasting LLM output creates a hidden maintenance cliff; higher-engagement read among working engineers. ([post](https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/))
+- **OpenAI super-PAC is funding an AI-generated news site attacking industry critics** — Investigative report on OpenAI-aligned PAC funding a model-generated outlet. Worth tracking for editorial-pipeline and disclosure standards. ([modelrepublic](https://www.modelrepublic.org/articles/the-reporters-at-this-news-site-are-ai-bots.-openai%E2%80%99s-super-pac-appears-to-be-using-it-to-advance-its-political-agenda))
+- **Telegram temporarily removed from Apple's App Store (then restored)** — Reuters confirms brief outage in App Store availability; reminder of platform-rule fragility for non-US-aligned apps. ([reuters](https://www.reuters.com/business/retail-consumer/telegram-says-app-restored-apples-app-sto))
+- **Cyberattack hits Liechtenstein's anti-money-laundering data register** — Public-sector breach of a sensitive KYC data system in a small state — likely to drive EU regulatory response. ([euronews](https://www.euronews.com/my-europe/2026/08/03/cyberattack-hits-liechtensteins-anti-money-l))
+
+**Crypto & Blockchain Engineering**
+- **~$88M BTC theft linked to Coldcard RNG flaw** (top pick above) — Incident is the strongest production issue on this digest. Watch the post-mortem for which firmware ranges are vulnerable and whether PSBT/multisig mitigates.
+- **Trump crypto tie-up "fueled family windfall" while retail investors lost** — Bloomberg investigation, primarily relevant for governance/political-risk framing around US digital-asset policy; not an engineering story. ([bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/how-a-trump-crypto-deal-enriched-the-family-while-investors-lost))
+- **Crypto miners stealing grid power in Southeast Asia** — DW investigative report on unauthorized mining loads; relevant for anyone operating grid-aware infrastructure in the region. ([dw](https://www.dw.com/en/how-crypto-miners-are-stealing-power-in-southeast-asia/a-78175364))
+
+**Open Source / GitHub**
+- **Bonsai (Jane Street)** and **Swiftlet** (above) are today's standout OSS launches worth bookmarking.
+- **Show HN: Syncular — offline-first SQL sync (TS + Rust cores)** — Targets local-first CRUD, with a Rust engine you can embed; a credible CRDT/MVCC contender. ([github](https://github.com/syncular/syncular))
+- **Show HN: `lde` — single-binary LuaJIT package manager + runtime** — Interesting "all-in-one" pattern for Lua deployment; niche but clean. ([lde.sh](https://lde.sh/blog/lde-0.10.0/))
+- **Qwen3.8-Max on OpenRouter + Artificial Analysis perf breakdowns** — Useful pricing/latency data for anyone evaluating which models to route traffic to. ([openrouter](https://openrouter.ai/qwen/qwen3.8-max) · [analysis](https://artificialanalysis.ai/models/qwen3-8-max))
+
+**Startups, YC & Industry**
+- **Hoplite (YC S26)** — Cloud agent launch (above).
+- **Armature (YC P26)** — MCP observability launch (above).
+- **Sixb — "operating layer for enterprise AI"** — Show HN claiming an event-driven OS-style layer for LLM agents at companies; worth a quick scan. ([sixb.ai](https://sixb.ai/news/sixb-framework-launch))
+- **CollectWise (YC F24) hiring AI Agent Engineer** — Active YC hiring post (mentioned only as job-market signal; not news). ([ycombinator](https://www.ycombinator.com/companies/collectwise/jobs/oEAfzBS-ai-agent-engineer))
+- **Palantir Q2: commercial revenue +150%, ~12% share jump** — Continuing validation of "forward-deployed" AI-on-data platforms in the US enterprise. ([cnbc](https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html))
+- **Korea stock market correction threatening tech/HBM boom** — Watch the AI-supply-chain spillover; relevant if you're tracking HBM/AI capex exposure. ([abc](https://www.abc.net.au/news/2026-08-03/korean-markets-threatening-upset-tech-boom/10698195))
+
+**Watchlist**
+- **Coldcard RNG disclosure** — firmware fix timeline and full address-set impact; if you use Coldcard, rotate your seed and check whether your PIN/passphrase recovery path was exposed.
+- **Apple Intelligence / OpenAI "Apple is getting this wrong" piece** — the actual claims in this piece aren't visible (OpenAI's site returned 403 to my fetch); worth reading on the open web next run to see if there's a concrete engineering/API argument.
+- **Qwen3.8-Max and frontis-MA1** landing on major routing/eval platforms — pricing changes, rate-limit behavior in real workloads, and whether self-improvement claims hold up on public benchmarks.
+- **EU age-verification hardware-attestation pilot** — published technical specs may drop this week and would shift app-side engineering timelines.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
