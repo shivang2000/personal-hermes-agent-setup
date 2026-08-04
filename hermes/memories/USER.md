@@ -33,3 +33,5 @@ Shivang prefers using the Pandoc CLI to generate PDFs from Markdown when availab
 Shivang prefers browser tasks requiring authentication to use a hybrid logged-in session strategy: real Chrome/Arc via background computer-use first, with safe CDP-attached Playwright fallback.
 §
 Shivang requires recurring X/Twitter automation to run in an isolated headless browser profile and never navigate Arc, change active tabs, open Finder, switch Spaces, or disturb YouTube/Netflix/normal computer use. A one-time visible login to the isolated profile is acceptable.
+§
+Shivang requires trading-bot deployment to use direct SSH/rsync/Docker on the known host, not AWS CLI; the active AWS CLI environment may be unrelated.

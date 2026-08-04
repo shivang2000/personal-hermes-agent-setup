@@ -1,13 +1,14 @@
 ---
 name: prop-firm-trading-bot-deploy
 description: Deploy and manage an automated trading bot on a funded prop-firm account. Covers rule verification, config drift detection, safety-stack review, alert channel setup, post-mortem preconditions, and deploy/monitor workflow. Use when setting up a bot against any prop firm (FundingPips, FTMO, MyFundedFX, etc.) — especially funded accounts where config drift can lose the account.
-version: 1.6.0
+version: 1.7.0
 created_by: agent
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [trading, prop-firm, deployment, risk-management, fundingpips, mt5]
     changelog:
+      - "1.7.0 (2026-08-04): Added references/trading-video-feasibility-review.md for source-first assessment of YouTube strategy claims; distinguishes research assistants, strategy generators, and autonomous execution; reconstructs deterministic rules; grades profitability evidence; checks prop-limit compatibility; keeps LLMs out of quantity/fill authority; and separates MT5 CFD execution from multi-leg Zerodha options. Also records direct SSH/rsync/Docker Compose as the user's required deployment transport, not AWS CLI."
       - 1.6.0 (2026-07-31): Added Phase 0 runtime security stop-gate and references/mt5-container-compromise-response.md after detecting an active root XMR miner in an MT5/noVNC container. Adds process/log/port triage, container-vs-host scope checks, approval-gated containment, clean replacement and credential rotation standard, and explicit rule that passing bot tests never overrides a compromised execution host.
       - 1.5.0 (2026-07-24): YouTube live signal source pattern added as references/youtube-signal-source-pattern.md. Synthesized-message delegation technique (YouTube transcripts → existing SignalParser.process_message), 6-kill-switch safety floor for non-deterministic signal sources, "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV, prompt hints), channel assessment checklist, pytest-plugin-broken workaround (inline asyncio.run), "OLD" matching "GOLD" test pitfall.
       - 1.4.0 (2026-07-12): 5-minute health-watchdog pattern added as references/health-watchdog-pattern.md. Silent-on-success cron (vs digest always-emit), auto-remediate-safe-containers only (never auto-restart MT5 container — would lose noVNC login), offset-based state file in /tmp to avoid re-alerting on the same CRITICAL, Python logging level-padding pitfall (substring without close-bracket matches both formats), inject-then-reset-state testing pattern. Cron deliver=local + script self-posts to Discord only on failure.
@@ -30,6 +31,7 @@ Use this skill when deploying or managing an automated trading bot against a fun
 - Config files reference prop-firm rules (daily loss, overall DD, profit target, min trading days)
 - A post-mortem document exists for a previous account failure
 - User wants to add a NEW signal source to the trading bot (YouTube live, Telegram channel, voice) — see `references/youtube-signal-source-pattern.md` for the synthesized-message delegation pattern and safety floor design
+- User asks whether a trading-bot video, AI broker integration, indicator strategy, or options setup is feasible/profitable for the funded bot — see `references/trading-video-feasibility-review.md`
 
 ## Critical principle: bot must be TIGHTER than the prop firm
 
@@ -160,6 +162,8 @@ If a post-mortem document exists (e.g. `docs/post-mortem-5k.md`), read it and ch
 - [ ] Data-durability: no single-instance data loss path
 
 ### Phase 7: Deploy
+
+**Deployment transport preference for Shivang's trading environment:** use direct SSH, `rsync`, `docker build`, and `docker-compose`/Docker commands on the known host. Do **not** use AWS CLI for deployment or assume the active shell is authenticated to the correct AWS environment. Read-only cloud control-plane checks also require explicit relevance and verified account context; host deployment should remain SSH-driven.
 
 **EC2 (recommended for funded accounts):**
 ```bash
@@ -390,6 +394,7 @@ See `references/ec2-provisioning-quickstart.md` for the EC2 provisioning quickst
 See `references/hourly-digest-pattern.md` for the reusable log-digest cron pattern (pure-Python script, `no_agent: true` schema, log-lag handling, Discord delivery) used to read `logs/trading.log` from a remote box.
 See `references/health-watchdog-pattern.md` for the 5-minute health-watchdog cron pattern (silent on success, auto-remediate safe containers, offset-based state file, level-padding-safe substring detection) — pairs with the hourly digest for proactive paging.
 See `references/youtube-signal-source-pattern.md` for the YouTube live audio → Whisper → Claude signal extraction pattern, including the "synthesized message" delegation technique (feed YouTube transcripts into the existing Telegram `SignalParser.process_message()` path), the 6-kill-switch safety floor for non-deterministic signal sources, the "no paper, go funded" override documentation pattern, Whisper API integration (PCM→WAV wrapping, prompt hints), and the channel assessment checklist.
+See `references/trading-video-feasibility-review.md` for evaluating YouTube trading-bot and AI-broker videos: source/transcript extraction, deterministic-rule reconstruction, profitability evidence grading, prop-limit compatibility, LLM execution boundaries, and MT5-versus-Zerodha architecture separation.
 
 ## Pitfalls
 
