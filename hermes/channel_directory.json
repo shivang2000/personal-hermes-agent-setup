@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T22:09:17.094457",
+  "updated_at": "2026-08-04T23:09:27.164706",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,18 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1534251665622962356:1534251665622962356",
+        "name": "Shivang Hermes AI / #general / which sub to get kimi, claude,chatgpt which sub will give use the best usage ... / topic 1534251665622962356",
+        "type": "thread",
+        "thread_id": "1534251665622962356"
+      },
+      {
+        "id": "1534251968216699012:1534251968216699012",
+        "name": "Shivang Hermes AI / #general / how can we use my cline https://cline.bot/ sub on this hermes to use kimi k3 ... / topic 1534251968216699012",
+        "type": "thread",
+        "thread_id": "1534251968216699012"
       },
       {
         "id": "1534200006129750077:1534200006129750077",

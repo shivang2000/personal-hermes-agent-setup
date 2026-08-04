@@ -93,6 +93,21 @@ If `curl -sI URL` returns `HTTP 200` but body has `<html><head>...<title>404</ti
 - `browser_navigate` to a Reddit URL gets redirected to a `?solution=...&js_challenge=1` page with just a "File a ticket" link as the DOM — no actual content.
 - For community sentiment on LLM models, use instead: Hacker News (via the `hackernews-frontpage` skill or Algolia API), LMArena text feedback, HF model discussions, OpenRouter rankings (real adoption signal), and the lab's own Discord/Twitter announcements.
 
+## Kimi API Platform (platform.kimi.ai / platform.kimi.com)
+
+- **Dual-language**: `.ai` = English/USD, `.com` = Chinese/CNY. Same content, same SPA.
+- **Direct deep-link URLs redirect to `/docs/overview`**: `browser_navigate` to `https://platform.kimi.ai/docs/pricing/kimi-k3` always lands on the overview page. This is consistent across all deep paths — the SPA's client-side router doesn't parse the initial URL for deep links.
+- **Fix — sidebar click navigation**: `browser_navigate` to the docs root (`/docs/overview`), take a snapshot to find sidebar link refs (e.g. `@e49` for "Kimi K3"), then `browser_click` the relevant link. The in-app router handles navigation correctly.
+- **Content extraction**: After clicking to the target page, use `browser_console` with `document.querySelector('main').innerText.substring(0, 10000)` to extract the full rendered content — snapshots truncate at ~15K chars but `browser_console` gives you the full text.
+- **Homepage pricing**: The platform homepage (`platform.kimi.ai/`) shows the model lineup with USD API pricing directly in the page snapshot — no need to navigate to a separate pricing page for basic API token pricing.
+- **Chinese CNY pricing**: `platform.kimi.com/` shows the same models with CNY prices (e.g. K3 = ¥2.00/¥20.00/¥100.00 per MTok vs $0.30/$3.00/$15.00 USD).
+
+## Kimi consumer app (kimi.com)
+
+- **Login-gated**: Consumer subscription pricing is behind a login wall. The SPA loads but shows no pricing without authentication.
+- **Shape 6 — JS bundle extraction**: `curl` the landing page, grep for `modulepreload` URLs pointing to `statics.moonshot.cn/kimi-web-seo/assets/`, fetch bundles named `subscription-*.js`, `check-*.js`, `goods_pb-*.js`, grep for `isFreePlan`, `isPaidPlan`, `Membership_Level`, `billingCycle`, `priceInCents` to extract tier structure without auth.
+- **Yields**: tier names (FREE, BASIC/INTERMEDIATE, higher), billing cycles (monthly, annual), currencies (USD, CNY), feature gates per tier, trial duration (7-day). Does NOT yield exact prices.
+
 ## Headless browser limitations on JS-rendered leaderboards
 
 - `browser_navigate` to a SPA does fetch the rendered DOM in the snapshot, but for tables >100 rows you'll get truncated output ("[... 4839 more lines truncated, use browser_snapshot for full content]" or similar).

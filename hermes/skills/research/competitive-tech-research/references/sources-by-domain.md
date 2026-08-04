@@ -1,6 +1,6 @@
 # Canonical Sources by Domain
 
-Last verified: June 2026. URLs and schemas rot — re-check on every use.
+Last verified: August 2026. URLs and schemas rot — re-check on every use.
 
 ## LLMs / open-weights models
 
@@ -69,3 +69,74 @@ Last verified: June 2026. URLs and schemas rot — re-check on every use.
 ## Speech-to-text / TTS
 - **HF Open ASR Leaderboard** — `https://huggingface.co/spaces/open-asr-leaderboard/leaderboard`.
 - **HF TTS Arena** — `https://huggingface.co/spaces/ArtificialAnalysis/text-to-speech-arena`.
+
+## Anthropic / Claude product line
+
+All Shape 2 (browser_navigate, JS-rendered pages). Help center URLs rot — see the pitfall in SKILL.md about extracting hrefs via browser_console.
+
+### Pricing & plans
+- **Claude pricing page** — `https://claude.com/pricing` — all consumer plans (Free, Pro, Max 5x, Max 20x) with feature comparison table. Pro = $20/mo monthly or $17/mo annual ($200 up front). Includes Claude Code, Cowork, Design, Science. Tabbed: Individual / Team & Enterprise / API.
+- **Claude product overview** — `https://claude.com/product/overview` — current model lineup (Fable 5, Opus 5, Sonnet 5, Haiku 4.5 as of Aug 2026) with model detail links.
+
+### Model detail pages
+- **Claude Opus page** — `https://www.anthropic.com/claude/opus` — Opus 5 announcement, availability, API pricing ($5/M input, $25/M output), benchmarks, customer quotes. States "available on Claude for Pro, Max, Team, and Enterprise users."
+- **Claude Platform models overview** — `https://platform.claude.com/docs/en/about-claude/models/overview` — API-level model comparison table (context window, max output, pricing, knowledge cutoff, API IDs for Anthropic/Bedrock/Vertex/Foundry). The authoritative spec table.
+
+### Help center (rate limits, context windows, Claude Code limits)
+- **Help center root** — `https://support.claude.com` — search-based; old `support.anthropic.com` URLs redirect here but old article IDs 404.
+- **Claude collection** — `https://support.claude.com/en/collections/4078531-claude` — 78 articles organized by category (Get started, Account, Conversation, Features, Personalization, Troubleshooting, Usage and limits). Navigate here first, extract hrefs via browser_console.
+- **Usage & length limits** — `https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work` — explains usage limits (dynamic, not published as hard numbers), length limits (context window), automatic context management, shared limits across claude.ai + Claude Code + Desktop.
+- **Context window on paid plans** — `https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans` — Opus 5 & Sonnet 5 = 1M tokens on all paid plans; older Opus/Sonnet = 500K; others = 200K. Pro users need usage credits enabled for 1M Opus in Claude Code.
+- **Models, usage, and limits in Claude Code** — `https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code` — metering (subscription vs API key), model selection via /model, token consumption patterns, context management, five habits to stretch usage.
+
+### Claude Code docs
+- **Claude Code overview** — `https://code.claude.com/docs/en/overview` — installation, surfaces (terminal, VS Code, desktop, web, JetBrains), requires Claude subscription or Console account.
+- **Claude Code cost management** — `https://code.claude.com/docs/en/costs` — token tracking via /usage and /cost, plan usage breakdown for subscribers, cost reduction strategies. Enterprise average ~$13/dev/active day, $150-250/dev/month.
+
+## OpenAI / ChatGPT product line
+
+**Cloudflare bot-blocked** — `openai.com`, `chatgpt.com`, and `help.openai.com` all return "Just a moment..." Cloudflare challenge to curl and browser_navigate. Use the Wayback Machine fallback: `https://web.archive.org/web/2026/https://chatgpt.com/pricing/` then `browser_console` with `document.querySelector('body').innerText` to extract rendered content. See `bot-blocked-web-fetch` skill for the full technique. Full pricing snapshot stored at `references/openai-chatgpt-pricing-2026-08.md`.
+
+### Pricing & plans (Shape 2 — JS-rendered, Cloudflare-blocked)
+- **ChatGPT pricing page** — `https://chatgpt.com/pricing/` — all individual plans (Free, Go ~$8, Plus ~$20, Pro from $100) + Business + Enterprise. JS-rendered comparison table with model access, context windows, Codex, features. Prices are rendered client-side from token identifiers (`chatgpt.plus`, `chatgpt.go`, etc.) — NOT in raw HTML. Must use `browser_console` to extract rendered text.
+- **Plans overview** — `https://chatgpt.com/plans/` — redirects to pricing page.
+- **Plus signup** — `https://chatgpt.com/explore/plus`
+- **Codex overview** — `https://chatgpt.com/codex`
+
+### Help center (Cloudflare-blocked, Wayback may not have snapshots)
+- **ChatGPT Plus subscription** — `https://help.openai.com/en/articles/7316658-chatgpt-plus-subscription` — blocked as of Aug 2026.
+- **Usage limits** — `https://help.openai.com/en/articles/10262009-what-are-the-limits-of-chatgpt-plus` — blocked as of Aug 2026.
+
+### Current model lineup (as of Aug 2026 snapshot)
+- GPT-5.5 Instant — base model, available on Free+
+- GPT-5.6 Sol — reasoning model, Plus+ (the best model included in Plus)
+- GPT-5.6 Sol Pro — advanced reasoning, Pro only
+- GPT-5.6 Terra — available on Plus+ (limited on Free/Go via Work/Codex desktop)
+- GPT-5.6 Luna — available on Plus+
+- GPT-5 Thinking Mini — lightweight reasoning, available on Free+
+
+## Kimi / Moonshot AI product line
+
+**Platform dual-language**: `platform.kimi.ai` (English, USD pricing) and `platform.kimi.com` (Chinese, CNY pricing). Consumer app at `kimi.com`. Docs are SPAs — direct deep-link URLs redirect to `/docs/overview`; use sidebar click navigation. Full pricing/model reference at `references/kimi-moonshot-pricing-2026-08.md`.
+
+### API Platform (Shape 2 — JS SPA, use sidebar navigation)
+- **Platform home** — `https://platform.kimi.ai/` — model lineup with USD API pricing in the page snapshot. Chinese version at `https://platform.kimi.com/` shows CNY pricing.
+- **Docs overview** — `https://platform.kimi.ai/docs/overview` — entry point; navigate via sidebar from here.
+- **Model List** — sidebar: Get Started → Model List. All current + deprecated models with context windows.
+- **Kimi K3 model page** — sidebar: Get Started → Kimi K3. Full specs, architecture, limits, code examples.
+- **K3 Pricing** — sidebar: Pricing → Kimi K3. Token pricing table.
+- **Rate Limits** — sidebar: Pricing → Recharge and Rate Limits. 6-tier recharge table (Tier 0 $1 → Tier 5 $3,000).
+- **Blog** — `https://platform.kimi.ai/blog` — blog index (Next.js, server-rendered post links). Posts at `/blog/posts/{slug}`.
+- **API base URL**: `https://api.moonshot.ai/v1` (OpenAI-compatible). API key env var: `MOONSHOT_API_KEY`.
+
+### Consumer app (login-gated pricing)
+- **Consumer app** — `https://www.kimi.com/` — SPA, requires login for subscription pricing. JS bundles at `statics.moonshot.cn/kimi-web-seo/assets/` contain subscription tier logic (Shape 6 technique — see SKILL.md). Membership levels: FREE, BASIC (INTERMEDIATE), higher. Monthly + annual billing, USD + CNY. Exact prices not extractable without auth.
+- **Kimi Business** — `https://platform.kimi.ai/kimi-business` — redirects to login.
+
+### Current model lineup (as of Aug 2026)
+- **kimi-k3** — flagship, 2.8T params, 1M context, vision, always-on reasoning (`reasoning_effort`: low/high/max). Open-source (weights by July 27, 2026). $3/$15 per MTok input/output.
+- **kimi-k2.7-code** / **kimi-k2.7-code-highspeed** — coding model, 256K context. HighSpeed: ~180 tok/s output. $0.95/$4.00 per MTok.
+- **kimi-k2.6** — general-purpose, 256K context, vision+text, thinking/non-thinking modes. $0.95/$4.00 per MTok.
+- **kimi-k2.5** — being sunset (Aug 31, 2026).
+- **moonshot-v1-*** — legacy, being sunset (Aug 31, 2026).
+- Deprecated: kimi-k2 series (May 2026), kimi-latest (Jan 2026), kimi-thinking-preview (Nov 2025).
