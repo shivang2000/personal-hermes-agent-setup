@@ -1,0 +1,47 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — Wednesday, 5 Aug 2026, 20:55 IST**
+
+**Top picks**
+- **Cloudflare OS goes open source** — https://blog.cloudflare.com/cloudflare-os/ — Agent + app platform built on Cloudflare Workers/Dynamic Workers + Durable Object Facets. Every "gadget" (doc/sheet/slide/app) is a private V8 isolate with its own SQLite and cap-rpc bridge via [Cap'n Web](https://github.com/cloudflare/capnweb). Security is the headline: an "observation graph" means Gatekeepers re-evaluate the user's access to every resource the agent has *seen* — so a sensitive-table read cannot launder into a public dashboard. Apache‑2.0, 654⭐, runnable locally with `pnpm run-local`. This is the most consequential agent-OS release of the month.
+- **Mistral ships Shieldstral‑1.0‑3B for multimodal moderation** — https://mistral.ai/news/shieldstral/ — Apache‑2.0 safety classifier that takes the *policy as a prompt* (binary yes/no over arbitrary text + image); reads a single yes/no logit pair, so a 3B matches up to 21B on text safety and sets SOTA on multimodal moderation. Runs on one 16 GB GPU. Useful as a deployable open guard for product teams that don't want to babysit a vendor model.
+- **MCP 2.0 (stateless) shipped** — spec dated 2026‑07‑28 — replaces the two‑request `initialize`+`tools/call` with a single POST carrying `MCP-Protocol-Version`/`Mcp-Method`/`Mcp-Name` headers. No server-side session state, trivially horizontal-scalable, easier to drive from small/local models. Simon Willison has the canonical writeup + three reference implementations: [stateless‑mcp](https://simonwillison.net/2026/Jul/31/stateless-mcp/), [`mcp-explorer`](https://github.com/simonw/mcp-explorer), [`datasette-mcp`](https://github.com/simonw/datasette-mcp).
+- **Run 80B Qwen in 4.3 GB RAM on a Mac, 35B on an iPhone** — Show HN, 306 pts — https://github.com/leonickson1 — Aggressive ternary/QRAM-style quantization + mmap'd weights prove you can serve frontier-class local inference on commodity Apple silicon. Companion: [**Maple-Preview**](https://deepgrove.ai) — ternary 20B MoE at 120 tok/s on an iPhone (158 pts), and [Fine‑tune 8B on 4 GB laptop GPU](https://github.com/makazhanalpamys) (131 pts). The "cloud-required for serious models" assumption is now defunct.
+- **`LLM 0.32` ships visible reasoning traces + OpenAI Responses + content‑addressable SQLite logs** — Simon Willison, Aug 4 — https://simonwillison.net/2026/Aug/4/llm-32/ — plus updated [`llm-anthropic 0.26`](https://github.com/simonw/llm-anthropic). Useful for any agent-harness team evaluating Claude/Anthropic+OpenAI side by side without instrumenting two divergent tool-calling stacks.
+- **Google's HTTP/2 implementation is measurably slowing Envoy** — https://apoxy.dev/blog/http2-envoy-slowdown/ (post currently 404'ing on the site but cached on HN at 25 pts; substantive detail in the [GitHub PR/repro](https://github.com/apoxy/envoy-h2-bench)) — Headroom-finding work for anyone running internal mesh ingress; relevant if you've been hand-tuning HTTP/2 settings and wondered why Google‑internal numbers look so different.
+
+**AI, Agents & Models**
+- **Position: LLMs Can't Jump** — https://openreview.net/ — Acceptance/Show-your-work argument (157 pts) that current LLMs fail at compositional reasoning when a sub-step is *not* present in the training distribution, with implications for how to scope agent tasks.
+- **MiniMax‑H3 omni‑modal generative system** (open‑weights, Chinese lab MiniMaxAI on HF) takes text/image/audio/video and returns ≈15 s video with audio — Simon Willison got it running on an M5 Max (45 min generation, 115 GB weights), with an MLX port at [`PipeNetwork/minimax-h3-mlx`](https://huggingface.co/PipeNetwork/minimax-h3-mlx). Worth watching for distilled / quantized follow-ups.
+- [`mcp-explorer`](https://github.com/simonw/mcp-explorer) — `uvx mcp-explorer` instant CLI for probing any MCP server (list / inspect / call); the most useful agent dev tool of the last week.
+- [`defending-code-reference-harness`](https://github.com/anthropics/defending-code-reference-harness) — Anthropic's 6.9 k⭐ eval‑in‑the‑loop harness for testing prompt‑injection defenses in coding agents; increasingly used as a public benchmark.
+
+**Software Engineering & DevTools**
+- **NumPy scales on free‑threaded (no‑GIL) Python** — https://quansight.org — 65‑pt post showing real parallel scaling once you remove the GIL; relevant given CPython 3.14+'s adoption push.
+- **tsbtree / TSON / Faster Than Ninja (bk‑S1)** — small, niche language/runtime wins worth scanning: TSON (JSON superset with content‑addressed schemas, [tson.io](https://tson.io), 24 pts), the Ninja‑beating build system (28 pts), and BSD `bmake` Mandelbrot as proof that coreutils-tier build tooling still has a pulse.
+- **[Rubin Observatory's first LSST release](https://rubinobservatory.org)** — 500k galaxies in the COSMOS field, free for research.
+
+**Cloud, Infra, Data & Security**
+- **Anthropic notes "three real-world cybersecurity incidents" in their own eval suite** — https://anthropic.com/news — useful read on the most common ways an agentic coding assistant gets induced into exfiltration; pairs well with Cloudflare OS's Gatekeeper story (above).
+- **OpenAI ↔ HuggingFace model‑evaluation cyberincident** (post‑mortems out last week) — https://openai.com/index/hugging-face-model-evaluation-security-incident/ plus [Simon Willison](https://simonwillison.net/2026/Jul/22/openai-cyberattack/) — Read once even if you weren't affected: it documents how a legit research probe can be turned into a supply‑chain attack against a model host.
+- **TIME Magazine is serving AI bots a *different* website with bot-optimized ads** — 132 pts — https://vincentschmalbach.com — Folly/money-rollout depending on your priors; worth knowing because if your agent pile‑reads TIME for research, you're not getting what your users see.
+- **Google Assistant being deprecated on mobile** (15 pts) — continues the voice-assistant consolidation; only relevant if you ship a mobile companion.
+
+**Crypto & Blockchain Engineering**
+- Quiet on infra‑advisories this slot — the prior runs already surfaced the late‑July regulatory and proof‑system news. Watch for the next round of L2 client releases (OP, Base, Arbitrum) and any post‑Pectra validator‑client bugfixes (to be verified next run).
+
+**Open Source / GitHub**
+- [`cloudflare/cloudflare-os`](https://github.com/cloudflare/cloudflare-os) — Apache‑2.0, 654⭐, 622 commits; the run‑local script is a one‑liner. See top picks.
+- [`PipeNetwork/minimax-h3-mlx`](https://huggingface.co/PipeNetwork/minimax-h3-mlx) — MLX port of the MiniMax H3 omni‑modal model; weekly‑quantized drop means consumer‑hardware vibe video is here.
+- [`mistralai/Shieldstral-1.0-3B`](https://huggingface.co/mistralai/Shieldstral-1.0-3B) — Apache‑2.0 multimodal guard model (see top picks).
+- Anthropic org repos worth tracking: [`skills`](https://github.com/anthropics/skills) (166k⭐), [`claude-code`](https://github.com/anthropics/claude-code) (140k⭐), [`claude-plugins-official`](https://github.com/anthropics/claude-plugins-official) (33k⭐) — overall velocity continues to grow.
+
+**Watchlist**
+- *Cloudflare OS* getting self‑hosted by non‑Cloudflare orgs over the next 48 h — watch the GitHub deploy‑repo for the first third‑party customisation PRs.
+- *MCP 2.0* adoption curve — once Anthropic, OpenAI, Cursor, Claude Code and the major agent harnesses ship the new wire format, the legacy stateful MCP becomes a deprecated surface; need to plan browser/proxy compatibility.
+- *Local‑LLM quantization arms race* — three top Show‑HN items this week (80B/4.3 GB, 20B MoE 120 tok/s on iPhone, 8B fine‑tune on 4 GB). Expect a wave of distilled "Tiny‑Sized Reasoning" checkpoints from major labs.
+- *OpenAI 5.x benchmarks / Anthropic Fable re-deploy* — the 2026‑07 Sonnet 5 / Opus 5 cycle is reaching maturity; any second‑half API break will hit lots of builders.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
