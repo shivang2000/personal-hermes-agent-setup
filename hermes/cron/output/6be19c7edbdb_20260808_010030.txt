@@ -1,0 +1,74 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 8 August 2026, 00:55 IST**
+
+**Top picks**
+
+- **Cloudflare drops an entire "agentic cloud" in one week** — Kitesurf (a stateless browser on V8 isolates), a rewritten MCP that "just works on Workers," WebMCP (one switch gives any site a browser-agent interface), Cloudflare OS, Cloudflare Wallets (x402 payments), the Agent Access Model for security, and Workers AI + AI Gateway merged into one control plane. This isn't a product, it's a platform play to own the agent runtime.
+- **AMD acquires Taalas to etch models into silicon** — Taalas hard-bakes transformer weights directly into chip masks instead of running them on GPUs, trading flexibility for inference throughput/energy. Concrete signal that custom silicon is starting to bite at the edge of Nvidia's moat.
+- **Oracle bans AI-generated code from OpenJDK** — A 204-point HN thread; this is the first major OSS governance move explicitly forbidding agent-authored commits in a flagship project. Watch how other foundations respond.
+- **Vercel ships Agent Plugins 1.0.0 as an open multi-vendor standard** — AWS, Cursor, GitHub, Microsoft, OpenAI and Vercel all on the steering committee. A single `plugin.json` packages Agent Skills + MCP servers; one manifest works across every compliant client.
+- **OpenAI publishes "Responding to the next frontier of critical cyber capabilities"** — First sustained policy post from OpenAI on offensive cyber use of frontier models, framed as a defensive/coordination piece.
+- **Google DeepMind launches Gemini Robotics 2 + Robotics ER 2** — Whole-body humanoid intelligence plus a video-grounded ER variant for multi-robot orchestration; Gemini Robotics ER 2 also handles task planning across robot fleets.
+
+**AI, Agents & Models**
+
+- **DeepSeek V4 Flash 0731 tops ARC-AGI** — A 127-point HN story shows DeepSeek's new Flash variant on the public ARC-AGI leaderboard. ARC blog post not yet live, but the HN discussion links through arcprize.org; details to follow.
+- **Claude Code: Auto mode becomes default permission mode on August 14** — Anthropic's coding CLI will shift to an auto-permit default unless explicitly overridden; security-aware teams should review sandboxing now.
+- **DiffusionGemma: 4× faster text generation** — Google's diffusion-style decoding research lands for Gemma, an alternative to autoregressive sampling that trades a few quality points for serious throughput.
+- **Databricks drove down AI coding spend 70%** — Engineering writeup on routing/model-selection tactics; concrete playbook rather than vendor hype.
+- **Gemini 3.5 with computer use, Gemini 3.5 Flash Cyber, Nano Banana 2 Lite and Gemini Omni Flash** — DeepMind rolled a batch of smaller specialised models this week; Flash Cyber targets security workflows.
+
+**Software Engineering & DevTools**
+
+- **Making Postgres 300× faster for analytics** — HN front-page deep-dive from malisper.me walking through batching, operator fusion and SIMD on Postgres. Practical, not a new DB; useful pattern even if the exact numbers are workload-specific.
+- **Next.js 16.3 on Vercel** — Leaner prefetching, immutable static assets, instant navigations.
+- **Vercel Agent Plugins 1.0.0** — See top pick.
+- **Cloudflare launches "Agent Development Lifecycle"** — Companion piece to the Cloudflare OS push; positions primitives for build, deploy and review of agents.
+- **Datadog State of Postgres report** — Telemetry from tens of thousands of production Postgres instances; useful baseline for sizing, replication and extensions.
+
+**Cloud, Infra, Data & Security**
+
+- **Kitesurf + Workers-AI unification + Cloudflare OS** — All part of one week of Cloudflare agent-platform launches; see top pick for breakdown.
+- **MIT TONTOU attack slips through Spectre defenses on Intel and AMD** — Timer interrupts reopen the branch-predictor poisoning window; working Zen 2 exploit demonstrated. Microcode mitigations pending.
+- **N-able God-mode flaw: vendor confirms attackers reached customer networks** — Second hotfix lands after admin access was abused downstream.
+- **ShinyHunters dumps 10.9M emails from cancer diagnostics provider** — Voice-phishing of staff led to full PII/PHI dump; classic 2025-era social-engineering pattern.
+- **Intrusion at US healthcare software vendor puts 3.8M records at risk** — Names, SSNs, diagnoses and insurance data exposed via Unlimited Technology Systems.
+- **GitHub Actions + Pages outage** — Latest in a series; worth noting if your CI depends on either.
+
+**Crypto & Blockchain Engineering**
+
+- **Bybit sues North Korea and Lazarus Group over $1.5B hack, secures asset freeze** — Exchange obtained a preliminary injunction freezing stolen assets; notable legal precedent for state-attributed crypto theft.
+- **Polymarket shifts to time-weighted pricing after a "five-second trick" drained millions** — Months of on-chain warnings culminated in a fix that makes artificial price pushes uneconomic.
+- **OFAC sanctions Iran-linked crypto exchanges Shelbit and Aban Tether** — Continued US pressure on Tehran's fiat/crypto rails.
+- **Wintermute gets SEC approval to trade equities and ETF blocks** — A crypto-native market maker now operating in US equity markets — structural shift in market-making.
+- **Ethereum weETH splits from restaking** — Plain ETH-staking exposure now decoupled from higher-risk restaking as validator-reward caps divide the staking sector.
+- **CLARITY Act slips to September** — Senate left Washington without a vote; OKX and others publicly pricing in non-pass scenarios.
+
+**Open Source / GitHub**
+
+- **cloudflare/computer — "Give your agent a computer"** — A virtual filesystem living inside a Durable Object with pluggable execution surfaces (just-bash, JavaScript, container). 5.5k stars, trending #3 today.
+- **PrimeIntellect-ai/prime-agent** — Self-improving RLM agent for long-running coding workflows; +2,271 stars in 24h, trending #1.
+- **denoland/celld** — Self-hosted, distributed Durable Objects (Deno team's take on Cloudflare's Durable Objects, deployable on your own infra).
+- **addyosmani/agent-skills** and **obra/superpowers** — Top of the "skills/agents methodology" surge; both well past 200k stars now.
+- **Open-source Cloudflare OS** — Companion to the platform push.
+
+**Startups, YC & Industry**
+
+- **OpenRelay (YC S26) — "One API for inference across every chip"** — Inference delivery network abstracting hardware choice; relevant given the AMD/Taalas shift.
+- **Context.dev (YC S26)** — Live web-data API aimed at AI agents; already 104 upvotes on Launch YC.
+- **Florin — Full-stack insurance company with 0 underwriters** — Autonomously places hard-to-price risks; 64 upvotes on YC.
+- **Libra Robotics (YC S26)** — Collaborative robot squads for solar installation; robotics-lab momentum continues.
+- **Cova — AI-agent home-care agency** — Operational vertical agent for home services.
+- **SpaceFlow — Managed runtime for enterprise AI agents** — "AI employees that do supply chain work and prove every task."
+
+**Watchlist**
+
+- **CLARITY Act** U.S. crypto market-structure bill: September is the next real window; OKX already pricing failure.
+- **Claude Code auto-mode default** rollout on Aug 14 — every team using Anthropic's CLI should test sandboxing before the flip.
+- **TONTOU microcode mitigations** — Intel/AMD patches expected; will set the tone for the next round of speculative-execution CVEs.
+- **Anthropic Claude Opus 5 / Sonnet 5** adoption patterns — still the model-tier everyone is benchmarking against, with Fable 5 also freshly redeployed.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
