@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1041
+        "completed": 1042
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-08-08T18:24:28.655137+05:30",
-      "last_run_at": "2026-08-08T15:39:30.021890+05:30",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/hermes-agent/.hermes-runtime/python/generation-1785160776-30709-b0acb97e/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
+      "next_run_at": "2026-08-08T20:26:22.745054+05:30",
+      "last_run_at": "2026-08-08T17:58:27.583926+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -65,7 +65,7 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 158
+        "completed": 159
       },
       "enabled": true,
       "state": "scheduled",
@@ -73,10 +73,10 @@
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
       "next_run_at": "2026-08-08T20:55:00+05:30",
-      "last_run_at": "2026-08-08T14:53:06.969690+05:30",
+      "last_run_at": "2026-08-08T18:57:01.804430+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: Connection error.",
-      "last_delivery_error": "delivery error: Discord send failed: Cannot connect to host discord.com:443 ssl:default [nodename nor servname provided, or not known]",
+      "last_error": "TimeoutError: Cron job 'AI / Crypto / Tech / Software news digest for #tech-news' idle for 1046s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
         "platform": "discord",
@@ -120,17 +120,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 396
+        "completed": 397
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
-      "next_run_at": "2026-08-08T17:30:00+05:30",
-      "last_run_at": "2026-08-08T16:39:40.481512+05:30",
+      "next_run_at": "2026-08-08T19:30:00+05:30",
+      "last_run_at": "2026-08-08T18:57:02.095264+05:30",
       "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 1567s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "last_error": "TimeoutError: Cron job 'AI/Tech breaking-news trigger (30m)' idle for 1047s (limit 600s) \u2014 last activity: starting API call #1",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -174,17 +174,17 @@
       "schedule_display": "*/30 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 391
+        "completed": 393
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
-      "next_run_at": "2026-08-08T17:30:00+05:30",
-      "last_run_at": "2026-08-08T16:39:40.485228+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'Reply-engagement scanner for AI accounts (30m)' idle for 1567s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
+      "next_run_at": "2026-08-08T19:30:00+05:30",
+      "last_run_at": "2026-08-08T18:57:21.248295+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -281,17 +281,17 @@
       "schedule_display": "*/45 7-22 * * *",
       "repeat": {
         "times": null,
-        "completed": 392
+        "completed": 394
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-08-08T17:45:00+05:30",
-      "last_run_at": "2026-08-08T16:39:40.492563+05:30",
-      "last_status": "error",
-      "last_error": "TimeoutError: Cron job 'AI/tech opportunity scan (45m)' idle for 968s (limit 600s) \u2014 last activity: executing tool: terminal",
+      "next_run_at": "2026-08-08T19:45:00+05:30",
+      "last_run_at": "2026-08-08T18:58:11.412973+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-08T17:24:28.663114+05:30"
+  "updated_at": "2026-08-08T19:26:22.745507+05:30"
 }
