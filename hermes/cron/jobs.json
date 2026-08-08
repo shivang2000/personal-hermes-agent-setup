@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1045
+        "completed": 1046
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-08-08T23:59:46.740661+05:30",
-      "last_run_at": "2026-08-08T21:58:49.302441+05:30",
+      "next_run_at": "2026-08-09T01:00:51.769985+05:30",
+      "last_run_at": "2026-08-08T22:59:52.396749+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -97,8 +97,8 @@
     },
     {
       "id": "83b4fd8d0951",
-      "name": "AI/Tech breaking-news trigger (30m)",
-      "prompt": "You are Shivang's background AI/Twitter breaking-news trigger. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report once that the isolated profile needs its one-time login. Research current AI/agent/LLM infra news from reliable public primary sources and use headless X search with `x_background.py search \"QUERY\" 15`. Confirm material claims against a primary source. Check `x_background.py profile @shivangchheda22 15` to prevent duplicates. Fire only for a genuinely major release, benchmark, API/pricing change, safety finding, or significant open-source launch; otherwise return `[SILENT]`. Draft one source-backed technical post in Shivang's concrete builder voice, <=260 characters preferred and <=280 required, applying the humanizer skill. For a high-value event, capture a clean public-source screenshot headlessly: `python3 /Users/shivang/.hermes/scripts/x_background.py capture \"SOURCE_URL\" /tmp/x-breaking-source.png`; prefer a relevant selector/crop when known, avoid cookie banners/private pages, and attach only if the image is legible and directly proves the claim. Post with `python3 /Users/shivang/.hermes/scripts/x_background.py post \"TEXT\" --image /tmp/x-breaking-source.png`; if screenshot capture is unsuitable, post text-only. Require returned `status: POSTED` and a verified X URL. Limit to one post per run and never retry a possibly completed submission. Report only the final text, URL, source, and whether an image was attached.",
+      "name": "PAUSED \u2014 AI/tech breaking-news automation",
+      "prompt": "SAFETY HOLD: This breaking-news X automation remains paused after an X suspicious-activity warning. Do not resume without Shivang's explicit approval. If manually run while paused for diagnostics, research public web sources only and do not access or write to X. Return `[SILENT]`.",
       "skills": [
         "ai-tech-twitter-system",
         "humanizer"
@@ -114,17 +114,17 @@
       "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "*/30 7-22 * * *",
-        "display": "*/30 7-22 * * *"
+        "expr": "17 14,21 * * *",
+        "display": "17 14,21 * * *"
       },
-      "schedule_display": "*/30 7-22 * * *",
+      "schedule_display": "17 14,21 * * *",
       "repeat": {
         "times": null,
         "completed": 404
       },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-08T23:55:03.243637+05:30",
       "paused_reason": null,
       "created_at": "2026-07-25T05:00:50.454535+05:30",
       "next_run_at": "2026-08-09T07:00:00+05:30",
@@ -151,8 +151,8 @@
     },
     {
       "id": "e7282bec2292",
-      "name": "Reply-engagement scanner for AI accounts (30m)",
-      "prompt": "You are Shivang's background X reply-engagement scanner. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not reply and report once that the isolated profile needs its one-time login. Find fresh, high-signal AI/agent/LLM-infra posts from credible accounts with `x_background.py search`, focusing on active technical conversations. Choose at most one target per run, skip anything Shivang already replied to, and stay `[SILENT]` if there is no genuinely useful addition. Draft a <=280-character reply that adds a concrete mechanism, failure mode, tradeoff, benchmark caveat, or production lesson; apply the humanizer skill and avoid generic praise or engagement farming. Normally use `python3 /Users/shivang/.hermes/scripts/x_background.py reply \"POST_URL\" \"TEXT\"`. Attach a screenshot only when it adds direct evidence and is from a safe public source: capture it headlessly with `x_background.py capture` and pass `--image PATH`. Require returned `status: REPLIED`; never retry a possibly completed reply. Report only the target URL and posted reply, otherwise `[SILENT]`.",
+      "name": "PAUSED \u2014 automated X replies",
+      "prompt": "SAFETY HOLD: Automated X replies are disabled after an X suspicious-activity warning. Do not resume this job without Shivang's explicit approval. The background runner also blocks replies unless a manual override environment variable is deliberately provided. If manually run for diagnostics, do not access or write to X and return `[SILENT]`.",
       "skills": [
         "ai-tech-twitter-system",
         "humanizer"
@@ -168,17 +168,17 @@
       "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "*/30 7-22 * * *",
-        "display": "*/30 7-22 * * *"
+        "expr": "11 19 * * *",
+        "display": "11 19 * * *"
       },
-      "schedule_display": "*/30 7-22 * * *",
+      "schedule_display": "11 19 * * *",
       "repeat": {
         "times": null,
         "completed": 400
       },
-      "enabled": true,
-      "state": "scheduled",
-      "paused_at": null,
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-08T23:55:04.389868+05:30",
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:04.917181+05:30",
       "next_run_at": "2026-08-09T07:00:00+05:30",
@@ -204,8 +204,8 @@
     },
     {
       "id": "15c6cb6d1c24",
-      "name": "Daily AI/tech autopost (12:45 PM IST)",
-      "prompt": "You are Shivang's daily background AI/tech autoposter. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report that the isolated profile needs its one-time login. Build one strong daily post from, in order: Shivang's recent safe technical/build context, a current source-backed AI/agent/LLM-infra development, or a concrete production engineering lesson. Use web research plus `x_background.py search` and `profile @shivangchheda22 20` to calibrate voice and prevent duplication. Draft <=260 characters preferred and <=280 required, with a concrete mechanism/tradeoff and 0-2 relevant hashtags. Apply the humanizer skill before posting. Make the post visual whenever a useful public proof artifact exists: benchmark chart, model card, release page, architecture diagram, terminal output safe for public sharing, or source announcement. Capture it headlessly via `python3 /Users/shivang/.hermes/scripts/x_background.py capture \"PUBLIC_URL\" /tmp/x-daily-source.png` (use `--selector` when it improves focus), verify the screenshot is relevant and contains no private data, then post with `python3 /Users/shivang/.hermes/scripts/x_background.py post \"TEXT\" --image /tmp/x-daily-source.png`. If no good image exists, post text-only rather than attaching filler. Require `status: POSTED` and a verified X URL; never retry a possibly completed post. Report only final text, URL, source, and image status.",
+      "name": "Conservative AI/tech autopost (M/W/F)",
+      "prompt": "You are Shivang's conservative AI/tech autoposter. The account recently showed an X suspicious-activity warning, so minimizing automation signals is more important than posting volume. Run only on Monday, Wednesday, and Friday. Research entirely from public web sources and safe local/session context. Do NOT call X check, search, profile, timeline, reply, quote, or any other authenticated X read during research. If there is no strong, personal, source-backed builder insight, return `[SILENT]` and do not open X. Maximum intended output is one original post, and `/Users/shivang/.hermes/scripts/x_background.py` enforces a hard cap of 1 automated write per rolling 24 hours and 3 per rolling 7 days. Never attempt to bypass that limit or retry a rate-limited/uncertain submission. Before posting, load and apply the humanizer skill in two passes: (1) rewrite the draft to match Shivang's natural technical builder voice, using specific first-person experience or an honest opinion when appropriate; (2) ask internally what still sounds AI-generated and rewrite again. Remove significance inflation, generic hooks, rule-of-three lists, slogan/mic-drop endings, excessive polish, engagement bait, and canned phrases. Prefer one concrete mechanism or production lesson, varied sentence rhythm, and normal human uncertainty. Keep <=REDACTED_SET_LOCALLY
       "skills": [
         "ai-tech-twitter-system",
         "humanizer"
@@ -221,10 +221,10 @@
       "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "45 12 * * *",
-        "display": "45 12 * * *"
+        "expr": "47 12 * * 1,3,5",
+        "display": "47 12 * * 1,3,5"
       },
-      "schedule_display": "45 12 * * *",
+      "schedule_display": "47 12 * * 1,3,5",
       "repeat": {
         "times": null,
         "completed": 15
@@ -234,7 +234,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-08-09T12:45:00+05:30",
+      "next_run_at": "2026-08-10T12:47:00+05:30",
       "last_run_at": "2026-08-08T15:09:41.799509+05:30",
       "last_status": "error",
       "last_error": "TimeoutError: Cron job 'Daily AI/tech autopost (12:45 PM IST)' idle for 985s (limit 600s) \u2014 last activity: waiting for non-streaming API response",
@@ -258,8 +258,8 @@
     },
     {
       "id": "d1d619cfb98e",
-      "name": "AI/tech opportunity scan (45m)",
-      "prompt": "You are Shivang's background AI/Twitter opportunity scanner. Run entirely headlessly and NEVER control Arc, the active browser tab, Finder, or visible desktop UI. Use `/Users/shivang/.hermes/scripts/x_background.py` only. First run `python3 /Users/shivang/.hermes/scripts/x_background.py check`; if `logged_in` is false, do not post and report once that the isolated profile needs its one-time login. Scan current AI agents, LLM infrastructure, evals, observability, reliability, DevTools, open source, and recruiter/founder-relevant builder conversations using reliable web sources and `x_background.py search`. Check `x_background.py profile @shivangchheda22 20` for duplicates. Stay `[SILENT]` unless there is a timely source-backed angle with a concrete mechanism or tradeoff. Choose at most one action per run: original post, quote post, or useful reply. Apply the humanizer skill; <=260 characters preferred and <=280 required. For original/quote posts, attach a clean screenshot when it materially improves proof and engagement: capture only a public primary source headlessly with `x_background.py capture \"URL\" /tmp/x-opportunity-source.png`, avoid private information and generic decorative images, then pass `--image`. Use `x_background.py post`, `quote`, or `reply`; require a successful status and do not retry a possibly completed action. Report only the final action, text, source, URL, and image status; otherwise `[SILENT]`.",
+      "name": "Low-frequency AI/tech opportunity review (T/Th/Sat)",
+      "prompt": "You are Shivang's low-frequency AI/tech opportunity reviewer. The account recently showed an X suspicious-activity warning. Run only Tuesday, Thursday, and Saturday. Research current AI agents, LLM infrastructure, evals, reliability, DevTools, and open source using public web sources only. Do NOT perform authenticated X reads (`check`, `search`, `profile`, `timeline`) while scanning. Most runs should return `[SILENT]`. Post only when the angle is unusually strong, source-backed, relevant to Shivang's real technical builder experience, and clearly distinct from his recent themes available in session/local context. Do not reply or quote-post. `/Users/shivang/.hermes/scripts/x_background.py` enforces 1 automated write per rolling 24 hours and 3 per rolling 7 days; never bypass, retry, or work around it. Apply the humanizer skill twice before posting: first remove AI-writing patterns and match Shivang's casual technical voice; then perform a final 'what still sounds AI-generated?' audit and rewrite. Avoid generic AI commentary, dramatic fragments, rule-of-three lists, fake certainty, polished LinkedIn rhythm, slogans, engagement bait, and more than one hashtag. Keep <=REDACTED_SET_LOCALLY
       "skills": [
         "ai-tech-twitter-system",
         "humanizer"
@@ -275,10 +275,10 @@
       "context_from": null,
       "schedule": {
         "kind": "cron",
-        "expr": "*/45 7-22 * * *",
-        "display": "*/45 7-22 * * *"
+        "expr": "23 18 * * 2,4,6",
+        "display": "23 18 * * 2,4,6"
       },
-      "schedule_display": "*/45 7-22 * * *",
+      "schedule_display": "23 18 * * 2,4,6",
       "repeat": {
         "times": null,
         "completed": 401
@@ -288,7 +288,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-08-09T07:00:00+05:30",
+      "next_run_at": "2026-08-11T18:23:00+05:30",
       "last_run_at": "2026-08-08T22:46:05.261614+05:30",
       "last_status": "ok",
       "last_error": null,
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-08T22:59:46.742012+05:30"
+  "updated_at": "2026-08-09T00:00:51.771538+05:30"
 }

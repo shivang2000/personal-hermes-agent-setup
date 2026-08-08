@@ -101,6 +101,17 @@ Avoid:
 - Dense jargon that only reads as performative.
 - Copying phrasing from source material.
 
+## Suspicious-activity safety policy (August 2026)
+
+After X showed Shivang a suspicious-activity warning, the conservative policy overrides all earlier high-frequency growth tactics:
+- Maximum one automated write per rolling 24 hours and three per rolling seven days, enforced in `x_background.py` before submit.
+- Automated replies and the breaking-news job remain paused unless Shivang explicitly re-enables them.
+- Regular posting runs Monday/Wednesday/Friday; opportunity review runs Tuesday/Thursday/Saturday, but `[SILENT]` is preferred and the hard weekly cap still applies.
+- Research must use public web sources and safe local/session context. Do not perform authenticated X searches, profile reads, timeline reads, or login checks on every scan. Open X only after a post has passed the quality gate.
+- Do not retry uncertain submissions or bypass the write limiter.
+- Apply `humanizer` twice: rewrite into Shivang's natural technical builder voice, then run a final anti-AI audit and rewrite again. Avoid generic hooks, significance inflation, rule-of-three lists, slogan endings, engagement bait, and polished LinkedIn rhythm.
+- Screenshots remain optional. Attach only a clean public proof artifact that materially supports the post.
+
 ## Recurring auto-post workflow
 
 For scheduled AI/tech tweet runs, Shivang has explicitly approved auto-posting. Do not ask for approval.
@@ -478,24 +489,24 @@ If a video/article creator is relevant and the exact public handle or URL is vis
 
 ## Cadence Options
 
-Current default for Shivang:
-- Daily must-post approval queue at 12:45 PM IST so the first review lands at the start of the broader Europe + US attention window.
-- 45-minute opportunity scans from 12:45 PM IST through 3:45 AM IST, covering Europe/London plus US workday and evening attention.
-- Breaking-news trigger at `every 30m` during the same active window — fires immediately on major AI events instead of waiting for the next 45-minute scan.
-- Reply-engagement scanner at `every 30m` during the same active window — replies to high-engagement AI tweets from large accounts.
-- Discovery-led posting whenever Shivang shares an insight and explicitly asks to post.
+Current default for Shivang after the suspicious-activity warning:
+- Conservative autopost on Monday, Wednesday, and Friday at 12:47 PM IST.
+- Opportunity review on Tuesday, Thursday, and Saturday at 6:23 PM IST; `[SILENT]` is the normal outcome.
+- Breaking-news and automated-reply jobs are paused.
+- Hard runner limits: one automated write per rolling 24 hours and three per rolling seven days.
+- Public-web research only until a final post is selected; avoid routine authenticated X reads.
+- Discovery-led manual posting remains available when Shivang explicitly asks, but the runner's safety limiter still applies by default.
 
 Timing rationale:
-- Optimize for Europe/London plus US recruiters and founders without forcing low-quality posts.
-- Prefer one strong daily queue plus selective 45-minute scans that can stay silent when there is nothing genuinely fresh.
+- Keep activity sparse and irregular enough to reduce account-risk signals while retaining a small number of high-quality technical posts.
+- Prefer silence over filling a schedule; a job run does not imply a post.
 - Bias toward posts that show real output, judgment, learning speed, and production hardening instead of generic AI hot takes.
 
-Cadence options:
-- Light: 1 queue/day, drafts only when there is a strong builder-context angle.
-- Standard: daily must-post + selective 45-minute scans during the active window.
-- High-frequency: same window, but only if the scans are allowed to return `[SILENT]` when there is no genuine opportunity.
-- Discovery-led: post when Shivang shares an insight and explicitly asks to post.
-- End-of-office-day reflection: weekdays at 7:30 PM IST, summarize safe local work signals into tweet angles for review; pin recurring Hermes jobs to `openai-codex` / `gpt-5.5` unless Shivang asks otherwise. See `references/local-work-summary-cron.md`.
+Cadence options under the current safety policy:
+- Conservative default: up to three automated writes per rolling seven days, with many scheduled runs returning `[SILENT]`.
+- Draft-only: research and prepare drafts without opening X or posting.
+- Discovery-led manual: post when Shivang explicitly asks, subject to the runner's safety limiter.
+- Do not restore daily/high-frequency scans or automated replies until Shivang explicitly accepts the account-risk tradeoff.
 
 When changing cadence, update existing Hermes cron jobs rather than creating duplicates unless the user wants separate queues.
 

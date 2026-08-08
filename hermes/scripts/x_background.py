@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import fcntl
+import hashlib
 import json
 import os
 import sys
@@ -34,13 +35,59 @@ from playwright.sync_api import BrowserContext, Page, TimeoutError as Playwright
 
 PROFILE_DIR = Path.home() / ".hermes" / "browser-profiles" / "x-automation"
 LOCK_PATH = Path.home() / ".hermes" / "locks" / "x-background.lock"
+ACTION_STATE_PATH = Path.home() / ".hermes" / "state" / "x-background-actions.json"
 DEFAULT_HANDLE = "shivangchheda22"
 VIEWPORT = {"width": 1440, "height": 1000}
+MAX_AUTOMATED_WRITES_24H = 1
+MAX_AUTOMATED_WRITES_7D = 3
+MIN_WRITE_GAP_SECONDS = 12 * 60 * 60
 
 
 def emit(value: Any, exit_code: int = 0) -> None:
     print(json.dumps(value, indent=2, ensure_ascii=False))
     raise SystemExit(exit_code)
+
+
+def _load_action_state() -> dict[str, Any]:
+    if not ACTION_STATE_PATH.exists():
+        return {"actions": []}
+    try:
+        return json.loads(ACTION_STATE_PATH.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {"actions": []}
+
+
+def _save_action_state(state: dict[str, Any]) -> None:
+    ACTION_STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ACTION_STATE_PATH.with_suffix(".tmp")
+    tmp.write_text(json.dumps(state, indent=2, sort_keys=True))
+    tmp.replace(ACTION_STATE_PATH)
+
+
+def reserve_automated_write(action: str, text: str) -> dict[str, Any]:
+    """Reserve a conservative write slot before clicking X's submit button.
+
+    A reservation counts even if the later UI submission fails. That is deliberate:
+    after suspicious-activity warnings, avoiding retries matters more than throughput.
+    """
+    now = time.time()
+    state = _load_action_state()
+    actions = [a for a in state.get("actions", []) if now - float(a.get("ts", 0)) < 30 * 86400]
+    recent_24h = [a for a in actions if now - float(a.get("ts", 0)) < 86400]
+    recent_7d = [a for a in actions if now - float(a.get("ts", 0)) < 7 * 86400]
+    if len(recent_24h) >= MAX_AUTOMATED_WRITES_24H:
+        raise RuntimeError("safety rate limit: one automated X write is already reserved in the last 24 hours")
+    if len(recent_7d) >= MAX_AUTOMATED_WRITES_7D:
+        raise RuntimeError("safety rate limit: three automated X writes are already reserved in the last 7 days")
+    if actions and now - float(actions[-1].get("ts", 0)) < MIN_WRITE_GAP_SECONDS:
+        raise RuntimeError("safety rate limit: fewer than 12 hours since the last automated X write")
+    digest = hashlib.sha256(text.strip().encode("utf-8")).hexdigest()
+    if any(a.get("digest") == digest for a in actions):
+        raise RuntimeError("duplicate safety check: this exact text was already reserved in the last 30 days")
+    record = {"ts": now, "action": action, "digest": digest, "status": "reserved"}
+    actions.append(record)
+    _save_action_state({"actions": actions})
+    return {"max_writes_24h": MAX_AUTOMATED_WRITES_24H, "max_writes_7d": MAX_AUTOMATED_WRITES_7D, "min_gap_hours": 12}
 
 
 @contextmanager
@@ -266,16 +313,19 @@ def cmd_post(text: str, image: str | None) -> None:
     with exclusive_lock(), browser_session(headless=True) as (_, page):
         require_login(page)
         compose(page, text, image)
+        safety = reserve_automated_write("post", text)
         submit(page)
         url = verify_recent_post(page, text)
         if not url:
             raise RuntimeError("submit completed but the post was not found on the profile")
-        emit({"status": "POSTED", "url": url, "image": str(Path(image).resolve()) if image else None})
+        emit({"status": "POSTED", "url": url, "image": str(Path(image).resolve()) if image else None, "safety": safety})
 
 
 def cmd_reply(post_url: str, text: str, image: str | None) -> None:
     if len(text) > 280:
         raise ValueError(f"reply is {len(text)} characters; maximum is 280")
+    if os.environ.get("HERMES_X_ALLOW_REPLY") != "1":
+        raise RuntimeError("automated replies are disabled after X suspicious-activity warning")
     with exclusive_lock(), browser_session(headless=True) as (_, page):
         require_login(page)
         goto(page, post_url, 2500)
@@ -297,8 +347,9 @@ def cmd_reply(post_url: str, text: str, image: str | None) -> None:
                 )""",
                 timeout=30_000,
             )
+        safety = reserve_automated_write("reply", f"{post_url}\n{text}")
         submit(page)
-        emit({"status": "REPLIED", "reply_to": post_url, "image": image})
+        emit({"status": "REPLIED", "reply_to": post_url, "image": image, "safety": safety})
 
 
 def cmd_quote(post_url: str, text: str, image: str | None) -> None:
@@ -309,9 +360,10 @@ def cmd_quote(post_url: str, text: str, image: str | None) -> None:
     with exclusive_lock(), browser_session(headless=True) as (_, page):
         require_login(page)
         compose(page, combined, image)
+        safety = reserve_automated_write("quote", combined)
         submit(page)
         url = verify_recent_post(page, text)
-        emit({"status": "POSTED", "url": url, "quote_of": post_url, "image": image})
+        emit({"status": "POSTED", "url": url, "quote_of": post_url, "image": image, "safety": safety})
 
 
 def parser() -> argparse.ArgumentParser:
