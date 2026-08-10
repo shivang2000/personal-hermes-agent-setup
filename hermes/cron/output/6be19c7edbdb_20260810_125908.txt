@@ -1,0 +1,72 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+Empty page means blocked. I have enough to write the digest. The OpenAI Astra story is from a secondary source (The Hacker News) — I'll note it carefully and only include what's clearly grounded. Let me finalize the digest now. Current time appears to be in the Aug 9–10, 2026 window; I'll use a current IST date.
+
+**Tech / AI / Crypto / Software Digest — Monday, 10 Aug 2026, 12:55 IST**
+
+**Top picks**
+
+- [Cloudflare launches "Agentic Internet" stack: WebMCP, Kitesurf browser, Wallets, and an Agent Access Model](https://blog.cloudflare.com/) — Across Aug 4–8 Cloudflare shipped a coordinated set of primitives: a stateless browser ("Kitesurf") running in V8 isolates on Workers, a WebMCP dev-preview that exposes any site as an agent interface with one switch, agent-native payments via x402 ("Cloudflare Wallets"), the "Agent Access Model" for task-scoped identity, and "Cloudflare OS" as the unifying platform. This is the most concrete end-to-end agent hosting surface yet and worth tracking for anyone building agent products.
+
+- [Docker Sandboxes – disposable, isolated sandboxes for AI agents](https://www.docker.com/blog/) — Top-of-HN launch: Docker's sandbox product gives coding agents a hardened, ephemeral execution environment with OIDC, audit logs streamed to SIEM, and runtime policy enforcement (Docker AI Governance). Direct response to the "29 million secret problem" of agent credential exposure.
+
+- [Claude Code auto mode is now the default](https://news.ycombinator.com/) — Anthropic has flipped the agent's permission mode so it can decide on its own when to act vs. confirm; 160 points and 139 comments on HN in 3 hours suggests this is a meaningful behavior shift for production users, not just a setting toggle.
+
+- [OpenAI's upcoming model Astra triggered an internal pause over cyber capability](https://thehackernews.com/) — Per The Hacker News, OpenAI is pausing internal activities on Astra after evals showed significant agentic-coding and cyber advances; the company is hardening controls (isolated test envs, restricted network/tool access, CoT monitors). Treat as primary news from OpenAI only via this secondary source — useful signal that capability thresholds are starting to bite inside labs.
+
+- [Metabase zero-day (CVSS 10.0) exploited in the wild](https://thehackernews.com/2026/08/08/) — Unauthenticated SQL injection on Metabase 1.58+ giving admin access; exploited against Metabase Cloud. Self-hosted users must patch immediately — this is the highest-impact vuln in the digest.
+
+- [Atlassian Rovo prompt-injection exfiltrates Jira/Confluence data](https://thehackernews.com/2026/08/08/) — Two independent firms (PromptArmor, Varonis) found attacker-controlled content can make Rovo read internal data and POST it out via a URL. Confirms the prompt-injection → enterprise exfil pattern is now hitting mainstream SaaS copilots, not just chatbots.
+
+**AI, Agents & Models**
+
+- [PrimeIntellect/prime-agent — self-improving RLM coding agent](https://github.com/PrimeIntellect-ai/prime-agent) — #1 trending repo today (~12k stars, ~2.4k stars today); monorepo with `prime-agent-runtime`, ACP kernel, and a coding-agent that "makes agent messages steer-only" — relevant if you're evaluating long-running coding agents.
+- [OpenAI GPT-5.6 family update — long-context in Fast mode](https://platform.openai.com/docs/changelog) — Aug 5: GPT-5.6 Sol/Terra/Luna now support >272K-token prompts in Fast mode (up to 2.5× faster, 2× price). Real cost lever for high-token RAG/coding workloads.
+- [GPT-5.6 price cuts — Luna -80%, Terra -20%](https://platform.openai.com/docs/changelog) — July 30. Background-mode / cheap tier economics matter if you're batching agent loops.
+- [OpenAI Terraform provider released](https://platform.openai.com/docs/changelog) — July 29: IaC for projects, users, groups, rate limits, certs, drift detection. Useful for platform teams standardizing API access.
+- [Stanford runs 37,000 AI agents as a virtual biotech; one drug design confirmed by Merck](https://venturebeat.com/category/ai) — Aug 7. Concrete data point for multi-agent debate > single model; relevant to anyone building research agents.
+- [Liquid AI LFM2.5-2.6B — agent-capable model that runs on a Raspberry Pi](https://venturebeat.com/category/ai) — Aug 6. ~3.7× faster than DeepSeek-V4-Flash in their bench; jumped to top of OpenRouter. On-device agent viability continues to improve.
+- [Meta enters AI coding with Muse Spark 1.2 / Muse Code and async background agents](https://venturebeat.com/category/ai) — Aug 5. Note default training-pipeline opt-in — enterprises on proprietary code should explicitly move to standard pricing.
+
+**Cloud, Infra, Data & Security**
+
+- [AWS Bedrock AgentCore Runtime Instances — persistent compute for prod agents](https://aws.amazon.com/blogs/aws/) — Long-running state for agents vs. request/response — addresses the cold-start pain for agent hosting on Bedrock.
+- [Amazon DynamoDB adds real-time vector search at any scale](https://aws.amazon.com/blogs/aws/) — Managed vector index inside DynamoDB; interesting for teams already on DDB who want to avoid a separate vector DB.
+- [Snowflake pushed CDC into Postgres](https://www.snowflake.com/) — HN front-page engineering writeup (80 pts) on how Snowflake added native logical CDC to Postgres (replication slots + Snowflake-managed consumer). Useful pattern for anyone building change-data pipelines.
+- [New CSS attacks break webmail boundaries (Outlook, Gmail, Fastmail, Proton, Yahoo, AOL)](https://thehackernews.com/2026/08/08/) — PortSwigger's Black Hat USA 2026 research shows CSS+DOM mutation chains exfiltrating creds/tokens and even manipulating AI email-reading tools. Practical PoCs available.
+- [N-able N-central Hotfix 2 after attackers reach managed systems](https://thehackernews.com/2026/08/08/) — CVE-2026-18577 (CVSS 8.2) was zero-day then-now; Hotfix 2 supersedes Hotfix 1 — apply even if you already patched.
+- [Run CI/CD for millions of repos on Cloudflare](https://blog.cloudflare.com/) — Cloudflare's CI/CD pitch (Workers-based runners). Worth a look if you're cost-sensitive on GitHub Actions / Buildkite.
+
+**Crypto & Blockchain Engineering**
+
+- [BTCPay / LND Lightning server exploit drains wallets](https://www.coindesk.com/) — Active exploitation; BTCPay urged users running LND to patch or take servers offline. Real-world Lightning ops incident — update if you run LND.
+- [Cloudflare Wallets + x402 for agent payments](https://blog.cloudflare.com/) — Programmable wallet with verifiable identity so agents can pay for APIs. Concrete protocol-level primitive, not just concept.
+- [XRPL amendment proposal targets $530M in tokenized Wall Street assets](https://www.coindesk.com/) — Encrypted token balances/transfer amounts with selective disclosure for issuers/auditors/regulators. Institutional-grade confidentiality on XRPL.
+- [Brazil central bank orders exchanges to delay large outbound crypto transfers](https://www.coindesk.com/) — >$10K transfers and flagged smaller ones must be held; affects any Brazilian exchange integrating payments.
+- [Senate punts CLARITY Act procedural vote to September](https://www.coindesk.com/) — US market-structure bill stalls; BTC held above $65K on ETF inflows. Watch for procedural motion when Senate reconvenes.
+
+**Open Source / GitHub**
+
+- [addyosmani/agent-skills — production-grade engineering skills for AI coding agents](https://github.com/addyosmani/agent-skills) — ~85k stars, +680 today. Skill definitions for Claude Code / similar agents; signals the "skills as first-class artifacts" pattern consolidating.
+- [google/skills — Agent Skills for Google products](https://github.com/google/skills) — Official Google counterpart to the ecosystem above; +528 stars today.
+- [vitali87/code-graph-rag — RAG over monorepos via knowledge graphs](https://github.com/vitali87/code-graph-rag) — Multi-language monorepo RAG; useful if you're building internal dev tooling on top of Claude/Cursor.
+- [pranshuparmar/witr — trace any process/port/container back to its origin](https://github.com/pranshuparmar/witr) — Practical CLI/TUI for the classic "why is this running on my box?" debugging problem.
+- [goauthentik/authentik — identity provider, +310 stars today](https://github.com/goauthentik/authentik) — Steady growth; relevant if you're replacing Okta/Keycloak for self-hosted SSO.
+
+**Startups, YC & Industry**
+
+- [OpenAI acquires presentation startup NextSlide](https://techcrunch.com/) — Continues OpenAI's vertical-app M&A into workflow software; relevant for anyone building on top of ChatGPT in the deck/slides category.
+- [HackerOne's situation — what happened?](https://news.ycombinator.com/) — 172-point HN thread (linkage to a third-party post-mortem; the cited URL returned 404 in our fetch, so treat as community discussion, not primary sourcing).
+- [Source Foundry raises $400M from Situational Awareness](https://techcrunch.com/) — Chip startup funding; useful as a signal that compute-substrate capital is still flowing despite the AI-bubble debate.
+- [AI safety eval is becoming a safety risk](https://techcrunch.com/) — Rebecca Bellan piece on eval-driven gaming/hacking; pairs with the OpenAI Astra pause story above.
+
+**Watchlist**
+
+- **OpenAI Astra rollout & capability governance** — model paused for security hardening; expect policy details and external comms in the next 1–2 weeks.
+- **Metabase / N-able patch adoption** — actively exploited CVSS 10.0 + 8.2; monitor for follow-on ransomware/data-extortion activity against self-hosted customers.
+- **US CLARITY Act** — Senate procedural vote punted to September; watch for floor scheduling and any committee markups before then.
+- **Cloudflare Agentic Internet rollout** — WebMCP, Kitesurf, Wallets, x402 all in early stages; expect SDK and pricing changes worth catching next digest.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
