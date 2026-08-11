@@ -1,0 +1,61 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. Let me draft the digest now. Current time: 20:55 IST, so this is the evening run.
+
+**Tech / AI / Crypto / Software Digest — Tuesday, 11 August 2026, 20:55 IST**
+
+**Top picks**
+- **Anthropic signs ~$9.1B, 20-year compute deal with Riot Platforms** — Anthropic is taking capacity from a former Bitcoin miner pivoting to AI/HPC, sending RIOT +20% pre-market and signaling a structural shift in how AI labs secure long-dated compute. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/riot-platforms-anthropic-9-billion-ai-deal) · [Cointelegraph](https://cointelegraph.com/news/anthropic-strikes-9b-compute-deal-with-bitcoin-miner-riot-report)
+- **Liquid AI ships LFM2.5-2.6B: a 2.6B hybrid-conv model trained *inside* agentic harnesses** — 22 double-gated short-conv blocks + 8 GQA, 128K context, ~220 tok/s on M5 Max, <2.5 GB RAM, post-trained with agentic RL against real tool-use environments; targets phones and edge agents. Concrete numbers, Apache-style permissive-ish (lfm1.0) license, GGUF/ONNX/MLX drops. [Source: Hugging Face model card](https://huggingface.co/LiquidAI/LFM2.5-2.6B) · [HN](https://news.ycombinator.com/item?id=42417705)
+- **Claude now watermarks/marks its generated text** — Anthropic published a technical post on how Claude identifies and labels AI-generated content (visible markers + metadata); useful reference for anyone building content provenance or scraping-detection into pipelines. [Source: HN/Claude blog](https://news.ycombinator.com/item?id=42415522)
+- **BTCPay Server hit by LND-credential exploit; offers up to $190K / 3 BTC bounty** — Attackers stole LND credentials from the project and drained merchant Lightning wallets last week; the team is paying 10% of recovered funds. A serious supply-chain hit to a self-custodial Bitcoin payment stack. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/btcpay-server-bounty)
+- **Meta open-source push: Zuckerberg goes on offensive vs "closed" AI rivals** — FT reports Meta is recommitting to open weights as the framing for its next Llama-tier release; FT cites the move as competitive positioning against closed frontier labs. [Source: FT via HN](https://news.ycombinator.com/item?id=42413114)
+- **antirez ships `h3-metal`: native MiniMax-M3 inference for Apple Silicon** — Salvatore Sanfilippo's Metal-backed port of the M3 inference engine, enabling local on-device LLM serving on M-series Macs without going through llama.cpp/MPS. Relevant for anyone running on-device agents. [Source: HN / antirez GitHub](https://news.ycombinator.com/item?id=42420117)
+
+**AI, Agents & Models**
+- **Cactus Compute releases Needle2: 14MB agentic LLM for phones, wearables, robots** — Quantized sub-100M-param model with an on-device agent loop, 359 HN points; not frontier but interesting for always-on/edge agent use cases. [Source](https://cactuscompute.com/needle2)
+- **"What's the best programming language for coding agents?" — Dan Luu** — Empirical follow-up to the language-for-agents debate, worth reading if you're tuning agent harness scaffolding. [Source](https://danluu.com/programming-languages-for-agents/)
+- **Faster floating point math with Rust's new `f16`/`f128` stable APIs** — Practical perf writeup; relevant for inference numerics and tensor math in Rust stacks. [Source](https://pythonspeed.com/faster-float-math-rust/)
+
+**Software Engineering & DevTools**
+- **Rust SIMD on the GPU** — Vectorware post on running portable SIMD code on GPU backends via Rust; 190 HN points, useful context for anyone writing custom inference or DSP kernels. [Source](https://vectorware.com/rust-simd-gpu/)
+- **To Save C, We Must Save ABI** — thephd on why C's de facto platform ABIs (System V, MSVC, Itanium) are the real blocker for evolution, not the language. Practical read for systems/library maintainers. [Source](https://thephd.dev/to-save-c-we-must-save-abi/)
+- **Chicken Scheme 6.0 released** — Major Scheme implementation update, native code generation tier maturing; 202 HN points. Niche but relevant for compiler/runtime people. [Source](https://call-cc.org/)
+
+**Cloud, Infra, Data & Security**
+- **Coldcard hardware-wallet hack fallout** — On-chain investigators tracing stolen BTC; loss figures still fluid but multiple victims. Reinforces the "don't keep signing keys on a permanently-online device" lesson. [Source: Cointelegraph](https://cointelegraph.com/news/coldcard-hack-losses-tracing-stolen-bitcoin)
+- **Nvidia's reported $500B AI-infrastructure push with 6 Wall Street firms** — MoUs to make "AI compute" a bankable infrastructure asset; relevant to anyone building on or competing for GPU capacity. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/nvidia-500b-ai-infrastructure-moUs)
+
+**Crypto & Blockchain Engineering**
+- **Bitcoin BIP-110 fork stalls: 300 blocks behind, "six years from fixing itself"** — The breakaway chain has produced only 2 blocks since Saturday; Luke Dashjr removed as BIP editor and is taking a sabbatical from Ocean. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/bip-110-fork-stalls) · [Cointelegraph](https://cointelegraph.com/news/luke-dashjr-removed-bip-editor)
+- **Ravencoin may roll back ~4 days of transactions after a critical block-validation flaw** — Two pools controlling most RVN hashrate are rebuilding from before Friday's first invalid block; deposits/withdrawals during that window are at risk of reversal. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/ravencoin-rollback-invalid-block)
+- **U.S. SEC to vote on proposing "Reg Crypto" for digital-asset offerings** — First major SEC crypto rulemaking process opens this week. [Source: CoinDesk](https://www.coindesk.com/policy/2026/08/11/sec-reg-crypto-vote)
+- **White House says CLARITY Act will hit Senate floor in September** — U.S. market-structure bill on the docket; watch for amendment activity. [Source: Cointelegraph](https://cointelegraph.com/news/white-house-clarity-act-september)
+- **South Korea drops Travel Rule threshold for crypto transfers** — Material compliance change for exchanges serving Korean users. [Source: Cointelegraph](https://cointelegraph.com/news/south-korea-drops-travel-rule-threshold)
+
+**Open Source / GitHub**
+- **`anthropics/skills`** — Public Agent Skills repo from Anthropic, 167k stars, still the canonical reference for Claude Skills authoring.
+- **`addyosmani/agent-skills`** — 86k stars, addy Osmani's companion "production-grade engineering skills for AI coding agents" — practical, less Anthropic-vendor-locked.
+- **`vitali87/code-graph-rag`** — Monorepo-aware RAG over multi-language codebases using knowledge graphs; +682 stars today, useful if `cursor`/`aider`-style indexing is on your roadmap. [Source](https://github.com/vitali87/code-graph-rag)
+- **`stablyai/orca`** — ADE (agent dev environment) for running fleets of parallel coding agents with your own model subscriptions; desktop + mobile + VPS. [Source](https://github.com/stablyai/orca)
+- **`PrimeIntellect-ai/prime-agent`** — Self-improving RLM agent for long-running autonomous coding workflows, gaining traction.
+- **`calesthio/OpenMontage`** — Open-source agentic video production system (12 pipelines, 100+ tools, 700+ skill files) — interesting if you care about agentic creative tooling.
+
+**Startups, YC & Industry**
+- **ElizaOS founder Shaw Walters on closing the foundation, the Burwick lawsuit, and "why crypto is failing builders"** — Long-form interview worth the listen if you build in/around the AI-agent-on-chain stack. [Source: CoinDesk video](https://www.coindesk.com/videos)
+- **FlightAware sues Kalshi over flight-cancellation prediction markets** — First-amendment / data-licensing implications for any platform repackaging real-world event data. [Source: CoinDesk](https://www.coindesk.com/business/2026/08/11/flightaware-sues-kalshi)
+- **Bitdeer reports ~5x Q2 BTC-mining output growth** — Useful data point on the post-halving miner landscape and the AI-HPC pivot. [Source: Cointelegraph](https://cointelegraph.com/news/bitdeer-q2-bitcoin-mining-output-fivefold)
+- **H100 becomes Europe's #2 corporate BTC treasury after a 2,455 BTC acquisition** — Continuing institutional accumulation pattern. [Source: Cointelegraph](https://cointelegraph.com/news/h100-europe-bitcoin-treasury)
+
+**YouTube / Technical Media**
+- **ElizaOS founder on closing the foundation & the Burwick lawsuit** — ~25-min interview on CoinDesk, useful commentary on the failure modes of AI-agent crypto foundations. [Source](https://www.coindesk.com/videos/elizaos-shaw-walters)
+
+**Watchlist**
+- **BTCPay + Coldcard** post-mortems — expect full root-cause write-ups and CVE-level disclosures this week; patch/rotate any exposed LND credentials.
+- **Anthropic compute-deal ripple effect** — if Riot's pivot works, expect more BTC-miner → AI-HPC conversions (Cipher, CleanSpark, IREN); watch CapEx announcements and energy contracts.
+- **Bitcoin BIP-110 / BCH-style fork trajectory** — if the breakaway chain stays at 2 blocks for another 48h, it dies; if it picks up hashrate, expect exchange deposit/withdrawal halts.
+- **SEC "Reg Crypto" rulemaking text** — first draft lands this week, will set the template for U.S. crypto offering compliance through 2027.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
