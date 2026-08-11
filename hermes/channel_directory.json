@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T02:12:36.487311",
+  "updated_at": "2026-08-12T03:13:01.846018",
   "platforms": {
     "discord": [
       {
@@ -51,6 +51,12 @@
         "type": "channel"
       },
       {
+        "id": "1530353549668520139:1530353549668520139",
+        "name": "Shivang Hermes AI / #tweets-automation / https://x.com/cheatyyyy?s=11 How is this person able to get so many views and... / topic 1530353549668520139",
+        "type": "thread",
+        "thread_id": "1530353549668520139"
+      },
+      {
         "id": "1536737264099528805:1536737264099528805",
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1536737264099528805",
         "type": "thread",
@@ -61,12 +67,6 @@
         "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1536375676133843014",
         "type": "thread",
         "thread_id": "1536375676133843014"
-      },
-      {
-        "id": "1530353549668520139:1530353549668520139",
-        "name": "Shivang Hermes AI / #tweets-automation / https://x.com/cheatyyyy?s=11 How is this person able to get so many views and... / topic 1530353549668520139",
-        "type": "thread",
-        "thread_id": "1530353549668520139"
       },
       {
         "id": "1534924846306295952:1534924846306295952",

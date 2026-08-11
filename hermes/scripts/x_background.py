@@ -300,10 +300,17 @@ def submit(page: Page) -> None:
 
 
 def verify_recent_post(page: Page, text: str, handle: str = DEFAULT_HANDLE) -> str | None:
-    goto(page, f"https://x.com/{handle}", 3000)
-    for item in extract_articles(page, 5):
-        if item["text"].strip() == text.strip():
-            return item["link"]
+    # X profile propagation can lag several seconds after submit, especially for
+    # posts with media or mentions. Retry read-only verification; never resubmit.
+    expected = " ".join(text.split())
+    for attempt in range(3):
+        goto(page, f"https://x.com/{handle}", 3500 + attempt * 1500)
+        for item in extract_articles(page, 8):
+            actual = " ".join(item["text"].split())
+            if actual == expected:
+                return item["link"]
+        if attempt < 2:
+            page.wait_for_timeout(2500)
     return None
 
 
