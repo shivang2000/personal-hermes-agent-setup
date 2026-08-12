@@ -4,13 +4,13 @@
     "created_at": "2026-06-12T11:40:28.204326+00:00",
     "created_by": null,
     "last_patched_at": "2026-07-27T13:20:08.684099+00:00",
-    "last_used_at": "2026-08-12T07:17:33.475746+00:00",
-    "last_viewed_at": "2026-07-27T13:36:52.748125+00:00",
+    "last_used_at": "2026-08-12T14:03:35.147757+00:00",
+    "last_viewed_at": "2026-08-12T14:03:35.144186+00:00",
     "patch_count": 54,
     "pinned": false,
     "state": "active",
-    "use_count": 1806,
-    "view_count": 64
+    "use_count": 1807,
+    "view_count": 65
   },
   "airtable": {
     "archived_at": null,
@@ -173,13 +173,13 @@
     "created_at": "2026-06-18T15:29:12.777653+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-18T16:01:14.542295+00:00",
-    "last_used_at": "2026-06-18T16:36:42.933327+00:00",
-    "last_viewed_at": "2026-06-18T16:36:42.931027+00:00",
+    "last_used_at": "2026-08-12T14:03:35.146567+00:00",
+    "last_viewed_at": "2026-08-12T14:03:35.143014+00:00",
     "patch_count": 8,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 4,
+    "view_count": 4
   },
   "bot-task-worker-completion": {
     "archived_at": null,
@@ -407,13 +407,13 @@
     "created_at": "2026-06-18T16:41:25.327154+00:00",
     "created_by": "agent",
     "last_patched_at": null,
-    "last_used_at": "2026-08-11T14:05:38.197560+00:00",
-    "last_viewed_at": "2026-08-11T14:05:38.194822+00:00",
+    "last_used_at": "2026-08-12T14:03:35.145279+00:00",
+    "last_viewed_at": "2026-08-12T14:03:35.141085+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 4,
+    "view_count": 4
   },
   "document-generate": {
     "archived_at": null,
