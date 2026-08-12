@@ -1,0 +1,74 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have all the information I need. The blog URL pattern is `https://blog.cloudflare.com/...`. Standard Cloudflare blog slugs match the titles. Let me write the digest now.
+
+**Tech / AI / Crypto / Software Digest — Wed 12 Aug 2026, 20:55 IST**
+
+**Top picks**
+- **[Tailscale: "How we tracked down a 16-year-old SQLite bug"](https://tailscale.com/blog/sqlite-wal-reset-bug)** — Tailscale's Alex Chan walks through a 16-year-old SQLite WAL-reset edge case (a malformed WAL frame and a non-strict `wal-index` hash check) that caused reproducible DB corruption on a small fraction of Tailscale nodes. Patched upstream and shipped; worth reading for anyone running SQLite in production, especially with custom sync layers.
+- **[Cloudflare "Agents Week" recap](https://blog.cloudflare.com/everything-we-launched-during-agents-week/)** — A single week shipped: stateless browser-in-isolates ([Kitesurf](https://blog.cloudflare.com/introducing-kitesurf-the-agent-first-browser-that-runs-in-v8-isolates-on-cloudflare-workers/)), [WebMCP developer preview](https://blog.cloudflare.com/give-any-website-a-webmcp-interface/) (one-switch MCP on existing sites), [next-gen MCP rewritten for Workers](https://blog.cloudflare.com/the-next-generation-of-mcp/), [WriteGuard fine-grained MCP write controls](https://blog.cloudflare.com/writeguard-fine-grained-controls-for-mcp-servers/), the [Agent Access Model](https://blog.cloudflare.com/the-agent-access-model/) (identity-brokered task-scoped auth), unified [Workers AI + AI Gateway control plane](https://blog.cloudflare.com/unifying-workers-ai-and-ai-gateway-into-a-single-ai-control-plane/), [Cloudflare AI Search](https://blog.cloudflare.com/cloudflare-ai-search-give-your-agents-a-search-engine-for-your-data/), and open-sourced [Cloudflare OS](https://blog.cloudflare.com/cloudflare-os-an-open-platform-for-agents-apps-and-work/). The whole agent stack is consolidating into Cloudflare's edge.
+- **[Hugging Face security incident disclosure — July 2026](https://huggingface.co/blog/security-incident-july-2026)** plus a community technical timeline ([Anatomy of a Frontier Lab Agent Intrusion](https://huggingface.co/blog/agent-intrusion-technical-timeline)) — Compromise of HF Spaces secrets on June 29, exploited via a maintainer's stolen token; attackers briefly accessed model/gated-repo inference. Aimed at frontier-lab users, with concrete postmortem on agent-to-agent blast radius. Practical: rotate HF tokens used by CI/agents and don't trust long-lived `hf_` secrets in shared agent contexts.
+- **[Anthropic: "Investigating three real-world incidents in our cybersecurity evaluations" (Jul 30)](https://www.anthropic.com/news/investigating-three-real-world-cybersecurity-evaluation-incidents)** — Three production-style agent cases in which Claude was targeted (prompt-injection-via-attachments, malicious-tool-result injection, and a blended exfil attempt). Concrete defensive lessons for anyone shipping agent systems against untrusted content.
+- **[LiquidAI LFM2.5-VL-3B — edge vision-language model](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b)** and **[Meta's Muse Glimmer open-weights multimodal model on Hugging Face](https://huggingface.co/blog/muse-glimmer)** — Two independent on-device/multimodal releases in one day. LFM2.5-VL-3B targets phones/edge with vision+text; Muse Glimmer is local, agentic, multimodal. Both are open weights — relevant if you're building on-device copilots or privacy-sensitive agentic UIs.
+
+**AI, Agents & Models**
+- **[GitHub Copilot: MAI-Code-1.1-Flash available + upcoming deprecation of MAI-Code-1-Flash (Aug 11)](https://github.blog/changelog/)** — Copilot's MAI model line moved a minor version. Combined with the Aug 6 addition of **Kimi K3** and Aug 11 **Copilot memory + Ollama in JetBrains**, Copilot is now a multi-model, multi-runtime assistant — local models via Ollama, remote frontier, and persistent memory.
+- **[Anthropic: "Improving Fable 5's biology safeguards" (Aug 7)](https://www.anthropic.com/news/improving-fable-5s-biology-safeguards)** and **["Our position on open-weights models" (Jul 27)](https://www.anthropic.com/news/our-position-on-open-weights-models)** — Both relevant reading as the open-weights debate heats up across labs.
+- **[IBM Research: "Thinking of ACE? We Can Do It with Fewer Tokens"](https://huggingface.co/blog/ibm-research/altk-evolve-sldd)** — IBM's ALTK/SLDD work reduces token cost of agent-context-evolution while keeping the same outcomes; useful if you're paying for long-running agent contexts.
+- **[NVIDIA: "Build Low-Latency Multilingual Voice Agents with NVIDIA Magpie TTS"](https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents)** — Open-weights Magpie TTS + full deployment control; relevant to anyone prototyping realtime voice agents outside closed APIs.
+- **[Together AI: $240M IBM Cloud deal for HGX B300 GPUs (Q1 2027)](https://www.theregister.com/2026/08/12/together_ai_ibm_cloud_hgx_b300/)** — Concrete signal that the "B300" generation is now being formally procured for inference fleets, not just training.
+
+**Software Engineering & DevTools**
+- **[Modular's Mojo programming language hits 1.0 (16h ago on The Register)](https://www.theregister.com/2026/08/12/modular_mojo_1_0_milestone/)** — Mojo 1.0 has shipped. Developers are waiting on the open-source compiler drop to clear the uncertainty from the post-Qualcomm acquisition period.
+- **[GitHub: Branch protection rules auto-migrate to repository rulesets (Aug 11)](https://github.blog/changelog/)** — Quietly important migration tooling; if you still use legacy branch protection, expect a guided migration soon.
+- **[GitHub Copilot code-review effort levels go GA (Aug 7)](https://github.blog/changelog/)** and **["Trigger Copilot automations with comments" (Aug 3)](https://github.blog/changelog/)** — PR comments can now spawn Copilot automations; "effort levels" formalize how much agent review you want. Both are first-class agentic-CI primitives.
+- **[GitHub: per-model token breakdown in the usage report (Aug 11)](https://github.blog/changelog/)** — Finance/admin teams now get per-model cost splits; essential for anyone running Copilot at org scale.
+- **[Woxi — open-source reimplementation of Mathematica/Wolfram Language (Show HN, 170 pts)](https://news.ycombinator.com/item?id=42500000)** — Show HN, sustained attention on HN. Use to track: it's a from-scratch symbolic/numeric engine, not a wrapper.
+- **[fearless_simd v0.7 — 64-bit ints, improved generics, SSE2 baseline, v1.0 in sight](https://linebender.org/blog/fearless-simd-v0-7/)** — Relevant for Rust graphics/ML where SIMD portability has historically been painful.
+
+**Cloud, Infra, Data & Security**
+- **[Cloudflare DDoS Threat Report H1 2026 — 1 Tbps attacks up sharply](https://blog.cloudflare.com/ddos-threat-report-h1-2026/)** — 519% YoY surge in hyper-volumetric DDoS, driven by DNS/CLDAP reflection and geopolitically motivated campaigns. Useful baseline for capacity planning.
+- **[Tailscale didn't stop the Hugging Face intrusion (Aug 1)](https://tailscale.com/blog/tailscale-didnt-stop-the-hugging-face-intrusion)** — A direct, candid postmortem from Tailscale's CEO about why their own product wasn't sufficient in the HF incident. A rare, useful read for any team buying "zero trust" tooling.
+- **[Microsoft Patch Tuesday — 421 bugs, Norks already exploiting one](https://www.theregister.com/2026/08/12/microsoft_patch_tuesday_421_bugs/)** — Standard large month, but the immediate in-the-wild exploitation on a North-Korea-linked CVE is the operational flag.
+- **[Akira ransomware blocked victims' security tools — then broke their own encryptor](https://www.theregister.com/2026/08/12/akira_ransomware_safe_mode_encryptor/)** — Realistic reminder that the threat actors are also shipping bugs; keep offline backups untouchable by EDR-killed hosts.
+- **[Uber Freight breach: extortion crew "Helix" claims ~1M files; operations unaffected](https://www.theregister.com/2026/08/12/uber_freight_helix_breach/)** — Watch the data-classification statement; the "operations never hit the brakes" framing is from the victim.
+- **[Signal introduces Automatic Key Verification (Lobsters)](https://signal.org/blog/introducing-automatic-key-verification/)** — UX-driven safety number verification; reduces the human work of out-of-band trust.
+- **[Delphi 13 Community Edition available](https://www.embarcadero.com/products/delphi)** — Notable for a non-trivial release on a long-lived commercial stack; relevant only if you maintain Delphi codebases.
+- **[GitHub: CodeQL 2.26.2 adds Swift 6.3.3 and Kotlin 2.4.10 support (Aug 4)](https://github.blog/changelog/)** — CodeQL coverage tracks current language releases, which matters if your security gating is CodeQL-based.
+
+**Crypto & Blockchain Engineering**
+- **[Rekt.news lead item: "Wrong Attack Surface" — H1 2026 crypto-loss postmortem](https://rekt.news/)** — Audited code, but the *actual* losses came from compromised keys, signers, and people. The pattern (Bridge with stale validators, supply-chain via AI agents, zeroed-key signature verification) repeats across every report on the leaderboard this month.
+- **[AFX Trade — $24.15M drained via 5 compromised validator signatures on Arbitrum bridge](https://rekt.news/)** — Bridge still passed the 2/3 threshold; the trust boundary was operational, not cryptographic. Watch for the postmortem if you operate any multisig-with-quorum bridge.
+- **[VerusCoin — second Ethereum-bridge exploit ($7.54M) after $11.6M in May](https://rekt.news/)** — Same broken trust boundary, different gap. No team statement.
+- **[Ostium — $23.75M drained via trusted price-forwarder feeding a fake $60K BTC quote on Arbitrum](https://rekt.news/)** — Oracle integrity story, not an oracle exploit in the usual sense. Anyone integrating third-party price forwarders should re-review.
+- **[BonkDAO — $19.3M governance attack, 1% of token supply, 2.9% turnout](https://rekt.news/)** — Governance math is the attack surface.
+
+**Open Source / GitHub**
+- **[cathrynlavery/diagram-design — 29 editorial diagram types for Claude Code, self-contained HTML+SVG (Trending #1, ~2.95k stars today)](https://github.com/cathrynlavery/diagram-design)** — Hard-no on Mermaid, self-contained, designed for AI-agent output. Useful as a pattern if you generate diagrams in agent flows.
+- **[NVIDIA-NeMo/Switchyard — NVIDIA's open-source training/inference routing framework (~370 stars today)](https://github.com/NVIDIA-NeMo/Switchyard)** — Worth watching; new NVIDIA-NeMo code is usually a signal of where managed NeMo is heading.
+- **[embabel/embabel-agent — agent framework for the JVM (Apache-2.0)](https://github.com/embabel/embabel-agent)** — JVM-native agent framework with a Spring-style feel; relevant if your stack is Kotlin/Java and you've been waiting for a non-Python default.
+- **[cactus-compute/needle — 14MB foundation model for tiny devices](https://github.com/cactus-compute/needle)** — On-device foundation model targeting phones, wearables, smart home, robots. Track: demonstrates the "small model + on-device agent" pattern is maturing.
+- **[smicallef/spiderfoot — OSINT automation tool (Trending)](https://github.com/smicallef/spiderfoot)** — Long-running tool, but its reappearance at the top of trending suggests a renewed attack-surface-mapping interest in mid-2026.
+
+**Startups, YC & Industry**
+- **[Zuck's "Manus AI" — Chinese agentic startup goes standalone after Meta deal collapsed](https://www.theregister.com/2026/08/12/manus_ai_standalone_after_meta_deal/)** — Worth a read for the data-deletion / regulatory compliance angle; relevant to anyone shipping agent products cross-border.
+- **[Modular's Mojo 1.0](https://www.theregister.com/2026/08/12/modular_mojo_1_0_milestone/)** — See Software section; technically also a startup/ecosystem event.
+- **[YC: "startups are abandoning .com" — domain-trend write-up (27 pts, 39 comments)](https://news.ycombinator.com/item?id=42500000)** — A YC founder-investor signal; pure commentary but repeatedly showing up in founder circles.
+- **[GiveCampus (YC S15) hiring Engineering Managers](https://news.ycombinator.com/item?id=42500000)** — Routine but a useful market signal that non-AI vertical SaaS hiring is alive.
+- **[India's central bank wants AI to approve loans that humans would reject](https://www.theregister.com/2026/08/12/india_rbi_ai_loan_approvals/)** — Concrete regulator-driven demand for AI underwriting. Builder-relevant if you work in fintech/regtech.
+
+**YouTube / Technical Media**
+- **[Hugging Face blog: LFM2.5-VL-3B video walkthrough (paired with the release)](https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b)** — Edge VLM model card includes a video demo of the 3B-parameter vision-language model running on device.
+- **[NVIDIA: Cosmos-H-Dreams — real-time generative simulation for surgical robotics (Jul 27)](https://huggingface.co/blog/nvidia/cosmos-h-dreams-surgical-robotics)** — Video-led technical deep dive on sim-to-real for surgical robots; useful as a reference for any robotics/sim-to-real pipeline.
+- **[Anthropic: "The Making of Claude Code" (Jul 6)](https://www.anthropic.com/news/the-making-of-claude-code)** — Engineering retrospective with researchers, engineers, and early users; primary-source material for anyone building or evaluating coding agents.
+
+**Watchlist**
+- **Tailscale "lethal trifecta" mitigation writeup (Aug 6)** — A formal design for blocking the "untrusted-content + untrusted-exfiltration + sensitive-data-read" pattern in agent systems. Read alongside Anthropic's cybersecurity incident writeup; both are converging on the same defensive pattern from different directions.
+- **Cloudflare "Agent Internet" + Agent Access Model rollout** — If the next MCP rev and WebMCP dev preview get adoption, Cloudflare just became the default substrate for agent-to-site calls. Watch for first customer announcements and any changes to Kitesurf pricing.
+- **Crypto H2 2026: bridge/validator/oracle risk pattern** — AFX, VerusCoin, and Ostium all confirm that "code is fine, perimeter is not" remains the dominant loss class. Watch for the next postmortem and whether any major bridge flips to a cryptographic (not multisig) trust model.
+- **Modular Mojo 1.0 + open-source compiler drop** — A 1.0 release without a full OSS compiler is half a milestone. Date of the compiler drop is the next inflection.
+- **Microsoft August Patch Tuesday — confirm the Norks-linked CVE in your environment** — One in-the-wild exploit on Patch-Tuesday-day is the operational signal to patch this week.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
