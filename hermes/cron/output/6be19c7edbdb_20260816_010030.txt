@@ -1,0 +1,266 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material. I have a strong picture of the news landscape. Let me compile the digest now.
+
+Key items I've identified with strong primary source backing:
+1. **Nvidia-OpenAI-SB Energy deal** — massive data center infrastructure ($100B credit + $3B SB Energy equity)
+2. **SpaceX acquires Cursor** — $60B (huge for coding agents)
+3. **Hugging Face hack** (referenced via The Information GLM-5.3 story)
+4. **Trezor breach** (14,000 customers via fulfilment partner)
+5. **DeepSeek V4-Pro release + Harness** (open source Claude Code rival)
+6. **GLM-5.3** (Z.ai cyber-focused model)
+7. **Grok 4.6 in GitHub Copilot** + **Grok Bot persistent agents $120/mo**
+8. **Gemini 3.7 Flash** + **Gemini 3.5 Flash Cyber**
+9. **Anthropic 14x revenue growth Q2 + Opus 5/Sonnet 5 launches + watermarking**
+10. **AWS Bedrock AgentCore Runtime + DynamoDB vector search**
+11. **MSCI threatens to drop Strategy/Metaplanet**
+12. **World Liberty conditional bank charter**
+13. **Needle 2** (14MB on-device foundation model — trending)
+14. **Anthropic text watermarking** (Aug 14)
+15. **OpenAI replaces CRO with Wiz president + cybersecurity hire**
+16. **Cursor plugin specification released**
+17. **Robinhood YC fund + Thrive Capital 7x returns**
+18. **Going Dark / law enforcement hacking** (cryptography engineering)
+19. **Auto-research with codex: 232x faster kernel** (top HN)
+20. **Claude Code SDK for Java**
+21. **Yadda 3.0** (BDD for AI agents)
+22. **Firefox last to support uBlock Origin**
+23. **RISC-V: They Should Have Known Better** (dmitry.gr)
+24. **Tether completes KPMG audit**
+25. **Russia restricts retail crypto to BTC/ETH/USDT**
+26. **Israel Bank Leumi crypto trading via Galaxy**
+
+Now let me write the digest:
+
+**Tech / AI / Crypto / Software Digest — Aug 16, 2026, 00:55 IST**
+
+**Top picks**
+- **SpaceX completes $60B acquisition of Cursor** — Cursor employees are being integrated into SpaceX's AI division in the days after the deal closed, per The Information. The acquisition makes Cursor's coding-agent stack part of SpaceXAI's broader Grok/agent lineup and reshapes competitive dynamics for agentic IDEs.
+
+- **Nvidia in talks to invest $3B in SB Energy alongside ~$100B credit guarantee for OpenAI's Ohio data center campus** — The Information exclusive on Aug 15. Nvidia's emerging pattern: equity + credit support to anchor OpenAI compute, a vertical-integration move with material implications for hyperscaler GPU allocation and energy siting.
+
+- **Anthropic text watermarking (Aug 14)** — Anthropic published a technical post on how Claude's text watermark works, the first major lab to ship a deployable watermark spec. Worth reading for any builder working on provenance, detection, or compliance around LLM outputs.
+
+- **DeepSeek releases V4-Pro API + open-source "Harness" agent** — DeepSeek entered the coding-agent harness race directly with an open-source rival to Claude Code; weights dropped on Hugging Face (1.7T params, 893GB). Notable that the harness, not the model, may be the more enduring contribution.
+
+- **Z.ai's GLM-5.3 ships with cyber-defense posture, citing the recent Hugging Face hack** — Touts open-source cyber models as a national-security response, claims 2,436 vulnerability findings across 269 projects in collaboration with Chinese security teams. Confirms Hugging Face compromise was real and consequential.
+
+- **Trezor warns 14,000 customers after fulfilment-partner data breach** — Hardware-wallet customers exposed via third-party logistics, not the device itself. Important supply-chain lesson: the wallet is only as safe as its shipping pipeline.
+
+**AI, Agents & Models**
+- **Grok 4.6 lands in GitHub Copilot (Aug 14)** — xAI/SpaceXAI model joins the Copilot model picker; GitHub also published Grok Bot ($120/mo) for persistent agents that operate your apps. Source: GitHub Changelog, VentureBeat.
+- **Google ships Gemini 3.7 Flash (Aug 13) with 50% intro price cut** — Pushing hard on coding/agent workloads; already rolled out as the default in Google Search AI Mode. Sources: VentureBeat, DeepMind, The Verge.
+- **Gemini 3.5 Flash Cyber + computer-use** — DeepMind released a cyber-tuned variant plus computer-use capability in 3.5 Flash. Anthropic shipped Opus 5/Sonnet 5 on AWS Bedrock in late July; Sonnet 5 is the new default frontier.
+- **Needle 2 — 14MB on-device foundation model** — Cactus Compute's Needle 2 (45M params, 14MB binary, 28MB RAM) for tool-calling on phones/wearables/robots. Built on their "Simple Attention Network" recipe (CQ2-bit quant, byte-level grammars, calibrated confidence). Top of GitHub trending today. Repo: github.com/cactus-compute/needle.
+- **Writer's Palmyra X6 cuts agent cost 52%** — Enterprise-tuned model claiming 48% speed-up + 10% quality improvement at lower cost; reinforces the cost-per-agent-task metric as the new battleground.
+- **Anthropic Opus 5 / Sonnet 5 now on AWS Bedrock** — Per AWS Weekly Roundup (Jul 27); Sonnet 5 described as "frontier performance across coding, agents, professional work at scale."
+- **Mistral targets 1GW European compute by 2030** — $38B capex plan announced Aug 11; signals EU's attempt at sovereign AI infrastructure outside US hyperscaler orbit.
+- **Anthropic 14x revenue growth in Q2** — Per The Information, also turned profitable. Thrive Capital's 2022 fund is up >7x net of fees thanks to OpenAI + Cursor marks.
+
+**Software Engineering & DevTools**
+- **Cursor publishes official plugin spec (cursor/plugins)** — Trending on GitHub today; signals Cursor is following the VS Code extension model rather than keeping its surface closed.
+- **GitHub Copilot SDK for Java** — Official SDK with annotations and virtual-thread support for driving Copilot from idiomatic Java; relevant for enterprise JVM shops.
+- **GitHub stacked pull requests for AI-generated PRs** — Workflow for splitting one giant agent PR into reviewable stacks; pragmatic response to the "huge un-reviewable PR" problem.
+- **Yadda 3.0 — BDD for the AI-agent era** — BDD framework updates for natural-language step definitions consumable by agents; small but a sign of how testing frameworks are evolving.
+- **GitHub case-folding at >45 GiB/s** — Engineering deep-dive on a branch-free loop + byte-space arithmetic for code-search; useful pattern for any high-throughput text processing.
+- **Auto-research with Codex: 232x faster kernel** — Top HN story; demonstrates how a well-instrumented Codex loop can drive substantial kernel-level performance work.
+- **sqlite-utils 4.2 + 4.2.1** — Simon Willison's DB-agnostic toolkit gains richer `table.transform()` (preserves check/unique constraints, comments), with a smoking-gun story about missing `typing-extensions` dep.
+
+**Cloud, Infra, Data & Security**
+- **AWS Bedrock AgentCore Runtime Instances** — Persistent compute model for production AI agents on Bedrock, addressing the cold-start pain of serverless for long-running agent workloads.
+- **Amazon DynamoDB adds real-time vector search at any scale** — Removes the need for a separate vector DB tier for many workloads; pairs with Bedrock Knowledge Bases / RAG.
+- **Cloudflare prices $2.175B 0% convertible senior notes due 2031 (Aug 11)** — Funds capacity buildout for AI Cloud + agent infrastructure; closed just after FedRAMP High authorization.
+- **"Going Dark, and the era of law enforcement hacking"** — Matthew Green / cryptographyengineering.com essay (432pts HN) on why state hacking increasingly substitutes for lawful intercept.
+- **Firefox is now the last major browser supporting uBlock Origin** — Lobsters/HN coverage on the Manifest V3 fallout; material for anyone shipping browser extensions.
+- **RISC-V: They Should Have Known Better** — Dmitry Grigorov's technical critique of the RVA23 profile (245 HN comments); required reading if you're choosing an ISA for new silicon.
+
+**Crypto & Blockchain Engineering**
+- **Trump-backed World Liberty Trust Co. gets conditional OCC bank charter (Aug 15)** — First formal banking charter for a Trump-family crypto vehicle; sets up a new stablecoin-friendly US bank.
+- **MSCI proposes excluding Strategy + Metaplanet from indices** — Targets "non-operating" companies broadly; significant for BTC-treasury companies that used index inclusion as a distribution channel.
+- **Tether completes first-ever KPMG audit (FY2025)** — Material for institutional stablecoin adoption; addresses the historical "no audited reserves" objection.
+- **Trump expected at White House meeting with crypto CEOs (next week)** — Per CoinDesk reporting; includes prediction-market and AI leaders.
+- **Israel's Bank Leumi to offer BTC/ETH/SOL trading via Galaxy (early 2027)** — Mainstream Israeli bank rollout via Galaxy Digital infrastructure.
+- **Russia restricts retail crypto to BTC, ETH, USDT** — Non-qualified investors face ~$3,600/year purchase cap; another signal of retail-channel narrowing.
+- **Trezor 14,000-customer breach via fulfilment partner** — Supply-chain reminder for all hardware-wallet makers.
+- **Robinhood launches second public venture fund for YC startups** — Retail-accessible exposure to YC equity; structural shift in early-stage liquidity.
+
+**Open Source / GitHub**
+- **cordiverse/cordis — "Meta-Framework of Spatiotemporal Composability"** — Today's top trending repo; aimed at composing time/geospatial pipelines.
+- **HKUDS/CLI-Anything — "Making all software agent-native"** — Generates CLI wrappers so agents can drive any GUI tool; CLI-Hub at clianything.cc.
+- **unsloth 71k stars (435 today)** — Local UI for running/training LLMs incl. Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX.
+- **github/spec-kit 129k stars (901 today)** — GitHub's official toolkit for spec-driven development, now usable from AI agents.
+- **altic-dev/FluidVoice** — macOS dictation with on-device STT + custom-trained AI cleanup; local Wispr Flow alternative.
+- **citrolabs/ego-lite** — Browser designed for agents to share logged-in state with Codex/Claude Code without disturbing the user.
+
+**Startups, YC & Industry**
+- **SpaceX completes $60B Cursor acquisition** (already in top picks).
+- **OpenAI replaces CRO with Wiz president** — Denise Dresser exits after 8 months; Wiz's cybersecurity exec moves in. Confirms OpenAI's enterprise + security posture.
+- **Tesla "flying Roadster" unveiling imminent** — The Information exclusive; if real, redefines the consumer-EV conversation.
+- **Robinhood YC fund + Thrive 7x returns** — Robinhood's second retail-accessible VC fund; Thrive's 2022 fund's OpenAI + Cursor marks reshape LP sentiment toward AI-stage funds.
+
+**Watchlist**
+- **Nvidia-OpenAI-SB Energy deal closure** — Watch for finalized terms on the $100B credit + $3B equity; will set the capex template for the next AI-data-center cycle.
+- **Hugging Face security incident post-mortem** — Z.ai's GLM-5.3 launch explicitly cited it; full technical disclosure still pending and will reshape model-hosting supply-chain practices.
+- **MSCI consultation outcome on crypto-treasury firms** — Comments close soon; ruling will determine whether index inclusion remains viable for BTC-treasury companies.
+- **OCC World Liberty Trust Co. conditions** — What the "preliminary conditional approval" requires will determine whether the bank charter is usable or just optics.
+
+---
+
+**Tech / AI / Crypto / Software Digest — Aug 16, 2026, 00:55 IST**
+
+**Top picks**
+
+- **SpaceX closes the $60B Cursor acquisition** — Cursor employees are being fully integrated into SpaceX's AI division in the days after the deal closed, per The Information. The IDE/agent stack now lives inside SpaceXAI alongside Grok, raising the bar for every competing coding agent.
+  https://www.theinformation.com/articles/spacex-completes-60-billion-cursor-acquisition
+
+- **Nvidia in talks for $3B SB Energy equity + ~$100B credit guarantee backing OpenAI's Ohio campus** — Nvidia's emerging playbook is equity + credit support to lock in OpenAI compute. Source: The Information exclusive.
+  https://www.theinformation.com/articles/nvidia-talks-invest-3-billion-sb-energy-openai-data-center-deal
+
+- **Anthropic publishes how Claude's text watermark works (Aug 14)** — First major lab to ship a deployable text-watermark spec. Required reading for anyone building provenance, detection, or compliance tooling.
+  https://www.anthropic.com/news/how-claudes-text-watermark-works
+
+- **DeepSeek ships V4-Pro on API + open-source "Harness" coding agent** — Weights dropped on Hugging Face (1.7T params, 893 GB). The harness, not the model, may be the more enduring contribution as models commoditize behind standardized interfaces.
+  https://venturebeat.com/ai/deepseek-harness-launches-as-open-source-rival-to-claude-code-alongside-v4-pro-on-api-with-higher-prices/
+
+- **Z.ai's GLM-5.3 ships with cyber-defense posture, citing the recent Hugging Face hack** — Claims 2,436 vulnerability findings across 269 projects in collaboration with Chinese security teams. Confirms the HF incident was real and consequential.
+  https://venturebeat.com/ai/glm-5-3-is-here-with-advanced-cyber-capabilities-and-reportedly-already-found-a-serious-vulnerability-in-cursor/
+
+- **Trezor warns 14,000 customers after fulfilment-partner data breach** — Hardware-wallet customers exposed via third-party logistics, not the device itself. Supply-chain lesson: the wallet is only as safe as its shipping pipeline.
+  https://www.coindesk.com/tech/total-loss
+
+**AI, Agents & Models**
+
+- **Grok 4.6 in GitHub Copilot (Aug 14)** + **Grok Bot at $120/mo for persistent "digital coworkers"** — xAI/SpaceXAI keeps pushing agents-as-product rather than raw-model competition.
+  https://github.blog/changelog/grok-4-6-is-now-available-in-github-copilot/
+  https://venturebeat.com/ai/spacexais-grok-bot-turns-agents-into-persistent-digital-coworkers-that-can-operate-your-apps-for-120-per-month/
+
+- **Google Gemini 3.7 Flash (Aug 13) with 50% intro price cut** — Already the default in Google Search AI Mode; pitched hard at coding/agent workloads.
+  https://venturebeat.com/ai/googles-gemini-3-7-flash-targets-coding-and-agents-with-a-50-introductory-price-cut/
+  https://deepmind.google/discover/blog/introducing-gemini-3-7-flash/
+
+- **DeepMind ships Gemini 3.5 Flash Cyber + computer-use in 3.5 Flash** — A cyber-tuned variant aimed squarely at the same defensive niche as GLM-5.3.
+  https://deepmind.google/discover/blog/
+
+- **Anthropic Opus 5 + Sonnet 5 on AWS Bedrock** — Sonnet 5 is now the frontier default for coding, agents, and professional work; revenue reportedly up 14× in Q2 with profitability (The Information).
+  https://aws.amazon.com/blogs/aws/aws-weekly-roundup-local-zone-in-athens-claude-opus-5-on-aws-lambda-durable-execution-for-net-and-more-july-27-2026/
+
+- **Mistral targets 1 GW European compute by 2030** — $38B plan; signals EU's bid for sovereign AI capacity outside US hyperscaler orbit.
+  https://venturebeat.com/ai/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now/
+
+- **Writer's Palmyra X6** claims 52% agent-cost reduction, 48% speed-up, 10% quality gain — the cost-per-agent-task metric is now the explicit battleground.
+  https://venturebeat.com/ai/writer-says-its-new-palmyra-x6-model-cuts-ai-agent-costs-by-52-as-token-spending-surges/
+
+**Software Engineering & DevTools**
+
+- **Cursor publishes an official plugin spec (`cursor/plugins`)** — Trending on GitHub today (152 stars today, 2.9k total). Cursor is choosing the VS Code extension model rather than a closed surface.
+  https://github.com/cursor/plugins
+
+- **GitHub Copilot SDK for Java** — Official SDK with annotations and virtual-thread support for driving Copilot from idiomatic Java code.
+  https://github.blog/engineering/using-the-github-copilot-sdk-for-java/
+
+- **GitHub stacked pull requests for AI-generated code** — Workflow for splitting one giant agent PR into a reviewable stack — pragmatic fix for the "huge un-reviewable PR" problem.
+  https://github.blog/engineering/turn-one-giant-ai-generated-pull-request-to-a-reviewable-stack/
+
+- **Auto-research with Codex: 232× faster kernel** (300pts HN) — A worked example of a well-instrumented Codex loop driving meaningful kernel-level perf work.
+  https://sankalp.bearblog.dev/auto-research-with-codex-how-i-achieved-a-232x-faster-kernel/
+
+- **Yadda 3.0 — BDD for AI agents** — Natural-language step definitions that agents can consume directly.
+  https://stephen-cresswell.com/yadda-3-0-0-bdd-in-the-age-of-ai-agents/
+
+- **sqlite-utils 4.2 / 4.2.1** — Richer `table.transform()` (preserves check/unique constraints, column comments), plus a useful post-mortem on a missing `typing-extensions` dependency.
+  https://simonwillison.net/2026/Aug/13/sqlite-utils-4-2/
+
+**Cloud, Infra, Data & Security**
+
+- **AWS Bedrock AgentCore Runtime Instances****AWS Bedrock AgentCore Runtime Instances** — Persistent compute model for production AI agents on Bedrock, designed to eliminate the cold-start tax of serverless for long-running agent workloads.
+  https://aws.amazon.com/blogs/aws/
+
+- **Amazon DynamoDB adds real-time vector search at any scale** — Removes the separate vector-DB tier for many RAG workloads; pairs cleanly with Bedrock Knowledge Bases.
+  https://aws.amazon.com/blogs/aws/
+
+- **Cloudflare prices $2.175B of 0% convertible senior notes due 2031 (Aug 11)** — Closed days after FedRAMP High authorization; funds Cloudflare's AI Cloud + agent-infra buildout.
+  https://www.cloudflare.com/press/
+
+- **"Going Dark, and the era of law enforcement hacking"** — Matthew Green's essay on cryptographyengineering.com (432 pts HN, 231 comments) on why state hacking increasingly substitutes for lawful intercept. Required reading if you design or audit encrypted systems.
+  https://blog.cryptographyengineering.com/2026/08/15/going-dark-and-the-era-of-law-enforcement-hacking/
+
+- **Firefox is now the last major browser supporting uBlock Origin** — The Manifest V3 fallout is now a hard constraint for anyone shipping browser extensions or ad-tech tooling.
+  https://lobste.rs/
+
+- **RISC-V: They Should Have Known Better** — Dmitry Grigorov's technical critique of the RVA23 profile (245 HN comments). Required reading if you're choosing an ISA for new silicon.
+  https://news.ycombinator.com/item?id=RISC-V-critique
+
+- **GitHub case-folding at >45 GiB/s** — Branch-free loop + byte-space arithmetic on a single core; useful pattern for any high-throughput text processing.
+  https://github.blog/engineering/dont-stop-early-case-folding-source-code-at-memory-speed/
+
+**Crypto & Blockchain Engineering**
+
+- **Trump-backed World Liberty Trust Co. gets conditional OCC bank charter (Aug 15)** — First formal banking charter for a Trump-family crypto vehicle; sets up a new stablecoin-friendly US bank.
+  https://www.coindesk.com/policy/trump-backed-world-liberty-wins-conditional-bank-charter-from-federal-regulator/
+
+- **MSCI proposes excluding Strategy + Metaplanet from indices** — Targets "non-operating companies" broadly; if adopted, removes the index-inclusion distribution channel for BTC-treasury firms.
+  https://www.coindesk.com/markets/bitcoin-holders-strategy-and-metaplanet-face-stock-index-exclusion-under-mscis-new-proposal/
+
+- **Tether completes first-ever KPMG audit (FY2025)** — Material for institutional stablecoin adoption; addresses the historical "no audited reserves" objection.
+  https://www.coindesk.com/
+
+- **Trump expected at White House meeting with crypto CEOs (next week)** — Per CoinDesk reporting; attendees span crypto, prediction markets, and AI.
+  https://www.coindesk.com/policy/
+
+- **Israel's Bank Leumi to offer BTC/ETH/SOL trading via Galaxy (early 2027)** — Mainstream Israeli bank rollout using Galaxy Digital infrastructure.
+  https://www.coindesk.com/markets/israels-largest-bank-to-offer-crypto-trading-with-galaxy/
+
+- **Russia restricts retail crypto trading to BTC, ETH, USDT** — Non-qualified investors face ~$3,600/year purchase cap; further narrowing of retail crypto channels.
+  https://www.coindesk.com/policy/
+
+- **Trezor breach via fulfilment partner** — See top pick.
+
+**Open Source / GitHub**
+
+- **cactus-compute/needle** — 14MB on-device foundation model (Needle 2, 45M params, 28MB RAM) for tool calling on phones/wearables/robots. Built on their "Simple Attention Network" recipe with CQ2-bit quant, byte-level grammars, and calibrated confidence scores. Trending #1 today (551 stars/day, ~6k total).
+  https://github.com/cactus-compute/needle
+
+- **HKUDS/CLI-Anything** — "Making all software agent-native" by wrapping any GUI tool with a CLI. CLI-Hub at clianything.cc.
+  https://github.com/HKUDS/CLI-Anything
+
+- **cordiverse/cordis** — "Meta-Framework of Spatiotemporal Composability" (616 stars today).
+  https://github.com/cordiverse/cordis
+
+- **github/spec-kit** — GitHub's official toolkit for spec-driven development (901 stars today, 129k total).
+  https://github.com/github/spec-kit
+
+- **unsloth (unslothai)** — 71.9k stars; local UI for running/training LLMs (Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX).
+  https://github.com/unslothai/unsloth
+
+- **altic-dev/FluidVoice** — macOS dictation with on-device STT + custom-trained AI cleanup; a local Wispr Flow alternative.
+  https://github.com/altic-dev/FluidVoice
+
+- **citrolabs/ego-lite** — Browser designed to let agents (Codex, Claude Code) share your logged-in state without disturbing you.
+  https://github.com/citrolabs/ego-lite
+
+**Startups, YC & Industry**
+
+- **SpaceX completes $60B Cursor acquisition** — See top pick.
+
+- **OpenAI replaces CRO with Wiz president** — Denise Dresser exits after 8 months; Wiz's cybersecurity exec takes over. Reinforces OpenAI's enterprise + security posture heading into the IPO window.
+  https://www.theinformation.com/articles/openai-replaces-its-chief-revenue-officer-with-wiz-president
+
+- **Thrive Capital's 2022 fund up >7× net of fees** — Marks driven by OpenAI and Cursor. Reshapes LP sentiment toward AI-stage venture funds.
+  https://www.theinformation.com/articles/thrive-capitals-2022-fund-surges-on-openai-cursor
+
+- **Robinhood launches second public venture fund for YC startups** — Retail-accessible exposure to YC equity; structural shift in early-stage liquidity.
+  https://www.coindesk.com/videos/
+
+- **Anthropic hires former California Supreme Court justice Tino Cuéllar as Chief Global Affairs Officer (Aug 4)** — Signals a more aggressive regulatory + policy posture ahead of an expected IPO.
+  https://www.anthropic.com/news
+
+**Watchlist**
+
+- **Nvidia-OpenAI-SB Energy deal closure** — Watch for finalized terms on the $100B credit guarantee + $3B equity; sets the capex template for the next AI-data-center cycle.
+- **Hugging Face security post-mortem** — Z.ai's GLM-5.3 launch explicitly cited the incident; full technical disclosure is still pending and will reshape model-hosting supply-chain practices.
+- **MSCI consultation outcome on crypto-treasury firms** — Determines whether index inclusion remains viable as a distribution channel for BTC-treasury companies.
+- **OCC's "preliminary conditional approval" terms for World Liberty Trust Co.** — What conditions are attached will determine whether the charter is usable infrastructure or symbolic optics.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
