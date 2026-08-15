@@ -1,0 +1,70 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough verified material. Let me draft and deliver the digest.
+
+**Tech / AI / Crypto / Software Digest — Saturday, 15 Aug 2026, 12:55 IST**
+
+**Top picks**
+- **Qwen 3.8 27B released by Alibaba (Apache-2.0)** — native vision-language 27B dense model mixing 16 Gated DeltaNet (linear-attention) blocks with one Gated Attention block per cycle, MTP heads, 256K context extensible to 1M. Posts state-of-the-art on its weight class across Terminal Bench 2.1 (73.0), SWE-bench Pro (61.7), QwenSWEBench (79.0), CoWorkBench (70.7), and Agents' Last Exam (Pass@1 20.4). HF repo: <https://huggingface.co/Qwen/Qwen3.8-27B>.
+- **Mixedbread Toast 1 — specialised search sub-agent** — agentic retrieval model that decomposes queries, gathers evidence, and returns curated context; claims frontier-model-quality search at ~$0.023/query, 8s p50, up to 10× cheaper and 12× faster than GPT-5.6 Sol / Claude Opus 5. On Databricks OfficeQA Pro V2, GPT-5.6 Sol + Toast 1 hits 70% correctness at ~$1.15/task vs Claude Fable 5 on Genie at 60% / ~$4. <https://www.mixedbread.com/blog/toast-1>.
+- **Google: making private AI practical with homomorphic encryption** — large, well-upvoted announcement on blog.google about practical FHE for inference; top of HN today. Worth watching for what tooling / SDKs land and which inference paths they target. <https://blog.google> (HN discussion: <https://news.ycombinator.com/item?id=44849999>).
+- **Omarchy 4.0 "Quattro" shipped (Basecamp/DHH)** — the biggest release in the project's history. Replaces Waybar, Walker, Mako, SwayOSD, hyprlock, swaybg, polkit-gnome with a single long-running **Quickshell** (QML/Iwayland) process with a plugin architecture, event-driven (idle CPU ≈ 0), and adds a config-pickable default coding agent (Claude Code, Codex, OpenCode, Pi, Gemini, Grok, Copilot, Crush). ISO: <https://iso.omarchy.org/omarchy-4.0.0.iso>; release notes: <https://github.com/basecamp/omarchy/releases/tag/v4.0.0>.
+- **OpenAI / Anthropic in a price war as Chinese labs close the gap** — Ars Technica report on API price compression across frontier providers, with Qwen 3.8 / Kimi K3 / GLM-5.2 changing the reference point for what's "cheap enough." <https://arstechnica.com> (HN: <https://news.ycombinator.com/newest>).
+
+**AI, Agents & Models**
+- **Qwen 3.8 27B (Apache-2.0)** — dense 27B VLM, Gated DeltaNet + Gated Attention hybrid, 256K→1M ctx, FP8 variant also published. <https://huggingface.co/Qwen/Qwen3.8-27B>.
+- **Mixedbread Toast 1** — agentic retrieval subagent designed to be wired under a frontier orchestrator (e.g. Codex), dramatically cutting search tokens on the Harvey LAB law-firm benchmark (80.6M → 23M tokens, same task score). <https://www.mixedbread.com/blog/toast-1>.
+- **Claude Code best-practices (Anthropic docs)** — newly-revised guide covering verification loops, explore-then-plan-then-code, sub-agents for investigation, "auto mode," context budget management, and adversarial review steps. Worth reading end-to-end if you run Claude Code daily. <https://code.claude.com/docs/en/best-practices>.
+- **Show HN: ThoughtDAG** — editable context graph for LLM conversations, lets the user rewind, edit, branch individual thoughts inside the prompt. <https://chenxiachan.github.io>.
+- **Show HN: MCP Memory** — fast agent memory server using Google's OKF (Open Knowledge Framework, presumably OK-RAG-style) and SQLite FTS5 as the backing index. <https://github.com/fellowgeek/mcp-memory>.
+- **GitHub trending: cactus-compute/needle** — 14 MB foundation model for phones / wearables / smart home / robots, +662 stars today. <https://github.com/cactus-compute/needle>.
+- **AI by Hand (Prof. Tom Yeh)** — back-of-the-envelope walkthroughs of transformer/SSM math. Now 73K subs, useful for engineers who want the derivations, not the marketing. <https://byhand.ai/>.
+
+**Software Engineering & DevTools**
+- **Racket v9.3** — new release of the Racket language platform. <https://racket-lang.org>.
+- **Show HN: Mole — deep research agent for your terminal** (67 pts) — bash/TUI agent that drives a multi-step research flow. <https://github.com/lajosdeme/mole>.
+- **Show HN: LuaCAD — parametric CAD scripted in Lua** (89 pts) — interesting because it treats CAD as a build pipeline, not a GUI. <https://ad-si.com>.
+- **RustDesk adds true unattended remote access on Wayland** — finally closes the long-standing gap that made Linux/Wayland servers hard to manage headless. <https://rustdesk.com/blog/wayland-unattended-remote-access>.
+
+**Cloud, Infra, Data & Security**
+- **Cloudflare DDoS Threat Report H1 2026** — 519% surge in hyper-volumetric (≥1 Tbps) attacks, mostly DNS/CLDAP reflection, geopolitically correlated. Concrete numbers for capacity planning. <https://blog.cloudflare.com/ddos-threat-report-h1-2026/>.
+- **Cloudflare: "Secure all your internal vibe-coded applications — in one click"** — Access for Workers: attach an Access policy directly to a Worker, applies across routes, custom domains, workers.dev, and previews. Very practical if your team ships LLM-generated apps. <https://blog.cloudflare.com/secure-all-your-internal-vibe-coded-applications-in-one-click/> (Aug 14).
+- **Cloudflare: "How Cloudflare detects MCP traffic and helps secure it"** — Gateway now classifies MCP requests via protocol-level heuristics so you can find shadow MCP servers and enforce Portal-only access. <https://blog.cloudflare.com/how-cloudflare-detects-mcp-traffic-and-helps-secure-it/> (Aug 14).
+- **Wired: "Coin-sized device can hack a Boeing 737"** — report on a CAN-bus-injection attack on commercial avionics. Relevant for anyone building hardware/embedded adjacent to safety-critical systems. <https://www.wired.com>.
+- **Cryptography Engineering: "Going Dark, and the era of law enforcement hacking"** — 305-pt HN post on why lawful-intercept policy is shifting toward active exploitation rather than wiretaps. Important context for security teams modeling adversary capabilities. <https://cryptographyengineering.com>.
+- **PBS station fears losing 50 TB after being ghosted by cloud storage provider** (Ars Technica) — cautionary tale on vendor lock-in and exit clauses. <https://arstechnica.com>.
+
+**Crypto & Blockchain Engineering**
+- **Trezor warns 14,000 customers after fulfilment-partner breach** — first time Trezor shipping addresses were exposed; data exposed on order fulfillment, not seeds. <https://www.coindesk.com> (homepage, Aug 14).
+- **Tether says KPMG U.S. completed its long-promised "Big Four" audit** of the $180 B USDT reserves (including gold). Historic for stablecoin transparency, although methodology/audit type matters. <https://www.coindesk.com>.
+- **Trump-backed World Liberty wins conditional national-bank charter from OCC** ("World Liberty Trust Co.") — preliminary conditional approval, not final; meaningful for stablecoin issuance/payments rails. <https://www.coindesk.com>.
+- **SEC cancels long-awaited "Reg Crypto" proposal meeting, postpones without a new date** — combined with a separate delay to the "innovation exemption" for tokenization, this is a real speed-bump for Wall Street's tokenization push. <https://www.coindesk.com>.
+- **Bank Leumi (Israel's largest bank) to offer BTC/ETH/SOL trading via Galaxy** — from early 2027; institutional channel keeps broadening. <https://www.coindesk.com>.
+- **MSCI consultation would exclude Strategy (MSTR) and Metaplanet from indices** — a structural risk for BTC-treasury-equities that engineers holding those instruments should track. <https://www.coindesk.com>.
+
+**Open Source / GitHub**
+- **github/spec-kit** — GitHub's spec-driven-development toolkit is on fire (1,160 stars today, 128K total). Worth a look for teams formalising how coding agents get briefs. <https://github.com/github/spec-kit>.
+- **cathrynlavery/diagram-design** — 29 editorial-style SVG diagram templates for Claude Code, no Mermaid slop. 17.6K stars, +3,646 today. <https://github.com/cathrynlavery/diagram-design>.
+- **citrolabs/ego-lite** — "fastest browser for AI agents," shares your logged-in browser state with Claude Code / Codex without disturbing you. <https://github.com/citrolabs/ego-lite>.
+- **holaboss-ai/holaOS** — open-source "all-in-one agent workspace" with 100+ integrations and shared memory, BYOK or built-in. <https://github.com/holaboss-ai/holaOS>.
+- **tempesta-tech/tempesta** — open-source XDP/TC DDoS filtering for 100G+ Linux networks. <https://github.com/tempesta-tech/tempesta>.
+
+**Startups, YC & Industry**
+- **Codex hits 15M users four months early** (HN, cited from grok.me) — if accurate, signals the consumer/agent surface is moving fast.
+- **Kalshi reportedly in talks with Sequoia + Wellington for $750M at $40B** — up from $22B in May; prediction markets still the most capital-rich AI-adjacent vertical.
+- **OpenAI upheaval / Sam Altman IPO push (FT)** — corporate reporting; treat as unconfirmed until FT formal writeup.
+- **PCBM (PCB-maker tooling)** continues to show up repeatedly in agent-bench launches — physical-world agents are arriving.
+
+**YouTube / Technical Media**
+- **Omarchy 4.0 introduction video (DHH)** — full walkthrough of the new Quickshell-based desktop, useful if you want to see the architecture explained by the maintainer. <https://www.youtube.com/watch?v=F7fe9pa8OeE>.
+- **AI by Hand (Prof. Tom Yeh, YouTube/Substack)** — paper-and-pen derivations of attention, SSMs, DeltaNet — solid "understand it from scratch" content. <https://byhand.ai/>.
+
+**Watchlist**
+- **Qwen 3.8 ecosystem integration** — Unsloth, vLLM, SGLang, Ollama builds landing this week; benchmark reliability across the Gated-DeltaNet hybrid is still to be proven on long-context.
+- **Google homomorphic-encryption for AI** — full blog post and SDK details haven't surfaced cleanly yet; expect follow-up posts and a research paper in the next few days.
+- **SEC "Reg Crypto" / tokenization exemption timing** — meeting re-scheduled, tokenization equities (Bullish, Coinbase, Circle) sold off on the news; watch for the next open meeting date.
+- **Microsoft/Adobe/Firefox extensions manifest changes (post uBlock Origin)** — the adblock fallout is real and ongoing; expect more "Manifest V3 workaround" posts and possibly a Chromium fork discussion.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
