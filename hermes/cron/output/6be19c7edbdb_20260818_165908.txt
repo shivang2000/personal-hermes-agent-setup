@@ -1,0 +1,58 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough. Now I'll write the digest.
+
+**Tech / AI / Crypto / Software Digest — Tuesday, 18 Aug 2026, 16:55 IST**
+
+**Top picks**
+- [`DuckDB v2.0 preview released`](https://duckdb.org/2026/08/17/duckdb-20-highlights) — v2.0 (codename "Cyanoptera") ships a native client/server protocol ("Quack"), full SQL `CONNECT` to remote DuckDB/Postgres/MySQL with pushdown, a rewritten SQL parser, new columnar storage format, `VARIANT` end-to-end shredding, triggers, async I/O and a reworked metrics layer; it's effectively the first release that treats DuckDB as a long-running service, not just an in-process engine.
+- [`Wiz's "Red Agent" exploited a Copilot-co-authored GitHub Actions flaw to reach Snowflake's Jira`](https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug) — A script-injection via `github.event.issue.title` survived GitHub Advanced Security's scan and was merged five days before an autonomous AI red-team tool exploited it through the `if:` branch guard, dumped Jira tokens, and traced its own blast radius; remediates a tangible "AI-authored code passed CI" failure mode that security teams now need to audit for.
+- [`GPT-5.6 Sol pricing cut 50% on OpenRouter; benchmarks show a step-change in vision`](https://openrouter.ai/openai/gpt-5.6-sol) — Roboflow's VLM eval shows Sol jumping object-detection mAP@50 from 13.8 (5.5) to 46.2, on top of a 50% OpenRouter price drop; combined with native UI navigation (computer-use) release notes, OpenAI is now competitive on both cost-per-token and frontier vision, which reshapes build-vs-route calls for multimodal agents.
+- [`A Preview of DuckDB v2.0 (RAJAPerf + server) and GPU Offload in Rust paper suggest the "in-process OLAP DB + GPU-native Rust" stack is coming together`](https://arxiv.org/abs/2608.13759) — A new rustc+LLVM-based GPU-offload framework hits competitive performance vs hand-tuned CUDA/HIP on RAJAPerf while preserving Rust's ownership/safety story — meaning a single Rust toolchain could soon target both host CPUs and multi-vendor GPUs without unsafe pointer escapes.
+- [`Speko (YC S26) launches as an "OpenRouter for voice AI"`](https://speko.ai/) — Per-language routing across 21 STT and 17 TTS models using published numbers, exposes model- and language-specific WER (multiple languages have no single winner), with a unified base URL wrapping OpenAI/Anthropic/first-party speech APIs — useful default for any product serving non-English voice traffic.
+- [`Linux 7.3 merges work that improves performance when vRAM is overcommitted`](https://pixelcluster.dev/VRAM-Overcommit/) — Direct practical value for anyone running GPU workloads on shared/cloud GPUs; kernel-side adjustments reduce contention when total VRAM allocations exceed physical capacity.
+
+**AI, Agents & Models**
+- [`"The Benchmarkpocalypse" — Dan Luu on LLMs making benchmark gaming trivial`](https://danluu.com/benchpocalypse/) — Demonstrates how an LLM-in-a-loop can game comprehensive suites (e.g., 1.4× the Rust `regex` crate on `rebar`, but 10× slower on a holdout ripgrep corpus) with no special intent; relevant reading for any team interpreting "X is now Y% faster" claims from agent-built perf PRs.
+- [`AI;DR (AI; Didn't Read) essay`](https://www.rickmanelius.com/p/aidr-ai-didnt-read) — A growing norm of refusing unedited AI output from peers; small cultural signal worth tracking if you publish externally.
+- [`Voker (YC S24) — analytics SDK for AI agents`](https://voker.ai) — Drop-in TS/Python wrappers around OpenAI/Anthropic/Gemini/Vercel AI SDK for tracing and observability; alternative shape vs LangSmith/Arize.
+- [`GPU Offload in Rust: Portable, Safe, and Fast`](https://arxiv.org/abs/2608.13759) — Zero-overhead multi-vendor GPU compilation built into rustc via LLVM Offload; RAJAPerf competitive with CUDA/HIP C++.
+- [`GPT 5.6 Sol is the best "vision" model OpenAI ever released`](https://blog.roboflow.com/openai-gpt-5-6/) — Detection, OCR, counting and document-layout gains; coordinate-format note (XYXY pixels vs Gemini's YXYX 0–1000) explains a real footgun.
+
+**Software Engineering & DevTools**
+- [`basecamp/omarchy trending (26.2k★) — opinionated Arch/Hyprland Linux distribution`](https://github.com/basecamp/omarchy) — Basecamp-maintained "Beautiful, Modern & Opinionated Linux" install that ships a curated Hyprland + dev-tool stack; useful baseline if you want a reproducible dev workstation.
+- [`OpenCut/OpenCut trending (84.5k★) — open-source CapCut alternative`](https://github.com/OpenCut-app/OpenCut) — Cross-platform video editor, MIT-style license, TS; useful if you evaluate local-first creative tooling.
+- [`Rethinking Database Programming — acadia.engineering`](https://acadia.engineering/blog/rethinking-database-programming) — Recent HN-front-page take on embedding-friendly DB ergonomics; worth a read for backend teams weighing new abstractions over raw SQL.
+
+**Cloud, Infra, Data & Security**
+- [`Wiz "Red Agent" → Snowflake Jira exploit via Copilot-co-authored workflow`](https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug) — Concrete incident showing a script-injection surviving GHAS + being disclosed and remediated same-day; pattern (untrusted input in `run:` step after template substitution) applies to every Actions workflow you maintain.
+- [`Linux 7.3 improves performance when running out of vRAM`](https://pixelcluster.dev/VRAM-Overcommit/) — Kernel-side efficiency wins for GPU-overcommit environments.
+- [`Google buys crashed airline Spirit's customer-data trove at auction for $10M`](https://www.theregister.com/ai-and-ml/2026/08/18/google-buys-crashed-airline-spirits-data-at-auction-because-ai/5288962) — 100M+ emails, 30M recorded calls, 600k ServiceNow tickets, SharePoint/Teams/OneDrive items; signals how cheap bulk "AI training" data acquisition has become when bankruptcies deliver it at fire-sale prices.
+
+**Crypto & Blockchain Engineering**
+- [`U.S. Treasury Department proposes GENIUS Act stablecoin rule`](https://www.coindesk.com) — Treasury draft rule defining stablecoin issuers, jurisdictions, and reserves; an early step in the U.S. implementation of the GENIUS Act that will shape where U.S.-resident engineers/issuers can deploy.
+- [`Ethereum Foundation warns some tools may break with Glamsterdam upgrade`](https://cointelegraph.com) — Developer-facing notice for EVM/smart-contract teams planning tool upgrades around Glamsterdam.
+- [`Chainalysis sues U.S. government over $95M ICE contract awarded to TRM Labs`](https://cointelegraph.com) — Worth watching if you build compliance/analytics tooling; signals procurement-disputes risk in U.S. government blockchain surveillance purchasing.
+- [`BitBox patches 'severe' wallet flaws that could put funds at risk`](https://cointelegraph.com) — Hardware-wallet severity worth pulling into your own security-update queue if you or your users carry BitBox.
+
+**Open Source / GitHub**
+- [`volcengine/OpenViking — Self-evolving Context Database for AI Agents`](https://github.com/volcengine/OpenViking) (29k★, Python) — ByteDance open-source agent-memory + RAG + skills framework; trending and updated today.
+- [`basecamp/omarchy`](https://github.com/basecamp/omarchy) (26.2k★) and [`OpenCut-app/OpenCut`](https://github.com/OpenCut-app/OpenCut) (84.5k★) — also leading GitHub Trending today.
+- [`harry0703/MoneyPrinterTurbo`](https://github.com/harry0703/MoneyPrinterTurbo) and [`public-apis/public-apis`](https://github.com/public-apis/public-apis) continue to dominate star-gain lists.
+
+**Startups, YC & Industry**
+- [`Speko (YC S26) — OpenRouter for voice AI`](https://speko.ai/) — YC-backed launch; per-language routing over STT/TTS with WER benchmarks.
+- [`Voker (YC S24) — analytics for AI agents`](https://voker.ai) — Wraps existing model SDKs so you can instrument existing code with minimal rewiring.
+- [`Gecko Security (YC F24) — AI that finds business-logic vulns`](https://news.ycombinator.com/item?id=44747204) — 30+ CVEs in Ollama/Gradio/RagFlow; uses compiler-accurate indexing plus threat modeling rather than AST/regex — promising direction for high-context SAST.
+- [`Payward (Kraken parent) joins Anthropic's Project Glasswing`](https://www.coindesk.com) — Crypto exchange committing engineering time to Anthropic's open-source AI cybersecurity initiative; signals Crypto × AI-security intersection gaining institutional pull.
+
+**Watchlist**
+- DuckDB v2.0 (Cyanoptera) feature freeze / release notes — preview promises CLI server, CONNECT pushdown, triggers; watch for the GA date and breaking-change list.
+- Anthropic Project Glasswing — open-source findings + partner outputs (Kraken + others joining this week); likely to surface at least one major product/technique rollout.
+- US Treasury GENIUS Act stablecoin rulemaking — will shape wallet/exchange compliance pipelines for the rest of 2026.
+- Glamsterdam upgrades breaking third-party Ethereum tooling — EF has called out tool incompatibility; expect a wave of fork-recovery and v2 client patches.
+- "Benchmarkpocalypse" — more teams calling out agent-reward-hacked perf claims; expect follow-ups benchmarking how to audit agent-written optimizations.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
