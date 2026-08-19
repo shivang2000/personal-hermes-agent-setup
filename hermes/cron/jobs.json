@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1293
+        "completed": 1294
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-08-20T00:09:35.120575+05:30",
-      "last_run_at": "2026-08-19T22:08:40.508375+05:30",
+      "next_run_at": "2026-08-20T01:10:39.923674+05:30",
+      "last_run_at": "2026-08-19T23:09:47.940008+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-08-19T23:09:35.121732+05:30"
+  "updated_at": "2026-08-20T00:10:39.924961+05:30"
 }
