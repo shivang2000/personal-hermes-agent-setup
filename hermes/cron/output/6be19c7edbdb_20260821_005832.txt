@@ -1,0 +1,68 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have all the verified material I need. Let me compose the digest now. The current IST time for the cron job (00:55 IST = late-night UTC Thursday / early-Friday Aug 21) — let me check the actual date context. LWN says "August 20, 2026" for many items. The Anthropic Opus 5 release was Jul 24, Sonnet 5 was Jun 30. The current digest run is at 00:55 IST Aug 21, 2026.
+
+**Tech / AI / Crypto / Software Digest — Friday, August 21, 2026, 00:55 IST**
+
+**Top picks**
+- [Malicious `arrayref` crate removed from crates.io after build-script payload confirmed (Rust Security Response WG)](https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref) — A published 0.3.10 of the widely-used `arrayref` crate was found to ship a `build.rs` that downloads a malicious payload at compile time; Rust yanked it and the advisory ([RUSTSEC-2026-0260](https://rustsec.org/advisories/RUSTSEC-2026-0260.html)) flags two related crates, `internment` and `append-only-vec`. Anyone using these in lockfiles should `cargo update` and audit builds that resolved them in the last day.
+- [Go 1.27 released with generic methods, ML-DSA, and an experimental SIMD package](https://go.dev/doc/go1.27) — Go finally adds methods-with-type-parameters (a long-awaited feature), ships `crypto/mldsa` for post-quantum signatures, new `encoding/json/v2` + `jsontext`, a `uuid` package, an experimental `simd` for explicit SIMD, a goroutine-leak `runtime` profile, and faster allocator paths; LWN's [release writeup](https://lwn.net/) confirms the 7.27 release tag.
+- [Modular open-sources the entire Mojo compiler and toolchain under Apache 2.0](https://www.modular.com/blog/mojo-open-source) — Building on the Mojo 1.0 release last week, the full compiler, standard library, and Bazel-based build now live in [`github.com/modular/modular`](https://github.com/modular/modular); contributions to the compiler aren't open yet (planned by year-end), but the move unlocks self-hosting, custom backends, and AI/accelerator tooling for anyone building on MAX.
+- [Cursor publishes "Git at any scale" — why hosting Git on plain filesystems keeps failing](https://cursor.com/blog/git-at-any-scale) — Vicent Martí walks through why packfiles break distributed-filesystem, DHT, and block-replicated designs, then explains Cursor's "Spokes" architecture (spokes caching repo data, a centralized origin holding canonical state, and a custom packfile format) to support very large monorepos. Important read for anyone designing code-hosting infrastructure or evaluating Cursor's reliability claims.
+- [Ethereum Foundation launches Platåberget testnet for Glamsterdam (Gloas+Amsterdam)](https://blog.ethereum.org/) — First long-running public testbed for Glamsterdam changes; flagged as **breaking** for any wallet, indexer, or gas estimator that hardcodes a maximum gas limit. EF also published ["The triage is the product"](https://blog.ethereum.org/) detailing how their Protocol Security team runs coordinated AI agents against live client code.
+
+**AI, Agents & Models**
+- [Google DeepMind: DiffusionGemma — 4× faster text generation via discrete diffusion](https://deepmind.google/discover/blog/) — DeepMind released a technical report and model weights showing a diffusion-style decoder can generate text several times faster than equivalent autoregressive Gemma variants on certain workloads; trade-offs include iterative refinement latency. (HN discussion: [DiffusionGemma Technical Report](https://arxiv.org/abs/)). Worth watching for streaming UX and inference-cost changes.
+- [Anthropic's Claude Opus 5 and Sonnet 5 are GA; Fable 5 redeployed globally](https://www.anthropic.com/news) — Opus 5 (Jul 24) is positioned as the long-running-agent tier; Sonnet 5 (Jun 30) targets coding/professional workloads at scale; Anthropic also proposed an industry jailbreak-severity framework with AWS, Microsoft, and Google ([Jul 30 cybersecurity evals post](https://www.anthropic.com/news)).
+- [Gemini 3.7 Flash + Gemini 3.5 Flash Cyber + computer-use released](https://deepmind.google/discover/blog/) — DeepMind shipped Gemini 3.7 Flash, added a security-focused "Flash Cyber" variant, and enabled computer-use in 3.5 Flash; Gemma 4 12B is now a unified encoder-free multimodal model.
+- [Show HN: 125M-param on-device piano autocomplete (RollTab)](https://simedw.com/2026/08/21/introducing-piano-autocomplete/) — A 125M MIDI model running fully on an iPhone; useful concrete example of how small domain-specific models can ship real interactive UX without server inference.
+- [obra/superpowers + cursor/plugins dominate agent-skills trending](https://github.com/trending) — Today's GitHub trending is dominated by agent harness plumbing: `superpowers` (skills framework), `cursor/plugins`, `volcengine/OpenViking` (self-evolving context DB), `akitaonrails/ai-memory` (cross-vendor handoff memory), and `chaitanyagiri/munder-difflin` (local multi-agent harness).
+
+**Software Engineering & DevTools**
+- [Linux kernel 7.2 released; 7.3 merge window open with 2,346 changesets](https://lwn.net/) — Per LWN's [7.2 stats post](https://lwn.net/), 7.2 was one of the busiest cycles ever (~600k new lines); the 7.3 merge window already includes a significant rework of group scheduling on SMP. [7.2 release announcement](https://igalia.com/).
+- [Fedora plans to restrict AF_ALG in the next release](https://lwn.net/) — Following recent "Copy Fail" and successor kernel crypto vulns, Fedora is disabling the deprecated kernel userspace-crypto socket interface to push dependents off it before upstream removal; relevant for anyone shipping native crypto helpers on Linux.
+- [Xorg-server 26.1.0 rc1 released](https://x.org/) — Six months after 21.1.x, the first 26.1 RC is out; notable for Wayland-coexistence and input work. (HN: [Xorg-server 26.1.0 rc1](https://news.ycombinator.com/))
+- [RPM 6.1.0 released with new release model and macros changes](https://lwn.net/) — First major RPM release under its new model; affects packagers and CI systems that sign packages or use modern macros.
+- [KDE Gear 26.08 released](https://lwn.net/) — Monthly KDE app suite update; changes across Dolphin, Okular, Kdenlive, and signing infrastructure.
+- [Go 1.27 released — generic methods, ML-DSA, SIMD, goroutine-leak profile](https://go.dev/doc/go1.27) — Also removes `bzr` VCS support, adds response-file parsing to `compile`/`link`/`asm`/`cgo`/`cover`/`pack`, and `go test` now runs the `stdversion` vet check by default.
+- [Debian developers voting on eight LLM-contribution proposals](https://lwn.net/) — From a total ban to explicit approval; outcome will set precedent for how major distros treat AI-generated patches and maintainer tooling.
+- [Show HN: Kandelo — POSIX-compatible multi-process WASM kernel in the browser](https://kandelo.dev/) — A browser-side WASM "kernel" with processes, syscalls, and POSIX semantics; experimental but interesting for sandboxes and in-browser dev environments.
+
+**Cloud, Infra, Data & Security**
+- [Supply-chain attack: `arrayref` 0.3.10 yanked from crates.io (RUSTSEC-2026-0260)](https://rustsec.org/advisories/RUSTSEC-2026-0260.html) — Build-script exfil pattern; also affects `internment` and `append-only-vec` per the Rust Security Response post. Run `cargo audit` and review lockfiles. ([HN thread](https://news.ycombinator.com/), 298 points.)
+- [Anthropic cybersecurity evals: three real-world incident case studies](https://www.anthropic.com/news) — Anthropic published post-mortem-style writeups of misuse attempts its red team caught, useful for agent builders designing tool-use guardrails.
+- [Tencent/AI-Infra-Guard: open-source AI red-teaming platform](https://github.com/Tencent/AI-Infra-Guard) — Scans for agent-skill, MCP-server, jailbreak, and AI-infra vulnerabilities; trending on GitHub today.
+- [AliExpress runs silent WebAudio fingerprinting that breaks Bluetooth multipoint](https://laserphile.com/) — Concrete browser-fingerprinting writeup; engineers reviewing site performance, audio stacks, or user-agent behavior should read it before assuming WebAudio is benign.
+- [Fedora retiring AF_ALG; broader Linux kernel crypto hardening continues](https://lwn.net/) — See Software section; cross-listed here because the upstream kernel Crypto API removals directly affect on-host crypto services.
+
+**Crypto & Blockchain Engineering**
+- [EF announces Platåberget testnet — Glamsterdam prep, breaking change for any gas-limit cap](https://blog.ethereum.org/) — Multi-month testnet for application developers to break their assumptions before Glamsterdam hits Sepolia/Hoodi.
+- [better.codes: open Lean-checked SNARK soundness benchmark by EF Formal Verification](https://blog.ethereum.org/) — Public leaderboard for raising the machine-checked soundness bound of `koalaIRS12` (Reed-Solomon proximity) toward a 128-bit target; agents can submit proofs.
+- [EF grants Trillion Dollar Security (1TS) funding to WEBCAT](https://blog.ethereum.org/) — Supports browsers, then wallets and Ethereum apps, in verifying that served code matches what developers signed.
+- [EF Protocol Security: "The triage is the product" — running AI agents against live protocol code](https://blog.ethereum.org/) — Detailed retrospective from Nikos Baxevanis on using coordinated AI agents for protocol-security review; concrete takeaways for client teams.
+- [pcaversaccio joins EF Board; new EF organizational structure (54-role reduction)](https://blog.ethereum.org/) — Governance update plus the EF's continuing restructuring; relevant if you consume ESP grants or coordinate with EF teams.
+- [Devcon 8 tickets live; event in Mumbai this November](https://blog.ethereum.org/) — Note: India dates; community / student / builder discounts available.
+
+**Open Source / GitHub**
+- [modular/modular open-sources MAX + Mojo](https://github.com/modular/modular) — Apache 2.0 + LLVM exceptions; compiler + Bazel build + stdlib all in one repo. 27.8k stars today.
+- [obra/superpowers — agentic skills framework & SDLC methodology](https://github.com/obra/superpowers) — Skills-as-files pattern for Claude Code / coding CLIs; gaining traction as the de-facto "skills" layer for agents.
+- [cursor/plugins — Cursor's official plugin spec + plugins](https://github.com/cursor/plugins) — Lets third parties ship agent capabilities into Cursor with explicit contracts.
+- [volcengine/OpenViking — self-evolving context database for AI agents](https://github.com/volcengine/OpenViking) — Unified agent memory + RAG + skills layer, 30.9k stars.
+- [AprilNEA/OpenLogi — Rust, local-first Logitech Options+ alternative over HID++](https://github.com/AprilNEA/OpenLogi) — No account, no telemetry, 1.5k stars today.
+- [RyanCodrai/turbovec — Rust vector index on TurboQuant, Python bindings](https://github.com/RyanCodrai/turbovec) — New compressed vector index for embedding search; worth benchmarking against HNSW/IVF.
+
+**Startups, YC & Industry**
+- [Launch HN: Vendo (YC S26) — embedded agent lets customers build features inside your product](https://news.ycombinator.com/) — Open-source customization layer: agent acts via your product's API as the signed-in user, renders UI in a sandboxed brand surface; 490 stars on [`runvendo/vendo`](https://github.com/runvendo).
+- [Show HN: Open-source Stripe Connect alternative](https://zoneless.com/) — Self-hosted payments marketplace primitive; relevant if Stripe Connect fees/terms are blockers.
+- [Show HN: GPU VulnDB — open vulnerability database for GPU infrastructure](https://gpuvulndb.org/) — GPU-driver / firmware CVE catalog; useful for AI infra teams.
+- [Anthropic + Cognizant expand enterprise rollout of Claude](https://www.anthropic.com/news) — Signals continued enterprise distribution push via SI partners.
+
+**Watchlist**
+- **arrayref / `internment` / `append-only-vec` downstream blast radius** — Confirm whether any internal Rust services resolved the yanked versions; expect post-mortems from Rust Security WG and likely `cargo` tooling changes.
+- **Debian GR on LLM-assisted contributions** — Vote closes soon; outcome will shape policy at other foundations (Fedora, Arch, FreeBSD) and corporate open-source programs.
+- **Glamsterdam (Glamsterdam EIPs) on Platåberget** — Watch for breaking-change writeups from wallets/indexers; affects L2 fee markets and block-builder economics.
+- **Diffusion-language-model inference economics** — DiffusionGemma + others are early, but if iterative-refinement latency drops enough, streaming UX and per-token cost models for LLM APIs could shift materially.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
