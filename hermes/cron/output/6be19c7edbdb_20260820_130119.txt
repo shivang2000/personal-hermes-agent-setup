@@ -1,0 +1,83 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough material to compose the digest. The Register confirms the GitHub outage details from their front-page summary. Let me produce the digest.
+
+**Tech / AI / Crypto / Software Digest — Thursday, 20 August 2026, 00:55 IST**
+
+**Top picks**
+- [OpenRouter is joining Stripe](https://openrouter.ai/blog) (Aug 19, OpenRouter) — The largest LLM routing/aggregator (millions of users, hundreds of models behind one API) is being acquired by Stripe. Signals that "agentic commerce" infra is consolidating around whoever owns payments + model routing, and that model-agnostic plumbing is now table-stakes for the payment layer.
+- [Go 1.27 released](https://go.dev/blog/go1.27) (Aug 19, Go team) — Generic methods, generic type inference in composite literals, `encoding/json/v2`, `crypto/mldsa` (post-quantum signatures), and a `simd` package. Big language ergonomics win + first-class PQ crypto + SIMD primitives land in one release.
+- [GitHub 8-hour outage: autoscaling fail + VS Code retry storm](https://www.theregister.com/) (Aug 19, The Register) — Load balancers buckled after a monitoring blind spot allowed retry traffic to spiral. Classic cascading-failure postmortem with implications for every product that runs agent/LLM retry loops against shared APIs.
+- [Cognition CEO denies SpaceX acquisition report](https://techcrunch.com/category/artificial-intelligence/) (Aug 20, TechCrunch) — Directly contradicts reports that SpaceX tried to acquire the Devin maker, days after [Cursor confirmed it was acquired by SpaceX](https://cursor.com/blog). Two competing AI-coding-shop narratives in the same week.
+- [OpenAI institutes new safeguards after Hugging Face breach](https://techcrunch.com/category/artificial-intelligence/) (Aug 18, TechCrunch) — OpenAI cut external researchers out of a "limited cyber program" after a breach on HF's side. Concrete reminder that model-red-team ecosystems inherit their host platforms' identity/secret-management risk.
+- [SvelteKit 3 puts heat on Next.js with type-safe "Remote Functions"](https://www.theregister.com/) (Aug 20, The Register) — SvelteKit brings type-safe RPCs directly into component files (no separate server routes, no REST/GraphQL boilerplate). Direct challenge to Next.js's server actions model.
+
+**AI, Agents & Models**
+- [Unsloth Dynamic 3.0 GGUFs](https://unsloth.ai) — Dynamic quantization (size-specialized per layer rather than uniform bit-width) for local inference, reportedly big quality/size wins for self-hosted models.
+- [fx: tiny open native coding agent (Zig, ~6MB)](https://fx.sh) — Vercel OSS; 6.39 MiB binary, instant time-to-prompt, model-agnostic (works with local models, gateways, subscriptions). Apache-2.0, embeddable, shell-like UX over an "IDE in a terminal."
+- [OpenRouter launches "Ori Eval"](https://openrouter.ai/blog) — Runs your agent on your own prompts, audits tools called, grades the answers; lets you pick models with proof rather than vibes.
+- [OpenRouter Analytics API + Team Spend Controls](https://openrouter.ai/blog) (Aug 17) — Per-key caps, per-member guardrails, org-wide credit pools; addresses the org-level FinOps problem for multi-model agents.
+- [Meta launches "Muse Glimmer" — local, agentic, multimodal OSS](https://huggingface.co/blog) — Hugging Face coverage confirms day-0 support on Intel via vLLM+HF Matrix. Open-weights counterweight to closed agentic multimodal stacks.
+- [LiquidAI LFM2.5 Q4_0 from quantization-aware distillation](https://huggingface.co/blog) (Aug 19) — Smaller LLMs designed up-front for INT4 rather than quantized post-hoc; relevant for edge/local-agent deployments.
+- [IBM Research: "How Much Memory Does Your Agent Actually Need?"](https://huggingface.co/blog) (Aug 18) — Empirical memory-budget guide for production agents; useful sizing data for agent architects.
+- [Multi-vector (late-interaction) embeddings in Sentence Transformers](https://huggingface.co/blog) (Aug 18) — ColBERT-style retrieval now first-class; relevant for high-recall RAG over long technical corpora.
+- [Bedrock-RL: deterministic Minecraft framework for VLM agent training](https://huggingface.co/blog) — Open RL env for training/benchmarking VLM agents with reproducible rollouts.
+- [AI agent suggested installing malware; engineer's company policy saved them](https://www.theregister.com/) (Aug 20) — Concrete supply-chain incident: coding agent recommended a typosquatted/malicious package; humans + a GitHub-source-verification policy caught it. Production lesson for every team shipping agent PRs.
+
+**Software Engineering & DevTools**
+- [Origin Code Hosting (Cursor Cloud Agents)](https://cursor.com/blog) (Aug 17) — Cursor is now a Git-hosting platform for AI coding agents; repos built/managed by cloud agents live alongside human-authored code. Direct competition for GitHub's agent surface.
+- [Cloud Agents and Cursor Harness Improvements](https://cursor.com/blog) (Aug 19) — Faster harness warm-starts and richer harness APIs for cloud-based coding agents.
+- [Stripe didn't really buy OpenRouter because of the 'singularity'](https://techcrunch.com/category/artificial-intelligence/) (Aug 19, TechCrunch) — Patrick Collison interview; the strategic logic is plumbing + agentic-commerce positioning, not frontier-model ambitions.
+- [OpenAI launches safer ChatGPT for teens](https://techcrunch.com/category/artificial-intelligence/) (Aug 18) — Age-gated default-on safety model for teen accounts; product/policy detail worth tracking for consumer-LLM builders.
+- [Google Gemini student hub + Lens homework help](https://techcrunch.com/category/artificial-intelligence/) (Aug 19) — Gemini gains a dedicated student surface and visual step-by-step problem solving via Lens.
+- [AGENTS.md feature request on Claude Code](https://news.ycombinator.com/) (Aug 20, HN) — Community pushing for standardized agent-context files (companion to README.md). Active convergence on agent-harness conventions.
+
+**Cloud, Infra, Data & Security**
+- [Cloudflare revisits remote Spectre attacks on Workers](https://blog.cloudflare.com/) (Aug 19) — New Spectre gadgets + remote timers + co-location primitives; documents what hardening Cloudflare shipped in response. Required reading for anyone running multi-tenant FaaS.
+- [Cloudflare BGP Role model — adoption of RFC 9234](https://blog.cloudflare.com/) (Aug 18) — Measurement of who deployed the route-leak protection; found two Tier-1s stripping OTC unexpectedly. Operator-relevant networking data.
+- [Certificate Transparency Monitoring is now GA on Cloudflare](https://blog.cloudflare.com/) (Aug 13) — Cloudflare stops emailing about certs it issued itself, so alerts now genuinely signal mis-issuance.
+- [Cloudflare Agents Week recap](https://blog.cloudflare.com/) (Aug 10) — Wallets, Radar, MCP, AI Search, unified AI control plane. Lots of "agent can pay / be discovered / be measured" primitives.
+- [Google pits Marvell vs. Broadcom for custom AI silicon](https://www.theregister.com/) (Aug 19) — Marvell reportedly offered Google a $12.2B stake to win the next-gen TPU-adjacent networking silicon slot. Material for the AI infrastructure supply chain.
+- [AMD: AI systems "4x more efficient" than two years ago](https://www.theregister.com/) (Aug 19) — Vendor claim on perf/W for current MI-generation systems; relevant to training/inference cost modeling.
+- [PostgreSQL for Everything](https://news.ycombinator.com/) (HN, 350 pts) — Long-form post on pushing Postgres into queue/cache/search/OLAP roles. Architectural reference for the "one database" movement.
+- [Expired credit cards revived by researchers to make unauthorized payments](https://www.theregister.com/) (Aug 19) — Gaps in merchant expiry checks allow dead plastic back onto billing rails. Concrete PCI/fintech integration risk.
+
+**Crypto & Blockchain Engineering**
+- [Hyperliquid HYPE +20% as Trump signals CFTC-compliant US path](https://cointelegraph.com/) (Aug 20) — Regulatory momentum for a perps DEX; watch for whether CFTC delivers a formal framework vs. rhetoric.
+- [OCC promises final GENIUS stablecoin rules by November](https://cointelegraph.com/) (Aug 19) — US bank-regulator timeline on the stablecoin framework; critical for stablecoin issuers/payment-rails builders.
+- [FalconX + Ethena put USDe backing into $1B institutional credit facility](https://cointelegraph.com/) (Aug 19) — Synthetic-dollar reserve plumbing gets bank-grade; raises the bar for DeFi-native dollar products.
+- [Harmony (REKT)](https://rekt.news/) — ~$3.2M lost via unauthenticated proof fields that let old cross-shard receipts replay; confirmed initial 4B ONE mint, full reconstruction 3.01T. Cross-shard message authentication remains a frontier problem.
+- [Coldcard firmware vulnerability (REKT)](https://rekt.news/) — Hardware-wallet RNG silently fell back to a guessable software RNG; ~$130M stolen across ≥15 attackers, no phishing required. Hardware-wallet supply-chain audit practices need to step up.
+- [BonkDAO governance attack (REKT)](https://rekt.news/) — $19.3M drained by a treasury-transfer proposal that passed with 2.9% turnout after the attacker bought 1% of supply. Token-weighted governance quorum defaults are exploitable as designed.
+- [VerusCoin Ethereum Bridge drained again (REKT)](https://rekt.news/) — Second exploit of the same bridge ($7.54M, after $11.6M in May); bridge operators with no post-mortem are themselves a red flag for users.
+
+**Open Source / GitHub**
+- [volcengine/OpenViking — Self-evolving context DB for AI agents](https://github.com/trending) — Unifies agent memory, RAG, and skills under one context store; ~800 stars/day. Architecture-relevant if you're building agent memory.
+- [chaitanyagiri/munder-difflin — local multi-agent harness](https://github.com/trending) — Local-first agent orchestration; ~795 stars/day.
+- [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/trending) — 817 skills mapped to MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF, MITRE F3; works with Claude Code, Copilot, Codex, Gemini CLI. ~766 stars/day. Practical security-agent content.
+- [mattpocock/skills + obra/superpowers](https://github.com/trending) — Agent-skills framework & methodology; massive momentum (obra/superpowers 274k stars total, ~557/day).
+- [jundot/omlx — LLM inference server with continuous batching + SSD caching for Apple Silicon](https://github.com/trending) — Menu-bar managed local LLM server with SSD-offloaded KV/prompt caches for Apple Silicon. Relevant for Mac-based local-agent stacks.
+- [santifer/career-ops — open-source AI job-search toolkit](https://github.com/trending) — Structured A-F rubric scoring of listings inside your local coding CLI. Engineering-productivity tooling trend.
+- [OneCLI (YC S26) — OSS sandboxed agent harness for teams](https://github.com/onecli) — Secured personal agent per employee; transparent HTTPS proxy injects stored credentials into outbound calls so agents can hit GitHub/Gmail/AWS without users managing secrets.
+
+**Startups, YC & Industry**
+- [Cursor is now part of SpaceX](https://cursor.com/blog) (Aug 14) — Anysphere/Cursor officially acquired by SpaceX. Vertical integration of an AI-coding tool into a hardware/launch empire.
+- [Computable — exchange for physical compute](https://www.ycombinator.com/launches) (YC S26) — Buy/sell/hedge GPU capacity for specific dates. Commoditization signal for AI-compute markets.
+- [Mentlio — engineering intelligence & token optimization](https://www.ycombinator.com/launches) (YC S26) — Spend/ROI command center for AI-coding orgs.
+- [Zomma (S26) — AI ops employees for finance back-offices](https://www.ycombinator.com/launches) — Computer-use agents that run end-to-end cross-border transaction alert investigations.
+- [Marker — AI-native consultancy rebuilding businesses with agents](https://www.ycombinator.com/launches) (YC S26)
+- [Radley (S26) — AI-native full-stack radiology practice](https://www.ycombinator.com/launches) — Rebuilds the radiology workflow rather than bolting AI onto it.
+- [Libra Robotics — coordinated robot crews for solar-farm construction](https://www.ycombinator.com/launches) (YC S26) — Multi-robot coordination as a crew.
+- [Etched valuation doubles to $21B in a month](https://techcrunch.com/category/artificial-intelligence/) (TechCrunch, ~2 days ago) — Transformer ASIC bet is getting priced by the market; capital-markets signal for specialized-AI-silicon thesis.
+- [Google acquires Spirit Airlines data at auction](https://www.theregister.com/) (Aug 19) — Buying a bankrupt airline's data for AI training is a new kind of data-acquisition play.
+
+**Watchlist**
+- CLARITY Act timing — Senate vote rumored for September; market and stablecoin rails move with the text. Watch [Cointelegraph](https://cointelegraph.com/) and the White House readout.
+- Anthropic "Fable 5" jailbreak-severity framework with Amazon/Microsoft/Google — an industry scoring standard could shape future red-team regulation; watch [Anthropic News](https://www.anthropic.com/news).
+- Cursor + SpaceX product integration — first concrete agent-coding-meets-rocket-engineering outputs will define whether vertical M&A here is strategy or spectacle.
+- Coldcard-class hardware-wallet RNG failures — Trezor/Ledger response and any coordinated firmware audit will set the bar for self-custody security this cycle.
+- OpenRouter→Stripe product integration — model-routing inside the Stripe API surface is the first real "agent pays for inference through payments rails" implementation; downstream builders should watch the API docs.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
