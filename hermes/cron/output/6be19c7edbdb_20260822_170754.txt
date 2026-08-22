@@ -1,0 +1,37 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 22 Aug 2026, 16:55 IST**
+
+**Top picks**
+- [Microsoft fixes maximum-severity Entra ID RCE](https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html) — CVE-2026-69836 is an unauthenticated deserialization flaw rated CVSS 10.0. Microsoft says the cloud service is fully mitigated with no customer action required—and corrected its bulletin to clarify that the vulnerability **was not exploited in the wild**.
+- [NVIDIA research puts the agent harness—not just the model—at center stage](https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/) — Fine-tuning around tool interaction, state management and execution policy reportedly made weaker models reliable on complex agent tasks. The practical implication: evaluate model+harness combinations; swapping in a larger model may be less valuable than training the control loop.
+- [Cloudflare demonstrates a remote Spectre leak in production Workers](https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/) — Researchers achieved an arbitrary-address side channel leaking up to 12 bits/s at 99% accuracy despite coarse timers and production noise. Cloudflare has patched Dynamic Process Isolation, deployed the V8 Sandbox and added in-process isolation; it found no evidence of real-world exploitation.
+- [Expired DNS dependency exposed military-base call metadata](https://lina.sh/blog/hijacking-e164-arpa) — A researcher bought an expired nameserver domain delegated for three `e164.arpa` ENUM zones, gaining potential control over VoIP routing for Diego Garcia, Ascension Island and Saint Helena. Hundreds of thousands of ENUM lookups exposed phone numbers, timestamps and resolver IPs; the researcher returned NXDOMAIN, deleted logs and did not intercept calls.
+- [Qwen3-TTS serving reaches sub-50 ms p95 first audio](https://nari-labs.com/blog/qwen3-tts-speed-cost-frontier/) — Nari Labs reports 10 RPS with no playback underruns on one H100 SXM. Its scheduler independently interleaves Talker, Code Predictor and Codec work, uses deadline-aware batching, captures the fixed 15-step predictor loop as a CUDA graph and caches codec state; implementation and benchmarks are open source.
+- [NVIDIA reportedly agrees to a $6B Poolside licensing deal](https://uk.finance.yahoo.com/news/nvidia-pay-poolside-6-billion-181448803.html) — Bloomberg reports NVIDIA will license Poolside’s model-development technology and offer jobs to more than 100 employees. It resembles a non-acquisition talent/IP transaction, underscoring how strategically valuable coding-model training infrastructure has become.
+
+**AI, Agents & Models**
+- [A 125M-parameter piano-autocomplete model running on iPhone](https://simedw.com/2026/08/20/midi-autocomplete/) — The model generates roughly 108 notes/s by predicting a complete structured note per transformer pass rather than autoregressing each MIDI attribute. Aggressive deduplication, explicit onset/duration representation, scheduled sampling and DPO mattered more than simply scaling the dataset.
+- [Huzzah experiments with persistent, declarative specifications for coding agents](https://www.danielvaughn.dev/posts/huzzah/) — Instead of disposable English chat, the editor stores terse pseudocode as the durable expression of human intent. It is early, but the design addresses prompt repetition, lost provenance and weak correspondence between requirements and generated code.
+
+**Software Engineering & DevTools**
+- [Rust Glancer: a disk-backed, low-memory alternative Rust LSP](https://rust-glancer.github.io/blog/hello-world/) — It freezes workspace analysis on save, persists the index and loads data per query, targeting under 100 MB RAM and near-instant restarts. The tradeoff is less complete Rust support and weaker per-keystroke freshness than rust-analyzer; the current implementation is explicitly experimental.
+
+**Crypto & Blockchain Engineering**
+- [Maya Protocol halted after a chained cross-chain exploit](https://www.coindesk.com/markets/2026/08/19/maya-protocol-exploit-drains-bitcoin-and-other-assets-as-pool-value-drops-usd11-million) — Multiple bugs were combined to drain assets and sharply reduce pool value, forcing the network to stop operations. Integrators should keep Maya routes disabled until a verified recovery plan, accounting and patched release are published.
+- [BounceBit shuts its L1 and moves toward BNB Chain after a $3.3M attack](https://en.cryptonomist.ch/2026/08/21/bouncebit-blockchain-attack/) — The incident has escalated from contract remediation to chain sunset and token migration. Wallets, exchanges and bridges need to verify migration contracts and suspend automatic routing through the old network.
+- [Besu 26.8.0 changes discovery behavior and expands IPv6 support](https://github.com/besu-eth/besu/releases/tag/26.8.0) — DiscV5 now uses `--discovery-mode`, DiscV4 gains IPv6 dual-stack RLPx, and several sync/plugin flags are deprecated. Operators should note the documented increased-CPU issue with `--discovery-mode=BOTH` and wait for the follow-up patch where appropriate.
+
+**Open Source / GitHub**
+- [Apache Maka 0.1.11](https://github.com/apache/maka/releases/tag/v0.1.11) — The local-first agent workspace records messages, tool calls, permission decisions and termination events in an append-only log. The 375-PR release adds multi-arm evaluation infrastructure, managed secret injection, automatic memory extraction and substantial runtime/recovery hardening.
+- [Proliferate opens a multi-agent coding IDE](https://github.com/proliferate-ai/proliferate) — The project runs Claude Code, Codex, OpenCode and other agents in parallel across local or cloud environments, with reusable workflows and observability integrations. Fresh server releases landed on Aug. 21; useful to compare with terminal-only agent orchestration.
+
+**Watchlist**
+- Microsoft’s follow-up disclosure for CVE-2026-69836, particularly technical root cause and any clarification of affected Entra components.
+- Maya Protocol’s exploit postmortem, solvency accounting and safe restart criteria.
+- BounceBit’s migration contract addresses, exchange support and treatment of applications deployed on the retired L1.
+- Regulatory scrutiny of NVIDIA’s Poolside licensing/talent deal as another acquisition-like transaction without a formal takeover.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
