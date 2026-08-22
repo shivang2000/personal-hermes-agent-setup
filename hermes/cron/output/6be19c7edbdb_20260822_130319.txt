@@ -1,0 +1,40 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 22 Aug 2026, 12:55 IST**
+
+**Top picks**
+- [OpenAI cuts GPT-5.6 Sol API pricing](https://developers.openai.com/api/docs/models/gpt-5.6-sol) — Promotional pricing is now $4/M input, $0.40/M cached input, and $20/M output tokens—a 20% input and 33% output reduction—through at least Nov. 21. The model exposes a 1.05M-token context window, 128K output, MCP, computer use, hosted shell, tool search, and other Responses API tools.
+- [DeepSeek adds experimental vision support](https://api-docs.deepseek.com/guides/vision/) — `deepseek-v4-flash-vision-exp` accepts JPEG, PNG, GIF, and WebP through OpenAI-compatible Chat Completions and Responses APIs. Images can be supplied inline, by URL, or through the Files API, making migration from existing multimodal clients relatively straightforward.
+- [Cloudflare demonstrates—and mitigates—a remote Spectre attack against Workers](https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/) — Researchers achieved a production-environment leak of up to 12 bit/s at 99% accuracy using speculative type confusion, PLRU signal amplification, and a remote timer. Cloudflare has strengthened Dynamic Process Isolation and integrated the V8 Sandbox; it reports no evidence of exploitation.
+- [Waymo details its custom in-vehicle AI compute](https://waymo.com/blog/2026/08/look-under-our-trunk/) — Its new 5nm ASIC provides over 1,000 TOPS for raw lidar/radar/camera processing, temporal denoising, and sensor-fusion models. The broader architecture uses heterogeneous accelerators, liquid cooling, and two redundant compute “engines” for deterministic onboard inference without a human fallback.
+- [Cloudflare introduces Bot Preference Sync](https://blog.cloudflare.com/bot-preference-sync/) — Cloudflare will generate or prepend `robots.txt` directives from a site’s separate Search, Agent, and Training policies while retaining edge enforcement. It reaches every plan in the coming week and raises the bar for mixed-use crawlers seeking Verified status.
+
+**AI, Agents & Models**
+- [Serving Qwen3-TTS with sub-50 ms p95 time-to-first-audio](https://nari-labs.com/blog/qwen3-tts-speed-cost-frontier/) — Nari Labs reports 10 RPS with no playback underruns on one H100 SXM, using a unified scheduler across the Talker, Code Predictor, and Codec, deadline-aware batching, CUDA graphs, and cached codec state. The implementation and benchmark are open source; the reported fully utilized cost is about $2 per million characters.
+
+**Software Engineering & DevTools**
+- [DuckDB v2.0 replaces its PostgreSQL-derived parser](https://duckdb.org/2026/08/20/duckdb-20-peg-parser) — The new PEG-based parser avoids LALR shift/reduce conflicts, preserves DuckSQL compatibility, powers autocomplete, and can be extended at runtime. This should make future SQL syntax and extension-specific grammar substantially easier to evolve.
+- [Rust Glancer: a filesystem-backed, low-memory Rust LSP](https://rust-glancer.github.io/blog/hello-world/) — Instead of rust-analyzer’s heavily incremental in-memory architecture, Glancer freezes analysis results on disk and performs shallow analysis between saves. The prototype stays below 100 MB in its demonstrations and supports common navigation/completion features, but remains incomplete.
+- [Encore rebuilds its Linux microVM stack for Apple Silicon](https://encore.dev/blog/firecracker-apple-silicon) — The new `crackling` abstraction boots the same OCI-derived Linux images through Firecracker/KVM on Linux and Apple’s Virtualization.framework on macOS. A shared `MachineBackend` contract exposes capability differences such as snapshots, tap/NAT networking, VirtioFS, Rosetta, and VM adoption rather than hiding them.
+
+**Cloud, Infra, Data & Security**
+- [Expired DNS dependency exposed military phone metadata](https://lina.sh/blog/hijacking-e164-arpa) — A researcher registered an expired nameserver domain still delegated for three `e164.arpa` ENUM zones, gaining theoretical control over SIP-routing responses. Passive DNS logs later revealed hundreds of thousands of call lookups associated with Diego Garcia and Ascension Island—an unusually stark example of abandoned-domain and infrastructure-delegation risk.
+
+**Crypto & Blockchain Engineering**
+- [Vitalik Buterin explains “local mixing” circuit obfuscation](https://vitalik.eth.limo/general/2026/08/21/obfuscation_part_iii_local_mixing.html) — The proposed iO family converts computation into reversible circuits, hardens them, adds junk gates, and repeatedly substitutes locally equivalent gate sequences to obscure internal logic. It avoids lattices and conventional public-key assumptions, but remains an experimental, high-risk white-box-cryptography direction rather than a deployable primitive.
+
+**Open Source / GitHub**
+- [Proliferate opens its multi-agent coding IDE](https://github.com/proliferate-ai/proliferate) — The project runs Claude Code, Codex, OpenCode, and other harnesses in parallel across local or cloud environments, with reusable workflows and isolated workspaces. It is useful to inspect as an emerging orchestration layer above individual coding-agent CLIs.
+
+**Startups, YC & Industry**
+- [GrapheneOS–Motorola partnership starts with a conventional phone](https://grapheneos.social/@GrapheneOS/117136278553665985) — GrapheneOS says the initial device will be a regular, non-folding Motorola handset. Specifications and timing remain undisclosed, but first-party hardware cooperation could remove several bootloader, update, and device-support constraints faced by privacy-focused Android distributions.
+- [Kagi adds an option to remove paywalled results](https://kagi.com/changelog#11296) — Users can now exclude paywalled links from search results rather than discovering access restrictions after clicking. It is a small but concrete example of a paid search provider optimizing around user control instead of publisher-driven ranking incentives.
+
+**YouTube / Technical Media**
+- [The coolest anti-surveillance tools at DEF CON](https://www.youtube.com/watch?v=-2uAsJ5EPAw) — An approximately 11-minute field overview of practical privacy and counter-surveillance hardware demonstrated at the conference; useful for a quick scan of tools outside the usual application-security stack.
+
+**Watchlist** — DeepSeek’s experimental vision model moving toward stable pricing and independent evals; Cloudflare’s all-plan Bot Preference Sync rollout next week; Rust Glancer’s progress on compatibility and correctness; GPT-5.6 Sol pricing after the Nov. 21 promotional window.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
