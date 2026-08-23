@@ -1,0 +1,31 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 24 Aug 2026, 00:55 IST**
+
+**Top picks**
+- [Rust 1.98 has a P-critical stable miscompilation](https://github.com/rust-lang/rust/issues/161441) — A regression can emit a null method slot in a compiler-generated vtable for boxed async services, causing safe Rust to dispatch to address zero. It reproduces on 1.98.0 but not 1.97.1 or a later nightly; production users with dynamic async-trait dispatch should hold upgrades or test aggressively.
+- [Malware distributed through Android automotive-head-unit firmware updates](https://securelist.com/android-head-unit-malware/121106/) — Kaspersky found DoFun’s privileged TWCore updater installing a multi-stage downloader tied to the BADBOX/MoYu ecosystem. The payload performs ad fraud and turns head units into reverse-proxy nodes; the vendor says it has fixed the distribution weakness.
+- [Four AI models collaborated to root an “unrootable” Fire HD tablet](https://ericpardee.github.io/fire-hd-ownership/) — Kimi K3 identified an unpatched Mali CVE in the device kernel, while GLM-5.3 corrected build-offset and page-table assumptions and produced a repeatable root. The detailed case study is a useful look at model handoffs, long-running cyber agents, verification failures, and the practical limits of provider safeguards.
+- [ASR leaders may be optimizing for public test sets rather than speech](https://huggingface.co/blog/asr-benchmark-optimization) — Tests across 11 open models found systems reproducing erroneous VoxPopuli transcripts and even supplying numbers removed from the audio. Held-out audio and perturbation probes are increasingly necessary when selecting speech models for production.
+- [Dutch regulator fines Uber €825M over automated account decisions](https://www.theguardian.com/technology/2026/aug/21/netherlands-fines-uber-automated-driver-suspensions) — The authority says drivers were deactivated without adequate notice or meaningful human involvement, violating GDPR restrictions on consequential automated decisions. Uber disputes the characterization and will appeal, but builders should treat human-review and challenge mechanisms as core product architecture.
+
+**AI, Agents & Models**
+- [LFM2.5-DSpark adds exact speculative decoding to llama.cpp and SGLang](https://huggingface.co/blog/LiquidAI/lfm25-dspark) — Liquid AI released roughly 300M-parameter draft models using a parallel backbone, sequential Markov head, and confidence-scheduled verifier. Vendor tests report up to 3.18× H100 throughput, 2.87× on-device speedups, and 57% lower function-calling latency, while greedy output remains identical to the target model.
+- [What an agent harness actually provides](https://earendil.com/posts/what-is-a-harness/) — A practical decomposition of harnesses into system instructions, tools, the agentic loop, and a model-translation layer. The key architectural argument is that owning the harness preserves session data, model portability, and workflow control independently of any single model vendor.
+
+**Software Engineering & DevTools**
+- [MartyPC brings early-PC emulation to native platforms and the browser](https://martypc.net/) — The Rust-based emulator models systems and video hardware ranging from MDA and Hercules through VGA, with a WebAssembly edition that runs interactively in-browser. It is a useful reference for emulator architecture, hardware timing, and substantial Rust-to-Wasm applications.
+
+**Cloud, Infra, Data & Security**
+- [AWS Glue 6.0: Spark 4.1, Iceberg v3, and 30% lower pricing](https://aws.amazon.com/blogs/aws/aws-glue-6-0-now-available-with-30-lower-price-and-full-apache-iceberg-v3-support/) — The managed runtime adds Python 3.13, Arrow-native Python UDFs/UDTFs, declarative pipelines, VARIANT shredding for semi-structured data, spatial types, and single-digit-millisecond stateless streaming mode.
+- [Nonprofits report irretrievable OneDrive data after Microsoft grant retirement](https://slate.com/technology/2026/08/microsoft-software-nonprofit-data-delete.html) — Slate reports that organizations missed or disputed Microsoft’s transition notices and then lost data when complimentary Microsoft 365 licenses expired. The reported figure of roughly 171,000 affected organizations comes from a support representative and is not independently confirmed, but the incident reinforces that SaaS retention is not a backup strategy.
+
+**Crypto & Blockchain Engineering**
+- [Ethereum launches a machine-checked, agent-driven SNARK security challenge](https://blog.ethereum.org/en/2026/08/20/better-codes-challenge) — Participants point their own agents at a Lean-formalized Reed–Solomon proximity problem; every submission is kernel-verified and raises a public soundness bound toward 128 bits. Accepted lemmas and failed approaches are upstreamed so other agents can build on them.
+- [Solana analyzes the economics of cutting slots from 400ms toward 200ms](https://solana.com/news/lowering-slot-time-and-validators-economic) — SIMD-0525 proposes feature-gated stages at 350, 300, 250, and 200ms. Shorter slots reduce stale-price exposure and leader control windows, but double vote frequency at 200ms and leave less latency headroom for voting and leader handoffs—making staged mainnet measurement critical.
+
+**Watchlist** — Whether Rust ships a 1.98.1 fix or advisory; the real fleet scope and remediation status of infected DoFun head units; Solana’s staged shorter-slot activation and validator timing data; Uber’s appeal and how regulators define “meaningful” human review.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
