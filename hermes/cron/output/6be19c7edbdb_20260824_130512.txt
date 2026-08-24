@@ -1,0 +1,28 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 24 Aug 2026, 12:55 IST**
+
+**Top picks**
+- [Anthropic is experiencing elevated errors across Claude products](https://status.claude.com/incidents/vgz5psbjmt1h) — Anthropic identified a cause but was still working on a fix for failures affecting Claude.ai, the API, Claude Code, and Cowork across Mythos 5, Fable 5, Opus 5, Opus 4.8, and other models. Production agent stacks need provider failover, idempotent retries, and durable task state rather than assuming model APIs are continuously available.
+- [Walgit puts a stateless Git server in front of object storage](https://github.com/tobi/walgit) — The new Rust project stores an immutable push WAL in S3/GCS and uses conditional manifest rewrites as compare-and-swap consensus; local repositories are disposable caches. It supports smart HTTP, LFS, bundle-URI clones, webhooks, and repositories larger than a serving machine, and has reached roughly 550 verified GitHub stars since appearing yesterday.
+- [EU right-to-repair obligations take effect](https://www.rte.ie/news/business/2026/0824/1588931-repair-rules/) — Manufacturers of covered phones, tablets, appliances, and other technically repairable products must offer repairs at a reasonable price and timeframe, publish service information, and make spare parts available. Hardware companies now need repairability, parts logistics, documentation, and post-warranty support in product planning.
+- [Nearly three million Teslas recalled in China over emergency door access](https://www.bbc.com/news/articles/c4g6ggdg030o) — Tesla will add warning labels and ship software that lowers windows after a collision, but China will require mechanical inside-and-outside releases on new vehicles from January 2027. The episode shows the limits of using software remediation for safety-critical electromechanical design.
+- [A reproducible high-cardinality metrics benchmark compares OpenObserve, Prometheus, and Mimir](https://openobserve.ai/blog/openobserve-vs-prometheus-mimir-metrics-benchmark/) — The vendor-run test fed all systems the same 2.2B samples/1.09M active series and published configurations and queries. OpenObserve reported much lower memory and query latency, but used more local disk; Vortex was about 3× faster than Parquet on filtered histograms, showing that storage format can matter as much as query engine.
+
+**AI, Agents & Models**
+- [A low-latency AI companion operates directly inside Skyrim](https://pantel.is/projects/ai-gaming-companion/) — Varkos separates latency-sensitive local perception, speech, and combat reflexes from persistent multi-step planning and slower cloud-driven personality evolution. Commands remain grounded in game objects and events, allowing plans to wait for signals, monitor progress, and recover when world state changes.
+- [An `agent.md` focused on code quality rather than prompting tricks](https://fabiensanglard.net/agent.md/index.html) — Fabien Sanglard’s rules enforce small diffs, layered boundaries, private-by-default APIs, early returns, explicit enums, and test-first bug fixes. The useful pattern is encoding review policy and architectural invariants where every coding-agent session sees them.
+
+**Software Engineering & DevTools**
+- [A two-line GCC cost-model adjustment produces a 12% Zen 5 benchmark gain](https://www.phoronix.com/news/AMD-Zen-5-Mispredict-Cost) — Increasing the branch-misprediction cost in the Zen 4/5 tables improved SPEC CPU `544.nab_r` by 12% on Zen 5 and 9% on Zen 4 under `-O3 -march=native -flto`. The patch is under review for GCC 17 and illustrates how stale backend cost models can leave meaningful performance untapped.
+- [Pngine turns WebGPU pipelines into declarative S-expressions](https://hugodaniel.com/posts/declarative-webgpu-with-s-expressions/) — The representation maps closely to WebGPU objects and passes, enabling ahead-of-time validation, replay, inspection, minification, and machine generation. Programs can compile into a binary chunk embedded inside their own PNG preview, or ship as HTML, ZIP, or raw bytecode.
+- [Range-cache adds sparse byte-range caching for immutable object storage](https://github.com/xav-db/range-cache) — The Rust crate merges adjacent ranges, returns zero-copy full hits, applies range-level LRU limits, fetches only missing gaps, and coalesces identical concurrent misses. It targets query engines repeatedly reading small index regions from S3 without downloading or caching complete objects.
+
+**Startups, YC & Industry**
+- [Alibaba launches a $10.2B share placement to finance AI expansion](https://www.reuters.com/business/retail-consumer/alibaba-set-open-down-8-hong-kong-after-102-billion-share-placement-plan-2026-08-24/) — Reuters reports that the discounted Hong Kong offering will fund AI and related infrastructure investment. The scale reinforces that cloud/model competition is becoming a capital-access contest involving datacenters, chips, and long-lived capacity—not merely model quality.
+
+**Watchlist** — Anthropic’s incident resolution and postmortem; independent reproductions of the OpenObserve benchmark under clustered and object-storage deployments; whether GCC’s Zen cost patch is backported to 16.3; implementation guidance and enforcement for EU repair obligations.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
