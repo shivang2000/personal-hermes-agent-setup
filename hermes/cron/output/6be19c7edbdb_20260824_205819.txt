@@ -1,0 +1,107 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+Excellent - lots of high-value items. I have plenty for a strong digest. Let me draft it now.
+
+**Tech / AI / Crypto / Software Digest — Monday, 24 Aug 2026, 20:55 IST**
+
+**Top picks**
+
+- **Anthropic's "Fable" model struggles as cheaper tools eat share** — FT reports Anthropic's July annualized revenue hit ~$65B (up from $47B in May) but its flagship Opus-tier "Fable 5" is at only 8% of Anthropic spend on Ramp's billing data, vs Opus 4.8 at 28% ([FT via Simon Willison](https://simonwillison.net/2026/Aug/23/anthropic-struggles/)). Draw Breunig's commentary captures the shift: harness/context quality matters again because the "next model fixes everything" free lunch is gone ([Drew Breunig](https://www.dbreunig.com/2026/08/22/fable-and-the-end-of-the-free-lunch.html)). Useful signal for anyone picking defaults.
+
+- **Ethereum Foundation opens the "Platåberget" testnet for Glamsterdam (Gloas + Amsterdam)** — First long-running public testnet for the post-Glamsterdam fork, with a hard-breaking change for any tool that assumes a hard gas cap (wallets, indexers, gas estimators) ([EF blog](https://blog.ethereum.org/2026/08/22/plat%C3%A5berget-testnet)). Wallets and infra teams should test now before Sepolia/Hoodi rollovers.
+
+- **EVM network halts block production after supply exploit, TON bridge dark** — Reported by CryptoSlate today; an EVM-compatible chain paused production following a token-supply exploit while its TON-based bridge stayed disconnected ([CryptoSlate](https://cryptoslate.com/)). Notable engineering detail: the chain opted to halt rather than patch live — worth tracking for cross-chain bridge risk and incident-response precedent.
+
+- **GitHub Copilot "remote control" is GA across github.com and GitHub Mobile** — Start a coding session in VS Code or the CLI, finish from your phone; Copilot sessions now stream state to phone/web clients ([GitHub Blog](https://github.blog/news-insights/company-news/take-your-local-github-sessions-anywhere/)). Materially changes the "where do I review agent output" workflow.
+
+- **"Executable is a SQLite database" — SELF format trick** — Farid Zakaria's hack uses SQLite's 4-byte application ID at offset 68 (set to "SELF") to package a structured ELF inside a SQLite file, then a tiny `self-exec` interpreter + `binfmt_misc` registration turns any SQLite file directly into a runnable binary ([fzakaria.com](https://fzakaria.com/2026/08/22/executable-is-a-sqlite-database/)). Clever for single-file distribution, embedded tools, and signed binaries.
+
+- **"What Is a Harness?"** — Widely-discussed essay arguing the agent harness (loops, context mgmt, tools, eval, permissioning) is the product, not the model ([earendil.com](https://earendil.com/what-is-a-harness/)). Pairs with Drew Breunig's point above; useful framing for engineering teams building on top of model APIs.
+
+**AI, Agents & Models**
+
+- **Linus Torvalds uses AI as a debug grinder on drm/xe** — In the merge commit "Don't hand out the flat CCS storage as usable VRAM" Torvalds credits an AI for grunt-work debugging a gnarly Intel GPU driver issue, noting the AI repeatedly declared it unsolvable before he pushed it to keep going ([Simon Willison quoting Torvalds](https://simonwillison.net/2026/Aug/22/linus-torvalds/)). Practical lesson: AI agents need stubborn operators to be effective on hard systems-level work.
+
+- **"Agent Is Not the Model"** — Joe Jag's short piece separating agent architecture from model choice; argues orchestration, evals, and feedback loops matter more than which base model ([joejag.com](https://joejag.com/2026/08/24/agent-is-not-the-model/)).
+
+- **llm 0.33 (Simon Willison's CLI)** — Adds templates that package a model with default options, three new server-side tools (Shell, WebFetch, WebSearch), and uses `httpx2` to drop the transitive httpx dependency that broke fresh installs ([Simon Willison release notes](https://simonwillison.net/2026/Aug/22/llm-033/)).
+
+- **Anthropic community plugin marketplace live** — Anthropic's official `claude-plugins-community` repo launched (read-only mirror at `clau.de/plugin-directory-submission`) — first-party distribution channel for Claude Code/Cowork plugins ([GitHub](https://github.com/anthropics/claude-plugins-community)).
+
+- **EF Protocol Security: "The triage is the product"** — EF notes from running coordinated AI agents against Ethereum protocol code, including what holds up to scrutiny and what client teams should take away ([EF blog](https://blog.ethereum.org/2026/08/20/the-triage-is-the-product)).
+
+**Software Engineering & DevTools**
+
+- **How Cursor beat Git's scalability shortcomings** — Cursor's infra team blog: S3 holds source of truth while per-engineer NVMe repos serve latency-sensitive editor operations ([The Register summary](https://www.theregister.com/2026/08/24/how-cursor-beat-gits-scalability/)).
+
+- **"Fast drilldown dashboards from a single Parquet file"** — Hamilton Ulmer walks through building an interactive drilldown dashboard that reads only from one Parquet file using DuckDB-style pushdown ([hamiltonulmer.com](https://hamiltonulmer.com/2026/08/24/fast-drilldown-dashboards-from-a-single-parquet-file/)).
+
+- **Show HN: Vanilla OS 3 "Reunion"** — Immutable, reproducible Linux release ([vanillaos.org](https://vanillaos.org/2026/08/24/announcing-vanilla-os-3-reunion/)).
+
+- **Emacs 31.1 released** — Major upstream release with new Canvas framework support ([Lobsters](https://lobste.rs/story/2c8d6f/emacs_311_released)).
+
+- **Apache Maka (Incubating)** — Apache's new local-first AI agent workspace that records model messages, tool calls, permissions, and termination events as an append-only log — useful pattern for agent observability and replay ([GitHub](https://github.com/apache/maka)).
+
+- **Wild AI-related reliability incidents are coming** — Lorin Hochstein argues we're about to see a wave of AI-vibecoding-induced outages as junior code reaches prod ([surfingcomplexity.blog](https://surfingcomplexity.blog/2026/08/23/wild-ai-reliability-incidents/)).
+
+**Cloud, Infra, Data & Security**
+
+- **GitHub Aug 17 outage postmortem** — GitHub's Vlad Fedorov walks through the August 17 outage and the reliability fixes underway; status page is also getting more granular ([GitHub Blog](https://github.blog/news-insights/company-news/the-august-17-outage/)).
+
+- **$1T AUM Apollo breached via social engineering** — Attackers spent four days inside Apollo's cloud platforms after talking their way past defenders — a reminder that voice/IT-helpdesk social engineering is still the cheapest cloud foothold ([The Register](https://www.theregister.com/2026/08/24/apollo_breach_social_engineering/)).
+
+- **AliExpress accused of silent-audio fingerprinting** — Sawtooth waves below human hearing used to fingerprint shoppers via browser audio APIs; Firefox and Brave are rolling defenses ([The Register](https://www.theregister.com/2026/08/24/aliexpress-silent-audio-fingerprinting/)).
+
+- **US datacenter water footprint tripled in 10 years** — Pre-AI-boom baseline numbers; trajectory is worse now, with reporting still silo-ed across utilities ([The Register](https://www.theregister.com/2026/08/24/us-datacenter-water-footprint/)).
+
+- **"Wild AI-related reliability incidents are coming"** — Hochstein: vibecoded junior code is about to reach prod at scale; SREs should expect unfamiliar failure modes ([surfingcomplexity.blog](https://surfingcomplexity.blog/2026/08/23/wild-ai-reliability-incidents/)).
+
+**Crypto & Blockchain Engineering**
+
+- **EF "better.codes" — agentic Lean-proven SNARK benchmarks** — Ethereum Foundation Formal Verification team (with Yukon + zkSecurity) launches an open challenge where AI agents compete to raise the machine-checked soundness bound of koalaIRS12 (a hash-based / Reed–Solomon proximity problem) toward a 128-bit target. Lean kernel checks every submission ([EF blog](https://blog.ethereum.org/2026/08/24/better-codes-agentic-snarks/)). Genuinely novel use of AI agents for cryptographic proofs.
+
+- **Zcash surges 62% ahead of NU7 issuance vote** — Snapshot today determines who votes on smoother issuance, faster blocks, and the scope of the NU7 upgrade ([CryptoSlate](https://cryptoslate.com/2026/08/24/zcash-nu7-vote/)).
+
+- **Bitcoin/Ethereum ETFs record biggest week of 2026** — $2.6B in inflows as BTC pushes toward $80K ([CryptoSlate analysis](https://cryptoslate.com/2026/08/24/btc-eth-etf-biggest-week/)).
+
+- **human.tech launches wallet protocol on Ika Network for dApps and AI agents** — MPC-style wallet infrastructure aimed at autonomous agent spending ([Chainwire via CryptoSlate](https://cryptoslate.com/2026/08/24/human-tech-ika-network-wallet/)).
+
+- **EF "Trillion Dollar Security" grant for WEBCAT** — Grant to Freedom of the Press Foundation to extend WEBCAT's signed-code-attestation model to Ethereum wallets and dapps ([EF blog](https://blog.ethereum.org/2026/08/22/1ts-webcat-grant/)).
+
+**Open Source / GitHub**
+
+- **basecamp/omarchy** — DHH's opinionated Linux distro hit ~30k stars; trending #3 today on GitHub ([GitHub](https://github.com/basecamp/omarchy)).
+
+- **openai/codex** — OpenAI's terminal coding agent passed 116k stars and added ~2k stars today ([GitHub Trending](https://github.com/openai/codex)).
+
+- **NousResearch/hermes-agent** — Trending top 5 again; +899 stars today ([GitHub](https://github.com/NousResearch/hermes-agent)).
+
+- **AprilNEA/OpenLogi** — Rust rewrite of Logitech Options+ for HID++ button remap/DPI; no account, no telemetry, +1.1k stars today ([GitHub](https://github.com/AprilNEA/OpenLogi)).
+
+- **Alishahryar1/free-claude-code** — Local proxy that lets you run Claude Code / Codex / Pi / OpenCode against 1.3B+ free-tier tokens from many providers; ToS-friendly routing. +889 stars today ([GitHub](https://github.com/Alishahryar1/free-claude-code)).
+
+**Startups, YC & Industry**
+
+- **Andreessen Horowitz "investing billions into a bleak future"** — Critical long-read on a16z's current AI thesis and the framing of its recent deployment pace ([modelrepublic.org](https://modelrepublic.org/2026/08/24/a16z-billions/)).
+
+- **Anthropic + OpenAI revenue divergence** — Same FT piece: OpenAI annualized revenue jumped 35% quarter-to-date to $40B+ after GPT 5.6 in July; Anthropic still growing faster but with a margin compression problem on its top model.
+
+- **Anthropic expects Q3 profitability** — Same FT reporting; 6,000 customers spending $100k+ annually.
+
+**YouTube / Technical Media**
+
+- **Linus Torvalds on using AI for kernel debugging** — Read the actual commit message; it doubles as a 4-paragraph essay on working with coding agents ([LKML via Simon Willison](https://simonwillison.net/2026/Aug/22/linus-torvalds/)).
+
+- **Hot Chips 2026: Applying High Bandwidth Flash (HBF)** — Chips and Cheese's writeup of this year's HBF talks — relevant if you're sizing memory tiers for inference ([chipsandcheese.com](https://chipsandcheese.com/2026/08/24/hot-chips-hbf/)).
+
+- **Emacs 31.1 release talk-track** — Pair with "An Introduction to Canvas in GNU Emacs" for anyone tracking the new graphics framework ([monadicsheep.org](https://monadicsheep.org/2026/08/24/emacs-canvas-intro/)).
+
+**Watchlist**
+
+- **Anthropic vs. OpenAI pricing pressure** — Both labs racing to ship cheaper competitive models; "Fable" cost shock could accelerate mid-tier open-weight adoption.
+- **Glamsterdam testnet readiness** — Wallets, indexers, gas estimators that hard-cap gas will break when Ethereum's next fork lands; track Platåberget bugs.
+- **EVM network halt + TON bridge dark** — Cross-chain bridge exploit precedent; follow post-mortem for actual exploit vector and affected chain identity.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
