@@ -1,0 +1,39 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — August 26, 2026, 12:55 IST**
+
+**Top picks**
+- [Apple debuts M6 and M5 Ultra](https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/) — M6 is Apple’s first 2 nm SoC, pairing a 12-core CPU/GPU with dual 16-core Neural Engines and 170GB/s unified-memory bandwidth. The quad-die M5 Ultra scales to 512GB memory and 1.2TB/s bandwidth, making the new Mac Studio unusually capable for large local models and memory-bound AI workloads.
+- [OpenAI’s Jalapeño inference ASIC surfaces at Hot Chips](https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia) — OpenAI and Broadcom built a general-purpose, HBM4-equipped inference chip with a reported ~16-month path to tape-out. SemiAnalysis observed lab runs and says it beats Blackwell—and currently published Rubin figures—on tokens per watt, but the numbers are partly OpenAI-supplied, omit realistic AgentX workloads, and come from engineering samples rather than production systems.
+- [Critical unauthenticated RCEs patched in Next.js](https://vercel.com/changelog/nextjs-august-2026-security-release) — One flaw reaches RCE through AVIF image optimization; [CVE-2026-75604](https://github.com/vercel/next.js/security/advisories/GHSA-p293-qw3h-jr36) affects Windows-hosted Pages/App Router deployments. Self-hosters should move immediately to **15.5.24 or 16.3.3**; Vercel-hosted apps have platform mitigations already applied.
+- [IBM releases Granite 4.2 reasoning models](https://huggingface.co/blog/ibm-granite/granite-4-2) — The Apache-2.0 family includes dense 3B, 8B and 30B models trained from scratch on roughly 15T tokens, with thinking/non-thinking modes, native tool calls and a stated 512K extended context. The 8B and 30B variants receive agentic RL in sandboxed terminal, coding, web-search and tool environments, and can serve through vLLM or SGLang.
+- [Vercel open-sources Run SDK for executing agent-generated code](https://vercel.com/blog/introducing-run) — It evaluates JavaScript or type-stripped TypeScript in fresh QuickJS contexts inside worker threads, without direct Node.js or network access. Narrow host functions define authority; signed interruption tokens support resumable auth/HITL approvals, while completed calls are replay-safe and execution has memory/time limits.
+
+**AI, Agents & Models**
+- [Quantization-Aware Healing recovers compressed 4-bit models](https://huggingface.co/blog/MultiverseComputingCAI/quantization-aware-healing) — QAH distills a structurally compressed, MXFP4 student directly from the original pre-compression teacher instead of a degraded intermediate checkpoint. Multiverse Computing reports its 60B GPT-OSS derivative beating the corresponding BF16 checkpoint on 7/9 benchmarks; promising, though results are author-reported and need replication.
+- [GitHub’s production LLM-evaluation playbook](https://github.blog/ai-and-ml/llms/how-to-evaluate-llms-before-production/) — Lessons from using an LLM to suppress secret-scanning false positives: optimize precision as the product outcome, keep recall as a hard safety constraint, and track latency/cost/reliability separately. GitHub recommends versioning datasets, prompts and models like integration tests and changing one major variable per experiment.
+- [Azure SRE Agent adds VNet integration and usage-based trial](https://developer.microsoft.com/blog/try-azure-sre-agent-with-no-always-on-charges/) — VNet support is GA, routing outbound agent traffic through delegated subnets with existing NSGs, private DNS and firewalls; Live Reports enter preview. New users can run up to three 30-day trials with no idle-agent charge, paying only for work performed.
+
+**Software Engineering & DevTools**
+- [Mozilla intends to enable JPEG XL by default](https://groups.google.com/a/mozilla.org/g/dev-platform/c/3YMV4MS34KA) — Firefox’s planned implementation uses the Rust `jxl-rs` decoder across all platforms, including animation and progressive display. Mozilla says multithreaded decoding is near Safari/libjxl performance for larger images, although discussion continues around poor lossless-decoding performance on some inputs.
+- [Maiao 1.4 revives Gerrit-style stacked reviews across Git hosts](https://github.com/runetes/maiao) — The community-maintained Go CLI turns each commit into a dependent PR/MR and now supports GitHub, GitLab, Gitea, Forgejo, Bitbucket Cloud and Cursor Origin. Useful for teams wanting stacked changes without moving to Gerrit or a proprietary review layer.
+
+**Cloud, Infra, Data & Security**
+- [A rooted Pixel can forge C2PA “captured with a camera” provenance](https://www.da.vidbuchanan.co.uk/blog/android-c2pa.html) — A new PoC uses an Android root LPE and the legitimate hardware-backed keystore path to sign arbitrary media as Pixel Camera output. The practical lesson is that C2PA attests what a trusted endpoint claims—not ground truth once that endpoint is compromised.
+- [Vercel Connect reaches GA with runtime-scoped agent credentials](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents) — Applications use deployment OIDC identity to request short-lived, task-scoped credentials instead of storing long-lived provider tokens. Connect now offers 100+ connectors, per-user/app identity, centralized revocation and audit controls; OAuth-capable MCP servers can also act as connectors.
+
+**Crypto & Blockchain Engineering**
+- [Ethereum publishes Glamsterdam gas-repricing impact guidance](https://blog.ethereum.org/en/2026/08/24/glamsterdam-repricing-testing) — EIP-8037/8038 reprice state creation and access to reflect growing state costs and prepare for roughly 3× higher base throughput. Historical transaction replay suggests most contracts are unaffected, but developers should test fixed-gas assumptions and use the Foundation’s affected-contract search against `glam-devnet-8`.
+
+**Open Source / GitHub**
+- [Apache Maka trends as a local-first, auditable agent workspace](https://github.com/apache/maka) — Maka records model messages, tool calls/results, permission decisions and termination events in an append-only log, emphasizing deterministic recovery and inspectable execution. The incubating Apache project has approximately **3.5K verified GitHub stars**, with active desktop, sandbox and Git integration work.
+
+**Watchlist**
+- [Qwen 3.8-Flash-Next](https://modelscope.cn/models/Qwen/Qwen3.8-Flash-Next) — A 125B-total/6B-active model is flagged for imminent release; watch for weights, license, context limits and reproducible serving benchmarks.
+- [Jalapeño production validation](https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia) — Independent long-context/multi-turn results, software maturity, system availability and real TCO will determine whether the engineering-sample advantage survives deployment.
+- [Next.js AVIF/libheif remediation](https://github.com/vercel/next.js/security/advisories/GHSA-2xp9-vwfh-vxw4) — Monitor exploit activity and the eventual restoration of AVIF optimization once a fixed upstream decoder propagates.
+- [Glamsterdam compatibility testing](https://ethereum.github.io/repricing-impact/) — Watch the affected-contract list and upgrade timeline as teams test gas-sensitive production contracts.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
