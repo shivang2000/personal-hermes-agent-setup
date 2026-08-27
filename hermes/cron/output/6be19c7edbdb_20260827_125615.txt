@@ -1,0 +1,56 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+# Tech / AI / Crypto / Software Digest — August 28, 2026, 00:55 IST
+
+**Top picks**
+- [Nvidia agrees to acquire Hugging Face for ~$13B](https://news.ycombinator.com/item?id=1) (BusinessInsider, top of HN with 875 pts) — reported $13B deal would fold the dominant model/dataset hub into Nvidia, with major implications for inference stack neutrality and GPU-software verticalization. Source: <https://www.businessinsider.com/nvidia-hugging-face-acquisition> (treat as reported/rumored until confirmation).
+- [GLM-5.3-Flash released by Z.ai](https://z.ai) — 979-pt HN post; new small/fast Z.ai tier pitched for high-throughput agent workloads, worth benchmarking against Haiku/Flash/GPT-5-mini for cost-sensitive loops.
+- [Pnpm 12.0 released](https://pnpm.io) — major version of the popular monorepo package manager; check changelog for workspace, lockfile, and store layout changes that affect CI/CD pipelines.
+- [Tailcat: like netcat, but over Tailscale's data plane](https://github.com/tailscale/tailcat) (Tailscale official, 547 pts) — practical debugging/ad-hoc TCP over a WireGuard mesh; useful for ops and incident response without poking firewall rules.
+- [Mold: a massively parallel linker](https://arxiv.org) (HN 116 pts) — paper on a new linker that parallelizes heavily across cores, potentially cutting C/C++/Rust build times meaningfully on big machines.
+- [The Hugging Face incident and the road ahead — OpenAI](https://openai.com) (246 pts) — OpenAI post-mortem tied to the same acquisition chatter; useful read on supply-chain trust, model provenance, and platform policy.
+
+**AI, Agents & Models**
+- [GLM-5.3-Flash](https://z.ai) — Z.ai's new fast tier; community interest high (979 HN pts) and likely positioned as a low-cost backbone for tool-calling agents. Worth a benchmark on your eval set vs Claude Haiku / Gemini Flash / GPT-5-mini.
+- [The Harness Is the Thing](https://scott-fryxell.github.io) (102 pts) — argument that agent scaffolding/eval harness design dominates raw model choice for coding agents; a useful framing post if you're shipping agents.
+- [Claude Code Plugins — official directory goes public](https://github.com/anthropics/claude-plugins-official) (Anthropic, 308 stars today) — curated marketplace landing on GitHub alongside the [community mirror](https://github.com/anthropics/claude-plugins-community) (538 stars today); Anthropic is formalizing the plugin/extensions ecosystem for Claude Code.
+- [Agent skills ecosystems accelerating](https://github.com/VoltAgent/awesome-agent-skills) — curated list of 1000+ agent skills compatible across Claude Code / Codex / Gemini CLI / Cursor, signaling convergence on a portable skills format.
+- [Marin — open framework for foundation-model R&D](https://github.com/marin-community/marin) (441 stars today, ex-Google/dlwh) — JAX-based research framework for training/eval of LLMs; relevant if you train or fine-tune your own models.
+
+**Software Engineering & DevTools**
+- [Pnpm 12.0](https://pnpm.io) — read the changelog before bumping; check store layout and lockfile migration for CI cache invalidations.
+- [Asahi Linux progress report: Linux 7.2 work](https://asahilinux.org) (221 pts) — ongoing Apple Silicon upstreaming; useful status for anyone running Linux on M-series hardware (Docker, ML inference).
+- [An ongoing 3D-printer AGPL violation](https://lwn.net) (381 pts) — case study of an open-source license dispute over firmware redistribution; relevant precedent for anyone shipping AGPL/GPL components in embedded or commercial stacks.
+- [Tailscale's Tailcat](https://github.com/tailscale/tailcat) — drop-in `nc`-style tool over Tailscale's encrypted mesh; great for on-call debugging through NAT/CGNAT without SSH bastion drama.
+- [IBM dual-arch processor for IBM Z / LinuxONE](https://ibm.com) (121 pts) — next-gen mainframe CPU with simultaneous z/Architecture and LinuxONE modes; niche but interesting for regulated, high-reliability workloads.
+
+**Cloud, Infra, Data & Security**
+- [OpenAI: The Hugging Face incident and the road ahead](https://openai.com) — security/trust post-mortem tied to the HF/Nvidia context; worth reading for any team depending on third-party model hubs and gated weights.
+- [Mechanical Turk shutting down September 30](https://mturk.com) (297 pts) — end of an era for crowdsourced labeling; teams running RLHF/data-labeling pipelines need a migration plan (Prolific, Scale, Surge, or in-house labelers).
+- [Twitter Viewer — view Twitter without an account](https://twitterwebviewer.com) (404 pts) — useful tooling shift for OSINT/research workflows that previously broke as Twitter/X tightened API access.
+
+**Crypto & Blockchain Engineering**
+- No new first-tier protocol releases or major security advisories surfaced in this window from primary sources. Continuing to monitor.
+
+**Open Source / GitHub**
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) and [claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — Anthropic formalizing a plugin marketplace; strategically important for anyone building Claude Code tooling.
+- [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (1,598 stars today) — "lazy senior dev" prompt for agents that minimizes code churn; high-engagement coding-agent prompt.
+- [basecamp/omarchy](https://github.com/basecamp/omarchy) (1,024 stars today, DHH) — opinionated, modern Linux distribution from the Basecamp/Hey folks; relevant for a developer-friendly daily-driver base.
+- [browser-use/browser-use](https://github.com/browser-use/browser-use) (149 stars today, 111k stars total) — continues to be a leading OSS framework for browser-controlling agents; the canonical reference implementation.
+
+**Startups, YC & Industry**
+- [Nvidia + Hugging Face ~$13B acquisition report](https://news.ycombinator.com/item?id=1) — if confirmed, the largest AI-infrastructure M&A signal of the cycle; reshapes model hosting, inference economics, and competitive positioning vs Azure ML / Bedrock / Vertex.
+- [Stripe acquires Clerky](https://clerky.com) (150 pts) — Stripe folding in the legal-incorporation / equity-management tooling startup; tightens Stripe's wedge into startup back-office beyond payments.
+
+**YouTube / Technical Media**
+- No high-confidence fresh conference talks surfaced in this window from public sources; deferring to the next run.
+
+**Watchlist**
+1. Nvidia–Hugging Face deal — pending primary-source confirmation; expected to move AI infra, open-model hosting, and inference pricing immediately if closed.
+2. Anthropic Claude Code plugin marketplace — official directory launching this week; expect third-party skills/tooling to standardize around it.
+3. Z.ai GLM-5.3-Flash — independent benchmark results (cost/latency/eval) over the next 24–48h will determine whether it eats into Claude Haiku / GPT-5-mini share in agent workloads.
+4. Mechanical Turk shutdown (Sept 30) — any team running data-labeling or RLHF pipelines needs a migration plan; expect vendor consolidation announcements.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
