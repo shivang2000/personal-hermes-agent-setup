@@ -1,0 +1,71 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+I have enough confirmed, primary-source data to write the digest. Let me compose it now.
+
+---
+
+**Tech / AI / Crypto / Software Digest — Fri 28 Aug 2026, 16:55 IST**
+
+**Top picks**
+
+- **Nvidia agrees to acquire Hugging Face for ~$13B** — Reported by Business Insider and confirmed across multiple HN threads (1902 pts, #1 on HN front page), the deal would fold the leading model hub (2M+ models, 500k+ datasets) and its Inference Endpoints stack into the chip vendor. Hugging Face's own community post links TechCrunch coverage. If confirmed, this reshapes open-model distribution and tightens Nvidia's grip on the inference stack — Hugging Face's community post: https://huggingface.co/posts ; HN thread: https://news.ycombinator.com/item?id=49458161
+- **Cloudflare: saved 100 TB of RAM by shrinking 1.1.1.1's DNS cache** — Sebastiaan Neuteboom's deep-dive on Big Pineapple (250B cache entries) shows five Rust-level changes (dropping unused `Vec<u8>` capacity fields, tightening ECS storage, using `Box<[T]>` over `Vec<T>`, etc.) cut per-entry footprint by 56% — net 100 TB reclaimed fleet-wide plus 43% higher insert throughput and 19% lower lookup latency. Excellent reference for anyone designing hot-path data structures in Rust. https://blog.cloudflare.com/dns-cache-memory-optimization-1111/
+- **Anthropic: Previewing the Model Hardware Standard (MHS)** — Aug 27 announcement. A shared, MCP-compatible spec so AI agents can drive lab and manufacturing hardware (microscopes, liquid handlers, robotic arms, lasers) via a standardized driver with natural-language device tags. Co-developed with HHMI Janelia; partners include Genentech, where it cut integration time for a BCA protein-assay rig (liquid handler + arm + plate reader). Worth watching as an open standard for embodied agents. https://www.anthropic.com/news/model-hardware-standard-research-preview
+- **Google: Gemma 4 12B ships for local agentic workflows on Apple Silicon** — DeepMind's 12B-parameter multimodal Gemma 4 now runs via the Google AI Edge Gallery on macOS (and Raspberry Pi via LiteRT). The post demos one-prompt 3D rubber-duck code generation with self-correction and a Python chart-rendering agent running fully locally. Practical on-device frontier-class agent capability. https://developers.googleblog.com/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/
+- **JetBrains ships `go-modern-guidelines` plugin for AI coding agents** — A new Apache-2.0 repo (trending on GitHub today) that teaches Junie, Claude Code, Codex, and Cursor to write modern Go up through 1.27 (`slices::Sort`, `cmp.Or`, `min`/`max`, `errors.AsType`-style matching, `&` for pointer-to-value). Aligned with the Go team's own `modernize` analyzer so the agent writes idiomatic code from the start instead of generating Go-1.14-style code. https://github.com/JetBrains/go-modern-guidelines
+
+**AI, Agents & Models**
+
+- **Google releases Gemini Omni 1.1 Flash** — Multimodal Flash variant with finer developer control over tool use and output formatting; positioned for low-latency agentic workloads. https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
+- **Google releases Gemini 3.5 Transcribe** — Speech-to-text model in the Gemini family; 307-pt HN thread. https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/
+- **Anthropic: 10,000 free Claude seats for scientists + AI for Science expansion** — Claude Team plan for scientists opens globally (free standard seats, $15/mo for 5× usage), with up to $50k/project in compute credits via AI for Science. First Mythos-class access cohort for life-sciences R&D now enrolled with USG partners. https://www.anthropic.com/news/expanding-support-for-scientists
+- **Hugging Face: Granite 4.2 LLMs ("How They're Built")** — IBM releases the architecture and training-recipe breakdown for the Granite 4.2 series; useful primary source for anyone studying enterprise-tuned open weights. https://huggingface.co/blog/granite-4-2-llms
+- **HF blog: Quantization-Aware Healing (Multiverse)** — A 4-bit quantized model that outperforms its full-precision parent by applying targeted calibration during the quantization pass. Worth reading for anyone shipping low-bit models. https://huggingface.co/blog
+- **HF blog: LFM2.5-DSpark — up to 3.2× faster inference** — Liquid AI's DSpark variant posts 3.2× speedups over LFM2 in batched inference; concrete architectural delta (sparse-mixture block). https://huggingface.co/blog/lfm2-5-dspark
+- **Terminal-Bench-Science: new eval for AI research agents** — Domain-specific terminal benchmark for scientific workflows (paper-writeup → experiment → analysis loops), released with 96-pt HN discussion. https://terminal-bench-science.ai
+- **Pollen Robotics × Hugging Face: Microduck** — $399 open-source biped robot pre-orders open; sim-to-real pipeline (MuJoCo→on-device) shown with walking, recovery, and grasping policies. Companion to Reachy Mini in the Hugging Face robotics push. https://pollen-robotics.com/microduck/
+
+**Software Engineering & DevTools**
+
+- **Tailscale ships `tailcat`** — `netcat`-style bidirectional transfer over Tailscale's DERP relay data plane, with a WebAssembly browser build for cross-network file sharing without Tailscale control-plane coordination. Trending on GitHub today (~986 stars/day). https://github.com/tailscale/tailcat
+- **Show HN: `OpenTIE` and `OpenXWA`** — Modern reverse-engineered source ports of *TIE Fighter* and *X-Wing Alliance*; 171-pt HN thread. https://github.com/elyosh/OpenTIE/
+- **Show HN: open-source OpenRouter that "turns usage into a better model"** — Experiential Labs releases routing telemetry infrastructure + per-token usage fine-tuning pipeline. https://github.com/experientiallabs/experiential
+- **Decompiling an N64 game in 84 days** — Detailed walkthrough of static reverse-engineering a retail N64 title (MIPS-R4300, custom microcode); 250-pt HN thread. https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/
+
+**Cloud, Infra, Data & Security**
+
+- **Stripe consortium drops $50B PayPal pursuit** — Bloomberg: the Advent-led / Stripe consortium is said to have walked away from the PayPal acquisition attempt. Concrete M&A consequence for fintech infra. https://www.bloomberg.com/news/articles/2026-08-28/advent-stripe-consortium-is-said-to-drop-pursuit-of-paypal
+- **FFmpeg division-by-zero caught by a vibecoded fuzzer** — A CVE-worthy fuzzer hit in FFmpeg traced to a deserialization path; reminder that agent-assisted fuzzing is finding real vulns in critical C/C++ media stacks. https://code.ffmpeg.org/FFmpeg/FFmpeg/issues/24290
+- **Cloudflare: revisit of remote Spectre attacks on Workers** — New attack primitives (Spectre gadgets, remote timers, co-location) and updated defenses; concrete implications for anyone running multi-tenant edge compute. https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/
+- **Cloudflare: BGP Role model adoption of RFC 9234** — Measurement of `Only-to-Customer` (OTC) and BGP Roles across Tier-1s; two Tier-1s were stripping OTC unexpectedly. Practical routing-engineering signal. https://blog.cloudflare.com/bgp-role-model-tracking-rfc-9234/
+- **Cloudflare DDoS H1 2026 report** — 519% YoY surge in hyper-volumetric (≥1 Tbps) attacks, dominated by DNS and CLDAP reflection; geopolitical conflict drives much of the new wave. https://blog.cloudflare.com/cloudflare-ddos-threat-report-h1-2026/
+
+**Crypto & Blockchain Engineering**
+
+*(No fresh primary-source items in the last ~24h from the surfaces checked; the previous run covered the recent market moves. Skipping a section rather than padding.)*
+
+**Open Source / GitHub**
+
+- **`JetBrains/go-modern-guidelines`** — see Top picks.
+- **`tailscale/tailcat`** — see Software Engineering.
+- **`Sovereign Tech Agency invests €508k in Flatpak** (Modal co-organizing, €508,640 over two years) — Concrete sovereign funding for sandbox/Portal hardening on Linux; Flatpak powers Silverblue, Aeon, SteamOS, GNOME OS. https://modal.cx/blog/announcing-flatpak-sta/
+- **`ChromeDevTools/chrome-devtools-mcp`** — Official MCP server for Chrome DevTools (~50k stars, slow-burn trending). Increasingly important for agent-driven browser automation. https://github.com/ChromeDevTools/chrome-devtools-mcp
+- **`marin-community/marin`** — Open framework for foundation-model R&D; trending today. https://github.com/marin-community/marin
+
+**Startups, YC & Industry**
+
+- **Nvidia / Hugging Face** — see Top picks.
+- **Stripe / PayPal** — see Cloud & Infra.
+- **GoGoGrandparent (YC S16) hiring backend engineers** — Direct job posting from a S16 YC alum running a non-emergency senior-transport service. https://www.ycombinator.com/companies/gogograndparent/jobs
+
+**Watchlist**
+
+- Confirmation and closing terms of the Nvidia / Hugging Face deal (regulatory scrutiny in EU/US likely given model-hub centrality).
+- Anthropic MHS opening up beyond research preview; first third-party hardware drivers and any safety-eval results.
+- Gemma 4 12B (and larger variants) plus Google AI Edge updates — on-device agent viability for indie devs hinges on these.
+- Go language signals around the `modernize` analyzer and the JetBrains skill — if Go 1.28 lands, expect a wave of agent-tooling refresh.
+- HF Inference Endpoints + Buckets rollout — the object-storage launch this month and the `Storage Buckets` banner suggest a competitive move against S3/R2 for ML artifacts.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
