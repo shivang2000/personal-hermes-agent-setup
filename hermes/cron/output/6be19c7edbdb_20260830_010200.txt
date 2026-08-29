@@ -1,0 +1,25 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 30 Aug 2026, 00:55 IST**
+
+**Top picks**
+- [GrapheneOS says Pixel 11 dropped ARM hardware memory tagging](https://bsky.app/profile/grapheneos.org/post/3mua32q4ds22e) — Its initial port cannot proceed because MTE appears absent from the software, firmware, and likely hardware. GrapheneOS uses MTE across the kernel and base OS to detect memory-corruption exploits; await confirmation from Google, but security-focused Android deployments should avoid assuming Pixel 11 compatibility.
+- [Warp’s pattern for self-improving agents](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude) — A task agent runs from a domain-specific skill, while a scheduled observer converts accumulated human feedback into small, reviewable skill-file patches. Keeping the update behind a normal PR and verification workflow offers a practical alternative to opaque, automatically mutated prompts.
+- [WinUI development moves fully to GitHub](https://github.com/microsoft/microsoft-ui-xaml/discussions/10700) — Microsoft marked all four open-source rollout phases complete: external developers can build, test, and submit PRs, while GitHub becomes the primary development and issue-tracking location rather than a mirror. This materially improves the contribution and debugging path for Windows desktop teams.
+- [SLEEPWALKER: a passive Windows backdoor with its own bytecode](https://r136a1.dev/2026/08/24/sleepwalker-a-passive-backdoor-with-its-own-command-language/) — The DLL side-loads as `dpapi.dll` into ESET’s `ERAAgent.exe`, opens no listening port, and activates only after sniffing a crafted packet or DNS trigger. Its 23-instruction VM supports staged payloads, in-memory execution, TCP/UDP/ICMP, SMB pipes, and VMware VMCI; the analysis includes hashes, YARA, and a read-only scanner.
+- [Go 1.27’s JSON rewrite has workload-dependent performance](https://lemire.me/blog/2026/08/29/the-new-go-json-api-twice-as-fast-or-1-5x-slower/) — Benchmarks found `encoding/json/v2` 1.5–2.3× faster for unmarshal and up to 3× faster for dynamic-data marshal, but roughly 1.5× slower when marshaling typed structs in one test. The v2 API also changes Unicode validation and case-sensitivity behavior, so benchmark representative schemas before migrating.
+
+**AI, Agents & Models**
+- [Subs launches a cloud-native, MCP-only agent harness](https://substructure.ai/) — Agents run unprivileged with no direct system access and receive capabilities through schema-validated MCP tools. The self-hostable engine persists every step before execution and supports per-user OAuth, subagents, delayed tool completion, human approval, Slack, AG-UI streaming, and webhook interception of the agent loop.
+
+**Software Engineering & DevTools**
+- [Typebase packages a backend as a folder of TypeScript](https://typebase.io/) — Schemas, authenticated actions, and environment definitions remain in the application repository, with generated typed clients for Next.js, SvelteKit, Nuxt, and Expo. It combines Postgres, Drizzle, oRPC, and Better Auth and can target Vercel, Cloudflare, or Deno; object storage remains on the roadmap.
+- [EVE Online begins migrating 2.4M lines from Python 2.7](https://www.eveonline.com/news/view/the-move-to-python-3-begins) — Stage one uses Python-Future/2to3 fixers while retaining dual-version compatibility: 95.9% of roughly 20,000 files already parse under both interpreters, but about 20,000 behavior-changing lines require manual review. It is a useful case study in incrementally modernizing a continuously running, data-sensitive legacy system.
+- [Tether brings iPhone continuity features to Linux](https://zackbartel.com/blog/2026/08/tether/) — The open-source project now relays iMessage, SMS, notifications, and contacts over Bluetooth, alongside file transfer, clipboard synchronization, and OTP handling. It builds on Apple’s Notification Center Service reverse engineering rather than requiring a Mac proxy.
+- [TurboKV offers an async embedded Rust key-value engine](https://github.com/kingroryg/turbokv) — The young project provides atomic batches, ordered scans, Bloom filters, compression, WAL recovery, and background compaction. Its durability modes explicitly distinguish process-crash recovery from per-write `sync_all`, a useful contract that embedded-database users should scrutinize before relying on benchmarks.
+
+**Watchlist** — Google’s response and definitive Pixel 11 MTE status; real-world WinUI community PR throughput now that GitHub is authoritative; evaluation and rollback practices for agent-written skill updates; additional SLEEPWALKER samples or actor attribution.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
