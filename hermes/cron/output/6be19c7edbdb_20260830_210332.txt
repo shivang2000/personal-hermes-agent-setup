@@ -1,0 +1,27 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 30 Aug 2026, 20:55 IST**
+
+**Top picks**
+- [OpenAI will remove its models from Cursor after SpaceX’s acquisition](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/) — OpenAI proposes a November 12 cutoff, citing its change-of-control clause and concerns about SpaceX’s compliance with model-use terms. Cursor users and teams should treat model portability as an immediate architecture requirement rather than relying on one IDE-provider contract.
+- [Anthropic previews the Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) — MHS gives instruments standardized `read`/`write` primitives, machine-readable capabilities and safety limits, with access through MCP, CLI, or APIs. Early deployments orchestrated microscopes, liquid handlers, robot arms, and quantum-laser systems; Anthropic plans to open-source it after the safety-focused preview.
+- [Tencent open-sources Hy4 preview](https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/) — The MoE model has 770B total/49B active parameters and a context window above 1M tokens, with API access through Tencent and OpenRouter. Tencent reports a 31.8% inference-throughput improvement produced partly through model-guided operator-fusion and communication optimization; benchmark comparisons remain vendor-reported.
+- [Qubes OS discloses a dom0 command-injection path](https://www.qubes-os.org/news/2026/08/29/qsb-118/) — A malicious qube can return a crafted filename during `qvm-copy-to-vm` error reporting; insufficient sanitization followed by `system()` execution turns it into arbitrary code in dom0. All Qubes releases are affected, with `qubes-core-dom0-linux` 4.3.22 carrying the 4.3 fix.
+- [Cosmos EVM underflow bug enabled a $5.7M, six-chain exploit](https://www.theblock.co/news/defi/2026-08-29-cosmos-labs-says-it-wrongly-cleared-the-bug-behind-a-5-7-million-six-chain-hack-413061) — Attackers wrapped a token balance below zero to `2^256−1`, then used the inflated value to drain target accounts. A researcher reported the flaw in April, but Cosmos initially judged production configurations safe; upgrade to Cosmos EVM 0.6.2/0.7.2 or later.
+
+**Software Engineering & DevTools**
+- [Cloudflare cut 100 TB from the 1.1.1.1 DNS cache](https://blog.cloudflare.com/dns-cache-memory-optimization-1111/) — Across 250B+ entries, five Rust layout changes halved per-entry memory while raising insertion throughput 43% and lowering lookup latency 19%. Techniques included replacing immutable `Vec`/`String` fields with boxed slices/strings, consolidating record lists behind `u16` offsets, bit-packing flags, and removing redundant owner names.
+- [GitHub Copilot code review now handles bot PRs and removes large-PR limits](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities) — Full agentic review now works on Copilot cloud-agent PRs and other bot-authored PRs when the organization enables unlicensed-member billing. GitHub also removed the previous 300-file/20,000-line ceiling and added “Addressed,” “Won’t fix,” and “Incorrect” resolution feedback.
+- [monty-go embeds sandboxed Python tool orchestration inside Go](https://github.com/fugue-labs/monty-go) — It compiles Pydantic’s Monty interpreter to a 2.9 MB WASM module and runs it through pure-Go `wazero`, without CGO, containers, or subprocesses. Execution pauses at declared external functions, allowing an agent to express loops and multi-tool workflows in one model round-trip while Go retains I/O and resource-limit control.
+
+**Cloud, Infra, Data & Security**
+- [XCENA and Samsung detail a compute-capable CXL memory expander](https://chipsandcheese.com/p/hot-chips-2026-xcena-and-samsungs) — MX1 combines up to 2 TB DDR5, downstream PCIe 6 SSDs, and 3,072 small RISC-V cores behind a PCIe 6/CXL 3.2 x8 link. Its near-memory programming model and SSD-backed “Infinite Memory” target workloads constrained by moving large datasets across the host interface, though software and memory-coherence integration remain the critical adoption questions.
+
+**Crypto & Blockchain Engineering**
+- [Fogo halted mainnet after a foundation compromise transferred 400M FOGO](https://www.theblock.co/news/defi/2026-08-29-layer-1-blockchain-fogo-halts-mainnet-after-attacker-receives-400-million-fogo-tokens-10-of-circulating-supply-413064) — The affected allocation represented roughly 10% of circulating supply and was worth about $3M. Validators began an upgrade intended to restrict implicated addresses, but the foundation had not yet disclosed the compromise vector or a restart time—raising familiar immutability, validator-coordination, and governance concerns.
+
+**Watchlist** — Cursor’s replacement-model strategy and OpenAI cutoff migration path; MHS’s promised open-source release and physical-safety evaluation model; Fogo’s restart and address-restriction mechanism; whether Cosmos confirms all affected chains and resolves claims that another upstream defect remains unpatched.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
