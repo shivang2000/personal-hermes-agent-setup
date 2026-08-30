@@ -1,0 +1,37 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 30 Aug 2026, 16:55 IST**
+
+**Top picks**
+- [Tencent open-sources Hy4 preview](https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/) — The mixture-of-experts model has 770B total parameters, roughly 49B active per token, and a 1M-token context window, targeting coding, research and long-horizon agent tasks. The scale makes independent evals and efficient quantized serving the next questions.
+- [SpaceX’s Cursor acquisition costs users direct OpenAI-model access](https://indianexpress.com/article/technology/artificial-intelligence/spacex-cursor-acquisition-openai-models-access-10854362/) — OpenAI plans to end Cursor access on **12 November**, citing uncertainty over contractual compliance after SpaceX bought Anysphere for $60B. Cursor says OpenAI models represent about 5% of traffic and negotiations continue; this is a concrete warning against building coding products around a single provider’s reseller agreement.
+- [Qubes OS discloses a dom0 command-injection path](https://www.qubes-os.org/news/2026/08/29/qsb-118/) — A malicious qube receiving a file from dom0 could place shell metacharacters in an error-return filename; dom0 interpolated it into a command passed to `system()`. All releases are affected, with `qubes-core-dom0-linux` 4.3.22 carrying the Qubes 4.3 fix.
+- [Samsung demonstrates compute inside LPDDR5X](https://chipsandcheese.com/p/hot-chips-2026-samsungs-processing) — LPDDR5X-PIM adds MAC units to each of 16 DRAM banks, exposing 614 GB/s of internal bandwidth versus 76.8 GB/s over the normal interface and up to 2.4 TOPS per package. Standard DDR commands remain usable, but cache coherence, preemption and concurrent normal/PIM accesses create substantial OS/runtime problems.
+- [California passes an open-source carve-out from OS age verification](https://www.tomshardware.com/software/linux/california-lawmakers-unanimously-pass-linux-exemption-from-age-verification-law-software-distributed-under-the-gpl-mit-bsd-and-apache-licenses-are-exempt) — AB 1856 exempts operating systems distributed under modifiable/redistributable licenses, covering GPL, MIT, BSD and Apache projects plus package-manager dependencies. It passed the Senate 39–0 and Assembly concurrence and now awaits Governor Newsom.
+
+**AI, Agents & Models**
+- [A verification framework for agent-generated modernization work](https://devblogs.microsoft.com/all-things-azure/only-believe-what-you-can-validate/) — Microsoft proposes explicitly recording each check, its cost, executor, evidence and what it actually proves. The useful production lesson is to combine deterministic tooling, AI review and human domain expertise rather than treating a green compile/test pipeline as semantic validation.
+- [Scientific Agent Skills v2.65.0](https://github.com/K-Dense-AI/scientific-agent-skills) — The MIT-licensed collection now advertises 165 reusable skills and 100+ scientific data integrations compatible with multiple coding-agent harnesses. GitHub showed roughly **1.6k stars today and 38.4k total**, indicating unusually rapid adoption for domain-specific agent tooling.
+
+**Software Engineering & DevTools**
+- [FreeCORE continues TrueNAS CORE on FreeBSD](https://freecore.org/) — The independent project carries TrueNAS CORE 13.3 forward with FreeBSD and OpenZFS; FreeCORE 15.0-U1 is marked stable and supports an in-place migration from TrueNAS CORE 13.3. Relevant for operators who want the FreeBSD-based appliance rather than moving to the Linux-based TrueNAS SCALE line.
+- [CPython officially adds RISC-V as a tier-3 platform](https://blog.python.org/2026/08/riscv-now-officially-supported/) — RISC-V is now listed in PEP 11 and backed by buildbots running on real hardware. Tier 3 does not yet promise release-blocking CI, but work is underway to add pre-merge runners and eventually seek tier-2 status.
+- [JupyterGIS 0.16 adds richer map composition and collaborative stories](https://blog.jupyter.org/jupytergis-0-16-new-visualization-capabilities-collaborative-story-maps-and-more-03e6b78bacc0) — The release introduces a grammar-of-graphics-style visualization layer and collaborative story maps, extending Jupyter’s real-time document model to reproducible geospatial narratives.
+
+**Crypto & Blockchain Engineering**
+- [Cosmos Labs says it incorrectly cleared the bug behind a $5.7M, six-chain exploit](https://news.google.com/rss/articles/CBMiywFBVV95cUxOUTI2YnRIdnU4X2ZWYjBwc1dmNDZUb0U5b1J3UVJsdUw1bU03T25fUWVGeWdZYWI1NE96NlNuU3hzdWdiUmVtdXJFd1NPWkZuVm1EMzliVnRhUXIydnJHdU9XNlY0YzdXVFQ3ZUtVVW1wcGRuODQ2SXNTYy1kTEhyUEhPeWVNdVNVQTVrTGVGLU1mS2Vvb2pyOU5RUFpBVUx0cG16UnRXUlV5eW01bkZnQjFNa3lma1luS3FfQm5kak9qaEZmMjc0czBaVQ?oc=5) — The acknowledgment shifts attention from the exploit alone to vulnerability-triage and disclosure quality in shared cross-chain infrastructure. Operators should watch for the complete postmortem, affected component versions and guidance for chains that inherited the bug.
+
+**Open Source / GitHub**
+- [vphone-cli boots a virtual iPhone using Apple’s Virtualization.framework](https://github.com/Lakr233/vphone-cli) — The 9.4k-star project uses Apple’s Private Cloud Compute research-VM infrastructure on Apple Silicon. It requires macOS 15+, Xcode and relaxed SIP/AMFI, so it is primarily a security/research tool rather than a production simulator.
+- [LatticeDB: a single-file graph, vector and text database](https://github.com/jeffhajewski/latticedb) — The embedded engine combines property-graph traversal, HNSW similarity search, BM25 and durable change streams behind one query layer. Its single-writer, local-first design is aimed at Graph RAG, agent memory and portable knowledge tools without a database server.
+- [restoredrill turns PostgreSQL restore testing into a CI check](https://github.com/ahmadpiran/restoredrill) — It restores the newest backup into a disposable container, checks RPO freshness, schema/data assertions and RTO, then emits a stable JSON evidence report. Version 0.1.1 is early and PostgreSQL-only, but the fail-closed design addresses a real gap between “backup succeeded” and “recovery works.”
+
+**YouTube / Technical Media**
+- [Inside Clay’s eval stack: 300M agent runs, one LangSmith pipeline](https://www.youtube.com/watch?v=Uny6LpmjraI) — Clay’s team covers local/CI evaluation, production traces, A/B metrics, data-lake feedback loops and the boundary between deterministic checks and model judges. A compact production case study rather than a framework tutorial.
+- [How to build a software factory for AI coding agents](https://www.youtube.com/watch?v=tGbjIvvYuHE) — Boundary’s discussion separates the inner agent harness, isolated development environments and the outer dispatch/control plane, including multi-repo orchestration, merge queues, evals and build-vs-buy decisions.
+
+**Watchlist** — OpenAI–Cursor negotiations and any Anthropic response before the November cutoff; migration of the Qubes fix from security-testing to stable; a complete Cosmos exploit/postmortem and affected-version matrix; independent Hy4 quality, memory-footprint and serving benchmarks.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
