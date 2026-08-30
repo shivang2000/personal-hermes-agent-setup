@@ -1,0 +1,28 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 30 Aug 2026, 12:55 IST**
+
+**Top picks**
+- [Tencent open-sources Hy4 preview](https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/) — The MoE model has 770B total/49B active parameters and a context window above 1M tokens, with API access through Tencent Cloud and OpenRouter. Tencent also claims model-assisted operator-fusion and communication work improved its own inference throughput by 31.8%; benchmark comparisons remain vendor-run.
+- [Critical Cosmos EVM accounting flaw exploited across six chains](https://thehackernews.com/2026/08/cosmos-evm-flaw-exploited-after-cosmos.html) — A mismatch between EVM `StateDB` spendable balances and Cosmos SDK locked/vesting balances enabled an unchecked subtraction to wrap near `2^256`, followed by reconciliation that could mint assets or burn victims’ holdings. Operators need the state-breaking v0.6.2/v0.7.2 upgrade; Cosmos estimates roughly $5.7M was sold through exchanges.
+- [Samsung puts MAC engines inside LPDDR5X banks](https://chipsandcheese.com/p/hot-chips-2026-samsungs-processing) — LPDDR5X-PIM adds compute blocks to all 16 banks, exposing 614 GB/s of internal bandwidth versus 76.8 GB/s over the external interface and up to 2.4 TOPS per package. Standard DDR commands preserve controller compatibility, but uncacheable mappings, mode switching, synchronization and context-switch handling create substantial OS/runtime challenges.
+- [Pocket-scale inference gets a reproducible benchmark suite](https://artificialanalysis.ai/hardware-inference-stack/mobile-phones) — Artificial Analysis is testing 39 sub-8GB quantized models on iPhone 17 Pro and Galaxy S26 Ultra using `llama.cpp`, measuring end-to-end latency, peak memory, token efficiency and five capability evaluations. This is more useful for on-device model selection than isolated tokens/sec claims.
+- [CPython formally adds RISC-V as a tier-3 platform](https://blog.python.org/2026/08/riscv-now-officially-supported/) — RISC-V is now listed in PEP 11 and tested on real hardware through CPython buildbots. Tier 3 does not yet guarantee release-blocking CI, but direct CI runners and eventual tier-2 status are being investigated.
+- [California legislature exempts open-source systems from age-verification mandate](https://www.tomshardware.com/software/linux/california-lawmakers-unanimously-pass-linux-exemption-from-age-verification-law-software-distributed-under-the-gpl-mit-bsd-and-apache-licenses-are-exempt) — AB 1856 excludes modifiable/redistributable software under licenses such as GPL, MIT, BSD and Apache, plus libraries delivered through package managers and browser-extension stores. The bill passed the Senate 39–0 and awaits the governor’s signature before the broader law takes effect in 2027.
+
+**Software Engineering & DevTools**
+- [Tether bridges iPhone continuity features to Linux](https://zackbartel.com/blog/2026/08/tether/) — The project synchronizes clipboard data and files and relays message/OTP workflows between iOS and Linux, using mutually approved mTLS connections. Browser and mail WebExtensions handle OTP extraction and autofill, avoiding dependence on undocumented native Continuity support.
+- [Typebase: a backend expressed as a TypeScript folder](https://github.com/typebase-io/monorepo) — Schema, auth and server actions live under `typebase/`; the CLI deploys a typed server whose frontend client invokes actions like local functions. The MIT-licensed project includes integrations for Next.js, SvelteKit, Nuxt and Expo.
+
+**Cloud, Infra, Data & Security**
+- [FreeCORE continues the TrueNAS CORE lineage on FreeBSD 15](https://freecore.org/) — This independent fork rebases TrueNAS CORE 13.3 onto FreeBSD 15 and OpenZFS, with 15.0-U1 presented as stable and an in-place upgrade route from CORE 13.3. Existing NAS operators should treat migration as a major platform change and validate hardware, jails/plugins and recovery paths first.
+
+**Open Source / GitHub**
+- [vphone-cli boots virtual iPhones through Apple’s virtualization stack](https://github.com/Lakr233/vphone-cli) — It automates firmware preparation, boot-chain patching, DFU restore, custom firmware installation, VM cloning and export using `Virtualization.framework` and Apple’s PCC research-VM infrastructure. It requires Apple Silicon plus relaxed SIP/AMFI and private entitlements, so it is currently a security-research tool rather than a production simulator.
+- [Defragger implements real ext4/FAT extent movement on Linux](https://github.com/gbin/defragger) — The Rust/Qt tool uses `FS_IOC_GETFSMAP`, `FS_IOC_FIEMAP` and `EXT4_IOC_MOVE_EXT` rather than wrapping `e4defrag`; privileged operations are isolated behind a narrow PolicyKit/D-Bus helper. It is explicitly alpha filesystem software, but its allocation visualization and reproducible loop-device demo are useful for storage-performance investigations.
+
+**Watchlist** — Independent evaluation and deployability of Hy4’s 1M-token context; identification and recovery of all Cosmos EVM chains exposed to GHSA-7g4w-cg88-2cq2; Governor Newsom’s decision on AB 1856; whether Samsung’s LPDDR5X-PIM gains practical compiler, kernel and memory-controller support.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
