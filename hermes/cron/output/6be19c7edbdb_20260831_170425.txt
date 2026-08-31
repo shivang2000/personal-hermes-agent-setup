@@ -1,0 +1,30 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 31 Aug 2026, 16:55 IST**
+
+**Top picks**
+- [DeepSeek-V4-Flash-Vision-Exp released](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp) — DeepSeek’s first experimental V4 multimodal model adds visual modules to the 305B-parameter V4-Flash architecture under MIT terms. Its self-reported results improve over V4-Flash-0731 on multimodal agents while retaining text-agent performance; weights are available, but inference-provider support is not yet live.
+- [Claude Code Auto Mode prompt-injection chain reaches code execution](https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/) — A targeted website-to-shell chain redirects Claude from WebFetch to `curl`, supplies an archive, and exploits Python module shadowing when the agent writes its own decoder. The researcher reports 60–80% success on a small sample, reinforcing that approval classifiers are not substitutes for isolated execution.
+- [OpenClaw 2.0 ships](https://openclaw.ai/blog/openclaw-2-accidentally) — The project’s largest release spans installation, browser/native clients, memory, skills, automations, plugins, and security, incorporating more than 16,000 PRs from 933 contributors. Shared cloud sessions preserve context while humans collaborate or hand off live agent work.
+- [OpenShot 4.0 adds integrated recording, color grading and local ML masks](https://www.openshot.org/blog/2026/08/30/openshot-40-record-edit-color-like-never-before/) — Screen, webcam, microphone and system audio are captured as separately editable tracks; the editor also gains curves, wheels, LUTs, scopes and locally executed subject masks. Expanded Qt 6 support modernizes the Linux foundation.
+- [uv proposes file-level wheel-cache deduplication](https://github.com/astral-sh/uv/pull/21327) — The open PR stores each payload under its BLAKE3 hash and hardlinks it into unpacked wheels. Astral measured roughly 10% local cache savings, with cold-install regressions kept below about 4% and little effect on warm installs.
+
+**AI, Agents & Models**
+- [Agent memory as a portable file format](https://calpaterson.com/memoryfields.html) — “Memoryfields” packages short Markdown pages, optional YAML metadata and an optional SQLite vector index into a transport-independent archive. The design replaces graph traversal and multi-stage extraction pipelines with one semantic search followed by parallel file reads.
+- [How to build a diffusion language model](https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model/) — Cornell’s Kuleshov Group covers masked and block diffusion, encoder–denoiser splits, remasking, sampling distillation and post-training. The practical tradeoff is parallel, revisable generation versus repeated denoising passes and more complex serving.
+- [Microduck publishes its sim-to-real RL training stack](https://github.com/pollen-robotics/microduck_rl) — Pollen Robotics’ environments use MuJoCo Warp and PPO for an 800 g biped, including actuator physics, backlash and domain randomization. Policies train at 50 Hz, export to ONNX and hot-swap behind a shared observation contract on the physical robot.
+
+**Software Engineering & DevTools**
+- [What happens when an RTX 4090 executes a global-memory store](https://blog.doubleword.ai/what-happens-when-a-gpu-writes-memory) — Doubleword experimentally traces `STG.E` through warp issue, coalescing, write-through L1, address translation, the crossbar and dirty L2 lines. A store can be acknowledged at L2 and consumed over PCIe without the value ever reaching DRAM—useful context for CUDA synchronization and performance work.
+- [Show HN: Typebase puts the backend in a TypeScript folder](https://typebase.io/) — Schemas, typed actions and authorization live beside application code, with generated clients over standard Postgres. It combines Drizzle, oRPC and Better Auth, targets Vercel/Cloudflare/Deno, and offers an ejectable alternative to dashboard-managed RLS or proprietary reactive backends.
+- [240M-domain autocomplete with effectively zero perceived p99 latency](https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names) — The client prefetches the current prefix plus every possible next character on keydown, hiding the network round trip before keyup. The backend combines an in-memory trie for popular domains with a 2.5 GB memory-mapped, delta-compressed block index for the long tail.
+- [Haiku R1/beta6 released](https://www.haiku-os.org/news/2026-08-26_haiku_r1_beta6) — Haiku’s first beta in roughly two years is available as a clean install or in-place upgrade. It is a meaningful checkpoint for the independent BeOS-compatible desktop stack after the project’s 25th anniversary.
+
+**Open Source / GitHub**
+- [Firecrawl’s `pdf-inspector` routes PDFs before paying the OCR tax](https://github.com/firecrawl/pdf-inspector) — The Rust library classifies pages as text, scanned, image-based or mixed, then performs position-aware extraction or selective OCR. It exposes Rust, Python, Node and browser-WASM bindings; Firecrawl says text PDFs are handled locally in under 200 ms and publishes a 200-document benchmark.
+
+**Watchlist** — Independent evaluations and practical serving requirements for DeepSeek-V4-Flash-Vision-Exp; Anthropic’s response or mitigations for the Auto Mode module-shadowing chain; OpenClaw 2.0 migration/security reports after the unusually large release; whether uv’s all-file cache deduplication lands and how it behaves beyond Linux/ext4.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
