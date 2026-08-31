@@ -1,0 +1,33 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 31 Aug 2026, 12:55 IST**
+
+**Top picks**
+- [Europe orders €387.8M LUMI-AI supercomputer](https://economictimes.indiatimes.com/tech/artificial-intelligence/europe-expands-ai-computing-network-with-390-million-order-from-frances-bull/articleshow/133645491.cms) — EuroHPC selected France’s Bull to build its sixth AI Factory system, pairing AMD compute with IBM storage and Nokia networking in Finland. Expected in H2 2027, it expands Europe’s publicly funded training/inference capacity beyond Nvidia-centric infrastructure.
+- [Cronos halts after an estimated $75M Tectonic lending exploit](https://www.coindesk.com/tech/2026/08/31/cronos-halts-blockchain-after-usd75-million-lending-exploit-hits-lending-app-tectonic) — The reported attack inflated thinly traded TONIC roughly 100×, posted it as collateral, then borrowed liquid assets. Validators paused the chain, making this both an oracle/liquidity failure and another contentious example of validator-coordinated emergency intervention.
+- [OpenClaw 2.0 ships its largest update](https://openclaw.ai/blog/openclaw-2-accidentally) — The release combines simplified subscription/API/local-model onboarding, a rebuilt browser client, shared cloud sessions, and changes across memory, skills, plugins, automation, and security. OpenClaw says 933 contributors produced more than 16,000 merged PRs—roughly half the project’s lifetime total.
+- [A technical map of ChatGPT Work’s actual agent runtime](https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/) — Testing finds cloud code execution with broad network access, headless Chrome/Playwright, persistent cross-session storage, sub-agents, scheduled runs, and Cloudflare-backed site publishing. Powerful, but the combination of private data, untrusted web content, and outbound access creates the full prompt-injection “lethal trifecta.”
+- [Tencent releases WeMM multimodal embedding models](https://github.com/Tencent/WeMM-Embedding) — The 2B/4B/9B family embeds text, images, video, visual documents, and interleaved inputs, with Matryoshka dimensions and vLLM/SGLang serving examples. Tencent reports the 2B model retains 98.7% of its full-dimensional MMEB-v2 image/video performance at only 256 dimensions; the new repository has 949 verified stars.
+
+**AI, Agents & Models**
+- [How to build a diffusion language model](https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model/) — Cornell’s implementation-oriented guide covers masked and block diffusion, encoder–denoiser splits, remasking for error correction, sampling distillation, and post-training. The key tradeoff is parallel, bidirectional refinement versus the extra denoising passes and fixed-length limitations of basic MDLMs.
+- [Google pushes lower-cost enterprise agent pricing](https://www.cnbc.com/video/2026/08/31/google-takes-aim-at-anthropic-microsoft-with-budget-friendly-ai-pricing.html) — Google is positioning its agent offering against Anthropic and Microsoft on price as enterprise usage scales. Builders should watch whether the discount applies to model inference, orchestration seats, or bundled cloud consumption before comparing effective task cost.
+- [Underfoot records silent on-device model drift](https://umer9538.github.io/underfoot/) — The open test harness freezes prompts and captures outputs by OS/framework build. Early Apple results expose deterministic markdown-wrapped “JSON,” an availability API that reports ready while every simulator generation fails, and guardrail behavior changing independently of the model—useful evidence for version-specific mobile AI regression suites.
+
+**Software Engineering & DevTools**
+- [croc v11.3 adds direct peer-to-peer transfers](https://getcroc.com/blog/croc-v11-3-release-update) — Authenticated CLI peers now attempt PAKE-bound WireGuard via UDP hole punching, fall back to Tailscale’s encrypted DERP network, then to existing croc relays. The transport changes automatically while croc’s AES-GCM file encryption and three-word-code workflow remain intact.
+- [Engineering “0 ms” perceived autocomplete over 240M domains](https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names) — Wirewiki prefetches the current prefix plus all possible next characters on `keydown`, hiding network latency before `keyup`. A memory trie handles the ranked head, while 240M delta-compressed names occupy about 2.5GB in an mmap’d SSD block index.
+- [Haiku R1/beta6 released](https://www.haiku-os.org/news/2026-08-26_haiku_r1_beta6) — The BeOS-inspired desktop OS published its first beta in roughly two years, with supported in-place upgrades. It is notable for alternative-OS and native-app developers rather than mainstream deployment, but the renewed release cadence drew strong developer attention this weekend.
+
+**Crypto & Blockchain Engineering**
+- [Polygon discloses validator flaws patched through Austin and Kyoto](https://crypto.news/polygon-fixes-validator-security-flaws-with-austin-and-kyoto-forks/) — The hard forks addressed validator-overload and denial-of-service risks before public disclosure; Polygon says it found no known mainnet exploitation. Node operators should verify they are on post-fork clients, while protocol teams should watch for a fuller technical postmortem.
+  
+**Open Source / GitHub**
+- [PRAXIST: rapidly rising executable-research agent harness](https://github.com/sapientinc/PRAXIST) — The four-day-old project has reached 4.8k verified stars. It coordinates parallel research peers around measurable objectives, task-owned evaluation, durable evidence, and generation-to-generation synthesis; note that it uses a fair-source license rather than a standard OSI open-source license.
+- [Codex with ChatGPT bridges planning and execution over MCP](https://github.com/XiaoDuoYa/codex-with-chatgpt) — The new 1.6k-star project uses ChatGPT’s web subscription as a planning/review layer while Codex retains write and execution authority. Repository access is exposed through eight read-only, OAuth-protected MCP tools over a Cloudflare tunnel—an interesting quota-optimization pattern that still warrants careful connector and tunnel review.
+
+**Watchlist** — Cronos restart timing, fund recovery, and a confirmed Tectonic root-cause report; technical details/CVEs for Polygon’s Austin and Kyoto fixes; published tiers and usage accounting for Google’s agent pricing; final accelerator, memory, and interconnect specifications for LUMI-AI.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
