@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1593
+        "completed": 1594
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-01T18:58:03.030981+05:30",
-      "last_run_at": "2026-09-01T16:57:04.888112+05:30",
+      "next_run_at": "2026-09-01T19:59:08.722107+05:30",
+      "last_run_at": "2026-09-01T17:58:10.094522+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -281,17 +281,17 @@
       "schedule_display": "23 18 * * 2,4,6",
       "repeat": {
         "times": null,
-        "completed": 410
+        "completed": 411
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:29.893319+05:30",
-      "next_run_at": "2026-09-01T18:23:00+05:30",
-      "last_run_at": "2026-08-29T18:26:27.619472+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-09-03T18:23:00+05:30",
+      "last_run_at": "2026-09-01T18:23:13.948848+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: this model requires a subscription or extra usage, upgrade for access at https://ollama.com/upgrade or add extra usage at https://ollama.com/settings (ref: 5e9f1310-4ab5-483e-ba93-ff3fff2604e8)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-01T17:58:03.032141+05:30"
+  "updated_at": "2026-09-01T18:59:08.723410+05:30"
 }
