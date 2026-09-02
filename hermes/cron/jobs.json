@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1619
+        "completed": 1620
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-02T21:25:45.486866+05:30",
-      "last_run_at": "2026-09-02T19:24:50.946757+05:30",
+      "next_run_at": "2026-09-02T22:26:51.143640+05:30",
+      "last_run_at": "2026-09-02T20:25:56.720569+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,17 +65,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 259
+        "completed": 260
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-09-02T20:55:00+05:30",
-      "last_run_at": "2026-09-02T16:56:38.583309+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: Codex stream produced no SSE events for 12s after first byte (threshold: 12s)",
+      "next_run_at": "2026-09-03T00:55:00+05:30",
+      "last_run_at": "2026-09-02T21:08:00.348675+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-02T20:25:45.487598+05:30"
+  "updated_at": "2026-09-02T21:26:51.144137+05:30"
 }
