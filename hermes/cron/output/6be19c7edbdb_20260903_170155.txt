@@ -1,0 +1,40 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 3 September 2026, 16:55 IST**
+
+**Top picks**
+- [Anthropic releases Claude Fable 5.1 and restricted-access Mythos 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1) — Fable targets coding and long-running knowledge work, while Mythos exposes stronger cyber and life-science capabilities through trusted-access programs. Anthropic reports 55.8% on Terminal-Bench 4.0, lower cache-read pricing that can cut highly agentic workloads by roughly 45%, and customer-controlled Enterprise Frontier Safeguards for zero-retention deployments.
+- [Google launches Gemini 3.8 Flash and Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/) — The general model costs $0.75/M input and $3.75/M output tokens and is tuned for longer reasoning/tool-use loops. The restricted Cyber variant scored 47.2% pass@1 on CWE-Bench and produced 2.6× more correct Chrome vulnerability patches than Google’s tested commercial-model baseline.
+- [Meta ships Muse Spark 1.3](https://developer.meta.com/ai/models/muse-spark/) — Meta’s new coding-oriented model adds max-reasoning mode, native multimodal perception, more reliable tool calling and higher first-attempt accuracy for long-horizon agents. It is available through Meta Model API and OpenRouter, with recipes for worktree-isolated agent fan-out, computer use and autonomous GitHub bots.
+- [Polars 2.0 enters release-candidate testing](https://pola.rs/posts/announcing-polars-2/) — Lazy queries now default to the streaming engine, which Polars expects to be about 5× faster in aggregate with substantially lower memory use. Migration risk: joins, group-bys and unpivots no longer preserve observable row order unless explicitly requested, while lossy coercions and mismatched horizontal concatenations now fail fast.
+- [curl publishes nine new advisories; upgrade to 8.22.0](https://curl.se/docs/security.html) — The September release fixes one medium and eight low-severity issues, including OpenSSL pinning and OpenLDAP authentication bypasses, multiple connection-reuse errors, cookie-scope bugs and two use-after-free cases. Six findings were produced by AISLE’s autonomous audit after broader frontier-model scans reported no additional issues.
+- [FBI probes suspected exposure of 153M+ driver’s licences](https://krebsonsecurity.com/2026/09/fbi-probes-service-selling-153m-drivers-licenses/) — A dark-web service appears to contain authentic North American identity scans and was adding hundreds of thousands of records per day; evidence points toward data collected by Louisiana verification provider IDScan, which is investigating. Any product retaining raw identity documents should revisit deletion, vendor-access and breach-containment controls immediately.
+
+**AI, Agents & Models**
+- [Grounded AI recommendations are being polluted by machine-targeted listicle farms](https://trellner.com/reports/manufactured-sources-behind-ai-recommendations/) — In 760 Perplexity Sonar/Sonar Pro calls, 59.8% of 7,534 retrieved citations came from sites outside the top 100,000 by traffic. Three apparently related domains generated 215,128 “best software” pages, illustrating why production search agents need source-quality scoring, domain-diversity limits and independent verification.
+- [Mistral clarifies training-data controls](https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training) — Consumer Vibe users and Studio/API customers are not opted out automatically, while Vibe Enterprise is; Vibe and API require separate toggles. Uploaded Vibe documents count as model input, so teams should enforce the setting centrally rather than assume one opt-out covers every surface.
+
+**Software Engineering & DevTools**
+- [Wasmi 2.0 overhauls its WebAssembly interpreter](https://wasmi-labs.github.io/blog/posts/wasmi-v2.0/) — Wasmi reports a 2.2× geometric-mean speedup over 1.0 on Apple M2 Pro, driven by direct-threaded dispatch, accumulator registers and a redesigned IR. It also adds stable fuel metering, Wasm’s deterministic profile and configurable validation for smaller embedded artifacts.
+- [Cloudflare prototypes zstd transcoding inside its Pingora cache](https://blog.cloudflare.com/cache-transcoding/) — Eligible uncompressed text is encoded once at cache fill, remains compressed on disk and between cache tiers, then is decoded at the edge. Tests achieved roughly 2.8× compression at zstd level 3, with a 4 KiB threshold retaining nearly all byte savings while keeping modeled CPU overhead to a few percent.
+
+**Crypto & Blockchain Engineering**
+- [Standard Chartered opens institutional spot BTC/ETH trading in the UAE](https://cointelegraph.com/news/standard-chartered-bitcoin-ether-trading-uae) — Eligible institutions can trade through the bank’s existing electronic channels via its DIFC-regulated entity, complementing custody launched in 2024. This is notable integration of crypto execution into conventional bank infrastructure rather than a separate exchange workflow.
+- [Wyoming adds onchain reserve verification to FRNT](https://cointelegraph.com/news/wyoming-chainlink-onchain-reserves-of-state-issued-stable-token) — Chainlink Proof of Reserve now publishes near-real-time reserve and supply data for the state-issued stablecoin between formal attestations. The commission is also evaluating Secure Mint, which would block issuance unless verified reserves meet or exceed circulating supply.
+
+**Open Source / GitHub**
+- [Fable 5.1 agent swarms generate reproducible browser-native 3D worlds](https://github.com/PhiloLabs/fable51-worlds) — The new MIT-licensed repository contains Three.js reconstructions built from OSM, LiDAR and public imagery, including validation views and the full generation pipeline. It is a useful artifact for evaluating whether long-running agents can research, implement and independently QA spatial software rather than merely generate demos.
+- [Magnitude brings hardware-aware local inference to existing coding agents](https://github.com/magnitudedev/magnitude) — The open-source server profiles the host, recommends fitting models, downloads and tunes them, then exposes them to Codex, Claude Code, Hermes, OpenCode, Cline and other harnesses. The repository has a verified 1.7K stars and is currently active on GitHub’s daily trending list.
+
+**Startups, YC & Industry**
+- [Palo Alto Networks reportedly paid $500M for Console](https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/) — The acquisition itself is confirmed, although the price is source-reported. Console’s IT-support agents—previously used for access grants, password resets and troubleshooting—will be integrated into Cortex to let security teams investigate and resolve alerts through natural language.
+- [Google avoids an ad-tech breakup, but operational remedies are coming](https://techcrunch.com/2026/09/02/google-spared-from-ad-business-breakup-but-judge-orders-changes-to-how-it-operates/) — A federal judge rejected divestiture while ordering changes intended to favor competitors. The written remedy remains sealed for 14 days, leaving the practical impact on ad exchanges, publishers and ad-tech integrations unresolved.
+
+**YouTube / Technical Media**
+- [Introducing Claude Fable 5.1 — Anthropic](https://youtu.be/ROF2Nv_KjOM) — Anthropic’s concise official launch demo focuses on complex, long-running tasks and shows the model executing an overnight forecasting workflow with iterative validation.
+
+**Watchlist** — Polars 2.0’s final release and ecosystem compatibility; the unsealed Google ad-tech remedy; confirmation and containment details from IDScan; availability and independent evaluation of Gemini Flash Cyber and Claude Mythos trusted-access programs.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
