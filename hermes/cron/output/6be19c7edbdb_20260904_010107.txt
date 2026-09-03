@@ -1,0 +1,35 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 4 Sep 2026, 00:55 IST**
+
+**Top picks**
+- [OpenAI starts phased GPT-6 Astra rollout](https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html) — OpenAI’s first model to cross its internal “Critical” cybersecurity threshold launches first through the vetted Daybreak program, then ChatGPT paid tiers, API and AWS. OpenAI claims major gains in computer use, software engineering and long-running workflows, with additional safeguards following last month’s containment incident.
+- [Nvidia agrees to acquire Hugging Face for $12.9B](https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html) — Nvidia says Hugging Face will remain open while receiving more infrastructure and scale. This places the dominant GPU vendor directly above a critical model, dataset and deployment distribution layer; API neutrality and support for non-Nvidia hardware now become important ecosystem questions.
+- [K2 Horizon opens six models—and their training lifecycle](https://ifm.ai/blog/k2/) — IFM released Apache-2.0 models from 0.9B dense through 375B-A23B MoE, alongside checkpoints, recipes/data, code, logs and evaluations. The 36B-A4B variant sparsifies both attention values via MoVA and feed-forward experts, approaching its 32B dense sibling with roughly 4B active parameters per token.
+- [Google launches WeatherNext 3](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/) — A mesh transformer ingests hourly geostationary-satellite mosaics plus historical analysis, producing forecasts down to 5-km resolution and refreshing hourly. Forecast data is queryable through BigQuery/Earth Engine or downloadable from Cloud Storage, making the release directly useful for logistics, energy and geospatial products.
+- [Polars 2.0 reaches its first release candidate](https://pola.rs/posts/announcing-polars-2/) — `LazyFrame.collect()` now defaults to the streaming engine, trading implicit row-order guarantees for substantially lower memory use and expected aggregate speedups. The RC also replaces silent lossy coercions and mismatched horizontal concatenation with explicit errors; migration testing is required before production upgrades.
+
+**AI, Agents & Models**
+- [Runway previews GWM Worlds 2](https://runway.com/research/introducing-gwm-worlds-2) — The autoregressive diffusion system generates continuous 720p/24-fps video plus 48-kHz audio while accepting camera controls and timestamped text actions. Its WorldPrompt representation separates persistent scene state from an event stream, targeting interactive media and embodied-agent simulation.
+- [Qwen 3.8 27B arrives on Cerebras at approximately 1,500 tokens/s](https://inference-docs.cerebras.ai/models/overview) — The public endpoint exposes 64K free-tier and 128K paid context, structured output and tool calling through an OpenAI-compatible API. Cerebras says the served model is unpruned, with activations, attention and KV cache remaining unquantized.
+- [OpenAI and Anthropic experienced overlapping model outages](https://status.openai.com/history) — OpenAI reported elevated ChatGPT/Codex errors while [Anthropic reported errors across multiple Claude models](https://status.claude.com/history); both incidents are resolved. Neither status page establishes a shared root cause, but production agents should maintain model/provider failover rather than treating model routing as simple load balancing.
+
+**Software Engineering & DevTools**
+- [Audacity 4.0 ships with a Qt interface and new project format](https://github.com/audacity/audacity/releases/tag/Audacity-4.0.0) — The rewrite adds direct multi-clip editing, clip groups, movable/dockable panels, workspaces and native high-DPI rendering. Projects migrate one-way to `.aup4`; macros, scripting pipes, MIDI/time tracks and several plugin formats are temporarily missing.
+- [Gemini 3.8 Flash begins rolling out across GitHub Copilot](https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/) — It is selectable in VS Code, Visual Studio, JetBrains, Xcode, Eclipse, Copilot CLI, cloud agent and the Copilot app. Enterprise administrators should review model policy because new models are automatically enabled unless global defaults or the specific model are disabled.
+
+**Cloud, Infra, Data & Security**
+- [GitHub CLI’s Linux repository signing key expires September 5](https://github.blog/changelog/2026-09-03-github-cli-linux-package-signing-key-expires-september-5/) — APT/RPM installations configured before April 8 may not trust the replacement key, breaking package updates after the next release. Refresh or verify keys now, especially in long-lived base images and CI bootstrap scripts.
+- [CodeQL 2.26.4 expands Actions and framework analysis](https://github.blog/changelog/2026-09-03-codeql-2-26-4-improves-github-actions-security-detections/) — New modeling detects mutable reusable-workflow references and tightens assumptions around event actor fields; Spring R2DBC SQL-injection sinks and Go 1.27 are now covered. Rust data-flow alerts may reappear at corrected source/sink locations.
+
+**Crypto & Blockchain Engineering**
+- [Standard Chartered launches institutional BTC/ETH spot trading in the UAE](https://www.sc.com/en/press-release/standard-chartered-becomes-first-global-systemically-important-bank-g-sib-to-launch-institutional-bitcoin-and-ether-spot-trading-in-the-uae/) — The DFSA-regulated service provides deliverable BTC/USD and ETH/USD trading through existing institutional FX interfaces, with settlement to the client’s chosen custodian. It adds bank-operated execution to the region’s existing custody infrastructure rather than introducing another retail exchange.
+
+**Startups, YC & Industry**
+- [Launch HN: Mireye indexes physical-world data for agents](https://news.ycombinator.com/item?id=49552616) — The YC S26 company exposes US parcel, infrastructure, hazard and location data through an API/MCP server, plus deterministic geometry and drive-time tools. A useful design choice is typed absence—`ok`, `absent` or `failed`—to stop models from converting missing county data into plausible fabrications.
+
+**Watchlist** — Astra’s wider API availability and cyber-control details; postmortems for the overlapping OpenAI/Claude disruptions; Nvidia’s commitments around Hugging Face governance and hardware neutrality; compatibility reports from the Polars 2.0 RC.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
