@@ -1,0 +1,31 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 6 Sep 2026, 00:55 IST**
+
+**Top picks**
+- [Actively exploited Chrome V8 type-confusion RCE](https://nvd.nist.gov/vuln/detail/CVE-2026-85046) — CVE-2026-85046 allows crafted HTML to execute code inside Chrome’s sandbox; CISA has added it to the Known Exploited Vulnerabilities catalog. Update Chrome and Chromium-derived browsers to builds incorporating **152.0.7977.82 or later**.
+- [TanStack Table v9 cuts large-table memory use by roughly 90%](https://tanstack.com/blog/tanstack-table-v9-memory-performance) — Moving methods from millions of per-instance closures to shared prototypes reduced an 8-million-cell benchmark from 2.71 GB to 257 MB. It is a strong practical example of how JavaScript object shape and function allocation dominate memory at scale.
+- [Meta’s ZGateway contains database connection fan-out](https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/) — The stateless proxy now carries about 40% of ZippyDB traffic at over 1B operations/second, multiplexing connections and coalescing requests across clients. Meta reports roughly 19× fewer persistent connections end-to-end for about 6% average compute overhead.
+- [Spotify delegates token-heavy Claude Code work to cheaper workers](https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90) — Claude hooks intercept large reads and boilerplate generation, then route them through Portal to Gemini 2.5 Flash modes. Spotify reports up to 90% lower Claude token use, with a 10–30 second delegation latency that makes routing thresholds essential.
+- [Rootless Kubernetes node components reach beta in v1.37](https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/) — `KubeletInUserNamespace` lets kubelet, CRI/OCI runtimes, CNI plugins and kube-proxy run as a non-root host user. This limits the blast radius of node-component escapes and can be combined with pod user namespaces.
+
+**AI, Agents & Models**
+- [GitHub previews adaptive multi-model orchestration in Copilot CLI](https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/) — HydraFusion selects single-model, cascade or independent-critic workflows per task, with isolated tool-less review and fail-safe patch application. GitHub’s offline TerminalBench 2.1 evaluation claims +4.9 points versus Opus 5 at 67% lower estimated cost; production latency and reliability remain to be validated.
+- [AI incident response creates “comprehension debt”](https://www.sylvainkalache.com/blog/ai-handles-incidents-engineers-lose-touch-with-their-systems) — The operational warning is that agents remove the routine incidents through which engineers learn system behavior, leaving humans underprepared for novel SEV0s. Recommended countermeasure: recurring incident simulations, tabletop exercises and deliberate manual practice.
+
+**Software Engineering & DevTools**
+- [Sentry splits profiling into backend and UI products](https://sentry.io/changelog/continuous-profiling-and-ui-profiling/) — Continuous Profiling targets backend CPU/cost analysis, while UI Profiling focuses on browser and mobile rendering performance. Teams using Sentry’s previous profiling product should review its migration and pricing changes.
+- [Pushin.eu launches an EU-only Git-hosting beta](https://pushin.eu/) — The invite-only service promises EU-resident repositories, private and public hosting, pull requests, issues and CI runners, with an explicit policy against model training on customer code. Relevant for teams evaluating data-residency and platform-jurisdiction risk.
+
+**Crypto & Blockchain Engineering**
+- [Bank of Korea finds measurable stablecoin–FX spillovers](https://www.bok.or.kr/eng/main/main.do) — Its new issue note studies fiat/stablecoin pair listings on a global exchange and finds that USD-stablecoin buying pressure can transmit into local-currency depreciation as market makers rebalance. This strengthens the case for treating stablecoin liquidity as part of FX-market infrastructure rather than an isolated crypto rail.
+
+**Open Source / GitHub**
+- [Magnitude: local inference server for existing coding agents](https://github.com/magnitudedev/magnitude) — The project automatically selects local models for available hardware and exposes them to tools including OpenCode, Hermes, Codex, Claude Code and Cline. GitHub showed **3.1k stars and 686 stars today** at check time, alongside active inference and daemon-boundary development.
+- [Human Atlas opens a browser-based 3D anatomy explorer](https://github.com/ashemag/human-atlas) — A new React/Three.js application packages 2,234 selectable BodyParts3D meshes with system layers, search and exploded views. The repository includes browser-ready geometry and scripts for rebuilding it from the attributed source dataset.
+
+**Watchlist** — [Chromium downstream patch propagation](https://nvd.nist.gov/vuln/detail/CVE-2026-85046); [HydraFusion’s real-workload cost and latency](https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/); [reported ClickFix campaign using blockchain-hosted payload references](https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/), pending primary IOCs and remediation guidance.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
