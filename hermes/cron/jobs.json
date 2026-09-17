@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1726
+        "completed": 1727
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-17T17:13:36.780417+05:30",
-      "last_run_at": "2026-09-17T15:12:38.230219+05:30",
+      "next_run_at": "2026-09-17T18:14:40.816906+05:30",
+      "last_run_at": "2026-09-17T16:13:42.224208+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,15 +65,15 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 318
+        "completed": 319
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-09-17T16:55:00+05:30",
-      "last_run_at": "2026-09-17T12:55:30.477469+05:30",
+      "next_run_at": "2026-09-17T20:55:00+05:30",
+      "last_run_at": "2026-09-17T16:55:46.569786+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 400: {\"detail\":\"The 'gpt-5.6-sol' model is not supported when using Codex with a ChatGPT account.\"}",
       "last_delivery_error": null,
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-17T16:13:36.781651+05:30"
+  "updated_at": "2026-09-17T17:14:40.818051+05:30"
 }
