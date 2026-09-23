@@ -1,0 +1,25 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 24 Sep 2026, 00:55 IST**
+
+**Top picks**
+- [Claude discovers a previously uncharacterized enzyme system](https://www.anthropic.com/news/claude-discovers-novel-enzyme-system) — Roughly 950 Claude agents searched genomic data for 21 hours using 210M tokens and identified array-associated reverse transcriptases beside CRISPR-like DNA repeats. Lab work confirmed the system exists, but its function remains unknown; this is an early, unusually concrete demonstration of agents generating experimentally testable biology rather than merely summarizing literature.
+- [Google launches Gemini 3.8 Flash and Flash-Lite TTS](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/) — The models support prompted voice design across 100+ languages, 2,000 production voices, native two-speaker scenes, long-form generation, and voice replication from a 30-second sample. Both are rolling out through AI Studio and the Gemini API, with consent verification, SynthID, and C2PA metadata around replicated voices.
+- [VLC 3.0.24 patches more than 130 security issues](https://www.videolan.org/vlc/releases/3.0.24.html) — VideoLAN fixed out-of-bounds access, integer-overflow, double-free, and use-after-free classes across VLC and bundled libraries. The release also jumps FFmpeg from 4.4 to 8.1.2, updates 49 dependencies, and rotates update verification to RSA-4096; desktop fleets should prioritize this upgrade.
+- [NYSE and Blockchain.com explore 24/7 tokenized-stock trading](https://www.reuters.com/business/media-telecom/nyse-blockchaincom-explore-selling-tokenised-stocks-2026-09-23/) — The companies are evaluating distribution of rights-bearing tokenized US securities through Blockchain.com, rather than synthetic stock-price tokens. It remains exploratory, but paired with the SEC’s new conditional relief, it points toward regulated identity, transfer-agent, custody, and blockchain-settlement infrastructure moving into production.
+
+**AI, Agents & Models**
+- [Claude Code can silently skip `AGENTS.md` when telemetry traffic is disabled](https://github.com/anthropics/claude-code/issues/95690) — Reports reproduced through version 2.1.280 show the local-file loader gated by a remotely fetched feature flag, affecting privacy-restricted environments, fresh CI runners, Bedrock, Vertex, and third-party gateways. Until loading becomes deterministic, a `CLAUDE.md` containing `@AGENTS.md` is the documented practical workaround.
+- [“Jev in 25 lines” demonstrates the mechanism behind probability-based LLM classifiers](https://www.nobodywho.ai/posts/jev-in-25-lines/) — The implementation runs a small local Qwen model, extracts next-token logits for a fixed choice set, and normalizes them into probabilities—without token generation or an API. It is a useful reality check for teams considering specialized “System 1” decision models: calibration and training matter, but the core serving primitive is straightforward.
+
+**Cloud, Infra, Data & Security**
+- [Trail of Bits argues for retiring SAML in favor of OIDC](https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/) — The technical case centers on XML parser differentials, canonicalization, enveloped signatures, and signature-wrapping attacks that remain difficult to eliminate across independent implementations. Teams maintaining SSO integrations should minimize custom SAML processing, strictly bind validated assertions to consumed fields, and prioritize OIDC migrations where feasible.
+
+**Startups, YC & Industry**
+- [Waymo introduces public-transit connection rewards](https://waymo.com/blog/2026/09/transit-rewards/) — In the Bay Area, riders who use the same linked Visa card for Waymo and one of 27 tap-to-pay transit agencies within two hours receive $2.85 in Waymo credit. The payment-network reconciliation model is notable: it creates multimodal integration without requiring every transit operator to adopt a shared application or booking API.
+
+**Watchlist** — Independent replication and functional characterization of Anthropic’s ART enzyme system; whether Anthropic removes remote gating from `AGENTS.md`; concrete venue, chain, custody, and settlement architecture for the NYSE–Blockchain.com initiative; forthcoming CVE-level advisories for VLC 3.0.24.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
