@@ -1,0 +1,41 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 25 September 2026, 20:55 IST**
+
+**Top picks**
+- [Anthropic publishes internal metrics for AI-led AI R&D](https://www.anthropic.com/institute/measuring-pace-of-ai-development) — Anthropic says Claude now “leads” 26% of its measured R&D work and collaborates on over 90%. Its main internal platform reportedly runs ~30,000 concurrent agents; online monitors cover every action and blocked 0.002% of more than a billion August decisions. These are self-reported but unusually concrete production-agent metrics.
+- [Cloudflare fixes cross-tenant data exposure in Containers](https://blog.cloudflare.com/containers-cross-tenant-vulnerability/) — `dm-thin` had `skip_block_zeroing` enabled, so a 4 KiB write could allocate a reused 64 KiB block and expose up to 60 KiB of another tenant’s residual data. Cloudflare re-enabled zeroing, retired existing disks and caches, and reports no evidence of malicious exploitation.
+- [Bitget reports a $351.6M backend compromise](https://thehackernews.com/2026/09/bitget-says-suspected-north-korean.html) — The attacker allegedly compromised wallet infrastructure, spoofed transaction data, and triggered the authorization path across several chains. Withdrawals were suspended; attribution to North Korean actors remains Bitget’s preliminary assessment while Mandiant and SlowMist investigate.
+- [Go experiments with portable, size-agnostic SIMD](https://go.dev/blog/simd-experiment) — Go 1.27’s experimental `simd` package targets AVX/AVX2/AVX-512, Arm NEON, and WebAssembly SIMD from one API, falling back to emulation elsewhere. It is aimed at near-assembly performance without architecture-specific Go assembly; enable it with `GOEXPERIMENT=simd`.
+- [Fed proposes the GENIUS Act stablecoin framework](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260924a.htm) — One proposal requires full backing with assets such as short-term Treasuries, standardized capital/risk controls, and safekeeping rules; another defines the application process for supervised banks issuing stablecoins. Comments close 60 days after Federal Register publication.
+
+**AI, Agents & Models**
+- [Cloudflare Turnstile Spin installs and repairs bot protection through coding agents](https://blog.cloudflare.com/turnstile-spin/) — Claude Code, Cursor, Codex, or another agent can locate the frontend widget and backend Siteverify path, propose changes, and apply them locally after approval. It also detects widgets lacking server-side validation and migrates existing CAPTCHA integrations.
+- [Google AX: a Kubernetes-like orchestrator for agent workloads](https://github.com/google/ax) — AX declares sandboxed `Task`, pre-wired `Workspace`, and `Model` resources using `ax.io/v1alpha1` manifests, with suspend/resume and SSH inspection for stateful agents. The early, breaking-change-prone project reached **11.2k stars** and added **1,386 stars today** on GitHub Trending.
+
+**Software Engineering & DevTools**
+- [F-Droid 2.0 begins rolling out](https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html) — Its largest app update in a decade rewrites major components in Kotlin and Jetpack Compose, improves multilingual search and filtering, and uses Android’s pre-approval API for smoother installs. Background updates are now the default, while Tor and panic-mode behavior received important changes.
+- [Topcoat advances server-driven reactive Rust applications](https://tokio.rs/blog/2026-09-24-topcoat-server-applications) — Browser-side signals can rerun server “shards,” while `live!` streams incremental UI updates for progress and chat-style workloads. The associated Toasty client adds expressive updates, document fields, and typed polymorphic relations.
+- [CodeQL 2.27.1 expands language and framework coverage](https://github.blog/changelog/2026-09-25-codeql-2-27-1-adds-c-and-c-query-and-kotlin-2-4-20-support/) — The release adds Kotlin 2.4.20 support, new C/C++ and C# queries, Go 1.27 models, better Fastify route attribution, and Rust data-flow improvements. GitHub.com code scanning receives it automatically.
+
+**Cloud, Infra, Data & Security**
+- [Roundcube pre-auth SQL injection is being exploited](https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html) — CVE-2026-48842 is a `preg_replace()` escape bypass in `virtuser_query` that permits unauthenticated SQL injection. Operators should be on Roundcube **1.6.16+ or 1.7.1+** and confirm the plugin/database were not exposed before patching.
+- [GitHub adds “proof of presence” for sensitive enterprise actions](https://github.blog/changelog/2026-09-24-require-proof-of-presence-for-high-impact-actions/) — The preview redirects users to Entra ID for fresh authentication or MFA before high-impact operations, mitigating stolen cookies, tokens, and overreaching agents. It currently covers EMU enterprises on GitHub.com/GHEC-DR and grants a two-hour elevated session after verification.
+
+**Open Source / GitHub**
+- [Whiteboard: a shared software-design canvas for humans and coding agents](https://github.com/devdotfast/whiteboard) — The YC W26 desktop app connects to Claude Code, Codex, and other agents through MCP/tools, letting them generate architecture reviews, diagrams, and branch-diff walkthroughs in a visual workspace. The repository has reached **1.1k stars**.
+- [git-bug puts a distributed issue tracker inside Git](https://github.com/git-bug/git-bug) — Issues can be created, queried, pushed, and pulled through ordinary Git remotes, with offline CLI, terminal, web, GraphQL, and bridge workflows for GitHub, GitLab, Jira, and Launchpad. The revived project is at **10.2k stars**.
+- [Agentic CUDA Kernel Optimizer](https://github.com/bertaye/agentic-cuda-optimizer) — A new LangGraph workflow repeatedly generates CUDA kernels, validates every case, benchmarks with CUDA events, and optionally feeds Nsight Compute counters back into the next iteration. A C++/NVRTC harness separates compilation and execution from Python-based correctness and candidate selection.
+
+**YouTube / Technical Media**
+- [Rails World 2026 opening keynote — DHH](https://www.youtube.com/watch?v=vDjW_dRyKXY) — A 63-minute talk on 37signals going “pencils down” on much handwritten code, how Rails’ convention-over-configuration model fits agentic development, and what framework maintainers should optimize for when agents become primary code producers.
+
+**Watchlist**
+- Bitget withdrawal restoration, wallet-infrastructure postmortem, and independent confirmation of attribution.
+- [Magic Eden’s reported legacy-approval exposure](https://www.theblock.co/news/web3/2026-09-25-magic-eden-legacy-approvals-leave-5-7-million-in-nfts-exposed-to-exploit-before-rescue-416874) — watch for a primary technical postmortem and guidance on revoking old approvals.
+- Whether Roundcube exploitation expands beyond the currently disclosed activity, and whether additional government vulnerability catalogs add CVE-2026-48842.
+- Industry feedback on the Fed’s proposed reserve, capital, custody, and bank-application requirements for stablecoin issuers.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
