@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 1910
+        "completed": 1911
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-25T13:30:13.169849+05:30",
-      "last_run_at": "2026-09-25T11:29:16.664640+05:30",
+      "next_run_at": "2026-09-25T14:31:17.822445+05:30",
+      "last_run_at": "2026-09-25T12:30:18.857154+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -65,15 +65,15 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 349
+        "completed": 350
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-09-25T12:55:00+05:30",
-      "last_run_at": "2026-09-25T01:02:23.705055+05:30",
+      "next_run_at": "2026-09-25T16:55:00+05:30",
+      "last_run_at": "2026-09-25T13:01:14.364014+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -227,17 +227,17 @@
       "schedule_display": "47 12 * * 1,3,5",
       "repeat": {
         "times": null,
-        "completed": 35
+        "completed": 36
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-09-25T12:47:00+05:30",
-      "last_run_at": "2026-09-23T12:47:57.885028+05:30",
-      "last_status": "error",
-      "last_error": "RuntimeError: HTTP 400: {\"detail\":\"The 'gpt-5.6-sol' model is not supported when using Codex with a ChatGPT account.\"}",
+      "next_run_at": "2026-09-28T12:47:00+05:30",
+      "last_run_at": "2026-09-25T12:49:19.228449+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -310,5 +310,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-25T12:30:13.172175+05:30"
+  "updated_at": "2026-09-25T13:31:17.823788+05:30"
 }
