@@ -1,0 +1,34 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 25 Sep 2026, 5:05 PM IST**
+
+**Top picks**
+- [Cloudflare fixes cross-tenant data exposure in Containers and Sandboxes](https://blog.cloudflare.com/containers-cross-tenant-vulnerability/) — Disabling `dm-thin` block zeroing let a 4 KiB write expose up to 60 KiB of residual data from another tenant’s recycled 64 KiB block. Cloudflare zeroed new allocations, retired existing disks/caches, and says telemetry shows no malicious exploitation.
+- [Project Swap: what happens when agents trade for us?](https://www.anthropic.com/research/project-swap) — Anthropic put 201 Claude agents into a real book-trading market; five-minute preference interviews predicted 61% of pairwise human rankings. Model capability affected market efficiency more than “ruthless” versus “prosocial” prompting—a useful result for agent marketplaces and delegated purchasing.
+- [GitHub Security Lab open-sources an agentic fuzzing pipeline](https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/) — Taskflow autonomously selects C/C++ entry points, writes AFL++ harnesses, measures coverage, iterates on gaps, triages crashes, and produces reports. Decisions stay with the LLM while MCP tools execute primitives and SQLite persists state; GitHub explicitly recommends a disposable VM because model-selected build commands run on the host.
+- [AWS relaunches EventBridge Custom event buses](https://aws.amazon.com/about-aws/whats-new/2026/09/eventbridge-relaunches-custom-event-buses/) — The new bus adds cross-account sharing, CloudEvents-preserving publication, strict ordering, content-based deduplication, subscriber resources, and retention from 24 hours to one year. Existing buses remain available as “classic,” while new pricing is based on transferred data rather than event count.
+- [F-Droid 2.0 ships its largest client overhaul in a decade](https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html) — The Android client moves new UI code to Kotlin and Jetpack Compose, expands multilingual search/filtering, and uses Android’s pre-approval/session installer APIs for smoother background updates. Rollout follows 14 test releases.
+
+**AI, Agents & Models**
+- [Gemini 3.8 Live adds real-time generated avatars](https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/) — Google coupled streaming video with native live dialogue, asynchronous tool execution, and multilingual lip-sync across 97 languages. It is available through Gemini Enterprise, with custom avatars currently allowlisted and generated audio/video marked by SynthID.
+- [Docker’s cloud Sandboxes target long-running coding agents](https://www.docker.com/c/sbx-promo/) — `sbx run <agent>` launches each agent in a separate cloud microVM with its own kernel, persistent execution after the laptop disconnects, and per-second billing. This is stronger isolation than sharing a local Docker daemon, especially when agents install arbitrary dependencies.
+- [Google AX rises on GitHub after its agent-runtime restructuring](https://github.com/google/ax) — The Apache-2.0 project now exposes Kubernetes-like `Task`, `Workspace`, and `Model` manifests for isolated agent jobs, prewired repos/MCP servers, resource limits, and suspend/resume. The repository has about 11,000 verified stars, but its `v1alpha1` interfaces still warn of breaking changes.
+
+**Software Engineering & DevTools**
+- [Topcoat 0.9 pushes server-driven reactive applications in Rust](https://tokio.rs/blog/2026-09-24-topcoat-server-applications) — Browser-side signals are expressed in a type-checked Rust subset transpiled to JavaScript, while server “shards” rerun as client state changes and stream UI patches. The accompanying Toasty ORM adds expressive updates, document fields, and polymorphic relations.
+
+**Cloud, Infra, Data & Security**
+- [AWS adds a billing-context API](https://aws.amazon.com/about-aws/whats-new/2026/09/aws-billing-and-cost-management-billing-context-api/) — `ListBillingViewSegments` returns time-segmented payer hierarchy, billing-owner, and billable/pro-forma rate context when accounts move between organizations or Billing Conductor groups. It returns metadata rather than usage data and is explicitly callable by FinOps agents.
+- [RDS PostgreSQL adds post-quantum TLS key exchange](https://aws.amazon.com/about-aws/whats-new/2026/09/postgresql-post-quantum-tls-key-exchange/) — PostgreSQL 18+ instances can now select approved post-quantum cryptographic groups through `ssl_groups`, providing a managed migration path for teams concerned about harvest-now/decrypt-later exposure.
+- [Qualcomm commits to upstream Linux support for Snapdragon X2](https://www.qualcomm.com/news/onq/2026/09/snapdragon-summit-agentic-ai-pcs-linux) — Core Adreno GPU and Hexagon NPU drivers are being upstreamed; Debian support is targeted by the end of 2026 and certified Ubuntu support for H1 2027. This could make ARM Linux laptops substantially more viable for local inference and development.
+- [Google prepares to test TPUs in orbit](https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/) — Project Suncatcher’s first satellite will test Trillium TPUs against launch vibration, radiation, and vacuum cooling. Longer-term scaling depends on radiator-based thermal systems and high-bandwidth laser links between tightly clustered satellites—still a research program, not near-term datacenter capacity.
+
+**Crypto & Blockchain Engineering**
+- [Nearly $352 million moves from Bitget wallets in a suspected breach](https://bitcoinmagazine.com/news/bitget-suffers-352-million-hack) — Reporting points to hot-wallet compromise, with Bitget investigating possible North Korean involvement. Builders and counterparties should treat attribution as preliminary and monitor withdrawal status, affected chains, and the eventual key-management postmortem.
+- [New York sues Polymarket over alleged illegal gambling operations](https://bitcoinmagazine.com/news/new-york-sues-polymarket) — The action targets access to prediction markets despite Polymarket’s federally regulated U.S. operation. The outcome could materially affect geofencing, compliance architecture, market listings, and API access for prediction-market applications.
+
+**Watchlist** — Bitget’s chain-by-chain accounting and custody postmortem; court requests or injunctions in New York’s Polymarket case; any Cloudflare customer-notification/CVE follow-up; stability of Google AX’s pre-release manifests and Agent Substrate dependency.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
