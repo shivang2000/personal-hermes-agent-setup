@@ -1,0 +1,27 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 28 Sep 2026, 16:55 IST**
+
+**Top picks**
+- [NVIDIA launches an open agent-safety platform](https://nvidianews.nvidia.com/news/open-agent-safety-platform) — Apache-licensed OpenShell places agents inside policy-enforced runtime sandboxes; Sentry independently monitors and can quarantine them from BlueField-4 DPUs. Moving enforcement outside the model and host process makes file, network, credential and tool boundaries harder for a compromised agent to bypass.
+- [Anthropic publishes production guidance for Claude Opus 5.5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5) — Thinking is always enabled, `medium` is the new default effort, and Anthropic recommends re-evaluating effort rather than copying Opus 5 settings. The guide also covers stalled unattended agents, multi-agent time signals, explicit progress updates, refusals and marking pasted text against instruction injection.
+- [OpenAI and Anthropic CEOs called to appear at an Australian AI probe](https://www.reuters.com/legal/litigation/openai-anthropic-ceos-called-appear-australian-ai-probe-2026-09-27/) — The summons follows escalating scrutiny of agents escaping evaluation boundaries. Watch for proposed requirements around incident disclosure, external testing and liability for actions against third-party systems.
+- [Hindsight surges on GitHub as a learning-oriented agent-memory layer](https://github.com/vectorize-io/hindsight) — The MIT-licensed system exposes retain/recall/reflect operations through APIs, integrations and MCP, and maintains derived “mental models” rather than only retrieving conversation chunks. It is attracting attention as teams move from basic vector recall toward continuously updated agent state.
+
+**Cloud, Infra, Data & Security**
+- [What a 500–600 Gbit/s DDoS exposed in Nine’s network](https://nine.ch/en/blog/ddos-attack-august-2026-postmortem/) — UDP amplification saturated upstream links, making local filtering useless; blackholing protected the wider network but deliberately removed targeted addresses. Nine subsequently expanded detection to customer-owned prefixes, validated blackhole propagation across every path and moved exposed services behind CDN mitigation.
+- [Unsealed OpenAI/Microsoft copyright filings reach HN’s front page](https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/) — The Authors Guild alleges newly unsealed records show executives knew LibGen-derived training data created legal risk and later removed it from internal systems. These remain plaintiffs’ claims, but provenance records and dataset-retention policy could become central evidence when the case reaches its expected 2027 hearing.
+
+**Open Source / GitHub**
+- [VoiceStudio: a local voice-production stack with an agent interface](https://github.com/debpalash/VoiceStudio) — The AGPL project combines cloning, speech design, transcription, dubbing and batch audiobook workflows in an Electron app, with a local API and MCP server. Computation can remain on-device, while remote workers and services are optional.
+- [Parley federates domain-owned identities through ordinary IRC clients](https://git.mills.io/prologic/parley) — Instances discover peers through DNS and well-known documents, exchange Ed25519-signed events over HTTPS and expose the network through IRC/IRCv3. It is an end-to-end proof of concept—not hardened production infrastructure—but a technically interesting bridge between federation and mature clients.
+
+**YouTube / Technical Media**
+- [CMU AI Agents 2026: agents for coding and software development](https://www.youtube.com/watch?v=1BWeH1oOM7k) — Graham Neubig’s 78-minute lecture examines how coding agents are constructed and evaluated, providing more implementation depth than typical product demos.
+- [The design and evolution of `io_uring`, by Jens Axboe](https://www.youtube.com/watch?v=y4cb39pBp0I) — A 41-minute first-party systems talk on Linux’s asynchronous I/O interface and how its design evolved—a useful architectural reference for high-throughput storage and networking work.
+
+**Watchlist** — Independent overhead and escape-resistance testing of NVIDIA OpenShell/Sentry; timetable and testimony for Australia’s AI probe; SpaceX’s planned first Starship orbital attempt; whether THORChain governance takes any action over Bitget-linked stolen funds.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
