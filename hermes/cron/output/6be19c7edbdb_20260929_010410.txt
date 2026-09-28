@@ -1,0 +1,37 @@
+Cronjob Response: AI / Crypto / Tech / Software news digest for #tech-news
+(job_id: 6be19c7edbdb)
+-------------
+
+**Tech / AI / Crypto / Software Digest — 29 Sep 2026, 00:55 IST**
+
+**Top picks**
+- [Anthropic launches Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5) — Anthropic reports 30%+ faster generation and up to 30% lower per-task cost than Sonnet 5, while retaining $2/M input and $10/M output pricing. It scores 70.6% on Terminal-Bench 4.0 and adds frontier-model cyber safeguards; GitHub has already [rolled it out across Copilot](https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/).
+- [Cloudflare ships `cf`, an agent-first CLI for its entire API](https://blog.cloudflare.com/cloudflare-cf-cli-launch/) — The open beta expands CLI coverage from Wrangler’s roughly 280 command paths to more than 3,000 API operations. JSON-first output, natural-language command search, typed `cloudflare.config.ts`, LSP support and Vite defaults are explicitly optimized for coding agents.
+- [Vinext 1.0 makes Next.js applications portable through Vite](https://blog.cloudflare.com/vinext-nextjs-on-vite/) — Cloudflare’s framework now supports App and Pages Router applications, RSC, Server Actions, API routes, ISR, OpenTelemetry and multiple runtimes with greater than 99% coverage for its prioritized compatibility suite. Its cache warming renders popular routes against a zero-traffic Worker version before promotion.
+- [Kitesurf adds WebMCP and broader browser automation support](https://blog.cloudflare.com/kitesurf-update/) — Cloudflare’s Workers-native browser can now invoke site-exposed tools instead of simulating clicks, passes 730,000+ Web Platform subtests and works through CDP, Playwright, Puppeteer or MCP. Rendering can also be moved client-side, including Kitty/ANSI terminal output.
+- [THORChain declines to block funds from the $387.5M Bitget breach](https://www.coindesk.com/tech/2026/09/28/thorchain-rejects-bitget-request-to-block-hacker-as-usd6-million-moves-to-bitcoin) — Public records showed 27 successful cross-chain swaps converting about 2,390 ETH into 75.2 BTC. The incident highlights the practical difference between protocol-wide emergency halts and selective address censorship in decentralized liquidity networks.
+
+**AI, Agents & Models**
+- [Vespper launches a DOCX MCP for document-editing agents](https://www.vespper.com/) — The YC F24 startup exposes Word-document sessions as MCP tools while preserving formatting, styling and tracked changes. Its SDK patches MCP tools with a session ID, enabling agents to perform workflows such as mail merges and structured NDA completion.
+- [Amazon CloudWatch Omni targets agent observability and evaluation](https://aws.amazon.com/blogs/aws/introducing-amazon-cloudwatch-omni-ai-powered-observability-for-generative-ai-and-agentic-workloads/) — The OpenTelemetry-based system records model and tool-call traces, provides 17 built-in evaluators, compares prompts/configurations and can build evaluation datasets from production traffic. Local VS Code/Kiro workflows can remain offline before optionally sharing telemetry with CloudWatch.
+
+**Software Engineering & DevTools**
+- [Cloudflare open-sources Forge, its API artifact generation pipeline](https://blog.cloudflare.com/forge-open-source-generation-pipeline/) — Forge runs in CI against distributed OpenAPI definitions and produces preview SDKs, CLIs and documentation for each change. Its chainable transformers can also target MCP, Cap’n Web, validation schemas and framework-specific clients; the project is Apache-2.0 licensed.
+- [Experimental native Rust and Tokio support arrives for Cloudflare Workers](https://blog.cloudflare.com/rust-workers-emscripten-target/) — New `wasm32-unknown-emscripten` support in `wasm-bindgen` bridges Rust, Emscripten and JavaScript while virtualizing timers, filesystems and sockets over Workers APIs. Cloudflare demonstrated a Tokio-based Rust Minecraft server inside a Durable Object with TCP ingress, though upstream Tokio integration remains in progress.
+- [Cloudflare publishes BEACON, a multi-billion-sample RUM dataset](https://blog.cloudflare.com/how-fast-is-the-web/) — The daily BigQuery dataset covers 10,000 large sites, major browser engines, countries, industries, Core Web Vitals and soft navigations. Full histograms expose long-tail behavior; early analysis suggests LCP discovery/render blocking usually costs more than resource download time.
+
+**Open Source / GitHub**
+- [OpenRig coordinates Claude Code and Codex as one multi-agent harness](https://github.com/mvschwarz/openrig) — The Apache-2.0 TypeScript project is trending after its recent 0.5.17 release, with mission orchestration, permissions and a TUI over multiple coding agents. GitHub showed roughly 1.6K stars, including 781 added today.
+- [Hindsight’s agent-memory stack surges on GitHub](https://github.com/vectorize-io/hindsight) — The project provides persistent memory, retrieval and learned “mental models,” with APIs, clients, Helm deployment and integrations. It reached about 40.7K stars, with GitHub reporting 4,413 stars today; current work includes memory-curation hooks, multimodal extraction and bounded reranking.
+- [VoiceStudio rises as a fully local speech-production stack](https://github.com/debpalash/VoiceStudio) — The project combines voice cloning/design, dubbing, dictation, transcription and audiobook workflows in an Electron application, advertising support for 646 languages. GitHub showed about 43.4K stars and 3,274 additions today.
+
+**Startups, YC & Industry**
+- [MongoDB CEO Chirantan Desai leaves to lead Meta’s enterprise platform](https://www.reuters.com/technology/mongodb-ceo-desai-steps-down-lead-metas-enterprise-platform-2026-09-28/) — The move signals a stronger Meta push into enterprise infrastructure while creating a leadership transition at a major developer-data platform.
+- [Launch HN: Vespper positions structured office documents as agent infrastructure](https://news.ycombinator.com/item?id=45419549) — The launch is notable less as another document editor than as a specialized MCP layer for stateful, format-preserving Office automation—a recurring gap in general-purpose agent stacks.
+
+**YouTube / Technical Media**
+- [AI Engineer World’s Fair 2026 session playlist](https://www.youtube.com/watch?v=T72nqdC92PM&list=PLDyBmFH9HlVc) — The recently updated collection includes technical sessions on training a 3B state-space vision model, embodied VLM/VLA agents, autoresearch and production agent systems.
+
+**Watchlist** — Anthropic says Haiku 5.5 will arrive in the coming weeks; production migration experience from Wrangler to Cloudflare’s new `cf` CLI; upstreaming of Tokio’s Emscripten/event-loop patches; further Bitget fund movements, attribution and recovery attempts.
+
+To stop or manage this job, send me a new message (e.g. "stop reminder AI / Crypto / Tech / Software news digest for #tech-news").
