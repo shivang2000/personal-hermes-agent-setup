@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2019
+        "completed": 2020
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-30T05:08:33.107161+05:30",
-      "last_run_at": "2026-09-30T03:08:01.215284+05:30",
+      "next_run_at": "2026-09-30T06:09:33.095511+05:30",
+      "last_run_at": "2026-09-30T04:08:39.544022+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,15 +44,16 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-09-30T04:08:33.110104+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:34068:b6f0b3d0d5e548f88dbb444f08b91482"
+        "at": "2026-09-30T05:09:33.099676+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:78cd1a4afdef4a988fa890392227f2bb"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-09-30T04:08:01.215284+05:30",
-        "dispatched_at": "2026-09-30T04:08:33.051069+05:30",
-        "lateness_seconds": 31.8,
+        "scheduled_at": "2026-09-30T05:08:39.544022+05:30",
+        "dispatched_at": "2026-09-30T05:09:33.050923+05:30",
+        "lateness_seconds": 53.5,
         "kind": "on_time"
-      }
+      },
+      "failure_streak": 0
     },
     {
       "id": "6be19c7edbdb",
@@ -341,28 +342,30 @@
       "schedule_display": "once at 2026-09-30 04:25",
       "repeat": {
         "times": 1,
-        "completed": 0
+        "completed": 1
       },
-      "enabled": true,
-      "state": "scheduled",
+      "enabled": false,
+      "state": "completed",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-09-30T03:30:32.788544+05:30",
-      "next_run_at": "2026-09-30T04:25:00+05:30",
-      "last_run_at": null,
-      "last_status": null,
-      "last_error": null,
+      "next_run_at": null,
+      "last_run_at": "2026-09-30T04:25:33.303760+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstderr:\n{\"status\": \"error\", \"error\": \"cua-driver list_apps failed (1): Cua Driver sends content-free product telemetry by default. Run `cua-driver telemetry disable` to stop it; `cua-driver telemetry status` shows the current setting.\\nCua Driver daemon on /Users/shivang/Library/Caches/cua-driver/cua-driver.sock is incompatible: daemon transport error on /Users/shivang/Library/Caches/cua-driver/cua-driver.sock: daemon metadata request failed: Unknown method: metadata\"}",
       "last_delivery_error": null,
       "last_delivery_unverified": null,
-      "failure_streak": 0,
+      "failure_streak": 1,
       "deliver": "local",
       "origin": null,
       "enabled_toolsets": [
         "terminal"
       ],
       "workdir": null,
-      "failure_deliver": "local"
+      "failure_deliver": "local",
+      "run_claim": null,
+      "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-30T04:08:33.110561+05:30"
+  "updated_at": "2026-09-30T05:09:33.100125+05:30"
 }
