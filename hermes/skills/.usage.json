@@ -316,13 +316,15 @@
     "created_at": "2026-07-02T19:16:55.050174+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-07-10T03:27:39.752580+00:00",
-    "last_viewed_at": "2026-07-10T03:27:39.751600+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-29T21:58:21.252983+00:00",
+    "last_viewed_at": "2026-09-29T21:58:21.250678+00:00",
     "patch_count": 0,
+    "patch_generation": 0,
     "pinned": false,
     "state": "stale",
-    "use_count": 5,
-    "view_count": 5
+    "use_count": 6,
+    "view_count": 6
   },
   "cso": {
     "archived_at": null,
@@ -615,13 +617,15 @@
     "created_at": "2026-06-17T11:52:20.722824+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-08-04T17:29:45.256933+00:00",
-    "last_viewed_at": "2026-08-04T17:29:45.254706+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-29T21:58:38.479830+00:00",
+    "last_viewed_at": "2026-09-29T21:58:38.478777+00:00",
     "patch_count": 0,
+    "patch_generation": 0,
     "pinned": false,
     "state": "stale",
-    "use_count": 43,
-    "view_count": 43
+    "use_count": 44,
+    "view_count": 44
   },
   "hermes-agent-skill-authoring": {
     "archived_at": "2026-09-18T02:53:44.282580+00:00",
@@ -641,13 +645,15 @@
     "created_at": "2026-07-01T23:17:20.233633+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-07-12T09:40:28.635155+00:00",
-    "last_used_at": "2026-07-12T10:08:33.452577+00:00",
-    "last_viewed_at": "2026-07-12T10:08:33.448944+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-29T22:00:53.075008+00:00",
+    "last_viewed_at": "2026-09-29T22:00:53.074240+00:00",
     "patch_count": 5,
+    "patch_generation": 0,
     "pinned": false,
     "state": "stale",
-    "use_count": 161,
-    "view_count": 6
+    "use_count": 163,
+    "view_count": 8
   },
   "hermes-durable-services": {
     "archived_at": null,
@@ -836,13 +842,15 @@
     "created_at": "2026-06-17T23:18:51.560512+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-28T04:46:57.169309+00:00",
-    "last_used_at": "2026-07-27T13:36:52.754146+00:00",
-    "last_viewed_at": "2026-07-27T13:36:52.750837+00:00",
+    "last_reused_patch_generation": 0,
+    "last_used_at": "2026-09-29T21:58:21.253809+00:00",
+    "last_viewed_at": "2026-09-29T21:58:21.251782+00:00",
     "patch_count": 3,
+    "patch_generation": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 12,
-    "view_count": 11
+    "use_count": 13,
+    "view_count": 12
   },
   "make-pdf": {
     "archived_at": null,
