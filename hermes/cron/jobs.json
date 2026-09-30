@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2027
+        "completed": 2028
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-09-30T13:16:33.127944+05:30",
-      "last_run_at": "2026-09-30T11:15:38.667302+05:30",
+      "next_run_at": "2026-09-30T14:17:33.121030+05:30",
+      "last_run_at": "2026-09-30T12:16:38.775731+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-09-30T12:16:33.131361+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:34068:d03f5a5aae9840f49e97b71bbca2fe4e"
+        "at": "2026-09-30T13:17:33.124870+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:4155f8b59ac04c339598ac58027502d6"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-09-30T12:15:38.667302+05:30",
-        "dispatched_at": "2026-09-30T12:16:33.084074+05:30",
-        "lateness_seconds": 54.4,
+        "scheduled_at": "2026-09-30T13:16:38.775731+05:30",
+        "dispatched_at": "2026-09-30T13:17:33.082452+05:30",
+        "lateness_seconds": 54.3,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 369
+        "completed": 370
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-09-30T12:55:00+05:30",
-      "last_run_at": "2026-09-30T01:06:11.965046+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-09-30T16:55:00+05:30",
+      "last_run_at": "2026-09-30T12:55:35.004343+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: 3b0bfcf2-bddf-454f-8d8e-16ec88f65d06)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -103,7 +103,14 @@
       "workdir": null,
       "fire_claim": null,
       "provider_snapshot": null,
-      "model_snapshot": null
+      "model_snapshot": null,
+      "last_dispatch": {
+        "scheduled_at": "2026-09-30T12:55:00+05:30",
+        "dispatched_at": "2026-09-30T12:55:33.111043+05:30",
+        "lateness_seconds": 33.1,
+        "kind": "on_time"
+      },
+      "failure_streak": 1
     },
     {
       "id": "83b4fd8d0951",
@@ -237,17 +244,17 @@
       "schedule_display": "47 12 * * 1,3,5",
       "repeat": {
         "times": null,
-        "completed": 37
+        "completed": 38
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-09-30T12:47:00+05:30",
-      "last_run_at": "2026-09-28T12:49:43.450076+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-10-02T12:47:00+05:30",
+      "last_run_at": "2026-09-30T12:47:42.351993+05:30",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: 896b8c5f-c20e-42f5-a2cd-0c6d19f679c9)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -264,7 +271,14 @@
         "session_search"
       ],
       "workdir": null,
-      "fire_claim": null
+      "fire_claim": null,
+      "last_dispatch": {
+        "scheduled_at": "2026-09-30T12:47:00+05:30",
+        "dispatched_at": "2026-09-30T12:47:33.068974+05:30",
+        "lateness_seconds": 33.1,
+        "kind": "on_time"
+      },
+      "failure_streak": 1
     },
     {
       "id": "d1d619cfb98e",
@@ -367,5 +381,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-09-30T12:16:33.131870+05:30"
+  "updated_at": "2026-09-30T13:17:33.125397+05:30"
 }
