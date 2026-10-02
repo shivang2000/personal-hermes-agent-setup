@@ -7,8 +7,10 @@ ascii-art
 ascii-video
 baoyu-infographic
 blogwatcher
+claude-code
 claude-design
 codebase-inspection
+codex
 comfyui
 design-md
 dogfood
@@ -52,3 +54,5 @@ spike
 teams-meeting-pipeline
 touchdesigner-mcp
 weights-and-biases
+xurl
+youtube-content
