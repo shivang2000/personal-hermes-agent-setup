@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2145
+        "completed": 2146
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-05T13:14:40.026305+05:30",
-      "last_run_at": "2026-10-05T11:13:45.814368+05:30",
+      "next_run_at": "2026-10-05T14:15:40.009215+05:30",
+      "last_run_at": "2026-10-05T12:14:45.892645+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-05T12:14:40.030042+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:34068:b561fcf0418a4111b54fe26ae0ad04d1"
+        "at": "2026-10-05T13:15:40.013095+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:7dca2e390723459eb6e4dc7f41bf4d8f"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-05T12:13:45.814368+05:30",
-        "dispatched_at": "2026-10-05T12:14:39.968656+05:30",
-        "lateness_seconds": 54.2,
+        "scheduled_at": "2026-10-05T13:14:45.892645+05:30",
+        "dispatched_at": "2026-10-05T13:15:39.954924+05:30",
+        "lateness_seconds": 54.1,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 389
+        "completed": 390
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-10-05T12:55:00+05:30",
-      "last_run_at": "2026-10-05T00:55:43.942378+05:30",
+      "next_run_at": "2026-10-05T16:55:00+05:30",
+      "last_run_at": "2026-10-05T12:55:42.146625+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade (ref: daba4545-bfe0-4154-af00-e19d75df4c5e)",
+      "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade (ref: d38955da-986a-4ca1-b2e4-b04f9ce656db)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -105,12 +105,12 @@
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-10-05T00:55:00+05:30",
-        "dispatched_at": "2026-10-05T00:55:39.832455+05:30",
-        "lateness_seconds": 39.8,
+        "scheduled_at": "2026-10-05T12:55:00+05:30",
+        "dispatched_at": "2026-10-05T12:55:39.912313+05:30",
+        "lateness_seconds": 39.9,
         "kind": "on_time"
       },
-      "failure_streak": 20
+      "failure_streak": 21
     },
     {
       "id": "83b4fd8d0951",
@@ -244,17 +244,17 @@
       "schedule_display": "47 12 * * 1,3,5",
       "repeat": {
         "times": null,
-        "completed": 39
+        "completed": 40
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-10-05T12:47:00+05:30",
-      "last_run_at": "2026-10-02T12:47:39.284909+05:30",
+      "next_run_at": "2026-10-07T12:47:00+05:30",
+      "last_run_at": "2026-10-05T12:47:47.588886+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: e57b194d-7222-4712-b039-928e4306fa14)",
+      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: 5ef3effe-eee3-4df7-9ee0-c4de92a95494)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -273,12 +273,12 @@
       "workdir": null,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-10-02T12:47:00+05:30",
-        "dispatched_at": "2026-10-02T12:47:33.672139+05:30",
-        "lateness_seconds": 33.7,
+        "scheduled_at": "2026-10-05T12:47:00+05:30",
+        "dispatched_at": "2026-10-05T12:47:39.943307+05:30",
+        "lateness_seconds": 39.9,
         "kind": "on_time"
       },
-      "failure_streak": 2
+      "failure_streak": 3
     },
     {
       "id": "d1d619cfb98e",
@@ -388,5 +388,5 @@
       "fire_claim": null
     }
   ],
-  "updated_at": "2026-10-05T12:14:40.030485+05:30"
+  "updated_at": "2026-10-05T13:15:40.013547+05:30"
 }
