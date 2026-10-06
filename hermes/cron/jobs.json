@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2184
+        "completed": 2185
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-07T04:53:40.538898+05:30",
-      "last_run_at": "2026-10-07T02:52:49.269821+05:30",
+      "next_run_at": "2026-10-07T05:54:40.536574+05:30",
+      "last_run_at": "2026-10-07T03:53:47.186299+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-07T03:53:40.541583+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:34068:68ae8e4d63714123996e814166b8cb7d"
+        "at": "2026-10-07T04:54:40.541927+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:a3a0d59ef9134ad390539baeb674b997"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-07T03:52:49.269821+05:30",
-        "dispatched_at": "2026-10-07T03:53:40.493052+05:30",
-        "lateness_seconds": 51.2,
+        "scheduled_at": "2026-10-07T04:53:47.186299+05:30",
+        "dispatched_at": "2026-10-07T04:54:40.484418+05:30",
+        "lateness_seconds": 53.3,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -339,54 +339,7 @@
         "kind": "on_time"
       },
       "failure_streak": 3
-    },
-    {
-      "id": "da04fb72ada7",
-      "name": "One-time: submit T3 Code prompt",
-      "prompt": "Run the deterministic computer-use script once. It locates the running T3 Code (Nightly) app, captures its window, presses Return exactly once in background mode, and captures the result. Do not retry the key press.",
-      "skills": [],
-      "skill": null,
-      "model": null,
-      "provider": null,
-      "base_url": null,
-      "script": "t3_submit_once.py",
-      "no_agent": true,
-      "monitor_script": null,
-      "monitor_url": null,
-      "monitor_state": null,
-      "context_from": null,
-      "schedule": {
-        "kind": "once",
-        "run_at": "2026-09-30T04:25:00+05:30",
-        "display": "once at 2026-09-30 04:25"
-      },
-      "schedule_display": "once at 2026-09-30 04:25",
-      "repeat": {
-        "times": 1,
-        "completed": 1
-      },
-      "enabled": false,
-      "state": "completed",
-      "paused_at": null,
-      "paused_reason": null,
-      "created_at": "2026-09-30T03:30:32.788544+05:30",
-      "next_run_at": null,
-      "last_run_at": "2026-09-30T04:25:33.303760+05:30",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstderr:\n{\"status\": \"error\", \"error\": \"cua-driver list_apps failed (1): Cua Driver sends content-free product telemetry by default. Run `cua-driver telemetry disable` to stop it; `cua-driver telemetry status` shows the current setting.\\nCua Driver daemon on /Users/shivang/Library/Caches/cua-driver/cua-driver.sock is incompatible: daemon transport error on /Users/shivang/Library/Caches/cua-driver/cua-driver.sock: daemon metadata request failed: Unknown method: metadata\"}",
-      "last_delivery_error": null,
-      "last_delivery_unverified": null,
-      "failure_streak": 1,
-      "deliver": "local",
-      "origin": null,
-      "enabled_toolsets": [
-        "terminal"
-      ],
-      "workdir": null,
-      "failure_deliver": "local",
-      "run_claim": null,
-      "fire_claim": null
     }
   ],
-  "updated_at": "2026-10-07T03:53:40.541968+05:30"
+  "updated_at": "2026-10-07T04:54:40.542580+05:30"
 }
