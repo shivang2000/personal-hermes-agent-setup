@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T18:56:16.203682",
+  "updated_at": "2026-10-07T20:31:15.787171",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,18 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1557393334497186004:1557393334497186004",
+        "name": "Shivang Hermes AI / #tweets-automation / - Addressed CodeRabbit feedback around retries and expected-failure classific... / topic 1557393334497186004",
+        "type": "thread",
+        "thread_id": "1557393334497186004"
+      },
+      {
+        "id": "1557393332588781710:1557393332588781710",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1557393332588781710",
+        "type": "thread",
+        "thread_id": "1557393332588781710"
       },
       {
         "id": "1557030405121511437:1557030405121511437",
