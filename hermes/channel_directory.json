@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T18:49:29.025481",
+  "updated_at": "2026-10-08T19:49:34.538405",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,42 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1557755679517974589:1557755679517974589",
+        "name": "Shivang Hermes AI / #tweets-automation / 5. “Self-hosted fonts are a reliability feature. Fewer third-party render-pat... / topic 1557755679517974589",
+        "type": "thread",
+        "thread_id": "1557755679517974589"
+      },
+      {
+        "id": "1557755675369803831:1557755675369803831",
+        "name": "Shivang Hermes AI / #tweets-automation / Project: `developer-portal-ui` Branch observed: `fix/self-host-dm-sans-font` ... / topic 1557755675369803831",
+        "type": "thread",
+        "thread_id": "1557755675369803831"
+      },
+      {
+        "id": "1557755677487931536:1557755677487931536",
+        "name": "Shivang Hermes AI / #tweets-automation / - **UI permissions deserve standalone helpers.** A tiny tested permission uti... / topic 1557755677487931536",
+        "type": "thread",
+        "thread_id": "1557755677487931536"
+      },
+      {
+        "id": "1557755671288484013:1557755671288484013",
+        "name": "Shivang Hermes AI / #tweets-automation / - When a shared endpoint already computes data but discards it, the safest ch... / topic 1557755671288484013",
+        "type": "thread",
+        "thread_id": "1557755671288484013"
+      },
+      {
+        "id": "1557755673956323419:1557755673956323419",
+        "name": "Shivang Hermes AI / #tweets-automation / - an already-initialized session can receive a repeated Hub sign-in event; - ... / topic 1557755673956323419",
+        "type": "thread",
+        "thread_id": "1557755673956323419"
+      },
+      {
+        "id": "1557755668788805685:1557755668788805685",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1557755668788805685",
+        "type": "thread",
+        "thread_id": "1557755668788805685"
       },
       {
         "id": "1557393334497186004:1557393334497186004",
