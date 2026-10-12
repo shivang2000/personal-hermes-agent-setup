@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2308
+        "completed": 2309
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-12T13:06:38.503918+05:30",
-      "last_run_at": "2026-10-12T10:46:37.699300+05:30",
+      "next_run_at": "2026-10-12T14:43:27.307077+05:30",
+      "last_run_at": "2026-10-12T12:07:12.981222+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,14 +44,14 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-12T12:06:38.508572+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:34068:33080daf4c2b4212b9d35e7924d76c31"
+        "at": "2026-10-12T13:43:27.313534+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:ecf6005189ba457b9a75ff31fe25f771"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-12T11:46:37.699300+05:30",
-        "dispatched_at": "2026-10-12T12:06:38.451862+05:30",
-        "lateness_seconds": 1200.8,
-        "kind": "late"
+        "scheduled_at": "2026-10-12T13:07:12.981222+05:30",
+        "dispatched_at": "2026-10-12T13:43:27.246360+05:30",
+        "lateness_seconds": 2174.3,
+        "kind": "catch_up"
       },
       "failure_streak": 0
     },
@@ -82,7 +82,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-10-12T12:55:00+05:30",
+      "next_run_at": "2026-10-12T16:55:00+05:30",
       "last_run_at": "2026-10-12T00:55:12.134187+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: df2fc6e8-31d1-4ff7-bb5a-d8678c63272b)",
@@ -101,14 +101,17 @@
         "file"
       ],
       "workdir": null,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-10-12T13:43:27.330433+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:5bc5b361223b496c94620688f6864fd7"
+      },
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-10-12T00:55:00+05:30",
-        "dispatched_at": "2026-10-12T00:55:06.919952+05:30",
-        "lateness_seconds": 6.9,
-        "kind": "on_time"
+        "scheduled_at": "2026-10-12T12:55:00+05:30",
+        "dispatched_at": "2026-10-12T13:43:27.246360+05:30",
+        "lateness_seconds": 2907.2,
+        "kind": "late"
       },
       "failure_streak": 48
     },
@@ -251,7 +254,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-10-12T12:47:00+05:30",
+      "next_run_at": "2026-10-14T12:47:00+05:30",
       "last_run_at": "2026-10-09T12:47:13.136085+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade (ref: 593147e7-e639-492f-b043-c312e7e03839)",
@@ -271,12 +274,15 @@
         "session_search"
       ],
       "workdir": null,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-10-12T13:43:27.347615+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:34068:083ba07f61f14e249019a5a8380e123d"
+      },
       "last_dispatch": {
-        "scheduled_at": "2026-10-09T12:47:00+05:30",
-        "dispatched_at": "2026-10-09T12:47:06.234831+05:30",
-        "lateness_seconds": 6.2,
-        "kind": "on_time"
+        "scheduled_at": "2026-10-12T12:47:00+05:30",
+        "dispatched_at": "2026-10-12T13:43:27.246360+05:30",
+        "lateness_seconds": 3387.2,
+        "kind": "late"
       },
       "failure_streak": 5
     },
@@ -341,5 +347,5 @@
       "failure_streak": 5
     }
   ],
-  "updated_at": "2026-10-12T12:06:38.509058+05:30"
+  "updated_at": "2026-10-12T13:43:27.348160+05:30"
 }
