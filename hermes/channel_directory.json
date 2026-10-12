@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T18:57:43.257249",
+  "updated_at": "2026-10-12T19:57:48.126343",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,48 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1559204525649174529:1559204525649174529",
+        "name": "Shivang Hermes AI / #tweets-automation / - Exact internal endpoint URLs/config values/application properties/chart val... / topic 1559204525649174529",
+        "type": "thread",
+        "thread_id": "1559204525649174529"
+      },
+      {
+        "id": "1559204518313463819:1559204518313463819",
+        "name": "Shivang Hermes AI / #tweets-automation / - mandatory-field asterisks shipped for selected details/test-request forms; ... / topic 1559204518313463819",
+        "type": "thread",
+        "thread_id": "1559204518313463819"
+      },
+      {
+        "id": "1559204522465820845:1559204522465820845",
+        "name": "Shivang Hermes AI / #tweets-automation / - Reliability: Auth/session incident reviews should separate browser-state bu... / topic 1559204522465820845",
+        "type": "thread",
+        "thread_id": "1559204522465820845"
+      },
+      {
+        "id": "1559204520582451221:1559204520582451221",
+        "name": "Shivang Hermes AI / #tweets-automation / - Avoid exact endpoint names, application properties/config diffs, internal r... / topic 1559204520582451221",
+        "type": "thread",
+        "thread_id": "1559204520582451221"
+      },
+      {
+        "id": "1559204513444012033:1559204513444012033",
+        "name": "Shivang Hermes AI / #tweets-automation / - Local reproduction note: running the frontend on `localhost` against deploy... / topic 1559204513444012033",
+        "type": "thread",
+        "thread_id": "1559204513444012033"
+      },
+      {
+        "id": "1559204515855601675:1559204515855601675",
+        "name": "Shivang Hermes AI / #tweets-automation / Sensitive areas to avoid: - Do not post the Sentry issue link, stack trace, b... / topic 1559204515855601675",
+        "type": "thread",
+        "thread_id": "1559204515855601675"
+      },
+      {
+        "id": "1559204511556575253:1559204511556575253",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1559204511556575253",
+        "type": "thread",
+        "thread_id": "1559204511556575253"
       },
       {
         "id": "1557755679517974589:1557755679517974589",
