@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T19:21:38.872674",
+  "updated_at": "2026-10-13T20:21:48.375883",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,36 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1559567580216164443:1559567580216164443",
+        "name": "Shivang Hermes AI / #tweets-automation / - Avoid posting branch names if you want tweets to be fully company/project-a... / topic 1559567580216164443",
+        "type": "thread",
+        "thread_id": "1559567580216164443"
+      },
+      {
+        "id": "1559567574088425505:1559567574088425505",
+        "name": "Shivang Hermes AI / #tweets-automation / - `src/components/Shared/AppCrashFallback.tsx` - `src/components/Shared/AppEr... / topic 1559567574088425505",
+        "type": "thread",
+        "thread_id": "1559567574088425505"
+      },
+      {
+        "id": "1559567578337124484:1559567578337124484",
+        "name": "Shivang Hermes AI / #tweets-automation / - cached browser state. - The key infra-ish improvement is adding a deploy/co... / topic 1559567578337124484",
+        "type": "thread",
+        "thread_id": "1559567578337124484"
+      },
+      {
+        "id": "1559567576307204208:1559567576307204208",
+        "name": "Shivang Hermes AI / #tweets-automation / - Updated most feature specs to use the new banner-aware flow. - Covered logi... / topic 1559567576307204208",
+        "type": "thread",
+        "thread_id": "1559567576307204208"
+      },
+      {
+        "id": "1559567571777495122:1559567571777495122",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1559567571777495122",
+        "type": "thread",
+        "thread_id": "1559567571777495122"
       },
       {
         "id": "1559204525649174529:1559204525649174529",
