@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T18:42:48.470918",
+  "updated_at": "2026-10-14T19:42:54.976159",
   "platforms": {
     "discord": [
       {
@@ -49,6 +49,42 @@
         "name": "trading-bot",
         "guild": "Shivang Hermes AI",
         "type": "channel"
+      },
+      {
+        "id": "1559929265028603927:1559929265028603927",
+        "name": "Shivang Hermes AI / #tweets-automation / - Raw CI/Jenkins config, internal repo URLs, private PR/Jira links, branch na... / topic 1559929265028603927",
+        "type": "thread",
+        "thread_id": "1559929265028603927"
+      },
+      {
+        "id": "1559929262759354399:1559929262759354399",
+        "name": "Shivang Hermes AI / #tweets-automation / - **E2E coverage must be paired with run-quality checks.** A spec committed p... / topic 1559929262759354399",
+        "type": "thread",
+        "thread_id": "1559929262759354399"
+      },
+      {
+        "id": "1559929260842688663:1559929260842688663",
+        "name": "Shivang Hermes AI / #tweets-automation / Testing/infra insight: - E2E runtime work is infrastructure work. Faster suit... / topic 1559929260842688663",
+        "type": "thread",
+        "thread_id": "1559929260842688663"
+      },
+      {
+        "id": "1559929253146009734:1559929253146009734",
+        "name": "Shivang Hermes AI / #tweets-automation / Cronjob Response: office-work-summary-for-tweets (job_id: 81a56cfa2830) -----... / topic 1559929253146009734",
+        "type": "thread",
+        "thread_id": "1559929253146009734"
+      },
+      {
+        "id": "1559929258527293511:1559929258527293511",
+        "name": "Shivang Hermes AI / #tweets-automation / - `TRES-6709: Playwright coverage for self-serve team limit and admin wallet-... / topic 1559929258527293511",
+        "type": "thread",
+        "thread_id": "1559929258527293511"
+      },
+      {
+        "id": "1559929255754731651:1559929255754731651",
+        "name": "Shivang Hermes AI / #tweets-automation / - Fixed a pagination regression where advancing to the next page could re-dis... / topic 1559929255754731651",
+        "type": "thread",
+        "thread_id": "1559929255754731651"
       },
       {
         "id": "1559567580216164443:1559567580216164443",
