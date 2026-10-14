@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2350
+        "completed": 2351
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-14T12:38:49.457418+05:30",
-      "last_run_at": "2026-10-14T10:37:55.379212+05:30",
+      "next_run_at": "2026-10-14T13:39:49.489926+05:30",
+      "last_run_at": "2026-10-14T11:38:54.980113+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-14T11:38:49.461793+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:3486:b8556964dcd5420db4bee36fe46d9067"
+        "at": "2026-10-14T12:39:49.493365+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:3486:8f06ef04a4944f7f987a5036e42c869e"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-14T11:37:55.379212+05:30",
-        "dispatched_at": "2026-10-14T11:38:49.415197+05:30",
-        "lateness_seconds": 54.0,
+        "scheduled_at": "2026-10-14T12:38:54.980113+05:30",
+        "dispatched_at": "2026-10-14T12:39:49.436736+05:30",
+        "lateness_seconds": 54.5,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -341,5 +341,5 @@
       "failure_streak": 6
     }
   ],
-  "updated_at": "2026-10-14T11:38:49.462264+05:30"
+  "updated_at": "2026-10-14T12:39:49.493838+05:30"
 }
