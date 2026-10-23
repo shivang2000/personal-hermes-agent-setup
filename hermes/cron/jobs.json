@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2574
+        "completed": 2575
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-24T01:16:12.829610+05:30",
-      "last_run_at": "2026-10-23T23:15:18.101110+05:30",
+      "next_run_at": "2026-10-24T02:17:12.865533+05:30",
+      "last_run_at": "2026-10-24T00:16:18.882012+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-24T00:16:12.832830+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:5789:1a9b54d657b8400bbfabc29291409b55"
+        "at": "2026-10-24T01:17:12.868146+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:5789:3c7c4f1a65c340daaab7450cbc16045f"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-24T00:15:18.101110+05:30",
-        "dispatched_at": "2026-10-24T00:16:12.773849+05:30",
-        "lateness_seconds": 54.7,
+        "scheduled_at": "2026-10-24T01:16:18.882012+05:30",
+        "dispatched_at": "2026-10-24T01:17:12.836276+05:30",
+        "lateness_seconds": 54.0,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 464
+        "completed": 465
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-10-24T00:55:00+05:30",
-      "last_run_at": "2026-10-23T20:55:17.957357+05:30",
+      "next_run_at": "2026-10-24T12:55:00+05:30",
+      "last_run_at": "2026-10-24T00:55:16.452360+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: 3ae1a22f-9d9f-4f1a-a05a-1a27e339d0ac)",
+      "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: 4b876eca-2f7f-484c-9a2e-a734c2aef381)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -105,12 +105,12 @@
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-10-23T20:55:00+05:30",
-        "dispatched_at": "2026-10-23T20:55:12.739852+05:30",
-        "lateness_seconds": 12.7,
+        "scheduled_at": "2026-10-24T00:55:00+05:30",
+        "dispatched_at": "2026-10-24T00:55:12.764329+05:30",
+        "lateness_seconds": 12.8,
         "kind": "on_time"
       },
-      "failure_streak": 95
+      "failure_streak": 96
     },
     {
       "id": "83b4fd8d0951",
@@ -341,5 +341,5 @@
       "failure_streak": 10
     }
   ],
-  "updated_at": "2026-10-24T00:16:12.833250+05:30"
+  "updated_at": "2026-10-24T01:17:12.868544+05:30"
 }
