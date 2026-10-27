@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2613
+        "completed": 2614
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-10-25T17:07:23.595914+05:30",
-      "last_run_at": "2026-10-25T15:06:33.659459+05:30",
+      "next_run_at": "2026-10-27T17:32:46.421852+05:30",
+      "last_run_at": "2026-10-25T16:07:29.223303+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,14 +44,14 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-10-25T16:07:23.599373+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:3380:8cd1ee93ee4e40c09b1ede2a18986bc6"
+        "at": "2026-10-27T16:32:46.424073+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:1585:679aad7467c544cda2af01fd15cdec2a"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-10-25T16:06:33.659459+05:30",
-        "dispatched_at": "2026-10-25T16:07:23.549453+05:30",
-        "lateness_seconds": 49.9,
-        "kind": "on_time"
+        "scheduled_at": "2026-10-25T17:07:29.223303+05:30",
+        "dispatched_at": "2026-10-27T16:32:46.331891+05:30",
+        "lateness_seconds": 170717.1,
+        "kind": "catch_up"
       },
       "failure_streak": 0
     },
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 470
+        "completed": 471
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-10-25T16:55:00+05:30",
-      "last_run_at": "2026-10-25T12:55:30.887519+05:30",
+      "next_run_at": "2026-10-27T16:55:00+05:30",
+      "last_run_at": "2026-10-25T16:55:47.109829+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: bcf32155-e5ed-4f77-a5ba-77ff67420354)",
+      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: b756ae18-1bb7-44b3-ba84-23cb88e13696)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -101,16 +101,19 @@
         "file"
       ],
       "workdir": null,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-10-27T16:32:46.439732+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:1585:125ab70f67a64a2c9c51ccb7c3c72c24"
+      },
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-10-25T12:55:00+05:30",
-        "dispatched_at": "2026-10-25T12:55:23.465044+05:30",
-        "lateness_seconds": 23.5,
-        "kind": "on_time"
+        "scheduled_at": "2026-10-25T20:55:00+05:30",
+        "dispatched_at": "2026-10-27T16:32:46.331891+05:30",
+        "lateness_seconds": 157066.3,
+        "kind": "catch_up"
       },
-      "failure_streak": 101
+      "failure_streak": 102
     },
     {
       "id": "83b4fd8d0951",
@@ -251,7 +254,7 @@
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-10-26T12:47:00+05:30",
+      "next_run_at": "2026-10-28T12:47:00+05:30",
       "last_run_at": "2026-10-23T12:47:19.156738+05:30",
       "last_status": "error",
       "last_error": "RuntimeError: HTTP 402: This model is not in the Free plan. Pro is $20/month for $60 of usage, with no 5-hour or weekly caps: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: f2c8f36a-bfa4-46dc-bd73-921c847dbd8f)",
@@ -271,12 +274,15 @@
         "session_search"
       ],
       "workdir": null,
-      "fire_claim": null,
+      "fire_claim": {
+        "at": "2026-10-27T16:32:46.467882+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:1585:38a88657873340ab81a7cc2ea4bed96f"
+      },
       "last_dispatch": {
-        "scheduled_at": "2026-10-23T12:47:00+05:30",
-        "dispatched_at": "2026-10-23T12:47:12.584971+05:30",
-        "lateness_seconds": 12.6,
-        "kind": "on_time"
+        "scheduled_at": "2026-10-26T12:47:00+05:30",
+        "dispatched_at": "2026-10-27T16:32:46.331891+05:30",
+        "lateness_seconds": 99946.3,
+        "kind": "catch_up"
       },
       "failure_streak": 11
     },
@@ -341,5 +347,5 @@
       "failure_streak": 11
     }
   ],
-  "updated_at": "2026-10-25T16:07:23.600015+05:30"
+  "updated_at": "2026-10-27T16:32:46.468764+05:30"
 }
