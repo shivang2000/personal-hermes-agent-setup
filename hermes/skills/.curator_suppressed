@@ -12,6 +12,7 @@ claude-design
 codebase-inspection
 codex
 comfyui
+computer-use
 design-md
 dogfood
 evaluating-llms-harness
@@ -24,6 +25,7 @@ github-issues
 github-pr-workflow
 github-repo-management
 google-workspace
+hermes-agent
 hermes-agent-skill-authoring
 himalaya
 imessage

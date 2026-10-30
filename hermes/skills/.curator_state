@@ -1,9 +1,9 @@
 {
-  "last_report_path": "/Users/shivang/.hermes/logs/curator/20261023-055922",
-  "last_run_at": "2026-10-23T05:59:22.197326+00:00",
-  "last_run_duration_seconds": 0.388622,
-  "last_run_summary": "auto: no changes; llm: skipped (consolidation off)",
+  "last_report_path": "/Users/shivang/.hermes/logs/curator/20261030-064544",
+  "last_run_at": "2026-10-30T06:45:44.992094+00:00",
+  "last_run_duration_seconds": 1.221236,
+  "last_run_summary": "auto: 3 archived; llm: skipped (consolidation off)",
   "last_run_summary_shown_at": "2026-09-25T03:26:54.023465+00:00",
   "paused": false,
-  "run_count": 22
+  "run_count": 23
 }
