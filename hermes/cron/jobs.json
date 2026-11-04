@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2787
+        "completed": 2788
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-11-04T17:11:30.361922+05:30",
-      "last_run_at": "2026-11-04T15:11:05.151101+05:30",
-      "last_status": "ok",
-      "last_error": null,
+      "next_run_at": "2026-11-04T18:12:30.390620+05:30",
+      "last_run_at": "2026-11-04T16:11:51.762718+05:30",
+      "last_status": "error",
+      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"<string>\", line 16, in <module>\n    exec(code, main.__dict__)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/tools/python-3.14.7+202****0901-darwin-arm64/lib/python3.14/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 128.",
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -44,16 +44,16 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-11-04T16:11:30.364818+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:5386:ae3f8e93c30f413983e0d0e6f085f9f7"
+        "at": "2026-11-04T17:12:30.394433+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:5386:f5da116a2af94c5d8615712d808789cd"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-11-04T16:11:05.151101+05:30",
-        "dispatched_at": "2026-11-04T16:11:30.318292+05:30",
-        "lateness_seconds": 25.2,
+        "scheduled_at": "2026-11-04T17:11:51.762718+05:30",
+        "dispatched_at": "2026-11-04T17:12:30.343701+05:30",
+        "lateness_seconds": 38.6,
         "kind": "on_time"
       },
-      "failure_streak": 0
+      "failure_streak": 1
     },
     {
       "id": "6be19c7edbdb",
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 504
+        "completed": 505
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-11-04T16:55:00+05:30",
-      "last_run_at": "2026-11-04T12:55:32.209986+05:30",
+      "next_run_at": "2026-11-04T20:55:00+05:30",
+      "last_run_at": "2026-11-04T16:59:39.152806+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: abc56fd7-16bb-4af6-9ce4-5ef587325295)",
+      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: c0a60fe1-976d-4b66-a573-f39cf5bbc9e9)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -105,12 +105,12 @@
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-11-04T12:55:00+05:30",
-        "dispatched_at": "2026-11-04T12:55:30.211719+05:30",
-        "lateness_seconds": 30.2,
+        "scheduled_at": "2026-11-04T16:55:00+05:30",
+        "dispatched_at": "2026-11-04T16:55:30.377809+05:30",
+        "lateness_seconds": 30.4,
         "kind": "on_time"
       },
-      "failure_streak": 135
+      "failure_streak": 136
     },
     {
       "id": "83b4fd8d0951",
@@ -341,5 +341,5 @@
       "failure_streak": 15
     }
   ],
-  "updated_at": "2026-11-04T16:11:30.365198+05:30"
+  "updated_at": "2026-11-04T17:12:30.394983+05:30"
 }
