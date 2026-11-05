@@ -20,17 +20,17 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2817
+        "completed": 2818
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-11-05T23:41:30.795730+05:30",
-      "last_run_at": "2026-11-05T21:40:49.050379+05:30",
-      "last_status": "error",
-      "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"<string>\", line 16, in <module>\n    exec(code, main.__dict__)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 266, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 257, in main\n    push = run([\"git\", \"push\", \"-u\", \"origin\", \"main\"], cwd=REPO)\n  File \"/Users/shivang/.hermes/scripts/sync_personal_hermes_repo.py\", line 44, in run\n    return subprocess.run(cmd, cwd=cwd, check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/shivang/.hermes/tools/python-3.14.7+202****0901-darwin-arm64/lib/python3.14/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command '['git', 'push', '-u', 'origin', 'main']' returned non-zero exit status 1.",
+      "next_run_at": "2026-11-06T00:42:30.833298+05:30",
+      "last_run_at": "2026-11-05T22:41:37.472868+05:30",
+      "last_status": "ok",
+      "last_error": null,
       "last_delivery_error": null,
       "deliver": "local",
       "origin": {
@@ -44,16 +44,16 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-11-05T22:41:30.809366+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:5386:2483e9b64d734a7d87a409bf329ade71"
+        "at": "2026-11-05T23:42:30.839872+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:5386:e200b2ef23eb43f8a0cf6c8cf7600dca"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-11-05T22:40:49.050379+05:30",
-        "dispatched_at": "2026-11-05T22:41:30.723200+05:30",
-        "lateness_seconds": 41.7,
+        "scheduled_at": "2026-11-05T23:41:37.472868+05:30",
+        "dispatched_at": "2026-11-05T23:42:30.778445+05:30",
+        "lateness_seconds": 53.3,
         "kind": "on_time"
       },
-      "failure_streak": 1
+      "failure_streak": 0
     },
     {
       "id": "6be19c7edbdb",
@@ -341,5 +341,5 @@
       "failure_streak": 16
     }
   ],
-  "updated_at": "2026-11-05T22:41:30.810630+05:30"
+  "updated_at": "2026-11-05T23:42:30.840411+05:30"
 }
