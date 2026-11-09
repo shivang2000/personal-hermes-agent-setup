@@ -1,0 +1,38 @@
+{
+  "homeassistant": {
+    "catalog": {
+      "name": "homeassistant",
+      "pin": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+      "repo": "https://github.com/NousResearch/hermes-official-plugins",
+      "sha": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+      "tier": "official"
+    },
+    "pinned": true,
+    "revision": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+    "source": "https://github.com/NousResearch/hermes-official-plugins#homeassistant"
+  },
+  "spotify": {
+    "catalog": {
+      "name": "spotify",
+      "pin": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+      "repo": "https://github.com/NousResearch/hermes-official-plugins",
+      "sha": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+      "tier": "official"
+    },
+    "pinned": true,
+    "revision": "e7a218f26db88426ab3e7376f0e000b6e356f5e7",
+    "source": "https://github.com/NousResearch/hermes-official-plugins#spotify"
+  },
+  "yuanbao": {
+    "catalog": {
+      "name": "yuanbao",
+      "pin": "51ede1f023906114ec06c216c4a7b98e8a45d672",
+      "repo": "https://github.com/NousResearch/hermes-labs-plugins",
+      "sha": "51ede1f023906114ec06c216c4a7b98e8a45d672",
+      "tier": "community"
+    },
+    "pinned": true,
+    "revision": "51ede1f023906114ec06c216c4a7b98e8a45d672",
+    "source": "https://github.com/NousResearch/hermes-labs-plugins#yuanbao"
+  }
+}

@@ -91,6 +91,7 @@ browser:
     adopt_existing_tab: false
     rewrite_loopback_urls: false
     loopback_host_alias: host.docker.internal
+  executable_path: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
 checkpoints:
   enabled: false
   max_snapshots: 20
@@ -520,10 +521,6 @@ hooks_auto_accept: false
 security:
   allow_private_urls: false
   redact_secrets: REDACTED_SET_LOCALLY
-  tirith_enabled: true
-  tirith_path: tirith
-  tirith_timeout: 5
-  tirith_fail_open: true
   website_blocklist:
     enabled: false
     domains: []
@@ -626,11 +623,81 @@ paste_collapse_threshold_fallback: 5
 paste_collapse_char_threshold: 2000
 computer_use:
   cua_telemetry: false
-_config_version: 49
+_config_version: 53
 group_sessions_per_user: true
 known_plugin_toolsets:
   cli:
     - spotify
+  acp:
+    - homeassistant
+    - yuanbao
+  webhook:
+    - homeassistant
+    - yuanbao
+  discord:
+    - yuanbao
+  google_chat:
+    - yuanbao
+  homeassistant:
+    - yuanbao
+  qqbot:
+    - yuanbao
+  signal:
+    - yuanbao
+  slack:
+    - yuanbao
+  teams:
+    - yuanbao
+  telegram:
+    - yuanbao
+  whatsapp:
+    - yuanbao
+  a2a:
+    - yuanbao
+  api_server:
+    - yuanbao
+  bluebubbles:
+    - yuanbao
+  buzz:
+    - yuanbao
+  cron:
+    - yuanbao
+  dingtalk:
+    - yuanbao
+  email:
+    - yuanbao
+  feishu:
+    - yuanbao
+  irc:
+    - yuanbao
+  line:
+    - yuanbao
+  matrix:
+    - yuanbao
+  mattermost:
+    - yuanbao
+  msgraph_webhook:
+    - yuanbao
+  ntfy:
+    - yuanbao
+  photon:
+    - yuanbao
+  raft:
+    - yuanbao
+  relay:
+    - yuanbao
+  simplex:
+    - yuanbao
+  sms:
+    - yuanbao
+  wecom:
+    - yuanbao
+  wecom_callback:
+    - yuanbao
+  weixin:
+    - yuanbao
+  whatsapp_cloud:
+    - yuanbao
 platform_toolsets:
   cli:
     - browser
@@ -680,7 +747,10 @@ platform_toolsets:
 plugins:
   disabled: []
   enabled:
+    - homeassistant
+    - spotify
     - superpowers
+    - yuanbao
 session_reset:
   at_hour: 4
   idle_minutes: 1440
@@ -723,3 +793,10 @@ custom_providers:
 # fallback_model:
 #   provider: openrouter
 #   model: anthropic/claude-sonnet-4
+_left_core_scoped:
+  - homeassistant
+  - yuanbao
+_left_core_installed:
+  - homeassistant
+  - spotify
+  - yuanbao

@@ -1,0 +1,18 @@
+[project]
+name = "hermes-homeassistant"
+version = "2.0.1"
+description = "Home Assistant gateway platform and smart-home tools for Hermes Agent (official plugin)"
+readme = "README.md"
+license = { text = "MIT" }
+authors=REDACTED_SET_LOCALLY
+requires-python = ">=3.11"
+dependencies = [
+  "aiohttp>=3.9,<4",
+  # Windows Python ships no IANA time zone database, so ZoneInfo cannot resolve the
+  # instance's zone there and the local timestamp twins would fall back to the machine's
+  # own time. This is the same database the OS provides on Linux and macOS.
+  "tzdata; platform_system == 'Windows'",
+]
+
+[project.urls]
+Homepage = "https://github.com/NousResearch/hermes-official-plugins/tree/main/homeassistant"
