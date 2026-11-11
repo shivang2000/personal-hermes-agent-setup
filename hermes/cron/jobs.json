@@ -20,15 +20,15 @@
       "schedule_display": "every 60m",
       "repeat": {
         "times": null,
-        "completed": 2948
+        "completed": 2949
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T05:58:54.658728+05:30",
-      "next_run_at": "2026-11-11T13:06:50.873079+05:30",
-      "last_run_at": "2026-11-11T11:06:00.478240+05:30",
+      "next_run_at": "2026-11-11T14:07:50.887068+05:30",
+      "last_run_at": "2026-11-11T12:06:56.432022+05:30",
       "last_status": "ok",
       "last_error": null,
       "last_delivery_error": null,
@@ -44,13 +44,13 @@
       ],
       "workdir": null,
       "fire_claim": {
-        "at": "2026-11-11T12:06:50.876448+05:30",
-        "by": "shivangtekiMacBook-Pro-6.local:27716:c261412a7ec44f50a72f3ffd73db883e"
+        "at": "2026-11-11T13:07:50.889492+05:30",
+        "by": "shivangtekiMacBook-Pro-6.local:27716:332b309b8092405da03449d3447e2642"
       },
       "last_dispatch": {
-        "scheduled_at": "2026-11-11T12:06:00.478240+05:30",
-        "dispatched_at": "2026-11-11T12:06:50.841481+05:30",
-        "lateness_seconds": 50.4,
+        "scheduled_at": "2026-11-11T13:06:56.432022+05:30",
+        "dispatched_at": "2026-11-11T13:07:50.850092+05:30",
+        "lateness_seconds": 54.4,
         "kind": "on_time"
       },
       "failure_streak": 0
@@ -75,17 +75,17 @@
       "schedule_display": "55 12,16,20,0 * * *",
       "repeat": {
         "times": null,
-        "completed": 531
+        "completed": 532
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-06-21T06:42:25.076514+05:30",
-      "next_run_at": "2026-11-11T12:55:00+05:30",
-      "last_run_at": "2026-11-11T00:55:50.242053+05:30",
+      "next_run_at": "2026-11-11T16:55:00+05:30",
+      "last_run_at": "2026-11-11T12:55:52.400801+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: ff7178d4-ba49-4e6a-ac19-f0bccc788d04)",
+      "last_error": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: 5b2befd9-f135-4423-8c8b-990c36c7e83d)",
       "last_delivery_error": null,
       "deliver": "discord:#tech-news",
       "origin": {
@@ -105,18 +105,18 @@
       "provider_snapshot": null,
       "model_snapshot": null,
       "last_dispatch": {
-        "scheduled_at": "2026-11-11T00:55:00+05:30",
-        "dispatched_at": "2026-11-11T00:55:44.844405+05:30",
-        "lateness_seconds": 44.8,
+        "scheduled_at": "2026-11-11T12:55:00+05:30",
+        "dispatched_at": "2026-11-11T12:55:50.777463+05:30",
+        "lateness_seconds": 50.8,
         "kind": "on_time"
       },
-      "failure_streak": 162,
+      "failure_streak": 163,
       "last_failure": {
-        "at": "2026-11-11T00:55:50.242053+05:30",
-        "detail": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: ff7178d4-ba49-4e6a-ac19-f0bccc788d04)"
+        "at": "2026-11-11T12:55:52.400801+05:30",
+        "detail": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: 5b2befd9-f135-4423-8c8b-990c36c7e83d)"
       },
       "canonical_completions": [
-        "2e32d5231b2f4fcfa3bebde4f833f4e0"
+        "5c2a6055601c4a458787f47f64fa4495"
       ]
     },
     {
@@ -251,17 +251,17 @@
       "schedule_display": "47 12 * * 1,3,5",
       "repeat": {
         "times": null,
-        "completed": 55
+        "completed": 56
       },
       "enabled": true,
       "state": "scheduled",
       "paused_at": null,
       "paused_reason": null,
       "created_at": "2026-07-25T05:01:17.886407+05:30",
-      "next_run_at": "2026-11-11T12:47:00+05:30",
-      "last_run_at": "2026-11-09T12:47:41.728580+05:30",
+      "next_run_at": "2026-11-13T12:47:00+05:30",
+      "last_run_at": "2026-11-11T12:47:58.324452+05:30",
       "last_status": "error",
-      "last_error": "RuntimeError: HTTP 402: this model is not included in your free usage, add usage credits to pay as you go: https://ollama.com/settings or upgrade for included usage: https://ollama.com/upgrade. Try gemma4:31b-cloud, which is in the Free plan. (ref: 165e1233-70e0-4197-be32-61b721c83004)",
+      "last_error": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: e5c136ba-c4b1-4443-b444-21ab832dce47)",
       "last_delivery_error": null,
       "deliver": "origin",
       "origin": {
@@ -280,12 +280,19 @@
       "workdir": null,
       "fire_claim": null,
       "last_dispatch": {
-        "scheduled_at": "2026-11-09T12:47:00+05:30",
-        "dispatched_at": "2026-11-09T12:47:34.033399+05:30",
-        "lateness_seconds": 34.0,
+        "scheduled_at": "2026-11-11T12:47:00+05:30",
+        "dispatched_at": "2026-11-11T12:47:50.856391+05:30",
+        "lateness_seconds": 50.9,
         "kind": "on_time"
       },
-      "failure_streak": 18
+      "failure_streak": 19,
+      "last_failure": {
+        "at": "2026-11-11T12:47:58.324452+05:30",
+        "detail": "RuntimeError: HTTP 402: Add usage credits or subscribe and save up to 66%: https://ollama.com/plans (ref: e5c136ba-c4b1-4443-b444-21ab832dce47)"
+      },
+      "canonical_completions": [
+        "f58be27e5bbe482ebfa72cc39b9cbe47"
+      ]
     },
     {
       "id": "d1d619cfb98e",
@@ -355,5 +362,5 @@
       ]
     }
   ],
-  "updated_at": "2026-11-11T12:06:50.876742+05:30"
+  "updated_at": "2026-11-11T13:07:50.889826+05:30"
 }
