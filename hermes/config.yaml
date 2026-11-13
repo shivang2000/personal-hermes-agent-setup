@@ -786,6 +786,11 @@ mcp_servers:
       TERMBRIDGE_ALLOWED_ENVS: docker
       TERMBRIDGE_MAX_SESSIONS: '3'
     enabled: true
+  t3code-personal:
+    url: https://prod-36342bcc4107081d.t3coderelay.com/mcp
+    connect_timeout: 315.0
+    auth: REDACTED_SET_LOCALLY
+    enabled: true
 custom_providers:
   - name: Local (localhost:11434)
     base_url: http://localhost:11434/v1
