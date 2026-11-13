@@ -1040,6 +1040,22 @@
     "use_count": 0,
     "view_count": 0
   },
+  "microsoft-office": {
+    "archived_at": null,
+    "created_at": "2026-11-13T07:46:31.391291+00:00",
+    "created_by": null,
+    "first_seen_at": "2026-11-13T07:46:31.391293+00:00",
+    "last_patched_at": null,
+    "last_reused_patch_generation": 0,
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 0,
+    "patch_generation": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
   "nano-pdf": {
     "archived_at": "2026-09-18T02:53:44.417243+00:00",
     "created_at": "2026-06-18T17:57:24.448466+00:00",
